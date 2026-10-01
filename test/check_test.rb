@@ -61,6 +61,8 @@ class CheckTest < Minitest::Test
   def test_long_dashes_fail
     assert_includes check('save' => "Enregistrer \u2014 maintenant").errors.join, 'save: long dash'
     assert_includes check('save' => "de 5\u201310").errors.join, 'save: long dash'
+    assert_includes check('save' => "Enregistrer &#{'m'}dash; maintenant").errors.join, 'save: long dash'
+    assert_includes check('save' => 'de 5&#8211;10').errors.join, 'save: long dash'
   end
 
   def test_the_file_must_be_for_its_language

@@ -13,7 +13,8 @@ module BroadcastI18n
 
     PLACEHOLDER = /%\{(\w+)\}/
     TAG = %r{</?([a-z][a-z0-9]*)\b}i
-    LONG_DASH = /[\u2013\u2014]/
+    # The characters, and the HTML entities that render as them
+    LONG_DASH = /[\u2013\u2014]|&[mn]dash;|&#821[12];|&#x201[34];/i
     PLURAL_KEYS = %w[zero one two few many other].freeze
 
     def initialize(reference:, file:, locale:)
