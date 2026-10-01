@@ -953,6 +953,7 @@ en:
         title: "Jobs Dashboard"
       show:
         jobs: "Jobs"
+        not_scheduled: "Not scheduled"
         statuses:
           finished: "Finished"
           failed: "Failed"
@@ -2253,6 +2254,13 @@ en:
       time_ago: "%{time} ago"
 
   broadcast_analytics:
+    chart:
+      series:
+        processed: "Processed"
+        delivered: "Delivered"
+        opens: "Opens"
+        clicks: "Clicks"
+        bounces: "Bounces"
     link_clicks:
       summary_html: "%{links} unique links clicked with %{clicks} total clicks"
       total_clicks: "Total Clicks"
@@ -2797,6 +2805,7 @@ en:
       archived: "Archived"
       estimated_hint: "Estimated from the current audience. The final count is calculated when the broadcast sends."
       time_ago: "%{time} ago"
+      not_available: "N/A"
     start_design:
       title: "New drag-and-drop email"
       body: "Your broadcast will start from the template you picked. You can change every block afterwards."
@@ -3333,6 +3342,16 @@ en:
         queued: "Queued"
         sent: "Sent"
         failed: "Failed"
+    outbound_receipt:
+      activity_status:
+        bounced: "Bounced"
+        spam: "Spam"
+        unsubscribed: "Unsubscribed"
+        clicked: "Clicked"
+        opened: "Opened"
+        delivered: "Delivered"
+        other: "Other"
+        sent: "Sent"
 
   errors:
     not_found:

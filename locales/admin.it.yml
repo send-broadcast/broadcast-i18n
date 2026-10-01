@@ -968,6 +968,7 @@ it:
         discard_confirm: "Sei sicuro?"
         title: "Dashboard dei job"
       show:
+        not_scheduled: "Non programmato"
         jobs: "Job"
         statuses:
           finished: "Completato"
@@ -2269,6 +2270,13 @@ it:
       time_ago: "%{time} fa"
 
   broadcast_analytics:
+    chart:
+      series:
+        processed: "Elaborati"
+        delivered: "Recapitati"
+        opens: "Aperture"
+        clicks: "Clic"
+        bounces: "Mancati recapiti"
     link_clicks:
       summary_html: "%{links} link unici cliccati, con %{clicks} clic in totale"
       total_clicks: "Clic totali"
@@ -2809,6 +2817,7 @@ it:
       rich_text_description: "Scrivi con un editor semplice. Perfetto per newsletter e annunci."
       html_description: "Controllo completo del codice per design personalizzati al pixel."
     broadcast:
+      not_available: "N/D"
       untitled: "Senza titolo"
       archived: "Archiviata"
       estimated_hint: "Stima basata sul pubblico attuale. Il conteggio finale viene calcolato al momento dell'invio."
@@ -3199,6 +3208,16 @@ it:
       long_day: "%-d %B %Y"
 
   enums:
+    outbound_receipt:
+      activity_status:
+        bounced: "Mancato recapito"
+        spam: "Spam"
+        unsubscribed: "Disiscritto"
+        clicked: "Cliccato"
+        opened: "Aperto"
+        delivered: "Recapitato"
+        other: "Altro"
+        sent: "Inviato"
     broadcast:
       status:
         draft: "Bozza"

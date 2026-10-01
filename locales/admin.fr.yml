@@ -971,6 +971,7 @@ fr:
         discard_confirm: "Êtes-vous sûr ?"
         title: "Tableau de bord des tâches"
       show:
+        not_scheduled: "Non programmé"
         jobs: "Tâches"
         statuses:
           finished: "Terminée"
@@ -2272,6 +2273,13 @@ fr:
       time_ago: "il y a %{time}"
 
   broadcast_analytics:
+    chart:
+      series:
+        processed: "Traités"
+        delivered: "Distribués"
+        opens: "Ouvertures"
+        clicks: "Clics"
+        bounces: "Rebonds"
     link_clicks:
       summary_html: "%{links} liens uniques cliqués, pour %{clicks} clics au total"
       total_clicks: "Total des clics"
@@ -2812,6 +2820,7 @@ fr:
       rich_text_description: "Rédigez avec un éditeur simple. Idéal pour les newsletters et les annonces."
       html_description: "Un contrôle total du code pour des designs sur mesure au pixel près."
     broadcast:
+      not_available: "N/D"
       untitled: "Sans titre"
       archived: "Archivée"
       estimated_hint: "Estimé à partir de l'audience actuelle. Le nombre définitif est calculé lors de l'envoi de la campagne."
@@ -3202,6 +3211,16 @@ fr:
       long_day: "%-d %B %Y"
 
   enums:
+    outbound_receipt:
+      activity_status:
+        bounced: "Rejeté"
+        spam: "Spam"
+        unsubscribed: "Désabonné"
+        clicked: "Cliqué"
+        opened: "Ouvert"
+        delivered: "Distribué"
+        other: "Autre"
+        sent: "Envoyé"
     broadcast:
       status:
         draft: "Brouillon"

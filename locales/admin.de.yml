@@ -972,6 +972,7 @@ de:
         discard_confirm: "Sind Sie sicher?"
         title: "Job-Dashboard"
       show:
+        not_scheduled: "Nicht geplant"
         jobs: "Jobs"
         statuses:
           finished: "Abgeschlossen"
@@ -2273,6 +2274,13 @@ de:
       time_ago: "vor %{time}"
 
   broadcast_analytics:
+    chart:
+      series:
+        processed: "Verarbeitet"
+        delivered: "Zugestellt"
+        opens: "Öffnungen"
+        clicks: "Klicks"
+        bounces: "Bounces"
     link_clicks:
       summary_html: "%{links} eindeutige Links wurden angeklickt, insgesamt %{clicks} Klicks"
       total_clicks: "Klicks gesamt"
@@ -2813,6 +2821,7 @@ de:
       rich_text_description: "Mit einem einfachen Editor schreiben. Ideal für Newsletter und Ankündigungen."
       html_description: "Volle Kontrolle über den Code für pixelgenaue, individuelle Designs."
     broadcast:
+      not_available: "k. A."
       untitled: "Unbenannt"
       archived: "Archiviert"
       estimated_hint: "Geschätzt anhand der aktuellen Zielgruppe. Die endgültige Anzahl wird beim Versand der Kampagne berechnet."
@@ -3203,6 +3212,16 @@ de:
       long_day: "%-d. %B %Y"
 
   enums:
+    outbound_receipt:
+      activity_status:
+        bounced: "Gebounced"
+        spam: "Spam"
+        unsubscribed: "Abgemeldet"
+        clicked: "Geklickt"
+        opened: "Geöffnet"
+        delivered: "Zugestellt"
+        other: "Sonstiges"
+        sent: "Gesendet"
     broadcast:
       status:
         draft: "Entwurf"
