@@ -7,7 +7,19 @@ require_relative 'broadcast_i18n/version'
 # translators can see what every key says. The translations live in locales/.
 module BroadcastI18n
   # Languages translated here, with their own names (for the language picker)
-  LOCALES = { 'it' => 'Italiano', 'fr' => 'Français', 'de' => 'Deutsch' }.freeze
+  LOCALES = {
+    'it' => 'Italiano',
+    'fr' => 'Français',
+    'de' => 'Deutsch',
+    'es' => 'Español',
+    'pt-BR' => 'Português (Brasil)',
+    'nl' => 'Nederlands',
+    'pl' => 'Polski',
+    'sv' => 'Svenska',
+    'da' => 'Dansk',
+    'nb' => 'Norsk bokmål',
+    'fi' => 'Suomi'
+  }.freeze
 
   def self.root = File.expand_path('..', __dir__)
 

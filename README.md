@@ -8,6 +8,14 @@ pages people use to run their newsletters, subscribers, sequences and sending.
 | Italian | `locales/admin.it.yml` |
 | French | `locales/admin.fr.yml` |
 | German | `locales/admin.de.yml` |
+| Spanish | `locales/admin.es.yml` |
+| Portuguese (Brazil) | `locales/admin.pt-BR.yml` |
+| Dutch | `locales/admin.nl.yml` |
+| Polish | `locales/admin.pl.yml` |
+| Swedish | `locales/admin.sv.yml` |
+| Danish | `locales/admin.da.yml` |
+| Norwegian Bokmål | `locales/admin.nb.yml` |
+| Finnish | `locales/admin.fi.yml` |
 
 English is written in the Broadcast application itself. `reference/admin.en.yml`
 is a copy of it, kept here so you can see what every key says. Pages subscribers

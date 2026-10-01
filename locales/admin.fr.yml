@@ -5605,7 +5605,7 @@ fr:
         delay_until: "Attendre jusqu'au lendemain à"
         no_label: "Sans libellé"
         with_tag: "Abonné avec le tag"
-        condition_html: "A été %{condition} ?"
+        condition_html: "%{condition} ?"
         evaluated_after_html: "Évaluée après %{duration}"
         no_target: "Aucune séquence cible indiquée"
         end: "Fin de la séquence"
