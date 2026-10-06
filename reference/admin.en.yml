@@ -1,9 +1,46 @@
-# Broadcast admin interface: English reference.
+# The signed-in admin interface, in English.
 #
-# Generated from the Broadcast application, where English is written. Do not
-# edit this file: suggest English changes in an issue instead. Translations in
-# locales/ follow its keys.
-
+# One file per language (admin.<locale>.yml); the languages offered are
+# User::LOCALES. Every key here must exist in every other admin.<locale>.yml,
+# which AdminTranslationsTest enforces.
+#
+# Views use lazy lookup, so a key's path is the view's path:
+# t('.subscribers') in layouts/sidebar/_icon_rail.html.erb reads
+# layouts.sidebar.icon_rail.subscribers.
+#
+# The pages subscribers see are NOT here. They speak the channel's language and
+# live in unsubscribes/confirmations/opt_ins.<locale>.yml (PublicPageLanguages).
+#
+# Conventions
+#   * Top-level blocks are kept in alphabetical order (view directories, plus
+#     activerecord, common, date, enums, helpers, time).
+#   * Controllers use lazy lookup too: t('.created') in BroadcastsController#create
+#     reads broadcasts.create.created. A title the controller sets (@title) is
+#     page_title, never title: the action's view usually has a title key of its
+#     own under the same path. Keys for a page title or breadcrumb shared by
+#     several actions use the absolute key of the action that owns the page.
+#   * common holds only words that read the same in every context (Save, Cancel,
+#     Delete). Anything whose translation depends on what it describes (New,
+#     Active, None) gets its own key next to the view that uses it.
+#   * Text containing markup: a key ending in _html, with links passed in as
+#     interpolations (t('.intro_html', link: link_to(t('.intro_link'), path))).
+#   * Counts: one/other keys and count:. Dates and times: l(value, format: :medium)
+#     with the formats under date.formats and time.formats below. In English:
+#       date medium "Jan 5, 2026", date long_day "January 5, 2026",
+#       time medium "Jan 5, 2026 at 3:04 PM", full "January 5, 2026 at 3:04 PM",
+#       full_zone "... 3:04 PM EST", day_clock "Jan 5 at 3:04 PM", clock "3:04 PM".
+#     Italian puts the day first and uses the 24-hour clock ("5 gen 2026 alle 15:04").
+#   * Enum values: human_enum(record, :status), reading enums.<model>.<attribute>.
+#   * JavaScript reads js.* through t() in app/javascript/lib/i18n.js (the layout
+#     embeds js.* for the user's language): t('autosave.saving') reads
+#     js.autosave.saving. tHtml() escapes the values for strings that become HTML.
+#   * Validation messages are symbols: errors.add(:field, :key) reads
+#     activerecord.errors.models.<model>.attributes.<field>.<key> (shared
+#     concerns: activerecord.errors.messages.<key>), named via activerecord.attributes.
+#   * Text built outside a request (jobs, mail, cable broadcasts) takes the
+#     language of the person it is for: the recipient's for mail, the starter's
+#     for a run's log. When everyone watching a page receives it, send a key and
+#     values (message_key, status_key) and let each browser word it.
 en:
   activerecord:
     attributes:
@@ -201,6 +238,9 @@ en:
               must_belong_to_the_same_channel: "must belong to the same channel"
             theme_settings:
               style_value_not_allowed: "%{setting} contains characters that are not allowed in a style value"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" is not allowed after submission (use one of %{allowed})"
+              invalid_block: "block %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Confirmation redirect URL must be a valid http(s) URL"
         opt_in_form_block:
           attributes:
@@ -442,14 +482,17 @@ en:
       intro: "Connect AI agents like Claude Code, ChatGPT, or custom scripts to manage your email marketing."
       introduction_heading: "Introduction Message"
       introduction_intro: "Copy this message and paste it into your AI agent to get started."
+      introduction_token: "Uses the token \"%{label}\"."
       label: "Label"
       last_used: "Last Used"
+      link_token: "Token: %{label}"
       manage_tokens: "Manage API Tokens"
       never: "Never"
       no_setup_links: "No active setup links. Generate one to onboard an agent."
       no_tokens_html: "No API tokens found. %{link} to get started."
       no_tokens_yet: "No tokens yet."
       setup_links_heading: "Setup Links"
+      setup_link_token: "Token for the new setup link"
       setup_links_intro: "Time-limited URLs for securely onboarding agents. Paste the link into your AI agent."
       time_ago: "%{time} ago"
       title: "Agents"
@@ -628,32 +671,6 @@ en:
         development_license: "Development License"
         title: "License"
         meta_description: "View your license information"
-    show:
-      subtitle: "Manage global settings for Broadcast"
-      version: "Version"
-      current_version_html: "Current Broadcast version is %{version}"
-      check_for_updates: "Check for updates"
-      licensing: "Licensing"
-      authorized_domain: "Authorized Domain"
-      license_key: "License Key"
-      development_license: "Development License"
-      development_build: "Development Build"
-      system_info: "System Info & Usage"
-      cpu_cores: "CPU Cores"
-      cpu_load: "CPU Load"
-      memory_used: "Memory Used"
-      free_memory: "Free Memory"
-      uploads_size: "Uploads Size"
-      disk_space_used: "Disk Space Used"
-      free_disk_space: "Free Disk Space"
-      reload_app: "Reload App"
-      reload_app_help: "Did you make changes to the domain settings for a broadcast channel? If so, you'll need to reload the app to allow the changes to take effect."
-    form:
-      heading: "S3 Compatible Storage"
-      intro: "To upload files and store assets that you reference in your emails, you need to configure your S3 compatible storage. Broadcast will store these assets in your S3 bucket."
-      update: "Update"
-    upgrade_in_progress:
-      message: "Upgrade in progress. System will be unavailable and will restart in 5-10 minutes."
     ai:
       show:
         subtitle: "Configure the AI provider for this installation. This applies to every channel."
@@ -685,11 +702,6 @@ en:
         cleared: "AI settings cleared."
     base:
       saas_unavailable: "This feature is not available in SaaS mode."
-    check_for_updates:
-      upgrade_now: "Upgrade now"
-      new_version: "New version v%{version} available!"
-      check_for_updates: "Check for updates"
-      last_checked: "Last checked %{time}"
     application_logs:
       show:
         subtitle: "View and stream application logs in real-time."
@@ -1391,6 +1403,13 @@ en:
         estimate: "Estimated time: 5-10 minutes"
         estimate_help: "Your system will be unavailable during this process"
         footer: "This page will not automatically refresh. Please check back shortly."
+      upgrade_refused:
+        title: "Upgrade not started"
+        work_in_flight: "Broadcast is busy with work that an upgrade would interrupt."
+        failed: "The upgrade could not be started."
+        try_again_later: "Nothing was changed. Try again when this work has finished."
+        check_logs: "Nothing was changed. Check the application logs for the error, then try again."
+        back: "Back to updates"
       check:
         upgrade_now: "Upgrade now"
         view_all: "View all versions"
@@ -3542,6 +3561,7 @@ en:
       saving: "Saving..."
       saved: "Saved"
       copied: "Copied!"
+      copy_failed: "Copy failed"
       unknown_error: "Unknown error"
       try_again: "Please try again."
       network_error: "Network error. Please try again."
@@ -7401,6 +7421,11 @@ en:
         auto_detect_help: "Shows every public page (the unsubscribe pages and the double opt-in confirmation page) in the browser's language when it is one of this channel's languages (added under Page text), with your text for that language. Other browsers see the default language."
         require_confirmation: "Require confirmation"
         require_confirmation_help: "Subscribers click a button to unsubscribe, which stops email security scanners unsubscribing people by opening the link. The one-click Unsubscribe button in Gmail and Yahoo always unsubscribes straight away."
+        topic_scope: "On an email sent to a topic"
+        topic_scope_help: "What the unsubscribe link and the one-click Unsubscribe button in Gmail and Yahoo do. Emails with no topic, and sequence and transactional emails, always unsubscribe from everything."
+        topic_scopes:
+          topic: "Turn off only that topic (the subscriber stays subscribed)"
+          everything: "Unsubscribe from everything"
         appearance: "Appearance"
         appearance_help_brand_kit: "How the unsubscribe pages look. Leave a colour blank to use your brand kit, shown in each field."
         appearance_help_standard: "How the unsubscribe pages look. Leave a colour blank to use Broadcast's standard look, shown in each field."
@@ -7425,6 +7450,7 @@ en:
         logo_social_note_link: "the brand kit"
         page_text: "Page text"
         page_text_help_html: "Edit one language at a time, then save once. A blank field uses the built-in text shown in it. Plain text; line breaks are kept. You can use <code class=\"text-sm\">{{ channel_name }}</code>, <code class=\"text-sm\">{{ email }}</code> and <code class=\"text-sm\">{{ first_name }}</code>."
+        page_text_topic_help_html: "The topic pages can also use <code class=\"text-sm\">{{ topic_name }}</code>."
         language: "Language"
         default: "Default"
         custom_count: "Fields with custom text"
@@ -7444,6 +7470,12 @@ en:
           resubscribed:
             label: "Resubscribed page"
             description: "Shown after resubscribing."
+          topic_confirm:
+            label: "Topic confirm page"
+            description: "Replaces the confirm page on an email sent to a topic."
+          topic_unsubscribed:
+            label: "Topic unsubscribed page"
+            description: "Shown after turning one topic off. The subscriber stays subscribed."
         fields:
           heading: "Heading"
           message: "Message"
@@ -7451,6 +7483,7 @@ en:
           stay_button: "Stay button"
           resubscribe_button: "Resubscribe button"
           unsubscribe_button: "Unsubscribe button"
+          everything_button: "Unsubscribe from everything button"
         legal_links: "Legal links"
         legal_links_help: "Shown at the bottom of every unsubscribe page when set."
         privacy_policy_url: "Privacy policy URL"
@@ -7458,6 +7491,7 @@ en:
         after_unsubscribing: "After unsubscribing"
         redirect: "Redirect to your own page"
         redirect_help: "Leave blank to show the unsubscribed page. When set, subscribers are unsubscribed first and then sent here. Must start with https://."
+        redirect_topic_note: "A topic unsubscribe never redirects: its page keeps \"Unsubscribe from everything\" one click away. That button follows the redirect."
       show:
         title: "Unsubscribe Page"
         back_to_settings: "Settings"
@@ -7473,6 +7507,8 @@ en:
           unsubscribed: "Unsubscribed"
           stayed: "Stayed"
           resubscribed: "Resubscribed"
+          topic_confirm: "Topic confirm"
+          topic_unsubscribed: "Topic unsubscribed"
         preview_width: "Preview width"
         devices:
           desktop: "Desktop"
@@ -7877,6 +7913,7 @@ en:
         opened: "Opened"
         clicked: "Clicked"
         unsubscribed: "Unsubscribed"
+        topic_unsubscribed: "Topic off"
         resubscribed: "Resubscribed"
         updated: "Updated"
         tags: "Tags"

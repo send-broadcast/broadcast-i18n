@@ -24,6 +24,7 @@
 #   dashboard -> dashboard          settings -> instellingen
 #   custom field -> aangepast veld  preheader -> voorbeeldtekst
 #   brand kit -> huisstijlkit       endpoint -> endpoint
+#   topic -> onderwerp
 nl:
   activerecord:
     attributes:
@@ -221,6 +222,9 @@ nl:
               must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
             theme_settings:
               style_value_not_allowed: "%{setting} bevat tekens die niet zijn toegestaan in een stijlwaarde"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" is niet toegestaan na verzending (gebruik een van %{allowed})"
+              invalid_block: "blok %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Doorstuur-URL na bevestiging moet een geldige http(s)-URL zijn"
         opt_in_form_block:
           attributes:
@@ -476,6 +480,9 @@ nl:
       token: "Token"
       tokens_heading: "API-tokens"
       tokens_intro: "Agents gebruiken dezelfde API-tokens als je integraties. Beheer ze op de tokenpagina."
+      introduction_token: "Gebruikt het token \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token voor de nieuwe instellingslink"
 
   ai:
     prompt_suggestions:
@@ -648,32 +655,6 @@ nl:
         development_license: "Ontwikkellicentie"
         title: "Licentie"
         meta_description: "Je licentiegegevens bekijken"
-    show:
-      subtitle: "Globale instellingen voor Broadcast beheren"
-      version: "Versie"
-      current_version_html: "De huidige versie van Broadcast is %{version}"
-      check_for_updates: "Controleren op updates"
-      licensing: "Licenties"
-      authorized_domain: "Geautoriseerd domein"
-      license_key: "Licentiesleutel"
-      development_license: "Ontwikkellicentie"
-      development_build: "Ontwikkelversie"
-      system_info: "Systeeminfo en gebruik"
-      cpu_cores: "CPU-kernen"
-      cpu_load: "CPU-belasting"
-      memory_used: "Gebruikt geheugen"
-      free_memory: "Vrij geheugen"
-      uploads_size: "Grootte van uploads"
-      disk_space_used: "Gebruikte schijfruimte"
-      free_disk_space: "Vrije schijfruimte"
-      reload_app: "App herladen"
-      reload_app_help: "Heb je de domeininstellingen van een kanaal gewijzigd? Dan moet je de app herladen om de wijzigingen door te voeren."
-    form:
-      heading: "S3-compatibele opslag"
-      intro: "Om bestanden te uploaden en assets op te slaan die je in je e-mails gebruikt, moet je S3-compatibele opslag instellen. Broadcast slaat deze assets op in je S3-bucket."
-      update: "Bijwerken"
-    upgrade_in_progress:
-      message: "Upgrade bezig. Het systeem is niet beschikbaar en start over 5 tot 10 minuten opnieuw op."
     ai:
       show:
         subtitle: "Stel de AI-provider voor deze installatie in. Dit geldt voor elk kanaal."
@@ -705,11 +686,6 @@ nl:
         cleared: "AI-instellingen gewist."
     base:
       saas_unavailable: "Deze functie is niet beschikbaar in SaaS-modus."
-    check_for_updates:
-      upgrade_now: "Nu upgraden"
-      new_version: "Nieuwe versie v%{version} beschikbaar!"
-      check_for_updates: "Controleren op updates"
-      last_checked: "Laatst gecontroleerd %{time}"
     application_logs:
       show:
         subtitle: "Applicatielogs in realtime bekijken en streamen."
@@ -1488,6 +1464,13 @@ nl:
         unknown_error: "Kan niet downgraden naar versie %{version}: er is een onbekende fout opgetreden"
         invalid_version: "Ongeldige versienotatie: %{version}"
         error: "Fout bij het verwerken van het downgradeverzoek: %{error}"
+      upgrade_refused:
+        title: "Upgrade niet gestart"
+        work_in_flight: "Broadcast is bezig met werk dat een upgrade zou onderbreken."
+        failed: "De upgrade kon niet worden gestart."
+        try_again_later: "Er is niets gewijzigd. Probeer het opnieuw als dit werk klaar is."
+        check_logs: "Er is niets gewijzigd. Zoek de fout in de applicatielogs en probeer het daarna opnieuw."
+        back: "Terug naar updates"
 
   autopilots:
     autopilot_not_found: "Autopilot niet gevonden"
@@ -3572,6 +3555,7 @@ nl:
       verified: "Geverifieerd"
       pending: "In afwachting"
       just_now: "Zojuist"
+      copy_failed: "Kopiëren mislukt"
     relative_time:
       minutes_ago: "%{count} min geleden"
       hours_ago: "%{count} u geleden"
@@ -7464,6 +7448,12 @@ nl:
           resubscribed:
             label: "Pagina na opnieuw aanmelden"
             description: "Wordt getoond na het opnieuw aanmelden."
+          topic_confirm:
+            label: "Bevestigingspagina voor onderwerp"
+            description: "Vervangt de bevestigingspagina bij een e-mail over een onderwerp."
+          topic_unsubscribed:
+            label: "Pagina na uitzetten onderwerp"
+            description: "Wordt getoond nadat een onderwerp is uitgezet. De abonnee blijft aangemeld."
         fields:
           heading: "Kop"
           message: "Bericht"
@@ -7471,6 +7461,7 @@ nl:
           stay_button: "Knop om aangemeld te blijven"
           resubscribe_button: "Knop om opnieuw aan te melden"
           unsubscribe_button: "Afmeldknop"
+          everything_button: "Knop \"Overal voor afmelden\""
         legal_links: "Juridische links"
         legal_links_help: "Worden onderaan elke afmeldpagina getoond als ze zijn ingevuld."
         privacy_policy_url: "URL van het privacybeleid"
@@ -7478,6 +7469,13 @@ nl:
         after_unsubscribing: "Na het afmelden"
         redirect: "Doorverwijzen naar je eigen pagina"
         redirect_help: "Laat leeg om de pagina na afmelden te tonen. Als dit is ingevuld, worden abonnees eerst afgemeld en daarna hierheen gestuurd. Moet beginnen met https://."
+        topic_scope: "Bij een e-mail over een onderwerp"
+        topic_scope_help: "Wat de afmeldlink en de afmeldknop met één klik in Gmail en Yahoo doen. E-mails zonder onderwerp, en reeks- en transactionele e-mails, melden altijd overal voor af."
+        topic_scopes:
+          topic: "Alleen dat onderwerp uitzetten (de abonnee blijft aangemeld)"
+          everything: "Overal voor afmelden"
+        page_text_topic_help_html: "De onderwerppagina's kunnen ook <code class=\"text-sm\">{{ topic_name }}</code> gebruiken."
+        redirect_topic_note: "Een onderwerp uitzetten leidt nooit door: de pagina houdt \"Overal voor afmelden\" één klik weg. Die knop volgt de doorverwijzing wel."
       show:
         title: "Afmeldpagina"
         back_to_settings: "Instellingen"
@@ -7493,6 +7491,8 @@ nl:
           unsubscribed: "Afgemeld"
           stayed: "Aangemeld gebleven"
           resubscribed: "Opnieuw aangemeld"
+          topic_confirm: "Onderwerp bevestigen"
+          topic_unsubscribed: "Onderwerp uitgezet"
         preview_width: "Breedte van het voorbeeld"
         devices:
           desktop: "Desktop"
@@ -7905,6 +7905,7 @@ nl:
         completed: "Voltooid"
         redacted: "Geanonimiseerd"
         activity: "Activiteit"
+        topic_unsubscribed: "Onderwerp uit"
       by: "door %{name}"
     index:
       empty: "Nog geen activiteit"

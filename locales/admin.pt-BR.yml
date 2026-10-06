@@ -22,6 +22,7 @@
 #   dashboard -> painel             settings -> configurações
 #   custom field -> campo personalizado   preheader -> texto de pré-visualização
 #   brand kit -> kit da marca       endpoint -> endpoint
+#   topic -> tópico
 pt-BR:
   activerecord:
     attributes:
@@ -219,6 +220,9 @@ pt-BR:
               must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
             theme_settings:
               style_value_not_allowed: "%{setting} contém caracteres que não são permitidos em um valor de estilo"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "bloco %{position}: o block_type \"%{block_type}\" não é permitido após o envio (use um de %{allowed})"
+              invalid_block: "bloco %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "A URL de redirecionamento após a confirmação precisa ser uma URL http(s) válida"
         opt_in_form_block:
           attributes:
@@ -474,6 +478,9 @@ pt-BR:
       token: "Token"
       tokens_heading: "Tokens de API"
       tokens_intro: "Os agentes usam os mesmos tokens de API das suas integrações. Gerencie-os na página de tokens."
+      introduction_token: "Usa o token \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token para o novo link de configuração"
 
   ai:
     prompt_suggestions:
@@ -646,32 +653,6 @@ pt-BR:
         development_license: "Licença de desenvolvimento"
         title: "Licença"
         meta_description: "Veja as informações da sua licença"
-    show:
-      subtitle: "Gerencie as configurações globais do Broadcast"
-      version: "Versão"
-      current_version_html: "A versão atual do Broadcast é %{version}"
-      check_for_updates: "Verificar atualizações"
-      licensing: "Licenciamento"
-      authorized_domain: "Domínio autorizado"
-      license_key: "Chave de licença"
-      development_license: "Licença de desenvolvimento"
-      development_build: "Build de desenvolvimento"
-      system_info: "Informações e uso do sistema"
-      cpu_cores: "Núcleos de CPU"
-      cpu_load: "Carga da CPU"
-      memory_used: "Memória usada"
-      free_memory: "Memória livre"
-      uploads_size: "Tamanho dos uploads"
-      disk_space_used: "Espaço em disco usado"
-      free_disk_space: "Espaço livre em disco"
-      reload_app: "Recarregar aplicação"
-      reload_app_help: "Você alterou as configurações de domínio de um canal? Se sim, será preciso recarregar a aplicação para que as alterações entrem em vigor."
-    form:
-      heading: "Armazenamento compatível com S3"
-      intro: "Para enviar arquivos e armazenar os recursos usados nos seus e-mails, você precisa configurar um armazenamento compatível com S3. O Broadcast guardará esses recursos no seu bucket S3."
-      update: "Atualizar"
-    upgrade_in_progress:
-      message: "Atualização em andamento. O sistema ficará indisponível e será reiniciado em 5 a 10 minutos."
     ai:
       show:
         subtitle: "Configure o provedor de IA desta instalação. Isso vale para todos os canais."
@@ -703,11 +684,6 @@ pt-BR:
         cleared: "Configurações de IA limpas."
     base:
       saas_unavailable: "Este recurso não está disponível no modo SaaS."
-    check_for_updates:
-      upgrade_now: "Atualizar agora"
-      new_version: "Nova versão v%{version} disponível!"
-      check_for_updates: "Verificar atualizações"
-      last_checked: "Última verificação %{time}"
     application_logs:
       show:
         subtitle: "Veja e acompanhe os logs da aplicação em tempo real."
@@ -1486,6 +1462,13 @@ pt-BR:
         unknown_error: "Não é possível voltar para a versão %{version}: ocorreu um erro desconhecido"
         invalid_version: "Formato de versão inválido: %{version}"
         error: "Erro ao processar a solicitação de retorno de versão: %{error}"
+      upgrade_refused:
+        title: "Atualização não iniciada"
+        work_in_flight: "O Broadcast está fazendo um trabalho que uma atualização interromperia."
+        failed: "Não foi possível iniciar a atualização."
+        try_again_later: "Nada foi alterado. Tente de novo quando esse trabalho terminar."
+        check_logs: "Nada foi alterado. Procure o erro nos logs do aplicativo e tente de novo."
+        back: "Voltar para atualizações"
 
   autopilots:
     autopilot_not_found: "Piloto automático não encontrado"
@@ -3570,6 +3553,7 @@ pt-BR:
       verified: "Verificado"
       pending: "Pendente"
       just_now: "Agora mesmo"
+      copy_failed: "Falha ao copiar"
     relative_time:
       minutes_ago: "há %{count} min"
       hours_ago: "há %{count} h"
@@ -7462,6 +7446,12 @@ pt-BR:
           resubscribed:
             label: "Página de nova inscrição"
             description: "Exibida depois de a pessoa se inscrever novamente."
+          topic_confirm:
+            label: "Página de confirmação de tópico"
+            description: "Substitui a página de confirmação em um e-mail enviado a um tópico."
+          topic_unsubscribed:
+            label: "Página de tópico desativado"
+            description: "Exibida depois de desativar um tópico. O assinante continua inscrito."
         fields:
           heading: "Título"
           message: "Mensagem"
@@ -7469,6 +7459,7 @@ pt-BR:
           stay_button: "Botão de permanecer"
           resubscribe_button: "Botão de nova inscrição"
           unsubscribe_button: "Botão de cancelamento"
+          everything_button: "Botão de cancelar a inscrição em tudo"
         legal_links: "Links legais"
         legal_links_help: "Exibidos no rodapé de todas as páginas de cancelamento, quando definidos."
         privacy_policy_url: "URL da política de privacidade"
@@ -7476,6 +7467,13 @@ pt-BR:
         after_unsubscribing: "Após o cancelamento"
         redirect: "Redirecionar para sua própria página"
         redirect_help: "Deixe em branco para mostrar a página de inscrição cancelada. Quando definido, a inscrição dos assinantes é cancelada primeiro e eles são enviados para cá. Precisa começar com https://."
+        topic_scope: "Em um e-mail enviado a um tópico"
+        topic_scope_help: "O que fazem o link de cancelamento e o botão de cancelamento com um clique do Gmail e do Yahoo. E-mails sem tópico, e e-mails de sequência e transacionais, sempre cancelam a inscrição em tudo."
+        topic_scopes:
+          topic: "Desativar só esse tópico (o assinante continua inscrito)"
+          everything: "Cancelar a inscrição em tudo"
+        page_text_topic_help_html: "As páginas de tópico também podem usar <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Desativar um tópico nunca redireciona: a página dele mantém \"Cancelar a inscrição em tudo\" a um clique. Esse botão segue o redirecionamento."
       show:
         title: "Página de cancelamento"
         back_to_settings: "Configurações"
@@ -7491,6 +7489,8 @@ pt-BR:
           unsubscribed: "Cancelada"
           stayed: "Permaneceu"
           resubscribed: "Nova inscrição"
+          topic_confirm: "Confirmação de tópico"
+          topic_unsubscribed: "Tópico desativado"
         preview_width: "Largura da pré-visualização"
         devices:
           desktop: "Desktop"
@@ -7903,6 +7903,7 @@ pt-BR:
         completed: "Concluído"
         redacted: "Anonimizado"
         activity: "Atividade"
+        topic_unsubscribed: "Tópico desativado"
       by: "por %{name}"
     index:
       empty: "Nenhuma atividade ainda"

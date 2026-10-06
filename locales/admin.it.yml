@@ -19,6 +19,7 @@
 #   draft -> bozza   schedule -> programmare   send -> inviare
 #   test email -> email di prova     Test Server / Test Inbox -> Server di test / Casella di test
 #   Autopilot -> Pilota automatico    file asset -> file
+#   topic -> argomento
 
 it:
   activerecord:
@@ -217,6 +218,9 @@ it:
               must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
             theme_settings:
               style_value_not_allowed: "%{setting} contiene caratteri non consentiti in un valore di stile"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "blocco %{position}: il block_type \"%{block_type}\" non è consentito dopo l'invio (usa uno tra %{allowed})"
+              invalid_block: "blocco %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "L’URL di reindirizzamento dopo la conferma deve essere un URL http(s) valido"
         opt_in_form_block:
           attributes:
@@ -472,6 +476,9 @@ it:
       token: "Token"
       tokens_heading: "Token API"
       tokens_intro: "Gli agenti usano gli stessi token API delle tue integrazioni. Gestiscili dalla pagina dei token."
+      introduction_token: "Usa il token \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token per il nuovo link di configurazione"
 
   ai:
     prompt_suggestions:
@@ -644,32 +651,6 @@ it:
         development_license: "Licenza di sviluppo"
         title: "Licenza"
         meta_description: "Visualizza le informazioni sulla tua licenza"
-    show:
-      subtitle: "Gestisci le impostazioni globali di Broadcast"
-      version: "Versione"
-      current_version_html: "La versione attuale di Broadcast è %{version}"
-      check_for_updates: "Verifica aggiornamenti"
-      licensing: "Licenza"
-      authorized_domain: "Dominio autorizzato"
-      license_key: "Chiave di licenza"
-      development_license: "Licenza di sviluppo"
-      development_build: "Build di sviluppo"
-      system_info: "Informazioni e utilizzo del sistema"
-      cpu_cores: "Core CPU"
-      cpu_load: "Carico CPU"
-      memory_used: "Memoria usata"
-      free_memory: "Memoria libera"
-      uploads_size: "Dimensione dei caricamenti"
-      disk_space_used: "Spazio su disco usato"
-      free_disk_space: "Spazio su disco libero"
-      reload_app: "Ricarica l'app"
-      reload_app_help: "Hai modificato le impostazioni del dominio di un canale? In tal caso, ricarica l'app perché le modifiche abbiano effetto."
-    form:
-      heading: "Archiviazione compatibile S3"
-      intro: "Per caricare file e salvare le risorse a cui fai riferimento nelle tue email, devi configurare un archivio compatibile S3. Broadcast salverà queste risorse nel tuo bucket S3."
-      update: "Aggiorna"
-    upgrade_in_progress:
-      message: "Aggiornamento in corso. Il sistema non sarà disponibile e si riavvierà tra 5-10 minuti."
     ai:
       show:
         subtitle: "Configura il fornitore AI per questa installazione. Vale per tutti i canali."
@@ -701,11 +682,6 @@ it:
         cleared: "Impostazioni AI cancellate."
     base:
       saas_unavailable: "Questa funzione non è disponibile in modalità SaaS."
-    check_for_updates:
-      upgrade_now: "Aggiorna ora"
-      new_version: "Nuova versione v%{version} disponibile!"
-      check_for_updates: "Verifica aggiornamenti"
-      last_checked: "Ultima verifica: %{time}"
     application_logs:
       show:
         subtitle: "Visualizza e segui in tempo reale i log dell'applicazione."
@@ -1484,6 +1460,13 @@ it:
         unknown_error: "Impossibile tornare alla versione %{version}: si è verificato un errore sconosciuto"
         invalid_version: "Formato di versione non valido: %{version}"
         error: "Errore durante la richiesta di downgrade: %{error}"
+      upgrade_refused:
+        title: "Aggiornamento non avviato"
+        work_in_flight: "Broadcast sta eseguendo attività che un aggiornamento interromperebbe."
+        failed: "Non è stato possibile avviare l'aggiornamento."
+        try_again_later: "Non è stato modificato nulla. Riprova quando queste attività saranno terminate."
+        check_logs: "Non è stato modificato nulla. Cerca l'errore nei log dell'applicazione, poi riprova."
+        back: "Torna agli aggiornamenti"
 
   autopilots:
     autopilot_not_found: "Pilota automatico non trovato"
@@ -3568,6 +3551,7 @@ it:
       verified: "Verificato"
       pending: "In attesa"
       just_now: "Proprio ora"
+      copy_failed: "Copia non riuscita"
     relative_time:
       minutes_ago: "%{count} min fa"
       hours_ago: "%{count} h fa"
@@ -7460,6 +7444,12 @@ it:
           resubscribed:
             label: "Pagina di nuova iscrizione"
             description: "Mostrata dopo che qualcuno si è iscritto di nuovo."
+          topic_confirm:
+            label: "Pagina di conferma argomento"
+            description: "Sostituisce la pagina di conferma in un'email inviata a un argomento."
+          topic_unsubscribed:
+            label: "Pagina di argomento disattivato"
+            description: "Mostrata dopo la disattivazione di un argomento. L'iscritto resta iscritto."
         fields:
           heading: "Titolo"
           message: "Messaggio"
@@ -7467,6 +7457,7 @@ it:
           stay_button: "Pulsante per restare iscritti"
           resubscribe_button: "Pulsante per iscriversi di nuovo"
           unsubscribe_button: "Pulsante di disiscrizione"
+          everything_button: "Pulsante di disiscrizione da tutto"
         legal_links: "Link legali"
         legal_links_help: "Mostrati in fondo a ogni pagina di disiscrizione, se impostati."
         privacy_policy_url: "URL dell’informativa sulla privacy"
@@ -7474,6 +7465,13 @@ it:
         after_unsubscribing: "Dopo la disiscrizione"
         redirect: "Reindirizza a una tua pagina"
         redirect_help: "Lascia vuoto per mostrare la pagina di disiscrizione avvenuta. Se impostato, gli iscritti vengono prima disiscritti e poi inviati qui. Deve iniziare con https://."
+        topic_scope: "In un'email inviata a un argomento"
+        topic_scope_help: "Cosa fanno il link di disiscrizione e il pulsante di disiscrizione con un clic di Gmail e Yahoo. Le email senza argomento, e le email di sequenza e transazionali, annullano sempre l'iscrizione a tutto."
+        topic_scopes:
+          topic: "Disattiva solo quell'argomento (l'iscritto resta iscritto)"
+          everything: "Annulla l'iscrizione a tutto"
+        page_text_topic_help_html: "Le pagine degli argomenti possono usare anche <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "La disattivazione di un argomento non reindirizza mai: la sua pagina tiene \"Annulla l'iscrizione a tutto\" a un clic. Quel pulsante segue il reindirizzamento."
       show:
         title: "Pagina di disiscrizione"
         back_to_settings: "Impostazioni"
@@ -7489,6 +7487,8 @@ it:
           unsubscribed: "Disiscritto"
           stayed: "Rimasto"
           resubscribed: "Iscritto di nuovo"
+          topic_confirm: "Conferma argomento"
+          topic_unsubscribed: "Argomento disattivato"
         preview_width: "Larghezza dell’anteprima"
         devices:
           desktop: "Desktop"
@@ -7901,6 +7901,7 @@ it:
         completed: "Completata"
         redacted: "Oscurato"
         activity: "Attività"
+        topic_unsubscribed: "Argomento disattivato"
       by: "da %{name}"
     index:
       empty: "Nessuna attività"

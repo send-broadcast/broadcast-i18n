@@ -24,6 +24,7 @@
 #   dashboard -> pulpit             settings -> ustawienia
 #   custom field -> pole niestandardowe   preheader -> tekst podglądu
 #   brand kit -> zestaw marki       endpoint -> endpoint
+#   topic -> temat
 pl:
   activerecord:
     attributes:
@@ -221,6 +222,9 @@ pl:
               must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
             theme_settings:
               style_value_not_allowed: "%{setting} zawiera znaki niedozwolone w wartości stylu"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" jest niedozwolony po wysłaniu (użyj jednego z %{allowed})"
+              invalid_block: "blok %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "URL przekierowania po potwierdzeniu musi być prawidłowym adresem http(s)"
         opt_in_form_block:
           attributes:
@@ -482,6 +486,9 @@ pl:
       token: "Token"
       tokens_heading: "Tokeny API"
       tokens_intro: "Agenci korzystają z tych samych tokenów API co twoje integracje. Zarządzaj nimi na stronie tokenów."
+      introduction_token: "Używa tokenu \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token dla nowego linku konfiguracyjnego"
 
   ai:
     prompt_suggestions:
@@ -654,32 +661,6 @@ pl:
         development_license: "Licencja deweloperska"
         title: "Licencja"
         meta_description: "Zobacz informacje o swojej licencji"
-    show:
-      subtitle: "Zarządzaj globalnymi ustawieniami Broadcast"
-      version: "Wersja"
-      current_version_html: "Bieżąca wersja Broadcast to %{version}"
-      check_for_updates: "Sprawdź aktualizacje"
-      licensing: "Licencjonowanie"
-      authorized_domain: "Autoryzowana domena"
-      license_key: "Klucz licencyjny"
-      development_license: "Licencja deweloperska"
-      development_build: "Wersja deweloperska"
-      system_info: "Informacje o systemie i użycie"
-      cpu_cores: "Rdzenie CPU"
-      cpu_load: "Obciążenie CPU"
-      memory_used: "Użyta pamięć"
-      free_memory: "Wolna pamięć"
-      uploads_size: "Rozmiar przesłanych plików"
-      disk_space_used: "Zajęte miejsce na dysku"
-      free_disk_space: "Wolne miejsce na dysku"
-      reload_app: "Przeładuj aplikację"
-      reload_app_help: "Czy zmieniono ustawienia domeny któregoś kanału? Jeśli tak, przeładuj aplikację, aby zmiany zaczęły obowiązywać."
-    form:
-      heading: "Magazyn zgodny z S3"
-      intro: "Aby przesyłać pliki i przechowywać zasoby używane w e-mailach, musisz skonfigurować magazyn zgodny z S3. Broadcast będzie przechowywać te zasoby w twoim buckecie S3."
-      update: "Zaktualizuj"
-    upgrade_in_progress:
-      message: "Trwa aktualizacja. System będzie niedostępny i uruchomi się ponownie za 5 do 10 minut."
     ai:
       show:
         subtitle: "Skonfiguruj dostawcę AI dla tej instalacji. Dotyczy to wszystkich kanałów."
@@ -711,11 +692,6 @@ pl:
         cleared: "Wyczyszczono ustawienia AI."
     base:
       saas_unavailable: "Ta funkcja nie jest dostępna w trybie SaaS."
-    check_for_updates:
-      upgrade_now: "Zaktualizuj teraz"
-      new_version: "Dostępna jest nowa wersja v%{version}!"
-      check_for_updates: "Sprawdź aktualizacje"
-      last_checked: "Ostatnio sprawdzono %{time}"
     application_logs:
       show:
         subtitle: "Przeglądaj i śledź logi aplikacji w czasie rzeczywistym."
@@ -1540,6 +1516,13 @@ pl:
         unknown_error: "Nie można wrócić do wersji %{version}: wystąpił nieznany błąd"
         invalid_version: "Nieprawidłowy format wersji: %{version}"
         error: "Błąd podczas przetwarzania żądania powrotu do starszej wersji: %{error}"
+      upgrade_refused:
+        title: "Aktualizacja nie została uruchomiona"
+        work_in_flight: "Broadcast wykonuje pracę, którą aktualizacja by przerwała."
+        failed: "Nie udało się uruchomić aktualizacji."
+        try_again_later: "Nic nie zostało zmienione. Spróbuj ponownie, gdy ta praca się zakończy."
+        check_logs: "Nic nie zostało zmienione. Sprawdź błąd w logach aplikacji, a potem spróbuj ponownie."
+        back: "Wróć do aktualizacji"
 
   autopilots:
     autopilot_not_found: "Nie znaleziono autopilota"
@@ -3680,6 +3663,7 @@ pl:
       verified: "Zweryfikowano"
       pending: "Oczekuje"
       just_now: "Przed chwilą"
+      copy_failed: "Nie udało się skopiować"
     relative_time:
       minutes_ago: "%{count} min temu"
       hours_ago: "%{count} godz. temu"
@@ -7702,6 +7686,12 @@ pl:
           resubscribed:
             label: "Strona ponownego zapisu"
             description: "Wyświetlana po ponownym zapisaniu się."
+          topic_confirm:
+            label: "Strona potwierdzenia tematu"
+            description: "Zastępuje stronę potwierdzenia w e-mailu wysłanym do tematu."
+          topic_unsubscribed:
+            label: "Strona po wyłączeniu tematu"
+            description: "Wyświetlana po wyłączeniu tematu. Subskrybent pozostaje zapisany."
         fields:
           heading: "Nagłówek"
           message: "Komunikat"
@@ -7709,6 +7699,7 @@ pl:
           stay_button: "Przycisk pozostania"
           resubscribe_button: "Przycisk ponownego zapisu"
           unsubscribe_button: "Przycisk wypisania"
+          everything_button: "Przycisk wypisania ze wszystkiego"
         legal_links: "Linki prawne"
         legal_links_help: "Wyświetlane na dole każdej strony wypisania, jeśli są ustawione."
         privacy_policy_url: "URL polityki prywatności"
@@ -7716,6 +7707,13 @@ pl:
         after_unsubscribing: "Po wypisaniu"
         redirect: "Przekieruj na własną stronę"
         redirect_help: "Zostaw puste, aby wyświetlić stronę po wypisaniu. Jeśli ustawisz adres, subskrybenci zostaną najpierw wypisani, a potem przekierowani tutaj. Musi zaczynać się od https://."
+        topic_scope: "W e-mailu wysłanym do tematu"
+        topic_scope_help: "Co robią link wypisania i przycisk wypisania jednym kliknięciem w Gmailu i Yahoo. E-maile bez tematu oraz e-maile z sekwencji i transakcyjne zawsze wypisują ze wszystkiego."
+        topic_scopes:
+          topic: "Wyłącz tylko ten temat (subskrybent pozostaje zapisany)"
+          everything: "Wypisz ze wszystkiego"
+        page_text_topic_help_html: "Strony tematu mogą też używać <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Wyłączenie tematu nigdy nie przekierowuje: jego strona trzyma \"Wypisz ze wszystkiego\" jedno kliknięcie dalej. Ten przycisk stosuje przekierowanie."
       show:
         title: "Strona wypisania"
         back_to_settings: "Ustawienia"
@@ -7731,6 +7729,8 @@ pl:
           unsubscribed: "Wypisano"
           stayed: "Pozostał"
           resubscribed: "Zapisano ponownie"
+          topic_confirm: "Potwierdzenie tematu"
+          topic_unsubscribed: "Temat wyłączony"
         preview_width: "Szerokość podglądu"
         devices:
           desktop: "Komputer"
@@ -8167,6 +8167,7 @@ pl:
         completed: "Ukończono"
         redacted: "Zanonimizowano"
         activity: "Aktywność"
+        topic_unsubscribed: "Temat wyłączony"
       by: "przez %{name}"
     index:
       empty: "Brak aktywności"

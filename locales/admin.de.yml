@@ -24,6 +24,7 @@
 #   Autopilot -> Autopilot          file asset -> Datei
 #   brand kit -> Markenkit          preheader -> Vorschautext
 #   custom field -> benutzerdefiniertes Feld   Ask AI -> KI fragen
+#   topic -> Thema
 de:
   activerecord:
     attributes:
@@ -221,6 +222,9 @@ de:
               must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
             theme_settings:
               style_value_not_allowed: "%{setting} enthält Zeichen, die in einem Stilwert nicht erlaubt sind"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "Block %{position}: block_type \"%{block_type}\" ist nach dem Absenden nicht erlaubt (verwenden Sie einen von %{allowed})"
+              invalid_block: "Block %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Die Weiterleitungs-URL nach der Bestätigung muss eine gültige http(s)-URL sein"
         opt_in_form_block:
           attributes:
@@ -476,6 +480,9 @@ de:
       token: "Token"
       tokens_heading: "API-Tokens"
       tokens_intro: "Agenten verwenden dieselben API-Tokens wie Ihre Integrationen. Verwalten Sie sie auf der Token-Seite."
+      introduction_token: "Verwendet das Token \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token für den neuen Einrichtungslink"
 
   ai:
     prompt_suggestions:
@@ -648,32 +655,6 @@ de:
         development_license: "Entwicklungslizenz"
         title: "Lizenz"
         meta_description: "Ihre Lizenzinformationen anzeigen"
-    show:
-      subtitle: "Globale Einstellungen für Broadcast verwalten"
-      version: "Version"
-      current_version_html: "Aktuelle Broadcast-Version: %{version}"
-      check_for_updates: "Nach Updates suchen"
-      licensing: "Lizenzierung"
-      authorized_domain: "Autorisierte Domain"
-      license_key: "Lizenzschlüssel"
-      development_license: "Entwicklungslizenz"
-      development_build: "Entwicklungs-Build"
-      system_info: "Systeminfo und Auslastung"
-      cpu_cores: "CPU-Kerne"
-      cpu_load: "CPU-Last"
-      memory_used: "Belegter Arbeitsspeicher"
-      free_memory: "Freier Arbeitsspeicher"
-      uploads_size: "Größe der Uploads"
-      disk_space_used: "Belegter Speicherplatz"
-      free_disk_space: "Freier Speicherplatz"
-      reload_app: "App neu laden"
-      reload_app_help: "Haben Sie die Domain-Einstellungen eines Kanals geändert? Dann müssen Sie die App neu laden, damit die Änderungen wirksam werden."
-    form:
-      heading: "S3-kompatibler Speicher"
-      intro: "Um Dateien hochzuladen und Assets zu speichern, auf die Sie in Ihren E-Mails verweisen, müssen Sie Ihren S3-kompatiblen Speicher konfigurieren. Broadcast speichert diese Assets in Ihrem S3-Bucket."
-      update: "Aktualisieren"
-    upgrade_in_progress:
-      message: "Upgrade läuft. Das System ist nicht verfügbar und startet in 5 bis 10 Minuten neu."
     ai:
       show:
         subtitle: "Konfigurieren Sie den KI-Anbieter für diese Installation. Dies gilt für jeden Kanal."
@@ -705,11 +686,6 @@ de:
         cleared: "KI-Einstellungen gelöscht."
     base:
       saas_unavailable: "Diese Funktion ist im SaaS-Modus nicht verfügbar."
-    check_for_updates:
-      upgrade_now: "Jetzt aktualisieren"
-      new_version: "Neue Version v%{version} verfügbar!"
-      check_for_updates: "Nach Updates suchen"
-      last_checked: "Zuletzt geprüft %{time}"
     application_logs:
       show:
         subtitle: "Anwendungsprotokolle in Echtzeit anzeigen und streamen."
@@ -1488,6 +1464,13 @@ de:
         unknown_error: "Downgrade auf Version %{version} nicht möglich: Ein unbekannter Fehler ist aufgetreten"
         invalid_version: "Ungültiges Versionsformat: %{version}"
         error: "Fehler bei der Verarbeitung der Downgrade-Anfrage: %{error}"
+      upgrade_refused:
+        title: "Upgrade nicht gestartet"
+        work_in_flight: "Broadcast führt gerade Arbeiten aus, die ein Upgrade unterbrechen würde."
+        failed: "Das Upgrade konnte nicht gestartet werden."
+        try_again_later: "Es wurde nichts geändert. Versuchen Sie es erneut, wenn diese Arbeiten abgeschlossen sind."
+        check_logs: "Es wurde nichts geändert. Suchen Sie den Fehler in den Anwendungsprotokollen und versuchen Sie es dann erneut."
+        back: "Zurück zu den Updates"
 
   autopilots:
     autopilot_not_found: "Autopilot nicht gefunden"
@@ -3572,6 +3555,7 @@ de:
       verified: "Verifiziert"
       pending: "Ausstehend"
       just_now: "Gerade eben"
+      copy_failed: "Kopieren fehlgeschlagen"
     relative_time:
       minutes_ago: "vor %{count} Min."
       hours_ago: "vor %{count} Std."
@@ -7464,6 +7448,12 @@ de:
           resubscribed:
             label: "Seite nach der Wiederanmeldung"
             description: "Wird nach der erneuten Anmeldung angezeigt."
+          topic_confirm:
+            label: "Themen-Bestätigungsseite"
+            description: "Ersetzt die Bestätigungsseite bei einer E-Mail zu einem Thema."
+          topic_unsubscribed:
+            label: "Seite nach der Themen-Abmeldung"
+            description: "Wird angezeigt, nachdem ein Thema abbestellt wurde. Der Abonnent bleibt angemeldet."
         fields:
           heading: "Überschrift"
           message: "Nachricht"
@@ -7471,6 +7461,7 @@ de:
           stay_button: "Button „Bleiben“"
           resubscribe_button: "Button zur Wiederanmeldung"
           unsubscribe_button: "Abmelde-Button"
+          everything_button: "Button \"Von allem abmelden\""
         legal_links: "Rechtliche Links"
         legal_links_help: "Werden, sofern festgelegt, unten auf jeder Abmeldeseite angezeigt."
         privacy_policy_url: "URL der Datenschutzerklärung"
@@ -7478,6 +7469,13 @@ de:
         after_unsubscribing: "Nach der Abmeldung"
         redirect: "Auf Ihre eigene Seite weiterleiten"
         redirect_help: "Leer lassen, um die Seite nach der Abmeldung anzuzeigen. Wenn festgelegt, werden Abonnenten zuerst abgemeldet und dann hierher weitergeleitet. Muss mit https:// beginnen."
+        topic_scope: "Bei einer E-Mail zu einem Thema"
+        topic_scope_help: "Was der Abmeldelink und der Ein-Klick-Abmelde-Button in Gmail und Yahoo bewirken. E-Mails ohne Thema sowie Sequenz- und Transaktions-E-Mails melden immer von allem ab."
+        topic_scopes:
+          topic: "Nur dieses Thema abbestellen (der Abonnent bleibt angemeldet)"
+          everything: "Von allem abmelden"
+        page_text_topic_help_html: "Die Themenseiten können außerdem <code class=\"text-sm\">{{ topic_name }}</code> verwenden."
+        redirect_topic_note: "Eine Themen-Abmeldung leitet nie weiter: Ihre Seite behält \"Von allem abmelden\" einen Klick entfernt. Dieser Button folgt der Weiterleitung."
       show:
         title: "Abmeldeseite"
         back_to_settings: "Einstellungen"
@@ -7493,6 +7491,8 @@ de:
           unsubscribed: "Abgemeldet"
           stayed: "Geblieben"
           resubscribed: "Wieder angemeldet"
+          topic_confirm: "Thema bestätigen"
+          topic_unsubscribed: "Thema abgemeldet"
         preview_width: "Vorschaubreite"
         devices:
           desktop: "Desktop"
@@ -7905,6 +7905,7 @@ de:
         completed: "Abgeschlossen"
         redacted: "Anonymisiert"
         activity: "Aktivität"
+        topic_unsubscribed: "Thema abbestellt"
       by: "von %{name}"
     index:
       empty: "Noch keine Aktivität"

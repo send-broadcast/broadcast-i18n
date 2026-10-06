@@ -22,6 +22,7 @@
 #   dashboard -> översikt           settings -> inställningar
 #   custom field -> anpassat fält   preheader -> förhandsvisningstext
 #   brand kit -> varumärkeskit      endpoint -> endpoint
+#   topic -> ämne
 sv:
   activerecord:
     attributes:
@@ -219,6 +220,9 @@ sv:
               must_belong_to_the_same_channel: "måste tillhöra samma kanal"
             theme_settings:
               style_value_not_allowed: "%{setting} innehåller tecken som inte är tillåtna i ett stilvärde"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" är inte tillåtet efter inskickning (använd ett av %{allowed})"
+              invalid_block: "block %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Omdirigerings-URL:en för bekräftelse måste vara en giltig http(s)-URL"
         opt_in_form_block:
           attributes:
@@ -474,6 +478,9 @@ sv:
       token: "Token"
       tokens_heading: "API-tokens"
       tokens_intro: "Agenter använder samma API-tokens som dina integrationer. Hantera dem på sidan för tokens."
+      introduction_token: "Använder token \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token för den nya installationslänken"
 
   ai:
     prompt_suggestions:
@@ -646,32 +653,6 @@ sv:
         development_license: "Utvecklingslicens"
         title: "Licens"
         meta_description: "Visa din licensinformation"
-    show:
-      subtitle: "Hantera globala inställningar för Broadcast"
-      version: "Version"
-      current_version_html: "Nuvarande Broadcast-version är %{version}"
-      check_for_updates: "Sök efter uppdateringar"
-      licensing: "Licensiering"
-      authorized_domain: "Auktoriserad domän"
-      license_key: "Licensnyckel"
-      development_license: "Utvecklingslicens"
-      development_build: "Utvecklingsversion"
-      system_info: "Systeminformation och användning"
-      cpu_cores: "CPU-kärnor"
-      cpu_load: "CPU-belastning"
-      memory_used: "Använt minne"
-      free_memory: "Ledigt minne"
-      uploads_size: "Storlek på uppladdningar"
-      disk_space_used: "Använt diskutrymme"
-      free_disk_space: "Ledigt diskutrymme"
-      reload_app: "Ladda om appen"
-      reload_app_help: "Har du ändrat domäninställningarna för en kanal? I så fall måste du ladda om appen för att ändringarna ska börja gälla."
-    form:
-      heading: "S3-kompatibel lagring"
-      intro: "För att ladda upp filer och lagra resurser som du refererar till i dina mejl behöver du konfigurera din S3-kompatibla lagring. Broadcast lagrar dessa resurser i din S3-bucket."
-      update: "Uppdatera"
-    upgrade_in_progress:
-      message: "Uppgradering pågår. Systemet är otillgängligt och startas om inom 5 till 10 minuter."
     ai:
       show:
         subtitle: "Konfigurera AI-leverantören för denna installation. Det gäller för alla kanaler."
@@ -703,11 +684,6 @@ sv:
         cleared: "AI-inställningar rensade."
     base:
       saas_unavailable: "Den här funktionen är inte tillgänglig i SaaS-läge."
-    check_for_updates:
-      upgrade_now: "Uppgradera nu"
-      new_version: "Ny version v%{version} tillgänglig!"
-      check_for_updates: "Sök efter uppdateringar"
-      last_checked: "Senast kontrollerat %{time}"
     application_logs:
       show:
         subtitle: "Visa och strömma applikationsloggar i realtid."
@@ -1486,6 +1462,13 @@ sv:
         unknown_error: "Det går inte att nedgradera till version %{version}: ett okänt fel uppstod"
         invalid_version: "Ogiltigt versionsformat: %{version}"
         error: "Fel vid behandling av nedgraderingsbegäran: %{error}"
+      upgrade_refused:
+        title: "Uppgraderingen startade inte"
+        work_in_flight: "Broadcast utför arbete som en uppgradering skulle avbryta."
+        failed: "Uppgraderingen kunde inte startas."
+        try_again_later: "Ingenting har ändrats. Försök igen när arbetet är klart."
+        check_logs: "Ingenting har ändrats. Leta efter felet i applikationsloggarna och försök sedan igen."
+        back: "Tillbaka till uppdateringar"
 
   autopilots:
     autopilot_not_found: "Autopilot hittades inte"
@@ -3570,6 +3553,7 @@ sv:
       verified: "Verifierad"
       pending: "Väntande"
       just_now: "Just nu"
+      copy_failed: "Kopieringen misslyckades"
     relative_time:
       minutes_ago: "för %{count} min sedan"
       hours_ago: "för %{count} tim sedan"
@@ -7462,6 +7446,12 @@ sv:
           resubscribed:
             label: "Sida för återregistrering"
             description: "Visas efter återregistrering."
+          topic_confirm:
+            label: "Bekräftelsesida för ämne"
+            description: "Ersätter bekräftelsesidan för ett mejl som skickas till ett ämne."
+          topic_unsubscribed:
+            label: "Sida för avstängt ämne"
+            description: "Visas efter att ett ämne har stängts av. Prenumeranten är kvar."
         fields:
           heading: "Rubrik"
           message: "Meddelande"
@@ -7469,6 +7459,7 @@ sv:
           stay_button: "Knapp för att stanna kvar"
           resubscribe_button: "Knapp för återregistrering"
           unsubscribe_button: "Avregistreringsknapp"
+          everything_button: "Knapp för att avregistrera från allt"
         legal_links: "Juridiska länkar"
         legal_links_help: "Visas längst ned på varje avregistreringssida när de är angivna."
         privacy_policy_url: "URL till integritetspolicy"
@@ -7476,6 +7467,13 @@ sv:
         after_unsubscribing: "Efter avregistrering"
         redirect: "Omdirigera till din egen sida"
         redirect_help: "Lämna tomt för att visa sidan för avregistrerad. När den är angiven avregistreras prenumeranterna först och skickas sedan hit. Måste börja med https://."
+        topic_scope: "För ett mejl som skickas till ett ämne"
+        topic_scope_help: "Vad avregistreringslänken och knappen för avregistrering med ett klick i Gmail och Yahoo gör. Mejl utan ämne, samt sekvens- och transaktionsmejl, avregistrerar alltid från allt."
+        topic_scopes:
+          topic: "Stäng av bara det ämnet (prenumeranten är kvar)"
+          everything: "Avregistrera från allt"
+        page_text_topic_help_html: "Ämnessidorna kan också använda <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Att stänga av ett ämne omdirigerar aldrig: sidan har \"Avregistrera från allt\" ett klick bort. Den knappen följer omdirigeringen."
       show:
         title: "Avregistreringssida"
         back_to_settings: "Inställningar"
@@ -7491,6 +7489,8 @@ sv:
           unsubscribed: "Avregistrerad"
           stayed: "Stannade kvar"
           resubscribed: "Återregistrerad"
+          topic_confirm: "Bekräfta ämne"
+          topic_unsubscribed: "Ämne avstängt"
         preview_width: "Förhandsvisningsbredd"
         devices:
           desktop: "Dator"
@@ -7903,6 +7903,7 @@ sv:
         completed: "Slutförd"
         redacted: "Anonymiserad"
         activity: "Aktivitet"
+        topic_unsubscribed: "Ämne av"
       by: "av %{name}"
     index:
       empty: "Ingen aktivitet än"

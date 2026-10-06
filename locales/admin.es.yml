@@ -23,6 +23,7 @@
 #   dashboard -> panel              settings -> configuración
 #   custom field -> campo personalizado   preheader -> texto de vista previa
 #   brand kit -> kit de marca       endpoint -> endpoint
+#   topic -> tema
 es:
   activerecord:
     attributes:
@@ -220,6 +221,9 @@ es:
               must_belong_to_the_same_channel: "debe pertenecer al mismo canal"
             theme_settings:
               style_value_not_allowed: "%{setting} contiene caracteres que no se permiten en un valor de estilo"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "bloque %{position}: el block_type \"%{block_type}\" no está permitido después del envío (usa uno de %{allowed})"
+              invalid_block: "bloque %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "La URL de redirección de confirmación debe ser una URL http(s) válida"
         opt_in_form_block:
           attributes:
@@ -475,6 +479,9 @@ es:
       token: "Token"
       tokens_heading: "Tokens de API"
       tokens_intro: "Los agentes usan los mismos tokens de API que tus integraciones. Gestiónalos desde la página de tokens."
+      introduction_token: "Usa el token \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token para el nuevo enlace de configuración"
 
   ai:
     prompt_suggestions:
@@ -647,32 +654,6 @@ es:
         development_license: "Licencia de desarrollo"
         title: "Licencia"
         meta_description: "Consulta la información de tu licencia"
-    show:
-      subtitle: "Gestiona la configuración global de Broadcast"
-      version: "Versión"
-      current_version_html: "La versión actual de Broadcast es %{version}"
-      check_for_updates: "Buscar actualizaciones"
-      licensing: "Licencias"
-      authorized_domain: "Dominio autorizado"
-      license_key: "Clave de licencia"
-      development_license: "Licencia de desarrollo"
-      development_build: "Compilación de desarrollo"
-      system_info: "Información y uso del sistema"
-      cpu_cores: "Núcleos de CPU"
-      cpu_load: "Carga de CPU"
-      memory_used: "Memoria usada"
-      free_memory: "Memoria libre"
-      uploads_size: "Tamaño de las subidas"
-      disk_space_used: "Espacio en disco usado"
-      free_disk_space: "Espacio libre en disco"
-      reload_app: "Recargar la aplicación"
-      reload_app_help: "¿Has cambiado la configuración de dominio de un canal? Si es así, tendrás que recargar la aplicación para que los cambios surtan efecto."
-    form:
-      heading: "Almacenamiento compatible con S3"
-      intro: "Para subir archivos y guardar los recursos que usas en tus correos, debes configurar tu almacenamiento compatible con S3. Broadcast guardará estos recursos en tu bucket de S3."
-      update: "Actualizar"
-    upgrade_in_progress:
-      message: "Actualización en curso. El sistema no estará disponible y se reiniciará en 5 a 10 minutos."
     ai:
       show:
         subtitle: "Configura el proveedor de IA de esta instalación. Se aplica a todos los canales."
@@ -704,11 +685,6 @@ es:
         cleared: "Configuración de IA borrada."
     base:
       saas_unavailable: "Esta función no está disponible en modo SaaS."
-    check_for_updates:
-      upgrade_now: "Actualizar ahora"
-      new_version: "¡Nueva versión v%{version} disponible!"
-      check_for_updates: "Buscar actualizaciones"
-      last_checked: "Última comprobación: %{time}"
     application_logs:
       show:
         subtitle: "Consulta y transmite los registros de la aplicación en tiempo real."
@@ -1487,6 +1463,13 @@ es:
         unknown_error: "No se puede volver a la versión %{version}: se produjo un error desconocido"
         invalid_version: "Formato de versión no válido: %{version}"
         error: "Error al procesar la solicitud de vuelta a una versión anterior: %{error}"
+      upgrade_refused:
+        title: "Actualización no iniciada"
+        work_in_flight: "Broadcast está haciendo un trabajo que una actualización interrumpiría."
+        failed: "No se pudo iniciar la actualización."
+        try_again_later: "No se ha cambiado nada. Vuelve a intentarlo cuando termine este trabajo."
+        check_logs: "No se ha cambiado nada. Busca el error en los registros de la aplicación y vuelve a intentarlo."
+        back: "Volver a las actualizaciones"
 
   autopilots:
     autopilot_not_found: "No se encontró el piloto automático"
@@ -3571,6 +3554,7 @@ es:
       verified: "Verificado"
       pending: "Pendiente"
       just_now: "Ahora mismo"
+      copy_failed: "No se pudo copiar"
     relative_time:
       minutes_ago: "hace %{count} min"
       hours_ago: "hace %{count} h"
@@ -7463,6 +7447,12 @@ es:
           resubscribed:
             label: "Página de nueva suscripción"
             description: "Se muestra después de volver a suscribirse."
+          topic_confirm:
+            label: "Página de confirmación de tema"
+            description: "Sustituye a la página de confirmación en un correo enviado a un tema."
+          topic_unsubscribed:
+            label: "Página de tema desactivado"
+            description: "Se muestra después de desactivar un tema. El suscriptor sigue suscrito."
         fields:
           heading: "Título"
           message: "Mensaje"
@@ -7470,6 +7460,7 @@ es:
           stay_button: "Botón de seguir suscrito"
           resubscribe_button: "Botón de volver a suscribirse"
           unsubscribe_button: "Botón de baja"
+          everything_button: "Botón de darse de baja de todo"
         legal_links: "Enlaces legales"
         legal_links_help: "Se muestran al pie de cada página de baja cuando se definen."
         privacy_policy_url: "URL de la política de privacidad"
@@ -7477,6 +7468,13 @@ es:
         after_unsubscribing: "Después de darse de baja"
         redirect: "Redirigir a tu propia página"
         redirect_help: "Déjalo vacío para mostrar la página de baja realizada. Si lo defines, los suscriptores se dan de baja primero y luego se les envía aquí. Debe empezar por https://."
+        topic_scope: "En un correo enviado a un tema"
+        topic_scope_help: "Lo que hacen el enlace de baja y el botón de baja con un clic de Gmail y Yahoo. Los correos sin tema, y los correos de secuencia y transaccionales, siempre dan de baja de todo."
+        topic_scopes:
+          topic: "Desactivar solo ese tema (el suscriptor sigue suscrito)"
+          everything: "Darse de baja de todo"
+        page_text_topic_help_html: "Las páginas de tema también pueden usar <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Desactivar un tema nunca redirige: su página mantiene \"Darse de baja de todo\" a un clic. Ese botón sí sigue la redirección."
       show:
         title: "Página de baja"
         back_to_settings: "Configuración"
@@ -7492,6 +7490,8 @@ es:
           unsubscribed: "Baja realizada"
           stayed: "Sigue suscrito"
           resubscribed: "Nueva suscripción"
+          topic_confirm: "Confirmación de tema"
+          topic_unsubscribed: "Tema desactivado"
         preview_width: "Ancho de la vista previa"
         devices:
           desktop: "Escritorio"
@@ -7904,6 +7904,7 @@ es:
         completed: "Completado"
         redacted: "Anonimizado"
         activity: "Actividad"
+        topic_unsubscribed: "Tema desactivado"
       by: "por %{name}"
     index:
       empty: "Todavía no hay actividad"

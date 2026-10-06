@@ -23,6 +23,7 @@
 #   Autopilot -> Pilote automatique   file asset -> fichier
 #   brand kit -> charte graphique   preheader -> texte d'aperçu
 #   custom field -> champ personnalisé   endpoint -> point de terminaison
+#   topic -> thème
 fr:
   activerecord:
     attributes:
@@ -220,6 +221,9 @@ fr:
               must_belong_to_the_same_channel: "doit appartenir au même canal"
             theme_settings:
               style_value_not_allowed: "%{setting} contient des caractères non autorisés dans une valeur de style"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "bloc %{position} : le block_type « %{block_type} » n'est pas autorisé après l'envoi (utilisez l'un de %{allowed})"
+              invalid_block: "bloc %{position} : %{details}"
           confirmation_redirect_url_must_be_a: "L'URL de redirection après confirmation doit être une URL http(s) valide"
         opt_in_form_block:
           attributes:
@@ -475,6 +479,9 @@ fr:
       token: "Jeton"
       tokens_heading: "Jetons API"
       tokens_intro: "Les agents utilisent les mêmes jetons API que vos intégrations. Gérez-les depuis la page des jetons."
+      introduction_token: "Utilise le jeton « %{label} »."
+      link_token: "Jeton : %{label}"
+      setup_link_token: "Jeton du nouveau lien de configuration"
 
   ai:
     prompt_suggestions:
@@ -647,32 +654,6 @@ fr:
         development_license: "Licence de développement"
         title: "Licence"
         meta_description: "Voir les informations de votre licence"
-    show:
-      subtitle: "Gérer les paramètres globaux de Broadcast"
-      version: "Version"
-      current_version_html: "La version actuelle de Broadcast est %{version}"
-      check_for_updates: "Rechercher des mises à jour"
-      licensing: "Licence"
-      authorized_domain: "Domaine autorisé"
-      license_key: "Clé de licence"
-      development_license: "Licence de développement"
-      development_build: "Version de développement"
-      system_info: "Informations et utilisation du système"
-      cpu_cores: "Cœurs du processeur"
-      cpu_load: "Charge du processeur"
-      memory_used: "Mémoire utilisée"
-      free_memory: "Mémoire libre"
-      uploads_size: "Taille des fichiers envoyés"
-      disk_space_used: "Espace disque utilisé"
-      free_disk_space: "Espace disque libre"
-      reload_app: "Recharger l'application"
-      reload_app_help: "Avez-vous modifié les paramètres de domaine d'un canal ? Dans ce cas, rechargez l'application pour que les changements prennent effet."
-    form:
-      heading: "Stockage compatible S3"
-      intro: "Pour envoyer des fichiers et stocker les ressources utilisées dans vos e-mails, configurez votre stockage compatible S3. Broadcast stockera ces ressources dans votre bucket S3."
-      update: "Mettre à jour"
-    upgrade_in_progress:
-      message: "Mise à jour en cours. Le système sera indisponible et redémarrera d'ici 5 à 10 minutes."
     ai:
       show:
         subtitle: "Configurez le fournisseur d'IA de cette installation. Ce réglage s'applique à tous les canaux."
@@ -704,11 +685,6 @@ fr:
         cleared: "Paramètres d'IA effacés."
     base:
       saas_unavailable: "Cette fonctionnalité n'est pas disponible en mode SaaS."
-    check_for_updates:
-      upgrade_now: "Mettre à jour maintenant"
-      new_version: "Nouvelle version v%{version} disponible !"
-      check_for_updates: "Rechercher des mises à jour"
-      last_checked: "Dernière vérification %{time}"
     application_logs:
       show:
         subtitle: "Consultez et suivez les journaux de l'application en temps réel."
@@ -1487,6 +1463,13 @@ fr:
         unknown_error: "Impossible de revenir à la version %{version} : une erreur inconnue s'est produite"
         invalid_version: "Format de version non valide : %{version}"
         error: "Erreur lors du traitement de la demande de retour à une version antérieure : %{error}"
+      upgrade_refused:
+        title: "Mise à niveau non lancée"
+        work_in_flight: "Broadcast effectue des tâches qu'une mise à niveau interromprait."
+        failed: "La mise à niveau n'a pas pu être lancée."
+        try_again_later: "Rien n'a été modifié. Réessayez une fois ces tâches terminées."
+        check_logs: "Rien n'a été modifié. Recherchez l'erreur dans les journaux de l'application, puis réessayez."
+        back: "Retour aux mises à jour"
 
   autopilots:
     autopilot_not_found: "Pilote automatique introuvable"
@@ -3571,6 +3554,7 @@ fr:
       verified: "Vérifié"
       pending: "En attente"
       just_now: "À l'instant"
+      copy_failed: "Échec de la copie"
     relative_time:
       minutes_ago: "il y a %{count} min"
       hours_ago: "il y a %{count} h"
@@ -7463,6 +7447,12 @@ fr:
           resubscribed:
             label: "Page de réabonnement"
             description: "Affichée après un réabonnement."
+          topic_confirm:
+            label: "Page de confirmation de thème"
+            description: "Remplace la page de confirmation pour un e-mail envoyé à un thème."
+          topic_unsubscribed:
+            label: "Page de thème désactivé"
+            description: "Affichée après la désactivation d'un thème. L'abonné reste abonné."
         fields:
           heading: "Titre"
           message: "Message"
@@ -7470,6 +7460,7 @@ fr:
           stay_button: "Bouton pour rester abonné"
           resubscribe_button: "Bouton de réabonnement"
           unsubscribe_button: "Bouton de désabonnement"
+          everything_button: "Bouton « Se désabonner de tout »"
         legal_links: "Liens légaux"
         legal_links_help: "Affichés en bas de chaque page de désabonnement lorsqu'ils sont définis."
         privacy_policy_url: "URL de la politique de confidentialité"
@@ -7477,6 +7468,13 @@ fr:
         after_unsubscribing: "Après le désabonnement"
         redirect: "Rediriger vers votre propre page"
         redirect_help: "Laissez vide pour afficher la page de désabonnement effectué. Si une adresse est définie, les abonnés sont d'abord désabonnés puis redirigés ici. Doit commencer par https://."
+        topic_scope: "Pour un e-mail envoyé à un thème"
+        topic_scope_help: "Ce que font le lien de désabonnement et le bouton de désabonnement en un clic de Gmail et Yahoo. Les e-mails sans thème, ainsi que les e-mails de séquence et transactionnels, désabonnent toujours de tout."
+        topic_scopes:
+          topic: "Désactiver uniquement ce thème (l'abonné reste abonné)"
+          everything: "Se désabonner de tout"
+        page_text_topic_help_html: "Les pages de thème peuvent aussi utiliser <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Une désactivation de thème ne redirige jamais : sa page garde « Se désabonner de tout » à un clic. Ce bouton suit la redirection."
       show:
         title: "Page de désabonnement"
         back_to_settings: "Paramètres"
@@ -7492,6 +7490,8 @@ fr:
           unsubscribed: "Désabonné"
           stayed: "Resté abonné"
           resubscribed: "Réabonné"
+          topic_confirm: "Confirmation de thème"
+          topic_unsubscribed: "Thème désactivé"
         preview_width: "Largeur de l'aperçu"
         devices:
           desktop: "Ordinateur"
@@ -7904,6 +7904,7 @@ fr:
         completed: "Terminé"
         redacted: "Anonymisé"
         activity: "Activité"
+        topic_unsubscribed: "Thème désactivé"
       by: "par %{name}"
     index:
       empty: "Aucune activité pour l'instant"

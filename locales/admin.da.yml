@@ -22,6 +22,7 @@
 #   dashboard -> oversigt           settings -> indstillinger
 #   custom field -> brugerdefineret felt   preheader -> forhåndsvisningstekst
 #   brand kit -> brandkit           endpoint -> endpoint
+#   topic -> emne
 da:
   activerecord:
     attributes:
@@ -219,6 +220,9 @@ da:
               must_belong_to_the_same_channel: "skal tilhøre samme kanal"
             theme_settings:
               style_value_not_allowed: "%{setting} indeholder tegn, der ikke er tilladt i en stilværdi"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" er ikke tilladt efter indsendelse (brug en af %{allowed})"
+              invalid_block: "blok %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Omdirigerings-URL'en efter bekræftelse skal være en gyldig http(s)-URL"
         opt_in_form_block:
           attributes:
@@ -474,6 +478,9 @@ da:
       token: "Token"
       tokens_heading: "API-tokens"
       tokens_intro: "Agenter bruger de samme API-tokens som dine integrationer. Administrer dem på siden med tokens."
+      introduction_token: "Bruger tokenet \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token til det nye opsætningslink"
 
   ai:
     prompt_suggestions:
@@ -646,32 +653,6 @@ da:
         development_license: "Udviklingslicens"
         title: "Licens"
         meta_description: "Se dine licensoplysninger"
-    show:
-      subtitle: "Administrer globale indstillinger for Broadcast"
-      version: "Version"
-      current_version_html: "Den aktuelle version af Broadcast er %{version}"
-      check_for_updates: "Søg efter opdateringer"
-      licensing: "Licensering"
-      authorized_domain: "Godkendt domæne"
-      license_key: "Licensnøgle"
-      development_license: "Udviklingslicens"
-      development_build: "Udviklingsbuild"
-      system_info: "Systeminfo og forbrug"
-      cpu_cores: "CPU-kerner"
-      cpu_load: "CPU-belastning"
-      memory_used: "Brugt hukommelse"
-      free_memory: "Ledig hukommelse"
-      uploads_size: "Størrelse på uploads"
-      disk_space_used: "Brugt diskplads"
-      free_disk_space: "Ledig diskplads"
-      reload_app: "Genindlæs app"
-      reload_app_help: "Har du ændret domæneindstillingerne for en kanal? I så fald skal du genindlæse appen, før ændringerne træder i kraft."
-    form:
-      heading: "S3-kompatibel lagring"
-      intro: "For at uploade filer og gemme de filer, du henviser til i dine e-mails, skal du konfigurere din S3-kompatible lagring. Broadcast gemmer filerne i din S3-bucket."
-      update: "Opdater"
-    upgrade_in_progress:
-      message: "Opgradering i gang. Systemet er utilgængeligt og genstarter om 5 til 10 minutter."
     ai:
       show:
         subtitle: "Konfigurer AI-udbyderen for denne installation. Det gælder for alle kanaler."
@@ -703,11 +684,6 @@ da:
         cleared: "AI-indstillinger ryddet."
     base:
       saas_unavailable: "Denne funktion er ikke tilgængelig i SaaS-tilstand."
-    check_for_updates:
-      upgrade_now: "Opgrader nu"
-      new_version: "Ny version v%{version} er tilgængelig!"
-      check_for_updates: "Søg efter opdateringer"
-      last_checked: "Sidst kontrolleret %{time}"
     application_logs:
       show:
         subtitle: "Se og stream applikationslogs i realtid."
@@ -1486,6 +1462,13 @@ da:
         unknown_error: "Kan ikke nedgradere til version %{version}: Der opstod en ukendt fejl"
         invalid_version: "Ugyldigt versionsformat: %{version}"
         error: "Fejl under behandling af anmodningen om nedgradering: %{error}"
+      upgrade_refused:
+        title: "Opgraderingen blev ikke startet"
+        work_in_flight: "Broadcast udfører arbejde, som en opgradering ville afbryde."
+        failed: "Opgraderingen kunne ikke startes."
+        try_again_later: "Intet er ændret. Prøv igen, når arbejdet er færdigt."
+        check_logs: "Intet er ændret. Find fejlen i applikationens logfiler, og prøv så igen."
+        back: "Tilbage til opdateringer"
 
   autopilots:
     autopilot_not_found: "Autopilot blev ikke fundet"
@@ -3570,6 +3553,7 @@ da:
       verified: "Bekræftet"
       pending: "Afventer"
       just_now: "Lige nu"
+      copy_failed: "Kopiering mislykkedes"
     relative_time:
       minutes_ago: "for %{count} min. siden"
       hours_ago: "for %{count} t. siden"
@@ -7462,6 +7446,12 @@ da:
           resubscribed:
             label: "Side for gentilmeldt"
             description: "Vises efter gentilmelding."
+          topic_confirm:
+            label: "Bekræftelsesside for emne"
+            description: "Erstatter bekræftelsessiden på en e-mail sendt til et emne."
+          topic_unsubscribed:
+            label: "Side for fravalgt emne"
+            description: "Vises, når et emne er slået fra. Abonnenten forbliver tilmeldt."
         fields:
           heading: "Overskrift"
           message: "Besked"
@@ -7469,6 +7459,7 @@ da:
           stay_button: "Knap for at forblive"
           resubscribe_button: "Knap for gentilmelding"
           unsubscribe_button: "Afmeldingsknap"
+          everything_button: "Knap til at afmelde alt"
         legal_links: "Juridiske links"
         legal_links_help: "Vises nederst på alle afmeldingssider, når de er udfyldt."
         privacy_policy_url: "URL til privatlivspolitik"
@@ -7476,6 +7467,13 @@ da:
         after_unsubscribing: "Efter afmelding"
         redirect: "Omdiriger til din egen side"
         redirect_help: "Lad feltet stå tomt for at vise siden for afmeldt. Når det er udfyldt, afmeldes abonnenter først og sendes derefter hertil. Skal starte med https://."
+        topic_scope: "På en e-mail sendt til et emne"
+        topic_scope_help: "Hvad afmeldingslinket og knappen til afmelding med ét klik i Gmail og Yahoo gør. E-mails uden emne samt sekvens- og transaktionsmails afmelder altid alt."
+        topic_scopes:
+          topic: "Slå kun det emne fra (abonnenten forbliver tilmeldt)"
+          everything: "Afmeld alt"
+        page_text_topic_help_html: "Emnesiderne kan også bruge <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "At slå et emne fra omdirigerer aldrig: siden har \"Afmeld alt\" ét klik væk. Den knap følger omdirigeringen."
       show:
         title: "Afmeldingsside"
         back_to_settings: "Indstillinger"
@@ -7491,6 +7489,8 @@ da:
           unsubscribed: "Afmeldt"
           stayed: "Forblev"
           resubscribed: "Gentilmeldt"
+          topic_confirm: "Bekræft emne"
+          topic_unsubscribed: "Emne fravalgt"
         preview_width: "Bredde på forhåndsvisning"
         devices:
           desktop: "Computer"
@@ -7903,6 +7903,7 @@ da:
         completed: "Fuldført"
         redacted: "Anonymiseret"
         activity: "Aktivitet"
+        topic_unsubscribed: "Emne fra"
       by: "af %{name}"
     index:
       empty: "Ingen aktivitet endnu"

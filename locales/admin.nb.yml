@@ -22,6 +22,7 @@
 #   dashboard -> oversikt           settings -> innstillinger
 #   custom field -> egendefinert felt   preheader -> forhåndsvisningstekst
 #   brand kit -> merkevaresett      endpoint -> endepunkt
+#   topic -> emne
 nb:
   activerecord:
     attributes:
@@ -219,6 +220,9 @@ nb:
               must_belong_to_the_same_channel: "må tilhøre samme kanal"
             theme_settings:
               style_value_not_allowed: "%{setting} inneholder tegn som ikke er tillatt i en stilverdi"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "blokk %{position}: block_type \"%{block_type}\" er ikke tillatt etter innsending (bruk en av %{allowed})"
+              invalid_block: "blokk %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Omdirigerings-URL-en for bekreftelse må være en gyldig http(s)-URL"
         opt_in_form_block:
           attributes:
@@ -474,6 +478,9 @@ nb:
       token: "Token"
       tokens_heading: "API-tokener"
       tokens_intro: "Agenter bruker de samme API-tokenene som integrasjonene dine. Administrer dem fra tokensiden."
+      introduction_token: "Bruker tokenet \"%{label}\"."
+      link_token: "Token: %{label}"
+      setup_link_token: "Token for den nye oppsettslenken"
 
   ai:
     prompt_suggestions:
@@ -646,32 +653,6 @@ nb:
         development_license: "Utviklingslisens"
         title: "Lisens"
         meta_description: "Vis lisensinformasjonen din"
-    show:
-      subtitle: "Administrer globale innstillinger for Broadcast"
-      version: "Versjon"
-      current_version_html: "Gjeldende Broadcast-versjon er %{version}"
-      check_for_updates: "Se etter oppdateringer"
-      licensing: "Lisensiering"
-      authorized_domain: "Autorisert domene"
-      license_key: "Lisensnøkkel"
-      development_license: "Utviklingslisens"
-      development_build: "Utviklingsbygg"
-      system_info: "Systeminfo og bruk"
-      cpu_cores: "CPU-kjerner"
-      cpu_load: "CPU-belastning"
-      memory_used: "Minne brukt"
-      free_memory: "Ledig minne"
-      uploads_size: "Størrelse på opplastinger"
-      disk_space_used: "Diskplass brukt"
-      free_disk_space: "Ledig diskplass"
-      reload_app: "Last inn appen på nytt"
-      reload_app_help: "Har du endret domeneinnstillingene for en kanal? I så fall må du laste inn appen på nytt for at endringene skal tre i kraft."
-    form:
-      heading: "S3-kompatibel lagring"
-      intro: "For å laste opp filer og lagre ressurser du bruker i e-postene dine, må du konfigurere S3-kompatibel lagring. Broadcast lagrer disse ressursene i S3-bøtten din."
-      update: "Oppdater"
-    upgrade_in_progress:
-      message: "Oppgradering pågår. Systemet vil være utilgjengelig og starter på nytt om 5 til 10 minutter."
     ai:
       show:
         subtitle: "Konfigurer AI-leverandøren for denne installasjonen. Dette gjelder for alle kanaler."
@@ -703,11 +684,6 @@ nb:
         cleared: "AI-innstillinger fjernet."
     base:
       saas_unavailable: "Denne funksjonen er ikke tilgjengelig i SaaS-modus."
-    check_for_updates:
-      upgrade_now: "Oppgrader nå"
-      new_version: "Ny versjon v%{version} er tilgjengelig!"
-      check_for_updates: "Se etter oppdateringer"
-      last_checked: "Sist sjekket %{time}"
     application_logs:
       show:
         subtitle: "Vis og strøm applikasjonslogger i sanntid."
@@ -1486,6 +1462,13 @@ nb:
         unknown_error: "Kan ikke nedgradere til versjon %{version}: det oppstod en ukjent feil"
         invalid_version: "Ugyldig versjonsformat: %{version}"
         error: "Feil ved behandling av nedgraderingsforespørselen: %{error}"
+      upgrade_refused:
+        title: "Oppgraderingen ble ikke startet"
+        work_in_flight: "Broadcast utfører arbeid som en oppgradering ville avbrutt."
+        failed: "Oppgraderingen kunne ikke startes."
+        try_again_later: "Ingenting er endret. Prøv igjen når arbeidet er ferdig."
+        check_logs: "Ingenting er endret. Finn feilen i applikasjonsloggene, og prøv igjen."
+        back: "Tilbake til oppdateringer"
 
   autopilots:
     autopilot_not_found: "Fant ikke autopiloten"
@@ -3570,6 +3553,7 @@ nb:
       verified: "Bekreftet"
       pending: "Venter"
       just_now: "Akkurat nå"
+      copy_failed: "Kopiering mislyktes"
     relative_time:
       minutes_ago: "for %{count} min siden"
       hours_ago: "for %{count} t siden"
@@ -7462,6 +7446,12 @@ nb:
           resubscribed:
             label: "Side for ny påmelding"
             description: "Vises etter ny påmelding."
+          topic_confirm:
+            label: "Bekreftelsesside for emne"
+            description: "Erstatter bekreftelsessiden på en e-post sendt til et emne."
+          topic_unsubscribed:
+            label: "Side for avslått emne"
+            description: "Vises etter at et emne er slått av. Abonnenten forblir påmeldt."
         fields:
           heading: "Overskrift"
           message: "Melding"
@@ -7469,6 +7459,7 @@ nb:
           stay_button: "Knapp for å bli"
           resubscribe_button: "Knapp for ny påmelding"
           unsubscribe_button: "Avmeldingsknapp"
+          everything_button: "Knapp for å melde av alt"
         legal_links: "Juridiske lenker"
         legal_links_help: "Vises nederst på alle avmeldingssider når de er angitt."
         privacy_policy_url: "URL til personvernerklæring"
@@ -7476,6 +7467,13 @@ nb:
         after_unsubscribing: "Etter avmelding"
         redirect: "Send videre til din egen side"
         redirect_help: "La stå tomt for å vise siden for avmeldt. Når dette er angitt, meldes abonnentene av først og sendes deretter hit. Må begynne med https://."
+        topic_scope: "På en e-post sendt til et emne"
+        topic_scope_help: "Hva avmeldingslenken og knappen for avmelding med ett klikk i Gmail og Yahoo gjør. E-post uten emne, samt sekvens- og transaksjonell e-post, melder alltid av alt."
+        topic_scopes:
+          topic: "Slå av bare det emnet (abonnenten forblir påmeldt)"
+          everything: "Meld av alt"
+        page_text_topic_help_html: "Emnesidene kan også bruke <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Å slå av et emne omdirigerer aldri: siden har \"Meld av alt\" ett klikk unna. Den knappen følger omdirigeringen."
       show:
         title: "Avmeldingsside"
         back_to_settings: "Innstillinger"
@@ -7491,6 +7489,8 @@ nb:
           unsubscribed: "Avmeldt"
           stayed: "Ble"
           resubscribed: "Påmeldt igjen"
+          topic_confirm: "Bekreft emne"
+          topic_unsubscribed: "Emne avslått"
         preview_width: "Bredde på forhåndsvisning"
         devices:
           desktop: "Datamaskin"
@@ -7903,6 +7903,7 @@ nb:
         completed: "Fullført"
         redacted: "Anonymisert"
         activity: "Aktivitet"
+        topic_unsubscribed: "Emne av"
       by: "av %{name}"
     index:
       empty: "Ingen aktivitet ennå"

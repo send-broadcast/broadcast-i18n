@@ -23,6 +23,7 @@
 #   dashboard -> koontinäkymä       settings -> asetukset
 #   custom field -> mukautettu kenttä   preheader -> esikatseluteksti
 #   brand kit -> brändipaketti      endpoint -> päätepiste
+#   topic -> aihe
 fi:
   activerecord:
     attributes:
@@ -220,6 +221,9 @@ fi:
               must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
             theme_settings:
               style_value_not_allowed: "%{setting} sisältää merkkejä, jotka eivät ole sallittuja tyyliarvossa"
+            opt_in_post_submission_blocks:
+              block_type_not_allowed: "lohko %{position}: block_type \"%{block_type}\" ei ole sallittu lähetyksen jälkeen (käytä jotakin näistä: %{allowed})"
+              invalid_block: "lohko %{position}: %{details}"
           confirmation_redirect_url_must_be_a: "Vahvistuksen uudelleenohjaus-URL:n on oltava kelvollinen http(s)-URL"
         opt_in_form_block:
           attributes:
@@ -475,6 +479,9 @@ fi:
       token: "Tunnus"
       tokens_heading: "API-tunnukset"
       tokens_intro: "Agentit käyttävät samoja API-tunnuksia kuin integraatiosi. Hallitse niitä tunnussivulta."
+      introduction_token: "Käyttää tunnusta \"%{label}\"."
+      link_token: "Tunnus: %{label}"
+      setup_link_token: "Tunnus uudelle asetuslinkille"
 
   ai:
     prompt_suggestions:
@@ -647,32 +654,6 @@ fi:
         development_license: "Kehityslisenssi"
         title: "Lisenssi"
         meta_description: "Näytä lisenssitietosi"
-    show:
-      subtitle: "Hallitse Broadcastin yleisiä asetuksia"
-      version: "Versio"
-      current_version_html: "Nykyinen Broadcast-versio on %{version}"
-      check_for_updates: "Tarkista päivitykset"
-      licensing: "Lisensointi"
-      authorized_domain: "Valtuutettu verkkotunnus"
-      license_key: "Lisenssiavain"
-      development_license: "Kehityslisenssi"
-      development_build: "Kehitysversio"
-      system_info: "Järjestelmätiedot ja käyttö"
-      cpu_cores: "Suoritinytimet"
-      cpu_load: "Suoritinkuorma"
-      memory_used: "Käytetty muisti"
-      free_memory: "Vapaa muisti"
-      uploads_size: "Latausten koko"
-      disk_space_used: "Käytetty levytila"
-      free_disk_space: "Vapaa levytila"
-      reload_app: "Lataa sovellus uudelleen"
-      reload_app_help: "Muutitko kanavan verkkotunnusasetuksia? Jos muutit, sovellus on ladattava uudelleen, jotta muutokset tulevat voimaan."
-    form:
-      heading: "S3-yhteensopiva tallennustila"
-      intro: "Jotta voit ladata tiedostoja ja tallentaa sähköposteissasi käyttämiäsi resursseja, sinun on määritettävä S3-yhteensopiva tallennustila. Broadcast tallentaa nämä resurssit S3-säilöösi."
-      update: "Päivitä"
-    upgrade_in_progress:
-      message: "Päivitys käynnissä. Järjestelmä ei ole käytettävissä ja käynnistyy uudelleen 5-10 minuutin kuluttua."
     ai:
       show:
         subtitle: "Määritä tämän asennuksen tekoälypalvelu. Asetus koskee kaikkia kanavia."
@@ -704,11 +685,6 @@ fi:
         cleared: "Tekoälyasetukset tyhjennetty."
     base:
       saas_unavailable: "Tämä ominaisuus ei ole käytettävissä SaaS-tilassa."
-    check_for_updates:
-      upgrade_now: "Päivitä nyt"
-      new_version: "Uusi versio v%{version} saatavilla!"
-      check_for_updates: "Tarkista päivitykset"
-      last_checked: "Tarkistettu viimeksi %{time}"
     application_logs:
       show:
         subtitle: "Näytä ja suoratoista sovelluslokeja reaaliajassa."
@@ -1487,6 +1463,13 @@ fi:
         unknown_error: "Versioon %{version} ei voi palata: tapahtui tuntematon virhe"
         invalid_version: "Virheellinen versiomuoto: %{version}"
         error: "Virhe palautuspyynnön käsittelyssä: %{error}"
+      upgrade_refused:
+        title: "Päivitystä ei aloitettu"
+        work_in_flight: "Broadcast tekee työtä, jonka päivitys keskeyttäisi."
+        failed: "Päivitystä ei voitu aloittaa."
+        try_again_later: "Mitään ei muutettu. Yritä uudelleen, kun työ on valmis."
+        check_logs: "Mitään ei muutettu. Etsi virhe sovelluksen lokeista ja yritä sitten uudelleen."
+        back: "Takaisin päivityksiin"
 
   autopilots:
     autopilot_not_found: "Autopilottia ei löytynyt"
@@ -3571,6 +3554,7 @@ fi:
       verified: "Vahvistettu"
       pending: "Odottaa"
       just_now: "Juuri nyt"
+      copy_failed: "Kopiointi epäonnistui"
     relative_time:
       minutes_ago: "%{count} min sitten"
       hours_ago: "%{count} h sitten"
@@ -7463,6 +7447,12 @@ fi:
           resubscribed:
             label: "Uudelleentilaus-sivu"
             description: "Näytetään uudelleentilauksen jälkeen."
+          topic_confirm:
+            label: "Aiheen vahvistussivu"
+            description: "Korvaa vahvistussivun aiheeseen lähetetyssä sähköpostissa."
+          topic_unsubscribed:
+            label: "Aihe poistettu -sivu"
+            description: "Näytetään, kun aihe on poistettu käytöstä. Tilaaja pysyy tilaajana."
         fields:
           heading: "Otsikko"
           message: "Viesti"
@@ -7470,6 +7460,7 @@ fi:
           stay_button: "Jatka tilausta -painike"
           resubscribe_button: "Tilaa uudelleen -painike"
           unsubscribe_button: "Peruutuspainike"
+          everything_button: "Peru kaikki -painike"
         legal_links: "Oikeudelliset linkit"
         legal_links_help: "Näytetään jokaisen peruutussivun alareunassa, kun ne on asetettu."
         privacy_policy_url: "Tietosuojaselosteen URL-osoite"
@@ -7477,6 +7468,13 @@ fi:
         after_unsubscribing: "Tilauksen perumisen jälkeen"
         redirect: "Ohjaa omalle sivullesi"
         redirect_help: "Jätä tyhjäksi, jos haluat näyttää Tilaus peruttu -sivun. Kun tämä on asetettu, tilaajien tilaus perutaan ensin ja heidät ohjataan sitten tänne. Osoitteen on alettava https://."
+        topic_scope: "Aiheeseen lähetetyssä sähköpostissa"
+        topic_scope_help: "Mitä tilauksen peruutuslinkki ja Gmailin ja Yahoon yhden klikkauksen peruutuspainike tekevät. Sähköpostit ilman aihetta sekä sarja- ja transaktiosähköpostit peruvat aina kaikki tilaukset."
+        topic_scopes:
+          topic: "Poista vain tämä aihe käytöstä (tilaaja pysyy tilaajana)"
+          everything: "Peru kaikki"
+        page_text_topic_help_html: "Aihesivuilla voi käyttää myös <code class=\"text-sm\">{{ topic_name }}</code>."
+        redirect_topic_note: "Aiheen poistaminen käytöstä ei koskaan uudelleenohjaa: sen sivulla \"Peru kaikki\" on yhden klikkauksen päässä. Se painike noudattaa uudelleenohjausta."
       show:
         title: "Peruutussivu"
         back_to_settings: "Asetukset"
@@ -7492,6 +7490,8 @@ fi:
           unsubscribed: "Peruttu"
           stayed: "Jatkaa"
           resubscribed: "Tilattu uudelleen"
+          topic_confirm: "Aiheen vahvistus"
+          topic_unsubscribed: "Aihe poistettu"
         preview_width: "Esikatselun leveys"
         devices:
           desktop: "Työpöytä"
@@ -7904,6 +7904,7 @@ fi:
         completed: "Valmis"
         redacted: "Anonymisoitu"
         activity: "Toiminta"
+        topic_unsubscribed: "Aihe pois"
       by: "käyttäjä %{name}"
     index:
       empty: "Ei vielä toimintaa"
