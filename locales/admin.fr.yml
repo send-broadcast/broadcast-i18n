@@ -132,6 +132,7 @@ fr:
         dropdown_options: "Options du menu déroulant"
         radio_options: "Options à choix unique"
         custom_field_key: "Clé du champ personnalisé"
+        topic: "Thème"
       segment_rule:
         operator: "Opérateur"
         field: "Champ"
@@ -237,6 +238,7 @@ fr:
               invalid_field_name: "doit commencer par une lettre et ne contenir que des lettres minuscules, des chiffres et des tirets bas"
             topic:
               no_topics: "est manquant : cette chaîne n'a pas encore de thème. Créez-en un dans Paramètres > Thèmes."
+              already_on_form: "est déjà dans ce formulaire. Chaque thème ne peut figurer qu'une fois dans un formulaire."
         segment:
           must_have_at_least_one_rule: "doit avoir au moins une règle"
         segment_rule:
@@ -7532,7 +7534,11 @@ fr:
         updated: "Thème %{name} mis à jour."
       destroy:
         deleted: "Thème %{name} supprimé."
-        in_use: "%{name} est utilisé par une campagne ou une séquence, il ne peut donc pas être supprimé. Retirez-le d'abord de celles-ci."
+        in_use_by: "%{name} est utilisé par %{uses}, il ne peut donc pas être supprimé. Retirez-le d'abord."
+        uses:
+          broadcast: "une campagne"
+          sequence: "une séquence"
+          opt_in_form: "un formulaire d'inscription"
       form:
         name: "Nom"
         name_help: "Les abonnés voient ce nom sur les pages de préférences et de désabonnement."

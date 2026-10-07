@@ -131,6 +131,7 @@ da:
         dropdown_options: "Valgmuligheder i rullemenu"
         radio_options: "Valgmuligheder for radioknapper"
         custom_field_key: "Nøgle til brugerdefineret felt"
+        topic: "Emne"
       segment_rule:
         operator: "Operator"
         field: "Felt"
@@ -236,6 +237,7 @@ da:
               invalid_field_name: "skal starte med et bogstav og må kun indeholde små bogstaver, tal og understregninger"
             topic:
               no_topics: "mangler: denne kanal har endnu ingen emner. Opret først et under Indstillinger > Emner."
+              already_on_form: "er allerede i denne formular. Hvert emne kan kun være i en formular én gang."
         segment:
           must_have_at_least_one_rule: "skal have mindst én regel"
         segment_rule:
@@ -7531,7 +7533,11 @@ da:
         updated: "Emnet %{name} er opdateret."
       destroy:
         deleted: "Emnet %{name} er slettet."
-        in_use: "%{name} bruges af en kampagne eller sekvens og kan derfor ikke slettes. Fjern det derfra først."
+        in_use_by: "%{name} bruges af %{uses} og kan derfor ikke slettes. Fjern det derfra først."
+        uses:
+          broadcast: "en kampagne"
+          sequence: "en sekvens"
+          opt_in_form: "en tilmeldingsformular"
       form:
         name: "Navn"
         name_help: "Abonnenter ser dette navn på indstillings- og afmeldingssiden."

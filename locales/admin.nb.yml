@@ -131,6 +131,7 @@ nb:
         dropdown_options: "Alternativer for nedtrekksliste"
         radio_options: "Alternativer for radioknapper"
         custom_field_key: "Nøkkel for egendefinert felt"
+        topic: "Emne"
       segment_rule:
         operator: "Operator"
         field: "Felt"
@@ -236,6 +237,7 @@ nb:
               invalid_field_name: "må begynne med en bokstav og bare inneholde små bokstaver, tall og understreker"
             topic:
               no_topics: "mangler: denne kanalen har ingen emner ennå. Opprett et først under Innstillinger > Emner."
+              already_on_form: "er allerede i dette skjemaet. Hvert emne kan bare være i et skjema én gang."
         segment:
           must_have_at_least_one_rule: "må ha minst én regel"
         segment_rule:
@@ -7531,7 +7533,11 @@ nb:
         updated: "Emnet %{name} er oppdatert."
       destroy:
         deleted: "Emnet %{name} er slettet."
-        in_use: "%{name} brukes av en kampanje eller sekvens og kan derfor ikke slettes. Fjern det derfra først."
+        in_use_by: "%{name} brukes av %{uses} og kan derfor ikke slettes. Fjern det derfra først."
+        uses:
+          broadcast: "en kampanje"
+          sequence: "en sekvens"
+          opt_in_form: "et påmeldingsskjema"
       form:
         name: "Navn"
         name_help: "Abonnenter ser dette navnet på innstillings- og avmeldingssiden."

@@ -131,6 +131,7 @@ sv:
         dropdown_options: "Alternativ i rullgardinsmeny"
         radio_options: "Alternativ för alternativknappar"
         custom_field_key: "Nyckel för anpassat fält"
+        topic: "Ämne"
       segment_rule:
         operator: "Operator"
         field: "Fält"
@@ -236,6 +237,7 @@ sv:
               invalid_field_name: "måste börja med en bokstav och får bara innehålla gemener, siffror och understreck"
             topic:
               no_topics: "saknas: den här kanalen har inga ämnen än. Skapa ett först under Inställningar > Ämnen."
+              already_on_form: "finns redan i det här formuläret. Varje ämne kan finnas en gång i ett formulär."
         segment:
           must_have_at_least_one_rule: "måste ha minst en regel"
         segment_rule:
@@ -7531,7 +7533,11 @@ sv:
         updated: "Ämnet %{name} har uppdaterats."
       destroy:
         deleted: "Ämnet %{name} har tagits bort."
-        in_use: "%{name} används av en kampanj eller sekvens och kan därför inte tas bort. Ta bort det därifrån först."
+        in_use_by: "%{name} används av %{uses} och kan därför inte tas bort. Ta bort det därifrån först."
+        uses:
+          broadcast: "en kampanj"
+          sequence: "en sekvens"
+          opt_in_form: "ett registreringsformulär"
       form:
         name: "Namn"
         name_help: "Prenumeranter ser det här namnet på inställnings- och avregistreringssidan."

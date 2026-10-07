@@ -133,6 +133,7 @@ de:
         dropdown_options: "Dropdown-Optionen"
         radio_options: "Optionsfelder"
         custom_field_key: "Schlüssel des benutzerdefinierten Felds"
+        topic: "Thema"
       segment_rule:
         operator: "Operator"
         field: "Feld"
@@ -238,6 +239,7 @@ de:
               invalid_field_name: "muss mit einem Buchstaben beginnen und darf nur Kleinbuchstaben, Ziffern und Unterstriche enthalten"
             topic:
               no_topics: "fehlt: Dieser Kanal hat noch keine Themen. Legen Sie zuerst eines unter Einstellungen > Themen an."
+              already_on_form: "ist bereits in diesem Formular. Jedes Thema kann nur einmal in einem Formular sein."
         segment:
           must_have_at_least_one_rule: "muss mindestens eine Regel enthalten"
         segment_rule:
@@ -7533,7 +7535,11 @@ de:
         updated: "Thema %{name} aktualisiert."
       destroy:
         deleted: "Thema %{name} gelöscht."
-        in_use: "%{name} wird von einer Kampagne oder Sequenz verwendet und kann daher nicht gelöscht werden. Entfernen Sie es dort zuerst."
+        in_use_by: "%{name} wird von %{uses} verwendet und kann daher nicht gelöscht werden. Entfernen Sie es dort zuerst."
+        uses:
+          broadcast: "einer Kampagne"
+          sequence: "einer Sequenz"
+          opt_in_form: "einem Anmeldeformular"
       form:
         name: "Name"
         name_help: "Abonnenten sehen diesen Namen auf der Einstellungs- und der Abmeldeseite."

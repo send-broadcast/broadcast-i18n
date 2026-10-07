@@ -133,6 +133,7 @@ pl:
         dropdown_options: "Opcje listy rozwijanej"
         radio_options: "Opcje przycisków wyboru"
         custom_field_key: "Klucz pola niestandardowego"
+        topic: "Temat"
       segment_rule:
         operator: "Operator"
         field: "Pole"
@@ -238,6 +239,7 @@ pl:
               invalid_field_name: "musi zaczynać się od litery i zawierać tylko małe litery, cyfry i podkreślenia"
             topic:
               no_topics: "brak: ten kanał nie ma jeszcze tematów. Najpierw utwórz temat w Ustawienia > Tematy."
+              already_on_form: "jest już w tym formularzu. Każdy temat może być w formularzu tylko raz."
         segment:
           must_have_at_least_one_rule: "musi mieć co najmniej jedną regułę"
         segment_rule:
@@ -7767,7 +7769,11 @@ pl:
         updated: "Zaktualizowano temat %{name}."
       destroy:
         deleted: "Usunięto temat %{name}."
-        in_use: "%{name} jest używany przez kampanię lub sekwencję, więc nie można go usunąć. Najpierw go tam odłącz."
+        in_use_by: "%{name} jest używany w: %{uses}, więc nie można go usunąć. Najpierw usuń go stamtąd."
+        uses:
+          broadcast: "kampania"
+          sequence: "sekwencja"
+          opt_in_form: "formularz zapisu"
       form:
         name: "Nazwa"
         name_help: "Subskrybenci widzą tę nazwę na stronach preferencji i wypisania."

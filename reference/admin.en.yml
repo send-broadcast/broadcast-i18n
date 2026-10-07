@@ -149,6 +149,7 @@ en:
         dropdown_options: "Dropdown options"
         radio_options: "Radio options"
         custom_field_key: "Custom field key"
+        topic: "Topic"
       segment_rule:
         operator: "Operator"
         field: "Field"
@@ -254,6 +255,7 @@ en:
               invalid_field_name: "must start with a letter and contain only lowercase letters, numbers, and underscores"
             topic:
               no_topics: "is missing: this channel has no topics yet. Create one in Settings > Topics first."
+              already_on_form: "is already on this form. Each topic can be on a form one time."
         segment:
           must_have_at_least_one_rule: "must have at least one rule"
         segment_rule:
@@ -5841,7 +5843,11 @@ en:
         updated: "Topic %{name} updated."
       destroy:
         deleted: "Topic %{name} deleted."
-        in_use: "%{name} is used by a broadcast or a sequence, so it cannot be deleted. Remove it from them first."
+        in_use_by: "%{name} is used by %{uses}, so it cannot be deleted. Remove it from them first."
+        uses:
+          broadcast: "a broadcast"
+          sequence: "a sequence"
+          opt_in_form: "an opt-in form"
       form:
         name: "Name"
         name_help: "Subscribers see this name on the preference and unsubscribe pages."

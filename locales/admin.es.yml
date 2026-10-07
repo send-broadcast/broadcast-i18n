@@ -132,6 +132,7 @@ es:
         dropdown_options: "Opciones del desplegable"
         radio_options: "Opciones de selección única"
         custom_field_key: "Clave del campo personalizado"
+        topic: "Tema"
       segment_rule:
         operator: "Operador"
         field: "Campo"
@@ -237,6 +238,7 @@ es:
               invalid_field_name: "debe empezar por una letra y contener solo letras minúsculas, números y guiones bajos"
             topic:
               no_topics: "falta: este canal todavía no tiene temas. Crea uno primero en Configuración > Temas."
+              already_on_form: "ya está en este formulario. Cada tema puede estar una sola vez en un formulario."
         segment:
           must_have_at_least_one_rule: "debe tener al menos una regla"
         segment_rule:
@@ -7532,7 +7534,11 @@ es:
         updated: "Tema %{name} actualizado."
       destroy:
         deleted: "Tema %{name} eliminado."
-        in_use: "%{name} lo usa una campaña o una secuencia, así que no se puede eliminar. Quítalo de ellas primero."
+        in_use_by: "%{name} está en uso en %{uses}, así que no se puede eliminar. Quítalo de ahí primero."
+        uses:
+          broadcast: "una campaña"
+          sequence: "una secuencia"
+          opt_in_form: "un formulario de suscripción"
       form:
         name: "Nombre"
         name_help: "Los suscriptores ven este nombre en las páginas de preferencias y de baja."

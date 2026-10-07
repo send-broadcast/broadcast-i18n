@@ -132,6 +132,7 @@ fi:
         dropdown_options: "Pudotusvalikon vaihtoehdot"
         radio_options: "Valintanappien vaihtoehdot"
         custom_field_key: "Mukautetun kentän avain"
+        topic: "Aihe"
       segment_rule:
         operator: "Operaattori"
         field: "Kenttä"
@@ -237,6 +238,7 @@ fi:
               invalid_field_name: "on alettava kirjaimella ja saa sisältää vain pieniä kirjaimia, numeroita ja alaviivoja"
             topic:
               no_topics: "puuttuu: tällä kanavalla ei ole vielä aiheita. Luo ensin aihe kohdassa Asetukset > Aiheet."
+              already_on_form: "on jo tässä lomakkeessa. Kukin aihe voi olla lomakkeessa vain kerran."
         segment:
           must_have_at_least_one_rule: "on oltava vähintään yksi sääntö"
         segment_rule:
@@ -7532,7 +7534,11 @@ fi:
         updated: "Aihe %{name} päivitettiin."
       destroy:
         deleted: "Aihe %{name} poistettiin."
-        in_use: "%{name} on kampanjan tai sarjan käytössä, joten sitä ei voi poistaa. Poista se niistä ensin."
+        in_use_by: "%{name} on käytössä kohteissa: %{uses}, joten sitä ei voi poistaa. Poista se niistä ensin."
+        uses:
+          broadcast: "kampanja"
+          sequence: "sarja"
+          opt_in_form: "tilauslomake"
       form:
         name: "Nimi"
         name_help: "Tilaajat näkevät tämän nimen asetus- ja peruutussivulla."

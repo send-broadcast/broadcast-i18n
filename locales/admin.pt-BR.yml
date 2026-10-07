@@ -131,6 +131,7 @@ pt-BR:
         dropdown_options: "Opções da lista suspensa"
         radio_options: "Opções de botão de opção"
         custom_field_key: "Chave do campo personalizado"
+        topic: "Tópico"
       segment_rule:
         operator: "Operador"
         field: "Campo"
@@ -236,6 +237,7 @@ pt-BR:
               invalid_field_name: "precisa começar com uma letra e conter apenas letras minúsculas, números e sublinhados"
             topic:
               no_topics: "está faltando: este canal ainda não tem tópicos. Crie um primeiro em Configurações > Tópicos."
+              already_on_form: "já está neste formulário. Cada tópico pode aparecer uma só vez em um formulário."
         segment:
           must_have_at_least_one_rule: "precisa ter pelo menos uma regra"
         segment_rule:
@@ -7531,7 +7533,11 @@ pt-BR:
         updated: "Tópico %{name} atualizado."
       destroy:
         deleted: "Tópico %{name} excluído."
-        in_use: "%{name} é usado por uma campanha ou sequência, por isso não pode ser excluído. Remova-o delas primeiro."
+        in_use_by: "%{name} está em uso em %{uses}, por isso não pode ser excluído. Remova-o de lá primeiro."
+        uses:
+          broadcast: "uma campanha"
+          sequence: "uma sequência"
+          opt_in_form: "um formulário de inscrição"
       form:
         name: "Nome"
         name_help: "Os assinantes veem este nome nas páginas de preferências e de cancelamento."

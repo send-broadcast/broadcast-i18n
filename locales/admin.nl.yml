@@ -133,6 +133,7 @@ nl:
         dropdown_options: "Keuzelijstopties"
         radio_options: "Keuzerondjesopties"
         custom_field_key: "Sleutel van aangepast veld"
+        topic: "Onderwerp"
       segment_rule:
         operator: "Operator"
         field: "Veld"
@@ -238,6 +239,7 @@ nl:
               invalid_field_name: "moet met een letter beginnen en mag alleen kleine letters, cijfers en underscores bevatten"
             topic:
               no_topics: "ontbreekt: dit kanaal heeft nog geen onderwerpen. Maak er eerst een aan in Instellingen > Onderwerpen."
+              already_on_form: "staat al op dit formulier. Elk onderwerp kan maar één keer op een formulier staan."
         segment:
           must_have_at_least_one_rule: "moet minstens één regel hebben"
         segment_rule:
@@ -7533,7 +7535,11 @@ nl:
         updated: "Onderwerp %{name} bijgewerkt."
       destroy:
         deleted: "Onderwerp %{name} verwijderd."
-        in_use: "%{name} wordt gebruikt door een campagne of reeks en kan daarom niet worden verwijderd. Haal het daar eerst weg."
+        in_use_by: "%{name} wordt gebruikt door %{uses} en kan daarom niet worden verwijderd. Haal het daar eerst weg."
+        uses:
+          broadcast: "een campagne"
+          sequence: "een reeks"
+          opt_in_form: "een aanmeldformulier"
       form:
         name: "Naam"
         name_help: "Abonnees zien deze naam op de voorkeuren- en afmeldpagina."

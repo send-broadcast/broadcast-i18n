@@ -129,6 +129,7 @@ it:
         dropdown_options: "Opzioni del menu a tendina"
         radio_options: "Opzioni a scelta singola"
         custom_field_key: "Chiave del campo personalizzato"
+        topic: "Argomento"
       segment_rule:
         operator: "Operatore"
         field: "Campo"
@@ -234,6 +235,7 @@ it:
               invalid_field_name: "deve iniziare con una lettera e contenere solo lettere minuscole, numeri e trattini bassi"
             topic:
               no_topics: "manca: questo canale non ha ancora argomenti. Creane uno prima in Impostazioni > Argomenti."
+              already_on_form: "è già in questo modulo. Ogni argomento può comparire una sola volta in un modulo."
         segment:
           must_have_at_least_one_rule: "deve avere almeno una regola"
         segment_rule:
@@ -7529,7 +7531,11 @@ it:
         updated: "Argomento %{name} aggiornato."
       destroy:
         deleted: "Argomento %{name} eliminato."
-        in_use: "%{name} è usato da una campagna o da una sequenza, quindi non può essere eliminato. Rimuovilo prima da lì."
+        in_use_by: "%{name} è usato da %{uses}, quindi non può essere eliminato. Rimuovilo prima da lì."
+        uses:
+          broadcast: "una campagna"
+          sequence: "una sequenza"
+          opt_in_form: "un modulo di iscrizione"
       form:
         name: "Nome"
         name_help: "Gli iscritti vedono questo nome nelle pagine delle preferenze e di disiscrizione."
