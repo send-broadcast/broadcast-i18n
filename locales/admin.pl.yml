@@ -222,6 +222,8 @@ pl:
               must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
             theme_settings:
               style_value_not_allowed: "%{setting} zawiera znaki niedozwolone w wartości stylu"
+            trigger_settings:
+              unknown_frequency: "częstotliwość %{value} jest nieznana. Użyj jednej z tych wartości: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" jest niedozwolony po wysłaniu (użyj jednego z %{allowed})"
               invalid_block: "blok %{position}: %{details}"
@@ -234,6 +236,8 @@ pl:
               must_be_an_array_of_options: "musi być listą opcji"
             custom_field_key:
               invalid_field_name: "musi zaczynać się od litery i zawierać tylko małe litery, cyfry i podkreślenia"
+            topic:
+              no_topics: "brak: ten kanał nie ma jeszcze tematów. Najpierw utwórz temat w Ustawienia > Tematy."
         segment:
           must_have_at_least_one_rule: "musi mieć co najmniej jedną regułę"
         segment_rule:
@@ -3413,6 +3417,7 @@ pl:
         dropdown: "Lista rozwijana"
         radio_group: "Grupa przycisków wyboru"
         custom_field: "Pole niestandardowe"
+        topic: "Temat"
     template:
       content_type:
         blocks: "Bloki"
@@ -4594,6 +4599,8 @@ pl:
         checkbox_hint: "Zgoda lub opcja"
         custom_field: "Pole niestandardowe"
         custom_field_hint: "Odpowiedź tekstowa (jedno- lub wielowierszowa)"
+        topic: "Temat"
+        topic_hint: "Zapis na jeden temat subskrybenta"
         dropdown: "Lista rozwijana"
         dropdown_hint: "Jeden wybór z listy"
         radio_group: "Grupa przycisków wyboru"
@@ -4776,50 +4783,6 @@ pl:
         preset_bold: "Wyrazisty"
         preset_soft: "Łagodny"
         preset_dark: "Ciemny"
-      trigger_editor:
-        when_heading: "Kiedy wyświetlać"
-        when_intro: "Skonfiguruj, kiedy widżet ma się pojawiać odwiedzającym."
-        inline_note: "(Uwaga: formularze osadzone w treści zawsze wyświetlają się od razu)"
-        trigger_type: "Typ wyzwalacza"
-        immediate: "Natychmiast"
-        immediate_help: "Wyświetl zaraz po wczytaniu strony"
-        time_delay: "Opóźnienie"
-        time_delay_help: "Wyświetl po określonej liczbie sekund"
-        scroll: "Procent przewinięcia"
-        scroll_help: "Wyświetl, gdy odwiedzający przewinie stronę w dół"
-        exit_intent: "Zamiar opuszczenia strony"
-        exit_intent_help: "Wyświetl, gdy odwiedzający ma zamiar opuścić stronę"
-        manual: "Ręcznie (kliknięcie)"
-        manual_help: "Wyświetl tylko po wywołaniu z poziomu kodu"
-        delay: "Opóźnienie (sekundy)"
-        seconds:
-          one: "%{count} sekunda"
-          few: "%{count} sekundy"
-          many: "%{count} sekund"
-          other: "%{count} sekundy"
-        scroll_percentage: "Procent przewinięcia"
-        exit_intent_addon: "Uruchamiaj także przy zamiarze opuszczenia strony"
-        exit_intent_addon_help: "Wyświetl, gdy odwiedzający próbuje wyjść, nawet jeśli inne warunki nie zostały spełnione"
-        frequency_heading: "Częstotliwość wyświetlania"
-        frequency_intro: "Określ, jak często widżet ma się pojawiać temu samemu odwiedzającemu."
-        always: "Przy każdym wczytaniu strony"
-        always_help: "Wyświetlaj przy każdej wizycie na stronie"
-        once_per_session: "Raz na sesję"
-        once_per_session_help: "Wyświetl raz, aż do zamknięcia przeglądarki"
-        once_per_days: "Raz na X dni"
-        once_per_days_help: "Wyświetl ponownie po określonej liczbie dni"
-        once: "Tylko raz"
-        once_help: "Po zamknięciu nigdy więcej nie wyświetlaj"
-        show_again_after: "Wyświetl ponownie po"
-        days:
-          one: "%{count} dniu"
-          few: "%{count} dniach"
-          many: "%{count} dniach"
-          other: "%{count} dnia"
-        devices_heading: "Kierowanie na urządzenia"
-        devices_intro: "Wybierz, na jakich urządzeniach widżet ma być widoczny."
-        show_on_desktop: "Pokazuj na komputerach"
-        show_on_mobile: "Pokazuj na telefonach"
       widget_preview_wrapper:
         heading: "Podgląd widżetu"
         panel_hidden: "Panel jest ukryty, dopóki nie zostanie spełniony warunek wyzwalacza"
@@ -4939,6 +4902,7 @@ pl:
         select_option: "Wybierz opcję..."
         option: "Opcja %{number}"
         custom_field: "Pole niestandardowe"
+        topic: "Temat"
         no_image: "Nie ustawiono obrazu"
         unknown_block_type: "Nieznany typ bloku: %{type}"
       inspector_button:
@@ -4957,6 +4921,13 @@ pl:
         select_all_help_html: "%{label} klucz kończący się na %{suffix} (np. %{example}) zaznacza i blokuje wszystkie pola wyboru, których klucz ma ten sam prefiks (%{first}, %{second}). Zapisywany jest tylko klucz %{suffix}, więc reguły segmentów powinny dopasowywać go lub poszczególne klucze."
         required: "Wymagane"
         required_help: "Użytkownicy muszą to zaznaczyć, aby wysłać formularz"
+      inspector_topic:
+        topic: "Temat"
+        topic_help_html: "Pole wyboru pokazuje nazwę i opis tematu. Zmień je w %{link}."
+        topics_link: "Ustawienia > Tematy"
+        storage_help: "Zaznaczone zapisuje true, niezaznaczone zapisuje false. Subskrybent, który nie zaznaczy pola, nigdy nie dostanie tego tematu, nawet gdy temat trafia do subskrybentów bez wartości."
+        storage_help_tag_html: "Zaznaczone dodaje tag %{tag}. Niezaznaczone nic nie dodaje."
+        existing_subscribers: "Subskrybent, który jest już na liście, zachowuje swoje tematy po wysłaniu formularza. Zmienia je na stronie preferencji."
       inspector_custom_field:
         field_key: "Klucz pola"
         field_key_help_html: "Zapisywane jako %{key}. Tylko małe litery, cyfry i podkreślenia."
@@ -5161,9 +5132,6 @@ pl:
     form_security:
       heading: "Ustawienia bezpieczeństwa"
       intro: "Chroń formularz przed spamem i nadużyciami."
-    form_trigger:
-      heading: "Ustawienia wyzwalania i wyświetlania"
-      intro: "Skonfiguruj, kiedy i jak często pojawia się widżet."
     index:
       title: "Formularze zapisu"
       meta_description: "Zobacz wszystkie formularze zapisu"

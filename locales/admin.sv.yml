@@ -220,6 +220,8 @@ sv:
               must_belong_to_the_same_channel: "måste tillhöra samma kanal"
             theme_settings:
               style_value_not_allowed: "%{setting} innehåller tecken som inte är tillåtna i ett stilvärde"
+            trigger_settings:
+              unknown_frequency: "frekvensen %{value} är okänd. Använd ett av dessa värden: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" är inte tillåtet efter inskickning (använd ett av %{allowed})"
               invalid_block: "block %{position}: %{details}"
@@ -232,6 +234,8 @@ sv:
               must_be_an_array_of_options: "måste vara en lista med alternativ"
             custom_field_key:
               invalid_field_name: "måste börja med en bokstav och får bara innehålla gemener, siffror och understreck"
+            topic:
+              no_topics: "saknas: den här kanalen har inga ämnen än. Skapa ett först under Inställningar > Ämnen."
         segment:
           must_have_at_least_one_rule: "måste ha minst en regel"
         segment_rule:
@@ -3315,6 +3319,7 @@ sv:
         dropdown: "Rullgardinsmeny"
         radio_group: "Alternativknappar"
         custom_field: "Anpassat fält"
+        topic: "Ämne"
     template:
       content_type:
         blocks: "Block"
@@ -4434,6 +4439,8 @@ sv:
         checkbox_hint: "Samtycke eller alternativ"
         custom_field: "Anpassat fält"
         custom_field_hint: "Fritextsvar (en eller flera rader)"
+        topic: "Ämne"
+        topic_hint: "Anmälan till ett prenumerantämne"
         dropdown: "Rullgardinsmeny"
         dropdown_hint: "Ett val från en lista"
         radio_group: "Alternativknappar"
@@ -4608,46 +4615,6 @@ sv:
         preset_bold: "Kraftfull"
         preset_soft: "Mjuk"
         preset_dark: "Mörk"
-      trigger_editor:
-        when_heading: "När den ska visas"
-        when_intro: "Ställ in när widgeten ska visas för besökare."
-        inline_note: "(Obs! Inbäddningar i sidan visas alltid direkt)"
-        trigger_type: "Typ av utlösare"
-        immediate: "Direkt"
-        immediate_help: "Visa så snart sidan har laddats"
-        time_delay: "Fördröjning"
-        time_delay_help: "Visa efter ett angivet antal sekunder"
-        scroll: "Rullningsprocent"
-        scroll_help: "Visa när besökaren rullar nedåt på sidan"
-        exit_intent: "Lämningsavsikt"
-        exit_intent_help: "Visa när besökaren är på väg att lämna sidan"
-        manual: "Manuell (klick)"
-        manual_help: "Visa bara när den utlöses programmatiskt"
-        delay: "Fördröjning (sekunder)"
-        seconds:
-          one: "%{count} sekund"
-          other: "%{count} sekunder"
-        scroll_percentage: "Rullningsprocent"
-        exit_intent_addon: "Utlös även vid lämningsavsikt"
-        exit_intent_addon_help: "Visa när besökaren försöker lämna sidan, även om andra villkor inte är uppfyllda"
-        frequency_heading: "Visningsfrekvens"
-        frequency_intro: "Styr hur ofta widgeten visas för samma besökare."
-        always: "Vid varje sidladdning"
-        always_help: "Visa vid varje sidbesök"
-        once_per_session: "En gång per session"
-        once_per_session_help: "Visa en gång tills webbläsaren stängs"
-        once_per_days: "En gång var X:e dag"
-        once_per_days_help: "Visa igen efter angivet antal dagar"
-        once: "Bara en gång"
-        once_help: "Visa aldrig igen efter att den stängts"
-        show_again_after: "Visa igen efter"
-        days:
-          one: "%{count} dag"
-          other: "%{count} dagar"
-        devices_heading: "Enhetsinriktning"
-        devices_intro: "Välj vilka enheter som ska visa widgeten."
-        show_on_desktop: "Visa på dator"
-        show_on_mobile: "Visa på mobil"
       widget_preview_wrapper:
         heading: "Förhandsvisning av widget"
         panel_hidden: "Panelen är dold tills utlösningsvillkoret är uppfyllt"
@@ -4767,6 +4734,7 @@ sv:
         select_option: "Välj ett alternativ..."
         option: "Alternativ %{number}"
         custom_field: "Anpassat fält"
+        topic: "Ämne"
         no_image: "Ingen bild angiven"
         unknown_block_type: "Okänd blocktyp: %{type}"
       inspector_button:
@@ -4785,6 +4753,13 @@ sv:
         select_all_help_html: "%{label} en nyckel som slutar på %{suffix} (t.ex. %{example}) kryssar i och låser alla kryssrutor vars nyckel har samma prefix (%{first}, %{second}). Bara nyckeln %{suffix} sparas, så segmentregler bör matcha antingen den eller de enskilda nycklarna."
         required: "Obligatorisk"
         required_help: "Användare måste kryssa i denna för att skicka"
+      inspector_topic:
+        topic: "Ämne"
+        topic_help_html: "Kryssrutan visar ämnets namn och beskrivning. Ändra dem under %{link}."
+        topics_link: "Inställningar > Ämnen"
+        storage_help: "Ikryssad sparar true och tom sparar false. En prenumerant som lämnar rutan tom får aldrig det här ämnet, inte ens när ämnet skickas till prenumeranter utan värde."
+        storage_help_tag_html: "Ikryssad lägger till taggen %{tag}. Tom lägger inte till något."
+        existing_subscribers: "En prenumerant som redan finns i listan behåller sina ämnen när hen skickar formuläret. Hen ändrar dem på inställningssidan."
       inspector_custom_field:
         field_key: "Fältnyckel"
         field_key_help_html: "Sparas som %{key}. Endast gemener, siffror och understreck."
@@ -4989,9 +4964,6 @@ sv:
     form_security:
       heading: "Säkerhetsinställningar"
       intro: "Skydda ditt formulär mot spam och missbruk."
-    form_trigger:
-      heading: "Utlösare och visning"
-      intro: "Ställ in när och hur ofta widgeten visas."
     index:
       title: "Registreringsformulär"
       meta_description: "Visa alla dina registreringsformulär"

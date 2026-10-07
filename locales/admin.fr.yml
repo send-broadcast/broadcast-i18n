@@ -221,6 +221,8 @@ fr:
               must_belong_to_the_same_channel: "doit appartenir au même canal"
             theme_settings:
               style_value_not_allowed: "%{setting} contient des caractères non autorisés dans une valeur de style"
+            trigger_settings:
+              unknown_frequency: "la fréquence %{value} est inconnue. Utilisez une de ces valeurs : %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "bloc %{position} : le block_type « %{block_type} » n'est pas autorisé après l'envoi (utilisez l'un de %{allowed})"
               invalid_block: "bloc %{position} : %{details}"
@@ -233,6 +235,8 @@ fr:
               must_be_an_array_of_options: "doit être une liste d'options"
             custom_field_key:
               invalid_field_name: "doit commencer par une lettre et ne contenir que des lettres minuscules, des chiffres et des tirets bas"
+            topic:
+              no_topics: "est manquant : cette chaîne n'a pas encore de thème. Créez-en un dans Paramètres > Thèmes."
         segment:
           must_have_at_least_one_rule: "doit avoir au moins une règle"
         segment_rule:
@@ -3326,6 +3330,7 @@ fr:
         dropdown: "Menu déroulant"
         radio_group: "Choix unique"
         custom_field: "Champ personnalisé"
+        topic: "Thème"
     template:
       content_type:
         blocks: "Blocs"
@@ -4435,6 +4440,8 @@ fr:
         checkbox_hint: "Consentement ou option"
         custom_field: "Champ personnalisé"
         custom_field_hint: "Réponse libre (sur une ou plusieurs lignes)"
+        topic: "Thème"
+        topic_hint: "Inscription à un thème d'abonné"
         dropdown: "Menu déroulant"
         dropdown_hint: "Un seul choix dans une liste"
         radio_group: "Choix unique"
@@ -4609,46 +4616,6 @@ fr:
         preset_bold: "Audacieux"
         preset_soft: "Doux"
         preset_dark: "Sombre"
-      trigger_editor:
-        when_heading: "Quand l'afficher"
-        when_intro: "Configurez quand le widget doit apparaître aux visiteurs."
-        inline_note: "(Remarque : les intégrations dans la page s'affichent toujours immédiatement)"
-        trigger_type: "Type de déclencheur"
-        immediate: "Immédiat"
-        immediate_help: "Afficher dès le chargement de la page"
-        time_delay: "Délai"
-        time_delay_help: "Afficher après un nombre de secondes défini"
-        scroll: "Pourcentage de défilement"
-        scroll_help: "Afficher quand le visiteur fait défiler la page"
-        exit_intent: "Intention de sortie"
-        exit_intent_help: "Afficher quand le visiteur s'apprête à quitter la page"
-        manual: "Manuel (clic)"
-        manual_help: "Afficher uniquement sur déclenchement par programme"
-        delay: "Délai (secondes)"
-        seconds:
-          one: "%{count} seconde"
-          other: "%{count} secondes"
-        scroll_percentage: "Pourcentage de défilement"
-        exit_intent_addon: "Déclencher aussi sur intention de sortie"
-        exit_intent_addon_help: "Afficher quand le visiteur essaie de partir, même si les autres conditions ne sont pas remplies"
-        frequency_heading: "Fréquence d'affichage"
-        frequency_intro: "Définissez à quelle fréquence le widget apparaît à un même visiteur."
-        always: "À chaque chargement de page"
-        always_help: "Afficher à chaque visite de page"
-        once_per_session: "Une fois par session"
-        once_per_session_help: "Afficher une fois jusqu'à la fermeture du navigateur"
-        once_per_days: "Une fois tous les X jours"
-        once_per_days_help: "Afficher de nouveau après le nombre de jours défini"
-        once: "Une seule fois"
-        once_help: "Ne plus jamais afficher une fois fermé"
-        show_again_after: "Afficher de nouveau après"
-        days:
-          one: "%{count} jour"
-          other: "%{count} jours"
-        devices_heading: "Ciblage des appareils"
-        devices_intro: "Choisissez les appareils sur lesquels le widget doit apparaître."
-        show_on_desktop: "Afficher sur ordinateur"
-        show_on_mobile: "Afficher sur mobile"
       widget_preview_wrapper:
         heading: "Aperçu du widget"
         panel_hidden: "Panneau masqué jusqu'à ce que la condition de déclenchement soit remplie"
@@ -4768,6 +4735,7 @@ fr:
         select_option: "Choisir une option..."
         option: "Option %{number}"
         custom_field: "Champ personnalisé"
+        topic: "Thème"
         no_image: "Aucune image définie"
         unknown_block_type: "Type de bloc inconnu : %{type}"
       inspector_button:
@@ -4786,6 +4754,13 @@ fr:
         select_all_help_html: "%{label} une clé se terminant par %{suffix} (ex. %{example}) coche et verrouille toutes les cases dont la clé partage son préfixe (%{first}, %{second}). Seule la clé %{suffix} est enregistrée : les règles de segment doivent donc correspondre à elle ou aux clés individuelles."
         required: "Obligatoire"
         required_help: "Les utilisateurs doivent cocher cette case pour envoyer le formulaire"
+      inspector_topic:
+        topic: "Thème"
+        topic_help_html: "La case affiche le nom et la description du thème. Modifiez-les dans %{link}."
+        topics_link: "Paramètres > Thèmes"
+        storage_help: "Cochée, elle enregistre true ; décochée, elle enregistre false. Un abonné qui ne coche pas la case ne reçoit jamais ce thème, même si le thème est envoyé aux abonnés sans valeur."
+        storage_help_tag_html: "Cochée, elle ajoute l'étiquette %{tag}. Décochée, elle n'ajoute rien."
+        existing_subscribers: "Un abonné déjà inscrit garde ses thèmes quand il envoie le formulaire. Il les modifie sur la page de préférences."
       inspector_custom_field:
         field_key: "Clé du champ"
         field_key_help_html: "Enregistré comme %{key}. Lettres minuscules, chiffres et tirets bas uniquement."
@@ -4990,9 +4965,6 @@ fr:
     form_security:
       heading: "Paramètres de sécurité"
       intro: "Protégez votre formulaire contre le spam et les abus."
-    form_trigger:
-      heading: "Paramètres de déclenchement et d'affichage"
-      intro: "Configurez quand et à quelle fréquence le widget apparaît."
     index:
       title: "Formulaires d'inscription"
       meta_description: "Voir tous vos formulaires d'inscription"

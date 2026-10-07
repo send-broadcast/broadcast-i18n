@@ -222,6 +222,8 @@ de:
               must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
             theme_settings:
               style_value_not_allowed: "%{setting} enthält Zeichen, die in einem Stilwert nicht erlaubt sind"
+            trigger_settings:
+              unknown_frequency: "Häufigkeit %{value} ist unbekannt. Verwenden Sie einen dieser Werte: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "Block %{position}: block_type \"%{block_type}\" ist nach dem Absenden nicht erlaubt (verwenden Sie einen von %{allowed})"
               invalid_block: "Block %{position}: %{details}"
@@ -234,6 +236,8 @@ de:
               must_be_an_array_of_options: "muss eine Liste von Optionen sein"
             custom_field_key:
               invalid_field_name: "muss mit einem Buchstaben beginnen und darf nur Kleinbuchstaben, Ziffern und Unterstriche enthalten"
+            topic:
+              no_topics: "fehlt: Dieser Kanal hat noch keine Themen. Legen Sie zuerst eines unter Einstellungen > Themen an."
         segment:
           must_have_at_least_one_rule: "muss mindestens eine Regel enthalten"
         segment_rule:
@@ -3327,6 +3331,7 @@ de:
         dropdown: "Dropdown"
         radio_group: "Optionsgruppe"
         custom_field: "Benutzerdefiniertes Feld"
+        topic: "Thema"
     template:
       content_type:
         blocks: "Blöcke"
@@ -4436,6 +4441,8 @@ de:
         checkbox_hint: "Einwilligung oder Option"
         custom_field: "Benutzerdefiniertes Feld"
         custom_field_hint: "Freitextantwort (ein- oder mehrzeilig)"
+        topic: "Thema"
+        topic_hint: "Anmeldung für ein Abonnenten-Thema"
         dropdown: "Dropdown"
         dropdown_hint: "Einfachauswahl aus einer Liste"
         radio_group: "Optionsgruppe"
@@ -4610,46 +4617,6 @@ de:
         preset_bold: "Kräftig"
         preset_soft: "Sanft"
         preset_dark: "Dunkel"
-      trigger_editor:
-        when_heading: "Wann anzeigen"
-        when_intro: "Legen Sie fest, wann das Widget für Besucher erscheint."
-        inline_note: "(Hinweis: Eingebettete Formulare werden immer sofort angezeigt)"
-        trigger_type: "Auslösertyp"
-        immediate: "Sofort"
-        immediate_help: "Anzeigen, sobald die Seite geladen ist"
-        time_delay: "Zeitverzögerung"
-        time_delay_help: "Nach einer festgelegten Anzahl von Sekunden anzeigen"
-        scroll: "Scrolltiefe in Prozent"
-        scroll_help: "Anzeigen, wenn der Besucher auf der Seite nach unten scrollt"
-        exit_intent: "Exit-Intent"
-        exit_intent_help: "Anzeigen, wenn der Besucher die Seite gerade verlassen will"
-        manual: "Manuell (Klick)"
-        manual_help: "Nur anzeigen, wenn per Code ausgelöst"
-        delay: "Verzögerung (Sekunden)"
-        seconds:
-          one: "%{count} Sekunde"
-          other: "%{count} Sekunden"
-        scroll_percentage: "Scrolltiefe in Prozent"
-        exit_intent_addon: "Auch bei Exit-Intent auslösen"
-        exit_intent_addon_help: "Anzeigen, wenn der Besucher die Seite verlassen will, auch wenn andere Bedingungen noch nicht erfüllt sind"
-        frequency_heading: "Anzeigehäufigkeit"
-        frequency_intro: "Legen Sie fest, wie oft das Widget demselben Besucher angezeigt wird."
-        always: "Bei jedem Seitenaufruf"
-        always_help: "Bei jedem Seitenbesuch anzeigen"
-        once_per_session: "Einmal pro Sitzung"
-        once_per_session_help: "Einmal anzeigen, bis der Browser geschlossen wird"
-        once_per_days: "Einmal alle X Tage"
-        once_per_days_help: "Nach der festgelegten Anzahl Tage erneut anzeigen"
-        once: "Nur einmal"
-        once_help: "Nach dem Schließen nie wieder anzeigen"
-        show_again_after: "Erneut anzeigen nach"
-        days:
-          one: "%{count} Tag"
-          other: "%{count} Tagen"
-        devices_heading: "Gerätesteuerung"
-        devices_intro: "Wählen Sie, auf welchen Geräten das Widget angezeigt wird."
-        show_on_desktop: "Auf Desktop anzeigen"
-        show_on_mobile: "Auf Mobilgeräten anzeigen"
       widget_preview_wrapper:
         heading: "Widget-Vorschau"
         panel_hidden: "Bereich ausgeblendet, bis die Auslösebedingung erfüllt ist"
@@ -4769,6 +4736,7 @@ de:
         select_option: "Option auswählen …"
         option: "Option %{number}"
         custom_field: "Benutzerdefiniertes Feld"
+        topic: "Thema"
         no_image: "Kein Bild festgelegt"
         unknown_block_type: "Unbekannter Blocktyp: %{type}"
       inspector_button:
@@ -4787,6 +4755,13 @@ de:
         select_all_help_html: "%{label} Ein Schlüssel, der auf %{suffix} endet (z. B. %{example}), aktiviert und sperrt jedes Kontrollkästchen, dessen Schlüssel dasselbe Präfix hat (%{first}, %{second}). Gespeichert wird nur der Schlüssel mit %{suffix}, daher sollten Segmentregeln entweder diesen oder die einzelnen Schlüssel abfragen."
         required: "Erforderlich"
         required_help: "Nutzer müssen dies aktivieren, um das Formular abzusenden"
+      inspector_topic:
+        topic: "Thema"
+        topic_help_html: "Das Kontrollkästchen zeigt den Namen und die Beschreibung des Themas. Sie ändern beides unter %{link}."
+        topics_link: "Einstellungen > Themen"
+        storage_help: "Angehakt speichert true, nicht angehakt speichert false. Wer das Kästchen nicht anhakt, erhält dieses Thema nie, auch wenn das Thema an Abonnenten ohne Wert sendet."
+        storage_help_tag_html: "Angehakt fügt das Tag %{tag} hinzu. Nicht angehakt fügt nichts hinzu."
+        existing_subscribers: "Ein Abonnent, der schon in der Liste ist, behält seine Themen, wenn er das Formular absendet. Er ändert sie auf der Einstellungsseite."
       inspector_custom_field:
         field_key: "Feldschlüssel"
         field_key_help_html: "Wird als %{key} gespeichert. Nur Kleinbuchstaben, Ziffern und Unterstriche."
@@ -4991,9 +4966,6 @@ de:
     form_security:
       heading: "Sicherheitseinstellungen"
       intro: "Schützen Sie Ihr Formular vor Spam und Missbrauch."
-    form_trigger:
-      heading: "Auslöser und Anzeige"
-      intro: "Legen Sie fest, wann und wie oft das Widget erscheint."
     index:
       title: "Anmeldeformulare"
       meta_description: "Alle Ihre Anmeldeformulare anzeigen"

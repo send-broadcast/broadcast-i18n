@@ -220,6 +220,8 @@ da:
               must_belong_to_the_same_channel: "skal tilhøre samme kanal"
             theme_settings:
               style_value_not_allowed: "%{setting} indeholder tegn, der ikke er tilladt i en stilværdi"
+            trigger_settings:
+              unknown_frequency: "frekvensen %{value} er ukendt. Brug en af disse værdier: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" er ikke tilladt efter indsendelse (brug en af %{allowed})"
               invalid_block: "blok %{position}: %{details}"
@@ -232,6 +234,8 @@ da:
               must_be_an_array_of_options: "skal være en liste over valgmuligheder"
             custom_field_key:
               invalid_field_name: "skal starte med et bogstav og må kun indeholde små bogstaver, tal og understregninger"
+            topic:
+              no_topics: "mangler: denne kanal har endnu ingen emner. Opret først et under Indstillinger > Emner."
         segment:
           must_have_at_least_one_rule: "skal have mindst én regel"
         segment_rule:
@@ -3315,6 +3319,7 @@ da:
         dropdown: "Rullemenu"
         radio_group: "Radioknapper"
         custom_field: "Brugerdefineret felt"
+        topic: "Emne"
     template:
       content_type:
         blocks: "Blokke"
@@ -4434,6 +4439,8 @@ da:
         checkbox_hint: "Samtykke eller valgmulighed"
         custom_field: "Brugerdefineret felt"
         custom_field_hint: "Fritekstsvar (en eller flere linjer)"
+        topic: "Emne"
+        topic_hint: "Tilmelding til ét abonnentemne"
         dropdown: "Rullemenu"
         dropdown_hint: "Ét valg fra en liste"
         radio_group: "Radioknapper"
@@ -4608,46 +4615,6 @@ da:
         preset_bold: "Markant"
         preset_soft: "Blød"
         preset_dark: "Mørk"
-      trigger_editor:
-        when_heading: "Hvornår den vises"
-        when_intro: "Konfigurer, hvornår widgetten skal vises for besøgende."
-        inline_note: "(Bemærk: indlejrede formularer vises altid med det samme)"
-        trigger_type: "Udløsertype"
-        immediate: "Med det samme"
-        immediate_help: "Vis, så snart siden er indlæst"
-        time_delay: "Tidsforsinkelse"
-        time_delay_help: "Vis efter et angivet antal sekunder"
-        scroll: "Rulleprocent"
-        scroll_help: "Vis, når den besøgende ruller ned ad siden"
-        exit_intent: "Exit intent"
-        exit_intent_help: "Vis, når den besøgende er ved at forlade siden"
-        manual: "Manuel (klik)"
-        manual_help: "Vis kun, når den udløses via kode"
-        delay: "Forsinkelse (sekunder)"
-        seconds:
-          one: "%{count} sekund"
-          other: "%{count} sekunder"
-        scroll_percentage: "Rulleprocent"
-        exit_intent_addon: "Udløs også ved exit intent"
-        exit_intent_addon_help: "Vis, når den besøgende prøver at forlade siden, også selvom de andre betingelser ikke er opfyldt"
-        frequency_heading: "Visningshyppighed"
-        frequency_intro: "Styr, hvor ofte widgetten vises for den samme besøgende."
-        always: "Ved hver sideindlæsning"
-        always_help: "Vis ved hvert sidebesøg"
-        once_per_session: "Én gang pr. session"
-        once_per_session_help: "Vis én gang, indtil browseren lukkes"
-        once_per_days: "Én gang hver X. dag"
-        once_per_days_help: "Vis igen efter det angivne antal dage"
-        once: "Kun én gang"
-        once_help: "Vis aldrig igen, når den er lukket"
-        show_again_after: "Vis igen efter"
-        days:
-          one: "%{count} dag"
-          other: "%{count} dage"
-        devices_heading: "Målretning efter enhed"
-        devices_intro: "Vælg, hvilke enheder der skal vise widgetten."
-        show_on_desktop: "Vis på computer"
-        show_on_mobile: "Vis på mobil"
       widget_preview_wrapper:
         heading: "Forhåndsvisning af widget"
         panel_hidden: "Panelet er skjult, indtil udløserbetingelsen er opfyldt"
@@ -4767,6 +4734,7 @@ da:
         select_option: "Vælg en mulighed..."
         option: "Mulighed %{number}"
         custom_field: "Brugerdefineret felt"
+        topic: "Emne"
         no_image: "Intet billede valgt"
         unknown_block_type: "Ukendt bloktype: %{type}"
       inspector_button:
@@ -4785,6 +4753,13 @@ da:
         select_all_help_html: "%{label} en nøgle, der ender på %{suffix} (f.eks. %{example}), afkrydser og låser alle afkrydsningsfelter, hvis nøgle har samme præfiks (%{first}, %{second}). Kun nøglen med %{suffix} gemmes, så segmentregler bør matche enten den eller de enkelte nøgler."
         required: "Påkrævet"
         required_help: "Brugerne skal afkrydse dette for at indsende"
+      inspector_topic:
+        topic: "Emne"
+        topic_help_html: "Afkrydsningsfeltet viser emnets navn og beskrivelse. Ret dem under %{link}."
+        topics_link: "Indstillinger > Emner"
+        storage_help: "Afkrydset gemmer true, og ikke afkrydset gemmer false. En abonnent, der ikke krydser feltet af, får aldrig dette emne, heller ikke når emnet sendes til abonnenter uden værdi."
+        storage_help_tag_html: "Afkrydset tilføjer tagget %{tag}. Ikke afkrydset tilføjer intet."
+        existing_subscribers: "En abonnent, der allerede er på listen, beholder sine emner, når vedkommende sender formularen. Vedkommende ændrer dem på indstillingssiden."
       inspector_custom_field:
         field_key: "Feltnøgle"
         field_key_help_html: "Gemmes som %{key}. Kun små bogstaver, tal og understregninger."
@@ -4989,9 +4964,6 @@ da:
     form_security:
       heading: "Sikkerhedsindstillinger"
       intro: "Beskyt din formular mod spam og misbrug."
-    form_trigger:
-      heading: "Udløser- og visningsindstillinger"
-      intro: "Konfigurer, hvornår og hvor ofte widgetten vises."
     index:
       title: "Tilmeldingsformularer"
       meta_description: "Se alle dine tilmeldingsformularer"

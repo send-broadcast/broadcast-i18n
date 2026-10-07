@@ -222,6 +222,8 @@ nl:
               must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
             theme_settings:
               style_value_not_allowed: "%{setting} bevat tekens die niet zijn toegestaan in een stijlwaarde"
+            trigger_settings:
+              unknown_frequency: "frequentie %{value} is onbekend. Gebruik een van deze waarden: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" is niet toegestaan na verzending (gebruik een van %{allowed})"
               invalid_block: "blok %{position}: %{details}"
@@ -234,6 +236,8 @@ nl:
               must_be_an_array_of_options: "moet een lijst met opties zijn"
             custom_field_key:
               invalid_field_name: "moet met een letter beginnen en mag alleen kleine letters, cijfers en underscores bevatten"
+            topic:
+              no_topics: "ontbreekt: dit kanaal heeft nog geen onderwerpen. Maak er eerst een aan in Instellingen > Onderwerpen."
         segment:
           must_have_at_least_one_rule: "moet minstens één regel hebben"
         segment_rule:
@@ -3317,6 +3321,7 @@ nl:
         dropdown: "Keuzelijst"
         radio_group: "Keuzerondjes"
         custom_field: "Aangepast veld"
+        topic: "Onderwerp"
     template:
       content_type:
         blocks: "Blokken"
@@ -4436,6 +4441,8 @@ nl:
         checkbox_hint: "Toestemming of optie"
         custom_field: "Aangepast veld"
         custom_field_hint: "Vrij tekstantwoord (één of meer regels)"
+        topic: "Onderwerp"
+        topic_hint: "Aanmelden voor één abonnee-onderwerp"
         dropdown: "Keuzelijst"
         dropdown_hint: "Eén keuze uit een lijst"
         radio_group: "Keuzerondjes"
@@ -4610,46 +4617,6 @@ nl:
         preset_bold: "Krachtig"
         preset_soft: "Zacht"
         preset_dark: "Donker"
-      trigger_editor:
-        when_heading: "Wanneer tonen"
-        when_intro: "Stel in wanneer de widget aan bezoekers verschijnt."
-        inline_note: "(Let op: inline insluitingen verschijnen altijd direct)"
-        trigger_type: "Type trigger"
-        immediate: "Direct"
-        immediate_help: "Tonen zodra de pagina is geladen"
-        time_delay: "Vertraging"
-        time_delay_help: "Tonen na een opgegeven aantal seconden"
-        scroll: "Scrollpercentage"
-        scroll_help: "Tonen als de bezoeker omlaag scrolt"
-        exit_intent: "Exit intent"
-        exit_intent_help: "Tonen als de bezoeker op het punt staat de pagina te verlaten"
-        manual: "Handmatig (klik)"
-        manual_help: "Alleen tonen als het via code wordt gestart"
-        delay: "Vertraging (seconden)"
-        seconds:
-          one: "%{count} seconde"
-          other: "%{count} seconden"
-        scroll_percentage: "Scrollpercentage"
-        exit_intent_addon: "Ook bij exit intent tonen"
-        exit_intent_addon_help: "Tonen als de bezoeker probeert te vertrekken, ook als aan andere voorwaarden nog niet is voldaan"
-        frequency_heading: "Weergavefrequentie"
-        frequency_intro: "Bepaal hoe vaak de widget aan dezelfde bezoeker verschijnt."
-        always: "Bij elke paginalading"
-        always_help: "Bij elk paginabezoek tonen"
-        once_per_session: "Eén keer per sessie"
-        once_per_session_help: "Eén keer tonen totdat de browser wordt gesloten"
-        once_per_days: "Eén keer per X dagen"
-        once_per_days_help: "Opnieuw tonen na het opgegeven aantal dagen"
-        once: "Slechts één keer"
-        once_help: "Nooit meer tonen nadat de widget is gesloten"
-        show_again_after: "Opnieuw tonen na"
-        days:
-          one: "%{count} dag"
-          other: "%{count} dagen"
-        devices_heading: "Apparaten"
-        devices_intro: "Kies op welke apparaten de widget verschijnt."
-        show_on_desktop: "Tonen op desktop"
-        show_on_mobile: "Tonen op mobiel"
       widget_preview_wrapper:
         heading: "Voorbeeld van widget"
         panel_hidden: "Paneel verborgen tot aan de triggervoorwaarde is voldaan"
@@ -4769,6 +4736,7 @@ nl:
         select_option: "Kies een optie..."
         option: "Optie %{number}"
         custom_field: "Aangepast veld"
+        topic: "Onderwerp"
         no_image: "Geen afbeelding ingesteld"
         unknown_block_type: "Onbekend bloktype: %{type}"
       inspector_button:
@@ -4787,6 +4755,13 @@ nl:
         select_all_help_html: "%{label} een sleutel die eindigt op %{suffix} (bijv. %{example}) vinkt elk selectievakje aan waarvan de sleutel hetzelfde voorvoegsel heeft (%{first}, %{second}) en vergrendelt het. Alleen de sleutel met %{suffix} wordt opgeslagen, dus segmentregels moeten op die sleutel of op de afzonderlijke sleutels controleren."
         required: "Vereist"
         required_help: "Gebruikers moeten dit aanvinken om te verzenden"
+      inspector_topic:
+        topic: "Onderwerp"
+        topic_help_html: "Het selectievakje toont de naam en de beschrijving van het onderwerp. Wijzig ze in %{link}."
+        topics_link: "Instellingen > Onderwerpen"
+        storage_help: "Aangevinkt slaat true op en niet aangevinkt slaat false op. Een abonnee die het vakje niet aanvinkt, krijgt dit onderwerp nooit, ook niet als het onderwerp naar abonnees zonder waarde gaat."
+        storage_help_tag_html: "Aangevinkt voegt de tag %{tag} toe. Niet aangevinkt voegt niets toe."
+        existing_subscribers: "Een abonnee die al op de lijst staat, houdt zijn onderwerpen als hij het formulier verstuurt. Hij wijzigt ze op de voorkeurenpagina."
       inspector_custom_field:
         field_key: "Veldsleutel"
         field_key_help_html: "Opgeslagen als %{key}. Alleen kleine letters, cijfers en underscores."
@@ -4991,9 +4966,6 @@ nl:
     form_security:
       heading: "Beveiligingsinstellingen"
       intro: "Bescherm je formulier tegen spam en misbruik."
-    form_trigger:
-      heading: "Trigger- en weergave-instellingen"
-      intro: "Stel in wanneer en hoe vaak de widget verschijnt."
     index:
       title: "Aanmeldformulieren"
       meta_description: "Al je aanmeldformulieren bekijken"

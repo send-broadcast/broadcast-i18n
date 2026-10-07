@@ -221,6 +221,8 @@ es:
               must_belong_to_the_same_channel: "debe pertenecer al mismo canal"
             theme_settings:
               style_value_not_allowed: "%{setting} contiene caracteres que no se permiten en un valor de estilo"
+            trigger_settings:
+              unknown_frequency: "la frecuencia %{value} no es válida. Usa uno de estos valores: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "bloque %{position}: el block_type \"%{block_type}\" no está permitido después del envío (usa uno de %{allowed})"
               invalid_block: "bloque %{position}: %{details}"
@@ -233,6 +235,8 @@ es:
               must_be_an_array_of_options: "debe ser una lista de opciones"
             custom_field_key:
               invalid_field_name: "debe empezar por una letra y contener solo letras minúsculas, números y guiones bajos"
+            topic:
+              no_topics: "falta: este canal todavía no tiene temas. Crea uno primero en Configuración > Temas."
         segment:
           must_have_at_least_one_rule: "debe tener al menos una regla"
         segment_rule:
@@ -3316,6 +3320,7 @@ es:
         dropdown: "Desplegable"
         radio_group: "Opciones de selección única"
         custom_field: "Campo personalizado"
+        topic: "Tema"
     template:
       content_type:
         blocks: "Bloques"
@@ -4435,6 +4440,8 @@ es:
         checkbox_hint: "Consentimiento u opción"
         custom_field: "Campo personalizado"
         custom_field_hint: "Respuesta de texto libre (una o varias líneas)"
+        topic: "Tema"
+        topic_hint: "Suscripción a un tema del suscriptor"
         dropdown: "Desplegable"
         dropdown_hint: "Una sola opción de una lista"
         radio_group: "Opciones de selección única"
@@ -4609,46 +4616,6 @@ es:
         preset_bold: "Llamativo"
         preset_soft: "Suave"
         preset_dark: "Oscuro"
-      trigger_editor:
-        when_heading: "Cuándo mostrar"
-        when_intro: "Configura cuándo debe aparecer el widget a los visitantes."
-        inline_note: "(Nota: los incrustados en línea siempre se muestran de inmediato)"
-        trigger_type: "Tipo de activación"
-        immediate: "Inmediata"
-        immediate_help: "Se muestra en cuanto carga la página"
-        time_delay: "Con retraso"
-        time_delay_help: "Se muestra tras un número de segundos determinado"
-        scroll: "Porcentaje de desplazamiento"
-        scroll_help: "Se muestra cuando el visitante se desplaza por la página"
-        exit_intent: "Intención de salida"
-        exit_intent_help: "Se muestra cuando el visitante está a punto de salir de la página"
-        manual: "Manual (clic)"
-        manual_help: "Solo se muestra cuando se activa mediante código"
-        delay: "Retraso (segundos)"
-        seconds:
-          one: "%{count} segundo"
-          other: "%{count} segundos"
-        scroll_percentage: "Porcentaje de desplazamiento"
-        exit_intent_addon: "Activar también con la intención de salida"
-        exit_intent_addon_help: "Se muestra cuando el visitante intenta salir, aunque no se cumplan las demás condiciones"
-        frequency_heading: "Frecuencia de visualización"
-        frequency_intro: "Controla con qué frecuencia aparece el widget a un mismo visitante."
-        always: "En cada carga de página"
-        always_help: "Se muestra en cada visita a la página"
-        once_per_session: "Una vez por sesión"
-        once_per_session_help: "Se muestra una vez hasta que se cierra el navegador"
-        once_per_days: "Una vez cada X días"
-        once_per_days_help: "Se vuelve a mostrar tras los días indicados"
-        once: "Solo una vez"
-        once_help: "No se vuelve a mostrar después de cerrarlo"
-        show_again_after: "Volver a mostrar después de"
-        days:
-          one: "%{count} día"
-          other: "%{count} días"
-        devices_heading: "Dispositivos de destino"
-        devices_intro: "Elige en qué dispositivos se debe ver el widget."
-        show_on_desktop: "Mostrar en escritorio"
-        show_on_mobile: "Mostrar en móvil"
       widget_preview_wrapper:
         heading: "Vista previa del widget"
         panel_hidden: "Panel oculto hasta que se cumpla la condición de activación"
@@ -4768,6 +4735,7 @@ es:
         select_option: "Selecciona una opción..."
         option: "Opción %{number}"
         custom_field: "Campo personalizado"
+        topic: "Tema"
         no_image: "No hay imagen definida"
         unknown_block_type: "Tipo de bloque desconocido: %{type}"
       inspector_button:
@@ -4786,6 +4754,13 @@ es:
         select_all_help_html: "%{label} una clave que termine en %{suffix} (p. ej., %{example}) marca y bloquea todas las casillas cuya clave comparta su prefijo (%{first}, %{second}). Solo se guarda la clave %{suffix}, así que las reglas de segmento deben coincidir con ella o con las claves individuales."
         required: "Obligatoria"
         required_help: "Los usuarios deben marcarla para enviar"
+      inspector_topic:
+        topic: "Tema"
+        topic_help_html: "La casilla muestra el nombre y la descripción del tema. Cámbialos en %{link}."
+        topics_link: "Configuración > Temas"
+        storage_help: "Marcada guarda true y sin marcar guarda false. Un suscriptor que deja la casilla sin marcar nunca recibe este tema, aunque el tema se envíe a suscriptores sin valor."
+        storage_help_tag_html: "Marcada añade la etiqueta %{tag}. Sin marcar no añade nada."
+        existing_subscribers: "Un suscriptor que ya está en la lista conserva sus temas cuando envía el formulario. Los cambia en la página de preferencias."
       inspector_custom_field:
         field_key: "Clave del campo"
         field_key_help_html: "Se guarda como %{key}. Solo letras minúsculas, números y guiones bajos."
@@ -4990,9 +4965,6 @@ es:
     form_security:
       heading: "Configuración de seguridad"
       intro: "Protege tu formulario del spam y los abusos."
-    form_trigger:
-      heading: "Configuración de activación y visualización"
-      intro: "Configura cuándo y con qué frecuencia aparece el widget."
     index:
       title: "Formularios de suscripción"
       meta_description: "Consulta todos tus formularios de suscripción"

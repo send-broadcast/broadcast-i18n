@@ -221,6 +221,8 @@ fi:
               must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
             theme_settings:
               style_value_not_allowed: "%{setting} sisältää merkkejä, jotka eivät ole sallittuja tyyliarvossa"
+            trigger_settings:
+              unknown_frequency: "tiheys %{value} on tuntematon. Käytä jotakin näistä arvoista: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "lohko %{position}: block_type \"%{block_type}\" ei ole sallittu lähetyksen jälkeen (käytä jotakin näistä: %{allowed})"
               invalid_block: "lohko %{position}: %{details}"
@@ -233,6 +235,8 @@ fi:
               must_be_an_array_of_options: "on oltava vaihtoehtojen luettelo"
             custom_field_key:
               invalid_field_name: "on alettava kirjaimella ja saa sisältää vain pieniä kirjaimia, numeroita ja alaviivoja"
+            topic:
+              no_topics: "puuttuu: tällä kanavalla ei ole vielä aiheita. Luo ensin aihe kohdassa Asetukset > Aiheet."
         segment:
           must_have_at_least_one_rule: "on oltava vähintään yksi sääntö"
         segment_rule:
@@ -3316,6 +3320,7 @@ fi:
         dropdown: "Pudotusvalikko"
         radio_group: "Valintanappiryhmä"
         custom_field: "Mukautettu kenttä"
+        topic: "Aihe"
     template:
       content_type:
         blocks: "Lohkot"
@@ -4435,6 +4440,8 @@ fi:
         checkbox_hint: "Suostumus tai valinta"
         custom_field: "Mukautettu kenttä"
         custom_field_hint: "Vapaa tekstivastaus (yksi- tai monirivinen)"
+        topic: "Aihe"
+        topic_hint: "Tilaajan liittyminen yhteen aiheeseen"
         dropdown: "Pudotusvalikko"
         dropdown_hint: "Yksi valinta luettelosta"
         radio_group: "Valintanappiryhmä"
@@ -4609,46 +4616,6 @@ fi:
         preset_bold: "Rohkea"
         preset_soft: "Pehmeä"
         preset_dark: "Tumma"
-      trigger_editor:
-        when_heading: "Milloin näytetään"
-        when_intro: "Määritä, milloin widget näytetään kävijöille."
-        inline_note: "(Huomaa: upotetut lomakkeet näytetään aina heti)"
-        trigger_type: "Käynnistimen tyyppi"
-        immediate: "Heti"
-        immediate_help: "Näytä heti, kun sivu latautuu"
-        time_delay: "Aikaviive"
-        time_delay_help: "Näytä määritetyn sekuntimäärän jälkeen"
-        scroll: "Vierityksen prosenttiosuus"
-        scroll_help: "Näytä, kun kävijä vierittää sivua alaspäin"
-        exit_intent: "Poistumisaikomus"
-        exit_intent_help: "Näytä, kun kävijä on poistumassa sivulta"
-        manual: "Manuaalinen (napsautus)"
-        manual_help: "Näytä vain ohjelmallisesti käynnistettynä"
-        delay: "Viive (sekuntia)"
-        seconds:
-          one: "%{count} sekunti"
-          other: "%{count} sekuntia"
-        scroll_percentage: "Vierityksen prosenttiosuus"
-        exit_intent_addon: "Käynnistä myös poistumisaikomuksesta"
-        exit_intent_addon_help: "Näytä, kun kävijä yrittää poistua, vaikka muut ehdot eivät olisi täyttyneet"
-        frequency_heading: "Näyttötiheys"
-        frequency_intro: "Hallitse, kuinka usein widget näytetään samalle kävijälle."
-        always: "Jokaisella sivunlatauksella"
-        always_help: "Näytä jokaisella sivukäynnillä"
-        once_per_session: "Kerran istunnossa"
-        once_per_session_help: "Näytä kerran, kunnes selain suljetaan"
-        once_per_days: "Kerran X päivässä"
-        once_per_days_help: "Näytä uudelleen määritetyn päivämäärän jälkeen"
-        once: "Vain kerran"
-        once_help: "Älä näytä enää koskaan, kun se on suljettu"
-        show_again_after: "Näytä uudelleen"
-        days:
-          one: "%{count} päivän kuluttua"
-          other: "%{count} päivän kuluttua"
-        devices_heading: "Laitekohdistus"
-        devices_intro: "Valitse, millä laitteilla widget näytetään."
-        show_on_desktop: "Näytä tietokoneella"
-        show_on_mobile: "Näytä mobiilissa"
       widget_preview_wrapper:
         heading: "Widgetin esikatselu"
         panel_hidden: "Paneeli on piilossa, kunnes käynnistysehto täyttyy"
@@ -4768,6 +4735,7 @@ fi:
         select_option: "Valitse vaihtoehto..."
         option: "Vaihtoehto %{number}"
         custom_field: "Mukautettu kenttä"
+        topic: "Aihe"
         no_image: "Kuvaa ei ole asetettu"
         unknown_block_type: "Tuntematon lohkotyyppi: %{type}"
       inspector_button:
@@ -4786,6 +4754,13 @@ fi:
         select_all_help_html: "%{label} avain, joka päättyy %{suffix} (esim. %{example}), valitsee ja lukitsee kaikki valintaruudut, joiden avaimella on sama etuliite (%{first}, %{second}). Vain %{suffix}-avain tallennetaan, joten segmenttisääntöjen on vastattava joko sitä tai yksittäisiä avaimia."
         required: "Pakollinen"
         required_help: "Käyttäjien on valittava tämä voidakseen lähettää"
+      inspector_topic:
+        topic: "Aihe"
+        topic_help_html: "Valintaruutu näyttää aiheen nimen ja kuvauksen. Muuta niitä kohdassa %{link}."
+        topics_link: "Asetukset > Aiheet"
+        storage_help: "Valittuna tallentuu true ja tyhjänä false. Tilaaja, joka jättää ruudun tyhjäksi, ei koskaan saa tätä aihetta, vaikka aihe lähetetään tilaajille ilman arvoa."
+        storage_help_tag_html: "Valittuna lisätään tunniste %{tag}. Tyhjänä ei lisätä mitään."
+        existing_subscribers: "Listalla jo oleva tilaaja säilyttää aiheensa, kun hän lähettää lomakkeen. Hän muuttaa niitä asetussivulla."
       inspector_custom_field:
         field_key: "Kentän avain"
         field_key_help_html: "Tallennetaan nimellä %{key}. Vain pienet kirjaimet, numerot ja alaviivat."
@@ -4990,9 +4965,6 @@ fi:
     form_security:
       heading: "Tietoturva-asetukset"
       intro: "Suojaa lomakettasi roskapostilta ja väärinkäytöltä."
-    form_trigger:
-      heading: "Käynnistys- ja näyttöasetukset"
-      intro: "Määritä, milloin ja kuinka usein widget näytetään."
     index:
       title: "Tilauslomakkeet"
       meta_description: "Näytä kaikki tilauslomakkeesi"

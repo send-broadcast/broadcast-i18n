@@ -220,6 +220,8 @@ pt-BR:
               must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
             theme_settings:
               style_value_not_allowed: "%{setting} contém caracteres que não são permitidos em um valor de estilo"
+            trigger_settings:
+              unknown_frequency: "a frequência %{value} não é reconhecida. Use um destes valores: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "bloco %{position}: o block_type \"%{block_type}\" não é permitido após o envio (use um de %{allowed})"
               invalid_block: "bloco %{position}: %{details}"
@@ -232,6 +234,8 @@ pt-BR:
               must_be_an_array_of_options: "precisa ser uma lista de opções"
             custom_field_key:
               invalid_field_name: "precisa começar com uma letra e conter apenas letras minúsculas, números e sublinhados"
+            topic:
+              no_topics: "está faltando: este canal ainda não tem tópicos. Crie um primeiro em Configurações > Tópicos."
         segment:
           must_have_at_least_one_rule: "precisa ter pelo menos uma regra"
         segment_rule:
@@ -3315,6 +3319,7 @@ pt-BR:
         dropdown: "Lista suspensa"
         radio_group: "Grupo de opções"
         custom_field: "Campo personalizado"
+        topic: "Tópico"
     template:
       content_type:
         blocks: "Blocos"
@@ -4434,6 +4439,8 @@ pt-BR:
         checkbox_hint: "Consentimento ou opção"
         custom_field: "Campo personalizado"
         custom_field_hint: "Resposta em texto livre (uma ou várias linhas)"
+        topic: "Tópico"
+        topic_hint: "Inscrição em um tópico do assinante"
         dropdown: "Lista suspensa"
         dropdown_hint: "Escolha única em uma lista"
         radio_group: "Grupo de opções"
@@ -4608,46 +4615,6 @@ pt-BR:
         preset_bold: "Marcante"
         preset_soft: "Suave"
         preset_dark: "Escuro"
-      trigger_editor:
-        when_heading: "Quando mostrar"
-        when_intro: "Configure quando o widget deve aparecer para os visitantes."
-        inline_note: "(Observação: formulários incorporados na página sempre aparecem imediatamente)"
-        trigger_type: "Tipo de gatilho"
-        immediate: "Imediato"
-        immediate_help: "Mostrar assim que a página carregar"
-        time_delay: "Atraso"
-        time_delay_help: "Mostrar após um número definido de segundos"
-        scroll: "Porcentagem de rolagem"
-        scroll_help: "Mostrar quando o visitante rolar a página para baixo"
-        exit_intent: "Intenção de saída"
-        exit_intent_help: "Mostrar quando o visitante estiver prestes a sair da página"
-        manual: "Manual (clique)"
-        manual_help: "Mostrar apenas quando acionado via código"
-        delay: "Atraso (segundos)"
-        seconds:
-          one: "%{count} segundo"
-          other: "%{count} segundos"
-        scroll_percentage: "Porcentagem de rolagem"
-        exit_intent_addon: "Também acionar na intenção de saída"
-        exit_intent_addon_help: "Mostrar quando o visitante tentar sair, mesmo que as outras condições não tenham sido atendidas"
-        frequency_heading: "Frequência de exibição"
-        frequency_intro: "Controle com que frequência o widget aparece para o mesmo visitante."
-        always: "Em todo carregamento de página"
-        always_help: "Mostrar em toda visita à página"
-        once_per_session: "Uma vez por sessão"
-        once_per_session_help: "Mostrar uma vez até o navegador ser fechado"
-        once_per_days: "Uma vez a cada X dias"
-        once_per_days_help: "Mostrar novamente após os dias definidos"
-        once: "Só uma vez"
-        once_help: "Nunca mostrar de novo depois de dispensado"
-        show_again_after: "Mostrar novamente após"
-        days:
-          one: "%{count} dia"
-          other: "%{count} dias"
-        devices_heading: "Segmentação por dispositivo"
-        devices_intro: "Escolha quais dispositivos devem ver o widget."
-        show_on_desktop: "Mostrar no desktop"
-        show_on_mobile: "Mostrar no celular"
       widget_preview_wrapper:
         heading: "Pré-visualização do widget"
         panel_hidden: "Painel oculto até que a condição do gatilho seja atendida"
@@ -4767,6 +4734,7 @@ pt-BR:
         select_option: "Selecione uma opção..."
         option: "Opção %{number}"
         custom_field: "Campo personalizado"
+        topic: "Tópico"
         no_image: "Nenhuma imagem definida"
         unknown_block_type: "Tipo de bloco desconhecido: %{type}"
       inspector_button:
@@ -4785,6 +4753,13 @@ pt-BR:
         select_all_help_html: "%{label} uma chave terminada em %{suffix} (ex.: %{example}) marca e bloqueia todas as caixas de seleção cuja chave tenha o mesmo prefixo (%{first}, %{second}). Só a chave %{suffix} é armazenada, então as regras de segmento devem corresponder a ela ou às chaves individuais."
         required: "Obrigatório"
         required_help: "Os usuários precisam marcar esta caixa para enviar"
+      inspector_topic:
+        topic: "Tópico"
+        topic_help_html: "A caixa mostra o nome e a descrição do tópico. Altere-os em %{link}."
+        topics_link: "Configurações > Tópicos"
+        storage_help: "Marcada salva true e desmarcada salva false. Um assinante que deixa a caixa desmarcada nunca recebe este tópico, mesmo quando o tópico é enviado a assinantes sem valor."
+        storage_help_tag_html: "Marcada adiciona a tag %{tag}. Desmarcada não adiciona nada."
+        existing_subscribers: "Um assinante que já está na lista mantém seus tópicos quando envia o formulário. Ele os altera na página de preferências."
       inspector_custom_field:
         field_key: "Chave do campo"
         field_key_help_html: "Armazenado como %{key}. Apenas letras minúsculas, números e sublinhados."
@@ -4989,9 +4964,6 @@ pt-BR:
     form_security:
       heading: "Configurações de segurança"
       intro: "Proteja seu formulário contra spam e abusos."
-    form_trigger:
-      heading: "Configurações de gatilho e exibição"
-      intro: "Configure quando e com que frequência o widget aparece."
     index:
       title: "Formulários de inscrição"
       meta_description: "Veja todos os seus formulários de inscrição"

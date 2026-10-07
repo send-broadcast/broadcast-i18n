@@ -218,6 +218,8 @@ it:
               must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
             theme_settings:
               style_value_not_allowed: "%{setting} contiene caratteri non consentiti in un valore di stile"
+            trigger_settings:
+              unknown_frequency: "la frequenza %{value} non è riconosciuta. Usa uno di questi valori: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blocco %{position}: il block_type \"%{block_type}\" non è consentito dopo l'invio (usa uno tra %{allowed})"
               invalid_block: "blocco %{position}: %{details}"
@@ -230,6 +232,8 @@ it:
               must_be_an_array_of_options: "deve essere un elenco di opzioni"
             custom_field_key:
               invalid_field_name: "deve iniziare con una lettera e contenere solo lettere minuscole, numeri e trattini bassi"
+            topic:
+              no_topics: "manca: questo canale non ha ancora argomenti. Creane uno prima in Impostazioni > Argomenti."
         segment:
           must_have_at_least_one_rule: "deve avere almeno una regola"
         segment_rule:
@@ -3323,6 +3327,7 @@ it:
         dropdown: "Menu a tendina"
         radio_group: "Gruppo di opzioni"
         custom_field: "Campo personalizzato"
+        topic: "Argomento"
     template:
       content_type:
         blocks: "Blocchi"
@@ -4432,6 +4437,8 @@ it:
         checkbox_hint: "Consenso o opzione"
         custom_field: "Campo personalizzato"
         custom_field_hint: "Risposta libera (su una o più righe)"
+        topic: "Argomento"
+        topic_hint: "Iscrizione a un argomento dell'iscritto"
         dropdown: "Menu a tendina"
         dropdown_hint: "Scelta singola da un elenco"
         radio_group: "Gruppo di opzioni"
@@ -4606,46 +4613,6 @@ it:
         preset_bold: "Deciso"
         preset_soft: "Morbido"
         preset_dark: "Scuro"
-      trigger_editor:
-        when_heading: "Quando mostrarlo"
-        when_intro: "Configura quando il widget deve comparire ai visitatori."
-        inline_note: "(Nota: i moduli incorporati nella pagina compaiono sempre subito)"
-        trigger_type: "Tipo di attivazione"
-        immediate: "Immediata"
-        immediate_help: "Mostra appena la pagina viene caricata"
-        time_delay: "Con ritardo"
-        time_delay_help: "Mostra dopo un numero di secondi stabilito"
-        scroll: "Percentuale di scorrimento"
-        scroll_help: "Mostra quando il visitatore scorre la pagina"
-        exit_intent: "Intenzione di uscita"
-        exit_intent_help: "Mostra quando il visitatore sta per lasciare la pagina"
-        manual: "Manuale (clic)"
-        manual_help: "Mostra solo quando viene attivato tramite codice"
-        delay: "Ritardo (secondi)"
-        seconds:
-          one: "%{count} secondo"
-          other: "%{count} secondi"
-        scroll_percentage: "Percentuale di scorrimento"
-        exit_intent_addon: "Attiva anche all'intenzione di uscita"
-        exit_intent_addon_help: "Mostra quando il visitatore prova ad andarsene, anche se le altre condizioni non sono state soddisfatte"
-        frequency_heading: "Frequenza di visualizzazione"
-        frequency_intro: "Controlla quanto spesso il widget compare allo stesso visitatore."
-        always: "A ogni caricamento della pagina"
-        always_help: "Mostra a ogni visita della pagina"
-        once_per_session: "Una volta per sessione"
-        once_per_session_help: "Mostra una volta finché il browser non viene chiuso"
-        once_per_days: "Una volta ogni X giorni"
-        once_per_days_help: "Mostra di nuovo dopo i giorni indicati"
-        once: "Solo una volta"
-        once_help: "Non mostrare più dopo la chiusura"
-        show_again_after: "Mostra di nuovo dopo"
-        days:
-          one: "%{count} giorno"
-          other: "%{count} giorni"
-        devices_heading: "Dispositivi"
-        devices_intro: "Scegli su quali dispositivi mostrare il widget."
-        show_on_desktop: "Mostra su desktop"
-        show_on_mobile: "Mostra su mobile"
       widget_preview_wrapper:
         heading: "Anteprima del widget"
         panel_hidden: "Pannello nascosto finché non si verifica la condizione di attivazione"
@@ -4765,6 +4732,7 @@ it:
         select_option: "Seleziona un'opzione…"
         option: "Opzione %{number}"
         custom_field: "Campo personalizzato"
+        topic: "Argomento"
         no_image: "Nessuna immagine impostata"
         unknown_block_type: "Tipo di blocco sconosciuto: %{type}"
       inspector_button:
@@ -4783,6 +4751,13 @@ it:
         select_all_help_html: "%{label} una chiave che termina con %{suffix} (es. %{example}) spunta e blocca tutte le caselle la cui chiave ha lo stesso prefisso (%{first}, %{second}). Viene salvata solo la chiave %{suffix}, quindi le regole dei segmenti devono corrispondere a questa o alle singole chiavi."
         required: "Obbligatoria"
         required_help: "Gli utenti devono spuntarla per inviare il modulo"
+      inspector_topic:
+        topic: "Argomento"
+        topic_help_html: "La casella mostra il nome e la descrizione dell'argomento. Modificali in %{link}."
+        topics_link: "Impostazioni > Argomenti"
+        storage_help: "Selezionata salva true, non selezionata salva false. Un iscritto che lascia la casella vuota non riceve mai questo argomento, anche quando l'argomento viene inviato agli iscritti senza valore."
+        storage_help_tag_html: "Selezionata aggiunge il tag %{tag}. Non selezionata non aggiunge nulla."
+        existing_subscribers: "Un iscritto già presente nella lista mantiene i suoi argomenti quando invia il modulo. Li modifica nella pagina delle preferenze."
       inspector_custom_field:
         field_key: "Chiave del campo"
         field_key_help_html: "Salvato come %{key}. Solo lettere minuscole, numeri e trattini bassi."
@@ -4987,9 +4962,6 @@ it:
     form_security:
       heading: "Impostazioni di sicurezza"
       intro: "Proteggi il modulo da spam e abusi."
-    form_trigger:
-      heading: "Impostazioni di attivazione e visualizzazione"
-      intro: "Configura quando e con che frequenza compare il widget."
     index:
       title: "Moduli di iscrizione"
       meta_description: "Visualizza tutti i tuoi moduli di iscrizione"

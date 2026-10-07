@@ -238,6 +238,8 @@ en:
               must_belong_to_the_same_channel: "must belong to the same channel"
             theme_settings:
               style_value_not_allowed: "%{setting} contains characters that are not allowed in a style value"
+            trigger_settings:
+              unknown_frequency: "frequency %{value} is not known. Use one of: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" is not allowed after submission (use one of %{allowed})"
               invalid_block: "block %{position}: %{details}"
@@ -250,6 +252,8 @@ en:
               must_be_an_array_of_options: "must be an array of options"
             custom_field_key:
               invalid_field_name: "must start with a letter and contain only lowercase letters, numbers, and underscores"
+            topic:
+              no_topics: "is missing: this channel has no topics yet. Create one in Settings > Topics first."
         segment:
           must_have_at_least_one_rule: "must have at least one rule"
         segment_rule:
@@ -3333,6 +3337,7 @@ en:
         dropdown: "Dropdown"
         radio_group: "Radio group"
         custom_field: "Custom field"
+        topic: "Topic"
     template:
       content_type:
         blocks: "Blocks"
@@ -4452,6 +4457,8 @@ en:
         checkbox_hint: "Consent or option"
         custom_field: "Custom Field"
         custom_field_hint: "Free-text answer (single or multi-line)"
+        topic: "Topic"
+        topic_hint: "Opt in to one subscriber topic"
         dropdown: "Dropdown"
         dropdown_hint: "Single choice from a list"
         radio_group: "Radio Group"
@@ -4626,46 +4633,6 @@ en:
         preset_bold: "Bold"
         preset_soft: "Soft"
         preset_dark: "Dark"
-      trigger_editor:
-        when_heading: "When to Show"
-        when_intro: "Configure when the widget should appear to visitors."
-        inline_note: "(Note: Inline embeds always show immediately)"
-        trigger_type: "Trigger Type"
-        immediate: "Immediate"
-        immediate_help: "Show as soon as the page loads"
-        time_delay: "Time Delay"
-        time_delay_help: "Show after a specified number of seconds"
-        scroll: "Scroll Percentage"
-        scroll_help: "Show when visitor scrolls down the page"
-        exit_intent: "Exit Intent"
-        exit_intent_help: "Show when visitor is about to leave the page"
-        manual: "Manual (Click)"
-        manual_help: "Only show when triggered programmatically"
-        delay: "Delay (seconds)"
-        seconds:
-          one: "%{count} second"
-          other: "%{count} seconds"
-        scroll_percentage: "Scroll percentage"
-        exit_intent_addon: "Also trigger on exit intent"
-        exit_intent_addon_help: "Show when visitor tries to leave, even if other conditions haven't been met"
-        frequency_heading: "Display Frequency"
-        frequency_intro: "Control how often the widget appears to the same visitor."
-        always: "Every page load"
-        always_help: "Show on every page visit"
-        once_per_session: "Once per session"
-        once_per_session_help: "Show once until browser is closed"
-        once_per_days: "Once every X days"
-        once_per_days_help: "Show again after specified days"
-        once: "Only once"
-        once_help: "Never show again after dismissed"
-        show_again_after: "Show again after"
-        days:
-          one: "%{count} day"
-          other: "%{count} days"
-        devices_heading: "Device Targeting"
-        devices_intro: "Choose which devices should see the widget."
-        show_on_desktop: "Show on desktop"
-        show_on_mobile: "Show on mobile"
       widget_preview_wrapper:
         heading: "Widget Preview"
         panel_hidden: "Panel hidden until trigger condition is met"
@@ -4785,6 +4752,7 @@ en:
         select_option: "Select an option..."
         option: "Option %{number}"
         custom_field: "Custom field"
+        topic: "Topic"
         no_image: "No image set"
         unknown_block_type: "Unknown block type: %{type}"
       inspector_button:
@@ -4803,6 +4771,13 @@ en:
         select_all_help_html: "%{label} a key ending in %{suffix} (e.g. %{example}) checks and locks every checkbox whose key shares its prefix (%{first}, %{second}). Only the %{suffix} key is stored, so segment rules should match either it or the individual keys."
         required: "Required"
         required_help: "Users must check this to submit"
+      inspector_topic:
+        topic: "Topic"
+        topic_help_html: "The checkbox shows the topic's name and description. Change them in %{link}."
+        topics_link: "Settings > Topics"
+        storage_help: "Ticked stores true and unticked stores false. A subscriber who leaves the box unticked never gets this topic, even when the topic sends to subscribers with no value."
+        storage_help_tag_html: "Ticked adds the tag %{tag}. Unticked adds nothing."
+        existing_subscribers: "A subscriber who is already on the list keeps their topics when they submit the form. They change them on the preference page."
       inspector_custom_field:
         field_key: "Field Key"
         field_key_help_html: "Stored as %{key}. Lowercase letters, numbers, underscores only."
@@ -5007,9 +4982,6 @@ en:
     form_security:
       heading: "Security Settings"
       intro: "Protect your form from spam and abuse."
-    form_trigger:
-      heading: "Trigger & Display Settings"
-      intro: "Configure when and how often the widget appears."
     index:
       title: "Opt-In Forms"
       meta_description: "View all your opt-in forms"

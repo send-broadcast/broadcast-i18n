@@ -220,6 +220,8 @@ nb:
               must_belong_to_the_same_channel: "må tilhøre samme kanal"
             theme_settings:
               style_value_not_allowed: "%{setting} inneholder tegn som ikke er tillatt i en stilverdi"
+            trigger_settings:
+              unknown_frequency: "frekvensen %{value} er ukjent. Bruk en av disse verdiene: %{allowed}"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blokk %{position}: block_type \"%{block_type}\" er ikke tillatt etter innsending (bruk en av %{allowed})"
               invalid_block: "blokk %{position}: %{details}"
@@ -232,6 +234,8 @@ nb:
               must_be_an_array_of_options: "må være en liste med alternativer"
             custom_field_key:
               invalid_field_name: "må begynne med en bokstav og bare inneholde små bokstaver, tall og understreker"
+            topic:
+              no_topics: "mangler: denne kanalen har ingen emner ennå. Opprett et først under Innstillinger > Emner."
         segment:
           must_have_at_least_one_rule: "må ha minst én regel"
         segment_rule:
@@ -3315,6 +3319,7 @@ nb:
         dropdown: "Nedtrekksliste"
         radio_group: "Radioknappgruppe"
         custom_field: "Egendefinert felt"
+        topic: "Emne"
     template:
       content_type:
         blocks: "Blokker"
@@ -4434,6 +4439,8 @@ nb:
         checkbox_hint: "Samtykke eller valg"
         custom_field: "Egendefinert felt"
         custom_field_hint: "Fritekstsvar (én eller flere linjer)"
+        topic: "Emne"
+        topic_hint: "Påmelding til ett abonnentemne"
         dropdown: "Nedtrekksliste"
         dropdown_hint: "Ett valg fra en liste"
         radio_group: "Radioknappgruppe"
@@ -4608,46 +4615,6 @@ nb:
         preset_bold: "Kraftig"
         preset_soft: "Myk"
         preset_dark: "Mørk"
-      trigger_editor:
-        when_heading: "Når skal det vises"
-        when_intro: "Konfigurer når widgeten skal vises for besøkende."
-        inline_note: "(Merk: Innebygde skjemaer vises alltid umiddelbart)"
-        trigger_type: "Utløsertype"
-        immediate: "Umiddelbart"
-        immediate_help: "Vis så snart siden er lastet inn"
-        time_delay: "Tidsforsinkelse"
-        time_delay_help: "Vis etter et angitt antall sekunder"
-        scroll: "Rulleprosent"
-        scroll_help: "Vis når den besøkende ruller nedover siden"
-        exit_intent: "Forlatelseshensikt"
-        exit_intent_help: "Vis når den besøkende er i ferd med å forlate siden"
-        manual: "Manuelt (klikk)"
-        manual_help: "Vis bare når den utløses programmatisk"
-        delay: "Forsinkelse (sekunder)"
-        seconds:
-          one: "%{count} sekund"
-          other: "%{count} sekunder"
-        scroll_percentage: "Rulleprosent"
-        exit_intent_addon: "Utløs også ved forlatelseshensikt"
-        exit_intent_addon_help: "Vis når den besøkende prøver å forlate siden, selv om de andre betingelsene ikke er oppfylt"
-        frequency_heading: "Visningsfrekvens"
-        frequency_intro: "Styr hvor ofte widgeten vises for den samme besøkende."
-        always: "Ved hver sidelasting"
-        always_help: "Vis ved hvert sidebesøk"
-        once_per_session: "Én gang per økt"
-        once_per_session_help: "Vis én gang til nettleseren lukkes"
-        once_per_days: "Én gang hver X. dag"
-        once_per_days_help: "Vis igjen etter angitt antall dager"
-        once: "Bare én gang"
-        once_help: "Vis aldri igjen etter at den er lukket"
-        show_again_after: "Vis igjen etter"
-        days:
-          one: "%{count} dag"
-          other: "%{count} dager"
-        devices_heading: "Enhetsmålretting"
-        devices_intro: "Velg hvilke enheter som skal se widgeten."
-        show_on_desktop: "Vis på datamaskin"
-        show_on_mobile: "Vis på mobil"
       widget_preview_wrapper:
         heading: "Forhåndsvisning av widget"
         panel_hidden: "Panelet er skjult til utløserbetingelsen er oppfylt"
@@ -4767,6 +4734,7 @@ nb:
         select_option: "Velg et alternativ..."
         option: "Alternativ %{number}"
         custom_field: "Egendefinert felt"
+        topic: "Emne"
         no_image: "Ikke noe bilde angitt"
         unknown_block_type: "Ukjent blokktype: %{type}"
       inspector_button:
@@ -4785,6 +4753,13 @@ nb:
         select_all_help_html: "%{label} en nøkkel som slutter på %{suffix} (f.eks. %{example}) krysser av og låser alle avkrysningsbokser med nøkler som har samme prefiks (%{first}, %{second}). Bare %{suffix}-nøkkelen lagres, så segmentregler bør samsvare med den eller med de enkelte nøklene."
         required: "Påkrevd"
         required_help: "Brukerne må krysse av for å sende inn"
+      inspector_topic:
+        topic: "Emne"
+        topic_help_html: "Avkrysningsboksen viser emnets navn og beskrivelse. Endre dem under %{link}."
+        topics_link: "Innstillinger > Emner"
+        storage_help: "Avkrysset lagrer true, og ikke avkrysset lagrer false. En abonnent som ikke krysser av i boksen, får aldri dette emnet, heller ikke når emnet sendes til abonnenter uten verdi."
+        storage_help_tag_html: "Avkrysset legger til taggen %{tag}. Ikke avkrysset legger ikke til noe."
+        existing_subscribers: "En abonnent som allerede er på listen, beholder emnene sine når vedkommende sender skjemaet. Vedkommende endrer dem på innstillingssiden."
       inspector_custom_field:
         field_key: "Feltnøkkel"
         field_key_help_html: "Lagres som %{key}. Bare små bokstaver, tall og understreker."
@@ -4989,9 +4964,6 @@ nb:
     form_security:
       heading: "Sikkerhetsinnstillinger"
       intro: "Beskytt skjemaet ditt mot spam og misbruk."
-    form_trigger:
-      heading: "Innstillinger for utløser og visning"
-      intro: "Konfigurer når og hvor ofte widgeten vises."
     index:
       title: "Påmeldingsskjemaer"
       meta_description: "Vis alle påmeldingsskjemaene dine"
