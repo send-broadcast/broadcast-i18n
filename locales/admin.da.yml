@@ -7519,6 +7519,11 @@ da:
           desktop: "Computer"
           mobile: "Mobil"
         frame_title: "Forhåndsvisning af afmeldingsside"
+        groups:
+          unsubscribe: "Afmelding"
+          topics: "Emnemails"
+          preferences: "Indstillinger"
+        needs_confirmation: "Vises ikke for abonnenter, så længe \"Kræv bekræftelse\" er slået fra."
       update:
         updated: "Afmeldingssiden er opdateret"
         demo_mode: "Demotilstand: ændringer gemmes ikke"

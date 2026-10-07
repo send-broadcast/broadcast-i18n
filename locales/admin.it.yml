@@ -7517,6 +7517,11 @@ it:
           desktop: "Desktop"
           mobile: "Mobile"
         frame_title: "Anteprima della pagina di disiscrizione"
+        groups:
+          unsubscribe: "Disiscrizione"
+          topics: "Email per argomento"
+          preferences: "Preferenze"
+        needs_confirmation: "Gli iscritti non la vedono finché \"Richiedi conferma\" è disattivato."
       update:
         updated: "Pagina di disiscrizione aggiornata"
         demo_mode: "Modalità demo: modifiche non salvate"

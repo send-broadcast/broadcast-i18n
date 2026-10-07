@@ -7519,6 +7519,11 @@ nb:
           desktop: "Datamaskin"
           mobile: "Mobil"
         frame_title: "Forhåndsvisning av avmeldingsside"
+        groups:
+          unsubscribe: "Avmelding"
+          topics: "Emne-e-post"
+          preferences: "Innstillinger"
+        needs_confirmation: "Vises ikke for abonnenter så lenge \"Krev bekreftelse\" er slått av."
       update:
         updated: "Avmeldingssiden er oppdatert"
         demo_mode: "Demomodus: endringer lagres ikke"

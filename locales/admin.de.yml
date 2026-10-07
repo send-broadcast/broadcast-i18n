@@ -7521,6 +7521,11 @@ de:
           desktop: "Desktop"
           mobile: "Mobil"
         frame_title: "Vorschau der Abmeldeseite"
+        groups:
+          unsubscribe: "Abmeldung"
+          topics: "Themen-E-Mails"
+          preferences: "Einstellungen"
+        needs_confirmation: "Für Abonnenten nicht sichtbar, solange \"Bestätigung verlangen\" aus ist."
       update:
         updated: "Abmeldeseite aktualisiert"
         demo_mode: "Demomodus: Änderungen nicht gespeichert"

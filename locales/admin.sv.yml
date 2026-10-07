@@ -7519,6 +7519,11 @@ sv:
           desktop: "Dator"
           mobile: "Mobil"
         frame_title: "Förhandsvisning av avregistreringssida"
+        groups:
+          unsubscribe: "Avregistrering"
+          topics: "Ämnesmejl"
+          preferences: "Inställningar"
+        needs_confirmation: "Visas inte för prenumeranter så länge \"Kräv bekräftelse\" är av."
       update:
         updated: "Avregistreringssidan har uppdaterats"
         demo_mode: "Demoläge: ändringar sparades inte"

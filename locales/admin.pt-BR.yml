@@ -7519,6 +7519,11 @@ pt-BR:
           desktop: "Desktop"
           mobile: "Celular"
         frame_title: "Pré-visualização da página de cancelamento"
+        groups:
+          unsubscribe: "Cancelamento"
+          topics: "E-mails por tópico"
+          preferences: "Preferências"
+        needs_confirmation: "Os assinantes não a veem enquanto \"Exigir confirmação\" estiver desativado."
       update:
         updated: "Página de cancelamento atualizada"
         demo_mode: "Modo de demonstração: alterações não salvas"

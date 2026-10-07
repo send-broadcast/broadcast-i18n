@@ -7520,6 +7520,11 @@ fr:
           desktop: "Ordinateur"
           mobile: "Mobile"
         frame_title: "Aperçu de la page de désabonnement"
+        groups:
+          unsubscribe: "Désabonnement"
+          topics: "E-mails par thème"
+          preferences: "Préférences"
+        needs_confirmation: "Non affichée aux abonnés tant que « Exiger une confirmation » est désactivé."
       update:
         updated: "Page de désabonnement mise à jour"
         demo_mode: "Mode démonstration : modifications non enregistrées"

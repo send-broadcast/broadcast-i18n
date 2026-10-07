@@ -7759,6 +7759,11 @@ pl:
           desktop: "Komputer"
           mobile: "Telefon"
         frame_title: "Podgląd strony wypisania"
+        groups:
+          unsubscribe: "Wypisanie"
+          topics: "E-maile tematyczne"
+          preferences: "Preferencje"
+        needs_confirmation: "Subskrybenci jej nie widzą, dopóki opcja \"Wymagaj potwierdzenia\" jest wyłączona."
       update:
         updated: "Zaktualizowano stronę wypisania"
         demo_mode: "Tryb demo: zmiany nie zostały zapisane"

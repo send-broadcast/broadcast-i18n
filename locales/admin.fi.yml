@@ -7520,6 +7520,11 @@ fi:
           desktop: "Työpöytä"
           mobile: "Mobiili"
         frame_title: "Peruutussivun esikatselu"
+        groups:
+          unsubscribe: "Tilauksen peruutus"
+          topics: "Aihesähköpostit"
+          preferences: "Asetukset"
+        needs_confirmation: "Ei näy tilaajille, kun \"Vaadi vahvistus\" on pois päältä."
       update:
         updated: "Peruutussivu päivitetty"
         demo_mode: "Esittelytila: muutoksia ei tallennettu"

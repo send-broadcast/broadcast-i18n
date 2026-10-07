@@ -7521,6 +7521,11 @@ nl:
           desktop: "Desktop"
           mobile: "Mobiel"
         frame_title: "Voorbeeld van de afmeldpagina"
+        groups:
+          unsubscribe: "Afmelden"
+          topics: "Onderwerp-e-mails"
+          preferences: "Voorkeuren"
+        needs_confirmation: "Abonnees zien deze pagina niet zolang \"Bevestiging vragen\" uit staat."
       update:
         updated: "Afmeldpagina bijgewerkt"
         demo_mode: "Demomodus: wijzigingen niet opgeslagen"

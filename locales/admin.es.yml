@@ -7520,6 +7520,11 @@ es:
           desktop: "Escritorio"
           mobile: "Móvil"
         frame_title: "Vista previa de la página de baja"
+        groups:
+          unsubscribe: "Baja"
+          topics: "Correos por tema"
+          preferences: "Preferencias"
+        needs_confirmation: "Los suscriptores no la ven mientras \"Pedir confirmación\" esté desactivado."
       update:
         updated: "Página de baja actualizada"
         demo_mode: "Modo de demostración: los cambios no se guardaron"
