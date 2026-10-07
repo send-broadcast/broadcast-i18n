@@ -7512,8 +7512,6 @@ es:
           unsubscribed: "Baja realizada"
           stayed: "Sigue suscrito"
           resubscribed: "Nueva suscripción"
-          topic_confirm: "Confirmación de tema"
-          topic_unsubscribed: "Tema desactivado"
           preferences: "Preferencias"
         preview_width: "Ancho de la vista previa"
         devices:
@@ -7523,7 +7521,6 @@ es:
         groups:
           unsubscribe: "Baja"
           topics: "Correos por tema"
-          preferences: "Preferencias"
         needs_confirmation: "Los suscriptores no la ven mientras \"Pedir confirmación\" esté desactivado."
       update:
         updated: "Página de baja actualizada"

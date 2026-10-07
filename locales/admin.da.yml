@@ -7511,8 +7511,6 @@ da:
           unsubscribed: "Afmeldt"
           stayed: "Forblev"
           resubscribed: "Gentilmeldt"
-          topic_confirm: "Bekræft emne"
-          topic_unsubscribed: "Emne fravalgt"
           preferences: "Indstillinger"
         preview_width: "Bredde på forhåndsvisning"
         devices:
@@ -7522,7 +7520,6 @@ da:
         groups:
           unsubscribe: "Afmelding"
           topics: "Emnemails"
-          preferences: "Indstillinger"
         needs_confirmation: "Vises ikke for abonnenter, så længe \"Kræv bekræftelse\" er slået fra."
       update:
         updated: "Afmeldingssiden er opdateret"

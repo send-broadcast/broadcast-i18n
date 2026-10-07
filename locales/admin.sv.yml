@@ -7511,8 +7511,6 @@ sv:
           unsubscribed: "Avregistrerad"
           stayed: "Stannade kvar"
           resubscribed: "Återregistrerad"
-          topic_confirm: "Bekräfta ämne"
-          topic_unsubscribed: "Ämne avstängt"
           preferences: "Inställningar"
         preview_width: "Förhandsvisningsbredd"
         devices:
@@ -7522,7 +7520,6 @@ sv:
         groups:
           unsubscribe: "Avregistrering"
           topics: "Ämnesmejl"
-          preferences: "Inställningar"
         needs_confirmation: "Visas inte för prenumeranter så länge \"Kräv bekräftelse\" är av."
       update:
         updated: "Avregistreringssidan har uppdaterats"

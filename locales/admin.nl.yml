@@ -7513,8 +7513,6 @@ nl:
           unsubscribed: "Afgemeld"
           stayed: "Aangemeld gebleven"
           resubscribed: "Opnieuw aangemeld"
-          topic_confirm: "Onderwerp bevestigen"
-          topic_unsubscribed: "Onderwerp uitgezet"
           preferences: "Voorkeuren"
         preview_width: "Breedte van het voorbeeld"
         devices:
@@ -7524,7 +7522,6 @@ nl:
         groups:
           unsubscribe: "Afmelden"
           topics: "Onderwerp-e-mails"
-          preferences: "Voorkeuren"
         needs_confirmation: "Abonnees zien deze pagina niet zolang \"Bevestiging vragen\" uit staat."
       update:
         updated: "Afmeldpagina bijgewerkt"

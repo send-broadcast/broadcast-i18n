@@ -7513,8 +7513,6 @@ de:
           unsubscribed: "Abgemeldet"
           stayed: "Geblieben"
           resubscribed: "Wieder angemeldet"
-          topic_confirm: "Thema bestätigen"
-          topic_unsubscribed: "Thema abgemeldet"
           preferences: "Einstellungen"
         preview_width: "Vorschaubreite"
         devices:
@@ -7524,7 +7522,6 @@ de:
         groups:
           unsubscribe: "Abmeldung"
           topics: "Themen-E-Mails"
-          preferences: "Einstellungen"
         needs_confirmation: "Für Abonnenten nicht sichtbar, solange \"Bestätigung verlangen\" aus ist."
       update:
         updated: "Abmeldeseite aktualisiert"

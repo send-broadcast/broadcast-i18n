@@ -7509,8 +7509,6 @@ it:
           unsubscribed: "Disiscritto"
           stayed: "Rimasto"
           resubscribed: "Iscritto di nuovo"
-          topic_confirm: "Conferma argomento"
-          topic_unsubscribed: "Argomento disattivato"
           preferences: "Preferenze"
         preview_width: "Larghezza dell’anteprima"
         devices:
@@ -7520,7 +7518,6 @@ it:
         groups:
           unsubscribe: "Disiscrizione"
           topics: "Email per argomento"
-          preferences: "Preferenze"
         needs_confirmation: "Gli iscritti non la vedono finché \"Richiedi conferma\" è disattivato."
       update:
         updated: "Pagina di disiscrizione aggiornata"

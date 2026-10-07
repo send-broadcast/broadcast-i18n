@@ -7512,8 +7512,6 @@ fi:
           unsubscribed: "Peruttu"
           stayed: "Jatkaa"
           resubscribed: "Tilattu uudelleen"
-          topic_confirm: "Aiheen vahvistus"
-          topic_unsubscribed: "Aihe poistettu"
           preferences: "Asetukset"
         preview_width: "Esikatselun leveys"
         devices:
@@ -7523,7 +7521,6 @@ fi:
         groups:
           unsubscribe: "Tilauksen peruutus"
           topics: "Aihesähköpostit"
-          preferences: "Asetukset"
         needs_confirmation: "Ei näy tilaajille, kun \"Vaadi vahvistus\" on pois päältä."
       update:
         updated: "Peruutussivu päivitetty"

@@ -7587,13 +7587,10 @@ en:
           unsubscribed: "Unsubscribed"
           stayed: "Stayed"
           resubscribed: "Resubscribed"
-          topic_confirm: "Topic confirm"
-          topic_unsubscribed: "Topic unsubscribed"
           preferences: "Preferences"
         groups:
           unsubscribe: "Unsubscribe"
           topics: "Topic emails"
-          preferences: "Preferences"
         needs_confirmation: "Not shown to subscribers while Require confirmation is off."
         preview_width: "Preview width"
         devices:

@@ -7511,8 +7511,6 @@ pt-BR:
           unsubscribed: "Cancelada"
           stayed: "Permaneceu"
           resubscribed: "Nova inscrição"
-          topic_confirm: "Confirmação de tópico"
-          topic_unsubscribed: "Tópico desativado"
           preferences: "Preferências"
         preview_width: "Largura da pré-visualização"
         devices:
@@ -7522,7 +7520,6 @@ pt-BR:
         groups:
           unsubscribe: "Cancelamento"
           topics: "E-mails por tópico"
-          preferences: "Preferências"
         needs_confirmation: "Os assinantes não a veem enquanto \"Exigir confirmação\" estiver desativado."
       update:
         updated: "Página de cancelamento atualizada"

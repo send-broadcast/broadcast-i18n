@@ -7511,8 +7511,6 @@ nb:
           unsubscribed: "Avmeldt"
           stayed: "Ble"
           resubscribed: "Påmeldt igjen"
-          topic_confirm: "Bekreft emne"
-          topic_unsubscribed: "Emne avslått"
           preferences: "Innstillinger"
         preview_width: "Bredde på forhåndsvisning"
         devices:
@@ -7522,7 +7520,6 @@ nb:
         groups:
           unsubscribe: "Avmelding"
           topics: "Emne-e-post"
-          preferences: "Innstillinger"
         needs_confirmation: "Vises ikke for abonnenter så lenge \"Krev bekreftelse\" er slått av."
       update:
         updated: "Avmeldingssiden er oppdatert"
