@@ -2195,6 +2195,9 @@ pt-BR:
           label: "Tamanho da fonte"
         color:
           label: "Cor"
+        preferencesLabel:
+          label: "Texto do link para a página de preferências"
+          placeholder: "Deixe em branco para não mostrar o link para a página de preferências"
       theme:
         width:
           label: "Largura do e-mail (px)"
@@ -2574,6 +2577,8 @@ pt-BR:
         save_draft: "Salvar como rascunho"
         send_hint_html: "Para enviar ou agendar, acesse a %{link}."
         details_page: "página de detalhes da campanha"
+        all_subscribers_label: "Todos os assinantes"
+        topic: "Tópico: %{name}"
       settings_tab:
         tracking_title: "Opções de rastreamento"
         tracking_subtitle: "Acompanhe o engajamento com sua campanha"
@@ -2636,6 +2641,10 @@ pt-BR:
         create_segment: "Criar um segmento"
         tip_label: "Dica:"
         tip_html: "%{label} Você pode selecionar vários segmentos. Os assinantes que corresponderem a qualquer segmento selecionado receberão a campanha. Os segmentos são atualizados automaticamente com base nas suas regras."
+        topic_title: "Tópico"
+        topic_subtitle: "Envie só para assinantes que recebem este tópico. O link de cancelamento então desativa só este tópico, a menos que o canal cancele a inscrição em tudo."
+        no_topic: "Sem tópico: todo o público acima"
+        manage_topics: "Gerenciar tópicos"
       content_tab:
         code: "Código"
         preview: "Pré-visualização"
@@ -3695,6 +3704,8 @@ pt-BR:
       subscriber_count:
         one: "(%{formatted} assinante)"
         other: "(%{formatted} assinantes)"
+      all_subscribers_label: "Todos os assinantes"
+      topic: "Tópico: %{name}"
     send_test_email:
       sending: "Enviando..."
       failed: "Não foi possível enviar o e-mail de teste"
@@ -4176,6 +4187,7 @@ pt-BR:
           channel_info: "Informações do canal"
           name: "Nome:"
           created: "Criado em:"
+          topics: "Tópicos"
         templates:
           title: "Modelos"
           subtitle: "Designs de e-mail reutilizáveis"
@@ -5755,6 +5767,9 @@ pt-BR:
         transactional: "Transacional (outbound)"
         bulk: "Em massa (broadcast)"
       submit: "Atualizar"
+      topic: "Tópico"
+      topic_hint: "As etapas de e-mail só chegam aos assinantes que recebem este tópico; os outros as pulam e seguem na sequência. O link de cancelamento em um e-mail de sequência sempre cancela a inscrição em tudo."
+      no_topic: "Sem tópico: todos os assinantes inscritos"
     topbar:
       go_back: "Voltar"
       back: "Voltar à sequência"
@@ -7452,6 +7467,9 @@ pt-BR:
           topic_unsubscribed:
             label: "Página de tópico desativado"
             description: "Exibida depois de desativar um tópico. O assinante continua inscrito."
+          preferences:
+            label: "Página de preferências"
+            description: "Onde os assinantes escolhem seus tópicos ({{ preferences_url }})."
         fields:
           heading: "Título"
           message: "Mensagem"
@@ -7460,6 +7478,10 @@ pt-BR:
           resubscribe_button: "Botão de nova inscrição"
           unsubscribe_button: "Botão de cancelamento"
           everything_button: "Botão de cancelar a inscrição em tudo"
+          preferences_link: "Link para a página de preferências"
+          save_button: "Botão Salvar"
+          saved_message: "Mensagem de salvo"
+          unsubscribed_message: "Mensagem quando cancelado"
         legal_links: "Links legais"
         legal_links_help: "Exibidos no rodapé de todas as páginas de cancelamento, quando definidos."
         privacy_policy_url: "URL da política de privacidade"
@@ -7491,6 +7513,7 @@ pt-BR:
           resubscribed: "Nova inscrição"
           topic_confirm: "Confirmação de tópico"
           topic_unsubscribed: "Tópico desativado"
+          preferences: "Preferências"
         preview_width: "Largura da pré-visualização"
         devices:
           desktop: "Desktop"
@@ -7500,6 +7523,64 @@ pt-BR:
         updated: "Página de cancelamento atualizada"
         demo_mode: "Modo de demonstração: alterações não salvas"
         not_saved: "Não salvo: %{errors}"
+    topics:
+      index:
+        title: "Tópicos"
+        intro: "Um tópico é um tipo de e-mail que os assinantes podem escolher receber ou não, como webinars ou ofertas. Cada tópico lê um campo personalizado ou uma tag que você escolhe. Uma campanha ou sequência enviada a um tópico só chega aos assinantes que o recebem."
+        new_topic: "Novo tópico"
+        empty: "Ainda não há tópicos. Crie um para cada tipo de e-mail que seus assinantes podem escolher."
+        topic: "Tópico"
+        reads: "Lê"
+        tag: "Tag"
+        count_on: "Sim"
+        count_off: "Não"
+        count_unset: "Sem valor"
+        count_receiving: "Recebem"
+        not_applicable: "n/d"
+        actions: "Ações"
+        unset_receives: "Sem valor: recebe"
+        unset_does_not_receive: "Sem valor: não recebe"
+        hidden_on_page: "Oculto na página de preferências"
+        move_up: "Mover para cima"
+        move_down: "Mover para baixo"
+        edit: "Editar"
+        delete: "Excluir"
+        delete_confirm: "Excluir o tópico %{name}? Os dados dos assinantes não mudam."
+        counts_note: "As contagens são de assinantes ativos. Um tópico por tag não tem um Não explícito: um assinante sem a tag não o recebe."
+      new:
+        title: "Novo tópico"
+      edit:
+        title: "Editar %{name}"
+      create:
+        created: "Tópico %{name} criado."
+      update:
+        updated: "Tópico %{name} atualizado."
+      destroy:
+        deleted: "Tópico %{name} excluído."
+        in_use: "%{name} é usado por uma campanha ou sequência, por isso não pode ser excluído. Remova-o delas primeiro."
+      form:
+        name: "Nome"
+        name_help: "Os assinantes veem este nome nas páginas de preferências e de cancelamento."
+        description: "Descrição"
+        description_help: "Opcional. Exibida abaixo do nome na página de preferências."
+        storage: "Onde o valor fica salvo"
+        storage_custom_data: "Um campo personalizado (sim, não ou sem valor)"
+        custom_data_key: "Campo personalizado"
+        custom_data_key_help: "Um nome de campo de nível superior, como sub_webinars. O valor true ou 1 significa sim; qualquer outro valor significa não. O Broadcast nunca preenche este campo por você."
+        storage_tag: "Uma tag (com ou sem a tag)"
+        tag_name: "Tag"
+        tag_help: "Assinantes com a tag recebem o tópico. Cancelar a inscrição no tópico remove a tag."
+        unset: "Assinantes sem valor"
+        unset_help: "O que acontece quando o campo de um assinante não tem valor. Um sim ou não definido sempre vale. Escolha com cuidado se você só pode enviar e-mails a quem aceitou este tópico."
+        unset_false: "Não receber este tópico"
+        unset_true: "Receber este tópico"
+        unset_effect:
+          one: "1 assinante ativo não tem valor para este tópico agora."
+          other: "%{count} assinantes ativos não têm valor para este tópico agora."
+        visible: "Mostrar na página de preferências"
+        visible_help: "Os assinantes podem ativar e desativar este tópico sozinhos."
+        save: "Salvar tópico"
+        cancel: "Cancelar"
 
   shared:
     confirm_dialog:
@@ -7904,6 +7985,7 @@ pt-BR:
         redacted: "Anonimizado"
         activity: "Atividade"
         topic_unsubscribed: "Tópico desativado"
+        preferences_updated: "Preferências"
       by: "por %{name}"
     index:
       empty: "Nenhuma atividade ainda"

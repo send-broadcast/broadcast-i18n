@@ -2197,6 +2197,9 @@ nl:
           label: "Lettergrootte"
         color:
           label: "Kleur"
+        preferencesLabel:
+          label: "Linktekst naar de voorkeurenpagina"
+          placeholder: "Laat leeg voor geen link naar de voorkeurenpagina"
       theme:
         width:
           label: "E-mailbreedte (px)"
@@ -2576,6 +2579,8 @@ nl:
         save_draft: "Opslaan als concept"
         send_hint_html: "Ga naar de %{link} om te verzenden of in te plannen."
         details_page: "detailpagina van de campagne"
+        all_subscribers_label: "Alle abonnees"
+        topic: "Onderwerp: %{name}"
       settings_tab:
         tracking_title: "Trackingopties"
         tracking_subtitle: "Volg de betrokkenheid bij je campagne"
@@ -2638,6 +2643,10 @@ nl:
         create_segment: "Een segment aanmaken"
         tip_label: "Tip:"
         tip_html: "%{label} Je kunt meerdere segmenten kiezen. Abonnees die in een van de gekozen segmenten vallen, ontvangen de campagne. Segmenten worden automatisch bijgewerkt op basis van je regels."
+        topic_title: "Onderwerp"
+        topic_subtitle: "Verzend alleen naar abonnees die dit onderwerp ontvangen. De afmeldlink zet dan alleen dit onderwerp uit, tenzij het kanaal overal voor afmeldt."
+        no_topic: "Geen onderwerp: iedereen in de doelgroep hierboven"
+        manage_topics: "Onderwerpen beheren"
       content_tab:
         code: "Code"
         preview: "Voorbeeld"
@@ -3697,6 +3706,8 @@ nl:
       subscriber_count:
         one: "(%{formatted} abonnee)"
         other: "(%{formatted} abonnees)"
+      all_subscribers_label: "Alle abonnees"
+      topic: "Onderwerp: %{name}"
     send_test_email:
       sending: "Verzenden..."
       failed: "Testmail verzenden mislukt"
@@ -4178,6 +4189,7 @@ nl:
           channel_info: "Kanaalinfo"
           name: "Naam:"
           created: "Aangemaakt:"
+          topics: "Onderwerpen"
         templates:
           title: "Sjablonen"
           subtitle: "Herbruikbare e-mailontwerpen"
@@ -5757,6 +5769,9 @@ nl:
         transactional: "Transactioneel (outbound)"
         bulk: "Bulk (broadcast)"
       submit: "Bijwerken"
+      topic: "Onderwerp"
+      topic_hint: "E-mailstappen bereiken alleen abonnees die dit onderwerp ontvangen; de anderen slaan ze over en gaan verder door de reeks. De afmeldlink in een reeks-e-mail meldt altijd overal voor af."
+      no_topic: "Geen onderwerp: alle ingeschreven abonnees"
     topbar:
       go_back: "Ga terug"
       back: "Terug naar reeks"
@@ -7454,6 +7469,9 @@ nl:
           topic_unsubscribed:
             label: "Pagina na uitzetten onderwerp"
             description: "Wordt getoond nadat een onderwerp is uitgezet. De abonnee blijft aangemeld."
+          preferences:
+            label: "Voorkeurenpagina"
+            description: "Waar abonnees hun onderwerpen kiezen ({{ preferences_url }})."
         fields:
           heading: "Kop"
           message: "Bericht"
@@ -7462,6 +7480,10 @@ nl:
           resubscribe_button: "Knop om opnieuw aan te melden"
           unsubscribe_button: "Afmeldknop"
           everything_button: "Knop \"Overal voor afmelden\""
+          preferences_link: "Link naar de voorkeurenpagina"
+          save_button: "Opslaan-knop"
+          saved_message: "Opgeslagen-melding"
+          unsubscribed_message: "Melding bij afmelding"
         legal_links: "Juridische links"
         legal_links_help: "Worden onderaan elke afmeldpagina getoond als ze zijn ingevuld."
         privacy_policy_url: "URL van het privacybeleid"
@@ -7493,6 +7515,7 @@ nl:
           resubscribed: "Opnieuw aangemeld"
           topic_confirm: "Onderwerp bevestigen"
           topic_unsubscribed: "Onderwerp uitgezet"
+          preferences: "Voorkeuren"
         preview_width: "Breedte van het voorbeeld"
         devices:
           desktop: "Desktop"
@@ -7502,6 +7525,64 @@ nl:
         updated: "Afmeldpagina bijgewerkt"
         demo_mode: "Demomodus: wijzigingen niet opgeslagen"
         not_saved: "Niet opgeslagen: %{errors}"
+    topics:
+      index:
+        title: "Onderwerpen"
+        intro: "Een onderwerp is een soort e-mail waarvoor abonnees kunnen kiezen, zoals webinars of aanbiedingen. Elk onderwerp leest een aangepast veld of een tag die je kiest. Een campagne of reeks naar een onderwerp bereikt alleen de abonnees die het ontvangen."
+        new_topic: "Nieuw onderwerp"
+        empty: "Nog geen onderwerpen. Maak er een voor elke soort e-mail die je abonnees kunnen kiezen."
+        topic: "Onderwerp"
+        reads: "Leest"
+        tag: "Tag"
+        count_on: "Ja"
+        count_off: "Nee"
+        count_unset: "Geen waarde"
+        count_receiving: "Ontvangen het"
+        not_applicable: "n.v.t."
+        actions: "Acties"
+        unset_receives: "Geen waarde: ontvangt"
+        unset_does_not_receive: "Geen waarde: ontvangt niet"
+        hidden_on_page: "Verborgen op de voorkeurenpagina"
+        move_up: "Omhoog"
+        move_down: "Omlaag"
+        edit: "Bewerken"
+        delete: "Verwijderen"
+        delete_confirm: "Het onderwerp %{name} verwijderen? De gegevens van abonnees veranderen niet."
+        counts_note: "De aantallen gaan over actieve abonnees. Een tag-onderwerp heeft geen expliciet Nee: een abonnee zonder de tag ontvangt het niet."
+      new:
+        title: "Nieuw onderwerp"
+      edit:
+        title: "%{name} bewerken"
+      create:
+        created: "Onderwerp %{name} aangemaakt."
+      update:
+        updated: "Onderwerp %{name} bijgewerkt."
+      destroy:
+        deleted: "Onderwerp %{name} verwijderd."
+        in_use: "%{name} wordt gebruikt door een campagne of reeks en kan daarom niet worden verwijderd. Haal het daar eerst weg."
+      form:
+        name: "Naam"
+        name_help: "Abonnees zien deze naam op de voorkeuren- en afmeldpagina."
+        description: "Beschrijving"
+        description_help: "Optioneel. Staat onder de naam op de voorkeurenpagina."
+        storage: "Waar de waarde staat"
+        storage_custom_data: "Een aangepast veld (ja, nee of geen waarde)"
+        custom_data_key: "Aangepast veld"
+        custom_data_key_help: "Een veldnaam op het hoogste niveau, zoals sub_webinars. De waarde true of 1 betekent ja; elke andere waarde betekent nee. Broadcast vult dit veld nooit voor je in."
+        storage_tag: "Een tag (met of zonder tag)"
+        tag_name: "Tag"
+        tag_help: "Abonnees met de tag ontvangen het onderwerp. Afmelden voor het onderwerp haalt de tag weg."
+        unset: "Abonnees zonder waarde"
+        unset_help: "Wat er gebeurt als het veld van een abonnee geen waarde heeft. Een ingesteld ja of nee geldt altijd. Kies zorgvuldig als je alleen mensen mag mailen die met dit onderwerp hebben ingestemd."
+        unset_false: "Dit onderwerp niet ontvangen"
+        unset_true: "Dit onderwerp ontvangen"
+        unset_effect:
+          one: "1 actieve abonnee heeft nu geen waarde voor dit onderwerp."
+          other: "%{count} actieve abonnees hebben nu geen waarde voor dit onderwerp."
+        visible: "Tonen op de voorkeurenpagina"
+        visible_help: "Abonnees kunnen dit onderwerp zelf aan- en uitzetten."
+        save: "Onderwerp opslaan"
+        cancel: "Annuleren"
 
   shared:
     confirm_dialog:
@@ -7906,6 +7987,7 @@ nl:
         redacted: "Geanonimiseerd"
         activity: "Activiteit"
         topic_unsubscribed: "Onderwerp uit"
+        preferences_updated: "Voorkeuren"
       by: "door %{name}"
     index:
       empty: "Nog geen activiteit"

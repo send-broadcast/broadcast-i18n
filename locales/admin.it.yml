@@ -2193,6 +2193,9 @@ it:
           label: "Dimensione del carattere"
         color:
           label: "Colore"
+        preferencesLabel:
+          label: "Testo del link alla pagina delle preferenze"
+          placeholder: "Lascia vuoto per non mostrare il link alla pagina delle preferenze"
       theme:
         width:
           label: "Larghezza dell'email (px)"
@@ -2572,6 +2575,8 @@ it:
         save_draft: "Salva come bozza"
         send_hint_html: "Per inviarla o programmarla, vai alla %{link}."
         details_page: "pagina dei dettagli della campagna"
+        all_subscribers_label: "Tutti gli iscritti"
+        topic: "Argomento: %{name}"
       settings_tab:
         tracking_title: "Opzioni di tracciamento"
         tracking_subtitle: "Monitora il coinvolgimento con la tua campagna"
@@ -2634,6 +2639,10 @@ it:
         create_segment: "Crea un segmento"
         tip_label: "Suggerimento:"
         tip_html: "%{label} Puoi scegliere più segmenti. Riceveranno la campagna gli iscritti che corrispondono ad almeno uno dei segmenti scelti. I segmenti si aggiornano da soli in base alle tue regole."
+        topic_title: "Argomento"
+        topic_subtitle: "Invia solo agli iscritti che ricevono questo argomento. Il link di disiscrizione disattiva allora solo questo argomento, a meno che il canale non annulli l'iscrizione a tutto."
+        no_topic: "Nessun argomento: tutto il pubblico sopra"
+        manage_topics: "Gestisci gli argomenti"
       content_tab:
         code: "Codice"
         preview: "Anteprima"
@@ -3693,6 +3702,8 @@ it:
       subscriber_count:
         one: "(%{formatted} iscritto)"
         other: "(%{formatted} iscritti)"
+      all_subscribers_label: "Tutti gli iscritti"
+      topic: "Argomento: %{name}"
     send_test_email:
       sending: "Invio..."
       failed: "Impossibile inviare l'email di prova"
@@ -4174,6 +4185,7 @@ it:
           channel_info: "Informazioni sul canale"
           name: "Nome:"
           created: "Creato il:"
+          topics: "Argomenti"
         templates:
           title: "Modelli"
           subtitle: "Design email riutilizzabili"
@@ -5753,6 +5765,9 @@ it:
         transactional: "Transazionale (outbound)"
         bulk: "Massivo (broadcast)"
       submit: "Aggiorna"
+      topic: "Argomento"
+      topic_hint: "I passaggi email raggiungono solo gli iscritti che ricevono questo argomento; gli altri li saltano e proseguono nella sequenza. Il link di disiscrizione in un'email di sequenza annulla sempre l'iscrizione a tutto."
+      no_topic: "Nessun argomento: tutti gli iscritti alla sequenza"
     topbar:
       go_back: "Torna indietro"
       back: "Torna alla sequenza"
@@ -7450,6 +7465,9 @@ it:
           topic_unsubscribed:
             label: "Pagina di argomento disattivato"
             description: "Mostrata dopo la disattivazione di un argomento. L'iscritto resta iscritto."
+          preferences:
+            label: "Pagina delle preferenze"
+            description: "Dove gli iscritti scelgono i loro argomenti ({{ preferences_url }})."
         fields:
           heading: "Titolo"
           message: "Messaggio"
@@ -7458,6 +7476,10 @@ it:
           resubscribe_button: "Pulsante per iscriversi di nuovo"
           unsubscribe_button: "Pulsante di disiscrizione"
           everything_button: "Pulsante di disiscrizione da tutto"
+          preferences_link: "Link alla pagina delle preferenze"
+          save_button: "Pulsante Salva"
+          saved_message: "Messaggio di salvataggio"
+          unsubscribed_message: "Messaggio se disiscritto"
         legal_links: "Link legali"
         legal_links_help: "Mostrati in fondo a ogni pagina di disiscrizione, se impostati."
         privacy_policy_url: "URL dell’informativa sulla privacy"
@@ -7489,6 +7511,7 @@ it:
           resubscribed: "Iscritto di nuovo"
           topic_confirm: "Conferma argomento"
           topic_unsubscribed: "Argomento disattivato"
+          preferences: "Preferenze"
         preview_width: "Larghezza dell’anteprima"
         devices:
           desktop: "Desktop"
@@ -7498,6 +7521,64 @@ it:
         updated: "Pagina di disiscrizione aggiornata"
         demo_mode: "Modalità demo: modifiche non salvate"
         not_saved: "Non salvato: %{errors}"
+    topics:
+      index:
+        title: "Argomenti"
+        intro: "Un argomento è un tipo di email che gli iscritti possono scegliere di ricevere o no, per esempio webinar o offerte. Ogni argomento legge un campo personalizzato o un tag che scegli tu. Una campagna o una sequenza inviata a un argomento raggiunge solo gli iscritti che lo ricevono."
+        new_topic: "Nuovo argomento"
+        empty: "Ancora nessun argomento. Creane uno per ogni tipo di email che i tuoi iscritti possono scegliere."
+        topic: "Argomento"
+        reads: "Legge"
+        tag: "Tag"
+        count_on: "Sì"
+        count_off: "No"
+        count_unset: "Nessun valore"
+        count_receiving: "Lo ricevono"
+        not_applicable: "n/d"
+        actions: "Azioni"
+        unset_receives: "Nessun valore: lo riceve"
+        unset_does_not_receive: "Nessun valore: non lo riceve"
+        hidden_on_page: "Nascosto nella pagina delle preferenze"
+        move_up: "Sposta su"
+        move_down: "Sposta giù"
+        edit: "Modifica"
+        delete: "Elimina"
+        delete_confirm: "Eliminare l'argomento %{name}? I dati degli iscritti non cambiano."
+        counts_note: "I conteggi riguardano gli iscritti attivi. Un argomento con tag non ha un No esplicito: un iscritto senza il tag non lo riceve."
+      new:
+        title: "Nuovo argomento"
+      edit:
+        title: "Modifica %{name}"
+      create:
+        created: "Argomento %{name} creato."
+      update:
+        updated: "Argomento %{name} aggiornato."
+      destroy:
+        deleted: "Argomento %{name} eliminato."
+        in_use: "%{name} è usato da una campagna o da una sequenza, quindi non può essere eliminato. Rimuovilo prima da lì."
+      form:
+        name: "Nome"
+        name_help: "Gli iscritti vedono questo nome nelle pagine delle preferenze e di disiscrizione."
+        description: "Descrizione"
+        description_help: "Facoltativa. Mostrata sotto il nome nella pagina delle preferenze."
+        storage: "Dove è salvato il valore"
+        storage_custom_data: "Un campo personalizzato (sì, no o nessun valore)"
+        custom_data_key: "Campo personalizzato"
+        custom_data_key_help: "Un nome di campo di primo livello, per esempio sub_webinars. Il valore true o 1 significa sì; qualsiasi altro valore significa no. Broadcast non compila mai questo campo al posto tuo."
+        storage_tag: "Un tag (con o senza tag)"
+        tag_name: "Tag"
+        tag_help: "Gli iscritti con il tag ricevono l'argomento. Annullare l'iscrizione all'argomento rimuove il tag."
+        unset: "Iscritti senza valore"
+        unset_help: "Cosa succede quando il campo di un iscritto non ha valore. Un sì o un no impostato vale sempre. Scegli con attenzione se puoi scrivere solo a chi ha accettato questo argomento."
+        unset_false: "Non ricevere questo argomento"
+        unset_true: "Ricevere questo argomento"
+        unset_effect:
+          one: "1 iscritto attivo non ha ora un valore per questo argomento."
+          other: "%{count} iscritti attivi non hanno ora un valore per questo argomento."
+        visible: "Mostra nella pagina delle preferenze"
+        visible_help: "Gli iscritti possono attivare e disattivare questo argomento da soli."
+        save: "Salva argomento"
+        cancel: "Annulla"
 
   shared:
     confirm_dialog:
@@ -7902,6 +7983,7 @@ it:
         redacted: "Oscurato"
         activity: "Attività"
         topic_unsubscribed: "Argomento disattivato"
+        preferences_updated: "Preferenze"
       by: "da %{name}"
     index:
       empty: "Nessuna attività"

@@ -2263,6 +2263,9 @@ pl:
           label: "Rozmiar czcionki"
         color:
           label: "Kolor"
+        preferencesLabel:
+          label: "Tekst linku do strony preferencji"
+          placeholder: "Zostaw puste, aby nie pokazywać linku do strony preferencji"
       theme:
         width:
           label: "Szerokość e-maila (px)"
@@ -2648,6 +2651,8 @@ pl:
         save_draft: "Zapisz jako wersję roboczą"
         send_hint_html: "Aby wysłać lub zaplanować, przejdź na %{link}."
         details_page: "stronę szczegółów kampanii"
+        all_subscribers_label: "Wszyscy subskrybenci"
+        topic: "Temat: %{name}"
       settings_tab:
         tracking_title: "Opcje śledzenia"
         tracking_subtitle: "Monitoruj zaangażowanie w kampanię"
@@ -2712,6 +2717,10 @@ pl:
         create_segment: "Utwórz segment"
         tip_label: "Wskazówka:"
         tip_html: "%{label} Możesz wybrać kilka segmentów. Kampanię otrzymają subskrybenci pasujący do dowolnego z wybranych segmentów. Segmenty aktualizują się automatycznie na podstawie twoich reguł."
+        topic_title: "Temat"
+        topic_subtitle: "Wysyłaj tylko do subskrybentów, którzy otrzymują ten temat. Link wypisania wyłącza wtedy tylko ten temat, chyba że kanał wypisuje ze wszystkiego."
+        no_topic: "Bez tematu: cała grupa odbiorców powyżej"
+        manage_topics: "Zarządzaj tematami"
       content_tab:
         code: "Kod"
         preview: "Podgląd"
@@ -3823,6 +3832,8 @@ pl:
         few: "(%{formatted} subskrybentów)"
         many: "(%{formatted} subskrybentów)"
         other: "(%{formatted} subskrybenta)"
+      all_subscribers_label: "Wszyscy subskrybenci"
+      topic: "Temat: %{name}"
     send_test_email:
       sending: "Wysyłanie..."
       failed: "Nie udało się wysłać testowego e-maila"
@@ -4326,6 +4337,7 @@ pl:
           channel_info: "Informacje o kanale"
           name: "Nazwa:"
           created: "Utworzono:"
+          topics: "Tematy"
         templates:
           title: "Szablony"
           subtitle: "Projekty e-maili wielokrotnego użytku"
@@ -5943,6 +5955,9 @@ pl:
         transactional: "Transakcyjny (outbound)"
         bulk: "Masowy (broadcast)"
       submit: "Zaktualizuj"
+      topic: "Temat"
+      topic_hint: "Kroki z e-mailem docierają tylko do subskrybentów, którzy otrzymują ten temat; pozostali je pomijają i idą dalej w sekwencji. Link wypisania w e-mailu z sekwencji zawsze wypisuje ze wszystkiego."
+      no_topic: "Bez tematu: wszyscy zapisani subskrybenci"
     topbar:
       go_back: "Wróć"
       back: "Wróć do sekwencji"
@@ -7692,6 +7707,9 @@ pl:
           topic_unsubscribed:
             label: "Strona po wyłączeniu tematu"
             description: "Wyświetlana po wyłączeniu tematu. Subskrybent pozostaje zapisany."
+          preferences:
+            label: "Strona preferencji"
+            description: "Tu subskrybenci wybierają swoje tematy ({{ preferences_url }})."
         fields:
           heading: "Nagłówek"
           message: "Komunikat"
@@ -7700,6 +7718,10 @@ pl:
           resubscribe_button: "Przycisk ponownego zapisu"
           unsubscribe_button: "Przycisk wypisania"
           everything_button: "Przycisk wypisania ze wszystkiego"
+          preferences_link: "Link do strony preferencji"
+          save_button: "Przycisk Zapisz"
+          saved_message: "Komunikat o zapisaniu"
+          unsubscribed_message: "Komunikat po wypisaniu"
         legal_links: "Linki prawne"
         legal_links_help: "Wyświetlane na dole każdej strony wypisania, jeśli są ustawione."
         privacy_policy_url: "URL polityki prywatności"
@@ -7731,6 +7753,7 @@ pl:
           resubscribed: "Zapisano ponownie"
           topic_confirm: "Potwierdzenie tematu"
           topic_unsubscribed: "Temat wyłączony"
+          preferences: "Preferencje"
         preview_width: "Szerokość podglądu"
         devices:
           desktop: "Komputer"
@@ -7740,6 +7763,66 @@ pl:
         updated: "Zaktualizowano stronę wypisania"
         demo_mode: "Tryb demo: zmiany nie zostały zapisane"
         not_saved: "Nie zapisano: %{errors}"
+    topics:
+      index:
+        title: "Tematy"
+        intro: "Temat to rodzaj e-maili, które subskrybenci mogą włączyć lub wyłączyć, na przykład webinary lub oferty. Każdy temat czyta wybrane przez Ciebie pole niestandardowe lub tag. Kampania lub sekwencja wysłana do tematu dociera tylko do subskrybentów, którzy go otrzymują."
+        new_topic: "Nowy temat"
+        empty: "Nie ma jeszcze tematów. Utwórz po jednym dla każdego rodzaju e-maili, które subskrybenci mogą wybrać."
+        topic: "Temat"
+        reads: "Czyta"
+        tag: "Tag"
+        count_on: "Tak"
+        count_off: "Nie"
+        count_unset: "Brak wartości"
+        count_receiving: "Otrzymują"
+        not_applicable: "nd."
+        actions: "Akcje"
+        unset_receives: "Brak wartości: otrzymuje"
+        unset_does_not_receive: "Brak wartości: nie otrzymuje"
+        hidden_on_page: "Ukryty na stronie preferencji"
+        move_up: "W górę"
+        move_down: "W dół"
+        edit: "Edytuj"
+        delete: "Usuń"
+        delete_confirm: "Usunąć temat %{name}? Dane subskrybentów się nie zmienią."
+        counts_note: "Liczby dotyczą aktywnych subskrybentów. Temat oparty na tagu nie ma jawnego Nie: subskrybent bez tagu go nie otrzymuje."
+      new:
+        title: "Nowy temat"
+      edit:
+        title: "Edytuj %{name}"
+      create:
+        created: "Utworzono temat %{name}."
+      update:
+        updated: "Zaktualizowano temat %{name}."
+      destroy:
+        deleted: "Usunięto temat %{name}."
+        in_use: "%{name} jest używany przez kampanię lub sekwencję, więc nie można go usunąć. Najpierw go tam odłącz."
+      form:
+        name: "Nazwa"
+        name_help: "Subskrybenci widzą tę nazwę na stronach preferencji i wypisania."
+        description: "Opis"
+        description_help: "Opcjonalny. Wyświetlany pod nazwą na stronie preferencji."
+        storage: "Gdzie zapisana jest wartość"
+        storage_custom_data: "Pole niestandardowe (tak, nie lub brak wartości)"
+        custom_data_key: "Pole niestandardowe"
+        custom_data_key_help: "Nazwa pola najwyższego poziomu, na przykład sub_webinars. Wartość true lub 1 oznacza tak; każda inna wartość oznacza nie. Broadcast nigdy nie wypełnia tego pola za Ciebie."
+        storage_tag: "Tag (z tagiem lub bez)"
+        tag_name: "Tag"
+        tag_help: "Subskrybenci z tagiem otrzymują temat. Wypisanie się z tematu usuwa tag."
+        unset: "Subskrybenci bez wartości"
+        unset_help: "Co się dzieje, gdy pole subskrybenta nie ma wartości. Ustawione tak lub nie zawsze wygrywa. Wybierz ostrożnie, jeśli możesz pisać tylko do osób, które zgodziły się na ten temat."
+        unset_false: "Nie otrzymuj tego tematu"
+        unset_true: "Otrzymuj ten temat"
+        unset_effect:
+          one: "1 aktywny subskrybent nie ma teraz wartości dla tego tematu."
+          other: "%{count} aktywnego subskrybenta nie ma teraz wartości dla tego tematu."
+          few: "%{count} aktywnych subskrybentów nie ma teraz wartości dla tego tematu."
+          many: "%{count} aktywnych subskrybentów nie ma teraz wartości dla tego tematu."
+        visible: "Pokaż na stronie preferencji"
+        visible_help: "Subskrybenci mogą sami włączać i wyłączać ten temat."
+        save: "Zapisz temat"
+        cancel: "Anuluj"
 
   shared:
     confirm_dialog:
@@ -8168,6 +8251,7 @@ pl:
         redacted: "Zanonimizowano"
         activity: "Aktywność"
         topic_unsubscribed: "Temat wyłączony"
+        preferences_updated: "Preferencje"
       by: "przez %{name}"
     index:
       empty: "Brak aktywności"

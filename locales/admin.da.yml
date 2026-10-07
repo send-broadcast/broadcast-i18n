@@ -2195,6 +2195,9 @@ da:
           label: "Skriftstørrelse"
         color:
           label: "Farve"
+        preferencesLabel:
+          label: "Linktekst til indstillingssiden"
+          placeholder: "Lad feltet være tomt for intet link til indstillingssiden"
       theme:
         width:
           label: "E-mailbredde (px)"
@@ -2574,6 +2577,8 @@ da:
         save_draft: "Gem som kladde"
         send_hint_html: "Gå til %{link} for at sende eller planlægge."
         details_page: "kampagnens detaljeside"
+        all_subscribers_label: "Alle abonnenter"
+        topic: "Emne: %{name}"
       settings_tab:
         tracking_title: "Sporingsindstillinger"
         tracking_subtitle: "Følg engagementet i din kampagne"
@@ -2636,6 +2641,10 @@ da:
         create_segment: "Opret et segment"
         tip_label: "Tip:"
         tip_html: "%{label} Du kan vælge flere segmenter. Abonnenter, der matcher et af de valgte segmenter, modtager kampagnen. Segmenter opdateres automatisk ud fra dine regler."
+        topic_title: "Emne"
+        topic_subtitle: "Send kun til abonnenter, der modtager dette emne. Afmeldingslinket slår så kun dette emne fra, medmindre kanalen afmelder alt."
+        no_topic: "Intet emne: hele målgruppen ovenfor"
+        manage_topics: "Administrer emner"
       content_tab:
         code: "Kode"
         preview: "Forhåndsvisning"
@@ -3695,6 +3704,8 @@ da:
       subscriber_count:
         one: "(%{formatted} abonnent)"
         other: "(%{formatted} abonnenter)"
+      all_subscribers_label: "Alle abonnenter"
+      topic: "Emne: %{name}"
     send_test_email:
       sending: "Sender..."
       failed: "Testmailen kunne ikke sendes"
@@ -4176,6 +4187,7 @@ da:
           channel_info: "Kanalinfo"
           name: "Navn:"
           created: "Oprettet:"
+          topics: "Emner"
         templates:
           title: "Skabeloner"
           subtitle: "Genbrugelige e-maildesigns"
@@ -5755,6 +5767,9 @@ da:
         transactional: "Transaktionel (outbound)"
         bulk: "Bulk (broadcast)"
       submit: "Opdater"
+      topic: "Emne"
+      topic_hint: "E-mailtrin når kun abonnenter, der modtager dette emne; de andre springer dem over og fortsætter i sekvensen. Afmeldingslinket i en sekvensmail afmelder altid alt."
+      no_topic: "Intet emne: alle tilmeldte abonnenter"
     topbar:
       go_back: "Gå tilbage"
       back: "Tilbage til sekvensen"
@@ -7452,6 +7467,9 @@ da:
           topic_unsubscribed:
             label: "Side for fravalgt emne"
             description: "Vises, når et emne er slået fra. Abonnenten forbliver tilmeldt."
+          preferences:
+            label: "Indstillingsside"
+            description: "Hvor abonnenter vælger deres emner ({{ preferences_url }})."
         fields:
           heading: "Overskrift"
           message: "Besked"
@@ -7460,6 +7478,10 @@ da:
           resubscribe_button: "Knap for gentilmelding"
           unsubscribe_button: "Afmeldingsknap"
           everything_button: "Knap til at afmelde alt"
+          preferences_link: "Link til indstillingssiden"
+          save_button: "Gem-knap"
+          saved_message: "Gemt-besked"
+          unsubscribed_message: "Besked ved afmelding"
         legal_links: "Juridiske links"
         legal_links_help: "Vises nederst på alle afmeldingssider, når de er udfyldt."
         privacy_policy_url: "URL til privatlivspolitik"
@@ -7491,6 +7513,7 @@ da:
           resubscribed: "Gentilmeldt"
           topic_confirm: "Bekræft emne"
           topic_unsubscribed: "Emne fravalgt"
+          preferences: "Indstillinger"
         preview_width: "Bredde på forhåndsvisning"
         devices:
           desktop: "Computer"
@@ -7500,6 +7523,64 @@ da:
         updated: "Afmeldingssiden er opdateret"
         demo_mode: "Demotilstand: ændringer gemmes ikke"
         not_saved: "Ikke gemt: %{errors}"
+    topics:
+      index:
+        title: "Emner"
+        intro: "Et emne er en slags e-mail, som abonnenter kan til- eller fravælge, for eksempel webinarer eller tilbud. Hvert emne læser et brugerdefineret felt eller et tag, som du vælger. En kampagne eller sekvens til et emne når kun de abonnenter, der modtager det."
+        new_topic: "Nyt emne"
+        empty: "Ingen emner endnu. Opret et for hver slags e-mail, dine abonnenter kan vælge."
+        topic: "Emne"
+        reads: "Læser"
+        tag: "Tag"
+        count_on: "Ja"
+        count_off: "Nej"
+        count_unset: "Ingen værdi"
+        count_receiving: "Modtager det"
+        not_applicable: "ikke relevant"
+        actions: "Handlinger"
+        unset_receives: "Ingen værdi: modtager"
+        unset_does_not_receive: "Ingen værdi: modtager ikke"
+        hidden_on_page: "Skjult på indstillingssiden"
+        move_up: "Flyt op"
+        move_down: "Flyt ned"
+        edit: "Rediger"
+        delete: "Slet"
+        delete_confirm: "Slet emnet %{name}? Abonnenternes data ændres ikke."
+        counts_note: "Tallene gælder aktive abonnenter. Et tag-emne har intet udtrykkeligt Nej: en abonnent uden tagget modtager det ikke."
+      new:
+        title: "Nyt emne"
+      edit:
+        title: "Rediger %{name}"
+      create:
+        created: "Emnet %{name} er oprettet."
+      update:
+        updated: "Emnet %{name} er opdateret."
+      destroy:
+        deleted: "Emnet %{name} er slettet."
+        in_use: "%{name} bruges af en kampagne eller sekvens og kan derfor ikke slettes. Fjern det derfra først."
+      form:
+        name: "Navn"
+        name_help: "Abonnenter ser dette navn på indstillings- og afmeldingssiden."
+        description: "Beskrivelse"
+        description_help: "Valgfrit. Vises under navnet på indstillingssiden."
+        storage: "Hvor værdien gemmes"
+        storage_custom_data: "Et brugerdefineret felt (ja, nej eller ingen værdi)"
+        custom_data_key: "Brugerdefineret felt"
+        custom_data_key_help: "Et feltnavn på øverste niveau, for eksempel sub_webinars. Værdien true eller 1 betyder ja; enhver anden værdi betyder nej. Broadcast udfylder aldrig dette felt for dig."
+        storage_tag: "Et tag (med eller uden tag)"
+        tag_name: "Tag"
+        tag_help: "Abonnenter med tagget modtager emnet. Afmelding af emnet fjerner tagget."
+        unset: "Abonnenter uden værdi"
+        unset_help: "Hvad der sker, når en abonnents felt ikke har en værdi. Et angivet ja eller nej gælder altid. Vælg med omhu, hvis du kun må sende til personer, der har sagt ja til dette emne."
+        unset_false: "Modtag ikke dette emne"
+        unset_true: "Modtag dette emne"
+        unset_effect:
+          one: "1 aktiv abonnent har ingen værdi for dette emne lige nu."
+          other: "%{count} aktive abonnenter har ingen værdi for dette emne lige nu."
+        visible: "Vis på indstillingssiden"
+        visible_help: "Abonnenter kan selv slå dette emne til og fra."
+        save: "Gem emne"
+        cancel: "Annuller"
 
   shared:
     confirm_dialog:
@@ -7904,6 +7985,7 @@ da:
         redacted: "Anonymiseret"
         activity: "Aktivitet"
         topic_unsubscribed: "Emne fra"
+        preferences_updated: "Indstillinger"
       by: "af %{name}"
     index:
       empty: "Ingen aktivitet endnu"

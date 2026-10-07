@@ -2197,6 +2197,9 @@ de:
           label: "Schriftgröße"
         color:
           label: "Farbe"
+        preferencesLabel:
+          label: "Text des Links zur Einstellungsseite"
+          placeholder: "Leer lassen für keinen Link zur Einstellungsseite"
       theme:
         width:
           label: "E-Mail-Breite (px)"
@@ -2576,6 +2579,8 @@ de:
         save_draft: "Als Entwurf speichern"
         send_hint_html: "Zum Senden oder Planen öffnen Sie die %{link}."
         details_page: "Detailseite der Kampagne"
+        all_subscribers_label: "Alle Abonnenten"
+        topic: "Thema: %{name}"
       settings_tab:
         tracking_title: "Tracking-Optionen"
         tracking_subtitle: "Verfolgen Sie die Interaktion mit Ihrer Kampagne"
@@ -2638,6 +2643,10 @@ de:
         create_segment: "Segment erstellen"
         tip_label: "Tipp:"
         tip_html: "%{label} Sie können mehrere Segmente auswählen. Abonnenten, die zu einem der ausgewählten Segmente gehören, erhalten die Kampagne. Segmente werden anhand Ihrer Regeln automatisch aktualisiert."
+        topic_title: "Thema"
+        topic_subtitle: "Nur an Abonnenten senden, die dieses Thema erhalten. Der Abmeldelink meldet dann nur von diesem Thema ab, außer der Kanal meldet von allem ab."
+        no_topic: "Kein Thema: alle in der Zielgruppe oben"
+        manage_topics: "Themen verwalten"
       content_tab:
         code: "Code"
         preview: "Vorschau"
@@ -3697,6 +3706,8 @@ de:
       subscriber_count:
         one: "(%{formatted} Abonnent)"
         other: "(%{formatted} Abonnenten)"
+      all_subscribers_label: "Alle Abonnenten"
+      topic: "Thema: %{name}"
     send_test_email:
       sending: "Wird gesendet …"
       failed: "Test-E-Mail konnte nicht gesendet werden"
@@ -4178,6 +4189,7 @@ de:
           channel_info: "Kanalinfo"
           name: "Name:"
           created: "Erstellt:"
+          topics: "Themen"
         templates:
           title: "Vorlagen"
           subtitle: "Wiederverwendbare E-Mail-Designs"
@@ -5757,6 +5769,9 @@ de:
         transactional: "Transaktional (Outbound)"
         bulk: "Bulk (Broadcast)"
       submit: "Aktualisieren"
+      topic: "Thema"
+      topic_hint: "E-Mail-Schritte erreichen nur Abonnenten, die dieses Thema erhalten; die anderen überspringen sie und durchlaufen die Sequenz weiter. Der Abmeldelink in einer Sequenz-E-Mail meldet immer von allem ab."
+      no_topic: "Kein Thema: alle eingeschriebenen Abonnenten"
     topbar:
       go_back: "Zurück"
       back: "Zurück zur Sequenz"
@@ -7454,6 +7469,9 @@ de:
           topic_unsubscribed:
             label: "Seite nach der Themen-Abmeldung"
             description: "Wird angezeigt, nachdem ein Thema abbestellt wurde. Der Abonnent bleibt angemeldet."
+          preferences:
+            label: "Einstellungsseite"
+            description: "Hier wählen Abonnenten ihre Themen ({{ preferences_url }})."
         fields:
           heading: "Überschrift"
           message: "Nachricht"
@@ -7462,6 +7480,10 @@ de:
           resubscribe_button: "Button zur Wiederanmeldung"
           unsubscribe_button: "Abmelde-Button"
           everything_button: "Button \"Von allem abmelden\""
+          preferences_link: "Link zur Einstellungsseite"
+          save_button: "Speichern-Button"
+          saved_message: "Gespeichert-Meldung"
+          unsubscribed_message: "Meldung bei Abmeldung"
         legal_links: "Rechtliche Links"
         legal_links_help: "Werden, sofern festgelegt, unten auf jeder Abmeldeseite angezeigt."
         privacy_policy_url: "URL der Datenschutzerklärung"
@@ -7493,6 +7515,7 @@ de:
           resubscribed: "Wieder angemeldet"
           topic_confirm: "Thema bestätigen"
           topic_unsubscribed: "Thema abgemeldet"
+          preferences: "Einstellungen"
         preview_width: "Vorschaubreite"
         devices:
           desktop: "Desktop"
@@ -7502,6 +7525,64 @@ de:
         updated: "Abmeldeseite aktualisiert"
         demo_mode: "Demomodus: Änderungen nicht gespeichert"
         not_saved: "Nicht gespeichert: %{errors}"
+    topics:
+      index:
+        title: "Themen"
+        intro: "Ein Thema ist eine Art von E-Mail, die Abonnenten an- oder abwählen können, zum Beispiel Webinare oder Angebote. Jedes Thema liest ein benutzerdefiniertes Feld oder einen Tag, den Sie wählen. Eine Kampagne oder Sequenz an ein Thema erreicht nur die Abonnenten, die es erhalten."
+        new_topic: "Neues Thema"
+        empty: "Noch keine Themen. Legen Sie eines für jede Art von E-Mail an, die Ihre Abonnenten wählen können."
+        topic: "Thema"
+        reads: "Liest"
+        tag: "Tag"
+        count_on: "Ja"
+        count_off: "Nein"
+        count_unset: "Kein Wert"
+        count_receiving: "Erhalten es"
+        not_applicable: "k. A."
+        actions: "Aktionen"
+        unset_receives: "Kein Wert: erhält es"
+        unset_does_not_receive: "Kein Wert: erhält es nicht"
+        hidden_on_page: "Auf der Einstellungsseite ausgeblendet"
+        move_up: "Nach oben"
+        move_down: "Nach unten"
+        edit: "Bearbeiten"
+        delete: "Löschen"
+        delete_confirm: "Das Thema %{name} löschen? Die Abonnentendaten bleiben unverändert."
+        counts_note: "Die Zahlen gelten für aktive Abonnenten. Ein Tag-Thema hat kein ausdrückliches Nein: Ein Abonnent ohne den Tag erhält es nicht."
+      new:
+        title: "Neues Thema"
+      edit:
+        title: "%{name} bearbeiten"
+      create:
+        created: "Thema %{name} angelegt."
+      update:
+        updated: "Thema %{name} aktualisiert."
+      destroy:
+        deleted: "Thema %{name} gelöscht."
+        in_use: "%{name} wird von einer Kampagne oder Sequenz verwendet und kann daher nicht gelöscht werden. Entfernen Sie es dort zuerst."
+      form:
+        name: "Name"
+        name_help: "Abonnenten sehen diesen Namen auf der Einstellungs- und der Abmeldeseite."
+        description: "Beschreibung"
+        description_help: "Optional. Wird auf der Einstellungsseite unter dem Namen angezeigt."
+        storage: "Wo der Wert gespeichert ist"
+        storage_custom_data: "Ein benutzerdefiniertes Feld (ja, nein oder kein Wert)"
+        custom_data_key: "Benutzerdefiniertes Feld"
+        custom_data_key_help: "Ein Feldname auf oberster Ebene, zum Beispiel sub_webinars. Der Wert true oder 1 bedeutet ja; jeder andere Wert bedeutet nein. Broadcast füllt dieses Feld nie für Sie aus."
+        storage_tag: "Ein Tag (mit oder ohne Tag)"
+        tag_name: "Tag"
+        tag_help: "Abonnenten mit dem Tag erhalten das Thema. Eine Abmeldung vom Thema entfernt den Tag."
+        unset: "Abonnenten ohne Wert"
+        unset_help: "Was gilt, wenn das Feld eines Abonnenten keinen Wert hat. Ein gesetztes Ja oder Nein gilt immer. Wählen Sie sorgfältig, wenn Sie nur Personen anschreiben dürfen, die diesem Thema zugestimmt haben."
+        unset_false: "Dieses Thema nicht erhalten"
+        unset_true: "Dieses Thema erhalten"
+        unset_effect:
+          one: "1 aktiver Abonnent hat derzeit keinen Wert für dieses Thema."
+          other: "%{count} aktive Abonnenten haben derzeit keinen Wert für dieses Thema."
+        visible: "Auf der Einstellungsseite anzeigen"
+        visible_help: "Abonnenten können dieses Thema selbst an- und abschalten."
+        save: "Thema speichern"
+        cancel: "Abbrechen"
 
   shared:
     confirm_dialog:
@@ -7906,6 +7987,7 @@ de:
         redacted: "Anonymisiert"
         activity: "Aktivität"
         topic_unsubscribed: "Thema abbestellt"
+        preferences_updated: "Einstellungen"
       by: "von %{name}"
     index:
       empty: "Noch keine Aktivität"

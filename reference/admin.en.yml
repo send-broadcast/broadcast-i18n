@@ -2209,6 +2209,9 @@ en:
           label: "Extra text"
         unsubscribeLabel:
           label: "Unsubscribe link text"
+        preferencesLabel:
+          label: "Preference page link text"
+          placeholder: "Leave blank for no preference page link"
         size:
           label: "Font size"
         color:
@@ -2580,9 +2583,11 @@ en:
         audience: "Audience"
         sending_to: "Sending to:"
         segment_count:
-          one: "(%{formatted} subscribers)"
+          one: "(%{formatted} subscriber)"
           other: "(%{formatted} subscribers)"
         all_subscribers: "All subscribers (%{total})"
+        all_subscribers_label: "All subscribers"
+        topic: "Topic: %{name}"
         warnings_title: "Please review before sending"
         warning_no_subject: "Subject line is empty"
         warning_no_body: "Email body is empty"
@@ -2646,7 +2651,7 @@ en:
         subtitle: "Choose who will receive this broadcast"
         all_subscribers: "All Subscribers"
         subscribers:
-          one: "%{formatted} subscribers"
+          one: "%{formatted} subscriber"
           other: "%{formatted} subscribers"
         all_hint: "Send to everyone on your list"
         or_segments: "Or select segments"
@@ -2654,6 +2659,10 @@ en:
         create_segment: "Create a segment"
         tip_label: "Tip:"
         tip_html: "%{label} You can select multiple segments. Subscribers matching any selected segment will receive the broadcast. Segments automatically update based on your rules."
+        topic_title: "Topic"
+        topic_subtitle: "Send only to subscribers who receive this topic. The unsubscribe link then turns off only this topic, unless the channel unsubscribes from everything."
+        no_topic: "No topic: everyone in the audience above"
+        manage_topics: "Manage topics"
       content_tab:
         code: "Code"
         preview: "Preview"
@@ -3710,6 +3719,8 @@ en:
       opens: "Opens"
       clicks: "Clicks"
       all_subscribers: "All subscribers (%{count})"
+      all_subscribers_label: "All subscribers"
+      topic: "Topic: %{name}"
       subscriber_count:
         one: "(%{formatted} subscriber)"
         other: "(%{formatted} subscribers)"
@@ -4183,6 +4194,7 @@ en:
           sender_details: "Sender Details"
           brand_kit: "Brand Kit"
           unsubscribe_page: "Unsubscribe Page"
+          topics: "Topics"
           ai_activity: "AI Activity"
           email_servers: "Email Servers"
           dns_health: "Domain DNS Health"
@@ -5769,6 +5781,9 @@ en:
       stream: "Message Stream"
       stream_hint: "Which Postmark stream this sequence sends on. Marketing sequences (onboarding, nurture, re-engagement) belong on the bulk stream, so complaints about them cannot damage the reputation carrying your receipts and password resets. Keep a sequence that services an account, such as trial or password expiry reminders, on the transactional stream."
       stream_bulk_hint: "The bulk stream requires an unsubscribe link on every email, and not every Postmark server has one. If sends start failing after changing this, check the server has a bulk stream in Postmark."
+      topic: "Topic"
+      topic_hint: "Email steps reach only subscribers who receive this topic; the others skip them and go on through the sequence. The unsubscribe link in a sequence email always unsubscribes from everything."
+      no_topic: "No topic: every enrolled subscriber"
       streams:
         transactional: "Transactional (outbound)"
         bulk: "Bulk (broadcast)"
@@ -5820,6 +5835,64 @@ en:
       submit: "Logout"
 
   settings:
+    topics:
+      index:
+        title: "Topics"
+        intro: "A topic is one kind of email subscribers can opt in to or out of, such as webinars or offers. Each topic reads a custom data field or a tag you choose. A broadcast or sequence sent to a topic reaches only the subscribers who receive it."
+        new_topic: "New topic"
+        empty: "No topics yet. Create one for each kind of email your subscribers can choose."
+        topic: "Topic"
+        reads: "Reads"
+        tag: "Tag"
+        count_on: "Yes"
+        count_off: "No"
+        count_unset: "No value"
+        count_receiving: "Receive it"
+        not_applicable: "n/a"
+        actions: "Actions"
+        unset_receives: "No value: receives"
+        unset_does_not_receive: "No value: does not receive"
+        hidden_on_page: "Hidden on the preference page"
+        move_up: "Move up"
+        move_down: "Move down"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirm: "Delete the topic %{name}? Subscriber data is not changed."
+        counts_note: "Counts are for active subscribers. A tag topic has no explicit No: a subscriber without the tag does not receive it."
+      new:
+        title: "New topic"
+      edit:
+        title: "Edit %{name}"
+      create:
+        created: "Topic %{name} created."
+      update:
+        updated: "Topic %{name} updated."
+      destroy:
+        deleted: "Topic %{name} deleted."
+        in_use: "%{name} is used by a broadcast or a sequence, so it cannot be deleted. Remove it from them first."
+      form:
+        name: "Name"
+        name_help: "Subscribers see this name on the preference and unsubscribe pages."
+        description: "Description"
+        description_help: "Optional. Shown under the name on the preference page."
+        storage: "Where the value is stored"
+        storage_custom_data: "A custom data field (yes, no, or no value)"
+        custom_data_key: "Custom data field"
+        custom_data_key_help: "A top-level field name, such as sub_webinars. A value of true or 1 means yes; any other value means no. Broadcast never fills this field in for you."
+        storage_tag: "A tag (tagged or not tagged)"
+        tag_name: "Tag"
+        tag_help: "Tagged subscribers receive the topic. Unsubscribing from the topic removes the tag."
+        unset: "Subscribers with no value"
+        unset_help: "What happens when a subscriber's field has no value. A yes or no that is set always wins. Choose carefully if you may only email people who agreed to this topic."
+        unset_false: "Do not receive this topic"
+        unset_true: "Receive this topic"
+        unset_effect:
+          one: "1 active subscriber has no value for this topic now."
+          other: "%{count} active subscribers have no value for this topic now."
+        visible: "Show on the preference page"
+        visible_help: "Subscribers can switch this topic on and off themselves."
+        save: "Save topic"
+        cancel: "Cancel"
     ai:
       activity:
         title: "AI Activity"
@@ -7476,6 +7549,9 @@ en:
           topic_unsubscribed:
             label: "Topic unsubscribed page"
             description: "Shown after turning one topic off. The subscriber stays subscribed."
+          preferences:
+            label: "Preference page"
+            description: "Where subscribers choose their topics ({{ preferences_url }})."
         fields:
           heading: "Heading"
           message: "Message"
@@ -7484,6 +7560,10 @@ en:
           resubscribe_button: "Resubscribe button"
           unsubscribe_button: "Unsubscribe button"
           everything_button: "Unsubscribe from everything button"
+          preferences_link: "Preference page link"
+          save_button: "Save button"
+          saved_message: "Saved message"
+          unsubscribed_message: "Message when unsubscribed"
         legal_links: "Legal links"
         legal_links_help: "Shown at the bottom of every unsubscribe page when set."
         privacy_policy_url: "Privacy policy URL"
@@ -7509,6 +7589,7 @@ en:
           resubscribed: "Resubscribed"
           topic_confirm: "Topic confirm"
           topic_unsubscribed: "Topic unsubscribed"
+          preferences: "Preferences"
         preview_width: "Preview width"
         devices:
           desktop: "Desktop"
@@ -7914,6 +7995,7 @@ en:
         clicked: "Clicked"
         unsubscribed: "Unsubscribed"
         topic_unsubscribed: "Topic off"
+        preferences_updated: "Preferences"
         resubscribed: "Resubscribed"
         updated: "Updated"
         tags: "Tags"

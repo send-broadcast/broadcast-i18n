@@ -2196,6 +2196,9 @@ es:
           label: "Tamaño de fuente"
         color:
           label: "Color"
+        preferencesLabel:
+          label: "Texto del enlace a la página de preferencias"
+          placeholder: "Déjalo vacío para no mostrar el enlace a la página de preferencias"
       theme:
         width:
           label: "Ancho del correo (px)"
@@ -2575,6 +2578,8 @@ es:
         save_draft: "Guardar como borrador"
         send_hint_html: "Para enviarla o programarla, ve a la %{link}."
         details_page: "página de detalles de la campaña"
+        all_subscribers_label: "Todos los suscriptores"
+        topic: "Tema: %{name}"
       settings_tab:
         tracking_title: "Opciones de seguimiento"
         tracking_subtitle: "Mide la interacción con tu campaña"
@@ -2637,6 +2642,10 @@ es:
         create_segment: "Crear un segmento"
         tip_label: "Consejo:"
         tip_html: "%{label} Puedes seleccionar varios segmentos. Los suscriptores que coincidan con cualquiera de los segmentos seleccionados recibirán la campaña. Los segmentos se actualizan automáticamente según tus reglas."
+        topic_title: "Tema"
+        topic_subtitle: "Envía solo a los suscriptores que reciben este tema. El enlace de baja desactiva entonces solo este tema, salvo que el canal dé de baja de todo."
+        no_topic: "Sin tema: toda la audiencia de arriba"
+        manage_topics: "Gestionar temas"
       content_tab:
         code: "Código"
         preview: "Vista previa"
@@ -3696,6 +3705,8 @@ es:
       subscriber_count:
         one: "(%{formatted} suscriptor)"
         other: "(%{formatted} suscriptores)"
+      all_subscribers_label: "Todos los suscriptores"
+      topic: "Tema: %{name}"
     send_test_email:
       sending: "Enviando..."
       failed: "No se pudo enviar el correo de prueba"
@@ -4177,6 +4188,7 @@ es:
           channel_info: "Información del canal"
           name: "Nombre:"
           created: "Creado:"
+          topics: "Temas"
         templates:
           title: "Plantillas"
           subtitle: "Diseños de correo reutilizables"
@@ -5756,6 +5768,9 @@ es:
         transactional: "Transaccional (outbound)"
         bulk: "Masivo (broadcast)"
       submit: "Actualizar"
+      topic: "Tema"
+      topic_hint: "Los pasos de correo solo llegan a los suscriptores que reciben este tema; los demás los saltan y siguen en la secuencia. El enlace de baja de un correo de secuencia siempre da de baja de todo."
+      no_topic: "Sin tema: todos los suscriptores inscritos"
     topbar:
       go_back: "Volver"
       back: "Volver a la secuencia"
@@ -7453,6 +7468,9 @@ es:
           topic_unsubscribed:
             label: "Página de tema desactivado"
             description: "Se muestra después de desactivar un tema. El suscriptor sigue suscrito."
+          preferences:
+            label: "Página de preferencias"
+            description: "Donde los suscriptores eligen sus temas ({{ preferences_url }})."
         fields:
           heading: "Título"
           message: "Mensaje"
@@ -7461,6 +7479,10 @@ es:
           resubscribe_button: "Botón de volver a suscribirse"
           unsubscribe_button: "Botón de baja"
           everything_button: "Botón de darse de baja de todo"
+          preferences_link: "Enlace a la página de preferencias"
+          save_button: "Botón Guardar"
+          saved_message: "Mensaje de guardado"
+          unsubscribed_message: "Mensaje si se dio de baja"
         legal_links: "Enlaces legales"
         legal_links_help: "Se muestran al pie de cada página de baja cuando se definen."
         privacy_policy_url: "URL de la política de privacidad"
@@ -7492,6 +7514,7 @@ es:
           resubscribed: "Nueva suscripción"
           topic_confirm: "Confirmación de tema"
           topic_unsubscribed: "Tema desactivado"
+          preferences: "Preferencias"
         preview_width: "Ancho de la vista previa"
         devices:
           desktop: "Escritorio"
@@ -7501,6 +7524,64 @@ es:
         updated: "Página de baja actualizada"
         demo_mode: "Modo de demostración: los cambios no se guardaron"
         not_saved: "No se guardó: %{errors}"
+    topics:
+      index:
+        title: "Temas"
+        intro: "Un tema es un tipo de correo que los suscriptores pueden elegir recibir o no, como webinars u ofertas. Cada tema lee un campo personalizado o una etiqueta que eliges. Una campaña o secuencia enviada a un tema solo llega a los suscriptores que lo reciben."
+        new_topic: "Nuevo tema"
+        empty: "Aún no hay temas. Crea uno para cada tipo de correo que tus suscriptores pueden elegir."
+        topic: "Tema"
+        reads: "Lee"
+        tag: "Etiqueta"
+        count_on: "Sí"
+        count_off: "No"
+        count_unset: "Sin valor"
+        count_receiving: "Lo reciben"
+        not_applicable: "n/d"
+        actions: "Acciones"
+        unset_receives: "Sin valor: lo recibe"
+        unset_does_not_receive: "Sin valor: no lo recibe"
+        hidden_on_page: "Oculto en la página de preferencias"
+        move_up: "Subir"
+        move_down: "Bajar"
+        edit: "Editar"
+        delete: "Eliminar"
+        delete_confirm: "¿Eliminar el tema %{name}? Los datos de los suscriptores no cambian."
+        counts_note: "Los recuentos son de suscriptores activos. Un tema de etiqueta no tiene un No explícito: un suscriptor sin la etiqueta no lo recibe."
+      new:
+        title: "Nuevo tema"
+      edit:
+        title: "Editar %{name}"
+      create:
+        created: "Tema %{name} creado."
+      update:
+        updated: "Tema %{name} actualizado."
+      destroy:
+        deleted: "Tema %{name} eliminado."
+        in_use: "%{name} lo usa una campaña o una secuencia, así que no se puede eliminar. Quítalo de ellas primero."
+      form:
+        name: "Nombre"
+        name_help: "Los suscriptores ven este nombre en las páginas de preferencias y de baja."
+        description: "Descripción"
+        description_help: "Opcional. Se muestra bajo el nombre en la página de preferencias."
+        storage: "Dónde se guarda el valor"
+        storage_custom_data: "Un campo personalizado (sí, no o sin valor)"
+        custom_data_key: "Campo personalizado"
+        custom_data_key_help: "Un nombre de campo de primer nivel, como sub_webinars. El valor true o 1 significa sí; cualquier otro valor significa no. Broadcast nunca rellena este campo por ti."
+        storage_tag: "Una etiqueta (con o sin etiqueta)"
+        tag_name: "Etiqueta"
+        tag_help: "Los suscriptores con la etiqueta reciben el tema. Darse de baja del tema quita la etiqueta."
+        unset: "Suscriptores sin valor"
+        unset_help: "Qué pasa cuando el campo de un suscriptor no tiene valor. Un sí o un no definido siempre manda. Elige con cuidado si solo puedes escribir a quien aceptó este tema."
+        unset_false: "No recibir este tema"
+        unset_true: "Recibir este tema"
+        unset_effect:
+          one: "1 suscriptor activo no tiene ahora valor para este tema."
+          other: "%{count} suscriptores activos no tienen ahora valor para este tema."
+        visible: "Mostrar en la página de preferencias"
+        visible_help: "Los suscriptores pueden activar y desactivar este tema por sí mismos."
+        save: "Guardar tema"
+        cancel: "Cancelar"
 
   shared:
     confirm_dialog:
@@ -7905,6 +7986,7 @@ es:
         redacted: "Anonimizado"
         activity: "Actividad"
         topic_unsubscribed: "Tema desactivado"
+        preferences_updated: "Preferencias"
       by: "por %{name}"
     index:
       empty: "Todavía no hay actividad"

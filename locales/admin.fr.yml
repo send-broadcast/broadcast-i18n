@@ -2196,6 +2196,9 @@ fr:
           label: "Taille de police"
         color:
           label: "Couleur"
+        preferencesLabel:
+          label: "Texte du lien vers la page de préférences"
+          placeholder: "Laissez vide pour ne pas afficher de lien vers la page de préférences"
       theme:
         width:
           label: "Largeur de l'e-mail (px)"
@@ -2575,6 +2578,8 @@ fr:
         save_draft: "Enregistrer en brouillon"
         send_hint_html: "Pour envoyer ou programmer, rendez-vous sur la %{link}."
         details_page: "page de détails de la campagne"
+        all_subscribers_label: "Tous les abonnés"
+        topic: "Thème : %{name}"
       settings_tab:
         tracking_title: "Options de suivi"
         tracking_subtitle: "Mesurez l'engagement suscité par votre campagne"
@@ -2637,6 +2642,10 @@ fr:
         create_segment: "Créer un segment"
         tip_label: "Astuce :"
         tip_html: "%{label} Vous pouvez choisir plusieurs segments. Les abonnés qui correspondent à l'un des segments choisis recevront la campagne. Les segments se mettent à jour automatiquement selon vos règles."
+        topic_title: "Thème"
+        topic_subtitle: "Envoyer uniquement aux abonnés qui reçoivent ce thème. Le lien de désabonnement désactive alors uniquement ce thème, sauf si le canal désabonne de tout."
+        no_topic: "Aucun thème : toute l'audience ci-dessus"
+        manage_topics: "Gérer les thèmes"
       content_tab:
         code: "Code"
         preview: "Aperçu"
@@ -3696,6 +3705,8 @@ fr:
       subscriber_count:
         one: "(%{formatted} abonné)"
         other: "(%{formatted} abonnés)"
+      all_subscribers_label: "Tous les abonnés"
+      topic: "Thème : %{name}"
     send_test_email:
       sending: "Envoi..."
       failed: "Impossible d'envoyer l'e-mail de test"
@@ -4177,6 +4188,7 @@ fr:
           channel_info: "Infos du canal"
           name: "Nom :"
           created: "Créé :"
+          topics: "Thèmes"
         templates:
           title: "Modèles"
           subtitle: "Designs d'e-mail réutilisables"
@@ -5756,6 +5768,9 @@ fr:
         transactional: "Transactionnel (outbound)"
         bulk: "Bulk (broadcast)"
       submit: "Mettre à jour"
+      topic: "Thème"
+      topic_hint: "Les étapes d'e-mail n'atteignent que les abonnés qui reçoivent ce thème ; les autres les sautent et poursuivent la séquence. Le lien de désabonnement d'un e-mail de séquence désabonne toujours de tout."
+      no_topic: "Aucun thème : tous les abonnés inscrits"
     topbar:
       go_back: "Retour"
       back: "Retour à la séquence"
@@ -7453,6 +7468,9 @@ fr:
           topic_unsubscribed:
             label: "Page de thème désactivé"
             description: "Affichée après la désactivation d'un thème. L'abonné reste abonné."
+          preferences:
+            label: "Page de préférences"
+            description: "Là où les abonnés choisissent leurs thèmes ({{ preferences_url }})."
         fields:
           heading: "Titre"
           message: "Message"
@@ -7461,6 +7479,10 @@ fr:
           resubscribe_button: "Bouton de réabonnement"
           unsubscribe_button: "Bouton de désabonnement"
           everything_button: "Bouton « Se désabonner de tout »"
+          preferences_link: "Lien vers la page de préférences"
+          save_button: "Bouton Enregistrer"
+          saved_message: "Message d'enregistrement"
+          unsubscribed_message: "Message en cas de désabonnement"
         legal_links: "Liens légaux"
         legal_links_help: "Affichés en bas de chaque page de désabonnement lorsqu'ils sont définis."
         privacy_policy_url: "URL de la politique de confidentialité"
@@ -7492,6 +7514,7 @@ fr:
           resubscribed: "Réabonné"
           topic_confirm: "Confirmation de thème"
           topic_unsubscribed: "Thème désactivé"
+          preferences: "Préférences"
         preview_width: "Largeur de l'aperçu"
         devices:
           desktop: "Ordinateur"
@@ -7501,6 +7524,64 @@ fr:
         updated: "Page de désabonnement mise à jour"
         demo_mode: "Mode démonstration : modifications non enregistrées"
         not_saved: "Non enregistré : %{errors}"
+    topics:
+      index:
+        title: "Thèmes"
+        intro: "Un thème est un type d'e-mail que les abonnés peuvent choisir de recevoir ou non, par exemple des webinaires ou des offres. Chaque thème lit un champ personnalisé ou un tag que vous choisissez. Une campagne ou une séquence envoyée à un thème n'atteint que les abonnés qui le reçoivent."
+        new_topic: "Nouveau thème"
+        empty: "Aucun thème pour l'instant. Créez-en un pour chaque type d'e-mail que vos abonnés peuvent choisir."
+        topic: "Thème"
+        reads: "Lit"
+        tag: "Tag"
+        count_on: "Oui"
+        count_off: "Non"
+        count_unset: "Aucune valeur"
+        count_receiving: "Le reçoivent"
+        not_applicable: "n/d"
+        actions: "Actions"
+        unset_receives: "Aucune valeur : reçoit"
+        unset_does_not_receive: "Aucune valeur : ne reçoit pas"
+        hidden_on_page: "Masqué sur la page de préférences"
+        move_up: "Monter"
+        move_down: "Descendre"
+        edit: "Modifier"
+        delete: "Supprimer"
+        delete_confirm: "Supprimer le thème %{name} ? Les données des abonnés ne sont pas modifiées."
+        counts_note: "Les nombres portent sur les abonnés actifs. Un thème par tag n'a pas de Non explicite : un abonné sans le tag ne le reçoit pas."
+      new:
+        title: "Nouveau thème"
+      edit:
+        title: "Modifier %{name}"
+      create:
+        created: "Thème %{name} créé."
+      update:
+        updated: "Thème %{name} mis à jour."
+      destroy:
+        deleted: "Thème %{name} supprimé."
+        in_use: "%{name} est utilisé par une campagne ou une séquence, il ne peut donc pas être supprimé. Retirez-le d'abord de celles-ci."
+      form:
+        name: "Nom"
+        name_help: "Les abonnés voient ce nom sur les pages de préférences et de désabonnement."
+        description: "Description"
+        description_help: "Facultatif. Affichée sous le nom sur la page de préférences."
+        storage: "Où la valeur est stockée"
+        storage_custom_data: "Un champ personnalisé (oui, non ou aucune valeur)"
+        custom_data_key: "Champ personnalisé"
+        custom_data_key_help: "Un nom de champ de premier niveau, par exemple sub_webinars. La valeur true ou 1 signifie oui ; toute autre valeur signifie non. Broadcast ne remplit jamais ce champ à votre place."
+        storage_tag: "Un tag (avec ou sans tag)"
+        tag_name: "Tag"
+        tag_help: "Les abonnés avec le tag reçoivent le thème. Le désabonnement du thème retire le tag."
+        unset: "Abonnés sans valeur"
+        unset_help: "Ce qui se passe quand le champ d'un abonné n'a pas de valeur. Un oui ou un non défini l'emporte toujours. Choisissez avec soin si vous ne pouvez écrire qu'aux personnes qui ont accepté ce thème."
+        unset_false: "Ne pas recevoir ce thème"
+        unset_true: "Recevoir ce thème"
+        unset_effect:
+          one: "1 abonné actif n'a actuellement aucune valeur pour ce thème."
+          other: "%{count} abonnés actifs n'ont actuellement aucune valeur pour ce thème."
+        visible: "Afficher sur la page de préférences"
+        visible_help: "Les abonnés peuvent activer et désactiver ce thème eux-mêmes."
+        save: "Enregistrer le thème"
+        cancel: "Annuler"
 
   shared:
     confirm_dialog:
@@ -7905,6 +7986,7 @@ fr:
         redacted: "Anonymisé"
         activity: "Activité"
         topic_unsubscribed: "Thème désactivé"
+        preferences_updated: "Préférences"
       by: "par %{name}"
     index:
       empty: "Aucune activité pour l'instant"

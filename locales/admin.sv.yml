@@ -2195,6 +2195,9 @@ sv:
           label: "Teckenstorlek"
         color:
           label: "Färg"
+        preferencesLabel:
+          label: "Länktext till inställningssidan"
+          placeholder: "Lämna tomt för ingen länk till inställningssidan"
       theme:
         width:
           label: "Mejlbredd (px)"
@@ -2574,6 +2577,8 @@ sv:
         save_draft: "Spara som utkast"
         send_hint_html: "Gå till %{link} för att skicka eller schemalägga."
         details_page: "kampanjens detaljsida"
+        all_subscribers_label: "Alla prenumeranter"
+        topic: "Ämne: %{name}"
       settings_tab:
         tracking_title: "Spårningsalternativ"
         tracking_subtitle: "Följ engagemanget för din kampanj"
@@ -2636,6 +2641,10 @@ sv:
         create_segment: "Skapa ett segment"
         tip_label: "Tips:"
         tip_html: "%{label} Du kan välja flera segment. Prenumeranter som matchar något av de valda segmenten får kampanjen. Segmenten uppdateras automatiskt utifrån dina regler."
+        topic_title: "Ämne"
+        topic_subtitle: "Skicka bara till prenumeranter som får det här ämnet. Avregistreringslänken stänger då bara av det här ämnet, om inte kanalen avregistrerar från allt."
+        no_topic: "Inget ämne: alla i målgruppen ovan"
+        manage_topics: "Hantera ämnen"
       content_tab:
         code: "Kod"
         preview: "Förhandsvisning"
@@ -3695,6 +3704,8 @@ sv:
       subscriber_count:
         one: "(%{formatted} prenumerant)"
         other: "(%{formatted} prenumeranter)"
+      all_subscribers_label: "Alla prenumeranter"
+      topic: "Ämne: %{name}"
     send_test_email:
       sending: "Skickar..."
       failed: "Det gick inte att skicka testmejlet"
@@ -4176,6 +4187,7 @@ sv:
           channel_info: "Kanalinformation"
           name: "Namn:"
           created: "Skapad:"
+          topics: "Ämnen"
         templates:
           title: "Mallar"
           subtitle: "Återanvändbara e-postdesigner"
@@ -5755,6 +5767,9 @@ sv:
         transactional: "Transaktionell (utgående)"
         bulk: "Bulk (kampanj)"
       submit: "Uppdatera"
+      topic: "Ämne"
+      topic_hint: "Mejlsteg når bara prenumeranter som får det här ämnet; de andra hoppar över dem och fortsätter i sekvensen. Avregistreringslänken i ett sekvensmejl avregistrerar alltid från allt."
+      no_topic: "Inget ämne: alla inskrivna prenumeranter"
     topbar:
       go_back: "Gå tillbaka"
       back: "Tillbaka till sekvensen"
@@ -7452,6 +7467,9 @@ sv:
           topic_unsubscribed:
             label: "Sida för avstängt ämne"
             description: "Visas efter att ett ämne har stängts av. Prenumeranten är kvar."
+          preferences:
+            label: "Inställningssida"
+            description: "Där prenumeranter väljer sina ämnen ({{ preferences_url }})."
         fields:
           heading: "Rubrik"
           message: "Meddelande"
@@ -7460,6 +7478,10 @@ sv:
           resubscribe_button: "Knapp för återregistrering"
           unsubscribe_button: "Avregistreringsknapp"
           everything_button: "Knapp för att avregistrera från allt"
+          preferences_link: "Länk till inställningssidan"
+          save_button: "Spara-knapp"
+          saved_message: "Sparat-meddelande"
+          unsubscribed_message: "Meddelande vid avregistrering"
         legal_links: "Juridiska länkar"
         legal_links_help: "Visas längst ned på varje avregistreringssida när de är angivna."
         privacy_policy_url: "URL till integritetspolicy"
@@ -7491,6 +7513,7 @@ sv:
           resubscribed: "Återregistrerad"
           topic_confirm: "Bekräfta ämne"
           topic_unsubscribed: "Ämne avstängt"
+          preferences: "Inställningar"
         preview_width: "Förhandsvisningsbredd"
         devices:
           desktop: "Dator"
@@ -7500,6 +7523,64 @@ sv:
         updated: "Avregistreringssidan har uppdaterats"
         demo_mode: "Demoläge: ändringar sparades inte"
         not_saved: "Inte sparat: %{errors}"
+    topics:
+      index:
+        title: "Ämnen"
+        intro: "Ett ämne är en sorts mejl som prenumeranter kan välja till eller bort, till exempel webbinarier eller erbjudanden. Varje ämne läser ett anpassat fält eller en tagg som du väljer. En kampanj eller sekvens till ett ämne når bara prenumeranterna som får det."
+        new_topic: "Nytt ämne"
+        empty: "Inga ämnen än. Skapa ett för varje sorts mejl som dina prenumeranter kan välja."
+        topic: "Ämne"
+        reads: "Läser"
+        tag: "Tagg"
+        count_on: "Ja"
+        count_off: "Nej"
+        count_unset: "Inget värde"
+        count_receiving: "Får det"
+        not_applicable: "ej tillämpligt"
+        actions: "Åtgärder"
+        unset_receives: "Inget värde: får det"
+        unset_does_not_receive: "Inget värde: får det inte"
+        hidden_on_page: "Dolt på inställningssidan"
+        move_up: "Flytta upp"
+        move_down: "Flytta ned"
+        edit: "Redigera"
+        delete: "Ta bort"
+        delete_confirm: "Ta bort ämnet %{name}? Prenumeranternas data ändras inte."
+        counts_note: "Antalen gäller aktiva prenumeranter. Ett taggämne har inget uttryckligt Nej: en prenumerant utan taggen får det inte."
+      new:
+        title: "Nytt ämne"
+      edit:
+        title: "Redigera %{name}"
+      create:
+        created: "Ämnet %{name} har skapats."
+      update:
+        updated: "Ämnet %{name} har uppdaterats."
+      destroy:
+        deleted: "Ämnet %{name} har tagits bort."
+        in_use: "%{name} används av en kampanj eller sekvens och kan därför inte tas bort. Ta bort det därifrån först."
+      form:
+        name: "Namn"
+        name_help: "Prenumeranter ser det här namnet på inställnings- och avregistreringssidan."
+        description: "Beskrivning"
+        description_help: "Valfritt. Visas under namnet på inställningssidan."
+        storage: "Var värdet lagras"
+        storage_custom_data: "Ett anpassat fält (ja, nej eller inget värde)"
+        custom_data_key: "Anpassat fält"
+        custom_data_key_help: "Ett fältnamn på översta nivån, till exempel sub_webinars. Värdet true eller 1 betyder ja; alla andra värden betyder nej. Broadcast fyller aldrig i det här fältet åt dig."
+        storage_tag: "En tagg (med eller utan tagg)"
+        tag_name: "Tagg"
+        tag_help: "Prenumeranter med taggen får ämnet. Att avregistrera sig från ämnet tar bort taggen."
+        unset: "Prenumeranter utan värde"
+        unset_help: "Vad som händer när en prenumerants fält saknar värde. Ett angivet ja eller nej gäller alltid. Välj noga om du bara får mejla personer som har godkänt det här ämnet."
+        unset_false: "Få inte det här ämnet"
+        unset_true: "Få det här ämnet"
+        unset_effect:
+          one: "1 aktiv prenumerant saknar värde för det här ämnet just nu."
+          other: "%{count} aktiva prenumeranter saknar värde för det här ämnet just nu."
+        visible: "Visa på inställningssidan"
+        visible_help: "Prenumeranter kan själva slå på och av det här ämnet."
+        save: "Spara ämne"
+        cancel: "Avbryt"
 
   shared:
     confirm_dialog:
@@ -7904,6 +7985,7 @@ sv:
         redacted: "Anonymiserad"
         activity: "Aktivitet"
         topic_unsubscribed: "Ämne av"
+        preferences_updated: "Inställningar"
       by: "av %{name}"
     index:
       empty: "Ingen aktivitet än"

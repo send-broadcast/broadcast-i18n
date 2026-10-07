@@ -2196,6 +2196,9 @@ fi:
           label: "Fonttikoko"
         color:
           label: "Väri"
+        preferencesLabel:
+          label: "Asetussivun linkin teksti"
+          placeholder: "Jätä tyhjäksi, jos et halua linkkiä asetussivulle"
       theme:
         width:
           label: "Sähköpostin leveys (px)"
@@ -2575,6 +2578,8 @@ fi:
         save_draft: "Tallenna luonnoksena"
         send_hint_html: "Lähetä tai ajasta kampanja %{link}."
         details_page: "kampanjan tietosivulla"
+        all_subscribers_label: "Kaikki tilaajat"
+        topic: "Aihe: %{name}"
       settings_tab:
         tracking_title: "Seuranta-asetukset"
         tracking_subtitle: "Seuraa kampanjasi sitoutumista"
@@ -2637,6 +2642,10 @@ fi:
         create_segment: "Luo segmentti"
         tip_label: "Vinkki:"
         tip_html: "%{label} Voit valita useita segmenttejä. Tilaajat, jotka vastaavat mitä tahansa valittua segmenttiä, saavat kampanjan. Segmentit päivittyvät automaattisesti sääntöjesi mukaan."
+        topic_title: "Aihe"
+        topic_subtitle: "Lähetä vain tilaajille, jotka saavat tämän aiheen. Peruutuslinkki poistaa silloin vain tämän aiheen, ellei kanava peru kaikkea."
+        no_topic: "Ei aihetta: koko yllä oleva kohderyhmä"
+        manage_topics: "Hallitse aiheita"
       content_tab:
         code: "Koodi"
         preview: "Esikatselu"
@@ -3696,6 +3705,8 @@ fi:
       subscriber_count:
         one: "(%{formatted} tilaaja)"
         other: "(%{formatted} tilaajaa)"
+      all_subscribers_label: "Kaikki tilaajat"
+      topic: "Aihe: %{name}"
     send_test_email:
       sending: "Lähetetään..."
       failed: "Testisähköpostin lähettäminen epäonnistui"
@@ -4177,6 +4188,7 @@ fi:
           channel_info: "Kanavan tiedot"
           name: "Nimi:"
           created: "Luotu:"
+          topics: "Aiheet"
         templates:
           title: "Mallit"
           subtitle: "Uudelleenkäytettävät sähköpostiulkoasut"
@@ -5756,6 +5768,9 @@ fi:
         transactional: "Transaktio (outbound)"
         bulk: "Massa (broadcast)"
       submit: "Päivitä"
+      topic: "Aihe"
+      topic_hint: "Sähköpostivaiheet tavoittavat vain tilaajat, jotka saavat tämän aiheen; muut ohittavat ne ja jatkavat sarjassa. Sarjan sähköpostin peruutuslinkki peruu aina kaikki tilaukset."
+      no_topic: "Ei aihetta: kaikki sarjaan liitetyt tilaajat"
     topbar:
       go_back: "Palaa takaisin"
       back: "Takaisin sarjaan"
@@ -7453,6 +7468,9 @@ fi:
           topic_unsubscribed:
             label: "Aihe poistettu -sivu"
             description: "Näytetään, kun aihe on poistettu käytöstä. Tilaaja pysyy tilaajana."
+          preferences:
+            label: "Asetussivu"
+            description: "Missä tilaajat valitsevat aiheensa ({{ preferences_url }})."
         fields:
           heading: "Otsikko"
           message: "Viesti"
@@ -7461,6 +7479,10 @@ fi:
           resubscribe_button: "Tilaa uudelleen -painike"
           unsubscribe_button: "Peruutuspainike"
           everything_button: "Peru kaikki -painike"
+          preferences_link: "Asetussivun linkki"
+          save_button: "Tallenna-painike"
+          saved_message: "Tallennettu-viesti"
+          unsubscribed_message: "Viesti, kun tilaus on peruttu"
         legal_links: "Oikeudelliset linkit"
         legal_links_help: "Näytetään jokaisen peruutussivun alareunassa, kun ne on asetettu."
         privacy_policy_url: "Tietosuojaselosteen URL-osoite"
@@ -7492,6 +7514,7 @@ fi:
           resubscribed: "Tilattu uudelleen"
           topic_confirm: "Aiheen vahvistus"
           topic_unsubscribed: "Aihe poistettu"
+          preferences: "Asetukset"
         preview_width: "Esikatselun leveys"
         devices:
           desktop: "Työpöytä"
@@ -7501,6 +7524,64 @@ fi:
         updated: "Peruutussivu päivitetty"
         demo_mode: "Esittelytila: muutoksia ei tallennettu"
         not_saved: "Ei tallennettu: %{errors}"
+    topics:
+      index:
+        title: "Aiheet"
+        intro: "Aihe on sähköpostien laji, jonka tilaajat voivat valita tai jättää pois, esimerkiksi webinaarit tai tarjoukset. Jokainen aihe lukee valitsemasi mukautetun kentän tai tunnisteen. Aiheeseen lähetetty kampanja tai sarja tavoittaa vain tilaajat, jotka saavat sen."
+        new_topic: "Uusi aihe"
+        empty: "Aiheita ei vielä ole. Luo yksi jokaista sähköpostilajia varten, jonka tilaajasi voivat valita."
+        topic: "Aihe"
+        reads: "Lukee"
+        tag: "Tunniste"
+        count_on: "Kyllä"
+        count_off: "Ei"
+        count_unset: "Ei arvoa"
+        count_receiving: "Saavat sen"
+        not_applicable: "ei sovellu"
+        actions: "Toiminnot"
+        unset_receives: "Ei arvoa: saa sen"
+        unset_does_not_receive: "Ei arvoa: ei saa sitä"
+        hidden_on_page: "Piilotettu asetussivulla"
+        move_up: "Siirrä ylös"
+        move_down: "Siirrä alas"
+        edit: "Muokkaa"
+        delete: "Poista"
+        delete_confirm: "Poistetaanko aihe %{name}? Tilaajien tiedot eivät muutu."
+        counts_note: "Luvut koskevat aktiivisia tilaajia. Tunnisteaiheella ei ole erillistä Ei-arvoa: tilaaja ilman tunnistetta ei saa sitä."
+      new:
+        title: "Uusi aihe"
+      edit:
+        title: "Muokkaa: %{name}"
+      create:
+        created: "Aihe %{name} luotiin."
+      update:
+        updated: "Aihe %{name} päivitettiin."
+      destroy:
+        deleted: "Aihe %{name} poistettiin."
+        in_use: "%{name} on kampanjan tai sarjan käytössä, joten sitä ei voi poistaa. Poista se niistä ensin."
+      form:
+        name: "Nimi"
+        name_help: "Tilaajat näkevät tämän nimen asetus- ja peruutussivulla."
+        description: "Kuvaus"
+        description_help: "Valinnainen. Näytetään nimen alla asetussivulla."
+        storage: "Missä arvo on tallessa"
+        storage_custom_data: "Mukautettu kenttä (kyllä, ei tai ei arvoa)"
+        custom_data_key: "Mukautettu kenttä"
+        custom_data_key_help: "Ylimmän tason kentän nimi, esimerkiksi sub_webinars. Arvo true tai 1 tarkoittaa kyllä; mikä tahansa muu arvo tarkoittaa ei. Broadcast ei koskaan täytä tätä kenttää puolestasi."
+        storage_tag: "Tunniste (tunniste tai ei tunnistetta)"
+        tag_name: "Tunniste"
+        tag_help: "Tilaajat, joilla on tunniste, saavat aiheen. Aiheen peruminen poistaa tunnisteen."
+        unset: "Tilaajat ilman arvoa"
+        unset_help: "Mitä tapahtuu, kun tilaajan kentällä ei ole arvoa. Asetettu kyllä tai ei pätee aina. Valitse huolella, jos saat lähettää vain niille, jotka ovat hyväksyneet tämän aiheen."
+        unset_false: "Älä saa tätä aihetta"
+        unset_true: "Saa tämä aihe"
+        unset_effect:
+          one: "1 aktiivisella tilaajalla ei ole nyt arvoa tälle aiheelle."
+          other: "%{count} aktiivisella tilaajalla ei ole nyt arvoa tälle aiheelle."
+        visible: "Näytä asetussivulla"
+        visible_help: "Tilaajat voivat itse ottaa tämän aiheen käyttöön ja pois."
+        save: "Tallenna aihe"
+        cancel: "Peruuta"
 
   shared:
     confirm_dialog:
@@ -7905,6 +7986,7 @@ fi:
         redacted: "Anonymisoitu"
         activity: "Toiminta"
         topic_unsubscribed: "Aihe pois"
+        preferences_updated: "Asetukset"
       by: "käyttäjä %{name}"
     index:
       empty: "Ei vielä toimintaa"
