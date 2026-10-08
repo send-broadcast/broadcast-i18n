@@ -5442,6 +5442,10 @@ de:
       failed: "Segment konnte nicht dupliziert werden: %{errors}"
     calculate_statistics:
       started: "Berechnung der Statistik gestartet. Dies kann einen Moment dauern."
+    preview_count:
+      false_zero_hint:
+        one: "0 erfüllen alle diese Regeln, 1 erfüllt mindestens eine. Meinten Sie Treffer bei ANY?"
+        other: "0 erfüllen alle diese Regeln, %{count} erfüllen mindestens eine. Meinten Sie Treffer bei ANY?"
 
   select_templates:
     index:
@@ -7982,6 +7986,7 @@ de:
         no_email_column: "Es wurde keine E-Mail-Spalte gefunden. Ordnen Sie vor dem Import eine Ihrer Spalten E-Mail zu."
         unparseable: "Diese Datei konnte nicht verarbeitet werden: %{error}"
         unreadable: "Diese Datei konnte nicht gelesen werden. Möglicherweise ist sie keine gültige CSV-/TSV-Datei: %{error}"
+        semicolon: "Diese Datei scheint durch Semikolons getrennt zu sein. Speichern Sie sie als CSV mit Kommas."
       warnings:
         unrecognized: "Nicht erkannte Spaltenüberschriften werden ignoriert, sofern Sie sie nicht zuordnen: %{headers}."
       targets:
@@ -8013,6 +8018,8 @@ de:
       rows:
         one: "%{count} Zeile"
         other: "%{count} Zeilen"
+      read_as_csv: "Gelesen als: kommagetrennt"
+      read_as_tsv: "Gelesen als: tabulatorgetrennt"
       awaiting: "Wartet auf Bestätigung"
       cannot_import: "Diese Datei kann noch nicht importiert werden"
       map_title: "Spalten zuordnen"

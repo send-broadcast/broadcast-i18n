@@ -5440,6 +5440,10 @@ sv:
       failed: "Det gick inte att duplicera segmentet: %{errors}"
     calculate_statistics:
       started: "Beräkningen av statistik har startat. Det kan ta en stund."
+    preview_count:
+      false_zero_hint:
+        one: "0 matchar alla dessa regler, 1 matchar minst en. Menade du Matcha ANY?"
+        other: "0 matchar alla dessa regler, %{count} matchar minst en. Menade du Matcha ANY?"
 
   select_templates:
     index:
@@ -7980,6 +7984,7 @@ sv:
         no_email_column: "Vi hittade ingen kolumn för e-post. Koppla en av dina kolumner till E-post innan du importerar."
         unparseable: "Vi kunde inte tolka filen: %{error}"
         unreadable: "Vi kunde inte läsa filen. Den kanske inte är en giltig CSV/TSV-fil: %{error}"
+        semicolon: "Filen verkar vara semikolonseparerad. Spara den som CSV med kommatecken."
       warnings:
         unrecognized: "Okända rubriker ignoreras om du inte kopplar dem: %{headers}."
       targets:
@@ -8011,6 +8016,8 @@ sv:
       rows:
         one: "%{count} rad"
         other: "%{count} rader"
+      read_as_csv: "Läst som: kommaseparerad"
+      read_as_tsv: "Läst som: tabbseparerad"
       awaiting: "Väntar på bekräftelse"
       cannot_import: "Den här filen kan inte importeras än"
       map_title: "Koppla dina kolumner"

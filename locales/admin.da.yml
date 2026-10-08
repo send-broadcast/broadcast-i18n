@@ -5440,6 +5440,10 @@ da:
       failed: "Segmentet kunne ikke duplikeres: %{errors}"
     calculate_statistics:
       started: "Beregningen af statistik er startet. Det kan tage et øjeblik."
+    preview_count:
+      false_zero_hint:
+        one: "0 matcher alle disse regler, 1 matcher mindst én. Mente du Match ANY?"
+        other: "0 matcher alle disse regler, %{count} matcher mindst én. Mente du Match ANY?"
 
   select_templates:
     index:
@@ -7980,6 +7984,7 @@ da:
         no_email_column: "Vi kunne ikke finde en E-mail-kolonne. Knyt en af dine kolonner til E-mail, før du importerer."
         unparseable: "Vi kunne ikke fortolke denne fil: %{error}"
         unreadable: "Vi kunne ikke læse denne fil. Den er måske ikke en gyldig CSV/TSV: %{error}"
+        semicolon: "Filen ser ud til at være semikolonsepareret. Gem den som CSV med kommaer."
       warnings:
         unrecognized: "Ukendte overskrifter ignoreres, medmindre du knytter dem til et felt: %{headers}."
       targets:
@@ -8011,6 +8016,8 @@ da:
       rows:
         one: "%{count} række"
         other: "%{count} rækker"
+      read_as_csv: "Læst som: kommasepareret"
+      read_as_tsv: "Læst som: tabulatorsepareret"
       awaiting: "Afventer bekræftelse"
       cannot_import: "Denne fil kan ikke importeres endnu"
       map_title: "Knyt dine kolonner til felter"

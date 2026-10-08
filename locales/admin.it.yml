@@ -5438,6 +5438,10 @@ it:
       failed: "Impossibile duplicare il segmento: %{errors}"
     calculate_statistics:
       started: "Calcolo delle statistiche avviato. Potrebbe volerci un momento."
+    preview_count:
+      false_zero_hint:
+        one: "0 corrispondono a tutte queste regole, 1 corrisponde ad almeno una. Intendevi Soddisfa ANY?"
+        other: "0 corrispondono a tutte queste regole, %{count} corrispondono ad almeno una. Intendevi Soddisfa ANY?"
 
   select_templates:
     index:
@@ -7978,6 +7982,7 @@ it:
         no_email_column: "Non troviamo una colonna Email. Prima di importare, collega una delle colonne a Email."
         unparseable: "Non riusciamo a interpretare questo file: %{error}"
         unreadable: "Non riusciamo a leggere questo file. Potrebbe non essere un CSV/TSV valido: %{error}"
+        semicolon: "Questo file sembra separato da punto e virgola. Salvalo come CSV con le virgole."
       warnings:
         unrecognized: "Le intestazioni non riconosciute verranno ignorate se non le colleghi: %{headers}."
       targets:
@@ -8009,6 +8014,8 @@ it:
       rows:
         one: "%{count} riga"
         other: "%{count} righe"
+      read_as_csv: "Letto come: separato da virgole"
+      read_as_tsv: "Letto come: separato da tabulazioni"
       awaiting: "In attesa di conferma"
       cannot_import: "Questo file non si può ancora importare"
       map_title: "Collega le colonne"

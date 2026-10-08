@@ -5442,6 +5442,10 @@ nl:
       failed: "Kon segment niet dupliceren: %{errors}"
     calculate_statistics:
       started: "Berekening van statistieken gestart. Dit kan even duren."
+    preview_count:
+      false_zero_hint:
+        one: "0 voldoen aan al deze regels, 1 voldoet aan ten minste één. Bedoelde je Voldoen aan ANY?"
+        other: "0 voldoen aan al deze regels, %{count} voldoen aan ten minste één. Bedoelde je Voldoen aan ANY?"
 
   select_templates:
     index:
@@ -7982,6 +7986,7 @@ nl:
         no_email_column: "We konden geen kolom voor e-mail vinden. Koppel een van je kolommen aan E-mail voordat je importeert."
         unparseable: "We konden dit bestand niet verwerken: %{error}"
         unreadable: "We konden dit bestand niet lezen. Mogelijk is het geen geldig CSV/TSV-bestand: %{error}"
+        semicolon: "Dit bestand lijkt gescheiden door puntkomma's. Sla het op als CSV met komma's."
       warnings:
         unrecognized: "Niet-herkende kolomkoppen worden genegeerd, tenzij je ze koppelt: %{headers}."
       targets:
@@ -8013,6 +8018,8 @@ nl:
       rows:
         one: "%{count} rij"
         other: "%{count} rijen"
+      read_as_csv: "Gelezen als: kommagescheiden"
+      read_as_tsv: "Gelezen als: tabgescheiden"
       awaiting: "Wacht op bevestiging"
       cannot_import: "Dit bestand kan nog niet worden geïmporteerd"
       map_title: "Koppel je kolommen"

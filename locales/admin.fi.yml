@@ -5441,6 +5441,10 @@ fi:
       failed: "Segmentin monistaminen epäonnistui: %{errors}"
     calculate_statistics:
       started: "Tilastojen laskenta aloitettu. Tämä voi kestää hetken."
+    preview_count:
+      false_zero_hint:
+        one: "0 täsmää kaikkiin näihin sääntöihin, 1 täsmää vähintään yhteen. Tarkoititko vaihtoehtoa ANY?"
+        other: "0 täsmää kaikkiin näihin sääntöihin, %{count} täsmää vähintään yhteen. Tarkoititko vaihtoehtoa ANY?"
 
   select_templates:
     index:
@@ -7981,6 +7985,7 @@ fi:
         no_email_column: "Sähköposti-saraketta ei löytynyt. Yhdistä jokin sarakkeistasi Sähköposti-kenttään ennen tuontia."
         unparseable: "Tätä tiedostoa ei voitu jäsentää: %{error}"
         unreadable: "Tätä tiedostoa ei voitu lukea. Se ei ehkä ole kelvollinen CSV- tai TSV-tiedosto: %{error}"
+        semicolon: "Tämä tiedosto näyttää puolipisteillä erotetulta. Tallenna se CSV-muodossa pilkuilla."
       warnings:
         unrecognized: "Tunnistamattomat otsikot jätetään huomiotta, ellet yhdistä niitä: %{headers}."
       targets:
@@ -8012,6 +8017,8 @@ fi:
       rows:
         one: "%{count} rivi"
         other: "%{count} riviä"
+      read_as_csv: "Luettu muodossa: pilkuilla erotettu"
+      read_as_tsv: "Luettu muodossa: sarkaimilla erotettu"
       awaiting: "Odottaa vahvistusta"
       cannot_import: "Tätä tiedostoa ei voi vielä tuoda"
       map_title: "Yhdistä sarakkeesi"

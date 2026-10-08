@@ -5440,6 +5440,10 @@ pt-BR:
       failed: "Não foi possível duplicar o segmento: %{errors}"
     calculate_statistics:
       started: "Cálculo das estatísticas iniciado. Isso pode levar alguns instantes."
+    preview_count:
+      false_zero_hint:
+        one: "0 correspondem a todas estas regras, 1 corresponde a pelo menos uma. Você quis dizer Corresponder a ANY?"
+        other: "0 correspondem a todas estas regras, %{count} correspondem a pelo menos uma. Você quis dizer Corresponder a ANY?"
 
   select_templates:
     index:
@@ -7980,6 +7984,7 @@ pt-BR:
         no_email_column: "Não encontramos uma coluna de e-mail. Mapeie uma das suas colunas para E-mail antes de importar."
         unparseable: "Não conseguimos interpretar este arquivo: %{error}"
         unreadable: "Não conseguimos ler este arquivo. Talvez ele não seja um CSV/TSV válido: %{error}"
+        semicolon: "Este arquivo parece separado por ponto e vírgula. Salve-o como CSV com vírgulas."
       warnings:
         unrecognized: "Os cabeçalhos não reconhecidos serão ignorados, a menos que você os mapeie: %{headers}."
       targets:
@@ -8011,6 +8016,8 @@ pt-BR:
       rows:
         one: "%{count} linha"
         other: "%{count} linhas"
+      read_as_csv: "Lido como: separado por vírgulas"
+      read_as_tsv: "Lido como: separado por tabulações"
       awaiting: "Aguardando confirmação"
       cannot_import: "Este arquivo ainda não pode ser importado"
       map_title: "Mapeie suas colunas"

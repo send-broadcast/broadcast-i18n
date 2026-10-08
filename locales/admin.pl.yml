@@ -5624,6 +5624,12 @@ pl:
       failed: "Nie udało się zduplikować segmentu: %{errors}"
     calculate_statistics:
       started: "Rozpoczęto obliczanie statystyk. Może to chwilę potrwać."
+    preview_count:
+      false_zero_hint:
+        one: "0 pasuje do wszystkich tych reguł, 1 pasuje do co najmniej jednej. Czy chodziło o Dopasuj do ANY?"
+        few: "0 pasuje do wszystkich tych reguł, %{count} pasują do co najmniej jednej. Czy chodziło o Dopasuj do ANY?"
+        many: "0 pasuje do wszystkich tych reguł, %{count} pasuje do co najmniej jednej. Czy chodziło o Dopasuj do ANY?"
+        other: "0 pasuje do wszystkich tych reguł, %{count} pasuje do co najmniej jednej. Czy chodziło o Dopasuj do ANY?"
 
   select_templates:
     index:
@@ -8244,6 +8250,7 @@ pl:
         no_email_column: "Nie znaleziono kolumny e-mail. Przed importem przypisz jedną z kolumn do pola E-mail."
         unparseable: "Nie udało się przetworzyć tego pliku: %{error}"
         unreadable: "Nie udało się odczytać tego pliku. Być może nie jest to prawidłowy plik CSV/TSV: %{error}"
+        semicolon: "Ten plik wygląda na rozdzielany średnikami. Zapisz go jako CSV z przecinkami."
       warnings:
         unrecognized: "Nierozpoznane nagłówki zostaną zignorowane, jeśli ich nie przypiszesz: %{headers}."
       targets:
@@ -8277,6 +8284,8 @@ pl:
         few: "%{count} wiersze"
         many: "%{count} wierszy"
         other: "%{count} wiersza"
+      read_as_csv: "Odczytano jako: rozdzielany przecinkami"
+      read_as_tsv: "Odczytano jako: rozdzielany tabulatorami"
       awaiting: "Czeka na potwierdzenie"
       cannot_import: "Tego pliku nie można jeszcze zaimportować"
       map_title: "Przypisz kolumny"

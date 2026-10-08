@@ -5441,6 +5441,10 @@ fr:
       failed: "Impossible de dupliquer le segment : %{errors}"
     calculate_statistics:
       started: "Le calcul des statistiques a commencé. Cela peut prendre un moment."
+    preview_count:
+      false_zero_hint:
+        one: "0 correspondent à toutes ces règles, 1 correspond à au moins une. Vouliez-vous dire Correspondre à ANY ?"
+        other: "0 correspondent à toutes ces règles, %{count} correspondent à au moins une. Vouliez-vous dire Correspondre à ANY ?"
 
   select_templates:
     index:
@@ -7981,6 +7985,7 @@ fr:
         no_email_column: "Aucune colonne E-mail trouvée. Associez l'une de vos colonnes à E-mail avant l'import."
         unparseable: "Impossible d'analyser ce fichier : %{error}"
         unreadable: "Impossible de lire ce fichier. Ce n'est peut-être pas un CSV/TSV valide : %{error}"
+        semicolon: "Ce fichier semble séparé par des points-virgules. Enregistrez-le en CSV avec des virgules."
       warnings:
         unrecognized: "Les en-têtes non reconnus seront ignorés, sauf si vous les associez : %{headers}."
       targets:
@@ -8012,6 +8017,8 @@ fr:
       rows:
         one: "%{count} ligne"
         other: "%{count} lignes"
+      read_as_csv: "Lu comme : séparé par des virgules"
+      read_as_tsv: "Lu comme : séparé par des tabulations"
       awaiting: "En attente de confirmation"
       cannot_import: "Ce fichier ne peut pas encore être importé"
       map_title: "Associez vos colonnes"

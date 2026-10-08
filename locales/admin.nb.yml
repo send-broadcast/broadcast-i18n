@@ -5440,6 +5440,10 @@ nb:
       failed: "Kunne ikke duplisere segmentet: %{errors}"
     calculate_statistics:
       started: "Beregningen av statistikk har startet. Dette kan ta litt tid."
+    preview_count:
+      false_zero_hint:
+        one: "0 samsvarer med alle disse reglene, 1 samsvarer med minst én. Mente du Samsvar med ANY?"
+        other: "0 samsvarer med alle disse reglene, %{count} samsvarer med minst én. Mente du Samsvar med ANY?"
 
   select_templates:
     index:
@@ -7980,6 +7984,7 @@ nb:
         no_email_column: "Vi fant ingen E-post-kolonne. Tilordne en av kolonnene dine til E-post før du importerer."
         unparseable: "Vi kunne ikke tolke denne filen: %{error}"
         unreadable: "Vi kunne ikke lese denne filen. Den er kanskje ikke en gyldig CSV/TSV: %{error}"
+        semicolon: "Filen ser ut til å være semikolonseparert. Lagre den som CSV med komma."
       warnings:
         unrecognized: "Overskrifter som ikke gjenkjennes, ignoreres med mindre du tilordner dem: %{headers}."
       targets:
@@ -8011,6 +8016,8 @@ nb:
       rows:
         one: "%{count} rad"
         other: "%{count} rader"
+      read_as_csv: "Lest som: kommaseparert"
+      read_as_tsv: "Lest som: tabulatorseparert"
       awaiting: "Venter på bekreftelse"
       cannot_import: "Denne filen kan ikke importeres ennå"
       map_title: "Tilordne kolonnene"

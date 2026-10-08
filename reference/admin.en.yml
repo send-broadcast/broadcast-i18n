@@ -5458,6 +5458,10 @@ en:
       failed: "Could not duplicate segment: %{errors}"
     calculate_statistics:
       started: "Statistics calculation started. This may take a moment."
+    preview_count:
+      false_zero_hint:
+        one: "0 match all of these rules, 1 matches at least one. Did you mean Match ANY?"
+        other: "0 match all of these rules, %{count} match at least one. Did you mean Match ANY?"
 
   select_templates:
     index:
@@ -7998,6 +8002,7 @@ en:
         no_email_column: "We couldn't find an Email column. Map one of your columns to Email before importing."
         unparseable: "We couldn't parse this file: %{error}"
         unreadable: "We couldn't read this file. It may not be a valid CSV/TSV: %{error}"
+        semicolon: "This file looks semicolon-separated. Save it as CSV with commas."
       warnings:
         unrecognized: "Unrecognized headers will be ignored unless you map them: %{headers}."
       targets:
@@ -8029,6 +8034,8 @@ en:
       rows:
         one: "%{count} row"
         other: "%{count} rows"
+      read_as_csv: "Read as: comma-separated"
+      read_as_tsv: "Read as: tab-separated"
       awaiting: "Awaiting confirmation"
       cannot_import: "This file can't be imported yet"
       map_title: "Map your columns"

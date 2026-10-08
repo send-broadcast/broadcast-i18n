@@ -5441,6 +5441,10 @@ es:
       failed: "No se pudo duplicar el segmento: %{errors}"
     calculate_statistics:
       started: "Se ha iniciado el cálculo de las estadísticas. Puede tardar un momento."
+    preview_count:
+      false_zero_hint:
+        one: "0 cumplen todas estas reglas, 1 cumple al menos una. ¿Querías decir Cumplir ANY?"
+        other: "0 cumplen todas estas reglas, %{count} cumplen al menos una. ¿Querías decir Cumplir ANY?"
 
   select_templates:
     index:
@@ -7981,6 +7985,7 @@ es:
         no_email_column: "No encontramos una columna de correo. Asigna una de tus columnas a Correo antes de importar."
         unparseable: "No pudimos analizar este archivo: %{error}"
         unreadable: "No pudimos leer este archivo. Puede que no sea un CSV/TSV válido: %{error}"
+        semicolon: "Este archivo parece separado por punto y coma. Guárdalo como CSV con comas."
       warnings:
         unrecognized: "Los encabezados no reconocidos se ignorarán salvo que los asignes: %{headers}."
       targets:
@@ -8012,6 +8017,8 @@ es:
       rows:
         one: "%{count} fila"
         other: "%{count} filas"
+      read_as_csv: "Leído como: separado por comas"
+      read_as_tsv: "Leído como: separado por tabulaciones"
       awaiting: "Pendiente de confirmación"
       cannot_import: "Este archivo todavía no se puede importar"
       map_title: "Asigna tus columnas"
