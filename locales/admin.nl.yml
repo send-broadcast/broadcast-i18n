@@ -28,6 +28,8 @@
 nl:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Uitgesloten segmenten"
       user:
         email: "E-mail"
         first_name: "Voornaam"
@@ -36,6 +38,7 @@ nl:
         password: "Wachtwoord"
         password_confirmation: "Wachtwoordbevestiging"
       broadcast:
+        excluded_segment_ids: "Uitgesloten segmenten"
         name: "Naam"
         subject: "Onderwerp"
         preheader: "Voorbeeldtekst"
@@ -114,6 +117,7 @@ nl:
         manual_dkim_selectors: "Handmatige DKIM-selectors"
         domain: "Domein"
       sequence:
+        excluded_segment_ids: "Uitgesloten segmenten"
         blocks_json: "Blokken-JSON"
         email_server_ids: "E-mailserver-ID's"
         sender_identity: "Afzenderidentiteit"
@@ -293,6 +297,8 @@ nl:
             email:
               already_suppressed: "staat al op de blokkeerlijst"
       messages:
+        excluded_elsewhere: "Dit segment wordt uitgesloten door %{names}. Haal het daar eerst uit de uitgesloten segmenten."
+        overlaps_included: "mogen geen segment bevatten dat ook in de doelgroep zit"
         is_not_a_block_document: "is geen blokdocument"
         is_not_valid_json: "is geen geldige JSON"
         must_be_an_object: "moet een object zijn"
@@ -1479,6 +1485,8 @@ nl:
         back: "Terug naar updates"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Concepten van deze autopilot gaan nooit naar iemand in deze segmenten."
     autopilot_not_found: "Autopilot niet gevonden"
     index:
       title: "Autopilots"
@@ -2449,6 +2457,9 @@ nl:
         other: "(%{count} abonnees)"
       modify: "Doelgroep van abonnees wijzigen"
     new:
+      exclude_hint: "Niemand in deze segmenten krijgt deze broadcast, ook niet als die in een segment hierboven zit."
+      exclude_aria: "%{name} uitsluiten"
+      exclude_title: "Uitsluiten"
       title: "Doelgroep van abonnees bewerken"
       intro: "Standaard ontvangen alle abonnees in dit kanaal deze campagne. Als je een of meer segmenten opgeeft, ontvangen alleen abonnees in die segmenten de campagne."
       only_failed_html: "Alleen abonnees bereiken die de vorige campagne (%{link}) nog niet heeft bereikt. Adressen die de e-mailprovider heeft geweigerd, worden overgeslagen."
@@ -2460,6 +2471,9 @@ nl:
       updated: "Doelgroep van abonnees bijgewerkt"
 
   broadcasts:
+    audience_extras:
+      topic: "Onderwerp: %{name}"
+      excludes: "Uitgesloten: %{names}"
     index:
       first_title: "Verzend je eerste campagne"
       first_subtitle: "Bereik je hele publiek met één e-mail"
@@ -2551,6 +2565,10 @@ nl:
       autosave: "Automatisch opslaan"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} uitgesloten)"
+          other: "(%{formatted} uitgesloten)"
+        excluding: "Uitgesloten"
         title: "Controleer je campagne"
         subtitle: "Controleer of alles klopt voordat je verzendt"
         content: "Inhoud"
@@ -2637,6 +2655,10 @@ nl:
         tags_placeholder: "Tags toevoegen..."
         tags_hint: "Voor interne ordening"
       audience_tab:
+        exclude_empty_warning: "Dit segment heeft geen abonnees en sluit dus niemand uit. Controleer de regels."
+        exclude_subtitle: "Niemand in deze segmenten krijgt deze broadcast, ook niet als die in de doelgroep hierboven zit."
+        exclude_aria: "%{name} uitsluiten"
+        exclude_title: "Uitsluiten"
         title: "Doelgroep kiezen"
         subtitle: "Kies wie deze campagne ontvangt"
         all_subscribers: "Alle abonnees"
@@ -3703,6 +3725,9 @@ nl:
       load_draft: "Concept laden"
       keep: "Houden wat ik heb"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} uitgesloten)"
+        other: "(%{formatted} uitgesloten)"
       next:
         settings: "Volgende: instellingen"
         audience: "Volgende: doelgroep"
@@ -5178,6 +5203,10 @@ nl:
       failed: "Probeer het opnieuw"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Dit segment heeft geen abonnees en sluit dus niemand uit. Controleer de regels."
+      exclude_aria: "%{name} uitsluiten"
+      title: "Uitgesloten segmenten"
     index:
       first_title: "Orden je abonnees"
       first_subtitle: "Maak segmenten om abonnees op basis van regels te groeperen"
@@ -5679,6 +5708,7 @@ nl:
       meta_description: "Reeks %{label}"
       breadcrumb: "Details"
     form:
+      excluded_segments_hint: "Niemand in deze segmenten krijgt een e-mail uit deze reeks, hoe die ook is ingeschreven."
       title: "Reeksinstellingen bewerken"
       general: "Algemene instellingen"
       label: "Label van de reeks"

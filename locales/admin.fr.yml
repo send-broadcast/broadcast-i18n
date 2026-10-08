@@ -27,6 +27,8 @@
 fr:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Segments exclus"
       user:
         email: "E-mail"
         first_name: "Prénom"
@@ -35,6 +37,7 @@ fr:
         password: "Mot de passe"
         password_confirmation: "Confirmation du mot de passe"
       broadcast:
+        excluded_segment_ids: "Segments exclus"
         name: "Nom"
         subject: "Objet"
         preheader: "Texte d'aperçu"
@@ -113,6 +116,7 @@ fr:
         manual_dkim_selectors: "Sélecteurs DKIM manuels"
         domain: "Domaine"
       sequence:
+        excluded_segment_ids: "Segments exclus"
         blocks_json: "Document à blocs"
         email_server_ids: "Serveurs e-mail"
         sender_identity: "Identité d'expéditeur"
@@ -292,6 +296,8 @@ fr:
             email:
               already_suppressed: "figure déjà dans la liste d'exclusion"
       messages:
+        excluded_elsewhere: "Ce segment est exclu par %{names}. Retirez-le d'abord de leurs segments exclus."
+        overlaps_included: "ne peuvent pas contenir un segment qui fait aussi partie de l'audience"
         is_not_a_block_document: "n'est pas un document à blocs"
         is_not_valid_json: "n'est pas un JSON valide"
         must_be_an_object: "doit être un objet"
@@ -1478,6 +1484,8 @@ fr:
         back: "Retour aux mises à jour"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Les brouillons de cet autopilote ne vont jamais aux personnes de ces segments."
     autopilot_not_found: "Pilote automatique introuvable"
     index:
       title: "Pilotes automatiques"
@@ -2448,6 +2456,9 @@ fr:
         other: "(%{count} abonnés)"
       modify: "Modifier le ciblage des abonnés"
     new:
+      exclude_hint: "Personne dans ces segments ne reçoit ce broadcast, même s'il fait partie d'un segment ci-dessus."
+      exclude_aria: "Exclure %{name}"
+      exclude_title: "Exclure"
       title: "Modifier le ciblage des abonnés"
       intro: "Par défaut, tous les abonnés de ce canal recevront cette campagne. Si vous indiquez un ou plusieurs segments, seuls les abonnés de ces segments la recevront."
       only_failed_html: "Cibler uniquement les abonnés que la dernière campagne (%{link}) n'a pas encore atteints. Les adresses refusées par le fournisseur d'e-mail sont exclues."
@@ -2459,6 +2470,9 @@ fr:
       updated: "Ciblage des abonnés mis à jour"
 
   broadcasts:
+    audience_extras:
+      topic: "Thème : %{name}"
+      excludes: "Exclus : %{names}"
     index:
       first_title: "Envoyez votre première campagne"
       first_subtitle: "Touchez toute votre audience avec un seul e-mail"
@@ -2550,6 +2564,10 @@ fr:
       autosave: "Enregistrement automatique"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} exclu)"
+          other: "(%{formatted} exclus)"
+        excluding: "Exclus"
         title: "Relisez votre campagne"
         subtitle: "Vérifiez que tout est correct avant l'envoi"
         content: "Contenu"
@@ -2636,6 +2654,10 @@ fr:
         tags_placeholder: "Ajouter des tags..."
         tags_hint: "Pour votre organisation interne"
       audience_tab:
+        exclude_empty_warning: "Ce segment n'a aucun abonné, il n'exclut donc personne. Vérifiez ses règles."
+        exclude_subtitle: "Personne dans ces segments ne reçoit ce broadcast, même s'il fait partie de l'audience ci-dessus."
+        exclude_aria: "Exclure %{name}"
+        exclude_title: "Exclure"
         title: "Choisir l'audience"
         subtitle: "Choisissez qui recevra cette campagne"
         all_subscribers: "Tous les abonnés"
@@ -3702,6 +3724,9 @@ fr:
       load_draft: "Charger le brouillon"
       keep: "Garder la version actuelle"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} exclu)"
+        other: "(%{formatted} exclus)"
       next:
         settings: "Suivant : Paramètres"
         audience: "Suivant : Audience"
@@ -5177,6 +5202,10 @@ fr:
       failed: "Veuillez réessayer"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Ce segment n'a aucun abonné, il n'exclut donc personne. Vérifiez ses règles."
+      exclude_aria: "Exclure %{name}"
+      title: "Segments exclus"
     index:
       first_title: "Organisez vos abonnés"
       first_subtitle: "Créez des segments pour regrouper les abonnés selon des règles"
@@ -5678,6 +5707,7 @@ fr:
       meta_description: "Séquence %{label}"
       breadcrumb: "Détails"
     form:
+      excluded_segments_hint: "Personne dans ces segments ne reçoit d'e-mail de cette séquence, quelle que soit la façon dont il y a été inscrit."
       title: "Modifier les paramètres de la séquence"
       general: "Paramètres généraux"
       label: "Libellé de la séquence"

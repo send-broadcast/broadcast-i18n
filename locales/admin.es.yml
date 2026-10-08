@@ -27,6 +27,8 @@
 es:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Segmentos excluidos"
       user:
         email: "Correo electrónico"
         first_name: "Nombre"
@@ -35,6 +37,7 @@ es:
         password: "Contraseña"
         password_confirmation: "Confirmación de contraseña"
       broadcast:
+        excluded_segment_ids: "Segmentos excluidos"
         name: "Nombre"
         subject: "Asunto"
         preheader: "Texto de vista previa"
@@ -113,6 +116,7 @@ es:
         manual_dkim_selectors: "Selectores DKIM manuales"
         domain: "Dominio"
       sequence:
+        excluded_segment_ids: "Segmentos excluidos"
         blocks_json: "JSON de bloques"
         email_server_ids: "ID de servidores de correo"
         sender_identity: "Identidad de remitente"
@@ -292,6 +296,8 @@ es:
             email:
               already_suppressed: "ya está en la lista de exclusión"
       messages:
+        excluded_elsewhere: "Este segmento está excluido por %{names}. Quítalo primero de sus segmentos excluidos."
+        overlaps_included: "no pueden incluir un segmento que también está en el público"
         is_not_a_block_document: "no es un documento de bloques"
         is_not_valid_json: "no es un JSON válido"
         must_be_an_object: "debe ser un objeto"
@@ -1478,6 +1484,8 @@ es:
         back: "Volver a las actualizaciones"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Los borradores de este autopiloto nunca llegan a nadie de estos segmentos."
     autopilot_not_found: "No se encontró el piloto automático"
     index:
       title: "Pilotos automáticos"
@@ -2448,6 +2456,9 @@ es:
         other: "(%{count} suscriptores)"
       modify: "Modificar los destinatarios"
     new:
+      exclude_hint: "Nadie de estos segmentos recibe este broadcast, aunque esté en un segmento de arriba."
+      exclude_aria: "Excluir %{name}"
+      exclude_title: "Excluir"
       title: "Editar los destinatarios"
       intro: "Por defecto, todos los suscriptores de este canal recibirán esta campaña. Si indicas uno o varios segmentos, solo la recibirán los suscriptores de esos segmentos."
       only_failed_html: "Dirigirse solo a los suscriptores a los que la última campaña (%{link}) aún no llegó. Las direcciones que rechazó el proveedor de correo quedan fuera."
@@ -2459,6 +2470,9 @@ es:
       updated: "Destinatarios actualizados"
 
   broadcasts:
+    audience_extras:
+      topic: "Tema: %{name}"
+      excludes: "Excluye: %{names}"
     index:
       first_title: "Envía tu primera campaña"
       first_subtitle: "Llega a todo tu público con un solo correo"
@@ -2550,6 +2564,10 @@ es:
       autosave: "Guardado automático"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} excluido)"
+          other: "(%{formatted} excluidos)"
+        excluding: "Excluye"
         title: "Revisa tu campaña"
         subtitle: "Confirma que todo está bien antes de enviar"
         content: "Contenido"
@@ -2636,6 +2654,10 @@ es:
         tags_placeholder: "Añadir etiquetas..."
         tags_hint: "Para organización interna"
       audience_tab:
+        exclude_empty_warning: "Este segmento no tiene suscriptores, así que no excluye a nadie. Revisa sus reglas."
+        exclude_subtitle: "Nadie de estos segmentos recibe este broadcast, aunque esté en el público de arriba."
+        exclude_aria: "Excluir %{name}"
+        exclude_title: "Excluir"
         title: "Seleccionar público"
         subtitle: "Elige quién recibirá esta campaña"
         all_subscribers: "Todos los suscriptores"
@@ -3702,6 +3724,9 @@ es:
       load_draft: "Cargar borrador"
       keep: "Conservar lo que tengo"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} excluido)"
+        other: "(%{formatted} excluidos)"
       next:
         settings: "Siguiente: Configuración"
         audience: "Siguiente: Público"
@@ -5177,6 +5202,10 @@ es:
       failed: "Inténtalo de nuevo"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Este segmento no tiene suscriptores, así que no excluye a nadie. Revisa sus reglas."
+      exclude_aria: "Excluir %{name}"
+      title: "Segmentos excluidos"
     index:
       first_title: "Organiza a tus suscriptores"
       first_subtitle: "Crea segmentos para agrupar a los suscriptores según reglas"
@@ -5678,6 +5707,7 @@ es:
       meta_description: "Secuencia %{label}"
       breadcrumb: "Detalles"
     form:
+      excluded_segments_hint: "Nadie de estos segmentos recibe correos de esta secuencia, sin importar cómo se inscribió."
       title: "Editar la configuración de la secuencia"
       general: "Configuración general"
       label: "Etiqueta de la secuencia"

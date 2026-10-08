@@ -26,6 +26,8 @@
 sv:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Uteslutna segment"
       user:
         email: "E-post"
         first_name: "Förnamn"
@@ -34,6 +36,7 @@ sv:
         password: "Lösenord"
         password_confirmation: "Bekräfta lösenord"
       broadcast:
+        excluded_segment_ids: "Uteslutna segment"
         name: "Namn"
         subject: "Ämne"
         preheader: "Förhandsvisningstext"
@@ -112,6 +115,7 @@ sv:
         manual_dkim_selectors: "Manuella DKIM-selektorer"
         domain: "Domän"
       sequence:
+        excluded_segment_ids: "Uteslutna segment"
         blocks_json: "Block-JSON"
         email_server_ids: "E-postserver-id:n"
         sender_identity: "Avsändaridentitet"
@@ -291,6 +295,8 @@ sv:
             email:
               already_suppressed: "finns redan på spärrlistan"
       messages:
+        excluded_elsewhere: "Det här segmentet utesluts av %{names}. Ta först bort det från deras uteslutna segment."
+        overlaps_included: "kan inte innehålla ett segment som också finns i målgruppen"
         is_not_a_block_document: "är inte ett blockdokument"
         is_not_valid_json: "är inte giltig JSON"
         must_be_an_object: "måste vara ett objekt"
@@ -1477,6 +1483,8 @@ sv:
         back: "Tillbaka till uppdateringar"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Utkast från den här autopiloten går aldrig till någon i de här segmenten."
     autopilot_not_found: "Autopilot hittades inte"
     index:
       title: "Autopilots"
@@ -2447,6 +2455,9 @@ sv:
         other: "(%{count} prenumeranter)"
       modify: "Ändra målgrupp"
     new:
+      exclude_hint: "Ingen i de här segmenten får det här utskicket, även om de finns i ett segment ovan."
+      exclude_aria: "Uteslut %{name}"
+      exclude_title: "Uteslut"
       title: "Redigera målgrupp"
       intro: "Som standard får alla prenumeranter i den här kanalen kampanjen. Om du anger ett eller flera segment får bara prenumeranterna i de segmenten kampanjen."
       only_failed_html: "Nå endast prenumeranter som den senaste kampanjen (%{link}) inte har nått än. Adresser som e-postleverantören har avvisat utelämnas."
@@ -2458,6 +2469,9 @@ sv:
       updated: "Målgruppen har uppdaterats"
 
   broadcasts:
+    audience_extras:
+      topic: "Ämne: %{name}"
+      excludes: "Utesluter: %{names}"
     index:
       first_title: "Skicka din första kampanj"
       first_subtitle: "Nå hela din målgrupp med ett enda mejl"
@@ -2549,6 +2563,10 @@ sv:
       autosave: "Spara automatiskt"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} utesluten)"
+          other: "(%{formatted} uteslutna)"
+        excluding: "Utesluter"
         title: "Granska din kampanj"
         subtitle: "Kontrollera att allt ser rätt ut innan du skickar"
         content: "Innehåll"
@@ -2635,6 +2653,10 @@ sv:
         tags_placeholder: "Lägg till taggar..."
         tags_hint: "För intern organisering"
       audience_tab:
+        exclude_empty_warning: "Det här segmentet har inga prenumeranter, så det utesluter ingen. Kontrollera dess regler."
+        exclude_subtitle: "Ingen i de här segmenten får det här utskicket, även om de finns i målgruppen ovan."
+        exclude_aria: "Uteslut %{name}"
+        exclude_title: "Uteslut"
         title: "Välj målgrupp"
         subtitle: "Välj vem som ska få den här kampanjen"
         all_subscribers: "Alla prenumeranter"
@@ -3701,6 +3723,9 @@ sv:
       load_draft: "Läs in utkast"
       keep: "Behåll det jag har"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} utesluten)"
+        other: "(%{formatted} uteslutna)"
       next:
         settings: "Nästa: Inställningar"
         audience: "Nästa: Målgrupp"
@@ -5176,6 +5201,10 @@ sv:
       failed: "Försök igen"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Det här segmentet har inga prenumeranter, så det utesluter ingen. Kontrollera dess regler."
+      exclude_aria: "Uteslut %{name}"
+      title: "Uteslutna segment"
     index:
       first_title: "Organisera dina prenumeranter"
       first_subtitle: "Skapa segment för att gruppera prenumeranter utifrån regler"
@@ -5677,6 +5706,7 @@ sv:
       meta_description: "Sekvens %{label}"
       breadcrumb: "Detaljer"
     form:
+      excluded_segments_hint: "Ingen i de här segmenten får e-post från den här sekvensen, oavsett hur de registrerades."
       title: "Redigera sekvensens inställningar"
       general: "Allmänna inställningar"
       label: "Sekvensens etikett"

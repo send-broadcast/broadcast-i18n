@@ -27,6 +27,8 @@
 fi:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Poissuljetut segmentit"
       user:
         email: "Sähköposti"
         first_name: "Etunimi"
@@ -35,6 +37,7 @@ fi:
         password: "Salasana"
         password_confirmation: "Salasanan vahvistus"
       broadcast:
+        excluded_segment_ids: "Poissuljetut segmentit"
         name: "Nimi"
         subject: "Aihe"
         preheader: "Esikatseluteksti"
@@ -113,6 +116,7 @@ fi:
         manual_dkim_selectors: "Manuaaliset DKIM-valitsimet"
         domain: "Verkkotunnus"
       sequence:
+        excluded_segment_ids: "Poissuljetut segmentit"
         blocks_json: "Lohkot (JSON)"
         email_server_ids: "Sähköpostipalvelinten tunnukset"
         sender_identity: "Lähettäjäidentiteetti"
@@ -292,6 +296,8 @@ fi:
             email:
               already_suppressed: "on jo estolistalla"
       messages:
+        excluded_elsewhere: "Tämän segmentin sulkee pois %{names}. Poista se ensin niiden poissuljetuista segmenteistä."
+        overlaps_included: "eivät voi sisältää segmenttiä, joka on myös yleisössä"
         is_not_a_block_document: "ei ole lohkodokumentti"
         is_not_valid_json: "ei ole kelvollista JSONia"
         must_be_an_object: "on oltava objekti"
@@ -1478,6 +1484,8 @@ fi:
         back: "Takaisin päivityksiin"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Tämän autopilotin luonnokset eivät koskaan mene kenellekään näissä segmenteissä."
     autopilot_not_found: "Autopilottia ei löytynyt"
     index:
       title: "Autopilotit"
@@ -2448,6 +2456,9 @@ fi:
         other: "(%{count} tilaajaa)"
       modify: "Muokkaa tilaajien kohdistusta"
     new:
+      exclude_hint: "Kukaan näissä segmenteissä ei saa tätä lähetystä, vaikka olisi yllä olevassa segmentissä."
+      exclude_aria: "Sulje pois %{name}"
+      exclude_title: "Sulje pois"
       title: "Muokkaa tilaajien kohdistusta"
       intro: "Oletuksena kaikki tämän kanavan tilaajat saavat tämän kampanjan. Jos määrität yhden tai useamman segmentin, vain näihin segmentteihin kuuluvat tilaajat saavat kampanjan."
       only_failed_html: "Kohdista vain tilaajiin, joita edellinen kampanja (%{link}) ei ole vielä tavoittanut. Sähköpostipalvelun hylkäämät osoitteet jätetään pois."
@@ -2459,6 +2470,9 @@ fi:
       updated: "Tilaajien kohdistus päivitetty"
 
   broadcasts:
+    audience_extras:
+      topic: "Aihe: %{name}"
+      excludes: "Poissuljetut: %{names}"
     index:
       first_title: "Lähetä ensimmäinen kampanjasi"
       first_subtitle: "Tavoita koko yleisösi yhdellä sähköpostilla"
@@ -2550,6 +2564,10 @@ fi:
       autosave: "Automaattinen tallennus"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} poissuljettu)"
+          other: "(%{formatted} poissuljettua)"
+        excluding: "Poissuljetut"
         title: "Tarkista kampanjasi"
         subtitle: "Varmista ennen lähettämistä, että kaikki näyttää oikealta"
         content: "Sisältö"
@@ -2636,6 +2654,10 @@ fi:
         tags_placeholder: "Lisää tunnisteita..."
         tags_hint: "Sisäiseen järjestämiseen"
       audience_tab:
+        exclude_empty_warning: "Tässä segmentissä ei ole tilaajia, joten se ei sulje pois ketään. Tarkista sen säännöt."
+        exclude_subtitle: "Kukaan näissä segmenteissä ei saa tätä lähetystä, vaikka olisi yllä olevassa yleisössä."
+        exclude_aria: "Sulje pois %{name}"
+        exclude_title: "Sulje pois"
         title: "Valitse yleisö"
         subtitle: "Valitse, kuka saa tämän kampanjan"
         all_subscribers: "Kaikki tilaajat"
@@ -3702,6 +3724,9 @@ fi:
       load_draft: "Lataa luonnos"
       keep: "Säilytä nykyinen"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} poissuljettu)"
+        other: "(%{formatted} poissuljettua)"
       next:
         settings: "Seuraava: Asetukset"
         audience: "Seuraava: Yleisö"
@@ -5177,6 +5202,10 @@ fi:
       failed: "Yritä uudelleen"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Tässä segmentissä ei ole tilaajia, joten se ei sulje pois ketään. Tarkista sen säännöt."
+      exclude_aria: "Sulje pois %{name}"
+      title: "Poissuljetut segmentit"
     index:
       first_title: "Järjestä tilaajasi"
       first_subtitle: "Luo segmenttejä tilaajien ryhmittelemiseksi sääntöjen perusteella"
@@ -5678,6 +5707,7 @@ fi:
       meta_description: "Sarja %{label}"
       breadcrumb: "Tiedot"
     form:
+      excluded_segments_hint: "Kukaan näissä segmenteissä ei saa sähköpostia tästä sarjasta, miten tahansa hänet onkin liitetty."
       title: "Muokkaa sarjan asetuksia"
       general: "Yleiset asetukset"
       label: "Sarjan nimi"

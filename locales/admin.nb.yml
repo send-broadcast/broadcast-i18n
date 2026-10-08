@@ -26,6 +26,8 @@
 nb:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Utelukkede segmenter"
       user:
         email: "E-post"
         first_name: "Fornavn"
@@ -34,6 +36,7 @@ nb:
         password: "Passord"
         password_confirmation: "Bekreft passord"
       broadcast:
+        excluded_segment_ids: "Utelukkede segmenter"
         name: "Navn"
         subject: "Emne"
         preheader: "Forhåndsvisningstekst"
@@ -112,6 +115,7 @@ nb:
         manual_dkim_selectors: "Manuelle DKIM-selektorer"
         domain: "Domene"
       sequence:
+        excluded_segment_ids: "Utelukkede segmenter"
         blocks_json: "Blokker (JSON)"
         email_server_ids: "E-postserver-ID-er"
         sender_identity: "Avsenderidentitet"
@@ -291,6 +295,8 @@ nb:
             email:
               already_suppressed: "står allerede på sperrelisten"
       messages:
+        excluded_elsewhere: "Dette segmentet utelukkes av %{names}. Fjern det først fra de utelukkede segmentene deres."
+        overlaps_included: "kan ikke inneholde et segment som også er i målgruppen"
         is_not_a_block_document: "er ikke et blokkdokument"
         is_not_valid_json: "er ikke gyldig JSON"
         must_be_an_object: "må være et objekt"
@@ -1477,6 +1483,8 @@ nb:
         back: "Tilbake til oppdateringer"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Utkast fra denne autopiloten går aldri til noen i disse segmentene."
     autopilot_not_found: "Fant ikke autopiloten"
     index:
       title: "Autopiloter"
@@ -2447,6 +2455,9 @@ nb:
         other: "(%{count} abonnenter)"
       modify: "Endre målretting av abonnenter"
     new:
+      exclude_hint: "Ingen i disse segmentene får denne utsendelsen, heller ikke om de er i et segment over."
+      exclude_aria: "Utelukk %{name}"
+      exclude_title: "Utelukk"
       title: "Rediger målretting av abonnenter"
       intro: "Som standard mottar alle abonnenter i denne kanalen denne kampanjen. Hvis du angir ett eller flere segmenter, mottar bare abonnenter i disse segmentene kampanjen."
       only_failed_html: "Målrett bare abonnenter som forrige kampanje (%{link}) ikke har nådd ennå. Adresser som e-postleverandøren har avvist, utelates."
@@ -2458,6 +2469,9 @@ nb:
       updated: "Målrettingen av abonnenter er oppdatert"
 
   broadcasts:
+    audience_extras:
+      topic: "Emne: %{name}"
+      excludes: "Utelukker: %{names}"
     index:
       first_title: "Send din første kampanje"
       first_subtitle: "Nå hele målgruppen din med én e-post"
@@ -2549,6 +2563,10 @@ nb:
       autosave: "Autolagring"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} utelukket)"
+          other: "(%{formatted} utelukket)"
+        excluding: "Utelukker"
         title: "Gå gjennom kampanjen"
         subtitle: "Kontroller at alt ser riktig ut før du sender"
         content: "Innhold"
@@ -2635,6 +2653,10 @@ nb:
         tags_placeholder: "Legg til tagger..."
         tags_hint: "For intern organisering"
       audience_tab:
+        exclude_empty_warning: "Dette segmentet har ingen abonnenter, så det utelukker ingen. Sjekk reglene."
+        exclude_subtitle: "Ingen i disse segmentene får denne utsendelsen, heller ikke om de er i målgruppen over."
+        exclude_aria: "Utelukk %{name}"
+        exclude_title: "Utelukk"
         title: "Velg målgruppe"
         subtitle: "Velg hvem som skal motta denne kampanjen"
         all_subscribers: "Alle abonnenter"
@@ -3701,6 +3723,9 @@ nb:
       load_draft: "Last inn utkast"
       keep: "Behold det jeg har"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} utelukket)"
+        other: "(%{formatted} utelukket)"
       next:
         settings: "Neste: Innstillinger"
         audience: "Neste: Målgruppe"
@@ -5176,6 +5201,10 @@ nb:
       failed: "Prøv igjen"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Dette segmentet har ingen abonnenter, så det utelukker ingen. Sjekk reglene."
+      exclude_aria: "Utelukk %{name}"
+      title: "Utelukkede segmenter"
     index:
       first_title: "Organiser abonnentene dine"
       first_subtitle: "Opprett segmenter for å gruppere abonnenter basert på regler"
@@ -5677,6 +5706,7 @@ nb:
       meta_description: "Sekvens %{label}"
       breadcrumb: "Detaljer"
     form:
+      excluded_segments_hint: "Ingen i disse segmentene får e-post fra denne sekvensen, uansett hvordan de ble meldt på."
       title: "Rediger innstillinger for sekvensen"
       general: "Generelle innstillinger"
       label: "Etikett for sekvensen"

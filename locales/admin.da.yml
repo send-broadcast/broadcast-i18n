@@ -26,6 +26,8 @@
 da:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Udelukkede segmenter"
       user:
         email: "E-mail"
         first_name: "Fornavn"
@@ -34,6 +36,7 @@ da:
         password: "Adgangskode"
         password_confirmation: "Bekræft adgangskode"
       broadcast:
+        excluded_segment_ids: "Udelukkede segmenter"
         name: "Navn"
         subject: "Emne"
         preheader: "Forhåndsvisningstekst"
@@ -112,6 +115,7 @@ da:
         manual_dkim_selectors: "Manuelle DKIM-selektorer"
         domain: "Domæne"
       sequence:
+        excluded_segment_ids: "Udelukkede segmenter"
         blocks_json: "Blok-JSON"
         email_server_ids: "Mailserver-id'er"
         sender_identity: "Afsenderidentitet"
@@ -291,6 +295,8 @@ da:
             email:
               already_suppressed: "er allerede på spærrelisten"
       messages:
+        excluded_elsewhere: "Dette segment udelukkes af %{names}. Fjern det først fra deres udelukkede segmenter."
+        overlaps_included: "kan ikke indeholde et segment, der også er i målgruppen"
         is_not_a_block_document: "er ikke et blokdokument"
         is_not_valid_json: "er ikke gyldig JSON"
         must_be_an_object: "skal være et objekt"
@@ -1477,6 +1483,8 @@ da:
         back: "Tilbage til opdateringer"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Kladder fra denne autopilot går aldrig til nogen i disse segmenter."
     autopilot_not_found: "Autopilot blev ikke fundet"
     index:
       title: "Autopilots"
@@ -2447,6 +2455,9 @@ da:
         other: "(%{count} abonnenter)"
       modify: "Rediger målgruppe"
     new:
+      exclude_hint: "Ingen i disse segmenter får denne udsendelse, heller ikke hvis de er i et segment ovenfor."
+      exclude_aria: "Udeluk %{name}"
+      exclude_title: "Udeluk"
       title: "Rediger målgruppe"
       intro: "Som standard modtager alle abonnenter i denne kanal kampagnen. Hvis du angiver et eller flere segmenter, modtager kun abonnenter i disse segmenter kampagnen."
       only_failed_html: "Målret kun abonnenter, som den seneste kampagne (%{link}) ikke har nået endnu. Adresser, som e-mailudbyderen har afvist, udelades."
@@ -2458,6 +2469,9 @@ da:
       updated: "Målgruppen blev opdateret"
 
   broadcasts:
+    audience_extras:
+      topic: "Emne: %{name}"
+      excludes: "Udelukker: %{names}"
     index:
       first_title: "Send din første kampagne"
       first_subtitle: "Nå hele din målgruppe med én e-mail"
@@ -2549,6 +2563,10 @@ da:
       autosave: "Automatisk lagring"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} udelukket)"
+          other: "(%{formatted} udelukket)"
+        excluding: "Udelukker"
         title: "Gennemgå din kampagne"
         subtitle: "Bekræft, at alt ser rigtigt ud, før du sender"
         content: "Indhold"
@@ -2635,6 +2653,10 @@ da:
         tags_placeholder: "Tilføj tags..."
         tags_hint: "Til intern organisering"
       audience_tab:
+        exclude_empty_warning: "Dette segment har ingen abonnenter, så det udelukker ingen. Tjek dets regler."
+        exclude_subtitle: "Ingen i disse segmenter får denne udsendelse, heller ikke hvis de er i målgruppen ovenfor."
+        exclude_aria: "Udeluk %{name}"
+        exclude_title: "Udeluk"
         title: "Vælg målgruppe"
         subtitle: "Vælg, hvem der skal modtage kampagnen"
         all_subscribers: "Alle abonnenter"
@@ -3701,6 +3723,9 @@ da:
       load_draft: "Indlæs kladde"
       keep: "Behold det, jeg har"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} udelukket)"
+        other: "(%{formatted} udelukket)"
       next:
         settings: "Næste: Indstillinger"
         audience: "Næste: Målgruppe"
@@ -5176,6 +5201,10 @@ da:
       failed: "Prøv igen"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Dette segment har ingen abonnenter, så det udelukker ingen. Tjek dets regler."
+      exclude_aria: "Udeluk %{name}"
+      title: "Udelukkede segmenter"
     index:
       first_title: "Organiser dine abonnenter"
       first_subtitle: "Opret segmenter for at gruppere abonnenter ud fra regler"
@@ -5677,6 +5706,7 @@ da:
       meta_description: "Sekvens %{label}"
       breadcrumb: "Detaljer"
     form:
+      excluded_segments_hint: "Ingen i disse segmenter får en e-mail fra denne sekvens, uanset hvordan de blev tilmeldt."
       title: "Rediger sekvensindstillinger"
       general: "Generelle indstillinger"
       label: "Sekvensetiket"

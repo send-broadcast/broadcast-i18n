@@ -44,6 +44,8 @@
 en:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Excluded segments"
       user:
         email: "Email"
         first_name: "First name"
@@ -52,6 +54,7 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
       broadcast:
+        excluded_segment_ids: "Excluded segments"
         name: "Name"
         subject: "Subject"
         preheader: "Preheader"
@@ -130,6 +133,7 @@ en:
         manual_dkim_selectors: "Manual dkim selectors"
         domain: "Domain"
       sequence:
+        excluded_segment_ids: "Excluded segments"
         blocks_json: "Blocks json"
         email_server_ids: "Email server ids"
         sender_identity: "Sender identity"
@@ -310,6 +314,8 @@ en:
               already_suppressed: "is already on the suppression list"
       messages:
         is_not_a_block_document: "is not a block document"
+        overlaps_included: "cannot include a segment that is also in the audience"
+        excluded_elsewhere: "This segment is excluded by %{names}. Remove it from their excluded segments first."
         is_not_valid_json: "is not valid JSON"
         must_be_an_object: "must be an object"
         has_an_unknown_setting: "has an unknown setting: %{key}"
@@ -1495,6 +1501,8 @@ en:
         error: "Error processing downgrade request: %{error}"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Drafts from this autopilot never go to anyone in these segments."
     autopilot_not_found: "Autopilot not found"
     index:
       title: "Autopilots"
@@ -2465,6 +2473,9 @@ en:
         other: "(%{count} subscribers)"
       modify: "Modify subscriber targeting"
     new:
+      exclude_title: "Exclude"
+      exclude_aria: "Exclude %{name}"
+      exclude_hint: "Nobody in these segments gets this broadcast, even when they are in a segment above."
       title: "Edit Subscriber Targeting"
       intro: "By default, all subscribers in this channel will receive this broadcast. If you specify one or more segments, only subscribers within those segments will receive the broadcast."
       only_failed_html: "Target only subscribers the last broadcast (%{link}) did not reach yet. Addresses the email provider rejected are left out."
@@ -2476,6 +2487,9 @@ en:
       updated: "Subscriber targeting updated"
 
   broadcasts:
+    audience_extras:
+      excludes: "Excludes: %{names}"
+      topic: "Topic: %{name}"
     index:
       first_title: "Send your first broadcast"
       first_subtitle: "Reach your entire audience with one email"
@@ -2567,6 +2581,10 @@ en:
       autosave: "Autosave"
     composer:
       review_tab:
+        excluding: "Excluding"
+        excluded_count:
+          one: "(%{formatted} excluded)"
+          other: "(%{formatted} excluded)"
         title: "Review Your Broadcast"
         subtitle: "Confirm everything looks correct before sending"
         content: "Content"
@@ -2653,6 +2671,10 @@ en:
         tags_placeholder: "Add tags..."
         tags_hint: "For internal organization"
       audience_tab:
+        exclude_title: "Exclude"
+        exclude_aria: "Exclude %{name}"
+        exclude_subtitle: "Nobody in these segments gets this broadcast, even when they are in the audience above."
+        exclude_empty_warning: "This segment has no subscribers, so it excludes nobody. Check its rules."
         title: "Select Audience"
         subtitle: "Choose who will receive this broadcast"
         all_subscribers: "All Subscribers"
@@ -3719,6 +3741,9 @@ en:
       load_draft: "Load draft"
       keep: "Keep what I have"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} excluded)"
+        other: "(%{formatted} excluded)"
       next:
         settings: "Next: Settings"
         audience: "Next: Audience"
@@ -5194,6 +5219,10 @@ en:
       failed: "Please try again"
 
   segments:
+    exclusion_checkboxes:
+      title: "Excluded segments"
+      exclude_aria: "Exclude %{name}"
+      empty_warning: "This segment has no subscribers, so it excludes nobody. Check its rules."
     index:
       first_title: "Organize your subscribers"
       first_subtitle: "Create segments to group subscribers based on rules"
@@ -5695,6 +5724,7 @@ en:
       meta_description: "Sequence %{label}"
       breadcrumb: "Details"
     form:
+      excluded_segments_hint: "Nobody in these segments gets an email from this sequence, however they were enrolled."
       title: "Edit Sequence Settings"
       general: "General Settings"
       label: "Sequence label"

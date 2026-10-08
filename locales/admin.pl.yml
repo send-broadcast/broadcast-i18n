@@ -28,6 +28,8 @@
 pl:
   activerecord:
     attributes:
+      autopilot:
+        excluded_segment_ids: "Wykluczone segmenty"
       user:
         email: "E-mail"
         first_name: "Imię"
@@ -36,6 +38,7 @@ pl:
         password: "Hasło"
         password_confirmation: "Potwierdzenie hasła"
       broadcast:
+        excluded_segment_ids: "Wykluczone segmenty"
         name: "Nazwa"
         subject: "Temat"
         preheader: "Tekst podglądu"
@@ -114,6 +117,7 @@ pl:
         manual_dkim_selectors: "Ręczne selektory DKIM"
         domain: "Domena"
       sequence:
+        excluded_segment_ids: "Wykluczone segmenty"
         blocks_json: "JSON bloków"
         email_server_ids: "Identyfikatory serwerów poczty"
         sender_identity: "Tożsamość nadawcy"
@@ -293,6 +297,8 @@ pl:
             email:
               already_suppressed: "jest już na liście wykluczeń"
       messages:
+        excluded_elsewhere: "Ten segment jest wykluczony przez %{names}. Najpierw usuń go z ich wykluczonych segmentów."
+        overlaps_included: "nie mogą zawierać segmentu, który jest też w grupie odbiorców"
         is_not_a_block_document: "nie jest dokumentem bloków"
         is_not_valid_json: "nie jest prawidłowym JSON-em"
         must_be_an_object: "musi być obiektem"
@@ -1531,6 +1537,8 @@ pl:
         back: "Wróć do aktualizacji"
 
   autopilots:
+    form:
+      excluded_segments_hint: "Szkice tego autopilota nigdy nie trafiają do nikogo z tych segmentów."
     autopilot_not_found: "Nie znaleziono autopilota"
     index:
       title: "Autopiloty"
@@ -2517,6 +2525,9 @@ pl:
         other: "(%{count} subskrybenta)"
       modify: "Zmień grupę docelową subskrybentów"
     new:
+      exclude_hint: "Nikt z tych segmentów nie otrzyma tego broadcastu, nawet jeśli jest w segmencie powyżej."
+      exclude_aria: "Wyklucz %{name}"
+      exclude_title: "Wyklucz"
       title: "Edytuj grupę docelową subskrybentów"
       intro: "Domyślnie tę kampanię otrzymają wszyscy subskrybenci tego kanału. Jeśli wskażesz jeden lub więcej segmentów, otrzymają ją tylko subskrybenci z tych segmentów."
       only_failed_html: "Kieruj tylko do subskrybentów, do których ostatnia kampania (%{link}) jeszcze nie dotarła. Adresy odrzucone przez dostawcę poczty są pomijane."
@@ -2530,6 +2541,9 @@ pl:
       updated: "Zaktualizowano grupę docelową subskrybentów"
 
   broadcasts:
+    audience_extras:
+      topic: "Temat: %{name}"
+      excludes: "Wykluczone: %{names}"
     index:
       first_title: "Wyślij pierwszą kampanię"
       first_subtitle: "Dotrzyj do wszystkich odbiorców jednym e-mailem"
@@ -2621,6 +2635,12 @@ pl:
       autosave: "Autozapis"
     composer:
       review_tab:
+        excluded_count:
+          one: "(%{formatted} wykluczony)"
+          few: "(%{formatted} wykluczonych)"
+          many: "(%{formatted} wykluczonych)"
+          other: "(%{formatted} wykluczonego)"
+        excluding: "Wykluczone"
         title: "Przejrzyj kampanię"
         subtitle: "Przed wysłaniem upewnij się, że wszystko jest w porządku"
         content: "Treść"
@@ -2709,6 +2729,10 @@ pl:
         tags_placeholder: "Dodaj tagi..."
         tags_hint: "Do wewnętrznej organizacji"
       audience_tab:
+        exclude_empty_warning: "Ten segment nie ma subskrybentów, więc nikogo nie wyklucza. Sprawdź jego reguły."
+        exclude_subtitle: "Nikt z tych segmentów nie otrzyma tego broadcastu, nawet jeśli jest w grupie odbiorców powyżej."
+        exclude_aria: "Wyklucz %{name}"
+        exclude_title: "Wyklucz"
         title: "Wybierz odbiorców"
         subtitle: "Wybierz, kto otrzyma tę kampanię"
         all_subscribers: "Wszyscy subskrybenci"
@@ -3829,6 +3853,11 @@ pl:
       load_draft: "Wczytaj wersję roboczą"
       keep: "Zachowaj obecną treść"
     broadcast_composer:
+      excluded_count:
+        one: "(%{formatted} wykluczony)"
+        few: "(%{formatted} wykluczonych)"
+        many: "(%{formatted} wykluczonych)"
+        other: "(%{formatted} wykluczonego)"
       next:
         settings: "Dalej: Ustawienia"
         audience: "Dalej: Odbiorcy"
@@ -5352,6 +5381,10 @@ pl:
       failed: "Spróbuj ponownie"
 
   segments:
+    exclusion_checkboxes:
+      empty_warning: "Ten segment nie ma subskrybentów, więc nikogo nie wyklucza. Sprawdź jego reguły."
+      exclude_aria: "Wyklucz %{name}"
+      title: "Wykluczone segmenty"
     index:
       first_title: "Uporządkuj subskrybentów"
       first_subtitle: "Twórz segmenty, aby grupować subskrybentów według reguł"
@@ -5865,6 +5898,7 @@ pl:
       meta_description: "Sekwencja %{label}"
       breadcrumb: "Szczegóły"
     form:
+      excluded_segments_hint: "Nikt z tych segmentów nie otrzyma e-maila z tej sekwencji, niezależnie od tego, jak został zapisany."
       title: "Edytuj ustawienia sekwencji"
       general: "Ustawienia ogólne"
       label: "Etykieta sekwencji"
