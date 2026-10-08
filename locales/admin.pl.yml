@@ -2525,7 +2525,7 @@ pl:
         other: "(%{count} subskrybenta)"
       modify: "Zmień grupę docelową subskrybentów"
     new:
-      exclude_hint: "Nikt z tych segmentów nie otrzyma tego broadcastu, nawet jeśli jest w segmencie powyżej."
+      exclude_hint: "Nikt z tych segmentów nie otrzyma tej kampanii, nawet jeśli jest w segmencie powyżej."
       exclude_aria: "Wyklucz %{name}"
       exclude_title: "Wyklucz"
       title: "Edytuj grupę docelową subskrybentów"
@@ -2730,7 +2730,7 @@ pl:
         tags_hint: "Do wewnętrznej organizacji"
       audience_tab:
         exclude_empty_warning: "Ten segment nie ma subskrybentów, więc nikogo nie wyklucza. Sprawdź jego reguły."
-        exclude_subtitle: "Nikt z tych segmentów nie otrzyma tego broadcastu, nawet jeśli jest w grupie odbiorców powyżej."
+        exclude_subtitle: "Nikt z tych segmentów nie otrzyma tej kampanii, nawet jeśli jest w grupie odbiorców powyżej."
         exclude_aria: "Wyklucz %{name}"
         exclude_title: "Wyklucz"
         title: "Wybierz odbiorców"

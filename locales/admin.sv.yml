@@ -2455,7 +2455,7 @@ sv:
         other: "(%{count} prenumeranter)"
       modify: "Ändra målgrupp"
     new:
-      exclude_hint: "Ingen i de här segmenten får det här utskicket, även om de finns i ett segment ovan."
+      exclude_hint: "Ingen i de här segmenten får den här kampanjen, även om de finns i ett segment ovan."
       exclude_aria: "Uteslut %{name}"
       exclude_title: "Uteslut"
       title: "Redigera målgrupp"
@@ -2654,7 +2654,7 @@ sv:
         tags_hint: "För intern organisering"
       audience_tab:
         exclude_empty_warning: "Det här segmentet har inga prenumeranter, så det utesluter ingen. Kontrollera dess regler."
-        exclude_subtitle: "Ingen i de här segmenten får det här utskicket, även om de finns i målgruppen ovan."
+        exclude_subtitle: "Ingen i de här segmenten får den här kampanjen, även om de finns i målgruppen ovan."
         exclude_aria: "Uteslut %{name}"
         exclude_title: "Uteslut"
         title: "Välj målgrupp"

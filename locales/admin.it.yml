@@ -2453,7 +2453,7 @@ it:
         other: "(%{count} iscritti)"
       modify: "Modifica i destinatari"
     new:
-      exclude_hint: "Nessuno in questi segmenti riceve questo broadcast, anche se è in un segmento qui sopra."
+      exclude_hint: "Nessuno in questi segmenti riceve questa campagna, anche se è in un segmento qui sopra."
       exclude_aria: "Escludi %{name}"
       exclude_title: "Escludi"
       title: "Modifica i destinatari"
@@ -2652,7 +2652,7 @@ it:
         tags_hint: "Per organizzarti internamente"
       audience_tab:
         exclude_empty_warning: "Questo segmento non ha iscritti, quindi non esclude nessuno. Controlla le sue regole."
-        exclude_subtitle: "Nessuno in questi segmenti riceve questo broadcast, anche se fa parte del pubblico qui sopra."
+        exclude_subtitle: "Nessuno in questi segmenti riceve questa campagna, anche se fa parte del pubblico qui sopra."
         exclude_aria: "Escludi %{name}"
         exclude_title: "Escludi"
         title: "Scegli il pubblico"

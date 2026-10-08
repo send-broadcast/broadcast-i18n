@@ -2455,7 +2455,7 @@ da:
         other: "(%{count} abonnenter)"
       modify: "Rediger målgruppe"
     new:
-      exclude_hint: "Ingen i disse segmenter får denne udsendelse, heller ikke hvis de er i et segment ovenfor."
+      exclude_hint: "Ingen i disse segmenter får denne kampagne, heller ikke hvis de er i et segment ovenfor."
       exclude_aria: "Udeluk %{name}"
       exclude_title: "Udeluk"
       title: "Rediger målgruppe"
@@ -2654,7 +2654,7 @@ da:
         tags_hint: "Til intern organisering"
       audience_tab:
         exclude_empty_warning: "Dette segment har ingen abonnenter, så det udelukker ingen. Tjek dets regler."
-        exclude_subtitle: "Ingen i disse segmenter får denne udsendelse, heller ikke hvis de er i målgruppen ovenfor."
+        exclude_subtitle: "Ingen i disse segmenter får denne kampagne, heller ikke hvis de er i målgruppen ovenfor."
         exclude_aria: "Udeluk %{name}"
         exclude_title: "Udeluk"
         title: "Vælg målgruppe"

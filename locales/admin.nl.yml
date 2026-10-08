@@ -2457,7 +2457,7 @@ nl:
         other: "(%{count} abonnees)"
       modify: "Doelgroep van abonnees wijzigen"
     new:
-      exclude_hint: "Niemand in deze segmenten krijgt deze broadcast, ook niet als die in een segment hierboven zit."
+      exclude_hint: "Niemand in deze segmenten krijgt deze campagne, ook niet als die in een segment hierboven zit."
       exclude_aria: "%{name} uitsluiten"
       exclude_title: "Uitsluiten"
       title: "Doelgroep van abonnees bewerken"
@@ -2656,7 +2656,7 @@ nl:
         tags_hint: "Voor interne ordening"
       audience_tab:
         exclude_empty_warning: "Dit segment heeft geen abonnees en sluit dus niemand uit. Controleer de regels."
-        exclude_subtitle: "Niemand in deze segmenten krijgt deze broadcast, ook niet als die in de doelgroep hierboven zit."
+        exclude_subtitle: "Niemand in deze segmenten krijgt deze campagne, ook niet als die in de doelgroep hierboven zit."
         exclude_aria: "%{name} uitsluiten"
         exclude_title: "Uitsluiten"
         title: "Doelgroep kiezen"

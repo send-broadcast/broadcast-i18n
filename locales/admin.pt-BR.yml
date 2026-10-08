@@ -2455,7 +2455,7 @@ pt-BR:
         other: "(%{count} assinantes)"
       modify: "Alterar o direcionamento de assinantes"
     new:
-      exclude_hint: "Ninguém nestes segmentos recebe este broadcast, mesmo que esteja em um segmento acima."
+      exclude_hint: "Ninguém nestes segmentos recebe esta campanha, mesmo que esteja em um segmento acima."
       exclude_aria: "Excluir %{name}"
       exclude_title: "Excluir"
       title: "Editar direcionamento de assinantes"
@@ -2654,7 +2654,7 @@ pt-BR:
         tags_hint: "Para organização interna"
       audience_tab:
         exclude_empty_warning: "Este segmento não tem assinantes, então não exclui ninguém. Confira as regras dele."
-        exclude_subtitle: "Ninguém nestes segmentos recebe este broadcast, mesmo que esteja no público acima."
+        exclude_subtitle: "Ninguém nestes segmentos recebe esta campanha, mesmo que esteja no público acima."
         exclude_aria: "Excluir %{name}"
         exclude_title: "Excluir"
         title: "Selecionar público"

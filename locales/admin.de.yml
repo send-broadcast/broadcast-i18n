@@ -2457,7 +2457,7 @@ de:
         other: "(%{count} Abonnenten)"
       modify: "Zielgruppe ändern"
     new:
-      exclude_hint: "Niemand in diesen Segmenten erhält diesen Broadcast, auch wenn er in einem Segment oben ist."
+      exclude_hint: "Niemand in diesen Segmenten erhält diese Kampagne, auch wenn er in einem Segment oben ist."
       exclude_aria: "%{name} ausschließen"
       exclude_title: "Ausschließen"
       title: "Zielgruppe bearbeiten"
@@ -2656,7 +2656,7 @@ de:
         tags_hint: "Zur internen Organisation"
       audience_tab:
         exclude_empty_warning: "Dieses Segment hat keine Abonnenten und schließt daher niemanden aus. Prüfen Sie seine Regeln."
-        exclude_subtitle: "Niemand in diesen Segmenten erhält diesen Broadcast, auch wenn er in der Zielgruppe oben ist."
+        exclude_subtitle: "Niemand in diesen Segmenten erhält diese Kampagne, auch wenn er in der Zielgruppe oben ist."
         exclude_aria: "%{name} ausschließen"
         exclude_title: "Ausschließen"
         title: "Zielgruppe auswählen"

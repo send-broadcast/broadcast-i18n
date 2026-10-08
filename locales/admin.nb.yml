@@ -2455,7 +2455,7 @@ nb:
         other: "(%{count} abonnenter)"
       modify: "Endre målretting av abonnenter"
     new:
-      exclude_hint: "Ingen i disse segmentene får denne utsendelsen, heller ikke om de er i et segment over."
+      exclude_hint: "Ingen i disse segmentene får denne kampanjen, heller ikke om de er i et segment over."
       exclude_aria: "Utelukk %{name}"
       exclude_title: "Utelukk"
       title: "Rediger målretting av abonnenter"
@@ -2654,7 +2654,7 @@ nb:
         tags_hint: "For intern organisering"
       audience_tab:
         exclude_empty_warning: "Dette segmentet har ingen abonnenter, så det utelukker ingen. Sjekk reglene."
-        exclude_subtitle: "Ingen i disse segmentene får denne utsendelsen, heller ikke om de er i målgruppen over."
+        exclude_subtitle: "Ingen i disse segmentene får denne kampanjen, heller ikke om de er i målgruppen over."
         exclude_aria: "Utelukk %{name}"
         exclude_title: "Utelukk"
         title: "Velg målgruppe"

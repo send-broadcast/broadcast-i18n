@@ -2456,7 +2456,7 @@ es:
         other: "(%{count} suscriptores)"
       modify: "Modificar los destinatarios"
     new:
-      exclude_hint: "Nadie de estos segmentos recibe este broadcast, aunque esté en un segmento de arriba."
+      exclude_hint: "Nadie de estos segmentos recibe esta campaña, aunque esté en un segmento de arriba."
       exclude_aria: "Excluir %{name}"
       exclude_title: "Excluir"
       title: "Editar los destinatarios"
@@ -2655,7 +2655,7 @@ es:
         tags_hint: "Para organización interna"
       audience_tab:
         exclude_empty_warning: "Este segmento no tiene suscriptores, así que no excluye a nadie. Revisa sus reglas."
-        exclude_subtitle: "Nadie de estos segmentos recibe este broadcast, aunque esté en el público de arriba."
+        exclude_subtitle: "Nadie de estos segmentos recibe esta campaña, aunque esté en el público de arriba."
         exclude_aria: "Excluir %{name}"
         exclude_title: "Excluir"
         title: "Seleccionar público"
