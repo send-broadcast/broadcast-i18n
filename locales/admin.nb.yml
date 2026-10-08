@@ -2439,9 +2439,9 @@ nb:
       will_send_to_all: "Alle abonnenter i denne kanalen vil motta denne kampanjen."
       define_segment_html: "For å nå bare en del av abonnentene kan du %{link}, så vises det her."
       define_segment_link: "definere et segment"
-      only_failed_html: "Bare mottakere som ikke mottok forrige kampanje (%{link}), blir målrettet"
+      only_failed_html: "Bare abonnenter som forrige kampanje (%{link}) ikke har nådd ennå, blir målrettet. Adresser som e-postleverandøren har avvist, utelates."
       following_segments: "Følgende segmenter vil motta denne kampanjen:"
-      failed_recipients_html: "Mislykkede mottakere av forrige kampanje (%{link})"
+      failed_recipients_html: "Abonnenter som forrige kampanje (%{link}) ikke har nådd ennå (adresser som e-postleverandøren har avvist, utelates)"
       count:
         one: "(%{count} abonnent)"
         other: "(%{count} abonnenter)"
@@ -2449,7 +2449,7 @@ nb:
     new:
       title: "Rediger målretting av abonnenter"
       intro: "Som standard mottar alle abonnenter i denne kanalen denne kampanjen. Hvis du angir ett eller flere segmenter, mottar bare abonnenter i disse segmentene kampanjen."
-      only_failed_html: "Målrett bare mottakere som ikke mottok forrige kampanje (%{link})"
+      only_failed_html: "Målrett bare abonnenter som forrige kampanje (%{link}) ikke har nådd ennå. Adresser som e-postleverandøren har avvist, utelates."
       segment_with_count:
         one: "%{name} (%{count} abonnent)"
         other: "%{name} (%{count} abonnenter)"

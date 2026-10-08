@@ -2439,9 +2439,9 @@ sv:
       will_send_to_all: "Alla prenumeranter i den här kanalen får den här kampanjen."
       define_segment_html: "För att rikta in dig på en delmängd av prenumeranterna, %{link} så visas det här."
       define_segment_link: "definiera ett segment"
-      only_failed_html: "Endast mottagare som inte fick den senaste kampanjen (%{link}) kommer att nås"
+      only_failed_html: "Endast prenumeranter som den senaste kampanjen (%{link}) inte har nått än kommer att nås. Adresser som e-postleverantören har avvisat utelämnas."
       following_segments: "Följande segment får den här kampanjen:"
-      failed_recipients_html: "Misslyckade mottagare av den senaste kampanjen (%{link})"
+      failed_recipients_html: "Prenumeranter som den senaste kampanjen (%{link}) inte har nått än (adresser som e-postleverantören har avvisat utelämnas)"
       count:
         one: "(%{count} prenumerant)"
         other: "(%{count} prenumeranter)"
@@ -2449,7 +2449,7 @@ sv:
     new:
       title: "Redigera målgrupp"
       intro: "Som standard får alla prenumeranter i den här kanalen kampanjen. Om du anger ett eller flera segment får bara prenumeranterna i de segmenten kampanjen."
-      only_failed_html: "Nå endast mottagare som inte fick den senaste kampanjen (%{link})"
+      only_failed_html: "Nå endast prenumeranter som den senaste kampanjen (%{link}) inte har nått än. Adresser som e-postleverantören har avvisat utelämnas."
       segment_with_count:
         one: "%{name} (%{count} prenumerant)"
         other: "%{name} (%{count} prenumeranter)"

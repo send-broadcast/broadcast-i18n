@@ -2440,9 +2440,9 @@ fi:
       will_send_to_all: "Kaikki tämän kanavan tilaajat saavat tämän kampanjan."
       define_segment_html: "Jos haluat kohdistaa osaan tilaajista, %{link}, niin se näkyy täällä."
       define_segment_link: "määritä segmentti"
-      only_failed_html: "Kohteena ovat vain vastaanottajat, jotka eivät saaneet edellistä kampanjaa (%{link})"
+      only_failed_html: "Kohteena ovat vain tilaajat, joita edellinen kampanja (%{link}) ei ole vielä tavoittanut. Sähköpostipalvelun hylkäämät osoitteet jätetään pois."
       following_segments: "Seuraavat segmentit saavat tämän kampanjan:"
-      failed_recipients_html: "Edellisen kampanjan epäonnistuneet vastaanottajat (%{link})"
+      failed_recipients_html: "Tilaajat, joita edellinen kampanja (%{link}) ei ole vielä tavoittanut (sähköpostipalvelun hylkäämät osoitteet jätetään pois)"
       count:
         one: "(%{count} tilaaja)"
         other: "(%{count} tilaajaa)"
@@ -2450,7 +2450,7 @@ fi:
     new:
       title: "Muokkaa tilaajien kohdistusta"
       intro: "Oletuksena kaikki tämän kanavan tilaajat saavat tämän kampanjan. Jos määrität yhden tai useamman segmentin, vain näihin segmentteihin kuuluvat tilaajat saavat kampanjan."
-      only_failed_html: "Kohdista vain vastaanottajiin, jotka eivät saaneet edellistä kampanjaa (%{link})"
+      only_failed_html: "Kohdista vain tilaajiin, joita edellinen kampanja (%{link}) ei ole vielä tavoittanut. Sähköpostipalvelun hylkäämät osoitteet jätetään pois."
       segment_with_count:
         one: "%{name} (%{count} tilaaja)"
         other: "%{name} (%{count} tilaajaa)"

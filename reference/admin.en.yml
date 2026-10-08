@@ -2457,9 +2457,9 @@ en:
       will_send_to_all: "All subscribers in this channel will receive this broadcast."
       define_segment_html: "To target a subset of subscribers, %{link} and it will appear here."
       define_segment_link: "define a segment"
-      only_failed_html: "Only recipients who did not receive the last broadcast (%{link}) will be targeted"
+      only_failed_html: "Only subscribers the last broadcast (%{link}) did not reach yet will be targeted. Addresses the email provider rejected are left out."
       following_segments: "The following segments will receive this broadcast:"
-      failed_recipients_html: "Failed recipients of the last broadcast (%{link})"
+      failed_recipients_html: "Subscribers the last broadcast (%{link}) did not reach yet (addresses the email provider rejected are left out)"
       count:
         one: "(%{count} subscribers)"
         other: "(%{count} subscribers)"
@@ -2467,7 +2467,7 @@ en:
     new:
       title: "Edit Subscriber Targeting"
       intro: "By default, all subscribers in this channel will receive this broadcast. If you specify one or more segments, only subscribers within those segments will receive the broadcast."
-      only_failed_html: "Target only recipients who did not receive the last broadcast (%{link})"
+      only_failed_html: "Target only subscribers the last broadcast (%{link}) did not reach yet. Addresses the email provider rejected are left out."
       segment_with_count:
         one: "%{name} (%{count} subscribers)"
         other: "%{name} (%{count} subscribers)"

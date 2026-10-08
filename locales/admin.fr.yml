@@ -2440,9 +2440,9 @@ fr:
       will_send_to_all: "Tous les abonnés de ce canal recevront cette campagne."
       define_segment_html: "Pour cibler une partie des abonnés, %{link} : il apparaîtra ici."
       define_segment_link: "définissez un segment"
-      only_failed_html: "Seuls les destinataires qui n'ont pas reçu la dernière campagne (%{link}) seront ciblés"
+      only_failed_html: "Seuls les abonnés que la dernière campagne (%{link}) n'a pas encore atteints seront ciblés. Les adresses refusées par le fournisseur d'e-mail sont exclues."
       following_segments: "Les segments suivants recevront cette campagne :"
-      failed_recipients_html: "Destinataires en échec de la dernière campagne (%{link})"
+      failed_recipients_html: "Abonnés que la dernière campagne (%{link}) n'a pas encore atteints (les adresses refusées par le fournisseur d'e-mail sont exclues)"
       count:
         one: "(%{count} abonné)"
         other: "(%{count} abonnés)"
@@ -2450,7 +2450,7 @@ fr:
     new:
       title: "Modifier le ciblage des abonnés"
       intro: "Par défaut, tous les abonnés de ce canal recevront cette campagne. Si vous indiquez un ou plusieurs segments, seuls les abonnés de ces segments la recevront."
-      only_failed_html: "Cibler uniquement les destinataires qui n'ont pas reçu la dernière campagne (%{link})"
+      only_failed_html: "Cibler uniquement les abonnés que la dernière campagne (%{link}) n'a pas encore atteints. Les adresses refusées par le fournisseur d'e-mail sont exclues."
       segment_with_count:
         one: "%{name} (%{count} abonné)"
         other: "%{name} (%{count} abonnés)"

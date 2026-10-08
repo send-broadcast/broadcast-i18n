@@ -2441,9 +2441,9 @@ nl:
       will_send_to_all: "Alle abonnees in dit kanaal ontvangen deze campagne."
       define_segment_html: "Om een deel van je abonnees te bereiken, %{link}; het verschijnt dan hier."
       define_segment_link: "maak je een segment aan"
-      only_failed_html: "Alleen ontvangers die de vorige campagne (%{link}) niet hebben ontvangen, worden bereikt"
+      only_failed_html: "Alleen abonnees die de vorige campagne (%{link}) nog niet heeft bereikt, krijgen deze campagne. Adressen die de e-mailprovider heeft geweigerd, worden overgeslagen."
       following_segments: "De volgende segmenten ontvangen deze campagne:"
-      failed_recipients_html: "Mislukte ontvangers van de vorige campagne (%{link})"
+      failed_recipients_html: "Abonnees die de vorige campagne (%{link}) nog niet heeft bereikt (adressen die de e-mailprovider heeft geweigerd, worden overgeslagen)"
       count:
         one: "(%{count} abonnee)"
         other: "(%{count} abonnees)"
@@ -2451,7 +2451,7 @@ nl:
     new:
       title: "Doelgroep van abonnees bewerken"
       intro: "Standaard ontvangen alle abonnees in dit kanaal deze campagne. Als je een of meer segmenten opgeeft, ontvangen alleen abonnees in die segmenten de campagne."
-      only_failed_html: "Alleen ontvangers bereiken die de vorige campagne (%{link}) niet hebben ontvangen"
+      only_failed_html: "Alleen abonnees bereiken die de vorige campagne (%{link}) nog niet heeft bereikt. Adressen die de e-mailprovider heeft geweigerd, worden overgeslagen."
       segment_with_count:
         one: "%{name} (%{count} abonnee)"
         other: "%{name} (%{count} abonnees)"

@@ -2440,9 +2440,9 @@ es:
       will_send_to_all: "Todos los suscriptores de este canal recibirán esta campaña."
       define_segment_html: "Para dirigirte a un subconjunto de suscriptores, %{link} y aparecerá aquí."
       define_segment_link: "define un segmento"
-      only_failed_html: "Solo se dirigirá a los destinatarios que no recibieron la última campaña (%{link})"
+      only_failed_html: "Solo se dirigirá a los suscriptores a los que la última campaña (%{link}) aún no llegó. Las direcciones que rechazó el proveedor de correo quedan fuera."
       following_segments: "Los siguientes segmentos recibirán esta campaña:"
-      failed_recipients_html: "Destinatarios fallidos de la última campaña (%{link})"
+      failed_recipients_html: "Suscriptores a los que la última campaña (%{link}) aún no llegó (las direcciones que rechazó el proveedor de correo quedan fuera)"
       count:
         one: "(%{count} suscriptor)"
         other: "(%{count} suscriptores)"
@@ -2450,7 +2450,7 @@ es:
     new:
       title: "Editar los destinatarios"
       intro: "Por defecto, todos los suscriptores de este canal recibirán esta campaña. Si indicas uno o varios segmentos, solo la recibirán los suscriptores de esos segmentos."
-      only_failed_html: "Dirigirse solo a los destinatarios que no recibieron la última campaña (%{link})"
+      only_failed_html: "Dirigirse solo a los suscriptores a los que la última campaña (%{link}) aún no llegó. Las direcciones que rechazó el proveedor de correo quedan fuera."
       segment_with_count:
         one: "%{name} (%{count} suscriptor)"
         other: "%{name} (%{count} suscriptores)"

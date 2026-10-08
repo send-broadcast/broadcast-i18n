@@ -2507,9 +2507,9 @@ pl:
       will_send_to_all: "Tę kampanię otrzymają wszyscy subskrybenci tego kanału."
       define_segment_html: "Aby kierować kampanię do części subskrybentów, %{link}, a pojawi się on tutaj."
       define_segment_link: "zdefiniuj segment"
-      only_failed_html: "Kampania trafi tylko do odbiorców, którzy nie otrzymali ostatniej kampanii (%{link})"
+      only_failed_html: "Kampania trafi tylko do subskrybentów, do których ostatnia kampania (%{link}) jeszcze nie dotarła. Adresy odrzucone przez dostawcę poczty są pomijane."
       following_segments: "Tę kampanię otrzymają następujące segmenty:"
-      failed_recipients_html: "Odbiorcy, do których nie dotarła ostatnia kampania (%{link})"
+      failed_recipients_html: "Subskrybenci, do których ostatnia kampania (%{link}) jeszcze nie dotarła (adresy odrzucone przez dostawcę poczty są pomijane)"
       count:
         one: "(%{count} subskrybent)"
         few: "(%{count} subskrybentów)"
@@ -2519,7 +2519,7 @@ pl:
     new:
       title: "Edytuj grupę docelową subskrybentów"
       intro: "Domyślnie tę kampanię otrzymają wszyscy subskrybenci tego kanału. Jeśli wskażesz jeden lub więcej segmentów, otrzymają ją tylko subskrybenci z tych segmentów."
-      only_failed_html: "Kieruj tylko do odbiorców, którzy nie otrzymali ostatniej kampanii (%{link})"
+      only_failed_html: "Kieruj tylko do subskrybentów, do których ostatnia kampania (%{link}) jeszcze nie dotarła. Adresy odrzucone przez dostawcę poczty są pomijane."
       segment_with_count:
         one: "%{name} (%{count} subskrybent)"
         few: "%{name} (%{count} subskrybentów)"

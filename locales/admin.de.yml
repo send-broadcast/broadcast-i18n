@@ -2441,9 +2441,9 @@ de:
       will_send_to_all: "Alle Abonnenten dieses Kanals erhalten diese Kampagne."
       define_segment_html: "Um nur einen Teil der Abonnenten anzusprechen, %{link}; es erscheint dann hier."
       define_segment_link: "legen Sie ein Segment an"
-      only_failed_html: "Es werden nur Empfänger angesprochen, die die letzte Kampagne (%{link}) nicht erhalten haben"
+      only_failed_html: "Es werden nur Abonnenten angesprochen, die die letzte Kampagne (%{link}) noch nicht erreicht hat. Adressen, die der E-Mail-Anbieter abgelehnt hat, bleiben ausgenommen."
       following_segments: "Die folgenden Segmente erhalten diese Kampagne:"
-      failed_recipients_html: "Empfänger, an die die letzte Kampagne (%{link}) nicht zugestellt werden konnte"
+      failed_recipients_html: "Abonnenten, die die letzte Kampagne (%{link}) noch nicht erreicht hat (vom E-Mail-Anbieter abgelehnte Adressen bleiben ausgenommen)"
       count:
         one: "(%{count} Abonnent)"
         other: "(%{count} Abonnenten)"
@@ -2451,7 +2451,7 @@ de:
     new:
       title: "Zielgruppe bearbeiten"
       intro: "Standardmäßig erhalten alle Abonnenten dieses Kanals diese Kampagne. Wenn Sie ein oder mehrere Segmente angeben, erhalten nur Abonnenten in diesen Segmenten die Kampagne."
-      only_failed_html: "Nur Empfänger ansprechen, die die letzte Kampagne (%{link}) nicht erhalten haben"
+      only_failed_html: "Nur Abonnenten ansprechen, die die letzte Kampagne (%{link}) noch nicht erreicht hat. Adressen, die der E-Mail-Anbieter abgelehnt hat, bleiben ausgenommen."
       segment_with_count:
         one: "%{name} (%{count} Abonnent)"
         other: "%{name} (%{count} Abonnenten)"

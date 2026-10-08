@@ -2437,9 +2437,9 @@ it:
       will_send_to_all: "Tutti gli iscritti di questo canale riceveranno questa campagna."
       define_segment_html: "Per raggiungere solo una parte degli iscritti, %{link}: comparirà qui."
       define_segment_link: "definisci un segmento"
-      only_failed_html: "Saranno raggiunti solo i destinatari che non hanno ricevuto la campagna precedente (%{link})"
+      only_failed_html: "Saranno raggiunti solo gli iscritti che la campagna precedente (%{link}) non ha ancora raggiunto. Gli indirizzi rifiutati dal provider email restano esclusi."
       following_segments: "Riceveranno questa campagna i seguenti segmenti:"
-      failed_recipients_html: "Destinatari non raggiunti dalla campagna precedente (%{link})"
+      failed_recipients_html: "Iscritti che la campagna precedente (%{link}) non ha ancora raggiunto (gli indirizzi rifiutati dal provider email restano esclusi)"
       count:
         one: "(%{count} iscritto)"
         other: "(%{count} iscritti)"
@@ -2447,7 +2447,7 @@ it:
     new:
       title: "Modifica i destinatari"
       intro: "Per impostazione predefinita, questa campagna arriva a tutti gli iscritti del canale. Se scegli uno o più segmenti, la riceveranno solo gli iscritti di quei segmenti."
-      only_failed_html: "Raggiungi solo i destinatari che non hanno ricevuto la campagna precedente (%{link})"
+      only_failed_html: "Raggiungi solo gli iscritti che la campagna precedente (%{link}) non ha ancora raggiunto. Gli indirizzi rifiutati dal provider email restano esclusi."
       segment_with_count:
         one: "%{name} (%{count} iscritto)"
         other: "%{name} (%{count} iscritti)"

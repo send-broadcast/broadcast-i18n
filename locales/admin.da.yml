@@ -2439,9 +2439,9 @@ da:
       will_send_to_all: "Alle abonnenter i denne kanal modtager kampagnen."
       define_segment_html: "Hvis du vil målrette en del af abonnenterne, så %{link}, så vises det her."
       define_segment_link: "definer et segment"
-      only_failed_html: "Kun modtagere, der ikke modtog den seneste kampagne (%{link}), bliver målrettet"
+      only_failed_html: "Kun abonnenter, som den seneste kampagne (%{link}) ikke har nået endnu, bliver målrettet. Adresser, som e-mailudbyderen har afvist, udelades."
       following_segments: "Følgende segmenter modtager kampagnen:"
-      failed_recipients_html: "Mislykkede modtagere af den seneste kampagne (%{link})"
+      failed_recipients_html: "Abonnenter, som den seneste kampagne (%{link}) ikke har nået endnu (adresser, som e-mailudbyderen har afvist, udelades)"
       count:
         one: "(%{count} abonnent)"
         other: "(%{count} abonnenter)"
@@ -2449,7 +2449,7 @@ da:
     new:
       title: "Rediger målgruppe"
       intro: "Som standard modtager alle abonnenter i denne kanal kampagnen. Hvis du angiver et eller flere segmenter, modtager kun abonnenter i disse segmenter kampagnen."
-      only_failed_html: "Målret kun modtagere, der ikke modtog den seneste kampagne (%{link})"
+      only_failed_html: "Målret kun abonnenter, som den seneste kampagne (%{link}) ikke har nået endnu. Adresser, som e-mailudbyderen har afvist, udelades."
       segment_with_count:
         one: "%{name} (%{count} abonnent)"
         other: "%{name} (%{count} abonnenter)"
