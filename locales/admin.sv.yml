@@ -2700,6 +2700,9 @@ sv:
       one_segment: "1 segment"
       all_subscribers: "Alla prenumeranter"
       no_segments: "Inga segment tillämpade"
+      retry_audience: "Bara de som missade den"
+      retry_of: "Nytt försök med %{name}"
+      retry_of_deleted: "Nytt försök med #%{id}, borttagen: når ingen"
       open_rate: "Öppningsgrad"
       opens:
         one: "%{formatted} öppning"
@@ -2804,6 +2807,9 @@ sv:
       title: "Skicka kampanj?"
       confirm: "Bekräfta att du vill börja skicka den här kampanjen."
       queued: "Om du bekräftar köas kampanjen och skickas direkt."
+      recipients:
+        one: "Den går till 1 prenumerant."
+        other: "Den går till %{formatted} prenumeranter."
       yes_send: "Ja, skicka den!"
     confirm_destroy:
       title: "Ta bort den här kampanjen?"

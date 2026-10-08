@@ -2701,6 +2701,9 @@ fr:
       one_segment: "1 segment"
       all_subscribers: "Tous les abonnés"
       no_segments: "Aucun segment appliqué"
+      retry_audience: "Seulement ceux qui l'ont manquée"
+      retry_of: "Relance de %{name}"
+      retry_of_deleted: "Relance de #%{id}, supprimée : n'atteint personne"
       open_rate: "Taux d'ouverture"
       opens:
         one: "%{formatted} ouverture"
@@ -2805,6 +2808,9 @@ fr:
       title: "Envoyer la campagne ?"
       confirm: "Confirmez que vous voulez lancer l'envoi de cette campagne."
       queued: "Si vous confirmez, la campagne sera mise en file d'attente et envoyée immédiatement."
+      recipients:
+        one: "Elle part à 1 abonné."
+        other: "Elle part à %{formatted} abonnés."
       yes_send: "Oui, l'envoyer !"
     confirm_destroy:
       title: "Supprimer cette campagne ?"

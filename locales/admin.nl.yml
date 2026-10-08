@@ -2702,6 +2702,9 @@ nl:
       one_segment: "1 segment"
       all_subscribers: "Alle abonnees"
       no_segments: "Geen segmenten toegepast"
+      retry_audience: "Alleen wie de campagne heeft gemist"
+      retry_of: "Herhaling van %{name}"
+      retry_of_deleted: "Herhaling van #%{id}, verwijderd: bereikt niemand"
       open_rate: "Openratio"
       opens:
         one: "%{formatted} opening"
@@ -2806,6 +2809,9 @@ nl:
       title: "Campagne verzenden?"
       confirm: "Bevestig dat je wilt beginnen met het verzenden van deze campagne."
       queued: "Als je bevestigt, wordt de campagne in de wachtrij gezet en direct verzonden."
+      recipients:
+        one: "De campagne gaat naar 1 abonnee."
+        other: "De campagne gaat naar %{formatted} abonnees."
       yes_send: "Ja, verzenden!"
     confirm_destroy:
       title: "Deze campagne verwijderen?"

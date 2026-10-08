@@ -2698,6 +2698,9 @@ it:
       one_segment: "1 segmento"
       all_subscribers: "Tutti gli iscritti"
       no_segments: "Nessun segmento applicato"
+      retry_audience: "Solo chi non l'ha ricevuta"
+      retry_of: "Nuovo invio di %{name}"
+      retry_of_deleted: "Nuovo invio di #%{id}, eliminata: non raggiunge nessuno"
       open_rate: "Tasso di apertura"
       opens:
         one: "%{formatted} apertura"
@@ -2802,6 +2805,9 @@ it:
       title: "Inviare la campagna?"
       confirm: "Conferma di voler avviare l'invio di questa campagna."
       queued: "Se confermi, la campagna verrà messa in coda e inviata subito."
+      recipients:
+        one: "Va a 1 iscritto."
+        other: "Va a %{formatted} iscritti."
       yes_send: "Sì, inviala!"
     confirm_destroy:
       title: "Eliminare questa campagna?"

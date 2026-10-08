@@ -2718,6 +2718,9 @@ en:
       one_segment: "1 segment"
       all_subscribers: "All Subscribers"
       no_segments: "No segments applied"
+      retry_audience: "Only people who missed it"
+      retry_of: "Retry of %{name}"
+      retry_of_deleted: "Retry of #%{id}, deleted: reaches nobody"
       open_rate: "Open Rate"
       opens:
         one: "%{formatted} opens"
@@ -2822,6 +2825,9 @@ en:
       title: "Send Broadcast?"
       confirm: "Confirm that you want to start sending this broadcast."
       queued: "If you confirm, the broadcast will be sent queued and sent immediately."
+      recipients:
+        one: "It goes to 1 subscriber."
+        other: "It goes to %{formatted} subscribers."
       yes_send: "Yes, send it!"
     confirm_destroy:
       title: "Delete this Broadcast?"

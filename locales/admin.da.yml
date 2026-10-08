@@ -2700,6 +2700,9 @@ da:
       one_segment: "1 segment"
       all_subscribers: "Alle abonnenter"
       no_segments: "Ingen segmenter anvendt"
+      retry_audience: "Kun dem, der gik glip af den"
+      retry_of: "Nyt forsøg med %{name}"
+      retry_of_deleted: "Nyt forsøg med #%{id}, slettet: når ingen"
       open_rate: "Åbningsrate"
       opens:
         one: "%{formatted} åbning"
@@ -2804,6 +2807,9 @@ da:
       title: "Send kampagne?"
       confirm: "Bekræft, at du vil begynde at sende denne kampagne."
       queued: "Hvis du bekræfter, sættes kampagnen i kø og sendes med det samme."
+      recipients:
+        one: "Den går til 1 abonnent."
+        other: "Den går til %{formatted} abonnenter."
       yes_send: "Ja, send den!"
     confirm_destroy:
       title: "Slet denne kampagne?"

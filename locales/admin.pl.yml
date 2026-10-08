@@ -2778,6 +2778,9 @@ pl:
       one_segment: "1 segment"
       all_subscribers: "Wszyscy subskrybenci"
       no_segments: "Nie zastosowano segmentów"
+      retry_audience: "Tylko ci, którzy jej nie otrzymali"
+      retry_of: "Ponowienie: %{name}"
+      retry_of_deleted: "Ponowienie #%{id}, usunięta: nie dotrze do nikogo"
       open_rate: "Wskaźnik otwarć"
       opens:
         one: "%{formatted} otwarcie"
@@ -2886,6 +2889,11 @@ pl:
       title: "Wysłać kampanię?"
       confirm: "Potwierdź, że chcesz rozpocząć wysyłkę tej kampanii."
       queued: "Po potwierdzeniu kampania zostanie dodana do kolejki i natychmiast wysłana."
+      recipients:
+        one: "Trafi do 1 subskrybenta."
+        few: "Trafi do %{formatted} subskrybentów."
+        many: "Trafi do %{formatted} subskrybentów."
+        other: "Trafi do %{formatted} subskrybenta."
       yes_send: "Tak, wyślij!"
     confirm_destroy:
       title: "Usunąć tę kampanię?"

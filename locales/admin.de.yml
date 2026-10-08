@@ -2702,6 +2702,9 @@ de:
       one_segment: "1 Segment"
       all_subscribers: "Alle Abonnenten"
       no_segments: "Keine Segmente angewendet"
+      retry_audience: "Nur, wer sie verpasst hat"
+      retry_of: "Wiederholung von %{name}"
+      retry_of_deleted: "Wiederholung von #%{id}, gelöscht: erreicht niemanden"
       open_rate: "Öffnungsrate"
       opens:
         one: "%{formatted} Öffnung"
@@ -2806,6 +2809,9 @@ de:
       title: "Kampagne senden?"
       confirm: "Bestätigen Sie, dass Sie den Versand dieser Kampagne starten möchten."
       queued: "Wenn Sie bestätigen, wird die Kampagne in die Warteschlange gestellt und sofort gesendet."
+      recipients:
+        one: "Sie geht an 1 Abonnenten."
+        other: "Sie geht an %{formatted} Abonnenten."
       yes_send: "Ja, senden!"
     confirm_destroy:
       title: "Diese Kampagne löschen?"

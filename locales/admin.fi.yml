@@ -2701,6 +2701,9 @@ fi:
       one_segment: "1 segmentti"
       all_subscribers: "Kaikki tilaajat"
       no_segments: "Segmenttejä ei käytetty"
+      retry_audience: "Vain ne, joilta se jäi saamatta"
+      retry_of: "Uusintayritys: %{name}"
+      retry_of_deleted: "Uusintayritys #%{id}, poistettu: ei tavoita ketään"
       open_rate: "Avausprosentti"
       opens:
         one: "%{formatted} avaus"
@@ -2805,6 +2808,9 @@ fi:
       title: "Lähetetäänkö kampanja?"
       confirm: "Vahvista, että haluat aloittaa tämän kampanjan lähettämisen."
       queued: "Jos vahvistat, kampanja asetetaan jonoon ja lähetetään heti."
+      recipients:
+        one: "Se lähtee 1 tilaajalle."
+        other: "Se lähtee %{formatted} tilaajalle."
       yes_send: "Kyllä, lähetä!"
     confirm_destroy:
       title: "Poistetaanko tämä kampanja?"

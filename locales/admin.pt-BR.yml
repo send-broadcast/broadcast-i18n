@@ -2700,6 +2700,9 @@ pt-BR:
       one_segment: "1 segmento"
       all_subscribers: "Todos os assinantes"
       no_segments: "Nenhum segmento aplicado"
+      retry_audience: "Só quem não recebeu"
+      retry_of: "Reenvio de %{name}"
+      retry_of_deleted: "Reenvio de #%{id}, excluída: não alcança ninguém"
       open_rate: "Taxa de abertura"
       opens:
         one: "%{formatted} abertura"
@@ -2804,6 +2807,9 @@ pt-BR:
       title: "Enviar a campanha?"
       confirm: "Confirme que deseja começar a enviar esta campanha."
       queued: "Se você confirmar, a campanha será colocada na fila e enviada imediatamente."
+      recipients:
+        one: "Vai para 1 assinante."
+        other: "Vai para %{formatted} assinantes."
       yes_send: "Sim, enviar!"
     confirm_destroy:
       title: "Excluir esta campanha?"
