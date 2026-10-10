@@ -2711,6 +2711,8 @@ nl:
         save_draft: "Concept opslaan"
         next_settings: "Volgende: instellingen"
     stats_cards:
+      velocity_waiting: "Wacht"
+      next_send_at: "Volgende verzending: %{time}"
       recipients: "Ontvangers"
       recalculate: "Herberekenen"
       delivered_of: "van %{total} afgeleverd"
@@ -2766,6 +2768,9 @@ nl:
       failed: "Verzenden van campagne mislukt"
       stalled: "Verzenden lijkt vast te zitten"
       stalled_hint: "Al meer dan 5 minuten geen e-mails verzonden. Probeer de campagne te pauzeren en te hervatten."
+      waiting_for_room: "Wacht op capaciteit op de e-mailserver"
+      waiting_for_room_hint: "De uurlimiet van de server is voor campagnes opgebruikt. Het verzenden gaat vanzelf verder (rond %{time}). Wil je eerder verzenden, verhoog dan de limiet of reset de snelheidslimiet op de serverpagina."
+      paused_in_flight: "E-mails die al onderweg waren toen je pauzeerde, kunnen nog aankomen. Het aantal ontvangers stopt zo meteen."
       delivery_analytics: "Afleverstatistieken"
       recent_activity: "Recente activiteit"
       link_performance: "Prestaties van links"
@@ -3688,6 +3693,8 @@ nl:
       rate_limit_title: "Snelheidslimiet bereikt"
       rate_limit_body: "De campagne wordt automatisch hervat zodra het venster van de snelheidslimiet voorbij is."
       rate_limit_message: "Snelheidslimiet bereikt voor %{server} (%{count}/%{limit} e-mails per uur). Wachten om te hervatten..."
+      waiting_for_room: "Wacht"
+      next_send_at: "Volgende verzending: %{time}"
     application_logs:
       starting: "Starten..."
       start_failed: "Streamen starten mislukt"
@@ -6023,6 +6030,7 @@ nl:
             one: "%{sent} verzonden in het huidige venster"
             other: "%{sent} verzonden in het huidige venster"
           rate_limit_reached: " · snelheidslimiet bereikt"
+          waiting_broadcast: "%{name} wacht tot %{time} op capaciteit"
           reset_confirm: "Het venster van de snelheidslimiet wissen zodat verzenden nu kan worden hervat?"
           reset_rate_limit: "Snelheidslimiet resetten"
           email_types: "E-mailtypen"
@@ -6349,6 +6357,18 @@ nl:
         rate_limits_intro: "Wil je het aantal e-mails per uur beperken, dan kan dat hier. Een lagere limiet helpt voorkomen dat e-mailproviders je op een zwarte lijst zetten. Je verzendvolume wordt dan wel lager en vooral campagnes doen er langer over om te worden verzonden."
         emails_per_hour: "E-mails per uur (minimaal 15 per uur)"
         rate_needed: "Op basis van je huidige aantal abonnees is een limiet van minimaal %{rate} e-mails per uur nodig om je campagnes binnen 24 uur te verzenden. Dit gaat uit van één e-mailserver die voor campagnes is ingesteld."
+        rate_needed_share: "Deze snelheid gaat ervan uit dat campagnes %{percent}% van de limiet van deze server gebruiken (zie de reserve hieronder)."
+        reserve_intro: "Elk type e-mail stopt onder de limiet om capaciteit vrij te houden voor types met een hogere prioriteit (eerst transactionele e-mails, dan reeksen, dan campagnes). Bij deze limiet:"
+        reserve_broadcasts:
+          one: "campagnes: tot 1 e-mail per uur"
+          other: "campagnes: tot %{count} e-mails per uur"
+        reserve_sequences:
+          one: "reeksen: tot 1 e-mail per uur"
+          other: "reeksen: tot %{count} e-mails per uur"
+        reserve_transactionals:
+          one: "transactionele e-mails: tot 1 e-mail per uur"
+          other: "transactionele e-mails: tot %{count} e-mails per uur"
+        separate_servers: "We raden aparte servers aan: één voor campagnes, en één voor transactionele e-mails en reeksen. Dan heeft elk type de volledige limiet van zijn eigen server, en vertraagt een nieuwsbrief nooit een inlogcode."
         aws_ses_integration: "AWS SES-integratie"
         aws_ses_integration_intro_html: "Broadcast kan bezorgingen, bounces, klachten, openingen en kliks van e-mails bijhouden met de statistieken van AWS SES zelf. Lees %{link} om te zien hoe je dit instelt."
         aws_ses_integration_docs_link: "onze documentatie"
@@ -7550,6 +7570,16 @@ nl:
       confirm: "Bevestigen"
     copyable_command:
       copy: "Opdracht kopiëren"
+    transactional_room_notice:
+      waiting:
+        one: "1 transactionele e-mail wacht al meer dan 30 minuten op capaciteit op de e-mailserver"
+        other: "%{count} transactionele e-mails wachten al meer dan 30 minuten op capaciteit op de e-mailserver"
+      waiting_hint: "De server zit aan zijn uurlimiet. Transactionele e-mails worden elke minuut opnieuw geprobeerd, maximaal 24 uur lang. Wil je eerder verzenden, verhoog dan de limiet, reset de snelheidslimiet op de serverpagina of gebruik een aparte server voor transactionele e-mails."
+      failed:
+        one: "1 transactionele e-mail is in de afgelopen 24 uur mislukt, omdat de e-mailserver 24 uur lang aan zijn uurlimiet zat"
+        other: "%{count} transactionele e-mails zijn in de afgelopen 24 uur mislukt, omdat de e-mailserver 24 uur lang aan zijn uurlimiet zat"
+      failed_hint: "Controleer de uurlimiet van de server of gebruik een aparte server voor transactionele e-mails."
+      view: "Transactionele e-mails bekijken"
     dns_health_alert:
       title: "DNS-records voor e-mailauthenticatie zijn gewijzigd"
       drift: "%{mechanism} %{status}"
@@ -8126,6 +8156,7 @@ nl:
       empty: "Geen abonnees in deze reeks"
     subscriber_sequence:
       in: "over %{time}"
+      waiting_for_room_since: "Wacht sinds %{time} op capaciteit op de e-mailserver"
       restart: "Reeks vanaf het begin starten"
       pause: "Reeks pauzeren"
       resume: "Reeks hervatten"
@@ -9237,6 +9268,7 @@ nl:
       tooltip_email_sent: "Geaccepteerd door de e-mailprovider. Met parallel verzenden aan melden campagnes verzendingen in plaats daarvan in broadcast.batch_completed"
       tooltip_email_failed: "Permanente bezorgfout; wordt niet opnieuw geprobeerd. Met parallel verzenden aan melden campagnes fouten in plaats daarvan in broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Tijdelijk probleem zoals greylisting; de bezorging wordt opnieuw geprobeerd"
+      tooltip_email_send_delayed: "Een transactionele e-mail wacht op capaciteit op zijn e-mailserver (uurlimiet bereikt); hij wordt maximaal 24 uur lang elke minuut opnieuw geprobeerd"
       tooltip_broadcast_queueing: "De campagne wordt voorbereid en de ontvangers worden in de wachtrij gezet"
       tooltip_broadcast_batch_completed: "Alleen bij parallel verzenden: één gebeurtenis per batch van maximaal 500, met wie is verzonden of mislukt, in plaats van email.sent / email.failed voor campagnes"
       tooltip_message_attempt_exhausted: "Alle nieuwe pogingen voor deze bezorging zijn mislukt"

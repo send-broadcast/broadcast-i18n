@@ -2709,6 +2709,8 @@ nb:
         save_draft: "Lagre utkast"
         next_settings: "Neste: Innstillinger"
     stats_cards:
+      velocity_waiting: "Venter"
+      next_send_at: "Neste utsending: %{time}"
       recipients: "Mottakere"
       recalculate: "Beregn på nytt"
       delivered_of: "av %{total} levert"
@@ -2764,6 +2766,9 @@ nb:
       failed: "Kampanjen kunne ikke sendes"
       stalled: "Utsendingen ser ut til å ha stoppet opp"
       stalled_hint: "Ingen e-poster er sendt på over 5 minutter. Prøv å sette kampanjen på pause og gjenoppta den."
+      waiting_for_room: "Venter på ledig kapasitet på e-postserveren"
+      waiting_for_room_hint: "Serverens timegrense for kampanjer er brukt opp. Utsendingen fortsetter av seg selv (rundt %{time}). Vil du sende tidligere, kan du øke grensen eller tilbakestille hastighetsgrensen på serversiden."
+      paused_in_flight: "E-poster som allerede var på vei da du satte på pause, kan fortsatt komme frem. Antall mottakere slutter å øke om et øyeblikk."
       delivery_analytics: "Leveringsanalyse"
       recent_activity: "Nylig aktivitet"
       link_performance: "Lenkeresultater"
@@ -3686,6 +3691,8 @@ nb:
       rate_limit_title: "Hastighetsgrensen er nådd"
       rate_limit_body: "Kampanjen gjenopptas automatisk når tidsvinduet for hastighetsgrensen er over."
       rate_limit_message: "Hastighetsgrensen er nådd for %{server} (%{count}/%{limit} e-poster per time). Venter på å gjenoppta..."
+      waiting_for_room: "Venter"
+      next_send_at: "Neste utsending: %{time}"
     application_logs:
       starting: "Starter..."
       start_failed: "Kunne ikke starte strømmingen"
@@ -6021,6 +6028,7 @@ nb:
             one: "%{sent} sendt i gjeldende tidsvindu"
             other: "%{sent} sendt i gjeldende tidsvindu"
           rate_limit_reached: " · hastighetsgrensen er nådd"
+          waiting_broadcast: "%{name} venter på ledig kapasitet til %{time}"
           reset_confirm: "Tømme tidsvinduet for hastighetsgrensen slik at utsendingen kan fortsette nå?"
           reset_rate_limit: "Tilbakestill hastighetsgrense"
           email_types: "E-posttyper"
@@ -6347,6 +6355,18 @@ nb:
         rate_limits_intro: "Hvis du trenger å begrense antallet e-poster som sendes per time, kan du gjøre det her. En lavere grense hjelper deg med å unngå å bli svartelistet av e-postleverandører. Samtidig blir e-postvolumet lavere, og spesielt kampanjer vil ta lengre tid å sende ut."
         emails_per_hour: "E-poster per time (minst 15 per time)"
         rate_needed: "Basert på det nåværende antallet abonnenter trengs en hastighet på minst %{rate} e-poster per time hvis du vil sende kampanjene dine innen 24 timer. Dette forutsetter én e-postserver som er angitt for kampanje-e-poster."
+        rate_needed_share: "Hastigheten regner med at kampanjer bruker %{percent} % av serverens grense (se reserven nedenfor)."
+        reserve_intro: "Hver e-posttype stopper under grensen for å holde av kapasitet til typer med høyere prioritet (først transaksjonell e-post, så sekvenser, så kampanjer). Ved denne grensen:"
+        reserve_broadcasts:
+          one: "kampanjer: opptil 1 e-post i timen"
+          other: "kampanjer: opptil %{count} e-poster i timen"
+        reserve_sequences:
+          one: "sekvenser: opptil 1 e-post i timen"
+          other: "sekvenser: opptil %{count} e-poster i timen"
+        reserve_transactionals:
+          one: "transaksjonell e-post: opptil 1 e-post i timen"
+          other: "transaksjonell e-post: opptil %{count} e-poster i timen"
+        separate_servers: "Vi anbefaler separate servere: én for kampanjer, og én for transaksjonell e-post og sekvenser. Da har hver type hele grensen på sin egen server, og et nyhetsbrev forsinker aldri en innloggingskode."
         aws_ses_integration: "AWS SES-integrasjon"
         aws_ses_integration_intro_html: "Broadcast kan spore leveringer, returer, klager, åpninger og klikk for e-poster ved hjelp av analysen som AWS SES selv tilbyr. Se %{link} for å lære hvordan du setter dette opp."
         aws_ses_integration_docs_link: "dokumentasjonen vår"
@@ -7548,6 +7568,16 @@ nb:
       confirm: "Bekreft"
     copyable_command:
       copy: "Kopier kommando"
+    transactional_room_notice:
+      waiting:
+        one: "1 transaksjonell e-post har ventet på ledig kapasitet på e-postserveren i over 30 minutter"
+        other: "%{count} transaksjonelle e-poster har ventet på ledig kapasitet på e-postserveren i over 30 minutter"
+      waiting_hint: "Serveren har nådd timegrensen sin. Transaksjonell e-post prøves på nytt hvert minutt, i opptil 24 timer. Vil du sende tidligere, kan du øke grensen, tilbakestille hastighetsgrensen på serversiden eller bruke en egen server for transaksjonell e-post."
+      failed:
+        one: "1 transaksjonell e-post mislyktes de siste 24 timene fordi e-postserveren lå på timegrensen i 24 timer"
+        other: "%{count} transaksjonelle e-poster mislyktes de siste 24 timene fordi e-postserveren lå på timegrensen i 24 timer"
+      failed_hint: "Sjekk serverens timegrense, eller bruk en egen server for transaksjonell e-post."
+      view: "Vis transaksjonelle e-poster"
     dns_health_alert:
       title: "DNS-postene for e-postautentisering er endret"
       drift: "%{mechanism} %{status}"
@@ -8124,6 +8154,7 @@ nb:
       empty: "Ingen abonnenter i denne sekvensen"
     subscriber_sequence:
       in: "om %{time}"
+      waiting_for_room_since: "Venter på ledig kapasitet på e-postserveren siden %{time}"
       restart: "Start sekvensen fra begynnelsen"
       pause: "Sett sekvensen på pause"
       resume: "Gjenoppta sekvensen"
@@ -9235,6 +9266,7 @@ nb:
       tooltip_email_sent: "Godtatt av e-postleverandøren. Med parallell sending på rapporterer kampanjer utsendinger i broadcast.batch_completed i stedet"
       tooltip_email_failed: "Permanent leveringsfeil; blir ikke forsøkt på nytt. Med parallell sending på rapporterer kampanjer feil i broadcast.batch_completed i stedet"
       tooltip_email_delivery_delayed: "Midlertidig problem som gråliste; leveringen blir forsøkt på nytt"
+      tooltip_email_send_delayed: "En transaksjonell e-post venter på ledig kapasitet på e-postserveren sin (timegrensen er nådd); den prøves på nytt hvert minutt i opptil 24 timer"
       tooltip_broadcast_queueing: "Kampanjen forberedes, og mottakerne legges i kø"
       tooltip_broadcast_batch_completed: "Bare ved parallell sending: én hendelse per gruppe på opptil 500, som viser hvem som ble sendt til eller mislyktes, i stedet for email.sent / email.failed for kampanjer"
       tooltip_message_attempt_exhausted: "Alle nye forsøk har mislyktes for denne leveringen"

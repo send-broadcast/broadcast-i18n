@@ -2709,6 +2709,8 @@ sv:
         save_draft: "Spara utkast"
         next_settings: "Nästa: Inställningar"
     stats_cards:
+      velocity_waiting: "Väntar"
+      next_send_at: "Nästa utskick: %{time}"
       recipients: "Mottagare"
       recalculate: "Räkna om"
       delivered_of: "av %{total} levererade"
@@ -2764,6 +2766,9 @@ sv:
       failed: "Kampanjen kunde inte skickas"
       stalled: "Utskicket verkar ha fastnat"
       stalled_hint: "Inga mejl har skickats på över 5 minuter. Försök att pausa och återuppta kampanjen."
+      waiting_for_room: "Väntar på ledig kapacitet på e-postservern"
+      waiting_for_room_hint: "Serverns timgräns för kampanjer är förbrukad. Utskicket fortsätter av sig självt (runt %{time}). Om du vill skicka tidigare kan du höja gränsen eller återställa hastighetsgränsen på serversidan."
+      paused_in_flight: "Mejl som redan var på väg när du pausade kan fortfarande komma fram. Antalet mottagare slutar öka om en liten stund."
       delivery_analytics: "Leveransstatistik"
       recent_activity: "Senaste aktivitet"
       link_performance: "Länkresultat"
@@ -3686,6 +3691,8 @@ sv:
       rate_limit_title: "Hastighetsgränsen har nåtts"
       rate_limit_body: "Kampanjen återupptas automatiskt när hastighetsgränsens tidsfönster har passerat."
       rate_limit_message: "Hastighetsgränsen har nåtts för %{server} (%{count}/%{limit} mejl per timme). Väntar på att återuppta..."
+      waiting_for_room: "Väntar"
+      next_send_at: "Nästa utskick: %{time}"
     application_logs:
       starting: "Startar..."
       start_failed: "Det gick inte att starta strömningen"
@@ -6021,6 +6028,7 @@ sv:
             one: "%{sent} skickat i nuvarande tidsfönster"
             other: "%{sent} skickade i nuvarande tidsfönster"
           rate_limit_reached: " · hastighetsgränsen nådd"
+          waiting_broadcast: "%{name} väntar på ledig kapacitet till %{time}"
           reset_confirm: "Rensa tidsfönstret för hastighetsgränsen så att utskicken kan fortsätta nu?"
           reset_rate_limit: "Återställ hastighetsgräns"
           email_types: "Mejltyper"
@@ -6347,6 +6355,18 @@ sv:
         rate_limits_intro: "Om du behöver begränsa antalet mejl som skickas per timme kan du göra det här. En lägre gräns hjälper dig att undvika att svartlistas av e-postleverantörer. Samtidigt minskar din mejlvolym, och särskilt kampanjer tar längre tid att skicka ut."
         emails_per_hour: "Mejl per timme (minst 15 per timme)"
         rate_needed: "Utifrån ditt nuvarande antal prenumeranter krävs minst %{rate} mejl per timme om du vill skicka dina kampanjer inom 24 timmar. Beräkningen utgår från en e-postserver som är angiven för kampanjmejl."
+        rate_needed_share: "Hastigheten räknar med att kampanjer använder %{percent} % av serverns gräns (se reserven nedan)."
+        reserve_intro: "Varje typ av mejl stannar under gränsen för att lämna kapacitet åt typer med högre prioritet (först transaktionsmejl, sedan sekvenser, sedan kampanjer). Vid den här gränsen:"
+        reserve_broadcasts:
+          one: "kampanjer: upp till 1 mejl per timme"
+          other: "kampanjer: upp till %{count} mejl per timme"
+        reserve_sequences:
+          one: "sekvenser: upp till 1 mejl per timme"
+          other: "sekvenser: upp till %{count} mejl per timme"
+        reserve_transactionals:
+          one: "transaktionsmejl: upp till 1 mejl per timme"
+          other: "transaktionsmejl: upp till %{count} mejl per timme"
+        separate_servers: "Vi rekommenderar separata servrar: en för kampanjer och en för transaktionsmejl och sekvenser. Då har varje typ hela gränsen på sin egen server, och ett nyhetsbrev försenar aldrig en inloggningskod."
         aws_ses_integration: "AWS SES-integration"
         aws_ses_integration_intro_html: "Broadcast kan spåra leveranser, studsar, klagomål, öppningar och klick för mejl med hjälp av statistiken från AWS SES. Läs %{link} för att se hur du ställer in det."
         aws_ses_integration_docs_link: "vår dokumentation"
@@ -7548,6 +7568,16 @@ sv:
       confirm: "Bekräfta"
     copyable_command:
       copy: "Kopiera kommando"
+    transactional_room_notice:
+      waiting:
+        one: "1 transaktionsmejl har väntat på ledig kapacitet på e-postservern i över 30 minuter"
+        other: "%{count} transaktionsmejl har väntat på ledig kapacitet på e-postservern i över 30 minuter"
+      waiting_hint: "Servern har nått sin timgräns. Transaktionsmejl försöks igen varje minut, i upp till 24 timmar. Om du vill skicka tidigare kan du höja gränsen, återställa hastighetsgränsen på serversidan eller använda en separat server för transaktionsmejl."
+      failed:
+        one: "1 transaktionsmejl misslyckades under de senaste 24 timmarna eftersom e-postservern låg kvar på sin timgräns i 24 timmar"
+        other: "%{count} transaktionsmejl misslyckades under de senaste 24 timmarna eftersom e-postservern låg kvar på sin timgräns i 24 timmar"
+      failed_hint: "Kontrollera serverns timgräns eller använd en separat server för transaktionsmejl."
+      view: "Visa transaktionsmejl"
     dns_health_alert:
       title: "DNS-posterna för e-postautentisering har ändrats"
       drift: "%{mechanism} %{status}"
@@ -8124,6 +8154,7 @@ sv:
       empty: "Inga prenumeranter i den här sekvensen"
     subscriber_sequence:
       in: "om %{time}"
+      waiting_for_room_since: "Väntar på ledig kapacitet på e-postservern sedan %{time}"
       restart: "Starta sekvensen från början"
       pause: "Pausa sekvensen"
       resume: "Återuppta sekvensen"
@@ -9235,6 +9266,7 @@ sv:
       tooltip_email_sent: "Accepterat av e-postleverantören. När parallell sändning är på rapporterar kampanjer i stället skickade mejl i broadcast.batch_completed"
       tooltip_email_failed: "Permanent leveransfel; inga nya försök görs. När parallell sändning är på rapporterar kampanjer i stället fel i broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Tillfälligt problem som greylisting; leveransen försöks igen"
+      tooltip_email_send_delayed: "Ett transaktionsmejl väntar på ledig kapacitet på sin e-postserver (timgränsen är nådd); det försöks igen varje minut i upp till 24 timmar"
       tooltip_broadcast_queueing: "Kampanjen förbereds och mottagarna läggs i kö"
       tooltip_broadcast_batch_completed: "Endast parallell sändning: en händelse per omgång om upp till 500, med listor över vilka som fick mejlet eller misslyckades, i stället för email.sent / email.failed för kampanjer"
       tooltip_message_attempt_exhausted: "Alla nya försök har misslyckats för den här leveransen"

@@ -2787,6 +2787,8 @@ pl:
         save_draft: "Zapisz wersję roboczą"
         next_settings: "Dalej: Ustawienia"
     stats_cards:
+      velocity_waiting: "Oczekuje"
+      next_send_at: "Następna wysyłka: %{time}"
       recipients: "Odbiorcy"
       recalculate: "Przelicz"
       delivered_of: "z %{total} dostarczonych"
@@ -2848,6 +2850,9 @@ pl:
       failed: "Nie udało się wysłać kampanii"
       stalled: "Wysyłka wydaje się zatrzymana"
       stalled_hint: "Od ponad 5 minut nie wysłano żadnego e-maila. Spróbuj wstrzymać i wznowić kampanię."
+      waiting_for_room: "Oczekiwanie na wolne miejsce na serwerze poczty"
+      waiting_for_room_hint: "Godzinowy limit serwera dla kampanii został wyczerpany. Wysyłka wznowi się samoczynnie (około %{time}). Aby wysłać wcześniej, zwiększ limit lub zresetuj limit szybkości na stronie serwera."
+      paused_in_flight: "E-maile, które były już w drodze w chwili wstrzymania, mogą jeszcze dotrzeć. Liczba odbiorców za chwilę przestanie rosnąć."
       delivery_analytics: "Analityka dostarczania"
       recent_activity: "Ostatnia aktywność"
       link_performance: "Skuteczność linków"
@@ -3806,6 +3811,8 @@ pl:
       rate_limit_title: "Osiągnięto limit szybkości"
       rate_limit_body: "Kampania wznowi się automatycznie, gdy minie okno limitu szybkości."
       rate_limit_message: "Osiągnięto limit szybkości dla %{server} (%{count}/%{limit} e-maili na godzinę). Oczekiwanie na wznowienie..."
+      waiting_for_room: "Oczekuje"
+      next_send_at: "Następna wysyłka: %{time}"
     application_logs:
       starting: "Uruchamianie..."
       start_failed: "Nie udało się rozpocząć strumieniowania"
@@ -6215,6 +6222,7 @@ pl:
             many: "Wysłano %{sent} w bieżącym oknie"
             other: "Wysłano %{sent} w bieżącym oknie"
           rate_limit_reached: " · osiągnięto limit szybkości"
+          waiting_broadcast: "%{name} czeka na wolne miejsce do %{time}"
           reset_confirm: "Wyczyścić okno limitu szybkości, aby wysyłka mogła być wznowiona od razu?"
           reset_rate_limit: "Resetuj limit szybkości"
           email_types: "Typy e-maili"
@@ -6543,6 +6551,24 @@ pl:
         rate_limits_intro: "Jeśli chcesz ograniczyć liczbę e-maili wysyłanych na godzinę, możesz to zrobić tutaj. Niższy limit pomaga uniknąć umieszczenia na czarnych listach dostawców poczty. Wolumen wysyłki będzie jednak mniejszy, a zwłaszcza kampanie będą wysyłane dłużej."
         emails_per_hour: "E-maile na godzinę (minimum 15 na godzinę)"
         rate_needed: "Przy obecnej liczbie subskrybentów, aby wysłać kampanie w ciągu 24 godzin, potrzebujesz limitu co najmniej %{rate} e-maili na godzinę. Zakładamy jeden serwer poczty przeznaczony do kampanii."
+        rate_needed_share: "Ta szybkość zakłada, że kampanie korzystają z %{percent}% limitu tego serwera (zobacz rezerwę poniżej)."
+        reserve_intro: "Każdy typ e-maili zatrzymuje się poniżej limitu, aby zostawić miejsce dla typów o wyższym priorytecie (najpierw e-maile transakcyjne, potem sekwencje, potem kampanie). Przy tym limicie:"
+        reserve_broadcasts:
+          one: "kampanie: do 1 e-maila na godzinę"
+          few: "kampanie: do %{count} e-maili na godzinę"
+          many: "kampanie: do %{count} e-maili na godzinę"
+          other: "kampanie: do %{count} e-maili na godzinę"
+        reserve_sequences:
+          one: "sekwencje: do 1 e-maila na godzinę"
+          few: "sekwencje: do %{count} e-maili na godzinę"
+          many: "sekwencje: do %{count} e-maili na godzinę"
+          other: "sekwencje: do %{count} e-maili na godzinę"
+        reserve_transactionals:
+          one: "e-maile transakcyjne: do 1 e-maila na godzinę"
+          few: "e-maile transakcyjne: do %{count} e-maili na godzinę"
+          many: "e-maile transakcyjne: do %{count} e-maili na godzinę"
+          other: "e-maile transakcyjne: do %{count} e-maili na godzinę"
+        separate_servers: "Zalecamy osobne serwery: jeden dla kampanii i jeden dla e-maili transakcyjnych i sekwencji. Wtedy każdy typ ma pełny limit własnego serwera, a newsletter nigdy nie opóźni kodu logowania."
         aws_ses_integration: "Integracja z AWS SES"
         aws_ses_integration_intro_html: "Broadcast może śledzić dostarczenia, odbicia, skargi, otwarcia i kliknięcia na podstawie analityki udostępnianej przez samo AWS SES. Sposób konfiguracji opisuje %{link}."
         aws_ses_integration_docs_link: "nasza dokumentacja"
@@ -7794,6 +7820,20 @@ pl:
       confirm: "Potwierdź"
     copyable_command:
       copy: "Kopiuj polecenie"
+    transactional_room_notice:
+      waiting:
+        one: "1 e-mail transakcyjny czeka ponad 30 minut na wolne miejsce na serwerze poczty"
+        few: "%{count} e-maile transakcyjne czekają ponad 30 minut na wolne miejsce na serwerze poczty"
+        many: "%{count} e-maili transakcyjnych czeka ponad 30 minut na wolne miejsce na serwerze poczty"
+        other: "%{count} e-maila transakcyjnego czeka ponad 30 minut na wolne miejsce na serwerze poczty"
+      waiting_hint: "Serwer osiągnął limit godzinowy. E-maile transakcyjne są ponawiane co minutę, maksymalnie przez 24 godziny. Aby wysłać wcześniej, zwiększ limit, zresetuj limit szybkości na stronie serwera lub użyj osobnego serwera dla e-maili transakcyjnych."
+      failed:
+        one: "1 e-mail transakcyjny nie został wysłany w ciągu ostatnich 24 godzin, bo serwer poczty przez 24 godziny pozostawał na limicie godzinowym"
+        few: "%{count} e-maile transakcyjne nie zostały wysłane w ciągu ostatnich 24 godzin, bo serwer poczty przez 24 godziny pozostawał na limicie godzinowym"
+        many: "%{count} e-maili transakcyjnych nie zostało wysłanych w ciągu ostatnich 24 godzin, bo serwer poczty przez 24 godziny pozostawał na limicie godzinowym"
+        other: "%{count} e-maila transakcyjnego nie zostało wysłane w ciągu ostatnich 24 godzin, bo serwer poczty przez 24 godziny pozostawał na limicie godzinowym"
+      failed_hint: "Sprawdź godzinowy limit serwera lub użyj osobnego serwera dla e-maili transakcyjnych."
+      view: "Zobacz e-maile transakcyjne"
     dns_health_alert:
       title: "Rekordy DNS uwierzytelniania poczty uległy zmianie"
       drift: "%{mechanism}: %{status}"
@@ -8400,6 +8440,7 @@ pl:
       empty: "Brak subskrybentów w tej sekwencji"
     subscriber_sequence:
       in: "za %{time}"
+      waiting_for_room_since: "Oczekuje na wolne miejsce na serwerze poczty od %{time}"
       restart: "Rozpocznij sekwencję od początku"
       pause: "Wstrzymaj sekwencję"
       resume: "Wznów sekwencję"
@@ -9559,6 +9600,7 @@ pl:
       tooltip_email_sent: "Zaakceptowany przez dostawcę poczty. Gdy włączona jest wysyłka równoległa, kampanie zgłaszają wysyłki w zdarzeniu broadcast.batch_completed"
       tooltip_email_failed: "Trwałe niepowodzenie dostarczenia; bez ponownych prób. Gdy włączona jest wysyłka równoległa, kampanie zgłaszają niepowodzenia w zdarzeniu broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problem tymczasowy, np. greylisting; dostarczenie zostanie ponowione"
+      tooltip_email_send_delayed: "E-mail transakcyjny czeka na wolne miejsce na swoim serwerze poczty (osiągnięto limit godzinowy); jest ponawiany co minutę maksymalnie przez 24 godziny"
       tooltip_broadcast_queueing: "Kampania jest przygotowywana, a odbiorcy trafiają do kolejki"
       tooltip_broadcast_batch_completed: "Tylko wysyłka równoległa: jedno zdarzenie na partię do 500 odbiorców, z listą wysłanych i nieudanych, zamiast email.sent / email.failed dla kampanii"
       tooltip_message_attempt_exhausted: "Wszystkie próby tego dostarczenia zakończyły się niepowodzeniem"

@@ -2710,6 +2710,8 @@ fi:
         save_draft: "Tallenna luonnos"
         next_settings: "Seuraava: Asetukset"
     stats_cards:
+      velocity_waiting: "Odottaa"
+      next_send_at: "Seuraava lähetys: %{time}"
       recipients: "Vastaanottajat"
       recalculate: "Laske uudelleen"
       delivered_of: "/ %{total} toimitettu"
@@ -2765,6 +2767,9 @@ fi:
       failed: "Kampanjan lähetys epäonnistui"
       stalled: "Lähetys näyttää jumittuneen"
       stalled_hint: "Sähköposteja ei ole lähetetty yli 5 minuuttiin. Kokeile keskeyttää kampanja ja jatkaa sitä."
+      waiting_for_room: "Odottaa vapaata kapasiteettia sähköpostipalvelimella"
+      waiting_for_room_hint: "Palvelimen tuntiraja on käytetty kampanjoilta loppuun. Lähetys jatkuu itsestään (noin %{time}). Jos haluat lähettää aiemmin, nosta rajaa tai nollaa nopeusrajoitus palvelimen sivulla."
+      paused_in_flight: "Sähköpostit, jotka olivat jo matkalla keskeyttäessäsi, voivat vielä saapua. Vastaanottajien määrä pysähtyy hetken kuluttua."
       delivery_analytics: "Toimitustilastot"
       recent_activity: "Viimeaikainen toiminta"
       link_performance: "Linkkien suoriutuminen"
@@ -3687,6 +3692,8 @@ fi:
       rate_limit_title: "Nopeusrajoitus saavutettu"
       rate_limit_body: "Kampanja jatkuu automaattisesti, kun nopeusrajoituksen aikaikkuna vapautuu."
       rate_limit_message: "Palvelimen %{server} nopeusrajoitus saavutettu (%{count}/%{limit} sähköpostia tunnissa). Odotetaan jatkamista..."
+      waiting_for_room: "Odottaa"
+      next_send_at: "Seuraava lähetys: %{time}"
     application_logs:
       starting: "Käynnistetään..."
       start_failed: "Suoratoiston käynnistäminen epäonnistui"
@@ -6022,6 +6029,7 @@ fi:
             one: "%{sent} lähetetty nykyisessä aikaikkunassa"
             other: "%{sent} lähetetty nykyisessä aikaikkunassa"
           rate_limit_reached: " · nopeusrajoitus saavutettu"
+          waiting_broadcast: "%{name} odottaa vapaata kapasiteettia %{time} asti"
           reset_confirm: "Tyhjennetäänkö nopeusrajoituksen aikaikkuna, jotta lähettäminen voi jatkua nyt?"
           reset_rate_limit: "Nollaa nopeusrajoitus"
           email_types: "Sähköpostityypit"
@@ -6348,6 +6356,18 @@ fi:
         rate_limits_intro: "Jos haluat rajoittaa tunnissa lähetettävien sähköpostien määrää, voit tehdä sen täällä. Matalampi raja auttaa välttämään joutumisen sähköpostipalveluntarjoajien estolistoille. Lähetysmääräsi kuitenkin pienenee, ja erityisesti kampanjoiden lähettäminen kestää pidempään."
         emails_per_hour: "Sähköpostia tunnissa (vähintään 15 tunnissa)"
         rate_needed: "Nykyisen tilaajamääräsi perusteella tarvitaan vähintään %{rate} sähköpostia tunnissa, jos haluat lähettää kampanjasi 24 tunnin kuluessa. Laskelma perustuu yhteen kampanjasähköposteille määritettyyn sähköpostipalvelimeen."
+        rate_needed_share: "Nopeus olettaa, että kampanjat käyttävät %{percent} % tämän palvelimen rajasta (katso varaus alta)."
+        reserve_intro: "Jokainen sähköpostityyppi pysähtyy rajan alle, jotta korkeamman prioriteetin tyypeille jää kapasiteettia (ensin transaktiosähköpostit, sitten sarjat, sitten kampanjat). Tällä rajalla:"
+        reserve_broadcasts:
+          one: "kampanjat: enintään 1 sähköposti tunnissa"
+          other: "kampanjat: enintään %{count} sähköpostia tunnissa"
+        reserve_sequences:
+          one: "sarjat: enintään 1 sähköposti tunnissa"
+          other: "sarjat: enintään %{count} sähköpostia tunnissa"
+        reserve_transactionals:
+          one: "transaktiosähköpostit: enintään 1 sähköposti tunnissa"
+          other: "transaktiosähköpostit: enintään %{count} sähköpostia tunnissa"
+        separate_servers: "Suosittelemme erillisiä palvelimia: yksi kampanjoille ja yksi transaktiosähköposteille ja sarjoille. Silloin jokaisella tyypillä on oman palvelimensa koko raja, eikä uutiskirje koskaan viivästytä kirjautumiskoodia."
         aws_ses_integration: "AWS SES -integraatio"
         aws_ses_integration_intro_html: "Broadcast voi seurata sähköpostien toimituksia, palautuksia, valituksia, avauksia ja klikkauksia AWS SES:n omien tilastojen avulla. Katso määritysohjeet kohdasta %{link}."
         aws_ses_integration_docs_link: "dokumentaatiomme"
@@ -7549,6 +7569,16 @@ fi:
       confirm: "Vahvista"
     copyable_command:
       copy: "Kopioi komento"
+    transactional_room_notice:
+      waiting:
+        one: "1 transaktiosähköposti on odottanut vapaata kapasiteettia sähköpostipalvelimella yli 30 minuuttia"
+        other: "%{count} transaktiosähköpostia on odottanut vapaata kapasiteettia sähköpostipalvelimella yli 30 minuuttia"
+      waiting_hint: "Palvelin on saavuttanut tuntirajansa. Transaktiosähköpostia yritetään uudelleen joka minuutti enintään 24 tunnin ajan. Jos haluat lähettää aiemmin, nosta rajaa, nollaa nopeusrajoitus palvelimen sivulla tai käytä transaktiosähköposteille erillistä palvelinta."
+      failed:
+        one: "1 transaktiosähköposti epäonnistui viimeisten 24 tunnin aikana, koska sähköpostipalvelin pysyi tuntirajassaan 24 tuntia"
+        other: "%{count} transaktiosähköpostia epäonnistui viimeisten 24 tunnin aikana, koska sähköpostipalvelin pysyi tuntirajassaan 24 tuntia"
+      failed_hint: "Tarkista palvelimen tuntiraja tai käytä transaktiosähköposteille erillistä palvelinta."
+      view: "Näytä transaktiosähköpostit"
     dns_health_alert:
       title: "Sähköpostin todennuksen DNS-tietueet ovat muuttuneet"
       drift: "%{mechanism} %{status}"
@@ -8125,6 +8155,7 @@ fi:
       empty: "Tässä sarjassa ei ole tilaajia"
     subscriber_sequence:
       in: "%{time} kuluttua"
+      waiting_for_room_since: "Odottanut vapaata kapasiteettia sähköpostipalvelimella %{time} alkaen"
       restart: "Aloita sarja alusta"
       pause: "Keskeytä sarja"
       resume: "Jatka sarjaa"
@@ -9236,6 +9267,7 @@ fi:
       tooltip_email_sent: "Sähköpostipalveluntarjoaja on hyväksynyt viestin. Kun rinnakkainen lähetys on käytössä, kampanjat ilmoittavat lähetykset sen sijaan tapahtumassa broadcast.batch_completed"
       tooltip_email_failed: "Pysyvä toimitusvirhe; ei uusintayrityksiä. Kun rinnakkainen lähetys on käytössä, kampanjat ilmoittavat virheet sen sijaan tapahtumassa broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Tilapäinen ongelma, kuten harmaalistaus; toimitusta yritetään uudelleen"
+      tooltip_email_send_delayed: "Transaktiosähköposti odottaa vapaata kapasiteettia sähköpostipalvelimellaan (tuntiraja saavutettu); sitä yritetään uudelleen joka minuutti enintään 24 tunnin ajan"
       tooltip_broadcast_queueing: "Kampanjaa valmistellaan ja vastaanottajia asetetaan jonoon"
       tooltip_broadcast_batch_completed: "Vain rinnakkaisessa lähetyksessä: yksi tapahtuma enintään 500 vastaanottajan erää kohden, jossa luetellaan kenelle lähetys onnistui tai epäonnistui, kampanjoiden email.sent- ja email.failed-tapahtumien sijaan"
       tooltip_message_attempt_exhausted: "Kaikki tämän toimituksen uusintayritykset ovat epäonnistuneet"

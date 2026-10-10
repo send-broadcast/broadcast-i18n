@@ -2710,6 +2710,8 @@ fr:
         save_draft: "Enregistrer le brouillon"
         next_settings: "Suivant : Paramètres"
     stats_cards:
+      velocity_waiting: "En attente"
+      next_send_at: "Prochain envoi : %{time}"
       recipients: "Destinataires"
       recalculate: "Recalculer"
       delivered_of: "remis sur %{total}"
@@ -2765,6 +2767,9 @@ fr:
       failed: "L'envoi de la campagne a échoué"
       stalled: "L'envoi semble bloqué"
       stalled_hint: "Aucun e-mail envoyé depuis plus de 5 minutes. Essayez de mettre la campagne en pause puis de la reprendre."
+      waiting_for_room: "En attente de capacité sur le serveur e-mail"
+      waiting_for_room_hint: "La limite horaire du serveur est atteinte pour les campagnes. L'envoi reprendra automatiquement (vers %{time}). Pour envoyer plus tôt, augmentez la limite ou réinitialisez la limite de débit sur la page du serveur."
+      paused_in_flight: "Les e-mails déjà en route au moment de la pause peuvent encore arriver. Le nombre de destinataires s'arrêtera dans un instant."
       delivery_analytics: "Statistiques de remise"
       recent_activity: "Activité récente"
       link_performance: "Performances des liens"
@@ -3687,6 +3692,8 @@ fr:
       rate_limit_title: "Limite d'envoi atteinte"
       rate_limit_body: "La campagne reprendra automatiquement dès que la fenêtre de limite d'envoi sera passée."
       rate_limit_message: "Limite d'envoi atteinte pour %{server} (%{count}/%{limit} e-mails par heure). En attente de reprise..."
+      waiting_for_room: "En attente"
+      next_send_at: "Prochain envoi : %{time}"
     application_logs:
       starting: "Démarrage..."
       start_failed: "Impossible de démarrer le suivi"
@@ -6022,6 +6029,7 @@ fr:
             one: "%{sent} envoyé dans la fenêtre actuelle"
             other: "%{sent} envoyés dans la fenêtre actuelle"
           rate_limit_reached: " · limite de débit atteinte"
+          waiting_broadcast: "%{name} attend de la capacité jusqu'à %{time}"
           reset_confirm: "Vider la fenêtre de limite de débit pour reprendre les envois maintenant ?"
           reset_rate_limit: "Réinitialiser la limite de débit"
           email_types: "Types d'e-mails"
@@ -6348,6 +6356,18 @@ fr:
         rate_limits_intro: "Si vous devez limiter le nombre d'e-mails envoyés par heure, vous pouvez le faire ici. Une limite plus basse vous aide à éviter les listes noires des fournisseurs d'e-mail. En revanche, votre volume d'envoi sera plus faible et les campagnes, en particulier, mettront plus de temps à partir."
         emails_per_hour: "E-mails par heure (minimum 15 par heure)"
         rate_needed: "D'après votre nombre actuel d'abonnés, un débit minimum de %{rate} e-mails par heure est nécessaire pour envoyer vos campagnes en moins de 24 heures. Ce calcul suppose un seul serveur e-mail dédié aux campagnes."
+        rate_needed_share: "Ce débit tient compte du fait que les campagnes utilisent %{percent} % de la limite de ce serveur (voir la réserve ci-dessous)."
+        reserve_intro: "Chaque type d'e-mail s'arrête sous la limite pour garder de la capacité aux types plus prioritaires (d'abord les e-mails transactionnels, puis les séquences, puis les campagnes). À cette limite :"
+        reserve_broadcasts:
+          one: "campagnes : jusqu'à 1 e-mail par heure"
+          other: "campagnes : jusqu'à %{count} e-mails par heure"
+        reserve_sequences:
+          one: "séquences : jusqu'à 1 e-mail par heure"
+          other: "séquences : jusqu'à %{count} e-mails par heure"
+        reserve_transactionals:
+          one: "e-mails transactionnels : jusqu'à 1 e-mail par heure"
+          other: "e-mails transactionnels : jusqu'à %{count} e-mails par heure"
+        separate_servers: "Nous recommandons des serveurs distincts : un pour les campagnes, et un pour les e-mails transactionnels et les séquences. Chaque type dispose alors de toute la limite de son propre serveur, et une newsletter ne retarde jamais un code de connexion."
         aws_ses_integration: "Intégration AWS SES"
         aws_ses_integration_intro_html: "Broadcast peut suivre les distributions, rebonds, plaintes, ouvertures et clics de vos e-mails grâce aux statistiques fournies par AWS SES. Consultez %{link} pour savoir comment le configurer."
         aws_ses_integration_docs_link: "notre documentation"
@@ -7549,6 +7569,16 @@ fr:
       confirm: "Confirmer"
     copyable_command:
       copy: "Copier la commande"
+    transactional_room_notice:
+      waiting:
+        one: "1 e-mail transactionnel attend de la capacité sur le serveur e-mail depuis plus de 30 minutes"
+        other: "%{count} e-mails transactionnels attendent de la capacité sur le serveur e-mail depuis plus de 30 minutes"
+      waiting_hint: "Le serveur a atteint sa limite horaire. Les e-mails transactionnels sont réessayés chaque minute, pendant 24 heures au maximum. Pour envoyer plus tôt, augmentez la limite, réinitialisez la limite de débit sur la page du serveur ou utilisez un serveur distinct pour les e-mails transactionnels."
+      failed:
+        one: "1 e-mail transactionnel a échoué au cours des dernières 24 heures, car le serveur e-mail est resté à sa limite horaire pendant 24 heures"
+        other: "%{count} e-mails transactionnels ont échoué au cours des dernières 24 heures, car le serveur e-mail est resté à sa limite horaire pendant 24 heures"
+      failed_hint: "Vérifiez la limite horaire du serveur ou utilisez un serveur distinct pour les e-mails transactionnels."
+      view: "Voir les e-mails transactionnels"
     dns_health_alert:
       title: "Les enregistrements DNS d'authentification des e-mails ont changé"
       drift: "%{mechanism} %{status}"
@@ -8125,6 +8155,7 @@ fr:
       empty: "Aucun abonné dans cette séquence"
     subscriber_sequence:
       in: "dans %{time}"
+      waiting_for_room_since: "En attente de capacité sur le serveur e-mail depuis %{time}"
       restart: "Reprendre la séquence depuis le début"
       pause: "Mettre la séquence en pause"
       resume: "Reprendre la séquence"
@@ -9236,6 +9267,7 @@ fr:
       tooltip_email_sent: "Accepté par le fournisseur d'e-mail. Avec l'envoi parallèle activé, les campagnes signalent les envois dans broadcast.batch_completed"
       tooltip_email_failed: "Échec de distribution définitif ; aucune nouvelle tentative. Avec l'envoi parallèle activé, les campagnes signalent les échecs dans broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problème temporaire, comme le greylisting ; la distribution sera retentée"
+      tooltip_email_send_delayed: "Un e-mail transactionnel attend de la capacité sur son serveur e-mail (limite horaire atteinte) ; il est réessayé chaque minute pendant 24 heures au maximum"
       tooltip_broadcast_queueing: "La campagne est en préparation et les destinataires sont mis en file d'attente"
       tooltip_broadcast_batch_completed: "Envoi parallèle uniquement : un événement par lot de 500 au maximum, listant les envois réussis ou échoués, à la place de email.sent / email.failed pour les campagnes"
       tooltip_message_attempt_exhausted: "Toutes les tentatives ont échoué pour cet envoi"

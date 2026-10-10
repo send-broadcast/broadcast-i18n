@@ -2711,6 +2711,8 @@ de:
         save_draft: "Entwurf speichern"
         next_settings: "Weiter: Einstellungen"
     stats_cards:
+      velocity_waiting: "Wartet"
+      next_send_at: "Nächster Versand: %{time}"
       recipients: "Empfänger"
       recalculate: "Neu berechnen"
       delivered_of: "von %{total} zugestellt"
@@ -2766,6 +2768,9 @@ de:
       failed: "Die Kampagne konnte nicht gesendet werden"
       stalled: "Der Versand scheint ins Stocken geraten zu sein"
       stalled_hint: "Seit über 5 Minuten wurden keine E-Mails gesendet. Versuchen Sie, die Kampagne zu pausieren und fortzusetzen."
+      waiting_for_room: "Wartet auf freie Kapazität des E-Mail-Servers"
+      waiting_for_room_hint: "Das Stundenlimit des Servers ist für Kampagnen ausgeschöpft. Der Versand wird automatisch fortgesetzt (voraussichtlich %{time}). Um früher zu senden, erhöhen Sie das Limit oder setzen Sie das Ratenlimit auf der Serverseite zurück."
+      paused_in_flight: "E-Mails, die beim Pausieren bereits unterwegs waren, können noch ankommen. Die Empfängerzahl bleibt gleich stehen."
       delivery_analytics: "Zustellungsanalyse"
       recent_activity: "Letzte Aktivität"
       link_performance: "Link-Performance"
@@ -3688,6 +3693,8 @@ de:
       rate_limit_title: "Ratenlimit erreicht"
       rate_limit_body: "Die Kampagne wird automatisch fortgesetzt, sobald das Zeitfenster des Ratenlimits abgelaufen ist."
       rate_limit_message: "Ratenlimit für %{server} erreicht (%{count}/%{limit} E-Mails pro Stunde). Warten auf Fortsetzung …"
+      waiting_for_room: "Wartet"
+      next_send_at: "Nächster Versand: %{time}"
     application_logs:
       starting: "Wird gestartet …"
       start_failed: "Streaming konnte nicht gestartet werden"
@@ -6023,6 +6030,7 @@ de:
             one: "%{sent} im aktuellen Zeitfenster gesendet"
             other: "%{sent} im aktuellen Zeitfenster gesendet"
           rate_limit_reached: " · Ratenlimit erreicht"
+          waiting_broadcast: "%{name} wartet bis %{time} auf freie Kapazität"
           reset_confirm: "Das Zeitfenster des Ratenlimits zurücksetzen, damit der Versand jetzt fortgesetzt werden kann?"
           reset_rate_limit: "Ratenlimit zurücksetzen"
           email_types: "E-Mail-Typen"
@@ -6349,6 +6357,18 @@ de:
         rate_limits_intro: "Wenn Sie die Anzahl der pro Stunde gesendeten E-Mails begrenzen möchten, können Sie das hier tun. Ein niedrigeres Limit hilft, nicht von E-Mail-Anbietern auf eine Blacklist gesetzt zu werden. Ihr Versandvolumen sinkt dadurch jedoch, und vor allem Kampagnen brauchen länger, bis sie vollständig versendet sind."
         emails_per_hour: "E-Mails pro Stunde (mindestens 15 pro Stunde)"
         rate_needed: "Basierend auf Ihrer aktuellen Abonnentenzahl ist eine Mindestrate von %{rate} E-Mails pro Stunde nötig, wenn Ihre Kampagnen innerhalb von 24 Stunden versendet werden sollen. Dies setzt einen E-Mail-Server voraus, der für Kampagnen-E-Mails festgelegt ist."
+        rate_needed_share: "Die Rate berücksichtigt, dass Kampagnen %{percent} % des Limits dieses Servers nutzen (siehe Reserve unten)."
+        reserve_intro: "Jeder E-Mail-Typ stoppt unterhalb des Limits, um Kapazität für Typen mit höherer Priorität freizuhalten (zuerst Transaktions-E-Mails, dann Sequenzen, dann Kampagnen). Bei diesem Limit:"
+        reserve_broadcasts:
+          one: "Kampagnen: bis zu 1 E-Mail pro Stunde"
+          other: "Kampagnen: bis zu %{count} E-Mails pro Stunde"
+        reserve_sequences:
+          one: "Sequenzen: bis zu 1 E-Mail pro Stunde"
+          other: "Sequenzen: bis zu %{count} E-Mails pro Stunde"
+        reserve_transactionals:
+          one: "Transaktions-E-Mails: bis zu 1 E-Mail pro Stunde"
+          other: "Transaktions-E-Mails: bis zu %{count} E-Mails pro Stunde"
+        separate_servers: "Wir empfehlen getrennte Server: einen für Kampagnen und einen für Transaktions-E-Mails und Sequenzen. Dann hat jeder Typ das volle Limit seines eigenen Servers, und ein Newsletter verzögert nie einen Anmeldecode."
         aws_ses_integration: "AWS-SES-Integration"
         aws_ses_integration_intro_html: "Broadcast kann Zustellungen, Bounces, Beschwerden, Öffnungen und Klicks anhand der Analysedaten von AWS SES erfassen. In %{link} erfahren Sie, wie Sie dies einrichten."
         aws_ses_integration_docs_link: "unserer Dokumentation"
@@ -7550,6 +7570,16 @@ de:
       confirm: "Bestätigen"
     copyable_command:
       copy: "Befehl kopieren"
+    transactional_room_notice:
+      waiting:
+        one: "1 Transaktions-E-Mail wartet seit über 30 Minuten auf freie Kapazität des E-Mail-Servers"
+        other: "%{count} Transaktions-E-Mails warten seit über 30 Minuten auf freie Kapazität des E-Mail-Servers"
+      waiting_hint: "Der Server hat sein Stundenlimit erreicht. Transaktions-E-Mails werden bis zu 24 Stunden lang jede Minute erneut versucht. Um früher zu senden, erhöhen Sie das Limit, setzen Sie das Ratenlimit auf der Serverseite zurück oder nutzen Sie einen eigenen Server für Transaktions-E-Mails."
+      failed:
+        one: "1 Transaktions-E-Mail ist in den letzten 24 Stunden fehlgeschlagen, weil der E-Mail-Server 24 Stunden lang am Stundenlimit war"
+        other: "%{count} Transaktions-E-Mails sind in den letzten 24 Stunden fehlgeschlagen, weil der E-Mail-Server 24 Stunden lang am Stundenlimit war"
+      failed_hint: "Prüfen Sie das Stundenlimit des Servers oder nutzen Sie einen eigenen Server für Transaktions-E-Mails."
+      view: "Transaktions-E-Mails anzeigen"
     dns_health_alert:
       title: "DNS-Einträge zur E-Mail-Authentifizierung haben sich geändert"
       drift: "%{mechanism} %{status}"
@@ -8126,6 +8156,7 @@ de:
       empty: "Keine Abonnenten in dieser Sequenz"
     subscriber_sequence:
       in: "in %{time}"
+      waiting_for_room_since: "Wartet seit %{time} auf freie Kapazität des E-Mail-Servers"
       restart: "Sequenz von vorn beginnen"
       pause: "Sequenz pausieren"
       resume: "Sequenz fortsetzen"
@@ -9237,6 +9268,7 @@ de:
       tooltip_email_sent: "Vom E-Mail-Anbieter angenommen. Bei aktiviertem parallelem Versand melden Kampagnen Sendungen stattdessen in broadcast.batch_completed"
       tooltip_email_failed: "Dauerhafter Zustellfehler; es wird kein neuer Versuch unternommen. Bei aktiviertem parallelem Versand melden Kampagnen Fehler stattdessen in broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Vorübergehendes Problem wie Greylisting; die Zustellung wird erneut versucht"
+      tooltip_email_send_delayed: "Eine Transaktions-E-Mail wartet auf freie Kapazität ihres E-Mail-Servers (Stundenlimit erreicht); sie wird bis zu 24 Stunden lang jede Minute erneut versucht"
       tooltip_broadcast_queueing: "Die Kampagne wird vorbereitet und die Empfänger werden eingereiht"
       tooltip_broadcast_batch_completed: "Nur bei parallelem Versand: ein Ereignis pro Batch von bis zu 500 Empfängern mit der Angabe, an wen gesendet wurde und wo es fehlschlug; ersetzt email.sent / email.failed bei Kampagnen"
       tooltip_message_attempt_exhausted: "Alle Wiederholungsversuche für diese Zustellung sind fehlgeschlagen"

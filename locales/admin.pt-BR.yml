@@ -2709,6 +2709,8 @@ pt-BR:
         save_draft: "Salvar rascunho"
         next_settings: "Próximo: Configurações"
     stats_cards:
+      velocity_waiting: "Aguardando"
+      next_send_at: "Próximo envio: %{time}"
       recipients: "Destinatários"
       recalculate: "Recalcular"
       delivered_of: "de %{total} entregues"
@@ -2764,6 +2766,9 @@ pt-BR:
       failed: "Falha no envio da campanha"
       stalled: "O envio parece travado"
       stalled_hint: "Nenhum e-mail enviado há mais de 5 minutos. Tente pausar e retomar a campanha."
+      waiting_for_room: "Aguardando capacidade no servidor de e-mail"
+      waiting_for_room_hint: "O limite por hora do servidor para campanhas foi atingido. O envio continua sozinho (por volta de %{time}). Para enviar antes, aumente o limite ou redefina o limite de taxa na página do servidor."
+      paused_in_flight: "E-mails que já estavam a caminho quando você pausou ainda podem chegar. A contagem de destinatários para em instantes."
       delivery_analytics: "Análise de entrega"
       recent_activity: "Atividade recente"
       link_performance: "Desempenho dos links"
@@ -3686,6 +3691,8 @@ pt-BR:
       rate_limit_title: "Limite de taxa atingido"
       rate_limit_body: "A campanha será retomada automaticamente quando a janela do limite de taxa terminar."
       rate_limit_message: "Limite de taxa atingido em %{server} (%{count}/%{limit} e-mails por hora). Aguardando para retomar..."
+      waiting_for_room: "Aguardando"
+      next_send_at: "Próximo envio: %{time}"
     application_logs:
       starting: "Iniciando..."
       start_failed: "Não foi possível iniciar o streaming"
@@ -6021,6 +6028,7 @@ pt-BR:
             one: "%{sent} enviado na janela atual"
             other: "%{sent} enviados na janela atual"
           rate_limit_reached: " · limite de taxa atingido"
+          waiting_broadcast: "%{name} está aguardando capacidade até %{time}"
           reset_confirm: "Limpar a janela do limite de taxa para que os envios possam ser retomados agora?"
           reset_rate_limit: "Redefinir limite de taxa"
           email_types: "Tipos de e-mail"
@@ -6347,6 +6355,18 @@ pt-BR:
         rate_limits_intro: "Se precisar limitar o número de e-mails enviados por hora, faça isso aqui. Um limite menor ajuda a evitar que você entre em listas de bloqueio dos provedores de e-mail. Porém, seu volume de envio será menor e as campanhas, principalmente, levarão mais tempo para serem enviadas."
         emails_per_hour: "E-mails por hora (mínimo de 15 por hora)"
         rate_needed: "Com base no seu número atual de assinantes, é necessária uma taxa mínima de %{rate} e-mails por hora para enviar suas campanhas em até 24 horas. Isso considera um único servidor de e-mail definido para campanhas."
+        rate_needed_share: "A taxa considera que as campanhas usam %{percent}% do limite deste servidor (veja a reserva abaixo)."
+        reserve_intro: "Cada tipo de e-mail para abaixo do limite para deixar capacidade para os tipos com prioridade maior (primeiro e-mails transacionais, depois sequências, depois campanhas). Com este limite:"
+        reserve_broadcasts:
+          one: "campanhas: até 1 e-mail por hora"
+          other: "campanhas: até %{count} e-mails por hora"
+        reserve_sequences:
+          one: "sequências: até 1 e-mail por hora"
+          other: "sequências: até %{count} e-mails por hora"
+        reserve_transactionals:
+          one: "e-mails transacionais: até 1 e-mail por hora"
+          other: "e-mails transacionais: até %{count} e-mails por hora"
+        separate_servers: "Recomendamos servidores separados: um para campanhas e outro para e-mails transacionais e sequências. Assim cada tipo tem o limite completo do próprio servidor, e uma newsletter nunca atrasa um código de login."
         aws_ses_integration: "Integração com o AWS SES"
         aws_ses_integration_intro_html: "O Broadcast pode rastrear entregas, rejeições, reclamações, aberturas e cliques usando as análises fornecidas pelo próprio AWS SES. Consulte %{link} para saber como configurar isso."
         aws_ses_integration_docs_link: "nossa documentação"
@@ -7548,6 +7568,16 @@ pt-BR:
       confirm: "Confirmar"
     copyable_command:
       copy: "Copiar comando"
+    transactional_room_notice:
+      waiting:
+        one: "1 e-mail transacional está aguardando capacidade no servidor de e-mail há mais de 30 minutos"
+        other: "%{count} e-mails transacionais estão aguardando capacidade no servidor de e-mail há mais de 30 minutos"
+      waiting_hint: "O servidor atingiu o limite por hora. E-mails transacionais são tentados novamente a cada minuto, por até 24 horas. Para enviar antes, aumente o limite, redefina o limite de taxa na página do servidor ou use um servidor separado para e-mails transacionais."
+      failed:
+        one: "1 e-mail transacional falhou nas últimas 24 horas porque o servidor de e-mail ficou no limite por hora durante 24 horas"
+        other: "%{count} e-mails transacionais falharam nas últimas 24 horas porque o servidor de e-mail ficou no limite por hora durante 24 horas"
+      failed_hint: "Verifique o limite por hora do servidor ou use um servidor separado para e-mails transacionais."
+      view: "Ver e-mails transacionais"
     dns_health_alert:
       title: "Os registros DNS de autenticação de e-mail mudaram"
       drift: "%{mechanism} %{status}"
@@ -8124,6 +8154,7 @@ pt-BR:
       empty: "Nenhum assinante nesta sequência"
     subscriber_sequence:
       in: "em %{time}"
+      waiting_for_room_since: "Aguardando capacidade no servidor de e-mail desde %{time}"
       restart: "Reiniciar a sequência do começo"
       pause: "Pausar sequência"
       resume: "Retomar sequência"
@@ -9235,6 +9266,7 @@ pt-BR:
       tooltip_email_sent: "Aceito pelo provedor de e-mail. Com o envio paralelo ativado, as campanhas informam os envios em broadcast.batch_completed"
       tooltip_email_failed: "Falha permanente de entrega; não haverá nova tentativa. Com o envio paralelo ativado, as campanhas informam as falhas em broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problema temporário, como greylisting; a entrega será tentada novamente"
+      tooltip_email_send_delayed: "Um e-mail transacional está aguardando capacidade no servidor de e-mail (limite por hora atingido); ele é tentado novamente a cada minuto por até 24 horas"
       tooltip_broadcast_queueing: "A campanha está sendo preparada e os destinatários estão entrando na fila"
       tooltip_broadcast_batch_completed: "Somente envio paralelo: um evento por lote de até 500, listando para quem foi enviado ou falhou, no lugar de email.sent / email.failed nas campanhas"
       tooltip_message_attempt_exhausted: "Todas as tentativas desta entrega falharam"

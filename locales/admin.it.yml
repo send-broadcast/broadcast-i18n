@@ -2707,6 +2707,8 @@ it:
         save_draft: "Salva la bozza"
         next_settings: "Avanti: Impostazioni"
     stats_cards:
+      velocity_waiting: "In attesa"
+      next_send_at: "Prossimo invio: %{time}"
       recipients: "Destinatari"
       recalculate: "Ricalcola"
       delivered_of: "di %{total} recapitate"
@@ -2762,6 +2764,9 @@ it:
       failed: "Invio della campagna non riuscito"
       stalled: "L'invio sembra bloccato"
       stalled_hint: "Nessuna email inviata da oltre 5 minuti. Prova a mettere in pausa e a riprendere la campagna."
+      waiting_for_room: "In attesa di capacità sul server email"
+      waiting_for_room_hint: "Il limite orario del server per le campagne è esaurito. L'invio riprende da solo (circa %{time}). Per inviare prima, aumenta il limite o azzera il limite di invio nella pagina del server."
+      paused_in_flight: "Le email già in viaggio quando hai messo in pausa potrebbero ancora arrivare. Il conteggio dei destinatari si ferma tra un attimo."
       delivery_analytics: "Statistiche di recapito"
       recent_activity: "Attività recente"
       link_performance: "Rendimento dei link"
@@ -3684,6 +3689,8 @@ it:
       rate_limit_title: "Limite di invio raggiunto"
       rate_limit_body: "La campagna riprenderà da sola quando finisce la finestra del limite di invio."
       rate_limit_message: "Limite di invio raggiunto per %{server} (%{count}/%{limit} email all’ora). In attesa di riprendere..."
+      waiting_for_room: "In attesa"
+      next_send_at: "Prossimo invio: %{time}"
     application_logs:
       starting: "Avvio..."
       start_failed: "Impossibile avviare lo streaming"
@@ -6019,6 +6026,7 @@ it:
             one: "%{sent} inviata nella finestra corrente"
             other: "%{sent} inviate nella finestra corrente"
           rate_limit_reached: " · limite di invio raggiunto"
+          waiting_broadcast: "%{name} è in attesa di capacità fino a %{time}"
           reset_confirm: "Azzerare la finestra del limite di invio, così l'invio può riprendere subito?"
           reset_rate_limit: "Azzera limite di invio"
           email_types: "Tipi di email"
@@ -6345,6 +6353,18 @@ it:
         rate_limits_intro: "Se devi limitare il numero di email inviate ogni ora, puoi farlo qui. Un limite più basso ti aiuta a evitare di finire nelle blacklist dei provider email. Però il volume di invio sarà più basso e in particolare le campagne impiegheranno più tempo a partire."
         emails_per_hour: "Email all'ora (minimo 15 all'ora)"
         rate_needed: "In base al numero attuale di iscritti, serve un ritmo minimo di %{rate} email all'ora per inviare le tue campagne entro 24 ore. Il calcolo presuppone un solo server email abilitato per le campagne."
+        rate_needed_share: "La velocità tiene conto che le campagne usano il %{percent}% del limite di questo server (vedi la riserva qui sotto)."
+        reserve_intro: "Ogni tipo di email si ferma sotto il limite per lasciare capacità ai tipi con priorità più alta (prima le email transazionali, poi le sequenze, poi le campagne). Con questo limite:"
+        reserve_broadcasts:
+          one: "campagne: fino a 1 email all'ora"
+          other: "campagne: fino a %{count} email all'ora"
+        reserve_sequences:
+          one: "sequenze: fino a 1 email all'ora"
+          other: "sequenze: fino a %{count} email all'ora"
+        reserve_transactionals:
+          one: "email transazionali: fino a 1 email all'ora"
+          other: "email transazionali: fino a %{count} email all'ora"
+        separate_servers: "Ti consigliamo server separati: uno per le campagne e uno per le email transazionali e le sequenze. Così ogni tipo ha tutto il limite del proprio server, e una newsletter non ritarda mai un codice di accesso."
         aws_ses_integration: "Integrazione AWS SES"
         aws_ses_integration_intro_html: "Broadcast può tracciare consegne, mancati recapiti, segnalazioni di spam, aperture e clic delle email usando le statistiche fornite da AWS SES. Consulta %{link} per sapere come configurarlo."
         aws_ses_integration_docs_link: "la nostra documentazione"
@@ -7546,6 +7566,16 @@ it:
       confirm: "Conferma"
     copyable_command:
       copy: "Copia il comando"
+    transactional_room_notice:
+      waiting:
+        one: "1 email transazionale attende capacità sul server email da oltre 30 minuti"
+        other: "%{count} email transazionali attendono capacità sul server email da oltre 30 minuti"
+      waiting_hint: "Il server ha raggiunto il limite orario. Le email transazionali vengono ritentate ogni minuto, per al massimo 24 ore. Per inviare prima, aumenta il limite, azzera il limite di invio nella pagina del server o usa un server separato per le email transazionali."
+      failed:
+        one: "1 email transazionale non è stata inviata nelle ultime 24 ore perché il server email è rimasto al limite orario per 24 ore"
+        other: "%{count} email transazionali non sono state inviate nelle ultime 24 ore perché il server email è rimasto al limite orario per 24 ore"
+      failed_hint: "Controlla il limite orario del server o usa un server separato per le email transazionali."
+      view: "Visualizza le email transazionali"
     dns_health_alert:
       title: "I record DNS di autenticazione dell'email sono cambiati"
       drift: "%{mechanism} %{status}"
@@ -8122,6 +8152,7 @@ it:
       empty: "Nessun iscritto in questa sequenza"
     subscriber_sequence:
       in: "tra %{time}"
+      waiting_for_room_since: "In attesa di capacità sul server email da %{time}"
       restart: "Ricomincia la sequenza dall'inizio"
       pause: "Metti in pausa la sequenza"
       resume: "Riprendi la sequenza"
@@ -9233,6 +9264,7 @@ it:
       tooltip_email_sent: "Accettata dal provider email. Con l'invio parallelo attivo, le campagne segnalano gli invii con broadcast.batch_completed"
       tooltip_email_failed: "Errore di consegna definitivo; non verrà ritentata. Con l'invio parallelo attivo, le campagne segnalano gli errori con broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problema temporaneo come il greylisting; la consegna verrà ritentata"
+      tooltip_email_send_delayed: "Un'email transazionale attende capacità sul proprio server email (limite orario raggiunto); viene ritentata ogni minuto per al massimo 24 ore"
       tooltip_broadcast_queueing: "La campagna è in preparazione e i destinatari vengono messi in coda"
       tooltip_broadcast_batch_completed: "Solo invio parallelo: un evento per ogni lotto di massimo 500, con l'elenco di chi ha ricevuto l'invio o di chi non è riuscito, al posto di email.sent / email.failed per le campagne"
       tooltip_message_attempt_exhausted: "Tutti i tentativi per questa consegna sono falliti"

@@ -2709,6 +2709,8 @@ da:
         save_draft: "Gem kladde"
         next_settings: "Næste: Indstillinger"
     stats_cards:
+      velocity_waiting: "Venter"
+      next_send_at: "Næste afsendelse: %{time}"
       recipients: "Modtagere"
       recalculate: "Genberegn"
       delivered_of: "af %{total} leveret"
@@ -2764,6 +2766,9 @@ da:
       failed: "Kampagnen kunne ikke sendes"
       stalled: "Afsendelsen ser ud til at være gået i stå"
       stalled_hint: "Der er ikke sendt e-mails i over 5 minutter. Prøv at sætte kampagnen på pause og genoptage den."
+      waiting_for_room: "Venter på ledig kapacitet på mailserveren"
+      waiting_for_room_hint: "Serverens timegrænse for kampagner er brugt op. Afsendelsen fortsætter af sig selv (omkring %{time}). Vil du sende før, kan du hæve grænsen eller nulstille hastighedsgrænsen på serversiden."
+      paused_in_flight: "Mails, der allerede var på vej, da du satte på pause, kan stadig nå frem. Antallet af modtagere holder op med at stige om et øjeblik."
       delivery_analytics: "Leveringsstatistik"
       recent_activity: "Seneste aktivitet"
       link_performance: "Linkresultater"
@@ -3686,6 +3691,8 @@ da:
       rate_limit_title: "Hastighedsgrænsen er nået"
       rate_limit_body: "Kampagnen genoptages automatisk, når hastighedsgrænsens tidsvindue er udløbet."
       rate_limit_message: "Hastighedsgrænsen er nået for %{server} (%{count}/%{limit} e-mails pr. time). Venter på at genoptage..."
+      waiting_for_room: "Venter"
+      next_send_at: "Næste afsendelse: %{time}"
     application_logs:
       starting: "Starter..."
       start_failed: "Streaming kunne ikke startes"
@@ -6021,6 +6028,7 @@ da:
             one: "%{sent} sendt i det aktuelle tidsvindue"
             other: "%{sent} sendt i det aktuelle tidsvindue"
           rate_limit_reached: " · hastighedsgrænsen er nået"
+          waiting_broadcast: "%{name} venter på ledig kapacitet indtil %{time}"
           reset_confirm: "Vil du rydde tidsvinduet for hastighedsgrænsen, så afsendelsen kan genoptages nu?"
           reset_rate_limit: "Nulstil hastighedsgrænse"
           email_types: "E-mailtyper"
@@ -6347,6 +6355,18 @@ da:
         rate_limits_intro: "Hvis du har brug for at begrænse antallet af e-mails, der sendes i timen, kan du gøre det her. En lavere grænse hjælper dig med at undgå at blive blacklistet af e-mailudbydere. Til gengæld bliver din e-mailvolumen lavere, og især kampagner tager længere tid at sende."
         emails_per_hour: "E-mails i timen (mindst 15 i timen)"
         rate_needed: "Ud fra dit nuværende antal abonnenter kræves en hastighed på mindst %{rate} e-mails i timen, hvis dine kampagner skal sendes inden for 24 timer. Beregningen forudsætter én mailserver, der er angivet til kampagnemails."
+        rate_needed_share: "Hastigheden regner med, at kampagner bruger %{percent} % af serverens grænse (se reserven nedenfor)."
+        reserve_intro: "Hver mailtype stopper under grænsen for at holde kapacitet fri til typer med højere prioritet (først transaktionsmails, så sekvenser, så kampagner). Ved denne grænse:"
+        reserve_broadcasts:
+          one: "kampagner: op til 1 mail i timen"
+          other: "kampagner: op til %{count} mails i timen"
+        reserve_sequences:
+          one: "sekvenser: op til 1 mail i timen"
+          other: "sekvenser: op til %{count} mails i timen"
+        reserve_transactionals:
+          one: "transaktionsmails: op til 1 mail i timen"
+          other: "transaktionsmails: op til %{count} mails i timen"
+        separate_servers: "Vi anbefaler separate servere: én til kampagner og én til transaktionsmails og sekvenser. Så har hver type hele grænsen på sin egen server, og et nyhedsbrev forsinker aldrig en login-kode."
         aws_ses_integration: "AWS SES-integration"
         aws_ses_integration_intro_html: "Broadcast kan spore leveringer, bounces, klager, åbninger og klik for e-mails ved hjælp af AWS SES' egen analyse. Se %{link} for at lære, hvordan du sætter det op."
         aws_ses_integration_docs_link: "vores dokumentation"
@@ -7548,6 +7568,16 @@ da:
       confirm: "Bekræft"
     copyable_command:
       copy: "Kopiér kommando"
+    transactional_room_notice:
+      waiting:
+        one: "1 transaktionsmail har ventet på ledig kapacitet på mailserveren i over 30 minutter"
+        other: "%{count} transaktionsmails har ventet på ledig kapacitet på mailserveren i over 30 minutter"
+      waiting_hint: "Serveren har nået sin timegrænse. Transaktionsmails forsøges igen hvert minut i op til 24 timer. Vil du sende før, kan du hæve grænsen, nulstille hastighedsgrænsen på serversiden eller bruge en separat server til transaktionsmails."
+      failed:
+        one: "1 transaktionsmail mislykkedes inden for de seneste 24 timer, fordi mailserveren lå på sin timegrænse i 24 timer"
+        other: "%{count} transaktionsmails mislykkedes inden for de seneste 24 timer, fordi mailserveren lå på sin timegrænse i 24 timer"
+      failed_hint: "Tjek serverens timegrænse, eller brug en separat server til transaktionsmails."
+      view: "Vis transaktionsmails"
     dns_health_alert:
       title: "DNS-posterne til e-mailgodkendelse er ændret"
       drift: "%{mechanism} %{status}"
@@ -8124,6 +8154,7 @@ da:
       empty: "Ingen abonnenter i denne sekvens"
     subscriber_sequence:
       in: "om %{time}"
+      waiting_for_room_since: "Venter på ledig kapacitet på mailserveren siden %{time}"
       restart: "Start sekvensen forfra"
       pause: "Sæt sekvensen på pause"
       resume: "Genoptag sekvensen"
@@ -9235,6 +9266,7 @@ da:
       tooltip_email_sent: "Accepteret af e-mailudbyderen. Når parallel afsendelse er slået til, rapporterer kampagner afsendelser i broadcast.batch_completed i stedet"
       tooltip_email_failed: "Permanent leveringsfejl; der forsøges ikke igen. Når parallel afsendelse er slået til, rapporterer kampagner fejl i broadcast.batch_completed i stedet"
       tooltip_email_delivery_delayed: "Midlertidigt problem som greylisting; leveringen forsøges igen"
+      tooltip_email_send_delayed: "En transaktionsmail venter på ledig kapacitet på sin mailserver (timegrænsen er nået); den forsøges igen hvert minut i op til 24 timer"
       tooltip_broadcast_queueing: "Kampagnen forberedes, og modtagerne sættes i kø"
       tooltip_broadcast_batch_completed: "Kun ved parallel afsendelse: én hændelse pr. batch på op til 500, med en liste over hvem der blev sendt til, eller hvor det mislykkedes, i stedet for email.sent / email.failed for kampagner"
       tooltip_message_attempt_exhausted: "Alle nye forsøg er mislykkedes for denne levering"

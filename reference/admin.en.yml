@@ -1,46 +1,9 @@
-# The signed-in admin interface, in English.
+# Broadcast admin interface: English reference.
 #
-# One file per language (admin.<locale>.yml); the languages offered are
-# User::LOCALES. Every key here must exist in every other admin.<locale>.yml,
-# which AdminTranslationsTest enforces.
-#
-# Views use lazy lookup, so a key's path is the view's path:
-# t('.subscribers') in layouts/sidebar/_icon_rail.html.erb reads
-# layouts.sidebar.icon_rail.subscribers.
-#
-# The pages subscribers see are NOT here. They speak the channel's language and
-# live in unsubscribes/confirmations/opt_ins.<locale>.yml (PublicPageLanguages).
-#
-# Conventions
-#   * Top-level blocks are kept in alphabetical order (view directories, plus
-#     activerecord, common, date, enums, helpers, time).
-#   * Controllers use lazy lookup too: t('.created') in BroadcastsController#create
-#     reads broadcasts.create.created. A title the controller sets (@title) is
-#     page_title, never title: the action's view usually has a title key of its
-#     own under the same path. Keys for a page title or breadcrumb shared by
-#     several actions use the absolute key of the action that owns the page.
-#   * common holds only words that read the same in every context (Save, Cancel,
-#     Delete). Anything whose translation depends on what it describes (New,
-#     Active, None) gets its own key next to the view that uses it.
-#   * Text containing markup: a key ending in _html, with links passed in as
-#     interpolations (t('.intro_html', link: link_to(t('.intro_link'), path))).
-#   * Counts: one/other keys and count:. Dates and times: l(value, format: :medium)
-#     with the formats under date.formats and time.formats below. In English:
-#       date medium "Jan 5, 2026", date long_day "January 5, 2026",
-#       time medium "Jan 5, 2026 at 3:04 PM", full "January 5, 2026 at 3:04 PM",
-#       full_zone "... 3:04 PM EST", day_clock "Jan 5 at 3:04 PM", clock "3:04 PM".
-#     Italian puts the day first and uses the 24-hour clock ("5 gen 2026 alle 15:04").
-#   * Enum values: human_enum(record, :status), reading enums.<model>.<attribute>.
-#   * JavaScript reads js.* through t() in app/javascript/lib/i18n.js (the layout
-#     embeds js.* for the user's language): t('autosave.saving') reads
-#     js.autosave.saving. tHtml() escapes the values for strings that become HTML.
-#   * Validation messages are symbols: errors.add(:field, :key) reads
-#     activerecord.errors.models.<model>.attributes.<field>.<key> (shared
-#     concerns: activerecord.errors.messages.<key>), named via activerecord.attributes.
-#   * Text built outside a request (jobs, mail, cable broadcasts) takes the
-#     language of the person it is for: the recipient's for mail, the starter's
-#     for a run's log. When everyone watching a page receives it, send a key and
-#     values (message_key, status_key) and let each browser word it.
+# Generated from the Broadcast application, where English is written. Do not
+# edit this file: suggest English changes in an issue instead. Translations in
+# locales/ follow its keys.
+
 en:
   activerecord:
     attributes:
@@ -2727,6 +2690,8 @@ en:
         save_draft: "Save Draft"
         next_settings: "Next: Settings"
     stats_cards:
+      velocity_waiting: "Waiting"
+      next_send_at: "Next send at %{time}"
       recipients: "Recipients"
       recalculate: "Recalculate"
       delivered_of: "of %{total} delivered"
@@ -2782,6 +2747,9 @@ en:
       failed: "Broadcast failed to send"
       stalled: "Sending appears stalled"
       stalled_hint: "No emails sent for over 5 minutes. Try pausing and resuming the broadcast."
+      waiting_for_room: "Waiting for room on the email server"
+      waiting_for_room_hint: "The server's hourly limit is used up for broadcasts. Sending continues by itself at %{time}. To send sooner, raise the limit or reset the rate limit on the server page."
+      paused_in_flight: "Emails that were already on their way when you paused may still arrive. The recipient count stops in a moment."
       delivery_analytics: "Delivery Analytics"
       recent_activity: "Recent Activity"
       link_performance: "Link Performance"
@@ -3704,6 +3672,8 @@ en:
       rate_limit_title: "Rate Limit Reached"
       rate_limit_body: "Broadcast will automatically resume once the rate limit window clears."
       rate_limit_message: "Rate limit reached for %{server} (%{count}/%{limit} emails per hour). Waiting to resume..."
+      waiting_for_room: "Waiting"
+      next_send_at: "Next send at %{time}"
     application_logs:
       starting: "Starting..."
       start_failed: "Failed to start streaming"
@@ -6101,6 +6071,7 @@ en:
             one: "%{sent} sent in the current window"
             other: "%{sent} sent in the current window"
           rate_limit_reached: " · rate limit reached"
+          waiting_broadcast: "%{name} is waiting for room until %{time}"
           reset_confirm: "Clear the rate-limit window so sending can resume now?"
           reset_rate_limit: "Reset rate limit"
           email_types: "Email Types"
@@ -6427,6 +6398,18 @@ en:
         rate_limits_intro: "If you need to set a limit on the number of emails sent per hour, you can do so here. Sending a lower limit will help you avoid getting blacklisted by email providers. However, your email volume will be lower and Broadcasts, especially, will take longer to send out."
         emails_per_hour: "Emails per hour (minimum 15 per hour)"
         rate_needed: "Based on your current subscriber count, a minimum rate of %{rate} emails per hour is needed if you want to send your broadcasts within 24 hours. This is based on having one email server that is specified for broadcast emails."
+        rate_needed_share: "The rate allows for broadcasts using %{percent}% of this server's limit (see the reserve below)."
+        reserve_intro: "Each email type stops below the limit to keep room for the types with a higher priority (transactional first, then sequences, then broadcasts). At this limit:"
+        reserve_broadcasts:
+          one: "broadcasts send up to 1 email per hour"
+          other: "broadcasts send up to %{count} emails per hour"
+        reserve_sequences:
+          one: "sequences send up to 1 email per hour"
+          other: "sequences send up to %{count} emails per hour"
+        reserve_transactionals:
+          one: "transactional email sends up to 1 email per hour"
+          other: "transactional email sends up to %{count} emails per hour"
+        separate_servers: "We recommend separate servers: one for broadcasts, and one for transactional and sequence email. Each type then has the full limit of its own server, and a newsletter never delays a login code."
         aws_ses_integration: "AWS SES Integration"
         aws_ses_integration_intro_html: "Broadcast can track email deliveries, bounces, complaints, opens, and clicks for emails using analytics provided by AWS SES itself. Refer to %{link} to learn how to set this up."
         aws_ses_integration_docs_link: "our documentation"
@@ -7566,6 +7549,16 @@ en:
       confirm: "Confirm"
     copyable_command:
       copy: "Copy command"
+    transactional_room_notice:
+      waiting:
+        one: "1 transactional email has been waiting for room on the email server for over 30 minutes"
+        other: "%{count} transactional emails have been waiting for room on the email server for over 30 minutes"
+      waiting_hint: "The server is at its hourly limit. Transactional email tries again every minute, for up to 24 hours. To send sooner, raise the limit, reset the rate limit on the server page, or use a separate server for transactional email."
+      failed:
+        one: "1 transactional email failed in the last 24 hours because the email server stayed at its hourly limit for 24 hours"
+        other: "%{count} transactional emails failed in the last 24 hours because the email server stayed at its hourly limit for 24 hours"
+      failed_hint: "Check the server's hourly limit, or use a separate server for transactional email."
+      view: "View transactional emails"
     dns_health_alert:
       title: "Email authentication DNS records have changed"
       drift: "%{mechanism} %{status}"
@@ -8142,6 +8135,7 @@ en:
       empty: "No subscribers in this sequence"
     subscriber_sequence:
       in: "in %{time}"
+      waiting_for_room_since: "Waiting for room on the email server since %{time}"
       restart: "Start sequence from beginning"
       pause: "Pause sequence"
       resume: "Resume sequence"
@@ -9253,6 +9247,7 @@ en:
       tooltip_email_sent: "Accepted by the email provider. With parallel sending on, broadcasts report sends in broadcast.batch_completed instead"
       tooltip_email_failed: "Permanent delivery failure; will not retry. With parallel sending on, broadcasts report failures in broadcast.batch_completed instead"
       tooltip_email_delivery_delayed: "Temporary issue like greylisting; delivery will retry"
+      tooltip_email_send_delayed: "A transactional email is waiting for room on its email server (hourly limit reached); it retries every minute for up to 24 hours"
       tooltip_broadcast_queueing: "Broadcast is being prepared and recipients are being queued"
       tooltip_broadcast_batch_completed: "Parallel sending only: one event per batch of up to 500, listing who was sent or failed, in place of email.sent / email.failed for broadcasts"
       tooltip_message_attempt_exhausted: "All retry attempts have failed for this delivery"
