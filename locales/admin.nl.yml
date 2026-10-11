@@ -1263,6 +1263,35 @@ nl:
       restart_server:
         triggered: "Herstart van taakserver gestart"
         failed: "Taakserver herstarten mislukt: %{error}"
+      runner_mode:
+        invalid: "Kies Standaard of Weinig geheugen."
+        not_editable: "Deze installatie stelt de modus van de taakserver buiten deze pagina in, of de taakserver draait niet."
+        unchanged: "De taakserver draait al in deze modus."
+        busy: "Niet gewijzigd. De taakserver is bezig: %{reasons}. Probeer het opnieuw als het werk klaar is."
+        saved_restarting: "Opgeslagen. De taakserver herstart binnen een à twee minuten in de modus %{mode}."
+        saved_manual: "Opgeslagen. Herstart de taakcontainer om de wijziging toe te passen: %{command}"
+        modes:
+          standard: "Standaard"
+          low_memory: "Weinig geheugen"
+          fork: "Standaard"
+          async: "Weinig geheugen"
+      runner_mode_panel:
+        title: "Geheugenmodus van de taakserver"
+        standard_description: "Eén proces per worker. Het beste voor servers met genoeg geheugen."
+        low_memory_description: "Alle workers in één proces. Gebruikt minder geheugen. Taken delen één proces, dus één trage taak kan de andere vertragen."
+        running_html: "Actief: %{mode} sinds %{time}"
+        not_running: "De taakserver draait niet. Start hem om deze instelling te zien of te wijzigen."
+        single_container_html: "Broadcast voert taken uit in de webserver (%{in_puma}). Voeg voor de modus Weinig geheugen %{line} toe aan je .env-bestand en herstart Broadcast."
+        env_override_html: "Ingesteld door %{variable} in je .env-bestand. Verwijder die regel en herstart de taakserver om dit hier te beheren."
+        restart_pending: "Herstart in afwachting. De taakserver draait nog in de modus %{mode}."
+        restart_pending_managed: "Hij herstart binnen een à twee minuten."
+        restart_pending_manual_html: "Herstart de taakcontainer om de wijziging toe te passen: %{command}"
+        overridden_html: "De taakserver draait in de modus %{mode}, niet in de opgeslagen modus %{saved}. Iets buiten deze pagina stelt dit in: %{variable} in de omgeving van de taakcontainer, of de optie %{flag} van bin/jobs."
+        recommendation: "Deze server heeft %{total} geheugen, of het grootste deel is in gebruik. De modus Weinig geheugen wordt aanbevolen."
+        hint: "Als deze server weinig geheugen over heeft, schakel dan over naar de modus Weinig geheugen."
+        busy_caution: "Je kunt niet herstarten terwijl een campagne wordt verzonden."
+        save_and_restart: "Opslaan en taakserver herstarten"
+        save: "Opslaan"
     host_system:
       show:
         healthy: "Gezond"

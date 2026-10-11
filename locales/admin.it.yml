@@ -1259,6 +1259,35 @@ it:
       restart_server:
         triggered: "Riavvio del server dei job avviato"
         failed: "Impossibile riavviare il server dei job: %{error}"
+      runner_mode:
+        invalid: "Scegli Standard o Poca memoria."
+        not_editable: "Questa installazione imposta la modalità del server dei job al di fuori di questa pagina, oppure il server dei job non è in esecuzione."
+        unchanged: "Il server dei job è già in questa modalità."
+        busy: "Nessuna modifica. Il server dei job è occupato: %{reasons}. Riprova quando il lavoro è finito."
+        saved_restarting: "Salvato. Il server dei job si riavvia in modalità %{mode} entro un paio di minuti."
+        saved_manual: "Salvato. Riavvia il container dei job per applicare la modifica: %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Poca memoria"
+          fork: "Standard"
+          async: "Poca memoria"
+      runner_mode_panel:
+        title: "Modalità memoria del server dei job"
+        standard_description: "Un processo per ogni worker. Ideale per i server con memoria sufficiente."
+        low_memory_description: "Tutti i worker in un solo processo. Usa meno memoria. I job condividono un processo, quindi un job lento può rallentare gli altri."
+        running_html: "In esecuzione: %{mode} dal %{time}"
+        not_running: "Il server dei job non è in esecuzione. Avvialo per vedere o modificare questa impostazione."
+        single_container_html: "Broadcast esegue i job dentro il server web (%{in_puma}). Per la modalità Poca memoria, aggiungi %{line} al tuo file .env e riavvia Broadcast."
+        env_override_html: "Impostato da %{variable} nel tuo file .env. Per gestirlo qui, rimuovi quella riga e riavvia il server dei job."
+        restart_pending: "Riavvio in sospeso. Il server dei job è ancora in modalità %{mode}."
+        restart_pending_managed: "Si riavvia entro un paio di minuti."
+        restart_pending_manual_html: "Riavvia il container dei job per applicare la modifica: %{command}"
+        overridden_html: "Il server dei job è in modalità %{mode}, non nella modalità salvata %{saved}. La imposta qualcosa al di fuori di questa pagina: %{variable} nell'ambiente del container dei job, oppure l'opzione %{flag} di bin/jobs."
+        recommendation: "Questo server ha %{total} di memoria, oppure ne usa già la maggior parte. È consigliata la modalità Poca memoria."
+        hint: "Se questo server ha poca memoria libera, passa alla modalità Poca memoria."
+        busy_caution: "Non puoi riavviare mentre è in invio una campagna."
+        save_and_restart: "Salva e riavvia il server dei job"
+        save: "Salva"
     host_system:
       show:
         healthy: "Buono"

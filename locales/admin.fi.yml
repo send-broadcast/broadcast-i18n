@@ -1262,6 +1262,35 @@ fi:
       restart_server:
         triggered: "Työpalvelimen uudelleenkäynnistys aloitettu"
         failed: "Työpalvelimen uudelleenkäynnistys epäonnistui: %{error}"
+      runner_mode:
+        invalid: "Valitse Vakio tai Vähän muistia."
+        not_editable: "Tämä asennus määrittää työpalvelimen tilan tämän sivun ulkopuolella, tai työpalvelin ei ole käynnissä."
+        unchanged: "Työpalvelin toimii jo tässä tilassa."
+        busy: "Ei muutettu. Työpalvelin on varattu: %{reasons}. Yritä uudelleen, kun työ on valmis."
+        saved_restarting: "Tallennettu. Työpalvelin käynnistyy uudelleen tilassa %{mode} parin minuutin kuluessa."
+        saved_manual: "Tallennettu. Ota muutos käyttöön käynnistämällä työsäiliö uudelleen: %{command}"
+        modes:
+          standard: "Vakio"
+          low_memory: "Vähän muistia"
+          fork: "Vakio"
+          async: "Vähän muistia"
+      runner_mode_panel:
+        title: "Työpalvelimen muistitila"
+        standard_description: "Yksi prosessi jokaista workeria kohden. Paras palvelimille, joilla on riittävästi muistia."
+        low_memory_description: "Kaikki workerit yhdessä prosessissa. Käyttää vähemmän muistia. Työt jakavat yhden prosessin, joten yksi hidas työ voi hidastaa muita."
+        running_html: "Käynnissä: %{mode} %{time} alkaen"
+        not_running: "Työpalvelin ei ole käynnissä. Käynnistä se, jotta voit nähdä tai muuttaa tämän asetuksen."
+        single_container_html: "Broadcast suorittaa työt verkkopalvelimen sisällä (%{in_puma}). Jos haluat käyttää tilaa Vähän muistia, lisää %{line} .env-tiedostoosi ja käynnistä Broadcast uudelleen."
+        env_override_html: "Asetettu muuttujalla %{variable} .env-tiedostossasi. Jos haluat hallita tätä täällä, poista rivi ja käynnistä työpalvelin uudelleen."
+        restart_pending: "Uudelleenkäynnistys odottaa. Työpalvelin toimii yhä tilassa %{mode}."
+        restart_pending_managed: "Se käynnistyy uudelleen parin minuutin kuluessa."
+        restart_pending_manual_html: "Ota muutos käyttöön käynnistämällä työsäiliö uudelleen: %{command}"
+        overridden_html: "Työpalvelin toimii tilassa %{mode}, ei tallennetussa tilassa %{saved}. Jokin tämän sivun ulkopuolinen asettaa sen: %{variable} työsäiliön ympäristössä tai bin/jobs-komennon valitsin %{flag}."
+        recommendation: "Tällä palvelimella on %{total} muistia, tai suurin osa siitä on käytössä. Tilaa Vähän muistia suositellaan."
+        hint: "Jos tämän palvelimen muisti käy vähiin, vaihda tilaan Vähän muistia."
+        busy_caution: "Uudelleenkäynnistys ei onnistu, kun kampanjaa lähetetään."
+        save_and_restart: "Tallenna ja käynnistä työpalvelin uudelleen"
+        save: "Tallenna"
     host_system:
       show:
         healthy: "Kunnossa"

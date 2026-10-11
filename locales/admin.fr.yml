@@ -1262,6 +1262,35 @@ fr:
       restart_server:
         triggered: "Redémarrage du serveur de tâches lancé"
         failed: "Impossible de redémarrer le serveur de tâches : %{error}"
+      runner_mode:
+        invalid: "Choisissez Standard ou Mémoire réduite."
+        not_editable: "Cette installation définit le mode du serveur de tâches en dehors de cette page, ou le serveur de tâches ne fonctionne pas."
+        unchanged: "Le serveur de tâches fonctionne déjà dans ce mode."
+        busy: "Aucun changement. Le serveur de tâches est occupé : %{reasons}. Réessayez quand le travail sera terminé."
+        saved_restarting: "Enregistré. Le serveur de tâches redémarre en mode %{mode} d'ici une à deux minutes."
+        saved_manual: "Enregistré. Redémarrez le conteneur des tâches pour appliquer le changement : %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Mémoire réduite"
+          fork: "Standard"
+          async: "Mémoire réduite"
+      runner_mode_panel:
+        title: "Mode mémoire du serveur de tâches"
+        standard_description: "Un processus par worker. Idéal pour les serveurs qui ont assez de mémoire."
+        low_memory_description: "Tous les workers dans un seul processus. Utilise moins de mémoire. Les tâches partagent un processus, donc une tâche lente peut ralentir les autres."
+        running_html: "En cours : %{mode} depuis le %{time}"
+        not_running: "Le serveur de tâches ne fonctionne pas. Démarrez-le pour voir ou modifier ce réglage."
+        single_container_html: "Broadcast exécute les tâches dans le serveur web (%{in_puma}). Pour le mode Mémoire réduite, ajoutez %{line} à votre fichier .env, puis redémarrez Broadcast."
+        env_override_html: "Défini par %{variable} dans votre fichier .env. Pour le gérer ici, supprimez cette ligne et redémarrez le serveur de tâches."
+        restart_pending: "Redémarrage en attente. Le serveur de tâches fonctionne encore en mode %{mode}."
+        restart_pending_managed: "Il redémarre d'ici une à deux minutes."
+        restart_pending_manual_html: "Redémarrez le conteneur des tâches pour appliquer le changement : %{command}"
+        overridden_html: "Le serveur de tâches fonctionne en mode %{mode}, et non dans le mode enregistré %{saved}. Un élément extérieur à cette page le définit : %{variable} dans l'environnement du conteneur des tâches, ou l'option %{flag} de bin/jobs."
+        recommendation: "Ce serveur a %{total} de mémoire, ou la plus grande partie est utilisée. Le mode Mémoire réduite est recommandé."
+        hint: "Si ce serveur manque de mémoire, passez au mode Mémoire réduite."
+        busy_caution: "Impossible de redémarrer pendant l'envoi d'une campagne."
+        save_and_restart: "Enregistrer et redémarrer le serveur de tâches"
+        save: "Enregistrer"
     host_system:
       show:
         healthy: "Bon état"

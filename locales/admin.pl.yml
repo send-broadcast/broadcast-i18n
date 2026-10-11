@@ -1313,6 +1313,35 @@ pl:
       restart_server:
         triggered: "Zlecono ponowne uruchomienie serwera zadań"
         failed: "Nie udało się uruchomić ponownie serwera zadań: %{error}"
+      runner_mode:
+        invalid: "Wybierz Standardowy lub Mało pamięci."
+        not_editable: "Ta instalacja ustawia tryb serwera zadań poza tą stroną albo serwer zadań nie działa."
+        unchanged: "Serwer zadań już działa w tym trybie."
+        busy: "Bez zmian. Serwer zadań jest zajęty: %{reasons}. Spróbuj ponownie, gdy praca się zakończy."
+        saved_restarting: "Zapisano. Serwer zadań uruchomi się ponownie w trybie %{mode} w ciągu minuty lub dwóch."
+        saved_manual: "Zapisano. Uruchom ponownie kontener zadań, aby zastosować zmianę: %{command}"
+        modes:
+          standard: "Standardowy"
+          low_memory: "Mało pamięci"
+          fork: "Standardowy"
+          async: "Mało pamięci"
+      runner_mode_panel:
+        title: "Tryb pamięci serwera zadań"
+        standard_description: "Jeden proces na każdy worker. Najlepszy dla serwerów z wystarczającą ilością pamięci."
+        low_memory_description: "Wszystkie workery w jednym procesie. Zużywa mniej pamięci. Zadania dzielą jeden proces, więc jedno wolne zadanie może spowolnić pozostałe."
+        running_html: "Działa: %{mode} od %{time}"
+        not_running: "Serwer zadań nie działa. Uruchom go, aby zobaczyć lub zmienić to ustawienie."
+        single_container_html: "Broadcast uruchamia zadania wewnątrz serwera WWW (%{in_puma}). Aby użyć trybu Mało pamięci, dodaj %{line} do pliku .env, a następnie uruchom Broadcast ponownie."
+        env_override_html: "Ustawione przez %{variable} w pliku .env. Aby zarządzać tym tutaj, usuń ten wiersz i uruchom ponownie serwer zadań."
+        restart_pending: "Oczekuje na ponowne uruchomienie. Serwer zadań nadal działa w trybie %{mode}."
+        restart_pending_managed: "Uruchomi się ponownie w ciągu minuty lub dwóch."
+        restart_pending_manual_html: "Uruchom ponownie kontener zadań, aby zastosować zmianę: %{command}"
+        overridden_html: "Serwer zadań działa w trybie %{mode}, a nie w zapisanym trybie %{saved}. Ustawia go coś spoza tej strony: %{variable} w środowisku kontenera zadań albo opcja %{flag} polecenia bin/jobs."
+        recommendation: "Ten serwer ma %{total} pamięci albo większość z niej jest w użyciu. Zalecany jest tryb Mało pamięci."
+        hint: "Jeśli na tym serwerze zaczyna brakować pamięci, przełącz na tryb Mało pamięci."
+        busy_caution: "Nie można uruchomić ponownie podczas wysyłania kampanii."
+        save_and_restart: "Zapisz i uruchom ponownie serwer zadań"
+        save: "Zapisz"
     host_system:
       show:
         healthy: "Sprawny"

@@ -1263,6 +1263,35 @@ de:
       restart_server:
         triggered: "Neustart des Job-Servers ausgelöst"
         failed: "Job-Server konnte nicht neu gestartet werden: %{error}"
+      runner_mode:
+        invalid: "Wählen Sie Standard oder Speichersparend."
+        not_editable: "Diese Installation legt den Modus des Job-Servers außerhalb dieser Seite fest, oder der Job-Server läuft nicht."
+        unchanged: "Der Job-Server läuft bereits in diesem Modus."
+        busy: "Nicht geändert. Der Job-Server ist beschäftigt: %{reasons}. Versuchen Sie es erneut, wenn die Arbeit abgeschlossen ist."
+        saved_restarting: "Gespeichert. Der Job-Server startet innerhalb von ein bis zwei Minuten im Modus %{mode} neu."
+        saved_manual: "Gespeichert. Starten Sie den Job-Container neu, damit die Änderung wirkt: %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Speichersparend"
+          fork: "Standard"
+          async: "Speichersparend"
+      runner_mode_panel:
+        title: "Speichermodus des Job-Servers"
+        standard_description: "Ein Prozess pro Worker. Am besten für Server mit genug Arbeitsspeicher."
+        low_memory_description: "Alle Worker in einem Prozess. Braucht weniger Arbeitsspeicher. Jobs teilen sich einen Prozess, daher kann ein langsamer Job die anderen bremsen."
+        running_html: "Läuft: %{mode} seit %{time}"
+        not_running: "Der Job-Server läuft nicht. Starten Sie ihn, um diese Einstellung zu sehen oder zu ändern."
+        single_container_html: "Broadcast führt Jobs im Webserver aus (%{in_puma}). Für den Modus Speichersparend fügen Sie %{line} zu Ihrer .env-Datei hinzu und starten Broadcast neu."
+        env_override_html: "Festgelegt durch %{variable} in Ihrer .env-Datei. Um den Modus hier zu verwalten, entfernen Sie diese Zeile und starten den Job-Server neu."
+        restart_pending: "Neustart ausstehend. Der Job-Server läuft noch im Modus %{mode}."
+        restart_pending_managed: "Er startet innerhalb von ein bis zwei Minuten neu."
+        restart_pending_manual_html: "Starten Sie den Job-Container neu, damit die Änderung wirkt: %{command}"
+        overridden_html: "Der Job-Server läuft im Modus %{mode}, nicht im gespeicherten Modus %{saved}. Etwas außerhalb dieser Seite legt ihn fest: %{variable} in der Umgebung des Job-Containers oder die Option %{flag} von bin/jobs."
+        recommendation: "Dieser Server hat %{total} Arbeitsspeicher, oder der Großteil davon ist belegt. Der Modus Speichersparend wird empfohlen."
+        hint: "Wenn der Arbeitsspeicher dieses Servers knapp wird, wechseln Sie in den Modus Speichersparend."
+        busy_caution: "Solange eine Kampagne gesendet wird, ist kein Neustart möglich."
+        save_and_restart: "Speichern und Job-Server neu starten"
+        save: "Speichern"
     host_system:
       show:
         healthy: "In Ordnung"

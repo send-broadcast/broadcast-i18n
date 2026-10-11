@@ -1242,6 +1242,35 @@ en:
       restart_server:
         triggered: "Job server restart triggered"
         failed: "Failed to restart job server: %{error}"
+      runner_mode:
+        invalid: "Choose Standard or Low memory."
+        not_editable: "This installation sets the job server mode outside this page, or the job server is not running."
+        unchanged: "The job server already runs in this mode."
+        busy: "Not changed. The job server is busy: %{reasons}. Try again when the work finishes."
+        saved_restarting: "Saved. The job server restarts in %{mode} mode within a minute or two."
+        saved_manual: "Saved. Restart the job container to apply it: %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Low memory"
+          fork: "Standard"
+          async: "Low memory"
+      runner_mode_panel:
+        title: "Job server memory mode"
+        standard_description: "One process for each worker. Best for servers with enough memory."
+        low_memory_description: "All workers in one process. Uses less memory. Jobs share one process, so one slow job can slow the others."
+        running_html: "Running: %{mode} since %{time}"
+        not_running: "The job server is not running. Start it to see or change this setting."
+        single_container_html: "Broadcast runs jobs inside the web server (%{in_puma}). To use Low memory mode, add %{line} to your .env file, then restart Broadcast."
+        env_override_html: "Set by %{variable} in your .env file. To manage this here, remove that line and restart the job server."
+        restart_pending: "Restart pending. The job server still runs in %{mode} mode."
+        restart_pending_managed: "It restarts within a minute or two."
+        restart_pending_manual_html: "Restart the job container to apply the change: %{command}"
+        overridden_html: "The job server runs in %{mode} mode, not the saved %{saved} mode. Something outside this page sets it: %{variable} in the job container's environment, or a %{flag} flag on bin/jobs."
+        recommendation: "This server has %{total} of memory, or most of it is in use. Low memory mode is recommended."
+        hint: "If this server runs low on memory, change to Low memory mode."
+        busy_caution: "You cannot restart while a broadcast is sending."
+        save_and_restart: "Save and restart job server"
+        save: "Save"
     host_system:
       show:
         healthy: "Healthy"

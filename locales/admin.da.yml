@@ -1261,6 +1261,35 @@ da:
       restart_server:
         triggered: "Genstart af jobserveren er startet"
         failed: "Kunne ikke genstarte jobserveren: %{error}"
+      runner_mode:
+        invalid: "Vælg Standard eller Lav hukommelse."
+        not_editable: "Denne installation indstiller jobserverens tilstand uden for denne side, eller jobserveren kører ikke."
+        unchanged: "Jobserveren kører allerede i denne tilstand."
+        busy: "Ikke ændret. Jobserveren er optaget: %{reasons}. Prøv igen, når arbejdet er færdigt."
+        saved_restarting: "Gemt. Jobserveren genstarter i tilstanden %{mode} inden for et par minutter."
+        saved_manual: "Gemt. Genstart jobcontaineren for at anvende ændringen: %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Lav hukommelse"
+          fork: "Standard"
+          async: "Lav hukommelse"
+      runner_mode_panel:
+        title: "Jobserverens hukommelsestilstand"
+        standard_description: "Én proces pr. worker. Bedst til servere med nok hukommelse."
+        low_memory_description: "Alle workers i én proces. Bruger mindre hukommelse. Jobs deler én proces, så ét langsomt job kan gøre de andre langsommere."
+        running_html: "Kører: %{mode} siden %{time}"
+        not_running: "Jobserveren kører ikke. Start den for at se eller ændre denne indstilling."
+        single_container_html: "Broadcast kører jobs inde i webserveren (%{in_puma}). Tilføj %{line} til din .env-fil, og genstart Broadcast for at bruge tilstanden Lav hukommelse."
+        env_override_html: "Indstillet af %{variable} i din .env-fil. Fjern den linje, og genstart jobserveren for at styre det her."
+        restart_pending: "Genstart afventer. Jobserveren kører stadig i tilstanden %{mode}."
+        restart_pending_managed: "Den genstarter inden for et par minutter."
+        restart_pending_manual_html: "Genstart jobcontaineren for at anvende ændringen: %{command}"
+        overridden_html: "Jobserveren kører i tilstanden %{mode}, ikke i den gemte tilstand %{saved}. Noget uden for denne side indstiller det: %{variable} i jobcontainerens miljø eller flaget %{flag} på bin/jobs."
+        recommendation: "Denne server har %{total} hukommelse, eller det meste af den er i brug. Tilstanden Lav hukommelse anbefales."
+        hint: "Hvis denne server mangler hukommelse, så skift til tilstanden Lav hukommelse."
+        busy_caution: "Du kan ikke genstarte, mens en kampagne bliver sendt."
+        save_and_restart: "Gem og genstart jobserveren"
+        save: "Gem"
     host_system:
       show:
         healthy: "Sund"

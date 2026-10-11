@@ -1262,6 +1262,35 @@ es:
       restart_server:
         triggered: "Reinicio del servidor de trabajos iniciado"
         failed: "No se pudo reiniciar el servidor de trabajos: %{error}"
+      runner_mode:
+        invalid: "Elige Estándar o Poca memoria."
+        not_editable: "Esta instalación define el modo del servidor de trabajos fuera de esta página, o el servidor de trabajos no está en marcha."
+        unchanged: "El servidor de trabajos ya funciona en este modo."
+        busy: "Sin cambios. El servidor de trabajos está ocupado: %{reasons}. Inténtalo de nuevo cuando termine el trabajo."
+        saved_restarting: "Guardado. El servidor de trabajos se reinicia en modo %{mode} en uno o dos minutos."
+        saved_manual: "Guardado. Reinicia el contenedor de trabajos para aplicar el cambio: %{command}"
+        modes:
+          standard: "Estándar"
+          low_memory: "Poca memoria"
+          fork: "Estándar"
+          async: "Poca memoria"
+      runner_mode_panel:
+        title: "Modo de memoria del servidor de trabajos"
+        standard_description: "Un proceso por cada worker. Lo mejor para servidores con memoria suficiente."
+        low_memory_description: "Todos los workers en un solo proceso. Usa menos memoria. Los trabajos comparten un proceso, así que un trabajo lento puede frenar a los demás."
+        running_html: "En marcha: %{mode} desde el %{time}"
+        not_running: "El servidor de trabajos no está en marcha. Inícialo para ver o cambiar este ajuste."
+        single_container_html: "Broadcast ejecuta los trabajos dentro del servidor web (%{in_puma}). Para usar el modo Poca memoria, añade %{line} a tu archivo .env y reinicia Broadcast."
+        env_override_html: "Definido por %{variable} en tu archivo .env. Para gestionarlo aquí, quita esa línea y reinicia el servidor de trabajos."
+        restart_pending: "Reinicio pendiente. El servidor de trabajos sigue en modo %{mode}."
+        restart_pending_managed: "Se reinicia en uno o dos minutos."
+        restart_pending_manual_html: "Reinicia el contenedor de trabajos para aplicar el cambio: %{command}"
+        overridden_html: "El servidor de trabajos funciona en modo %{mode}, no en el modo guardado %{saved}. Algo fuera de esta página lo define: %{variable} en el entorno del contenedor de trabajos, o la opción %{flag} de bin/jobs."
+        recommendation: "Este servidor tiene %{total} de memoria, o la mayor parte está en uso. Se recomienda el modo Poca memoria."
+        hint: "Si este servidor se queda sin memoria, cambia al modo Poca memoria."
+        busy_caution: "No puedes reiniciar mientras se envía una campaña."
+        save_and_restart: "Guardar y reiniciar el servidor de trabajos"
+        save: "Guardar"
     host_system:
       show:
         healthy: "Correcto"

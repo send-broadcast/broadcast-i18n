@@ -1261,6 +1261,35 @@ nb:
       restart_server:
         triggered: "Omstart av jobbserveren er startet"
         failed: "Kunne ikke starte jobbserveren på nytt: %{error}"
+      runner_mode:
+        invalid: "Velg Standard eller Lite minne."
+        not_editable: "Denne installasjonen stiller inn jobbserverens modus utenfor denne siden, eller jobbserveren kjører ikke."
+        unchanged: "Jobbserveren kjører allerede i denne modusen."
+        busy: "Ikke endret. Jobbserveren er opptatt: %{reasons}. Prøv igjen når arbeidet er ferdig."
+        saved_restarting: "Lagret. Jobbserveren starter på nytt i modusen %{mode} innen et par minutter."
+        saved_manual: "Lagret. Start jobbcontaineren på nytt for å ta i bruk endringen: %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Lite minne"
+          fork: "Standard"
+          async: "Lite minne"
+      runner_mode_panel:
+        title: "Jobbserverens minnemodus"
+        standard_description: "Én prosess per worker. Best for servere med nok minne."
+        low_memory_description: "Alle workers i én prosess. Bruker mindre minne. Jobbene deler én prosess, så én treg jobb kan gjøre de andre tregere."
+        running_html: "Kjører: %{mode} siden %{time}"
+        not_running: "Jobbserveren kjører ikke. Start den for å se eller endre denne innstillingen."
+        single_container_html: "Broadcast kjører jobber inne i webserveren (%{in_puma}). Legg til %{line} i .env-filen din og start Broadcast på nytt for å bruke modusen Lite minne."
+        env_override_html: "Stilt inn av %{variable} i .env-filen din. Fjern den linjen og start jobbserveren på nytt for å styre dette her."
+        restart_pending: "Omstart venter. Jobbserveren kjører fortsatt i modusen %{mode}."
+        restart_pending_managed: "Den starter på nytt innen et par minutter."
+        restart_pending_manual_html: "Start jobbcontaineren på nytt for å ta i bruk endringen: %{command}"
+        overridden_html: "Jobbserveren kjører i modusen %{mode}, ikke i den lagrede modusen %{saved}. Noe utenfor denne siden stiller det inn: %{variable} i jobbcontainerens miljø, eller flagget %{flag} på bin/jobs."
+        recommendation: "Denne serveren har %{total} minne, eller det meste av det er i bruk. Modusen Lite minne anbefales."
+        hint: "Hvis denne serveren får lite minne, bytt til modusen Lite minne."
+        busy_caution: "Du kan ikke starte på nytt mens en kampanje sendes."
+        save_and_restart: "Lagre og start jobbserveren på nytt"
+        save: "Lagre"
     host_system:
       show:
         healthy: "Frisk"

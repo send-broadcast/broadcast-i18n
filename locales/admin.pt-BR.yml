@@ -1261,6 +1261,35 @@ pt-BR:
       restart_server:
         triggered: "Reinício do servidor de jobs acionado"
         failed: "Não foi possível reiniciar o servidor de jobs: %{error}"
+      runner_mode:
+        invalid: "Escolha Padrão ou Pouca memória."
+        not_editable: "Esta instalação define o modo do servidor de jobs fora desta página, ou o servidor de jobs não está em execução."
+        unchanged: "O servidor de jobs já está neste modo."
+        busy: "Nada foi alterado. O servidor de jobs está ocupado: %{reasons}. Tente de novo quando o trabalho terminar."
+        saved_restarting: "Salvo. O servidor de jobs reinicia no modo %{mode} em um ou dois minutos."
+        saved_manual: "Salvo. Reinicie o contêiner de jobs para aplicar a mudança: %{command}"
+        modes:
+          standard: "Padrão"
+          low_memory: "Pouca memória"
+          fork: "Padrão"
+          async: "Pouca memória"
+      runner_mode_panel:
+        title: "Modo de memória do servidor de jobs"
+        standard_description: "Um processo para cada worker. Melhor para servidores com memória suficiente."
+        low_memory_description: "Todos os workers em um só processo. Usa menos memória. Os jobs compartilham um processo, então um job lento pode atrasar os outros."
+        running_html: "Em execução: %{mode} desde %{time}"
+        not_running: "O servidor de jobs não está em execução. Inicie-o para ver ou mudar esta configuração."
+        single_container_html: "O Broadcast executa os jobs dentro do servidor web (%{in_puma}). Para usar o modo Pouca memória, adicione %{line} ao seu arquivo .env e reinicie o Broadcast."
+        env_override_html: "Definido por %{variable} no seu arquivo .env. Para gerenciar aqui, remova essa linha e reinicie o servidor de jobs."
+        restart_pending: "Reinício pendente. O servidor de jobs ainda está no modo %{mode}."
+        restart_pending_managed: "Ele reinicia em um ou dois minutos."
+        restart_pending_manual_html: "Reinicie o contêiner de jobs para aplicar a mudança: %{command}"
+        overridden_html: "O servidor de jobs está no modo %{mode}, não no modo salvo %{saved}. Algo fora desta página o define: %{variable} no ambiente do contêiner de jobs, ou a opção %{flag} do bin/jobs."
+        recommendation: "Este servidor tem %{total} de memória, ou a maior parte dela está em uso. O modo Pouca memória é recomendado."
+        hint: "Se este servidor ficar com pouca memória, mude para o modo Pouca memória."
+        busy_caution: "Não é possível reiniciar enquanto uma campanha está sendo enviada."
+        save_and_restart: "Salvar e reiniciar o servidor de jobs"
+        save: "Salvar"
     host_system:
       show:
         healthy: "Saudável"

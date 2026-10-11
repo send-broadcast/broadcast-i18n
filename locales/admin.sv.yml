@@ -1261,6 +1261,35 @@ sv:
       restart_server:
         triggered: "Omstart av jobbservern har startats"
         failed: "Det gick inte att starta om jobbservern: %{error}"
+      runner_mode:
+        invalid: "Välj Standard eller Lite minne."
+        not_editable: "Den här installationen ställer in jobbserverns läge utanför den här sidan, eller så körs inte jobbservern."
+        unchanged: "Jobbservern körs redan i det här läget."
+        busy: "Inte ändrat. Jobbservern är upptagen: %{reasons}. Försök igen när arbetet är klart."
+        saved_restarting: "Sparat. Jobbservern startar om i läget %{mode} inom en eller två minuter."
+        saved_manual: "Sparat. Starta om jobbcontainern för att tillämpa ändringen: %{command}"
+        modes:
+          standard: "Standard"
+          low_memory: "Lite minne"
+          fork: "Standard"
+          async: "Lite minne"
+      runner_mode_panel:
+        title: "Jobbserverns minnesläge"
+        standard_description: "En process för varje worker. Bäst för servrar med tillräckligt med minne."
+        low_memory_description: "Alla workers i en process. Använder mindre minne. Jobben delar en process, så ett långsamt jobb kan sakta ner de andra."
+        running_html: "Körs: %{mode} sedan %{time}"
+        not_running: "Jobbservern körs inte. Starta den för att se eller ändra den här inställningen."
+        single_container_html: "Broadcast kör jobb inne i webbservern (%{in_puma}). Lägg till %{line} i din .env-fil och starta om Broadcast för att använda läget Lite minne."
+        env_override_html: "Inställt av %{variable} i din .env-fil. Ta bort den raden och starta om jobbservern för att hantera det här."
+        restart_pending: "Omstart väntar. Jobbservern körs fortfarande i läget %{mode}."
+        restart_pending_managed: "Den startar om inom en eller två minuter."
+        restart_pending_manual_html: "Starta om jobbcontainern för att tillämpa ändringen: %{command}"
+        overridden_html: "Jobbservern körs i läget %{mode}, inte i det sparade läget %{saved}. Något utanför den här sidan ställer in det: %{variable} i jobbcontainerns miljö, eller flaggan %{flag} för bin/jobs."
+        recommendation: "Den här servern har %{total} minne, eller så används det mesta. Läget Lite minne rekommenderas."
+        hint: "Om den här servern får ont om minne, byt till läget Lite minne."
+        busy_caution: "Du kan inte starta om medan en kampanj skickas."
+        save_and_restart: "Spara och starta om jobbservern"
+        save: "Spara"
     host_system:
       show:
         healthy: "Frisk"
