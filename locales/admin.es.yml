@@ -171,6 +171,7 @@ es:
             design_settings:
               must_be_an_object: "debe ser un objeto"
               email_width_must_be_between_and: "el ancho del correo debe estar entre %{min} y %{max} píxeles"
+              radius_must_be_between_and: "el radio de las esquinas debe estar entre %{min} y %{max} píxeles"
               logo_must_be_an_image_from: "el logotipo debe ser una imagen de la biblioteca de archivos de este canal"
               website_must_be_an_http_s: "el sitio web debe ser una URL http(s)"
               social_icon_style_must_be_one: "el estilo de los iconos sociales debe ser uno de %{styles}"
@@ -316,6 +317,8 @@ es:
         text_must_be_an_object: "el texto debe ser un objeto"
         text_has_an_unknown_language: "el texto tiene un idioma desconocido: %{language}"
         has_an_unknown_page: "tiene una página desconocida: %{page}"
+        button_needs_label_and_url: "Página %{page} (%{language}): el botón necesita un texto y un enlace"
+        button_url_must_be_http: "Página %{page} (%{language}): el enlace del botón debe ser una URL http:// o https://"
         link_must_be_http_url: "el enlace %{link} debe ser una URL http(s)"
         colour_must_be_hex: "el color %{setting} debe ser un valor hexadecimal como #2563eb"
         must_be_true_or_false: "%{setting} debe ser true o false"
@@ -400,6 +403,9 @@ es:
           users:
             description: "Usuarios, su acceso a canales y sus permisos de sistema (nunca sudo)"
             name: "Usuarios"
+          channel_settings:
+            description: "Ajustes generales, de remitente, kit de marca, página de baja y página de confirmación"
+            name: "Configuración del canal"
           webhook_endpoints:
             description: "Configuración de webhooks salientes"
             name: "Endpoints de webhook"
@@ -2990,6 +2996,8 @@ es:
       add_languages: "Añade idiomas"
       add_languages_note_html: "%{link} en la configuración de la página de baja; todas las páginas públicas usan los mismos."
       appearance_heading: "Apariencia"
+      button_intro: "Botón (opcional): lleva a los suscriptores a otro sitio, por ejemplo de vuelta a tu web. Dale un texto y un enlace http:// o https://, o deja ambos en blanco para no mostrar botón."
+      button_fallback: "Si lo dejas en blanco, esta página muestra el botón de Confirmado en el mismo idioma, como se ve en los campos."
       appearance_intro: "Cómo se ve la página de confirmación. Deja un color en blanco para usar %{look}, que se muestra en cada campo. Esta es la apariencia de todas las páginas de confirmación de %{channel}, sea cual sea la plantilla que envió el correo."
       brand_kit_link: "el kit de marca"
       colors:
@@ -3005,14 +3013,26 @@ es:
       fallback_standard: "la apariencia estándar de Broadcast"
       fields:
         body: "Cuerpo"
+        button_label: "Texto del botón"
+        button_url: "Enlace del botón"
         heading: "Título"
       language_tabs: "Idioma"
+      legal_links:
+        legal_notice: "Aviso legal"
+        privacy_policy: "Política de privacidad"
+      legal_links_heading: "Enlaces legales"
+      legal_links_intro_html: "Los enlaces a tu política de privacidad y a tu aviso legal (Impressum) aparecen al pie de cada página de confirmación, en el idioma de la página. Son los mismos enlaces que en las páginas de baja y se configuran en %{link}."
+      legal_links_not_set: "sin configurar"
+      legal_links_settings_link: "la configuración de la página de baja"
       logo_note_html: "El logotipo y los enlaces sociales vienen de %{link}, así que solo se muestran cuando la página coincide con él."
       match_brand_kit: "Coincidir con el kit de marca del canal"
       match_brand_kit_hint_html: "Usa el logotipo, los colores, la fuente, el radio de las esquinas y los enlaces sociales de %{link}. Es el mismo interruptor que en la página del kit de marca. Los colores que definas abajo siguen teniendo prioridad."
       page_text_heading: "Texto de la página"
       page_text_intro_html: "Lo que leen los suscriptores en %{path} después de hacer clic en el enlace del correo de confirmación, para cada resultado. Edita un idioma cada vez y guarda una sola vez. Un campo en blanco usa el texto integrado que se muestra en él. Puedes usar %{channel_name}, %{email} y %{first_name}."
       picker: "Selector de %{label}"
+      placeholders:
+        button_label: "Sin botón"
+        button_url: "https://example.com"
       show_logo: "Mostrar logotipo"
       show_social_links: "Mostrar enlaces sociales"
       states:
@@ -3579,6 +3599,7 @@ es:
       labels:
         autopilot: "Piloto automático"
         broadcasts: "Campañas"
+        channel_settings: "Configuración del canal"
         email_servers: "Servidores de correo"
         opt_in_forms: "Formularios de suscripción"
         segments: "Segmentos"
@@ -8662,6 +8683,9 @@ es:
         transactionals:
           description: "Enviar correos puntuales mediante la API"
           name: "Correos transaccionales"
+        channel_settings:
+          description: "Ajustes generales, de remitente, kit de marca, página de baja y página de confirmación"
+          name: "Configuración del canal"
         webhook_endpoints:
           description: "Configuración de webhooks salientes"
           name: "Endpoints de webhook"

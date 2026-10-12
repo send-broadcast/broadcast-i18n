@@ -172,6 +172,7 @@ nl:
             design_settings:
               must_be_an_object: "moet een object zijn"
               email_width_must_be_between_and: "e-mailbreedte moet tussen %{min} en %{max} pixels liggen"
+              radius_must_be_between_and: "afronding van de hoeken moet tussen %{min} en %{max} pixels liggen"
               logo_must_be_an_image_from: "logo moet een afbeelding uit de bestandsbibliotheek van dit kanaal zijn"
               website_must_be_an_http_s: "website moet een http(s)-URL zijn"
               social_icon_style_must_be_one: "stijl van sociale pictogrammen moet een van deze zijn: %{styles}"
@@ -317,6 +318,8 @@ nl:
         text_must_be_an_object: "tekst moet een object zijn"
         text_has_an_unknown_language: "tekst bevat een onbekende taal: %{language}"
         has_an_unknown_page: "heeft een onbekende pagina: %{page}"
+        button_needs_label_and_url: "Pagina %{page} (%{language}): de knop heeft zowel een tekst als een link nodig"
+        button_url_must_be_http: "Pagina %{page} (%{language}): de link van de knop moet een http://- of https://-URL zijn"
         link_must_be_http_url: "link %{link} moet een http(s)-URL zijn"
         colour_must_be_hex: "kleur %{setting} moet een hexwaarde zijn, zoals #2563eb"
         must_be_true_or_false: "%{setting} moet true of false zijn"
@@ -401,6 +404,9 @@ nl:
           users:
             description: "Gebruikers, hun kanaaltoegang en systeemrechten (nooit sudo)"
             name: "Gebruikers"
+          channel_settings:
+            description: "Instellingen voor algemeen, afzender, huisstijlkit, afmeldpagina en bevestigingspagina"
+            name: "Kanaalinstellingen"
           webhook_endpoints:
             description: "Configuraties voor uitgaande webhooks"
             name: "Webhook-endpoints"
@@ -2991,6 +2997,8 @@ nl:
       add_languages: "Voeg talen toe"
       add_languages_note_html: "%{link} in de instellingen van de afmeldpagina; elke openbare pagina gebruikt dezelfde talen."
       appearance_heading: "Weergave"
+      button_intro: "Knop (optioneel): stuur abonnees door, bijvoorbeeld terug naar je website. Geef de knop een tekst en een http://- of https://-link, of laat beide leeg voor geen knop."
+      button_fallback: "Laat je dit leeg, dan toont deze pagina de knop van Bevestigd in dezelfde taal, zoals in de velden getoond."
       appearance_intro: "Hoe de bevestigingspagina eruitziet. Laat een kleur leeg om %{look} te gebruiken, zoals in elk veld getoond. Dit is de weergave van elke bevestigingspagina in %{channel}, ongeacht welk sjabloon de e-mail heeft verzonden."
       brand_kit_link: "de huisstijlkit"
       colors:
@@ -3006,14 +3014,26 @@ nl:
       fallback_standard: "de standaardweergave van Broadcast"
       fields:
         body: "Tekst"
+        button_label: "Knoptekst"
+        button_url: "Knoplink"
         heading: "Kop"
       language_tabs: "Taal"
+      legal_links:
+        legal_notice: "Juridische kennisgeving"
+        privacy_policy: "Privacybeleid"
+      legal_links_heading: "Juridische links"
+      legal_links_intro_html: "De links naar je privacybeleid en je juridische kennisgeving (Impressum) staan onderaan elke bevestigingspagina, in de taal van de pagina. Het zijn dezelfde links als op de afmeldpagina's en je stelt ze in bij %{link}."
+      legal_links_not_set: "niet ingesteld"
+      legal_links_settings_link: "de instellingen van de afmeldpagina"
       logo_note_html: "Het logo en de sociale links komen uit %{link}, dus ze verschijnen alleen als de pagina daarop is afgestemd."
       match_brand_kit: "Afstemmen op de huisstijlkit van het kanaal"
       match_brand_kit_hint_html: "Gebruikt het logo, de kleuren, het lettertype, de hoekafronding en de sociale links uit %{link}. Dezelfde schakelaar als op de pagina Huisstijlkit. Kleuren die je hieronder instelt, gaan nog steeds voor."
       page_text_heading: "Paginatekst"
       page_text_intro_html: "Wat abonnees per uitkomst lezen op %{path} nadat ze op de link in de bevestigingsmail hebben geklikt. Bewerk één taal tegelijk en sla daarna één keer op. Een leeg veld gebruikt de ingebouwde tekst die erin staat. Je kunt %{channel_name}, %{email} en %{first_name} gebruiken."
       picker: "Kiezer voor %{label}"
+      placeholders:
+        button_label: "Geen knop"
+        button_url: "https://example.com"
       show_logo: "Logo tonen"
       show_social_links: "Sociale links tonen"
       states:
@@ -3580,6 +3600,7 @@ nl:
       labels:
         autopilot: "Autopilot"
         broadcasts: "Campagnes"
+        channel_settings: "Kanaalinstellingen"
         email_servers: "E-mailservers"
         opt_in_forms: "Aanmeldformulieren"
         segments: "Segmenten"
@@ -8663,6 +8684,9 @@ nl:
         transactionals:
           description: "Losse e-mails versturen via de API"
           name: "Transactionele e-mails"
+        channel_settings:
+          description: "Instellingen voor algemeen, afzender, huisstijlkit, afmeldpagina en bevestigingspagina"
+          name: "Kanaalinstellingen"
         webhook_endpoints:
           description: "Instellingen voor uitgaande webhooks"
           name: "Webhook-endpoints"

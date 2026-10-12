@@ -151,6 +151,7 @@ en:
             design_settings:
               must_be_an_object: "must be an object"
               email_width_must_be_between_and: "email width must be between %{min} and %{max} pixels"
+              radius_must_be_between_and: "corner radius must be between %{min} and %{max} pixels"
               logo_must_be_an_image_from: "logo must be an image from this channel's file library"
               website_must_be_an_http_s: "website must be an http(s) URL"
               social_icon_style_must_be_one: "social icon style must be one of %{styles}"
@@ -296,6 +297,8 @@ en:
         text_must_be_an_object: "text must be an object"
         text_has_an_unknown_language: "text has an unknown language: %{language}"
         has_an_unknown_page: "has an unknown page: %{page}"
+        button_needs_label_and_url: "%{page} page (%{language}): the button needs both a label and a link"
+        button_url_must_be_http: "%{page} page (%{language}): the button link must be an http:// or https:// URL"
         link_must_be_http_url: "%{link} link must be an http(s) URL"
         colour_must_be_hex: "%{setting} colour must be a hex value such as #2563eb"
         must_be_true_or_false: "%{setting} must be true or false"
@@ -380,6 +383,9 @@ en:
           users:
             description: "Users, their channel access and system permissions (never sudo)"
             name: "Users"
+          channel_settings:
+            description: "General, sender, brand kit, unsubscribe page and confirmation page settings"
+            name: "Channel Settings"
           webhook_endpoints:
             description: "Outbound webhook configurations"
             name: "Webhook Endpoints"
@@ -2970,6 +2976,8 @@ en:
       add_languages: "Add languages"
       add_languages_note_html: "%{link} in the unsubscribe page settings; every public page speaks the same ones."
       appearance_heading: "Appearance"
+      button_intro: "Button (optional): send subscribers on, for example back to your website. Give it a label and an http:// or https:// link, or leave both blank for no button."
+      button_fallback: "Left blank, this page shows the Confirmed button in the same language, shown in the fields."
       appearance_intro: "How the confirmation page looks. Leave a colour blank to use %{look}, shown in each field. This is the look of every confirmation page in %{channel}, whichever template sent the email."
       brand_kit_link: "the brand kit"
       colors:
@@ -2985,14 +2993,26 @@ en:
       fallback_standard: "Broadcast's standard look"
       fields:
         body: "Body"
+        button_label: "Button label"
+        button_url: "Button link"
         heading: "Heading"
       language_tabs: "Language"
+      legal_links:
+        legal_notice: "Legal notice"
+        privacy_policy: "Privacy policy"
+      legal_links_heading: "Legal links"
+      legal_links_intro_html: "Your privacy policy and legal notice (Impressum) links show at the bottom of every confirmation page, in the page's language. They are the same links as on the unsubscribe pages and are set in %{link}."
+      legal_links_not_set: "not set"
+      legal_links_settings_link: "the unsubscribe page settings"
       logo_note_html: "The logo and social links come from %{link}, so they show only when the page matches it."
       match_brand_kit: "Match the channel brand kit"
       match_brand_kit_hint_html: "Uses the logo, colours, font, corner radius and social links from %{link}. The same switch as on the Brand Kit page. Colours you set below still take priority."
       page_text_heading: "Page text"
       page_text_intro_html: "What subscribers read at %{path} after clicking the link in the confirmation email, for each outcome. Edit one language at a time, then save once. A blank field uses the built-in text shown in it. You can use %{channel_name}, %{email} and %{first_name}."
       picker: "%{label} picker"
+      placeholders:
+        button_label: "No button"
+        button_url: "https://example.com"
       show_logo: "Show logo"
       show_social_links: "Show social links"
       states:
@@ -3559,6 +3579,7 @@ en:
       labels:
         autopilot: "Autopilot"
         broadcasts: "Broadcasts"
+        channel_settings: "Channel Settings"
         email_servers: "Email Servers"
         opt_in_forms: "Opt-In Forms"
         segments: "Segments"
@@ -8642,6 +8663,9 @@ en:
         transactionals:
           description: "Send one-off emails via API"
           name: "Transactional Emails"
+        channel_settings:
+          description: "General, sender, brand kit, unsubscribe page and confirmation page settings"
+          name: "Channel Settings"
         webhook_endpoints:
           description: "Outgoing webhook configurations"
           name: "Webhook Endpoints"

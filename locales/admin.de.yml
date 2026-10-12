@@ -172,6 +172,7 @@ de:
             design_settings:
               must_be_an_object: "muss ein Objekt sein"
               email_width_must_be_between_and: "E-Mail-Breite muss zwischen %{min} und %{max} Pixeln liegen"
+              radius_must_be_between_and: "Eckenradius muss zwischen %{min} und %{max} Pixeln liegen"
               logo_must_be_an_image_from: "Logo muss ein Bild aus der Dateibibliothek dieses Kanals sein"
               website_must_be_an_http_s: "Website muss eine http(s)-URL sein"
               social_icon_style_must_be_one: "Stil der Social-Media-Symbole muss einer der folgenden sein: %{styles}"
@@ -317,6 +318,8 @@ de:
         text_must_be_an_object: "Text muss ein Objekt sein"
         text_has_an_unknown_language: "Text enthält eine unbekannte Sprache: %{language}"
         has_an_unknown_page: "enthält eine unbekannte Seite: %{page}"
+        button_needs_label_and_url: "Seite %{page} (%{language}): Der Button braucht eine Beschriftung und einen Link"
+        button_url_must_be_http: "Seite %{page} (%{language}): Der Link des Buttons muss eine http://- oder https://-URL sein"
         link_must_be_http_url: "Link %{link} muss eine http(s)-URL sein"
         colour_must_be_hex: "Farbe %{setting} muss ein Hex-Wert wie #2563eb sein"
         must_be_true_or_false: "%{setting} muss true oder false sein"
@@ -401,6 +404,9 @@ de:
           users:
             description: "Benutzer, ihr Kanalzugriff und ihre Systemberechtigungen (niemals sudo)"
             name: "Benutzer"
+          channel_settings:
+            description: "Einstellungen für Allgemeines, Absender, Markenkit, Abmeldeseite und Bestätigungsseite"
+            name: "Kanaleinstellungen"
           webhook_endpoints:
             description: "Konfigurationen für ausgehende Webhooks"
             name: "Webhook-Endpunkte"
@@ -2991,6 +2997,8 @@ de:
       add_languages: "Sprachen hinzufügen"
       add_languages_note_html: "%{link} in den Einstellungen der Abmeldeseite; alle öffentlichen Seiten verwenden dieselben Sprachen."
       appearance_heading: "Darstellung"
+      button_intro: "Button (optional): Leiten Sie Abonnenten weiter, zum Beispiel zurück zu Ihrer Website. Geben Sie eine Beschriftung und einen http://- oder https://-Link an, oder lassen Sie beides leer, wenn Sie keinen Button möchten."
+      button_fallback: "Bleibt er leer, zeigt diese Seite den Button der Seite Bestätigt in derselben Sprache, wie in den Feldern angezeigt."
       appearance_intro: "So sieht die Bestätigungsseite aus. Lassen Sie eine Farbe leer, um %{look} zu verwenden (in jedem Feld angezeigt). Diese Darstellung gilt für jede Bestätigungsseite in %{channel}, unabhängig davon, welche Vorlage die E-Mail gesendet hat."
       brand_kit_link: "dem Markenkit"
       colors:
@@ -3006,14 +3014,26 @@ de:
       fallback_standard: "das Standard-Design von Broadcast"
       fields:
         body: "Text"
+        button_label: "Beschriftung des Buttons"
+        button_url: "Link des Buttons"
         heading: "Überschrift"
       language_tabs: "Sprache"
+      legal_links:
+        legal_notice: "Impressum"
+        privacy_policy: "Datenschutzerklärung"
+      legal_links_heading: "Rechtliche Links"
+      legal_links_intro_html: "Die Links zu Ihrer Datenschutzerklärung und Ihrem Impressum erscheinen unten auf jeder Bestätigungsseite, in der Sprache der Seite. Es sind dieselben Links wie auf den Abmeldeseiten, und Sie legen sie in %{link} fest."
+      legal_links_not_set: "nicht festgelegt"
+      legal_links_settings_link: "den Einstellungen der Abmeldeseite"
       logo_note_html: "Logo und Social-Media-Links stammen aus %{link} und werden daher nur angezeigt, wenn die Seite daran angeglichen ist."
       match_brand_kit: "An das Markenkit des Kanals angleichen"
       match_brand_kit_hint_html: "Verwendet Logo, Farben, Schriftart, Eckenradius und Social-Media-Links aus %{link}. Derselbe Schalter wie auf der Markenkit-Seite. Farben, die Sie unten festlegen, haben weiterhin Vorrang."
       page_text_heading: "Seitentext"
       page_text_intro_html: "Was Abonnenten unter %{path} lesen, nachdem sie auf den Link in der Bestätigungs-E-Mail geklickt haben, für jedes Ergebnis. Bearbeiten Sie jeweils eine Sprache und speichern Sie dann einmal. Ein leeres Feld verwendet den darin angezeigten integrierten Text. Sie können %{channel_name}, %{email} und %{first_name} verwenden."
       picker: "Auswahl für %{label}"
+      placeholders:
+        button_label: "Kein Button"
+        button_url: "https://example.com"
       show_logo: "Logo anzeigen"
       show_social_links: "Social-Media-Links anzeigen"
       states:
@@ -3580,6 +3600,7 @@ de:
       labels:
         autopilot: "Autopilot"
         broadcasts: "Kampagnen"
+        channel_settings: "Kanaleinstellungen"
         email_servers: "E-Mail-Server"
         opt_in_forms: "Anmeldeformulare"
         segments: "Segmente"
@@ -8663,6 +8684,9 @@ de:
         transactionals:
           description: "Einzelne E-Mails über die API senden"
           name: "Transaktions-E-Mails"
+        channel_settings:
+          description: "Einstellungen für Allgemeines, Absender, Markenkit, Abmeldeseite und Bestätigungsseite"
+          name: "Kanaleinstellungen"
         webhook_endpoints:
           description: "Konfigurationen für ausgehende Webhooks"
           name: "Webhook-Endpunkte"

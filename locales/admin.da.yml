@@ -170,6 +170,7 @@ da:
             design_settings:
               must_be_an_object: "skal være et objekt"
               email_width_must_be_between_and: "mailbredden skal være mellem %{min} og %{max} pixels"
+              radius_must_be_between_and: "hjørneradius skal være mellem %{min} og %{max} pixels"
               logo_must_be_an_image_from: "logoet skal være et billede fra denne kanals filbibliotek"
               website_must_be_an_http_s: "hjemmesiden skal være en http(s)-URL"
               social_icon_style_must_be_one: "stilen for sociale ikoner skal være en af %{styles}"
@@ -315,6 +316,8 @@ da:
         text_must_be_an_object: "tekst skal være et objekt"
         text_has_an_unknown_language: "tekst indeholder et ukendt sprog: %{language}"
         has_an_unknown_page: "har en ukendt side: %{page}"
+        button_needs_label_and_url: "%{page}-siden (%{language}): knappen skal have både en tekst og et link"
+        button_url_must_be_http: "%{page}-siden (%{language}): knappens link skal være en http://- eller https://-URL"
         link_must_be_http_url: "linket %{link} skal være en http(s)-URL"
         colour_must_be_hex: "farven %{setting} skal være en hexværdi som #2563eb"
         must_be_true_or_false: "%{setting} skal være true eller false"
@@ -399,6 +402,9 @@ da:
           users:
             description: "Brugere, deres kanaladgang og systemtilladelser (aldrig sudo)"
             name: "Brugere"
+          channel_settings:
+            description: "Indstillinger for generelt, afsender, brandkit, afmeldingsside og bekræftelsesside"
+            name: "Kanalindstillinger"
           webhook_endpoints:
             description: "Konfiguration af udgående webhooks"
             name: "Webhook-endpoints"
@@ -2989,6 +2995,8 @@ da:
       add_languages: "Tilføj sprog"
       add_languages_note_html: "%{link} i indstillingerne for afmeldingssiden; alle offentlige sider bruger de samme sprog."
       appearance_heading: "Udseende"
+      button_intro: "Knap (valgfri): send abonnenter videre, for eksempel tilbage til dit website. Giv den en tekst og et http://- eller https://-link, eller lad begge være tomme for ingen knap."
+      button_fallback: "Hvis den er tom, viser siden knappen fra Bekræftet på samme sprog, som vist i felterne."
       appearance_intro: "Sådan ser bekræftelsessiden ud. Lad en farve være tom for at bruge %{look}, som vises i hvert felt. Det er udseendet på alle bekræftelsessider i %{channel}, uanset hvilken skabelon der sendte e-mailen."
       brand_kit_link: "brandkittet"
       colors:
@@ -3004,14 +3012,26 @@ da:
       fallback_standard: "Broadcasts standardudseende"
       fields:
         body: "Brødtekst"
+        button_label: "Knaptekst"
+        button_url: "Knaplink"
         heading: "Overskrift"
       language_tabs: "Sprog"
+      legal_links:
+        legal_notice: "Juridisk meddelelse"
+        privacy_policy: "Privatlivspolitik"
+      legal_links_heading: "Juridiske links"
+      legal_links_intro_html: "Links til din privatlivspolitik og juridiske meddelelse (Impressum) vises nederst på alle bekræftelsessider, på sidens sprog. Det er de samme links som på afmeldingssiderne, og du angiver dem i %{link}."
+      legal_links_not_set: "ikke angivet"
+      legal_links_settings_link: "indstillingerne for afmeldingssiden"
       logo_note_html: "Logoet og de sociale links kommer fra %{link}, så de vises kun, når siden matcher det."
       match_brand_kit: "Match kanalens brandkit"
       match_brand_kit_hint_html: "Bruger logo, farver, skrifttype, hjørneradius og sociale links fra %{link}. Det er den samme kontakt som på siden Brandkit. Farver, du angiver nedenfor, har stadig forrang."
       page_text_heading: "Sidetekst"
       page_text_intro_html: "Det, abonnenterne læser på %{path} efter at have klikket på linket i bekræftelsesmailen, for hvert udfald. Rediger ét sprog ad gangen, og gem derefter én gang. Et tomt felt bruger den indbyggede tekst, der vises i det. Du kan bruge %{channel_name}, %{email} og %{first_name}."
       picker: "Vælger til %{label}"
+      placeholders:
+        button_label: "Ingen knap"
+        button_url: "https://example.com"
       show_logo: "Vis logo"
       show_social_links: "Vis sociale links"
       states:
@@ -3578,6 +3598,7 @@ da:
       labels:
         autopilot: "Autopilot"
         broadcasts: "Kampagner"
+        channel_settings: "Kanalindstillinger"
         email_servers: "Mailservere"
         opt_in_forms: "Tilmeldingsformularer"
         segments: "Segmenter"
@@ -8661,6 +8682,9 @@ da:
         transactionals:
           description: "Send enkeltstående e-mails via API"
           name: "Transaktionsmails"
+        channel_settings:
+          description: "Indstillinger for generelt, afsender, brandkit, afmeldingsside og bekræftelsesside"
+          name: "Kanalindstillinger"
         webhook_endpoints:
           description: "Konfigurationer af udgående webhooks"
           name: "Webhook-endpoints"
