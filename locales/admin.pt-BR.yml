@@ -2238,6 +2238,9 @@ pt-BR:
           placeholder: "Usa o endereço físico das Configurações quando em branco"
         html:
           label: "Texto extra"
+        showUnsubscribe:
+          label: "Mostrar link de cancelamento"
+          hint: "Desative apenas em um e-mail que não deve ter um, como um e-mail de confirmação de double opt-in. Um e-mail de campanha ou de sequência sem outro link de cancelamento recebe então o rodapé do canal."
         unsubscribeLabel:
           label: "Texto do link de cancelamento da inscrição"
         size:
@@ -6398,6 +6401,7 @@ pt-BR:
         unsubscribe_note_footer: "Se o seu canal não tiver rodapé de e-mail, estas configurações não terão efeito."
         include_unsubscribe_header: "Incluir cabeçalho de cancelamento"
         include_unsubscribe_link: "Incluir link de cancelamento"
+        include_unsubscribe_link_hint: "O cabeçalho List-Unsubscribe é uma configuração separada (Incluir cabeçalho de cancelamento). Ele continua ativo quando este link está desativado."
         use_custom_unsubscribe_link: "Personalizar o link de cancelamento"
         use_custom_unsubscribe_link_hint: "Isso substitui o padrão do canal"
         custom_unsubscribe_link: "Personalize o link de cancelamento deste servidor"

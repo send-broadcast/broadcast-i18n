@@ -2238,6 +2238,9 @@ sv:
           placeholder: "Använder den fysiska adressen från Inställningar om tomt"
         html:
           label: "Extra text"
+        showUnsubscribe:
+          label: "Visa avregistreringslänk"
+          hint: "Stäng av bara för ett mejl som inte får ha en, till exempel ett bekräftelsemejl för dubbel opt-in. Ett kampanj- eller sekvensmejl utan någon annan avregistreringslänk får då kanalens sidfot."
         unsubscribeLabel:
           label: "Text för avregistreringslänk"
         size:
@@ -6398,6 +6401,7 @@ sv:
         unsubscribe_note_footer: "Om din kanal inte har någon mejlsidfot gäller inte dessa inställningar."
         include_unsubscribe_header: "Inkludera avregistreringshuvud"
         include_unsubscribe_link: "Inkludera avregistreringslänk"
+        include_unsubscribe_link_hint: "List-Unsubscribe-huvudet är en separat inställning (Inkludera avregistreringshuvud). Det förblir på när den här länken är av."
         use_custom_unsubscribe_link: "Anpassa avregistreringslänken"
         use_custom_unsubscribe_link_hint: "Detta åsidosätter kanalens standard"
         custom_unsubscribe_link: "Anpassa avregistreringslänken för denna server"

@@ -2240,6 +2240,9 @@ nl:
           placeholder: "Gebruikt het fysieke adres uit Instellingen als dit leeg is"
         html:
           label: "Extra tekst"
+        showUnsubscribe:
+          label: "Afmeldlink tonen"
+          hint: "Zet dit alleen uit voor een e-mail die er geen mag hebben, zoals een double opt-in-bevestigingsmail. Een campagne- of reeksmail zonder andere afmeldlink krijgt dan de voettekst van het kanaal."
         unsubscribeLabel:
           label: "Tekst van afmeldlink"
         size:
@@ -6400,6 +6403,7 @@ nl:
         unsubscribe_note_footer: "Als je kanaal geen e-mailvoettekst heeft, hebben deze instellingen geen effect."
         include_unsubscribe_header: "Afmeldheader toevoegen"
         include_unsubscribe_link: "Afmeldlink toevoegen"
+        include_unsubscribe_link_hint: "De List-Unsubscribe-header is een aparte instelling (Afmeldheader toevoegen). Die blijft aan als deze link uit staat."
         use_custom_unsubscribe_link: "Afmeldlink aanpassen"
         use_custom_unsubscribe_link_hint: "Dit vervangt de standaardinstelling van het kanaal"
         custom_unsubscribe_link: "Aangepaste afmeldlink voor deze server"

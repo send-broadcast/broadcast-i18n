@@ -2238,6 +2238,9 @@ da:
           placeholder: "Bruger den fysiske adresse fra Indstillinger, hvis feltet er tomt"
         html:
           label: "Ekstra tekst"
+        showUnsubscribe:
+          label: "Vis afmeldingslink"
+          hint: "Slå kun fra for en e-mail, der ikke må have et, f.eks. en bekræftelsesmail for dobbelt opt-in. En kampagne- eller sekvensmail uden et andet afmeldingslink får så kanalens sidefod."
         unsubscribeLabel:
           label: "Tekst til afmeldingslink"
         size:
@@ -6398,6 +6401,7 @@ da:
         unsubscribe_note_footer: "Hvis din kanal ikke har en e-mailsidefod, har disse indstillinger ingen effekt."
         include_unsubscribe_header: "Medtag afmeldingsheader"
         include_unsubscribe_link: "Medtag afmeldingslink"
+        include_unsubscribe_link_hint: "List-Unsubscribe-headeren er en separat indstilling (Medtag afmeldingsheader). Den forbliver slået til, når dette link er slået fra."
         use_custom_unsubscribe_link: "Tilpas afmeldingslink"
         use_custom_unsubscribe_link_hint: "Dette tilsidesætter kanalens standard"
         custom_unsubscribe_link: "Tilpas afmeldingslinket for denne server"

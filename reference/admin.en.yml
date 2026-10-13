@@ -2219,6 +2219,9 @@ en:
           placeholder: "Uses the physical address from Settings when blank"
         html:
           label: "Extra text"
+        showUnsubscribe:
+          label: "Show unsubscribe link"
+          hint: "Turn off only for an email that must not have one, such as a double opt-in confirmation. A broadcast or sequence email without another unsubscribe link then gets the channel footer."
         unsubscribeLabel:
           label: "Unsubscribe link text"
         preferencesLabel:
@@ -6441,6 +6444,7 @@ en:
         unsubscribe_note_footer: "If your broadcast channel does not have an email footer, these settings will not take effect."
         include_unsubscribe_header: "Include unsubscribe header"
         include_unsubscribe_link: "Include unsubscribe link"
+        include_unsubscribe_link_hint: "The List-Unsubscribe header is a separate setting (Include unsubscribe header). It stays on when this link is off."
         use_custom_unsubscribe_link: "Customize unsubscribe link"
         use_custom_unsubscribe_link_hint: "This overrides the channel's default"
         custom_unsubscribe_link: "Customize unsubscribe link for this server"

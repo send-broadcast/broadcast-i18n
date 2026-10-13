@@ -2306,6 +2306,9 @@ pl:
           placeholder: "Jeśli puste, używany jest adres fizyczny z Ustawień"
         html:
           label: "Dodatkowy tekst"
+        showUnsubscribe:
+          label: "Pokaż link do wypisania"
+          hint: "Wyłącz tylko w e-mailu, który nie może go zawierać, np. w e-mailu potwierdzającym double opt-in. E-mail kampanii lub sekwencji bez innego linku do wypisania otrzyma wtedy stopkę kanału."
         unsubscribeLabel:
           label: "Tekst linku do wypisania"
         size:
@@ -6594,6 +6597,7 @@ pl:
         unsubscribe_note_footer: "Jeśli kanał nie ma stopki e-maila, te ustawienia nie będą działać."
         include_unsubscribe_header: "Dołącz nagłówek wypisania"
         include_unsubscribe_link: "Dołącz link do wypisania"
+        include_unsubscribe_link_hint: "Nagłówek List-Unsubscribe to osobne ustawienie (Dołącz nagłówek wypisania). Pozostaje włączony, gdy ten link jest wyłączony."
         use_custom_unsubscribe_link: "Dostosuj link do wypisania"
         use_custom_unsubscribe_link_hint: "Zastępuje ustawienie domyślne kanału"
         custom_unsubscribe_link: "Dostosuj link do wypisania dla tego serwera"

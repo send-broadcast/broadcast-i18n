@@ -2239,6 +2239,9 @@ fr:
           placeholder: "Utilise l'adresse physique des Paramètres si elle est vide"
         html:
           label: "Texte supplémentaire"
+        showUnsubscribe:
+          label: "Afficher le lien de désabonnement"
+          hint: "À désactiver uniquement pour un e-mail qui ne doit pas en avoir, comme un e-mail de confirmation du double opt-in. Un e-mail de campagne ou de séquence sans autre lien de désabonnement reçoit alors le pied de page du canal."
         unsubscribeLabel:
           label: "Texte du lien de désabonnement"
         size:
@@ -6399,6 +6402,7 @@ fr:
         unsubscribe_note_footer: "Si votre canal n'a pas de pied de page d'e-mail, ces paramètres n'auront aucun effet."
         include_unsubscribe_header: "Inclure l'en-tête de désabonnement"
         include_unsubscribe_link: "Inclure le lien de désabonnement"
+        include_unsubscribe_link_hint: "L'en-tête List-Unsubscribe est un réglage distinct (Inclure l'en-tête de désabonnement). Il reste activé quand ce lien est désactivé."
         use_custom_unsubscribe_link: "Personnaliser le lien de désabonnement"
         use_custom_unsubscribe_link_hint: "Remplace le réglage par défaut du canal"
         custom_unsubscribe_link: "Lien de désabonnement personnalisé pour ce serveur"

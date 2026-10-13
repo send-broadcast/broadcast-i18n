@@ -2239,6 +2239,9 @@ fi:
           placeholder: "Jos tyhjä, käytetään asetusten postiosoitetta"
         html:
           label: "Lisäteksti"
+        showUnsubscribe:
+          label: "Näytä peruutuslinkki"
+          hint: "Poista käytöstä vain sähköpostista, jossa sitä ei saa olla, kuten kaksoisvahvistuksen vahvistussähköpostista. Kampanja- tai sarjasähköposti, jossa ei ole muuta peruutuslinkkiä, saa silloin kanavan alatunnisteen."
         unsubscribeLabel:
           label: "Peruutuslinkin teksti"
         size:
@@ -6399,6 +6402,7 @@ fi:
         unsubscribe_note_footer: "Jos kanavallasi ei ole sähköpostin alatunnistetta, nämä asetukset eivät vaikuta."
         include_unsubscribe_header: "Sisällytä peruutusotsake"
         include_unsubscribe_link: "Sisällytä peruutuslinkki"
+        include_unsubscribe_link_hint: "List-Unsubscribe-otsake on erillinen asetus (Sisällytä peruutusotsake). Se pysyy päällä, kun tämä linkki on pois päältä."
         use_custom_unsubscribe_link: "Mukauta peruutuslinkkiä"
         use_custom_unsubscribe_link_hint: "Tämä ohittaa kanavan oletuksen"
         custom_unsubscribe_link: "Mukauta tämän palvelimen peruutuslinkkiä"

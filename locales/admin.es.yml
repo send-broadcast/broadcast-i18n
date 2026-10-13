@@ -2239,6 +2239,9 @@ es:
           placeholder: "Si está en blanco, se usa la dirección física de Configuración"
         html:
           label: "Texto adicional"
+        showUnsubscribe:
+          label: "Mostrar enlace de baja"
+          hint: "Desactívalo solo en un correo que no deba tenerlo, como un correo de doble confirmación. Un correo de campaña o de secuencia sin otro enlace de baja recibe entonces el pie del canal."
         unsubscribeLabel:
           label: "Texto del enlace de baja"
         size:
@@ -6399,6 +6402,7 @@ es:
         unsubscribe_note_footer: "Si tu canal no tiene un pie de correo, estos ajustes no tendrán efecto."
         include_unsubscribe_header: "Incluir cabecera de baja"
         include_unsubscribe_link: "Incluir enlace de baja"
+        include_unsubscribe_link_hint: "La cabecera List-Unsubscribe es un ajuste aparte (Incluir cabecera de baja). Sigue activa cuando este enlace está desactivado."
         use_custom_unsubscribe_link: "Personalizar el enlace de baja"
         use_custom_unsubscribe_link_hint: "Esto sustituye al predeterminado del canal"
         custom_unsubscribe_link: "Personalizar el enlace de baja de este servidor"

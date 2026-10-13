@@ -2240,6 +2240,9 @@ de:
           placeholder: "Verwendet die Postanschrift aus den Einstellungen, wenn leer"
         html:
           label: "Zusätzlicher Text"
+        showUnsubscribe:
+          label: "Abmeldelink anzeigen"
+          hint: "Nur für eine E-Mail deaktivieren, die keinen haben darf, etwa eine Double-Opt-in-Bestätigungs-E-Mail. Eine Kampagnen- oder Sequenz-E-Mail ohne anderen Abmeldelink erhält dann die Fußzeile des Kanals."
         unsubscribeLabel:
           label: "Text des Abmeldelinks"
         size:
@@ -6400,6 +6403,7 @@ de:
         unsubscribe_note_footer: "Wenn Ihr Kanal keine E-Mail-Fußzeile hat, greifen diese Einstellungen nicht."
         include_unsubscribe_header: "Abmelde-Header einfügen"
         include_unsubscribe_link: "Abmeldelink einfügen"
+        include_unsubscribe_link_hint: "Der List-Unsubscribe-Header ist eine eigene Einstellung (Abmelde-Header einfügen). Er bleibt aktiv, wenn dieser Link deaktiviert ist."
         use_custom_unsubscribe_link: "Abmeldelink anpassen"
         use_custom_unsubscribe_link_hint: "Überschreibt den Standard des Kanals"
         custom_unsubscribe_link: "Abmeldelink für diesen Server anpassen"

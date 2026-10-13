@@ -2238,6 +2238,9 @@ nb:
           placeholder: "Bruker den fysiske adressen fra Innstillinger når feltet er tomt"
         html:
           label: "Ekstra tekst"
+        showUnsubscribe:
+          label: "Vis avmeldingslenke"
+          hint: "Slå av bare for en e-post som ikke skal ha en, for eksempel en bekreftelses-e-post ved dobbel påmelding. En kampanje- eller sekvens-e-post uten en annen avmeldingslenke får da kanalens bunntekst."
         unsubscribeLabel:
           label: "Tekst for avmeldingslenke"
         size:
@@ -6398,6 +6401,7 @@ nb:
         unsubscribe_note_footer: "Hvis kanalen din ikke har en bunntekst i e-posten, har ikke disse innstillingene noen effekt."
         include_unsubscribe_header: "Ta med avmeldingshode"
         include_unsubscribe_link: "Ta med avmeldingslenke"
+        include_unsubscribe_link_hint: "List-Unsubscribe-hodet er en egen innstilling (Ta med avmeldingshode). Det forblir på når denne lenken er av."
         use_custom_unsubscribe_link: "Tilpass avmeldingslenken"
         use_custom_unsubscribe_link_hint: "Dette overstyrer kanalens standard"
         custom_unsubscribe_link: "Tilpass avmeldingslenken for denne serveren"

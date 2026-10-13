@@ -2236,6 +2236,9 @@ it:
           placeholder: "Se vuoto usa l'indirizzo fisico delle Impostazioni"
         html:
           label: "Testo aggiuntivo"
+        showUnsubscribe:
+          label: "Mostra il link di disiscrizione"
+          hint: "Disattivalo solo in un'email che non deve averlo, come un'email di conferma del doppio opt-in. Un'email di campagna o di sequenza senza un altro link di disiscrizione riceve allora il piè di pagina del canale."
         unsubscribeLabel:
           label: "Testo del link di disiscrizione"
         size:
@@ -6396,6 +6399,7 @@ it:
         unsubscribe_note_footer: "Se il tuo canale non ha un piè di pagina per le email, queste impostazioni non avranno effetto."
         include_unsubscribe_header: "Includi l'header di disiscrizione"
         include_unsubscribe_link: "Includi il link di disiscrizione"
+        include_unsubscribe_link_hint: "L'header List-Unsubscribe è un'impostazione separata (Includi l'header di disiscrizione). Resta attivo quando questo link è disattivato."
         use_custom_unsubscribe_link: "Personalizza il link di disiscrizione"
         use_custom_unsubscribe_link_hint: "Sostituisce l'impostazione predefinita del canale"
         custom_unsubscribe_link: "Link di disiscrizione personalizzato per questo server"
