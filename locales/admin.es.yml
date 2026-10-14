@@ -6210,6 +6210,7 @@ es:
         checked: "Gestión de bajas comprobada: %{handling}."
         switched: "Gestión de bajas cambiada a %{handling}."
         failed: "No se pudo comprobar la gestión de bajas: %{error}"
+        no_token: "Broadcast necesita el token de servidor de Postmark de este servidor para comprobar la gestión de bajas. Introdúzcalo como contraseña SMTP o conecte la API."
       postmark_subscription_sync:
         "on": "Las bajas de Postmark se sincronizan."
         "off": "Las bajas de Postmark ya no se sincronizan."

@@ -6210,6 +6210,7 @@ fr:
         checked: "Gestion des désabonnements vérifiée : %{handling}."
         switched: "Gestion des désabonnements passée à %{handling}."
         failed: "Impossible de vérifier la gestion des désabonnements : %{error}"
+        no_token: "Broadcast a besoin du jeton de serveur Postmark de ce serveur pour vérifier la gestion des désabonnements. Saisissez-le comme mot de passe SMTP ou connectez l'API."
       postmark_subscription_sync:
         "on": "Les désabonnements Postmark sont synchronisés."
         "off": "Les désabonnements Postmark ne sont plus synchronisés."

@@ -6209,6 +6209,7 @@ pt-BR:
         checked: "Tratamento de cancelamentos verificado: %{handling}."
         switched: "Tratamento de cancelamentos alterado para %{handling}."
         failed: "Não foi possível verificar o tratamento de cancelamentos: %{error}"
+        no_token: "O Broadcast precisa do token de servidor do Postmark deste servidor para verificar o tratamento de cancelamentos. Informe-o como senha SMTP ou conecte a API."
       postmark_subscription_sync:
         "on": "Os cancelamentos do Postmark são sincronizados."
         "off": "Os cancelamentos do Postmark não são mais sincronizados."

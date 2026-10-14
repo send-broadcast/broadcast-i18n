@@ -6211,6 +6211,7 @@ nl:
         checked: "Afmeldafhandeling gecontroleerd: %{handling}."
         switched: "Afmeldafhandeling gewijzigd naar %{handling}."
         failed: "De afmeldafhandeling kon niet worden gecontroleerd: %{error}"
+        no_token: "Broadcast heeft het Postmark-servertoken van deze server nodig om de afmeldafhandeling te controleren. Vul het in als SMTP-wachtwoord of koppel de API."
       postmark_subscription_sync:
         "on": "Afmeldingen uit Postmark worden gesynchroniseerd."
         "off": "Afmeldingen uit Postmark worden niet meer gesynchroniseerd."

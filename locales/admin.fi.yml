@@ -6210,6 +6210,7 @@ fi:
         checked: "Peruutusten käsittely tarkistettu: %{handling}."
         switched: "Peruutusten käsittely vaihdettu: %{handling}."
         failed: "Peruutusten käsittelyä ei voitu tarkistaa: %{error}"
+        no_token: "Broadcast tarvitsee tämän palvelimen Postmark-palvelintunnuksen tarkistaakseen peruutusten käsittelyn. Anna se SMTP-salasanaksi tai yhdistä API."
       postmark_subscription_sync:
         "on": "Postmarkin peruutukset synkronoidaan."
         "off": "Postmarkin peruutuksia ei enää synkronoida."

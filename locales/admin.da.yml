@@ -6209,6 +6209,7 @@ da:
         checked: "Afmeldingshåndtering kontrolleret: %{handling}."
         switched: "Afmeldingshåndtering skiftet til %{handling}."
         failed: "Afmeldingshåndteringen kunne ikke kontrolleres: %{error}"
+        no_token: "Broadcast skal bruge serverens Postmark-servertoken for at kontrollere afmeldingshåndteringen. Indtast den som SMTP-adgangskode, eller forbind API'et."
       postmark_subscription_sync:
         "on": "Afmeldinger fra Postmark synkroniseres."
         "off": "Afmeldinger fra Postmark synkroniseres ikke længere."

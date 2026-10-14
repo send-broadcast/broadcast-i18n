@@ -6209,6 +6209,7 @@ sv:
         checked: "Hantering av avregistreringar kontrollerad: %{handling}."
         switched: "Hantering av avregistreringar ändrad till %{handling}."
         failed: "Det gick inte att kontrollera hanteringen av avregistreringar: %{error}"
+        no_token: "Broadcast behöver serverns Postmark-servertoken för att kontrollera hanteringen av avregistreringar. Ange den som SMTP-lösenord eller anslut API:et."
       postmark_subscription_sync:
         "on": "Avregistreringar från Postmark synkroniseras."
         "off": "Avregistreringar från Postmark synkroniseras inte längre."

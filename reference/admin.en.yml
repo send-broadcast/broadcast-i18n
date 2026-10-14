@@ -6252,6 +6252,7 @@ en:
         checked: "Unsubscribe handling checked: %{handling}."
         switched: "Unsubscribe handling switched to %{handling}."
         failed: "Could not check the unsubscribe handling: %{error}"
+        no_token: "Broadcast needs this server's Postmark server token to check the unsubscribe handling. Enter it as the SMTP password, or connect the API."
       postmark_subscription_sync:
         "on": "Postmark unsubscribes are synced."
         "off": "Postmark unsubscribes are no longer synced."

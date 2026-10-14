@@ -6209,6 +6209,7 @@ nb:
         checked: "Håndtering av avmeldinger sjekket: %{handling}."
         switched: "Håndtering av avmeldinger byttet til %{handling}."
         failed: "Kunne ikke sjekke håndteringen av avmeldinger: %{error}"
+        no_token: "Broadcast trenger Postmark-servertokenet til denne serveren for å sjekke håndteringen av avmeldinger. Skriv det inn som SMTP-passord, eller koble til API-et."
       postmark_subscription_sync:
         "on": "Avmeldinger fra Postmark synkroniseres."
         "off": "Avmeldinger fra Postmark synkroniseres ikke lenger."

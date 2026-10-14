@@ -6211,6 +6211,7 @@ de:
         checked: "Abmeldeverwaltung geprüft: %{handling}."
         switched: "Abmeldeverwaltung auf %{handling} umgestellt."
         failed: "Die Abmeldeverwaltung konnte nicht geprüft werden: %{error}"
+        no_token: "Broadcast braucht das Postmark-Server-Token dieses Servers, um die Abmeldeverwaltung zu prüfen. Geben Sie es als SMTP-Passwort ein oder verbinden Sie die API."
       postmark_subscription_sync:
         "on": "Abmeldungen aus Postmark werden synchronisiert."
         "off": "Abmeldungen aus Postmark werden nicht mehr synchronisiert."

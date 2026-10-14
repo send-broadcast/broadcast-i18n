@@ -6401,6 +6401,7 @@ pl:
         checked: "Sprawdzono obsługę wypisów: %{handling}."
         switched: "Zmieniono obsługę wypisów na %{handling}."
         failed: "Nie udało się sprawdzić obsługi wypisów: %{error}"
+        no_token: "Broadcast potrzebuje tokenu serwera Postmark tego serwera, aby sprawdzić obsługę wypisów. Wpisz go jako hasło SMTP albo połącz API."
       postmark_subscription_sync:
         "on": "Wypisy z Postmark są synchronizowane."
         "off": "Wypisy z Postmark nie są już synchronizowane."

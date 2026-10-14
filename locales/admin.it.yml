@@ -6207,6 +6207,7 @@ it:
         checked: "Gestione delle disiscrizioni verificata: %{handling}."
         switched: "Gestione delle disiscrizioni cambiata in %{handling}."
         failed: "Impossibile verificare la gestione delle disiscrizioni: %{error}"
+        no_token: "Broadcast ha bisogno del token del server Postmark di questo server per verificare la gestione delle disiscrizioni. Inseriscilo come password SMTP oppure collega l'API."
       postmark_subscription_sync:
         "on": "Le disiscrizioni da Postmark sono sincronizzate."
         "off": "Le disiscrizioni da Postmark non sono più sincronizzate."
