@@ -2868,6 +2868,11 @@ sv:
       test_placeholder: "t.ex. %{email}"
       test_hint: "Ange en e-postadress som du har åtkomst till, så att du kan kontrollera hur mejlet kommer att se ut."
       use_my_email: "Klicka här för att använda %{email}"
+    postmark_unsubscribe_warning:
+      title: "Postmark lägger till en andra avregistreringslänk"
+      second_link: "Postmark-servern som skickar dina kampanjer använder Postmarks hantering av avregistreringar. Postmark lägger till sin egen länk under Broadcasts."
+      no_tag: "Det här e-postmeddelandet har ingen %{tag}-tagg, så Postmark lägger sin länk längst ned i meddelandet."
+      server_link: "Visa e-postservern %{server}"
     confirm_send:
       title: "Skicka kampanj?"
       confirm: "Bekräfta att du vill börja skicka den här kampanjen."
@@ -6115,6 +6120,27 @@ sv:
           removing: "Tar bort..."
           smtp_com_no_credentials_html: "Inga API-uppgifter konfigurerade. %{link} för att aktivera automatisk konfiguration av callbacks."
           smtp_com_configure: "Konfigurera API-uppgifter"
+        postmark_unsubscribes:
+          title: "Hantering av avregistreringar"
+          status:
+            custom: "Custom: Broadcast hanterar avregistreringar. Postmark lägger inte till någon egen länk."
+            postmark: "Postmark: Postmark lägger till sin egen avregistreringslänk och List-Unsubscribe-header i varje kampanj."
+            none: "None: Postmark lägger inte till någon avregistreringslänk."
+            missing: "Den här servern har ingen broadcast-stream ännu. Broadcast skapar den när webhookarna konfigureras."
+            unknown: "Inte kontrollerad ännu."
+          checked_ago: "Kontrollerad för %{time} sedan"
+          check_now: "Kontrollera nu"
+          banner:
+            title: "Prenumeranter ser två avregistreringslänkar"
+            second_link: "Postmark lägger till sin egen avregistreringslänk under Broadcasts, och avregistreringsknappen i Gmail och Apple Mail går till Postmark."
+            sync: "Så länge prenumerationssynkroniseringen är på avregistrerar en avregistrering via Postmark även prenumeranten i Broadcast, så att båda listorna stämmer."
+            refused: "Postmark lät inte Broadcast ändra detta: %{error}"
+            ask_support: "Bara Postmarks support kan slå på Custom för ditt konto. Kopiera den här förfrågan och skicka den till dem:"
+            copy: "Kopiera förfrågan"
+          sync:
+            label: "Synkronisera avregistreringar från Postmark"
+            help: "En avregistrering via Postmarks länk avregistrerar prenumeranten i Broadcast, och en ny registrering i Broadcast tar bort spärren i Postmark."
+            save: "Spara"
         webhooks:
           heading: "Webhooks"
           configured: "Konfigurerad"
@@ -6179,6 +6205,15 @@ sv:
         copied_and_switched: "E-postservern har kopierats. Du visar nu %{channel}. Kopian är inaktiv som standard."
         copied: "E-postservern har kopierats till %{channel}. Kopian är inaktiv som standard."
         failed: "Det gick inte att kopiera e-postservern: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Hantering av avregistreringar kontrollerad: %{handling}."
+        switched: "Hantering av avregistreringar ändrad till %{handling}."
+        failed: "Det gick inte att kontrollera hanteringen av avregistreringar: %{error}"
+      postmark_subscription_sync:
+        "on": "Avregistreringar från Postmark synkroniseras."
+        "off": "Avregistreringar från Postmark synkroniseras inte längre."
+        webhooks_updated: "Postmark-webhookarna är uppdaterade."
+        webhooks_failed: "Det gick inte att uppdatera Postmark-webhookarna: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Webhooklösenordet har förnyats och webhooks har uppdaterats i Postmark."
         sync_failed: "Lösenordet förnyades men synkroniseringen av webhooks misslyckades: %{errors}"

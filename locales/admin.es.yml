@@ -2869,6 +2869,11 @@ es:
       test_placeholder: "p. ej., %{email}"
       test_hint: "Introduce una dirección de correo a la que tengas acceso, para comprobar cómo se verá el correo."
       use_my_email: "Haz clic aquí para usar %{email}"
+    postmark_unsubscribe_warning:
+      title: "Postmark añade un segundo enlace de baja"
+      second_link: "El servidor de Postmark que envía sus campañas usa la gestión de bajas de Postmark. Postmark añade su propio enlace de baja bajo el de Broadcast."
+      no_tag: "Este correo no tiene la etiqueta %{tag}, así que Postmark añade su enlace al final del correo."
+      server_link: "Ver el servidor de correo %{server}"
     confirm_send:
       title: "¿Enviar la campaña?"
       confirm: "Confirma que quieres empezar a enviar esta campaña."
@@ -6116,6 +6121,27 @@ es:
           removing: "Eliminando..."
           smtp_com_no_credentials_html: "No hay credenciales de API configuradas. %{link} para activar la configuración automática de callbacks."
           smtp_com_configure: "Configura las credenciales de API"
+        postmark_unsubscribes:
+          title: "Gestión de bajas"
+          status:
+            custom: "Custom: Broadcast gestiona las bajas. Postmark no añade un enlace propio."
+            postmark: "Postmark: Postmark añade su propio enlace de baja y su encabezado List-Unsubscribe a cada campaña."
+            none: "None: Postmark no añade ningún enlace de baja."
+            missing: "Este servidor aún no tiene stream de broadcast. Broadcast lo crea al configurar los webhooks."
+            unknown: "Aún no se ha comprobado."
+          checked_ago: "Comprobado hace %{time}"
+          check_now: "Comprobar ahora"
+          banner:
+            title: "Los suscriptores ven dos enlaces de baja"
+            second_link: "Postmark añade su propio enlace de baja bajo el de Broadcast, y el botón de baja de Gmail y Apple Mail lleva a Postmark."
+            sync: "Mientras la sincronización de suscripciones está activada, una baja a través de Postmark también da de baja al suscriptor en Broadcast, así ambas listas coinciden."
+            refused: "Postmark no permitió a Broadcast cambiar esto: %{error}"
+            ask_support: "Solo el soporte de Postmark puede activar Custom para su cuenta. Copie esta solicitud y envíesela:"
+            copy: "Copiar solicitud"
+          sync:
+            label: "Sincronizar las bajas de Postmark"
+            help: "Una baja a través del enlace de Postmark da de baja al suscriptor en Broadcast, y una nueva suscripción en Broadcast quita el bloqueo en Postmark."
+            save: "Guardar"
         webhooks:
           heading: "Webhooks"
           configured: "Configurados"
@@ -6180,6 +6206,15 @@ es:
         copied_and_switched: "Servidor de correo copiado. Ahora estás viendo %{channel}. La copia está inactiva por defecto."
         copied: "Servidor de correo copiado a %{channel}. La copia está inactiva por defecto."
         failed: "No se pudo copiar el servidor de correo: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Gestión de bajas comprobada: %{handling}."
+        switched: "Gestión de bajas cambiada a %{handling}."
+        failed: "No se pudo comprobar la gestión de bajas: %{error}"
+      postmark_subscription_sync:
+        "on": "Las bajas de Postmark se sincronizan."
+        "off": "Las bajas de Postmark ya no se sincronizan."
+        webhooks_updated: "Los webhooks de Postmark están actualizados."
+        webhooks_failed: "No se pudieron actualizar los webhooks de Postmark: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Contraseña de webhook renovada y webhooks actualizados en Postmark."
         sync_failed: "Contraseña renovada, pero falló la sincronización de webhooks: %{errors}"

@@ -2868,6 +2868,11 @@ nb:
       test_placeholder: "f.eks. %{email}"
       test_hint: "Skriv inn en e-postadresse du har tilgang til, slik at du kan se hvordan e-posten vil se ut."
       use_my_email: "Klikk her for å bruke %{email}"
+    postmark_unsubscribe_warning:
+      title: "Postmark legger til en ekstra avmeldingslenke"
+      second_link: "Postmark-serveren som sender kampanjene dine, bruker Postmarks håndtering av avmeldinger. Postmark legger til sin egen lenke under Broadcast sin."
+      no_tag: "Denne e-posten har ingen %{tag}-tagg, så Postmark legger lenken sin nederst i e-posten."
+      server_link: "Se e-postserveren %{server}"
     confirm_send:
       title: "Sende kampanjen?"
       confirm: "Bekreft at du vil begynne å sende denne kampanjen."
@@ -6115,6 +6120,27 @@ nb:
           removing: "Fjerner..."
           smtp_com_no_credentials_html: "Ingen API-påloggingsinformasjon er konfigurert. %{link} for å aktivere automatisk oppsett av tilbakekall."
           smtp_com_configure: "Konfigurer API-påloggingsinformasjon"
+        postmark_unsubscribes:
+          title: "Håndtering av avmeldinger"
+          status:
+            custom: "Custom: Broadcast håndterer avmeldinger. Postmark legger ikke til en egen lenke."
+            postmark: "Postmark: Postmark legger til sin egen avmeldingslenke og List-Unsubscribe-header i hver kampanje."
+            none: "None: Postmark legger ikke til noen avmeldingslenke."
+            missing: "Denne serveren har ingen broadcast-stream ennå. Broadcast oppretter den når webhookene settes opp."
+            unknown: "Ikke sjekket ennå."
+          checked_ago: "Sjekket for %{time} siden"
+          check_now: "Sjekk nå"
+          banner:
+            title: "Abonnenter ser to avmeldingslenker"
+            second_link: "Postmark legger til sin egen avmeldingslenke under Broadcast sin, og avmeldingsknappen i Gmail og Apple Mail går til Postmark."
+            sync: "Så lenge abonnementssynkroniseringen er på, melder en avmelding via Postmark også av abonnenten i Broadcast, slik at begge listene stemmer."
+            refused: "Postmark tillot ikke Broadcast å endre dette: %{error}"
+            ask_support: "Bare Postmarks kundestøtte kan slå på Custom for kontoen din. Kopier denne forespørselen og send den til dem:"
+            copy: "Kopier forespørsel"
+          sync:
+            label: "Synkroniser avmeldinger fra Postmark"
+            help: "En avmelding via Postmarks lenke melder av abonnenten i Broadcast, og en ny påmelding i Broadcast fjerner sperren i Postmark."
+            save: "Lagre"
         webhooks:
           heading: "Webhooks"
           configured: "Konfigurert"
@@ -6179,6 +6205,15 @@ nb:
         copied_and_switched: "E-postserveren er kopiert. Du ser nå på %{channel}. Kopien er inaktiv som standard."
         copied: "E-postserveren er kopiert til %{channel}. Kopien er inaktiv som standard."
         failed: "Kunne ikke kopiere e-postserveren: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Håndtering av avmeldinger sjekket: %{handling}."
+        switched: "Håndtering av avmeldinger byttet til %{handling}."
+        failed: "Kunne ikke sjekke håndteringen av avmeldinger: %{error}"
+      postmark_subscription_sync:
+        "on": "Avmeldinger fra Postmark synkroniseres."
+        "off": "Avmeldinger fra Postmark synkroniseres ikke lenger."
+        webhooks_updated: "Postmark-webhookene er oppdatert."
+        webhooks_failed: "Kunne ikke oppdatere Postmark-webhookene: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Webhook-passordet er fornyet og webhooks er oppdatert i Postmark."
         sync_failed: "Passordet er fornyet, men synkroniseringen av webhooks mislyktes: %{errors}"

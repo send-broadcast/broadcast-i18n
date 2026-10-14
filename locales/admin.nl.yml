@@ -2870,6 +2870,11 @@ nl:
       test_placeholder: "bijv. %{email}"
       test_hint: "Voer een e-mailadres in waar je toegang toe hebt, zodat je kunt controleren hoe de e-mail eruitziet."
       use_my_email: "Klik hier om %{email} te gebruiken"
+    postmark_unsubscribe_warning:
+      title: "Postmark voegt een tweede afmeldlink toe"
+      second_link: "De Postmark-server die uw campagnes verstuurt, gebruikt de afmeldafhandeling van Postmark. Postmark voegt een eigen afmeldlink toe onder die van Broadcast."
+      no_tag: "Deze e-mail heeft geen %{tag}-tag, dus Postmark zet zijn link onderaan de e-mail."
+      server_link: "E-mailserver %{server} bekijken"
     confirm_send:
       title: "Campagne verzenden?"
       confirm: "Bevestig dat je wilt beginnen met het verzenden van deze campagne."
@@ -6117,6 +6122,27 @@ nl:
           removing: "Verwijderen..."
           smtp_com_no_credentials_html: "Geen API-gegevens ingesteld. %{link} om callbacks automatisch in te stellen."
           smtp_com_configure: "Stel API-gegevens in"
+        postmark_unsubscribes:
+          title: "Afmeldafhandeling"
+          status:
+            custom: "Custom: Broadcast handelt afmeldingen af. Postmark voegt geen eigen link toe."
+            postmark: "Postmark: Postmark voegt aan elke campagne een eigen afmeldlink en List-Unsubscribe-header toe."
+            none: "None: Postmark voegt geen afmeldlink toe."
+            missing: "Deze server heeft nog geen broadcast-stream. Broadcast maakt die aan bij het instellen van de webhooks."
+            unknown: "Nog niet gecontroleerd."
+          checked_ago: "%{time} geleden gecontroleerd"
+          check_now: "Nu controleren"
+          banner:
+            title: "Abonnees zien twee afmeldlinks"
+            second_link: "Postmark voegt een eigen afmeldlink toe onder die van Broadcast, en de afmeldknop in Gmail en Apple Mail gaat naar Postmark."
+            sync: "Zolang de abonnementssynchronisatie aan staat, meldt een afmelding via Postmark de abonnee ook af in Broadcast, zodat beide lijsten kloppen."
+            refused: "Postmark stond Broadcast niet toe dit te wijzigen: %{error}"
+            ask_support: "Alleen de support van Postmark kan Custom voor uw account aanzetten. Kopieer dit verzoek en stuur het naar hen:"
+            copy: "Verzoek kopiëren"
+          sync:
+            label: "Afmeldingen uit Postmark synchroniseren"
+            help: "Een afmelding via de link van Postmark meldt de abonnee af in Broadcast, en een heraanmelding in Broadcast heft de blokkade in Postmark op."
+            save: "Opslaan"
         webhooks:
           heading: "Webhooks"
           configured: "Ingesteld"
@@ -6181,6 +6207,15 @@ nl:
         copied_and_switched: "E-mailserver gekopieerd. Je bekijkt nu %{channel}. De kopie is standaard inactief."
         copied: "E-mailserver gekopieerd naar %{channel}. De kopie is standaard inactief."
         failed: "E-mailserver kopiëren mislukt: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Afmeldafhandeling gecontroleerd: %{handling}."
+        switched: "Afmeldafhandeling gewijzigd naar %{handling}."
+        failed: "De afmeldafhandeling kon niet worden gecontroleerd: %{error}"
+      postmark_subscription_sync:
+        "on": "Afmeldingen uit Postmark worden gesynchroniseerd."
+        "off": "Afmeldingen uit Postmark worden niet meer gesynchroniseerd."
+        webhooks_updated: "De Postmark-webhooks zijn bijgewerkt."
+        webhooks_failed: "De Postmark-webhooks konden niet worden bijgewerkt: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Webhookwachtwoord vernieuwd en webhooks bijgewerkt in Postmark."
         sync_failed: "Wachtwoord vernieuwd, maar synchroniseren van webhooks mislukt: %{errors}"

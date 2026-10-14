@@ -2870,6 +2870,11 @@ de:
       test_placeholder: "z. B. %{email}"
       test_hint: "Geben Sie eine E-Mail-Adresse ein, auf die Sie Zugriff haben, damit Sie prüfen können, wie die E-Mail aussieht."
       use_my_email: "Hier klicken, um %{email} zu verwenden"
+    postmark_unsubscribe_warning:
+      title: "Postmark fügt einen zweiten Abmeldelink hinzu"
+      second_link: "Der Postmark-Server, der Ihre Kampagnen versendet, nutzt die Abmeldeverwaltung von Postmark. Postmark fügt unter dem Link von Broadcast einen eigenen Abmeldelink hinzu."
+      no_tag: "Diese E-Mail enthält kein %{tag}-Tag, daher fügt Postmark seinen Link am Ende der E-Mail ein."
+      server_link: "E-Mail-Server %{server} ansehen"
     confirm_send:
       title: "Kampagne senden?"
       confirm: "Bestätigen Sie, dass Sie den Versand dieser Kampagne starten möchten."
@@ -6117,6 +6122,27 @@ de:
           removing: "Wird entfernt …"
           smtp_com_no_credentials_html: "Keine API-Zugangsdaten konfiguriert. %{link}, um die automatische Einrichtung der Callbacks zu aktivieren."
           smtp_com_configure: "API-Zugangsdaten konfigurieren"
+        postmark_unsubscribes:
+          title: "Abmeldeverwaltung"
+          status:
+            custom: "Custom: Broadcast verwaltet Abmeldungen. Postmark fügt keinen eigenen Link hinzu."
+            postmark: "Postmark: Postmark fügt jeder Kampagne einen eigenen Abmeldelink und einen eigenen List-Unsubscribe-Header hinzu."
+            none: "None: Postmark fügt keinen Abmeldelink hinzu."
+            missing: "Dieser Server hat noch keinen Broadcast-Stream. Broadcast legt ihn beim Einrichten der Webhooks an."
+            unknown: "Noch nicht geprüft."
+          checked_ago: "Vor %{time} geprüft"
+          check_now: "Jetzt prüfen"
+          banner:
+            title: "Abonnenten sehen zwei Abmeldelinks"
+            second_link: "Postmark fügt unter dem Link von Broadcast einen eigenen Abmeldelink hinzu, und die Abmeldeschaltfläche in Gmail und Apple Mail führt zu Postmark."
+            sync: "Solange die Abo-Synchronisierung aktiv ist, meldet eine Abmeldung über Postmark den Abonnenten auch in Broadcast ab, damit beide Listen übereinstimmen."
+            refused: "Postmark hat Broadcast diese Änderung nicht erlaubt: %{error}"
+            ask_support: "Nur der Postmark-Support kann Custom für Ihr Konto aktivieren. Kopieren Sie diese Anfrage und senden Sie sie an den Support:"
+            copy: "Anfrage kopieren"
+          sync:
+            label: "Abmeldungen aus Postmark synchronisieren"
+            help: "Eine Abmeldung über den Link von Postmark meldet den Abonnenten in Broadcast ab, und eine erneute Anmeldung in Broadcast hebt die Sperre in Postmark auf."
+            save: "Speichern"
         webhooks:
           heading: "Webhooks"
           configured: "Konfiguriert"
@@ -6181,6 +6207,15 @@ de:
         copied_and_switched: "E-Mail-Server kopiert. Sie sehen jetzt %{channel}. Die Kopie ist standardmäßig inaktiv."
         copied: "E-Mail-Server nach %{channel} kopiert. Die Kopie ist standardmäßig inaktiv."
         failed: "E-Mail-Server konnte nicht kopiert werden: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Abmeldeverwaltung geprüft: %{handling}."
+        switched: "Abmeldeverwaltung auf %{handling} umgestellt."
+        failed: "Die Abmeldeverwaltung konnte nicht geprüft werden: %{error}"
+      postmark_subscription_sync:
+        "on": "Abmeldungen aus Postmark werden synchronisiert."
+        "off": "Abmeldungen aus Postmark werden nicht mehr synchronisiert."
+        webhooks_updated: "Die Postmark-Webhooks sind aktualisiert."
+        webhooks_failed: "Die Postmark-Webhooks konnten nicht aktualisiert werden: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Webhook-Passwort erneuert und Webhooks in Postmark aktualisiert."
         sync_failed: "Passwort erneuert, aber die Webhook-Synchronisierung ist fehlgeschlagen: %{errors}"

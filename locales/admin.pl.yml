@@ -2952,6 +2952,11 @@ pl:
       test_placeholder: "np. %{email}"
       test_hint: "Podaj adres e-mail, do którego masz dostęp, aby sprawdzić wygląd e-maila."
       use_my_email: "Kliknij tutaj, aby użyć %{email}"
+    postmark_unsubscribe_warning:
+      title: "Postmark dodaje drugi link do wypisu"
+      second_link: "Serwer Postmark, który wysyła Twoje kampanie, korzysta z obsługi wypisów Postmark. Postmark dodaje własny link pod linkiem Broadcast."
+      no_tag: "Ta wiadomość nie ma tagu %{tag}, więc Postmark dodaje swój link na końcu wiadomości."
+      server_link: "Zobacz serwer poczty %{server}"
     confirm_send:
       title: "Wysłać kampanię?"
       confirm: "Potwierdź, że chcesz rozpocząć wysyłkę tej kampanii."
@@ -6307,6 +6312,27 @@ pl:
           removing: "Usuwanie..."
           smtp_com_no_credentials_html: "Nie skonfigurowano danych uwierzytelniających API. %{link}, aby włączyć automatyczną konfigurację callbacków."
           smtp_com_configure: "Skonfiguruj dane uwierzytelniające API"
+        postmark_unsubscribes:
+          title: "Obsługa wypisów"
+          status:
+            custom: "Custom: Broadcast obsługuje wypisy. Postmark nie dodaje własnego linku."
+            postmark: "Postmark: Postmark dodaje do każdej kampanii własny link do wypisu i własny nagłówek List-Unsubscribe."
+            none: "None: Postmark nie dodaje linku do wypisu."
+            missing: "Ten serwer nie ma jeszcze strumienia broadcast. Broadcast utworzy go podczas konfiguracji webhooków."
+            unknown: "Jeszcze nie sprawdzono."
+          checked_ago: "Sprawdzono %{time} temu"
+          check_now: "Sprawdź teraz"
+          banner:
+            title: "Subskrybenci widzą dwa linki do wypisu"
+            second_link: "Postmark dodaje własny link do wypisu pod linkiem Broadcast, a przycisk wypisu w Gmailu i Apple Mail prowadzi do Postmark."
+            sync: "Gdy synchronizacja subskrypcji jest włączona, wypis przez Postmark wypisuje subskrybenta także w Broadcast, więc obie listy są zgodne."
+            refused: "Postmark nie pozwolił Broadcast tego zmienić: %{error}"
+            ask_support: "Tylko wsparcie Postmark może włączyć Custom dla Twojego konta. Skopiuj tę prośbę i wyślij ją do nich:"
+            copy: "Kopiuj prośbę"
+          sync:
+            label: "Synchronizuj wypisy z Postmark"
+            help: "Wypis przez link Postmark wypisuje subskrybenta w Broadcast, a ponowna subskrypcja w Broadcast usuwa blokadę w Postmark."
+            save: "Zapisz"
         webhooks:
           heading: "Webhooki"
           configured: "Skonfigurowane"
@@ -6371,6 +6397,15 @@ pl:
         copied_and_switched: "Skopiowano serwer poczty. Teraz przeglądasz kanał %{channel}. Kopia jest domyślnie nieaktywna."
         copied: "Skopiowano serwer poczty do kanału %{channel}. Kopia jest domyślnie nieaktywna."
         failed: "Nie udało się skopiować serwera poczty: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Sprawdzono obsługę wypisów: %{handling}."
+        switched: "Zmieniono obsługę wypisów na %{handling}."
+        failed: "Nie udało się sprawdzić obsługi wypisów: %{error}"
+      postmark_subscription_sync:
+        "on": "Wypisy z Postmark są synchronizowane."
+        "off": "Wypisy z Postmark nie są już synchronizowane."
+        webhooks_updated: "Webhooki Postmark są zaktualizowane."
+        webhooks_failed: "Nie udało się zaktualizować webhooków Postmark: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Odświeżono hasło webhooka i zaktualizowano webhooki w Postmark."
         sync_failed: "Odświeżono hasło, ale synchronizacja webhooków nie powiodła się: %{errors}"

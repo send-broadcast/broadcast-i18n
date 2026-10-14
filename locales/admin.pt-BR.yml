@@ -2868,6 +2868,11 @@ pt-BR:
       test_placeholder: "ex.: %{email}"
       test_hint: "Informe um endereço de e-mail ao qual você tenha acesso, para conferir a aparência do e-mail."
       use_my_email: "Clique aqui para usar %{email}"
+    postmark_unsubscribe_warning:
+      title: "O Postmark adiciona um segundo link de cancelamento"
+      second_link: "O servidor Postmark que envia suas campanhas usa o tratamento de cancelamentos do Postmark. O Postmark adiciona seu próprio link abaixo do link do Broadcast."
+      no_tag: "Este e-mail não tem a tag %{tag}, então o Postmark adiciona o link dele no final do e-mail."
+      server_link: "Ver o servidor de e-mail %{server}"
     confirm_send:
       title: "Enviar a campanha?"
       confirm: "Confirme que deseja começar a enviar esta campanha."
@@ -6115,6 +6120,27 @@ pt-BR:
           removing: "Removendo..."
           smtp_com_no_credentials_html: "Nenhuma credencial de API configurada. %{link} para ativar a configuração automática de callbacks."
           smtp_com_configure: "Configure as credenciais de API"
+        postmark_unsubscribes:
+          title: "Tratamento de cancelamentos"
+          status:
+            custom: "Custom: o Broadcast trata os cancelamentos. O Postmark não adiciona um link próprio."
+            postmark: "Postmark: o Postmark adiciona seu próprio link de cancelamento e seu cabeçalho List-Unsubscribe a cada campanha."
+            none: "None: o Postmark não adiciona link de cancelamento."
+            missing: "Este servidor ainda não tem o stream broadcast. O Broadcast o cria ao configurar os webhooks."
+            unknown: "Ainda não verificado."
+          checked_ago: "Verificado há %{time}"
+          check_now: "Verificar agora"
+          banner:
+            title: "Os assinantes veem dois links de cancelamento"
+            second_link: "O Postmark adiciona seu próprio link de cancelamento abaixo do link do Broadcast, e o botão de cancelamento do Gmail e do Apple Mail leva ao Postmark."
+            sync: "Enquanto a sincronização de assinaturas estiver ativada, um cancelamento pelo Postmark também cancela a assinatura no Broadcast, e as duas listas ficam iguais."
+            refused: "O Postmark não permitiu que o Broadcast alterasse isso: %{error}"
+            ask_support: "Só o suporte do Postmark pode ativar o Custom para sua conta. Copie esta solicitação e envie a eles:"
+            copy: "Copiar solicitação"
+          sync:
+            label: "Sincronizar cancelamentos do Postmark"
+            help: "Um cancelamento pelo link do Postmark cancela a assinatura no Broadcast, e uma nova assinatura no Broadcast remove o bloqueio no Postmark."
+            save: "Salvar"
         webhooks:
           heading: "Webhooks"
           configured: "Configurados"
@@ -6179,6 +6205,15 @@ pt-BR:
         copied_and_switched: "Servidor de e-mail copiado. Agora você está vendo %{channel}. A cópia fica inativa por padrão."
         copied: "Servidor de e-mail copiado para %{channel}. A cópia fica inativa por padrão."
         failed: "Não foi possível copiar o servidor de e-mail: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Tratamento de cancelamentos verificado: %{handling}."
+        switched: "Tratamento de cancelamentos alterado para %{handling}."
+        failed: "Não foi possível verificar o tratamento de cancelamentos: %{error}"
+      postmark_subscription_sync:
+        "on": "Os cancelamentos do Postmark são sincronizados."
+        "off": "Os cancelamentos do Postmark não são mais sincronizados."
+        webhooks_updated: "Os webhooks do Postmark foram atualizados."
+        webhooks_failed: "Não foi possível atualizar os webhooks do Postmark: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Senha do webhook renovada e webhooks atualizados no Postmark."
         sync_failed: "A senha foi renovada, mas a sincronização dos webhooks falhou: %{errors}"

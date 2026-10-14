@@ -2869,6 +2869,11 @@ fr:
       test_placeholder: "ex. %{email}"
       test_hint: "Saisissez une adresse e-mail à laquelle vous avez accès, pour vérifier le rendu de l'e-mail."
       use_my_email: "Cliquez ici pour utiliser %{email}"
+    postmark_unsubscribe_warning:
+      title: "Postmark ajoute un second lien de désabonnement"
+      second_link: "Le serveur Postmark qui envoie vos campagnes utilise la gestion des désabonnements de Postmark. Postmark ajoute son propre lien sous celui de Broadcast."
+      no_tag: "Cet e-mail n'a pas de balise %{tag}, donc Postmark ajoute son lien en bas de l'e-mail."
+      server_link: "Voir le serveur d'e-mail %{server}"
     confirm_send:
       title: "Envoyer la campagne ?"
       confirm: "Confirmez que vous voulez lancer l'envoi de cette campagne."
@@ -6116,6 +6121,27 @@ fr:
           removing: "Suppression..."
           smtp_com_no_credentials_html: "Aucun identifiant API configuré. %{link} pour activer la configuration automatique des callbacks."
           smtp_com_configure: "Configurez les identifiants API"
+        postmark_unsubscribes:
+          title: "Gestion des désabonnements"
+          status:
+            custom: "Custom : Broadcast gère les désabonnements. Postmark n'ajoute pas de lien."
+            postmark: "Postmark : Postmark ajoute son propre lien de désabonnement et son en-tête List-Unsubscribe à chaque campagne."
+            none: "None : Postmark n'ajoute aucun lien de désabonnement."
+            missing: "Ce serveur n'a pas encore de stream broadcast. Broadcast le crée en configurant les webhooks."
+            unknown: "Pas encore vérifié."
+          checked_ago: "Vérifié il y a %{time}"
+          check_now: "Vérifier maintenant"
+          banner:
+            title: "Les abonnés voient deux liens de désabonnement"
+            second_link: "Postmark ajoute son propre lien de désabonnement sous celui de Broadcast, et le bouton de désabonnement de Gmail et Apple Mail mène à Postmark."
+            sync: "Tant que la synchronisation des abonnements est activée, un désabonnement via Postmark désabonne aussi l'abonné dans Broadcast, et les deux listes concordent."
+            refused: "Postmark n'a pas permis à Broadcast de modifier ce réglage : %{error}"
+            ask_support: "Seul le support de Postmark peut activer Custom pour votre compte. Copiez cette demande et envoyez-la au support :"
+            copy: "Copier la demande"
+          sync:
+            label: "Synchroniser les désabonnements Postmark"
+            help: "Un désabonnement via le lien de Postmark désabonne l'abonné dans Broadcast, et un réabonnement dans Broadcast lève le blocage dans Postmark."
+            save: "Enregistrer"
         webhooks:
           heading: "Webhooks"
           configured: "Configurés"
@@ -6180,6 +6206,15 @@ fr:
         copied_and_switched: "Serveur e-mail copié. Vous consultez maintenant %{channel}. La copie est inactive par défaut."
         copied: "Serveur e-mail copié vers %{channel}. La copie est inactive par défaut."
         failed: "Impossible de copier le serveur e-mail : %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Gestion des désabonnements vérifiée : %{handling}."
+        switched: "Gestion des désabonnements passée à %{handling}."
+        failed: "Impossible de vérifier la gestion des désabonnements : %{error}"
+      postmark_subscription_sync:
+        "on": "Les désabonnements Postmark sont synchronisés."
+        "off": "Les désabonnements Postmark ne sont plus synchronisés."
+        webhooks_updated: "Les webhooks Postmark sont à jour."
+        webhooks_failed: "Les webhooks Postmark n'ont pas pu être mis à jour : %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Mot de passe des webhooks renouvelé et webhooks mis à jour dans Postmark."
         sync_failed: "Mot de passe renouvelé, mais la synchronisation des webhooks a échoué : %{errors}"

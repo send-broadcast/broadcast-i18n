@@ -2866,6 +2866,11 @@ it:
       test_placeholder: "es. %{email}"
       test_hint: "Inserisci un indirizzo email a cui hai accesso, così potrai vedere come apparirà l'email."
       use_my_email: "Clicca qui per usare %{email}"
+    postmark_unsubscribe_warning:
+      title: "Postmark aggiunge un secondo link di disiscrizione"
+      second_link: "Il server Postmark che invia le tue campagne usa la gestione delle disiscrizioni di Postmark. Postmark aggiunge il proprio link sotto quello di Broadcast."
+      no_tag: "Questa email non contiene il tag %{tag}, quindi Postmark aggiunge il suo link in fondo all'email."
+      server_link: "Vedi il server email %{server}"
     confirm_send:
       title: "Inviare la campagna?"
       confirm: "Conferma di voler avviare l'invio di questa campagna."
@@ -6113,6 +6118,27 @@ it:
           removing: "Rimozione..."
           smtp_com_no_credentials_html: "Nessuna credenziale API configurata. %{link} per attivare la configurazione automatica delle callback."
           smtp_com_configure: "Configura le credenziali API"
+        postmark_unsubscribes:
+          title: "Gestione delle disiscrizioni"
+          status:
+            custom: "Custom: Broadcast gestisce le disiscrizioni. Postmark non aggiunge un proprio link."
+            postmark: "Postmark: Postmark aggiunge a ogni campagna il proprio link di disiscrizione e la propria intestazione List-Unsubscribe."
+            none: "None: Postmark non aggiunge alcun link di disiscrizione."
+            missing: "Questo server non ha ancora uno stream broadcast. Broadcast lo crea quando configura i webhook."
+            unknown: "Non ancora verificato."
+          checked_ago: "Verificato %{time} fa"
+          check_now: "Verifica ora"
+          banner:
+            title: "Gli iscritti vedono due link di disiscrizione"
+            second_link: "Postmark aggiunge il proprio link di disiscrizione sotto quello di Broadcast, e il pulsante di disiscrizione di Gmail e Apple Mail porta a Postmark."
+            sync: "Finché la sincronizzazione delle iscrizioni è attiva, una disiscrizione tramite Postmark disiscrive l'iscritto anche in Broadcast, così le due liste coincidono."
+            refused: "Postmark non ha permesso a Broadcast di cambiare questa impostazione: %{error}"
+            ask_support: "Solo il supporto di Postmark può attivare Custom per il tuo account. Copia questa richiesta e inviala al supporto:"
+            copy: "Copia richiesta"
+          sync:
+            label: "Sincronizza le disiscrizioni da Postmark"
+            help: "Una disiscrizione tramite il link di Postmark disiscrive l'iscritto in Broadcast, e una nuova iscrizione in Broadcast rimuove il blocco in Postmark."
+            save: "Salva"
         webhooks:
           heading: "Webhook"
           configured: "Configurati"
@@ -6177,6 +6203,15 @@ it:
         copied_and_switched: "Server email copiato. Ora stai visualizzando %{channel}. La copia è inattiva per impostazione predefinita."
         copied: "Server email copiato in %{channel}. La copia è inattiva per impostazione predefinita."
         failed: "Impossibile copiare il server email: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Gestione delle disiscrizioni verificata: %{handling}."
+        switched: "Gestione delle disiscrizioni cambiata in %{handling}."
+        failed: "Impossibile verificare la gestione delle disiscrizioni: %{error}"
+      postmark_subscription_sync:
+        "on": "Le disiscrizioni da Postmark sono sincronizzate."
+        "off": "Le disiscrizioni da Postmark non sono più sincronizzate."
+        webhooks_updated: "I webhook di Postmark sono aggiornati."
+        webhooks_failed: "Impossibile aggiornare i webhook di Postmark: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Password dei webhook rigenerata e webhook aggiornati in Postmark."
         sync_failed: "Password rigenerata, ma la sincronizzazione dei webhook non è riuscita: %{errors}"

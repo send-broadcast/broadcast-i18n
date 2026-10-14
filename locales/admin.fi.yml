@@ -2869,6 +2869,11 @@ fi:
       test_placeholder: "esim. %{email}"
       test_hint: "Anna sähköpostiosoite, johon sinulla on pääsy, jotta voit tarkistaa sähköpostin ulkoasun."
       use_my_email: "Käytä osoitetta %{email} napsauttamalla tästä"
+    postmark_unsubscribe_warning:
+      title: "Postmark lisää toisen peruutuslinkin"
+      second_link: "Kampanjasi lähettävällä Postmark-palvelimella on Postmarkin peruutusten käsittely. Postmark lisää oman peruutuslinkkinsä Broadcastin linkin alle."
+      no_tag: "Tässä sähköpostissa ei ole %{tag}-tagia, joten Postmark lisää linkkinsä sähköpostin loppuun."
+      server_link: "Näytä sähköpostipalvelin %{server}"
     confirm_send:
       title: "Lähetetäänkö kampanja?"
       confirm: "Vahvista, että haluat aloittaa tämän kampanjan lähettämisen."
@@ -6116,6 +6121,27 @@ fi:
           removing: "Poistetaan..."
           smtp_com_no_credentials_html: "API-tunnistetietoja ei ole määritetty. %{link}, jotta takaisinkutsujen automaattinen määritys otetaan käyttöön."
           smtp_com_configure: "Määritä API-tunnistetiedot"
+        postmark_unsubscribes:
+          title: "Peruutusten käsittely"
+          status:
+            custom: "Custom: Broadcast käsittelee peruutukset. Postmark ei lisää omaa linkkiä."
+            postmark: "Postmark: Postmark lisää jokaiseen kampanjaan oman peruutuslinkkinsä ja List-Unsubscribe-otsakkeensa."
+            none: "None: Postmark ei lisää peruutuslinkkiä."
+            missing: "Tällä palvelimella ei ole vielä broadcast-streamia. Broadcast luo sen, kun se määrittää webhookit."
+            unknown: "Ei vielä tarkistettu."
+          checked_ago: "Tarkistettu %{time} sitten"
+          check_now: "Tarkista nyt"
+          banner:
+            title: "Tilaajat näkevät kaksi peruutuslinkkiä"
+            second_link: "Postmark lisää oman peruutuslinkkinsä Broadcastin linkin alle, ja Gmailin ja Apple Mailin peruutuspainike vie Postmarkiin."
+            sync: "Kun tilausten synkronointi on päällä, peruutus Postmarkin kautta peruuttaa tilaajan myös Broadcastissa, joten molemmat listat täsmäävät."
+            refused: "Postmark ei sallinut Broadcastin muuttaa tätä: %{error}"
+            ask_support: "Vain Postmarkin tuki voi ottaa Custom-käsittelyn käyttöön tilillesi. Kopioi tämä pyyntö ja lähetä se heille:"
+            copy: "Kopioi pyyntö"
+          sync:
+            label: "Synkronoi Postmarkin peruutukset"
+            help: "Peruutus Postmarkin linkin kautta peruuttaa tilaajan Broadcastissa, ja uudelleentilaus Broadcastissa poistaa Postmarkin eston."
+            save: "Tallenna"
         webhooks:
           heading: "Webhookit"
           configured: "Määritetty"
@@ -6180,6 +6206,15 @@ fi:
         copied_and_switched: "Sähköpostipalvelin kopioitu. Tarkastelet nyt kanavaa %{channel}. Kopio on oletuksena pois käytöstä."
         copied: "Sähköpostipalvelin kopioitu kanavalle %{channel}. Kopio on oletuksena pois käytöstä."
         failed: "Sähköpostipalvelimen kopioiminen epäonnistui: %{error}"
+      check_postmark_unsubscribe_handling:
+        checked: "Peruutusten käsittely tarkistettu: %{handling}."
+        switched: "Peruutusten käsittely vaihdettu: %{handling}."
+        failed: "Peruutusten käsittelyä ei voitu tarkistaa: %{error}"
+      postmark_subscription_sync:
+        "on": "Postmarkin peruutukset synkronoidaan."
+        "off": "Postmarkin peruutuksia ei enää synkronoida."
+        webhooks_updated: "Postmarkin webhookit on päivitetty."
+        webhooks_failed: "Postmarkin webhookeja ei voitu päivittää: %{error}"
       refresh_postmark_password:
         refreshed_and_synced: "Webhookin salasana uudistettu ja webhookit päivitetty Postmarkissa."
         sync_failed: "Salasana uudistettu, mutta webhookien synkronointi epäonnistui: %{errors}"
