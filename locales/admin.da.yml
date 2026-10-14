@@ -2808,6 +2808,8 @@ da:
       stalled_hint: "Der er ikke sendt e-mails i over 5 minutter. Prøv at sætte kampagnen på pause og genoptage den."
       waiting_for_room: "Venter på ledig kapacitet på mailserveren"
       waiting_for_room_hint: "Serverens timegrænse for kampagner er brugt op. Afsendelsen fortsætter af sig selv (omkring %{time}). Vil du sende før, kan du hæve grænsen eller nulstille hastighedsgrænsen på serversiden."
+      retrying: "Afsendelsen stoppede et øjeblik"
+      retrying_hint: "Mailserveren tog ikke imod den seneste mail: %{reason}. Broadcast prøver igen af sig selv %{time} (forsøg %{attempt} af %{max})."
       paused_in_flight: "Mails, der allerede var på vej, da du satte på pause, kan stadig nå frem. Antallet af modtagere holder op med at stige om et øjeblik."
       delivery_analytics: "Leveringsstatistik"
       recent_activity: "Seneste aktivitet"
@@ -5200,6 +5202,12 @@ da:
       like_without: "Som %{role}, uden %{missing}"
       like_plus_without: "Som %{role}, plus %{extra}, uden %{missing}"
       separator: " og "
+
+  provider_block:
+    title: "Sat på pause af %{provider}"
+    account_limit: "%{provider} har sat afsendelsen på denne server på pause indtil %{time}. Afsendelsen fortsætter af sig selv. %{provider} begrænser, hvor meget en ny konto må sende; gennemfør kontobekræftelsen hos %{provider} for at fjerne grænsen."
+    quota: "%{provider} har nået sin daglige afsendelseskvote. Afsendelsen fortsætter af sig selv %{time}. Vil du sende mere pr. dag, kan du bede %{provider} om at hæve kvoten."
+    throttle: "%{provider} har bedt Broadcast om at sende langsommere. Afsendelsen fortsætter af sig selv %{time}."
 
   profile:
     show:
@@ -7635,7 +7643,7 @@ da:
       waiting:
         one: "1 transaktionsmail har ventet på ledig kapacitet på mailserveren i over 30 minutter"
         other: "%{count} transaktionsmails har ventet på ledig kapacitet på mailserveren i over 30 minutter"
-      waiting_hint: "Serveren har nået sin timegrænse. Transaktionsmails forsøges igen hvert minut i op til 24 timer. Vil du sende før, kan du hæve grænsen, nulstille hastighedsgrænsen på serversiden eller bruge en separat server til transaktionsmails."
+      waiting_hint: "Serverens timegrænse er brugt op. Transaktionsmails sendes, når serveren har ledig kapacitet igen, i op til 24 timer. Vil du sende før, kan du hæve grænsen, nulstille hastighedsgrænsen på serversiden eller bruge en separat server til transaktionsmails."
       failed:
         one: "1 transaktionsmail mislykkedes inden for de seneste 24 timer, fordi mailserveren lå på sin timegrænse i 24 timer"
         other: "%{count} transaktionsmails mislykkedes inden for de seneste 24 timer, fordi mailserveren lå på sin timegrænse i 24 timer"
@@ -9332,7 +9340,7 @@ da:
       tooltip_email_sent: "Accepteret af e-mailudbyderen. Når parallel afsendelse er slået til, rapporterer kampagner afsendelser i broadcast.batch_completed i stedet"
       tooltip_email_failed: "Permanent leveringsfejl; der forsøges ikke igen. Når parallel afsendelse er slået til, rapporterer kampagner fejl i broadcast.batch_completed i stedet"
       tooltip_email_delivery_delayed: "Midlertidigt problem som greylisting; leveringen forsøges igen"
-      tooltip_email_send_delayed: "En transaktionsmail venter på ledig kapacitet på sin mailserver (timegrænsen er nået); den forsøges igen hvert minut i op til 24 timer"
+      tooltip_email_send_delayed: "En transaktionsmail venter på sin mailserver: timegrænsen er brugt op, eller mailudbyderen har sat afsendelsen på pause. Den forsøges igen, når serveren har ledig kapacitet, i op til 24 timer"
       tooltip_broadcast_queueing: "Kampagnen forberedes, og modtagerne sættes i kø"
       tooltip_broadcast_batch_completed: "Kun ved parallel afsendelse: én hændelse pr. batch på op til 500, med en liste over hvem der blev sendt til, eller hvor det mislykkedes, i stedet for email.sent / email.failed for kampagner"
       tooltip_message_attempt_exhausted: "Alle nye forsøg er mislykkedes for denne levering"

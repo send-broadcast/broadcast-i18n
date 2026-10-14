@@ -2810,6 +2810,8 @@ nl:
       stalled_hint: "Al meer dan 5 minuten geen e-mails verzonden. Probeer de campagne te pauzeren en te hervatten."
       waiting_for_room: "Wacht op capaciteit op de e-mailserver"
       waiting_for_room_hint: "De uurlimiet van de server is voor campagnes opgebruikt. Het verzenden gaat vanzelf verder (rond %{time}). Wil je eerder verzenden, verhoog dan de limiet of reset de snelheidslimiet op de serverpagina."
+      retrying: "Verzenden even gestopt"
+      retrying_hint: "De e-mailserver heeft de laatste e-mail niet geaccepteerd: %{reason}. Broadcast probeert het vanzelf opnieuw om %{time} (poging %{attempt} van %{max})."
       paused_in_flight: "E-mails die al onderweg waren toen je pauzeerde, kunnen nog aankomen. Het aantal ontvangers stopt zo meteen."
       delivery_analytics: "Afleverstatistieken"
       recent_activity: "Recente activiteit"
@@ -5202,6 +5204,12 @@ nl:
       like_without: "Zoals %{role}, zonder %{missing}"
       like_plus_without: "Zoals %{role}, plus %{extra}, zonder %{missing}"
       separator: " en "
+
+  provider_block:
+    title: "Gepauzeerd door %{provider}"
+    account_limit: "%{provider} heeft het verzenden op deze server gepauzeerd tot %{time}. Het verzenden gaat vanzelf verder. %{provider} beperkt hoeveel een nieuw account mag verzenden; rond de accountverificatie bij %{provider} af om de limiet op te heffen."
+    quota: "%{provider} heeft zijn dagelijkse verzendquotum bereikt. Het verzenden gaat om %{time} vanzelf verder. Wil je meer per dag verzenden, vraag %{provider} dan om het quotum te verhogen."
+    throttle: "%{provider} heeft Broadcast gevraagd langzamer te verzenden. Het verzenden gaat om %{time} vanzelf verder."
 
   profile:
     show:
@@ -7637,7 +7645,7 @@ nl:
       waiting:
         one: "1 transactionele e-mail wacht al meer dan 30 minuten op capaciteit op de e-mailserver"
         other: "%{count} transactionele e-mails wachten al meer dan 30 minuten op capaciteit op de e-mailserver"
-      waiting_hint: "De server zit aan zijn uurlimiet. Transactionele e-mails worden elke minuut opnieuw geprobeerd, maximaal 24 uur lang. Wil je eerder verzenden, verhoog dan de limiet, reset de snelheidslimiet op de serverpagina of gebruik een aparte server voor transactionele e-mails."
+      waiting_hint: "De uurlimiet van de server is opgebruikt. Transactionele e-mails worden verzonden zodra de server weer capaciteit heeft, maximaal 24 uur lang. Wil je eerder verzenden, verhoog dan de limiet, reset de snelheidslimiet op de serverpagina of gebruik een aparte server voor transactionele e-mails."
       failed:
         one: "1 transactionele e-mail is in de afgelopen 24 uur mislukt, omdat de e-mailserver 24 uur lang aan zijn uurlimiet zat"
         other: "%{count} transactionele e-mails zijn in de afgelopen 24 uur mislukt, omdat de e-mailserver 24 uur lang aan zijn uurlimiet zat"
@@ -9334,7 +9342,7 @@ nl:
       tooltip_email_sent: "Geaccepteerd door de e-mailprovider. Met parallel verzenden aan melden campagnes verzendingen in plaats daarvan in broadcast.batch_completed"
       tooltip_email_failed: "Permanente bezorgfout; wordt niet opnieuw geprobeerd. Met parallel verzenden aan melden campagnes fouten in plaats daarvan in broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Tijdelijk probleem zoals greylisting; de bezorging wordt opnieuw geprobeerd"
-      tooltip_email_send_delayed: "Een transactionele e-mail wacht op capaciteit op zijn e-mailserver (uurlimiet bereikt); hij wordt maximaal 24 uur lang elke minuut opnieuw geprobeerd"
+      tooltip_email_send_delayed: "Een transactionele e-mail wacht op zijn e-mailserver: de uurlimiet is opgebruikt of de e-mailprovider heeft het verzenden gepauzeerd. Hij wordt opnieuw geprobeerd zodra de server capaciteit heeft, maximaal 24 uur lang"
       tooltip_broadcast_queueing: "De campagne wordt voorbereid en de ontvangers worden in de wachtrij gezet"
       tooltip_broadcast_batch_completed: "Alleen bij parallel verzenden: één gebeurtenis per batch van maximaal 500, met wie is verzonden of mislukt, in plaats van email.sent / email.failed voor campagnes"
       tooltip_message_attempt_exhausted: "Alle nieuwe pogingen voor deze bezorging zijn mislukt"

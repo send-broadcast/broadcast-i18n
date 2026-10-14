@@ -2809,6 +2809,8 @@ fi:
       stalled_hint: "Sähköposteja ei ole lähetetty yli 5 minuuttiin. Kokeile keskeyttää kampanja ja jatkaa sitä."
       waiting_for_room: "Odottaa vapaata kapasiteettia sähköpostipalvelimella"
       waiting_for_room_hint: "Palvelimen tuntiraja on käytetty kampanjoilta loppuun. Lähetys jatkuu itsestään (noin %{time}). Jos haluat lähettää aiemmin, nosta rajaa tai nollaa nopeusrajoitus palvelimen sivulla."
+      retrying: "Lähetys pysähtyi hetkeksi"
+      retrying_hint: "Sähköpostipalvelin ei hyväksynyt viimeisintä sähköpostia: %{reason}. Broadcast yrittää itsestään uudelleen %{time} (yritys %{attempt}/%{max})."
       paused_in_flight: "Sähköpostit, jotka olivat jo matkalla keskeyttäessäsi, voivat vielä saapua. Vastaanottajien määrä pysähtyy hetken kuluttua."
       delivery_analytics: "Toimitustilastot"
       recent_activity: "Viimeaikainen toiminta"
@@ -5201,6 +5203,12 @@ fi:
       like_without: "Kuten %{role}, ilman: %{missing}"
       like_plus_without: "Kuten %{role}, lisäksi %{extra}, ilman: %{missing}"
       separator: " ja "
+
+  provider_block:
+    title: "%{provider} keskeytti lähetyksen"
+    account_limit: "%{provider} keskeytti lähetyksen tällä palvelimella %{time} asti. Lähetys jatkuu itsestään. %{provider} rajoittaa, kuinka paljon uusi tili saa lähettää; poista raja viimeistelemällä tilin vahvistus palvelussa %{provider}."
+    quota: "%{provider} on saavuttanut päivittäisen lähetyskiintiönsä. Lähetys jatkuu itsestään %{time}. Jos haluat lähettää enemmän päivässä, pyydä palvelua %{provider} nostamaan kiintiötä."
+    throttle: "%{provider} pyysi Broadcastia hidastamaan lähetystä. Lähetys jatkuu itsestään %{time}."
 
   profile:
     show:
@@ -7636,7 +7644,7 @@ fi:
       waiting:
         one: "1 transaktiosähköposti on odottanut vapaata kapasiteettia sähköpostipalvelimella yli 30 minuuttia"
         other: "%{count} transaktiosähköpostia on odottanut vapaata kapasiteettia sähköpostipalvelimella yli 30 minuuttia"
-      waiting_hint: "Palvelin on saavuttanut tuntirajansa. Transaktiosähköpostia yritetään uudelleen joka minuutti enintään 24 tunnin ajan. Jos haluat lähettää aiemmin, nosta rajaa, nollaa nopeusrajoitus palvelimen sivulla tai käytä transaktiosähköposteille erillistä palvelinta."
+      waiting_hint: "Palvelimen tuntiraja on käytetty loppuun. Transaktiosähköpostit lähetetään, kun palvelimella on taas vapaata kapasiteettia, enintään 24 tunnin ajan. Jos haluat lähettää aiemmin, nosta rajaa, nollaa nopeusrajoitus palvelimen sivulla tai käytä transaktiosähköposteille erillistä palvelinta."
       failed:
         one: "1 transaktiosähköposti epäonnistui viimeisten 24 tunnin aikana, koska sähköpostipalvelin pysyi tuntirajassaan 24 tuntia"
         other: "%{count} transaktiosähköpostia epäonnistui viimeisten 24 tunnin aikana, koska sähköpostipalvelin pysyi tuntirajassaan 24 tuntia"
@@ -9333,7 +9341,7 @@ fi:
       tooltip_email_sent: "Sähköpostipalveluntarjoaja on hyväksynyt viestin. Kun rinnakkainen lähetys on käytössä, kampanjat ilmoittavat lähetykset sen sijaan tapahtumassa broadcast.batch_completed"
       tooltip_email_failed: "Pysyvä toimitusvirhe; ei uusintayrityksiä. Kun rinnakkainen lähetys on käytössä, kampanjat ilmoittavat virheet sen sijaan tapahtumassa broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Tilapäinen ongelma, kuten harmaalistaus; toimitusta yritetään uudelleen"
-      tooltip_email_send_delayed: "Transaktiosähköposti odottaa vapaata kapasiteettia sähköpostipalvelimellaan (tuntiraja saavutettu); sitä yritetään uudelleen joka minuutti enintään 24 tunnin ajan"
+      tooltip_email_send_delayed: "Transaktiosähköposti odottaa sähköpostipalvelintaan: tuntiraja on käytetty loppuun tai sähköpostipalvelun tarjoaja keskeytti lähetyksen. Sitä yritetään uudelleen, kun palvelimella on vapaata kapasiteettia, enintään 24 tunnin ajan"
       tooltip_broadcast_queueing: "Kampanjaa valmistellaan ja vastaanottajia asetetaan jonoon"
       tooltip_broadcast_batch_completed: "Vain rinnakkaisessa lähetyksessä: yksi tapahtuma enintään 500 vastaanottajan erää kohden, jossa luetellaan kenelle lähetys onnistui tai epäonnistui, kampanjoiden email.sent- ja email.failed-tapahtumien sijaan"
       tooltip_message_attempt_exhausted: "Kaikki tämän toimituksen uusintayritykset ovat epäonnistuneet"

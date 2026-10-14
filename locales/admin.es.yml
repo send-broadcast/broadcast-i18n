@@ -2809,6 +2809,8 @@ es:
       stalled_hint: "No se ha enviado ningún correo en más de 5 minutos. Prueba a pausar y reanudar la campaña."
       waiting_for_room: "Esperando capacidad en el servidor de correo"
       waiting_for_room_hint: "El límite por hora del servidor para campañas está agotado. El envío continuará solo (aprox. %{time}). Para enviar antes, aumenta el límite o restablece el límite de envío en la página del servidor."
+      retrying: "El envío se detuvo un momento"
+      retrying_hint: "El servidor de correo no aceptó el último correo: %{reason}. Broadcast lo intenta de nuevo solo a las %{time} (intento %{attempt} de %{max})."
       paused_in_flight: "Los correos que ya estaban en camino cuando pausaste aún pueden llegar. El número de destinatarios se detendrá en un momento."
       delivery_analytics: "Estadísticas de entrega"
       recent_activity: "Actividad reciente"
@@ -5201,6 +5203,12 @@ es:
       like_without: "Como %{role}, sin %{missing}"
       like_plus_without: "Como %{role}, más %{extra}, sin %{missing}"
       separator: " y "
+
+  provider_block:
+    title: "Pausado por %{provider}"
+    account_limit: "%{provider} pausó el envío en este servidor hasta %{time}. El envío continuará solo. %{provider} limita cuánto puede enviar una cuenta nueva; completa la verificación de la cuenta en %{provider} para quitar el límite."
+    quota: "%{provider} alcanzó su cuota diaria de envío. El envío continuará solo a las %{time}. Para enviar más por día, pide a %{provider} que aumente la cuota."
+    throttle: "%{provider} pidió a Broadcast que envíe más despacio. El envío continuará solo a las %{time}."
 
   profile:
     show:
@@ -7636,7 +7644,7 @@ es:
       waiting:
         one: "1 correo transaccional lleva más de 30 minutos esperando capacidad en el servidor de correo"
         other: "%{count} correos transaccionales llevan más de 30 minutos esperando capacidad en el servidor de correo"
-      waiting_hint: "El servidor alcanzó su límite por hora. Los correos transaccionales se reintentan cada minuto, durante un máximo de 24 horas. Para enviar antes, aumenta el límite, restablece el límite de envío en la página del servidor o usa un servidor separado para los correos transaccionales."
+      waiting_hint: "El límite por hora del servidor está agotado. Los correos transaccionales se envían cuando el servidor vuelve a tener capacidad, durante un máximo de 24 horas. Para enviar antes, aumenta el límite, restablece el límite de envío en la página del servidor o usa un servidor separado para los correos transaccionales."
       failed:
         one: "1 correo transaccional falló en las últimas 24 horas porque el servidor de correo permaneció en su límite por hora durante 24 horas"
         other: "%{count} correos transaccionales fallaron en las últimas 24 horas porque el servidor de correo permaneció en su límite por hora durante 24 horas"
@@ -9333,7 +9341,7 @@ es:
       tooltip_email_sent: "Aceptado por el proveedor de correo. Con el envío en paralelo activado, las campañas notifican los envíos en broadcast.batch_completed"
       tooltip_email_failed: "Error de entrega permanente; no se reintentará. Con el envío en paralelo activado, las campañas notifican los errores en broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problema temporal, como el greylisting; la entrega se reintentará"
-      tooltip_email_send_delayed: "Un correo transaccional espera capacidad en su servidor de correo (se alcanzó el límite por hora); se reintenta cada minuto durante un máximo de 24 horas"
+      tooltip_email_send_delayed: "Un correo transaccional espera a su servidor de correo: el límite por hora está agotado o el proveedor de correo pausó el envío. Se reintenta cuando el servidor tiene capacidad, durante un máximo de 24 horas"
       tooltip_broadcast_queueing: "La campaña se está preparando y los destinatarios se están poniendo en cola"
       tooltip_broadcast_batch_completed: "Solo con envío en paralelo: un evento por lote de hasta 500, con la lista de envíos correctos y fallidos, en lugar de email.sent / email.failed para las campañas"
       tooltip_message_attempt_exhausted: "Han fallado todos los reintentos de este envío"

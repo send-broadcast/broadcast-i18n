@@ -2806,6 +2806,8 @@ it:
       stalled_hint: "Nessuna email inviata da oltre 5 minuti. Prova a mettere in pausa e a riprendere la campagna."
       waiting_for_room: "In attesa di capacità sul server email"
       waiting_for_room_hint: "Il limite orario del server per le campagne è esaurito. L'invio riprende da solo (circa %{time}). Per inviare prima, aumenta il limite o azzera il limite di invio nella pagina del server."
+      retrying: "L'invio si è fermato per un momento"
+      retrying_hint: "Il server email non ha accettato l'ultima email: %{reason}. Broadcast riprova da solo alle %{time} (tentativo %{attempt} di %{max})."
       paused_in_flight: "Le email già in viaggio quando hai messo in pausa potrebbero ancora arrivare. Il conteggio dei destinatari si ferma tra un attimo."
       delivery_analytics: "Statistiche di recapito"
       recent_activity: "Attività recente"
@@ -5198,6 +5200,12 @@ it:
       like_without: "Come %{role}, senza %{missing}"
       like_plus_without: "Come %{role}, più %{extra}, senza %{missing}"
       separator: " e "
+
+  provider_block:
+    title: "In pausa per %{provider}"
+    account_limit: "%{provider} ha messo in pausa l'invio su questo server fino alle %{time}. L'invio riprende da solo. %{provider} limita quanto può inviare un nuovo account; completa la verifica dell'account su %{provider} per rimuovere il limite."
+    quota: "%{provider} ha raggiunto la sua quota di invio giornaliera. L'invio riprende da solo alle %{time}. Per inviare di più al giorno, chiedi a %{provider} di aumentare la quota."
+    throttle: "%{provider} ha chiesto a Broadcast di rallentare. L'invio riprende da solo alle %{time}."
 
   profile:
     show:
@@ -7633,7 +7641,7 @@ it:
       waiting:
         one: "1 email transazionale attende capacità sul server email da oltre 30 minuti"
         other: "%{count} email transazionali attendono capacità sul server email da oltre 30 minuti"
-      waiting_hint: "Il server ha raggiunto il limite orario. Le email transazionali vengono ritentate ogni minuto, per al massimo 24 ore. Per inviare prima, aumenta il limite, azzera il limite di invio nella pagina del server o usa un server separato per le email transazionali."
+      waiting_hint: "Il limite orario del server è esaurito. Le email transazionali vengono inviate quando il server torna ad avere capacità, per al massimo 24 ore. Per inviare prima, aumenta il limite, azzera il limite di invio nella pagina del server o usa un server separato per le email transazionali."
       failed:
         one: "1 email transazionale non è stata inviata nelle ultime 24 ore perché il server email è rimasto al limite orario per 24 ore"
         other: "%{count} email transazionali non sono state inviate nelle ultime 24 ore perché il server email è rimasto al limite orario per 24 ore"
@@ -9330,7 +9338,7 @@ it:
       tooltip_email_sent: "Accettata dal provider email. Con l'invio parallelo attivo, le campagne segnalano gli invii con broadcast.batch_completed"
       tooltip_email_failed: "Errore di consegna definitivo; non verrà ritentata. Con l'invio parallelo attivo, le campagne segnalano gli errori con broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problema temporaneo come il greylisting; la consegna verrà ritentata"
-      tooltip_email_send_delayed: "Un'email transazionale attende capacità sul proprio server email (limite orario raggiunto); viene ritentata ogni minuto per al massimo 24 ore"
+      tooltip_email_send_delayed: "Un'email transazionale attende il proprio server email: il limite orario è esaurito oppure il provider email ha messo in pausa l'invio. Viene ritentata quando il server ha capacità, per al massimo 24 ore"
       tooltip_broadcast_queueing: "La campagna è in preparazione e i destinatari vengono messi in coda"
       tooltip_broadcast_batch_completed: "Solo invio parallelo: un evento per ogni lotto di massimo 500, con l'elenco di chi ha ricevuto l'invio o di chi non è riuscito, al posto di email.sent / email.failed per le campagne"
       tooltip_message_attempt_exhausted: "Tutti i tentativi per questa consegna sono falliti"

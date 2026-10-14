@@ -2808,6 +2808,8 @@ pt-BR:
       stalled_hint: "Nenhum e-mail enviado há mais de 5 minutos. Tente pausar e retomar a campanha."
       waiting_for_room: "Aguardando capacidade no servidor de e-mail"
       waiting_for_room_hint: "O limite por hora do servidor para campanhas foi atingido. O envio continua sozinho (por volta de %{time}). Para enviar antes, aumente o limite ou redefina o limite de taxa na página do servidor."
+      retrying: "O envio parou por um momento"
+      retrying_hint: "O servidor de e-mail não aceitou o último e-mail: %{reason}. O Broadcast tenta de novo sozinho às %{time} (tentativa %{attempt} de %{max})."
       paused_in_flight: "E-mails que já estavam a caminho quando você pausou ainda podem chegar. A contagem de destinatários para em instantes."
       delivery_analytics: "Análise de entrega"
       recent_activity: "Atividade recente"
@@ -5200,6 +5202,12 @@ pt-BR:
       like_without: "Como %{role}, sem %{missing}"
       like_plus_without: "Como %{role}, mais %{extra}, sem %{missing}"
       separator: " e "
+
+  provider_block:
+    title: "Pausado por %{provider}"
+    account_limit: "%{provider} pausou o envio neste servidor até %{time}. O envio continua sozinho. %{provider} limita quanto uma conta nova pode enviar; conclua a verificação da conta no %{provider} para remover o limite."
+    quota: "%{provider} atingiu a cota diária de envio. O envio continua sozinho às %{time}. Para enviar mais por dia, peça ao %{provider} para aumentar a cota."
+    throttle: "%{provider} pediu ao Broadcast para enviar mais devagar. O envio continua sozinho às %{time}."
 
   profile:
     show:
@@ -7635,7 +7643,7 @@ pt-BR:
       waiting:
         one: "1 e-mail transacional está aguardando capacidade no servidor de e-mail há mais de 30 minutos"
         other: "%{count} e-mails transacionais estão aguardando capacidade no servidor de e-mail há mais de 30 minutos"
-      waiting_hint: "O servidor atingiu o limite por hora. E-mails transacionais são tentados novamente a cada minuto, por até 24 horas. Para enviar antes, aumente o limite, redefina o limite de taxa na página do servidor ou use um servidor separado para e-mails transacionais."
+      waiting_hint: "O limite por hora do servidor foi atingido. E-mails transacionais são enviados quando o servidor tiver capacidade de novo, por até 24 horas. Para enviar antes, aumente o limite, redefina o limite de taxa na página do servidor ou use um servidor separado para e-mails transacionais."
       failed:
         one: "1 e-mail transacional falhou nas últimas 24 horas porque o servidor de e-mail ficou no limite por hora durante 24 horas"
         other: "%{count} e-mails transacionais falharam nas últimas 24 horas porque o servidor de e-mail ficou no limite por hora durante 24 horas"
@@ -9332,7 +9340,7 @@ pt-BR:
       tooltip_email_sent: "Aceito pelo provedor de e-mail. Com o envio paralelo ativado, as campanhas informam os envios em broadcast.batch_completed"
       tooltip_email_failed: "Falha permanente de entrega; não haverá nova tentativa. Com o envio paralelo ativado, as campanhas informam as falhas em broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problema temporário, como greylisting; a entrega será tentada novamente"
-      tooltip_email_send_delayed: "Um e-mail transacional está aguardando capacidade no servidor de e-mail (limite por hora atingido); ele é tentado novamente a cada minuto por até 24 horas"
+      tooltip_email_send_delayed: "Um e-mail transacional está aguardando o servidor de e-mail: o limite por hora foi atingido ou o provedor de e-mail pausou o envio. Ele é tentado novamente quando o servidor tiver capacidade, por até 24 horas"
       tooltip_broadcast_queueing: "A campanha está sendo preparada e os destinatários estão entrando na fila"
       tooltip_broadcast_batch_completed: "Somente envio paralelo: um evento por lote de até 500, listando para quem foi enviado ou falhou, no lugar de email.sent / email.failed nas campanhas"
       tooltip_message_attempt_exhausted: "Todas as tentativas desta entrega falharam"

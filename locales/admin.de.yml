@@ -2810,6 +2810,8 @@ de:
       stalled_hint: "Seit über 5 Minuten wurden keine E-Mails gesendet. Versuchen Sie, die Kampagne zu pausieren und fortzusetzen."
       waiting_for_room: "Wartet auf freie Kapazität des E-Mail-Servers"
       waiting_for_room_hint: "Das Stundenlimit des Servers ist für Kampagnen ausgeschöpft. Der Versand wird automatisch fortgesetzt (voraussichtlich %{time}). Um früher zu senden, erhöhen Sie das Limit oder setzen Sie das Ratenlimit auf der Serverseite zurück."
+      retrying: "Versand kurz unterbrochen"
+      retrying_hint: "Der E-Mail-Server hat die letzte E-Mail nicht angenommen: %{reason}. Broadcast versucht es automatisch erneut um %{time} (Versuch %{attempt} von %{max})."
       paused_in_flight: "E-Mails, die beim Pausieren bereits unterwegs waren, können noch ankommen. Die Empfängerzahl bleibt gleich stehen."
       delivery_analytics: "Zustellungsanalyse"
       recent_activity: "Letzte Aktivität"
@@ -5202,6 +5204,12 @@ de:
       like_without: "Wie %{role}, ohne %{missing}"
       like_plus_without: "Wie %{role}, zusätzlich %{extra}, ohne %{missing}"
       separator: " und "
+
+  provider_block:
+    title: "Von %{provider} pausiert"
+    account_limit: "%{provider} hat den Versand über diesen Server bis %{time} pausiert. Der Versand wird automatisch fortgesetzt. %{provider} begrenzt, wie viel ein neues Konto senden darf; schließen Sie die Kontoverifizierung bei %{provider} ab, um die Grenze aufzuheben."
+    quota: "%{provider} hat sein tägliches Sendekontingent erreicht. Der Versand wird um %{time} automatisch fortgesetzt. Um mehr pro Tag zu senden, bitten Sie %{provider}, das Kontingent zu erhöhen."
+    throttle: "%{provider} hat Broadcast gebeten, langsamer zu senden. Der Versand wird um %{time} automatisch fortgesetzt."
 
   profile:
     show:
@@ -7637,7 +7645,7 @@ de:
       waiting:
         one: "1 Transaktions-E-Mail wartet seit über 30 Minuten auf freie Kapazität des E-Mail-Servers"
         other: "%{count} Transaktions-E-Mails warten seit über 30 Minuten auf freie Kapazität des E-Mail-Servers"
-      waiting_hint: "Der Server hat sein Stundenlimit erreicht. Transaktions-E-Mails werden bis zu 24 Stunden lang jede Minute erneut versucht. Um früher zu senden, erhöhen Sie das Limit, setzen Sie das Ratenlimit auf der Serverseite zurück oder nutzen Sie einen eigenen Server für Transaktions-E-Mails."
+      waiting_hint: "Das Stundenlimit des Servers ist ausgeschöpft. Transaktions-E-Mails werden gesendet, sobald der Server wieder freie Kapazität hat, bis zu 24 Stunden lang. Um früher zu senden, erhöhen Sie das Limit, setzen Sie das Ratenlimit auf der Serverseite zurück oder nutzen Sie einen eigenen Server für Transaktions-E-Mails."
       failed:
         one: "1 Transaktions-E-Mail ist in den letzten 24 Stunden fehlgeschlagen, weil der E-Mail-Server 24 Stunden lang am Stundenlimit war"
         other: "%{count} Transaktions-E-Mails sind in den letzten 24 Stunden fehlgeschlagen, weil der E-Mail-Server 24 Stunden lang am Stundenlimit war"
@@ -9334,7 +9342,7 @@ de:
       tooltip_email_sent: "Vom E-Mail-Anbieter angenommen. Bei aktiviertem parallelem Versand melden Kampagnen Sendungen stattdessen in broadcast.batch_completed"
       tooltip_email_failed: "Dauerhafter Zustellfehler; es wird kein neuer Versuch unternommen. Bei aktiviertem parallelem Versand melden Kampagnen Fehler stattdessen in broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Vorübergehendes Problem wie Greylisting; die Zustellung wird erneut versucht"
-      tooltip_email_send_delayed: "Eine Transaktions-E-Mail wartet auf freie Kapazität ihres E-Mail-Servers (Stundenlimit erreicht); sie wird bis zu 24 Stunden lang jede Minute erneut versucht"
+      tooltip_email_send_delayed: "Eine Transaktions-E-Mail wartet auf ihren E-Mail-Server: Das Stundenlimit ist ausgeschöpft, oder der E-Mail-Anbieter hat den Versand pausiert. Sie wird erneut versucht, sobald der Server freie Kapazität hat, bis zu 24 Stunden lang"
       tooltip_broadcast_queueing: "Die Kampagne wird vorbereitet und die Empfänger werden eingereiht"
       tooltip_broadcast_batch_completed: "Nur bei parallelem Versand: ein Ereignis pro Batch von bis zu 500 Empfängern mit der Angabe, an wen gesendet wurde und wo es fehlschlug; ersetzt email.sent / email.failed bei Kampagnen"
       tooltip_message_attempt_exhausted: "Alle Wiederholungsversuche für diese Zustellung sind fehlgeschlagen"

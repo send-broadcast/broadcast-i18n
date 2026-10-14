@@ -2808,6 +2808,8 @@ nb:
       stalled_hint: "Ingen e-poster er sendt på over 5 minutter. Prøv å sette kampanjen på pause og gjenoppta den."
       waiting_for_room: "Venter på ledig kapasitet på e-postserveren"
       waiting_for_room_hint: "Serverens timegrense for kampanjer er brukt opp. Utsendingen fortsetter av seg selv (rundt %{time}). Vil du sende tidligere, kan du øke grensen eller tilbakestille hastighetsgrensen på serversiden."
+      retrying: "Utsendingen stoppet et øyeblikk"
+      retrying_hint: "E-postserveren tok ikke imot den siste e-posten: %{reason}. Broadcast prøver igjen av seg selv %{time} (forsøk %{attempt} av %{max})."
       paused_in_flight: "E-poster som allerede var på vei da du satte på pause, kan fortsatt komme frem. Antall mottakere slutter å øke om et øyeblikk."
       delivery_analytics: "Leveringsanalyse"
       recent_activity: "Nylig aktivitet"
@@ -5200,6 +5202,12 @@ nb:
       like_without: "Som %{role}, uten %{missing}"
       like_plus_without: "Som %{role}, pluss %{extra}, uten %{missing}"
       separator: " og "
+
+  provider_block:
+    title: "Satt på pause av %{provider}"
+    account_limit: "%{provider} har satt utsendingen på denne serveren på pause til %{time}. Utsendingen fortsetter av seg selv. %{provider} begrenser hvor mye en ny konto kan sende; fullfør kontobekreftelsen hos %{provider} for å fjerne grensen."
+    quota: "%{provider} har nådd den daglige sendekvoten sin. Utsendingen fortsetter av seg selv %{time}. Vil du sende mer per dag, kan du be %{provider} om å øke kvoten."
+    throttle: "%{provider} har bedt Broadcast om å sende saktere. Utsendingen fortsetter av seg selv %{time}."
 
   profile:
     show:
@@ -7635,7 +7643,7 @@ nb:
       waiting:
         one: "1 transaksjonell e-post har ventet på ledig kapasitet på e-postserveren i over 30 minutter"
         other: "%{count} transaksjonelle e-poster har ventet på ledig kapasitet på e-postserveren i over 30 minutter"
-      waiting_hint: "Serveren har nådd timegrensen sin. Transaksjonell e-post prøves på nytt hvert minutt, i opptil 24 timer. Vil du sende tidligere, kan du øke grensen, tilbakestille hastighetsgrensen på serversiden eller bruke en egen server for transaksjonell e-post."
+      waiting_hint: "Serverens timegrense er brukt opp. Transaksjonell e-post sendes når serveren har ledig kapasitet igjen, i opptil 24 timer. Vil du sende tidligere, kan du øke grensen, tilbakestille hastighetsgrensen på serversiden eller bruke en egen server for transaksjonell e-post."
       failed:
         one: "1 transaksjonell e-post mislyktes de siste 24 timene fordi e-postserveren lå på timegrensen i 24 timer"
         other: "%{count} transaksjonelle e-poster mislyktes de siste 24 timene fordi e-postserveren lå på timegrensen i 24 timer"
@@ -9332,7 +9340,7 @@ nb:
       tooltip_email_sent: "Godtatt av e-postleverandøren. Med parallell sending på rapporterer kampanjer utsendinger i broadcast.batch_completed i stedet"
       tooltip_email_failed: "Permanent leveringsfeil; blir ikke forsøkt på nytt. Med parallell sending på rapporterer kampanjer feil i broadcast.batch_completed i stedet"
       tooltip_email_delivery_delayed: "Midlertidig problem som gråliste; leveringen blir forsøkt på nytt"
-      tooltip_email_send_delayed: "En transaksjonell e-post venter på ledig kapasitet på e-postserveren sin (timegrensen er nådd); den prøves på nytt hvert minutt i opptil 24 timer"
+      tooltip_email_send_delayed: "En transaksjonell e-post venter på e-postserveren sin: timegrensen er brukt opp, eller e-postleverandøren har satt utsendingen på pause. Den prøves på nytt når serveren har ledig kapasitet, i opptil 24 timer"
       tooltip_broadcast_queueing: "Kampanjen forberedes, og mottakerne legges i kø"
       tooltip_broadcast_batch_completed: "Bare ved parallell sending: én hendelse per gruppe på opptil 500, som viser hvem som ble sendt til eller mislyktes, i stedet for email.sent / email.failed for kampanjer"
       tooltip_message_attempt_exhausted: "Alle nye forsøk har mislyktes for denne leveringen"

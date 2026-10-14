@@ -2808,6 +2808,8 @@ sv:
       stalled_hint: "Inga mejl har skickats på över 5 minuter. Försök att pausa och återuppta kampanjen."
       waiting_for_room: "Väntar på ledig kapacitet på e-postservern"
       waiting_for_room_hint: "Serverns timgräns för kampanjer är förbrukad. Utskicket fortsätter av sig självt (runt %{time}). Om du vill skicka tidigare kan du höja gränsen eller återställa hastighetsgränsen på serversidan."
+      retrying: "Utskicket stannade en stund"
+      retrying_hint: "E-postservern tog inte emot det senaste mejlet: %{reason}. Broadcast försöker igen av sig självt %{time} (försök %{attempt} av %{max})."
       paused_in_flight: "Mejl som redan var på väg när du pausade kan fortfarande komma fram. Antalet mottagare slutar öka om en liten stund."
       delivery_analytics: "Leveransstatistik"
       recent_activity: "Senaste aktivitet"
@@ -5200,6 +5202,12 @@ sv:
       like_without: "Som %{role}, utan %{missing}"
       like_plus_without: "Som %{role}, plus %{extra}, utan %{missing}"
       separator: " och "
+
+  provider_block:
+    title: "Pausat av %{provider}"
+    account_limit: "%{provider} har pausat utskicket på den här servern till %{time}. Utskicket fortsätter av sig självt. %{provider} begränsar hur mycket ett nytt konto får skicka; slutför kontoverifieringen hos %{provider} för att ta bort gränsen."
+    quota: "%{provider} har nått sin dagliga sändkvot. Utskicket fortsätter av sig självt %{time}. Om du vill skicka mer per dag kan du be %{provider} att höja kvoten."
+    throttle: "%{provider} har bett Broadcast att skicka långsammare. Utskicket fortsätter av sig självt %{time}."
 
   profile:
     show:
@@ -7635,7 +7643,7 @@ sv:
       waiting:
         one: "1 transaktionsmejl har väntat på ledig kapacitet på e-postservern i över 30 minuter"
         other: "%{count} transaktionsmejl har väntat på ledig kapacitet på e-postservern i över 30 minuter"
-      waiting_hint: "Servern har nått sin timgräns. Transaktionsmejl försöks igen varje minut, i upp till 24 timmar. Om du vill skicka tidigare kan du höja gränsen, återställa hastighetsgränsen på serversidan eller använda en separat server för transaktionsmejl."
+      waiting_hint: "Serverns timgräns är förbrukad. Transaktionsmejl skickas när servern har ledig kapacitet igen, i upp till 24 timmar. Om du vill skicka tidigare kan du höja gränsen, återställa hastighetsgränsen på serversidan eller använda en separat server för transaktionsmejl."
       failed:
         one: "1 transaktionsmejl misslyckades under de senaste 24 timmarna eftersom e-postservern låg kvar på sin timgräns i 24 timmar"
         other: "%{count} transaktionsmejl misslyckades under de senaste 24 timmarna eftersom e-postservern låg kvar på sin timgräns i 24 timmar"
@@ -9332,7 +9340,7 @@ sv:
       tooltip_email_sent: "Accepterat av e-postleverantören. När parallell sändning är på rapporterar kampanjer i stället skickade mejl i broadcast.batch_completed"
       tooltip_email_failed: "Permanent leveransfel; inga nya försök görs. När parallell sändning är på rapporterar kampanjer i stället fel i broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Tillfälligt problem som greylisting; leveransen försöks igen"
-      tooltip_email_send_delayed: "Ett transaktionsmejl väntar på ledig kapacitet på sin e-postserver (timgränsen är nådd); det försöks igen varje minut i upp till 24 timmar"
+      tooltip_email_send_delayed: "Ett transaktionsmejl väntar på sin e-postserver: timgränsen är förbrukad, eller e-postleverantören har pausat utskicket. Det försöks igen när servern har ledig kapacitet, i upp till 24 timmar"
       tooltip_broadcast_queueing: "Kampanjen förbereds och mottagarna läggs i kö"
       tooltip_broadcast_batch_completed: "Endast parallell sändning: en händelse per omgång om upp till 500, med listor över vilka som fick mejlet eller misslyckades, i stället för email.sent / email.failed för kampanjer"
       tooltip_message_attempt_exhausted: "Alla nya försök har misslyckats för den här leveransen"

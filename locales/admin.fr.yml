@@ -2809,6 +2809,8 @@ fr:
       stalled_hint: "Aucun e-mail envoyé depuis plus de 5 minutes. Essayez de mettre la campagne en pause puis de la reprendre."
       waiting_for_room: "En attente de capacité sur le serveur e-mail"
       waiting_for_room_hint: "La limite horaire du serveur est atteinte pour les campagnes. L'envoi reprendra automatiquement (vers %{time}). Pour envoyer plus tôt, augmentez la limite ou réinitialisez la limite de débit sur la page du serveur."
+      retrying: "L'envoi s'est arrêté un instant"
+      retrying_hint: "Le serveur e-mail n'a pas accepté le dernier e-mail : %{reason}. Broadcast réessaie automatiquement à %{time} (tentative %{attempt} sur %{max})."
       paused_in_flight: "Les e-mails déjà en route au moment de la pause peuvent encore arriver. Le nombre de destinataires s'arrêtera dans un instant."
       delivery_analytics: "Statistiques de remise"
       recent_activity: "Activité récente"
@@ -5201,6 +5203,12 @@ fr:
       like_without: "Comme %{role}, sans %{missing}"
       like_plus_without: "Comme %{role}, plus %{extra}, sans %{missing}"
       separator: " et "
+
+  provider_block:
+    title: "Mis en pause par %{provider}"
+    account_limit: "%{provider} a mis l'envoi en pause sur ce serveur jusqu'à %{time}. L'envoi reprendra automatiquement. %{provider} limite ce qu'un nouveau compte peut envoyer ; terminez la vérification du compte chez %{provider} pour lever la limite."
+    quota: "%{provider} a atteint son quota d'envoi quotidien. L'envoi reprendra automatiquement à %{time}. Pour envoyer davantage par jour, demandez à %{provider} d'augmenter le quota."
+    throttle: "%{provider} a demandé à Broadcast de ralentir. L'envoi reprendra automatiquement à %{time}."
 
   profile:
     show:
@@ -7636,7 +7644,7 @@ fr:
       waiting:
         one: "1 e-mail transactionnel attend de la capacité sur le serveur e-mail depuis plus de 30 minutes"
         other: "%{count} e-mails transactionnels attendent de la capacité sur le serveur e-mail depuis plus de 30 minutes"
-      waiting_hint: "Le serveur a atteint sa limite horaire. Les e-mails transactionnels sont réessayés chaque minute, pendant 24 heures au maximum. Pour envoyer plus tôt, augmentez la limite, réinitialisez la limite de débit sur la page du serveur ou utilisez un serveur distinct pour les e-mails transactionnels."
+      waiting_hint: "La limite horaire du serveur est atteinte. Les e-mails transactionnels sont envoyés dès que le serveur a de nouveau de la capacité, pendant 24 heures au maximum. Pour envoyer plus tôt, augmentez la limite, réinitialisez la limite de débit sur la page du serveur ou utilisez un serveur distinct pour les e-mails transactionnels."
       failed:
         one: "1 e-mail transactionnel a échoué au cours des dernières 24 heures, car le serveur e-mail est resté à sa limite horaire pendant 24 heures"
         other: "%{count} e-mails transactionnels ont échoué au cours des dernières 24 heures, car le serveur e-mail est resté à sa limite horaire pendant 24 heures"
@@ -9333,7 +9341,7 @@ fr:
       tooltip_email_sent: "Accepté par le fournisseur d'e-mail. Avec l'envoi parallèle activé, les campagnes signalent les envois dans broadcast.batch_completed"
       tooltip_email_failed: "Échec de distribution définitif ; aucune nouvelle tentative. Avec l'envoi parallèle activé, les campagnes signalent les échecs dans broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problème temporaire, comme le greylisting ; la distribution sera retentée"
-      tooltip_email_send_delayed: "Un e-mail transactionnel attend de la capacité sur son serveur e-mail (limite horaire atteinte) ; il est réessayé chaque minute pendant 24 heures au maximum"
+      tooltip_email_send_delayed: "Un e-mail transactionnel attend son serveur e-mail : la limite horaire est atteinte ou le fournisseur d'e-mail a mis l'envoi en pause. Il est réessayé dès que le serveur a de la capacité, pendant 24 heures au maximum"
       tooltip_broadcast_queueing: "La campagne est en préparation et les destinataires sont mis en file d'attente"
       tooltip_broadcast_batch_completed: "Envoi parallèle uniquement : un événement par lot de 500 au maximum, listant les envois réussis ou échoués, à la place de email.sent / email.failed pour les campagnes"
       tooltip_message_attempt_exhausted: "Toutes les tentatives ont échoué pour cet envoi"

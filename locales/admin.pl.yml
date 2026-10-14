@@ -2892,6 +2892,8 @@ pl:
       stalled_hint: "Od ponad 5 minut nie wysłano żadnego e-maila. Spróbuj wstrzymać i wznowić kampanię."
       waiting_for_room: "Oczekiwanie na wolne miejsce na serwerze poczty"
       waiting_for_room_hint: "Godzinowy limit serwera dla kampanii został wyczerpany. Wysyłka wznowi się samoczynnie (około %{time}). Aby wysłać wcześniej, zwiększ limit lub zresetuj limit szybkości na stronie serwera."
+      retrying: "Wysyłka na chwilę się zatrzymała"
+      retrying_hint: "Serwer poczty nie przyjął ostatniego e-maila: %{reason}. Broadcast spróbuje ponownie samoczynnie o %{time} (próba %{attempt} z %{max})."
       paused_in_flight: "E-maile, które były już w drodze w chwili wstrzymania, mogą jeszcze dotrzeć. Liczba odbiorców za chwilę przestanie rosnąć."
       delivery_analytics: "Analityka dostarczania"
       recent_activity: "Ostatnia aktywność"
@@ -5376,6 +5378,12 @@ pl:
       like_without: "Jak %{role}, bez: %{missing}"
       like_plus_without: "Jak %{role}, plus %{extra}, bez: %{missing}"
       separator: " i "
+
+  provider_block:
+    title: "Wstrzymane przez %{provider}"
+    account_limit: "%{provider} wstrzymał wysyłkę na tym serwerze do %{time}. Wysyłka wznowi się samoczynnie. %{provider} ogranicza, ile może wysłać nowe konto; dokończ weryfikację konta w %{provider}, aby znieść limit."
+    quota: "%{provider} osiągnął dzienny limit wysyłki. Wysyłka wznowi się samoczynnie o %{time}. Aby wysyłać więcej dziennie, poproś %{provider} o zwiększenie limitu."
+    throttle: "%{provider} poprosił Broadcast o wolniejszą wysyłkę. Wysyłka wznowi się samoczynnie o %{time}."
 
   profile:
     show:
@@ -7887,7 +7895,7 @@ pl:
         few: "%{count} e-maile transakcyjne czekają ponad 30 minut na wolne miejsce na serwerze poczty"
         many: "%{count} e-maili transakcyjnych czeka ponad 30 minut na wolne miejsce na serwerze poczty"
         other: "%{count} e-maila transakcyjnego czeka ponad 30 minut na wolne miejsce na serwerze poczty"
-      waiting_hint: "Serwer osiągnął limit godzinowy. E-maile transakcyjne są ponawiane co minutę, maksymalnie przez 24 godziny. Aby wysłać wcześniej, zwiększ limit, zresetuj limit szybkości na stronie serwera lub użyj osobnego serwera dla e-maili transakcyjnych."
+      waiting_hint: "Godzinowy limit serwera został wyczerpany. E-maile transakcyjne są wysyłane, gdy serwer znów ma wolne miejsce, maksymalnie przez 24 godziny. Aby wysłać wcześniej, zwiększ limit, zresetuj limit szybkości na stronie serwera lub użyj osobnego serwera dla e-maili transakcyjnych."
       failed:
         one: "1 e-mail transakcyjny nie został wysłany w ciągu ostatnich 24 godzin, bo serwer poczty przez 24 godziny pozostawał na limicie godzinowym"
         few: "%{count} e-maile transakcyjne nie zostały wysłane w ciągu ostatnich 24 godzin, bo serwer poczty przez 24 godziny pozostawał na limicie godzinowym"
@@ -9664,7 +9672,7 @@ pl:
       tooltip_email_sent: "Zaakceptowany przez dostawcę poczty. Gdy włączona jest wysyłka równoległa, kampanie zgłaszają wysyłki w zdarzeniu broadcast.batch_completed"
       tooltip_email_failed: "Trwałe niepowodzenie dostarczenia; bez ponownych prób. Gdy włączona jest wysyłka równoległa, kampanie zgłaszają niepowodzenia w zdarzeniu broadcast.batch_completed"
       tooltip_email_delivery_delayed: "Problem tymczasowy, np. greylisting; dostarczenie zostanie ponowione"
-      tooltip_email_send_delayed: "E-mail transakcyjny czeka na wolne miejsce na swoim serwerze poczty (osiągnięto limit godzinowy); jest ponawiany co minutę maksymalnie przez 24 godziny"
+      tooltip_email_send_delayed: "E-mail transakcyjny czeka na swój serwer poczty: limit godzinowy został wyczerpany albo dostawca poczty wstrzymał wysyłkę. Jest ponawiany, gdy serwer ma wolne miejsce, maksymalnie przez 24 godziny"
       tooltip_broadcast_queueing: "Kampania jest przygotowywana, a odbiorcy trafiają do kolejki"
       tooltip_broadcast_batch_completed: "Tylko wysyłka równoległa: jedno zdarzenie na partię do 500 odbiorców, z listą wysłanych i nieudanych, zamiast email.sent / email.failed dla kampanii"
       tooltip_message_attempt_exhausted: "Wszystkie próby tego dostarczenia zakończyły się niepowodzeniem"
