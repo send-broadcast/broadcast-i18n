@@ -8240,6 +8240,7 @@ sv:
     start_processing:
       started: "Importen har startat"
     limit_exceeded: "Importen skulle lägga till %{count} prenumeranter, men du har bara %{remaining} kvar. Uppgradera ditt abonnemang."
+    topic_kept_off: "Rad %{email}: %{reason} Ämnet förblev avstängt och resten av raden importerades."
 
   subscriber_sequences:
     index:
@@ -8440,7 +8441,7 @@ sv:
       unset: "Inte angivet"
       unset_receives: "Inte angivet (får det)"
       unset_does_not_receive: "Inte angivet (får det inte)"
-      locked_hint: "Prenumeranten har stängt av det här ämnet. Bara prenumeranten kan slå på det igen."
+      locked_hint: "Prenumeranten har stängt av det här ämnet. Bara prenumeranten kan slå på det igen, på sin inställningssida."
     form:
       intro: "Hantera prenumerantens uppgifter och preferenser."
     update:

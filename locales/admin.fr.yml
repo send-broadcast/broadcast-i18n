@@ -8241,6 +8241,7 @@ fr:
     start_processing:
       started: "Import lancé"
     limit_exceeded: "L'import ajouterait %{count} abonnés, mais il ne vous en reste que %{remaining}. Veuillez passer à une offre supérieure."
+    topic_kept_off: "Ligne %{email} : %{reason} Le thème est resté désactivé, et le reste de la ligne a été importé."
 
   subscriber_sequences:
     index:
@@ -8441,7 +8442,7 @@ fr:
       unset: "Non défini"
       unset_receives: "Non défini (reçoit)"
       unset_does_not_receive: "Non défini (ne reçoit pas)"
-      locked_hint: "L'abonné a désactivé ce thème. Seul l'abonné peut le réactiver."
+      locked_hint: "L'abonné a désactivé ce thème. Seul l'abonné peut le réactiver, depuis sa page de préférences."
     form:
       intro: "Gérez les informations et préférences de l'abonné."
     update:

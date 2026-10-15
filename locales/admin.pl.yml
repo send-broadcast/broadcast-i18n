@@ -8526,6 +8526,7 @@ pl:
     start_processing:
       started: "Rozpoczęto import"
     limit_exceeded: "Import dodałby subskrybentów: %{count}, a pozostało ci tylko: %{remaining}. Zmień plan na wyższy."
+    topic_kept_off: "Wiersz %{email}: %{reason} Temat pozostał wyłączony, a reszta wiersza została zaimportowana."
 
   subscriber_sequences:
     index:
@@ -8728,7 +8729,7 @@ pl:
       unset: "Nie ustawiono"
       unset_receives: "Nie ustawiono (otrzymuje)"
       unset_does_not_receive: "Nie ustawiono (nie otrzymuje)"
-      locked_hint: "Subskrybent wyłączył ten temat. Tylko subskrybent może go ponownie włączyć."
+      locked_hint: "Subskrybent wyłączył ten temat. Tylko subskrybent może go ponownie włączyć na swojej stronie preferencji."
     form:
       intro: "Zarządzaj informacjami i preferencjami subskrybenta."
     update:

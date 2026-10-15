@@ -1,0 +1,35 @@
+# Broadcast admin interface: field names and validation messages, English reference.
+#
+# Generated from the Broadcast application, where English is written. Do not
+# edit this file: suggest English changes in an issue instead. Translations in
+# locales/ follow its keys.
+
+en:
+  activerecord:
+    attributes:
+      token:
+        rate_limit_per_minute: "Rate limit (requests per minute)"
+      admin_api_token:
+        rate_limit_per_minute: "Rate limit (requests per minute)"
+      topic:
+        name: "Name"
+        storage: "Storage"
+        custom_data_key: "Custom data field"
+        tag_name: "Tag"
+        unset_receives: "Subscribers with no value"
+    errors:
+      models:
+        topic:
+          attributes:
+            unset_receives:
+              not_allowed_for_tag: "must be off for a tag topic: a tag cannot record an explicit opt-out"
+        subscriber:
+          attributes:
+            base:
+              topic_turned_off_by_subscriber: "%{topics} was turned off by the subscriber. Only the subscriber can turn it back on, from their preference page."
+        segment_rule:
+          attributes:
+            value:
+              topic_not_in_channel: "must be a topic of this channel"
+            operator:
+              needs_custom_data_topic: "\"is not set\" needs a custom data topic: a tag topic has no unset value"

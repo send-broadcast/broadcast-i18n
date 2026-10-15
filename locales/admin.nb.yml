@@ -8240,6 +8240,7 @@ nb:
     start_processing:
       started: "Importen har startet"
     limit_exceeded: "Importen ville lagt til %{count} abonnenter, men du har bare %{remaining} igjen. Oppgrader abonnementet ditt."
+    topic_kept_off: "Rad %{email}: %{reason} Emnet forble av, og resten av raden ble importert."
 
   subscriber_sequences:
     index:
@@ -8440,7 +8441,7 @@ nb:
       unset: "Ikke angitt"
       unset_receives: "Ikke angitt (får det)"
       unset_does_not_receive: "Ikke angitt (får det ikke)"
-      locked_hint: "Abonnenten har slått av dette emnet. Bare abonnenten kan slå det på igjen."
+      locked_hint: "Abonnenten har slått av dette emnet. Bare abonnenten kan slå det på igjen, på sin innstillingsside."
     form:
       intro: "Administrer abonnentinformasjon og preferanser."
     update:

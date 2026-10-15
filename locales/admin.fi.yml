@@ -8241,6 +8241,7 @@ fi:
     start_processing:
       started: "Tuonti aloitettu"
     limit_exceeded: "Tuonti lisäisi %{count} tilaajaa, mutta sinulla on jäljellä vain %{remaining}. Päivitä tilauksesi."
+    topic_kept_off: "Rivi %{email}: %{reason} Aihe pysyi pois käytöstä, ja muu rivi tuotiin."
 
   subscriber_sequences:
     index:
@@ -8441,7 +8442,7 @@ fi:
       unset: "Ei asetettu"
       unset_receives: "Ei asetettu (saa)"
       unset_does_not_receive: "Ei asetettu (ei saa)"
-      locked_hint: "Tilaaja poisti tämän aiheen käytöstä. Vain tilaaja voi ottaa sen uudelleen käyttöön."
+      locked_hint: "Tilaaja poisti tämän aiheen käytöstä. Vain tilaaja voi ottaa sen uudelleen käyttöön omalla asetussivullaan."
     form:
       intro: "Hallitse tilaajan tietoja ja asetuksia."
     update:

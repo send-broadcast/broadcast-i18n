@@ -8240,6 +8240,7 @@ pt-BR:
     start_processing:
       started: "Importação iniciada"
     limit_exceeded: "A importação adicionaria %{count} assinantes, mas você só tem %{remaining} restantes. Faça upgrade do seu plano."
+    topic_kept_off: "Linha %{email}: %{reason} O tópico continuou desativado, e o resto da linha foi importado."
 
   subscriber_sequences:
     index:
@@ -8440,7 +8441,7 @@ pt-BR:
       unset: "Não definido"
       unset_receives: "Não definido (recebe)"
       unset_does_not_receive: "Não definido (não recebe)"
-      locked_hint: "O assinante desativou este tópico. Só o assinante pode ativá-lo de novo."
+      locked_hint: "O assinante desativou este tópico. Só o assinante pode ativá-lo de novo, na página de preferências dele."
     form:
       intro: "Gerencie as informações e preferências do assinante."
     update:

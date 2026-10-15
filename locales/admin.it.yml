@@ -8238,6 +8238,7 @@ it:
     start_processing:
       started: "Importazione avviata"
     limit_exceeded: "L'importazione aggiungerebbe %{count} iscritti, ma te ne restano solo %{remaining}. Passa a un piano superiore."
+    topic_kept_off: "Riga %{email}: %{reason} L'argomento è rimasto disattivato e il resto della riga è stato importato."
 
   subscriber_sequences:
     index:
@@ -8438,7 +8439,7 @@ it:
       unset: "Non impostato"
       unset_receives: "Non impostato (lo riceve)"
       unset_does_not_receive: "Non impostato (non lo riceve)"
-      locked_hint: "L'iscritto ha disattivato questo argomento. Solo l'iscritto può riattivarlo."
+      locked_hint: "L'iscritto ha disattivato questo argomento. Solo l'iscritto può riattivarlo, dalla sua pagina delle preferenze."
     form:
       intro: "Gestisci le informazioni e le preferenze dell'iscritto."
     update:

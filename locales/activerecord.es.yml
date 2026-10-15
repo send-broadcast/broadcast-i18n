@@ -1,0 +1,34 @@
+# Broadcast admin interface: field names and validation messages, Spanish.
+#
+# Every key mirrors reference/activerecord.en.yml. Keep each %{placeholder} as
+# it is and never use long dashes. Follow the style notes and glossary at the top
+# of admin.es.yml. bin/check validates the file; see CONTRIBUTING.md.
+es:
+  activerecord:
+    attributes:
+      token:
+        rate_limit_per_minute: "Límite de frecuencia (solicitudes por minuto)"
+      admin_api_token:
+        rate_limit_per_minute: "Límite de frecuencia (solicitudes por minuto)"
+      topic:
+        name: "Nombre"
+        storage: "Almacenamiento"
+        custom_data_key: "Campo personalizado"
+        tag_name: "Etiqueta"
+        unset_receives: "Suscriptores sin valor"
+    errors:
+      models:
+        topic:
+          attributes:
+            unset_receives:
+              not_allowed_for_tag: "debe estar desactivado en un tema de etiqueta: una etiqueta no puede registrar una baja explícita"
+        subscriber:
+          attributes:
+            base:
+              topic_turned_off_by_subscriber: "El suscriptor desactivó %{topics}. Solo el suscriptor puede volver a activarlo, desde su página de preferencias."
+        segment_rule:
+          attributes:
+            value:
+              topic_not_in_channel: "debe ser un tema de este canal"
+            operator:
+              needs_custom_data_topic: "\"no está definido\" necesita un tema de campo personalizado: un tema de etiqueta nunca queda sin valor"

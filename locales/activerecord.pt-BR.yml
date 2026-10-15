@@ -1,0 +1,34 @@
+# Broadcast admin interface: field names and validation messages, Portuguese (Brazil).
+#
+# Every key mirrors reference/activerecord.en.yml. Keep each %{placeholder} as
+# it is and never use long dashes. Follow the style notes and glossary at the top
+# of admin.pt-BR.yml. bin/check validates the file; see CONTRIBUTING.md.
+pt-BR:
+  activerecord:
+    attributes:
+      token:
+        rate_limit_per_minute: "Limite de taxa (requisições por minuto)"
+      admin_api_token:
+        rate_limit_per_minute: "Limite de taxa (requisições por minuto)"
+      topic:
+        name: "Nome"
+        storage: "Armazenamento"
+        custom_data_key: "Campo personalizado"
+        tag_name: "Tag"
+        unset_receives: "Assinantes sem valor"
+    errors:
+      models:
+        topic:
+          attributes:
+            unset_receives:
+              not_allowed_for_tag: "precisa estar desativado em um tópico por tag: uma tag não consegue registrar uma recusa explícita"
+        subscriber:
+          attributes:
+            base:
+              topic_turned_off_by_subscriber: "O assinante desativou %{topics}. Só o assinante pode ativá-lo de novo, na página de preferências dele."
+        segment_rule:
+          attributes:
+            value:
+              topic_not_in_channel: "precisa ser um tópico deste canal"
+            operator:
+              needs_custom_data_topic: "\"não está definido\" precisa de um tópico por campo personalizado: um tópico por tag nunca fica sem valor"

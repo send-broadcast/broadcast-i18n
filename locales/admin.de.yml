@@ -8242,6 +8242,7 @@ de:
     start_processing:
       started: "Import gestartet"
     limit_exceeded: "Der Import würde %{count} Abonnenten hinzufügen, Sie haben aber nur noch %{remaining} frei. Bitte upgraden Sie Ihren Tarif."
+    topic_kept_off: "Zeile %{email}: %{reason} Das Thema blieb abgeschaltet, der Rest der Zeile wurde importiert."
 
   subscriber_sequences:
     index:
@@ -8442,7 +8443,7 @@ de:
       unset: "Nicht festgelegt"
       unset_receives: "Nicht festgelegt (erhält es)"
       unset_does_not_receive: "Nicht festgelegt (erhält es nicht)"
-      locked_hint: "Der Abonnent hat dieses Thema abgeschaltet. Nur der Abonnent kann es wieder anschalten."
+      locked_hint: "Der Abonnent hat dieses Thema abgeschaltet. Nur der Abonnent kann es wieder anschalten, auf seiner Einstellungsseite."
     form:
       intro: "Abonnenteninformationen und Präferenzen verwalten."
     update:

@@ -8223,6 +8223,7 @@ en:
     start_processing:
       started: "Import started"
     limit_exceeded: "Import would add %{count} subscribers, but you only have %{remaining} remaining. Please upgrade your plan."
+    topic_kept_off: "Row %{email}: %{reason} The topic was kept off, and the rest of the row was imported."
 
   subscriber_sequences:
     index:
@@ -8423,7 +8424,7 @@ en:
       unset: "Not set"
       unset_receives: "Not set (receives)"
       unset_does_not_receive: "Not set (does not receive)"
-      locked_hint: "The subscriber turned this topic off. Only the subscriber can turn it back on."
+      locked_hint: "The subscriber turned this topic off. Only the subscriber can turn it back on, from their preference page."
     form:
       intro: "Manage subscriber information and preferences."
     update:

@@ -8241,6 +8241,7 @@ es:
     start_processing:
       started: "Importación iniciada"
     limit_exceeded: "La importación añadiría %{count} suscriptores, pero solo te quedan %{remaining}. Mejora tu plan."
+    topic_kept_off: "Fila %{email}: %{reason} El tema se mantuvo desactivado y el resto de la fila se importó."
 
   subscriber_sequences:
     index:
@@ -8441,7 +8442,7 @@ es:
       unset: "Sin definir"
       unset_receives: "Sin definir (lo recibe)"
       unset_does_not_receive: "Sin definir (no lo recibe)"
-      locked_hint: "El suscriptor desactivó este tema. Solo el suscriptor puede volver a activarlo."
+      locked_hint: "El suscriptor desactivó este tema. Solo el suscriptor puede volver a activarlo, desde su página de preferencias."
     form:
       intro: "Gestiona la información y las preferencias del suscriptor."
     update:

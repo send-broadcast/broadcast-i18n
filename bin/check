@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-# Checks every translation in locales/ against reference/admin.en.yml.
+# Checks every translation in locales/ against its English in reference/
+# (locales/admin.fr.yml against reference/admin.en.yml, and so on).
 #
 #   bin/check           all languages
 #   bin/check fr        one language
@@ -15,16 +16,16 @@ list_missing = ARGV.delete('--missing')
 locales = ARGV.empty? ? BroadcastI18n::LOCALES.keys : ARGV
 failed = false
 
-locales.each do |locale|
-  file = BroadcastI18n.locale_file(locale)
+locales.product(BroadcastI18n::FILES).each do |locale, name|
+  file = BroadcastI18n.locale_file(locale, name)
   unless File.exist?(file)
     puts "#{locale}: #{File.basename(file)} not found"
     failed = true
     next
   end
 
-  result = BroadcastI18n::Check.new(reference: BroadcastI18n.reference_file, file:, locale:).run
-  puts format('%-3s %6.1f%% translated, %d missing, %d errors', locale, result.coverage, result.missing.size, result.errors.size)
+  result = BroadcastI18n::Check.new(reference: BroadcastI18n.reference_file(name), file:, locale:).run
+  puts format('%-5s %-12s %6.1f%% translated, %d missing, %d errors', locale, name, result.coverage, result.missing.size, result.errors.size)
   result.errors.each { |error| puts "    #{error}" }
   result.missing.each { |key| puts "    missing: #{key}" } if list_missing
   failed ||= result.errors.any?

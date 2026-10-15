@@ -8240,6 +8240,7 @@ da:
     start_processing:
       started: "Importen er startet"
     limit_exceeded: "Importen ville tilføje %{count} abonnenter, men du har kun %{remaining} tilbage. Opgrader din plan."
+    topic_kept_off: "Række %{email}: %{reason} Emnet forblev slået fra, og resten af rækken blev importeret."
 
   subscriber_sequences:
     index:
@@ -8440,7 +8441,7 @@ da:
       unset: "Ikke angivet"
       unset_receives: "Ikke angivet (modtager)"
       unset_does_not_receive: "Ikke angivet (modtager ikke)"
-      locked_hint: "Abonnenten har slået dette emne fra. Kun abonnenten kan slå det til igen."
+      locked_hint: "Abonnenten har slået dette emne fra. Kun abonnenten kan slå det til igen, på sin indstillingsside."
     form:
       intro: "Administrer abonnentens oplysninger og præferencer."
     update:

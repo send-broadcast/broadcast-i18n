@@ -8242,6 +8242,7 @@ nl:
     start_processing:
       started: "Import gestart"
     limit_exceeded: "De import zou %{count} abonnees toevoegen, maar je hebt er nog maar %{remaining} over. Upgrade je abonnement."
+    topic_kept_off: "Rij %{email}: %{reason} Het onderwerp bleef uit en de rest van de rij is geïmporteerd."
 
   subscriber_sequences:
     index:
@@ -8442,7 +8443,7 @@ nl:
       unset: "Niet ingesteld"
       unset_receives: "Niet ingesteld (ontvangt)"
       unset_does_not_receive: "Niet ingesteld (ontvangt niet)"
-      locked_hint: "De abonnee heeft dit onderwerp uitgezet. Alleen de abonnee kan het weer aanzetten."
+      locked_hint: "De abonnee heeft dit onderwerp uitgezet. Alleen de abonnee kan het weer aanzetten, op de eigen voorkeurenpagina."
     form:
       intro: "Beheer de gegevens en voorkeuren van de abonnee."
     update:
