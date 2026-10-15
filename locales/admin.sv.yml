@@ -407,6 +407,9 @@ sv:
           channel_settings:
             description: "Inställningar för allmänt, avsändare, varumärkeskit, avregistreringssida och bekräftelsesida"
             name: "Kanalinställningar"
+          file_assets:
+            description: "Ladda upp, lista och ta bort filer i filbiblioteket"
+            name: "Filer"
           webhook_endpoints:
             description: "Konfigurationer för utgående webhooks"
             name: "Webhook-endpoints"
@@ -2125,6 +2128,8 @@ sv:
           label: "Radhöjd"
         color:
           label: "Färg"
+        linkColor:
+          label: "Länkfärg"
       image:
         src:
           label: "Bild"
@@ -2207,6 +2212,8 @@ sv:
           label: "Bild till höger"
         imageWidth:
           label: "Bildbredd (%)"
+        linkColor:
+          label: "Länkfärg"
       social:
         links:
           label: "Profiler"
@@ -3527,6 +3534,11 @@ sv:
       picker_empty: "Inga filer har laddats upp ännu"
     create:
       uploaded: "Filen har laddats upp"
+      uploaded_many:
+        one: "%{count} fil har laddats upp"
+        other: "%{count} filer har laddats upp"
+      some_failed: "Vissa filer laddades inte upp: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Det gick inte att ladda upp filen"
     destroy:
       deleted: "Filen har tagits bort"
@@ -3612,6 +3624,7 @@ sv:
         broadcasts: "Kampanjer"
         channel_settings: "Kanalinställningar"
         email_servers: "E-postservrar"
+        file_assets: "Filer"
         opt_in_forms: "Registreringsformulär"
         segments: "Segment"
         sequences: "Sekvenser"
@@ -3925,6 +3938,11 @@ sv:
         not_contains: "Har inte prenumeranttaggen"
         tagged_with: "Klickade i ett mejl taggat"
         not_tagged_with: "Har inte klickat i ett mejl taggat"
+      topic_operators:
+        receives: "Får"
+        does_not_receive: "Får inte"
+        not_set: "Är inte angivet"
+      select_topic: "Välj ämne"
       select_operator: "Välj operator"
       number_of_days: "Antal dagar"
       days_ago: "dagar sedan"
@@ -4031,6 +4049,9 @@ sv:
     file_upload:
       default_types: "PNG, JPG, GIF upp till 10 MB"
       selected: "Vald fil: %{name}"
+      selected_count:
+        one: "%{count} fil vald"
+        other: "%{count} filer valda"
     form_inspector:
       delete_confirm: "Är du säker på att du vill ta bort det här blocket?"
     host_system:
@@ -5309,6 +5330,8 @@ sv:
         has_clicked_any_email: "Har klickat i något mejl"
         group_custom: "-- Anpassade data --"
         custom_data: "Fält för anpassade data"
+        group_topics: "-- Ämnen --"
+        topic: "Ämne"
       field: "Fält"
       field_hint: "Välj vilket prenumerantattribut som ska filtreras"
       select_field: "Välj fält"
@@ -5366,6 +5389,10 @@ sv:
       fewer_than_within_days: "har färre än"
       tagged_with: "har klickat i ett mejl taggat med"
       not_tagged_with: "har inte klickat i ett mejl taggat med"
+      receives: "får"
+      does_not_receive: "får inte"
+      not_set: "är inte angivet"
+      is_set: "är angivet"
       not_starts_with: "börjar inte med"
       not_ends_with: "slutar inte med"
     rule_fields:
@@ -5391,6 +5418,8 @@ sv:
       has_opened_any_email: "Har öppnat något mejl"
       has_clicked_any_email: "Har klickat i något mejl"
       custom: "Anpassat: %{name}"
+      topic: "Ämne"
+      deleted_topic: "Borttaget ämne"
     rate_indicator:
       excellent: "Utmärkt"
       good: "Bra"
@@ -8287,6 +8316,12 @@ sv:
       send_email: "Skicka mejl"
       tag_link: "Visa prenumeranter taggade med %{tag}"
       no_tags: "Inga taggar"
+      topics: "Ämnen"
+      topic_on: "På"
+      topic_off: "Av"
+      topic_unset: "Inte angivet"
+      topic_receives: "Får mejl som skickas till det här ämnet"
+      topic_does_not_receive: "Får inte mejl som skickas till det här ämnet"
       tabs:
         details: "Detaljer"
         emails: "Senaste mejl"
@@ -8397,6 +8432,15 @@ sv:
       submit: "Lägg till prenumerant"
     edit_modal_form:
       submit: "Spara ändringar"
+    topic_fields:
+      heading: "Ämnen"
+      hint: "Vilka typer av mejl den här prenumeranten får. Prenumeranten kan ändra dem på inställningssidan."
+      "on": "På"
+      "off": "Av"
+      unset: "Inte angivet"
+      unset_receives: "Inte angivet (får det)"
+      unset_does_not_receive: "Inte angivet (får det inte)"
+      locked_hint: "Prenumeranten har stängt av det här ämnet. Bara prenumeranten kan slå på det igen."
     form:
       intro: "Hantera prenumerantens uppgifter och preferenser."
     update:
@@ -8706,6 +8750,9 @@ sv:
         channel_settings:
           description: "Inställningar för allmänt, avsändare, varumärkeskit, avregistreringssida och bekräftelsesida"
           name: "Kanalinställningar"
+        file_assets:
+          description: "Ladda upp, lista och ta bort filer i filbiblioteket"
+          name: "Filer"
         webhook_endpoints:
           description: "Konfigurationer för utgående webhooks"
           name: "Webhook-endpoints"

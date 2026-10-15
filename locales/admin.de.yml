@@ -409,6 +409,9 @@ de:
           channel_settings:
             description: "Einstellungen für Allgemeines, Absender, Markenkit, Abmeldeseite und Bestätigungsseite"
             name: "Kanaleinstellungen"
+          file_assets:
+            description: "Dateien in der Dateibibliothek hochladen, auflisten und löschen"
+            name: "Dateien"
           webhook_endpoints:
             description: "Konfigurationen für ausgehende Webhooks"
             name: "Webhook-Endpunkte"
@@ -2127,6 +2130,8 @@ de:
           label: "Zeilenhöhe"
         color:
           label: "Farbe"
+        linkColor:
+          label: "Linkfarbe"
       image:
         src:
           label: "Bild"
@@ -2209,6 +2214,8 @@ de:
           label: "Bild rechts"
         imageWidth:
           label: "Bildbreite (%)"
+        linkColor:
+          label: "Linkfarbe"
       social:
         links:
           label: "Profile"
@@ -3529,6 +3536,11 @@ de:
       picker_empty: "Noch keine Dateien hochgeladen"
     create:
       uploaded: "Datei erfolgreich hochgeladen"
+      uploaded_many:
+        one: "%{count} Datei erfolgreich hochgeladen"
+        other: "%{count} Dateien erfolgreich hochgeladen"
+      some_failed: "Einige Dateien wurden nicht hochgeladen: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Datei-Upload fehlgeschlagen"
     destroy:
       deleted: "Datei erfolgreich gelöscht"
@@ -3614,6 +3626,7 @@ de:
         broadcasts: "Kampagnen"
         channel_settings: "Kanaleinstellungen"
         email_servers: "E-Mail-Server"
+        file_assets: "Dateien"
         opt_in_forms: "Anmeldeformulare"
         segments: "Segmente"
         sequences: "Sequenzen"
@@ -3927,6 +3940,11 @@ de:
         not_contains: "Hat Abonnenten-Tag nicht"
         tagged_with: "Hat E-Mail mit Tag angeklickt"
         not_tagged_with: "Hat E-Mail mit Tag nicht angeklickt"
+      topic_operators:
+        receives: "Erhält"
+        does_not_receive: "Erhält nicht"
+        not_set: "Ist nicht festgelegt"
+      select_topic: "Thema auswählen"
       select_operator: "Operator auswählen"
       number_of_days: "Anzahl Tage"
       days_ago: "Tage her"
@@ -4033,6 +4051,9 @@ de:
     file_upload:
       default_types: "PNG, JPG, GIF bis 10 MB"
       selected: "Ausgewählte Datei: %{name}"
+      selected_count:
+        one: "%{count} Datei ausgewählt"
+        other: "%{count} Dateien ausgewählt"
     form_inspector:
       delete_confirm: "Möchten Sie diesen Block wirklich löschen?"
     host_system:
@@ -5311,6 +5332,8 @@ de:
         has_clicked_any_email: "Hat eine E-Mail angeklickt"
         group_custom: "-- Benutzerdefinierte Daten --"
         custom_data: "Benutzerdefiniertes Datenfeld"
+        group_topics: "-- Themen --"
+        topic: "Thema"
       field: "Feld"
       field_hint: "Wählen Sie, nach welchem Abonnentenattribut gefiltert wird"
       select_field: "Feld auswählen"
@@ -5368,6 +5391,10 @@ de:
       fewer_than_within_days: "hat weniger als"
       tagged_with: "hat E-Mail mit Tag angeklickt"
       not_tagged_with: "hat E-Mail mit Tag nicht angeklickt"
+      receives: "erhält"
+      does_not_receive: "erhält nicht"
+      not_set: "ist nicht festgelegt"
+      is_set: "ist festgelegt"
       not_starts_with: "beginnt nicht mit"
       not_ends_with: "endet nicht mit"
     rule_fields:
@@ -5393,6 +5420,8 @@ de:
       has_opened_any_email: "Hat eine E-Mail geöffnet"
       has_clicked_any_email: "Hat eine E-Mail angeklickt"
       custom: "Benutzerdefiniert: %{name}"
+      topic: "Thema"
+      deleted_topic: "Gelöschtes Thema"
     rate_indicator:
       excellent: "Ausgezeichnet"
       good: "Gut"
@@ -8289,6 +8318,12 @@ de:
       send_email: "E-Mail senden"
       tag_link: "Abonnenten mit dem Tag %{tag} anzeigen"
       no_tags: "Keine Tags"
+      topics: "Themen"
+      topic_on: "An"
+      topic_off: "Aus"
+      topic_unset: "Nicht festgelegt"
+      topic_receives: "Erhält E-Mails, die an dieses Thema gesendet werden"
+      topic_does_not_receive: "Erhält keine E-Mails, die an dieses Thema gesendet werden"
       tabs:
         details: "Details"
         emails: "Letzte E-Mails"
@@ -8399,6 +8434,15 @@ de:
       submit: "Abonnent hinzufügen"
     edit_modal_form:
       submit: "Änderungen speichern"
+    topic_fields:
+      heading: "Themen"
+      hint: "Welche Arten von E-Mails dieser Abonnent erhält. Der Abonnent kann sie auf der Einstellungsseite ändern."
+      "on": "An"
+      "off": "Aus"
+      unset: "Nicht festgelegt"
+      unset_receives: "Nicht festgelegt (erhält es)"
+      unset_does_not_receive: "Nicht festgelegt (erhält es nicht)"
+      locked_hint: "Der Abonnent hat dieses Thema abgeschaltet. Nur der Abonnent kann es wieder anschalten."
     form:
       intro: "Abonnenteninformationen und Präferenzen verwalten."
     update:
@@ -8708,6 +8752,9 @@ de:
         channel_settings:
           description: "Einstellungen für Allgemeines, Absender, Markenkit, Abmeldeseite und Bestätigungsseite"
           name: "Kanaleinstellungen"
+        file_assets:
+          description: "Dateien in der Dateibibliothek hochladen, auflisten und löschen"
+          name: "Dateien"
         webhook_endpoints:
           description: "Konfigurationen für ausgehende Webhooks"
           name: "Webhook-Endpunkte"

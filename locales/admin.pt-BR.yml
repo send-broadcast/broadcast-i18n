@@ -407,6 +407,9 @@ pt-BR:
           channel_settings:
             description: "Configurações gerais, de remetente, kit da marca, página de cancelamento e página de confirmação"
             name: "Configurações do canal"
+          file_assets:
+            description: "Enviar, listar e excluir arquivos da biblioteca de arquivos"
+            name: "Arquivos"
           webhook_endpoints:
             description: "Configurações de webhooks de saída"
             name: "Endpoints de webhook"
@@ -2125,6 +2128,8 @@ pt-BR:
           label: "Altura da linha"
         color:
           label: "Cor"
+        linkColor:
+          label: "Cor dos links"
       image:
         src:
           label: "Imagem"
@@ -2207,6 +2212,8 @@ pt-BR:
           label: "Imagem à direita"
         imageWidth:
           label: "Largura da imagem (%)"
+        linkColor:
+          label: "Cor dos links"
       social:
         links:
           label: "Perfis"
@@ -3527,6 +3534,11 @@ pt-BR:
       picker_empty: "Nenhum arquivo enviado ainda"
     create:
       uploaded: "Arquivo enviado com sucesso"
+      uploaded_many:
+        one: "%{count} arquivo enviado com sucesso"
+        other: "%{count} arquivos enviados com sucesso"
+      some_failed: "Alguns arquivos não foram enviados: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Falha no envio do arquivo"
     destroy:
       deleted: "Arquivo excluído com sucesso"
@@ -3612,6 +3624,7 @@ pt-BR:
         broadcasts: "Campanhas"
         channel_settings: "Configurações do canal"
         email_servers: "Servidores de e-mail"
+        file_assets: "Arquivos"
         opt_in_forms: "Formulários de inscrição"
         segments: "Segmentos"
         sequences: "Sequências"
@@ -3925,6 +3938,11 @@ pt-BR:
         not_contains: "Não tem a tag de assinante"
         tagged_with: "Clicou em um e-mail com a tag"
         not_tagged_with: "Não clicou em um e-mail com a tag"
+      topic_operators:
+        receives: "Recebe"
+        does_not_receive: "Não recebe"
+        not_set: "Não está definido"
+      select_topic: "Selecione o tópico"
       select_operator: "Selecione o operador"
       number_of_days: "Número de dias"
       days_ago: "dias atrás"
@@ -4031,6 +4049,9 @@ pt-BR:
     file_upload:
       default_types: "PNG, JPG, GIF de até 10 MB"
       selected: "Arquivo selecionado: %{name}"
+      selected_count:
+        one: "%{count} arquivo selecionado"
+        other: "%{count} arquivos selecionados"
     form_inspector:
       delete_confirm: "Tem certeza de que deseja excluir este bloco?"
     host_system:
@@ -5309,6 +5330,8 @@ pt-BR:
         has_clicked_any_email: "Clicou em algum e-mail"
         group_custom: "-- Dados personalizados --"
         custom_data: "Campo de dados personalizados"
+        group_topics: "-- Tópicos --"
+        topic: "Tópico"
       field: "Campo"
       field_hint: "Escolha qual atributo do assinante filtrar"
       select_field: "Selecione o campo"
@@ -5366,6 +5389,10 @@ pt-BR:
       fewer_than_within_days: "tem menos de"
       tagged_with: "clicou em um e-mail com a tag"
       not_tagged_with: "não clicou em um e-mail com a tag"
+      receives: "recebe"
+      does_not_receive: "não recebe"
+      not_set: "não está definido"
+      is_set: "está definido"
       not_starts_with: "não começa com"
       not_ends_with: "não termina com"
     rule_fields:
@@ -5391,6 +5418,8 @@ pt-BR:
       has_opened_any_email: "Abriu algum e-mail"
       has_clicked_any_email: "Clicou em algum e-mail"
       custom: "Personalizado: %{name}"
+      topic: "Tópico"
+      deleted_topic: "Tópico excluído"
     rate_indicator:
       excellent: "Excelente"
       good: "Boa"
@@ -8287,6 +8316,12 @@ pt-BR:
       send_email: "Enviar e-mail"
       tag_link: "Mostrar assinantes com a tag %{tag}"
       no_tags: "Sem tags"
+      topics: "Tópicos"
+      topic_on: "Ativado"
+      topic_off: "Desativado"
+      topic_unset: "Não definido"
+      topic_receives: "Recebe e-mails enviados a este tópico"
+      topic_does_not_receive: "Não recebe e-mails enviados a este tópico"
       tabs:
         details: "Detalhes"
         emails: "Últimos e-mails"
@@ -8397,6 +8432,15 @@ pt-BR:
       submit: "Adicionar assinante"
     edit_modal_form:
       submit: "Salvar alterações"
+    topic_fields:
+      heading: "Tópicos"
+      hint: "Os tipos de e-mail que este assinante recebe. O assinante pode alterá-los na página de preferências."
+      "on": "Ativado"
+      "off": "Desativado"
+      unset: "Não definido"
+      unset_receives: "Não definido (recebe)"
+      unset_does_not_receive: "Não definido (não recebe)"
+      locked_hint: "O assinante desativou este tópico. Só o assinante pode ativá-lo de novo."
     form:
       intro: "Gerencie as informações e preferências do assinante."
     update:
@@ -8706,6 +8750,9 @@ pt-BR:
         channel_settings:
           description: "Configurações gerais, de remetente, kit da marca, página de cancelamento e página de confirmação"
           name: "Configurações do canal"
+        file_assets:
+          description: "Enviar, listar e excluir arquivos da biblioteca de arquivos"
+          name: "Arquivos"
         webhook_endpoints:
           description: "Configurações de webhooks de saída"
           name: "Endpoints de webhook"

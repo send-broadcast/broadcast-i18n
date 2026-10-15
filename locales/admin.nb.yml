@@ -407,6 +407,9 @@ nb:
           channel_settings:
             description: "Innstillinger for generelt, avsender, merkevaresett, avmeldingsside og bekreftelsesside"
             name: "Kanalinnstillinger"
+          file_assets:
+            description: "Last opp, vis og slett filer i filbiblioteket"
+            name: "Filer"
           webhook_endpoints:
             description: "Konfigurasjoner for utgående webhooks"
             name: "Webhook-endepunkter"
@@ -2125,6 +2128,8 @@ nb:
           label: "Linjehøyde"
         color:
           label: "Farge"
+        linkColor:
+          label: "Lenkefarge"
       image:
         src:
           label: "Bilde"
@@ -2207,6 +2212,8 @@ nb:
           label: "Bilde til høyre"
         imageWidth:
           label: "Bildebredde (%)"
+        linkColor:
+          label: "Lenkefarge"
       social:
         links:
           label: "Profiler"
@@ -3527,6 +3534,11 @@ nb:
       picker_empty: "Ingen filer er lastet opp ennå"
     create:
       uploaded: "Filen er lastet opp"
+      uploaded_many:
+        one: "%{count} fil er lastet opp"
+        other: "%{count} filer er lastet opp"
+      some_failed: "Noen filer ble ikke lastet opp: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Opplasting av filen mislyktes"
     destroy:
       deleted: "Filen er slettet"
@@ -3612,6 +3624,7 @@ nb:
         broadcasts: "Kampanjer"
         channel_settings: "Kanalinnstillinger"
         email_servers: "E-postservere"
+        file_assets: "Filer"
         opt_in_forms: "Påmeldingsskjemaer"
         segments: "Segmenter"
         sequences: "Sekvenser"
@@ -3925,6 +3938,11 @@ nb:
         not_contains: "Har ikke abonnenttaggen"
         tagged_with: "Klikket i en e-post tagget"
         not_tagged_with: "Har ikke klikket i en e-post tagget"
+      topic_operators:
+        receives: "Får"
+        does_not_receive: "Får ikke"
+        not_set: "Er ikke angitt"
+      select_topic: "Velg emne"
       select_operator: "Velg operator"
       number_of_days: "Antall dager"
       days_ago: "dager siden"
@@ -4031,6 +4049,9 @@ nb:
     file_upload:
       default_types: "PNG, JPG, GIF opptil 10 MB"
       selected: "Valgt fil: %{name}"
+      selected_count:
+        one: "%{count} fil valgt"
+        other: "%{count} filer valgt"
     form_inspector:
       delete_confirm: "Er du sikker på at du vil slette denne blokken?"
     host_system:
@@ -5309,6 +5330,8 @@ nb:
         has_clicked_any_email: "Har klikket i en e-post"
         group_custom: "-- Egendefinerte data --"
         custom_data: "Felt for egendefinerte data"
+        group_topics: "-- Emner --"
+        topic: "Emne"
       field: "Felt"
       field_hint: "Velg hvilken abonnentegenskap du vil filtrere på"
       select_field: "Velg felt"
@@ -5366,6 +5389,10 @@ nb:
       fewer_than_within_days: "har færre enn"
       tagged_with: "klikket i en e-post tagget"
       not_tagged_with: "har ikke klikket i en e-post tagget"
+      receives: "får"
+      does_not_receive: "får ikke"
+      not_set: "er ikke angitt"
+      is_set: "er angitt"
       not_starts_with: "begynner ikke med"
       not_ends_with: "slutter ikke med"
     rule_fields:
@@ -5391,6 +5418,8 @@ nb:
       has_opened_any_email: "Har åpnet en e-post"
       has_clicked_any_email: "Har klikket i en e-post"
       custom: "Egendefinert: %{name}"
+      topic: "Emne"
+      deleted_topic: "Slettet emne"
     rate_indicator:
       excellent: "Utmerket"
       good: "Bra"
@@ -8287,6 +8316,12 @@ nb:
       send_email: "Send e-post"
       tag_link: "Vis abonnenter tagget med %{tag}"
       no_tags: "Ingen tagger"
+      topics: "Emner"
+      topic_on: "På"
+      topic_off: "Av"
+      topic_unset: "Ikke angitt"
+      topic_receives: "Får e-post som sendes til dette emnet"
+      topic_does_not_receive: "Får ikke e-post som sendes til dette emnet"
       tabs:
         details: "Detaljer"
         emails: "Siste e-poster"
@@ -8397,6 +8432,15 @@ nb:
       submit: "Legg til abonnent"
     edit_modal_form:
       submit: "Lagre endringer"
+    topic_fields:
+      heading: "Emner"
+      hint: "Hvilke typer e-post denne abonnenten får. Abonnenten kan endre dem på innstillingssiden."
+      "on": "På"
+      "off": "Av"
+      unset: "Ikke angitt"
+      unset_receives: "Ikke angitt (får det)"
+      unset_does_not_receive: "Ikke angitt (får det ikke)"
+      locked_hint: "Abonnenten har slått av dette emnet. Bare abonnenten kan slå det på igjen."
     form:
       intro: "Administrer abonnentinformasjon og preferanser."
     update:
@@ -8706,6 +8750,9 @@ nb:
         channel_settings:
           description: "Innstillinger for generelt, avsender, merkevaresett, avmeldingsside og bekreftelsesside"
           name: "Kanalinnstillinger"
+        file_assets:
+          description: "Last opp, vis og slett filer i filbiblioteket"
+          name: "Filer"
         webhook_endpoints:
           description: "Konfigurasjoner for utgående webhooks"
           name: "Webhook-endepunkter"

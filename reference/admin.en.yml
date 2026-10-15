@@ -388,6 +388,9 @@ en:
           channel_settings:
             description: "General, sender, brand kit, unsubscribe page and confirmation page settings"
             name: "Channel Settings"
+          file_assets:
+            description: "Upload, list and delete files in the file library"
+            name: "File Assets"
           webhook_endpoints:
             description: "Outbound webhook configurations"
             name: "Webhook Endpoints"
@@ -2106,6 +2109,8 @@ en:
           label: "Line height"
         color:
           label: "Colour"
+        linkColor:
+          label: "Link colour"
       image:
         src:
           label: "Image"
@@ -2188,6 +2193,8 @@ en:
           label: "Image on the right"
         imageWidth:
           label: "Image width (%)"
+        linkColor:
+          label: "Link colour"
       social:
         links:
           label: "Profiles"
@@ -3508,6 +3515,11 @@ en:
       picker_empty: "No file assets uploaded yet"
     create:
       uploaded: "File uploaded successfully"
+      uploaded_many:
+        one: "%{count} file uploaded successfully"
+        other: "%{count} files uploaded successfully"
+      some_failed: "Some files were not uploaded: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "File upload failed"
     destroy:
       deleted: "File deleted successfully"
@@ -3593,6 +3605,7 @@ en:
         broadcasts: "Broadcasts"
         channel_settings: "Channel Settings"
         email_servers: "Email Servers"
+        file_assets: "File Assets"
         opt_in_forms: "Opt-In Forms"
         segments: "Segments"
         sequences: "Sequences"
@@ -3906,6 +3919,11 @@ en:
         not_contains: "Does not have subscriber tag"
         tagged_with: "Clicked an email tagged"
         not_tagged_with: "Has not clicked an email tagged"
+      topic_operators:
+        receives: "Receives"
+        does_not_receive: "Does not receive"
+        not_set: "Is not set"
+      select_topic: "Select topic"
       select_operator: "Select operator"
       number_of_days: "Number of days"
       days_ago: "days ago"
@@ -4012,6 +4030,9 @@ en:
     file_upload:
       default_types: "PNG, JPG, GIF up to 10MB"
       selected: "File selected: %{name}"
+      selected_count:
+        one: "%{count} file selected"
+        other: "%{count} files selected"
     form_inspector:
       delete_confirm: "Are you sure you want to delete this block?"
     host_system:
@@ -5292,6 +5313,8 @@ en:
         has_clicked_any_email: "Has Clicked Any Email"
         group_custom: "-- Custom Data --"
         custom_data: "Custom Data Field"
+        group_topics: "-- Topics --"
+        topic: "Topic"
       field: "Field"
       field_hint: "Choose which subscriber attribute to filter"
       select_field: "Select field"
@@ -5349,6 +5372,10 @@ en:
       fewer_than_within_days: "has fewer than"
       tagged_with: "clicked an email tagged"
       not_tagged_with: "has not clicked an email tagged"
+      receives: "receives"
+      does_not_receive: "does not receive"
+      not_set: "is not set"
+      is_set: "is set"
       not_starts_with: "does not start with"
       not_ends_with: "does not end with"
     rule_fields:
@@ -5374,6 +5401,8 @@ en:
       has_opened_any_email: "Has opened any email"
       has_clicked_any_email: "Has clicked any email"
       custom: "Custom: %{name}"
+      topic: "Topic"
+      deleted_topic: "Deleted topic"
     rate_indicator:
       excellent: "Excellent"
       good: "Good"
@@ -8270,6 +8299,12 @@ en:
       send_email: "Send Email"
       tag_link: "Show subscribers tagged with %{tag}"
       no_tags: "No tags"
+      topics: "Topics"
+      topic_on: "On"
+      topic_off: "Off"
+      topic_unset: "Not set"
+      topic_receives: "Receives email sent to this topic"
+      topic_does_not_receive: "Does not receive email sent to this topic"
       tabs:
         details: "Details"
         emails: "Last Emails"
@@ -8380,6 +8415,15 @@ en:
       submit: "Add subscriber"
     edit_modal_form:
       submit: "Save changes"
+    topic_fields:
+      heading: "Topics"
+      hint: "Which kinds of email this subscriber gets. The subscriber can change these on the preference page."
+      "on": "On"
+      "off": "Off"
+      unset: "Not set"
+      unset_receives: "Not set (receives)"
+      unset_does_not_receive: "Not set (does not receive)"
+      locked_hint: "The subscriber turned this topic off. Only the subscriber can turn it back on."
     form:
       intro: "Manage subscriber information and preferences."
     update:
@@ -8689,6 +8733,9 @@ en:
         channel_settings:
           description: "General, sender, brand kit, unsubscribe page and confirmation page settings"
           name: "Channel Settings"
+        file_assets:
+          description: "Upload, list and delete files in the file library"
+          name: "File Assets"
         webhook_endpoints:
           description: "Outgoing webhook configurations"
           name: "Webhook Endpoints"

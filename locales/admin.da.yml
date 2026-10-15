@@ -407,6 +407,9 @@ da:
           channel_settings:
             description: "Indstillinger for generelt, afsender, brandkit, afmeldingsside og bekræftelsesside"
             name: "Kanalindstillinger"
+          file_assets:
+            description: "Upload, vis og slet filer i filbiblioteket"
+            name: "Filer"
           webhook_endpoints:
             description: "Konfiguration af udgående webhooks"
             name: "Webhook-endpoints"
@@ -2125,6 +2128,8 @@ da:
           label: "Linjehøjde"
         color:
           label: "Farve"
+        linkColor:
+          label: "Linkfarve"
       image:
         src:
           label: "Billede"
@@ -2207,6 +2212,8 @@ da:
           label: "Billede til højre"
         imageWidth:
           label: "Billedbredde (%)"
+        linkColor:
+          label: "Linkfarve"
       social:
         links:
           label: "Profiler"
@@ -3527,6 +3534,11 @@ da:
       picker_empty: "Der er endnu ikke uploadet nogen filer"
     create:
       uploaded: "Filen blev uploadet"
+      uploaded_many:
+        one: "%{count} fil blev uploadet"
+        other: "%{count} filer blev uploadet"
+      some_failed: "Nogle filer blev ikke uploadet: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Filen kunne ikke uploades"
     destroy:
       deleted: "Filen blev slettet"
@@ -3612,6 +3624,7 @@ da:
         broadcasts: "Kampagner"
         channel_settings: "Kanalindstillinger"
         email_servers: "Mailservere"
+        file_assets: "Filer"
         opt_in_forms: "Tilmeldingsformularer"
         segments: "Segmenter"
         sequences: "Sekvenser"
@@ -3925,6 +3938,11 @@ da:
         not_contains: "Har ikke abonnenttag"
         tagged_with: "Har klikket i en e-mail med tagget"
         not_tagged_with: "Har ikke klikket i en e-mail med tagget"
+      topic_operators:
+        receives: "Modtager"
+        does_not_receive: "Modtager ikke"
+        not_set: "Er ikke angivet"
+      select_topic: "Vælg emne"
       select_operator: "Vælg operator"
       number_of_days: "Antal dage"
       days_ago: "dage siden"
@@ -4031,6 +4049,9 @@ da:
     file_upload:
       default_types: "PNG, JPG, GIF på op til 10 MB"
       selected: "Valgt fil: %{name}"
+      selected_count:
+        one: "%{count} fil valgt"
+        other: "%{count} filer valgt"
     form_inspector:
       delete_confirm: "Er du sikker på, at du vil slette denne blok?"
     host_system:
@@ -5309,6 +5330,8 @@ da:
         has_clicked_any_email: "Har klikket i en e-mail"
         group_custom: "-- Brugerdefinerede data --"
         custom_data: "Brugerdefineret datafelt"
+        group_topics: "-- Emner --"
+        topic: "Emne"
       field: "Felt"
       field_hint: "Vælg, hvilken abonnentegenskab der skal filtreres på"
       select_field: "Vælg felt"
@@ -5366,6 +5389,10 @@ da:
       fewer_than_within_days: "har færre end"
       tagged_with: "klikkede i en e-mail med tagget"
       not_tagged_with: "har ikke klikket i en e-mail med tagget"
+      receives: "modtager"
+      does_not_receive: "modtager ikke"
+      not_set: "er ikke angivet"
+      is_set: "er angivet"
       not_starts_with: "starter ikke med"
       not_ends_with: "slutter ikke med"
     rule_fields:
@@ -5391,6 +5418,8 @@ da:
       has_opened_any_email: "Har åbnet en e-mail"
       has_clicked_any_email: "Har klikket i en e-mail"
       custom: "Brugerdefineret: %{name}"
+      topic: "Emne"
+      deleted_topic: "Slettet emne"
     rate_indicator:
       excellent: "Fremragende"
       good: "God"
@@ -8287,6 +8316,12 @@ da:
       send_email: "Send e-mail"
       tag_link: "Vis abonnenter med tagget %{tag}"
       no_tags: "Ingen tags"
+      topics: "Emner"
+      topic_on: "Til"
+      topic_off: "Fra"
+      topic_unset: "Ikke angivet"
+      topic_receives: "Modtager e-mails sendt til dette emne"
+      topic_does_not_receive: "Modtager ikke e-mails sendt til dette emne"
       tabs:
         details: "Detaljer"
         emails: "Seneste e-mails"
@@ -8397,6 +8432,15 @@ da:
       submit: "Tilføj abonnent"
     edit_modal_form:
       submit: "Gem ændringer"
+    topic_fields:
+      heading: "Emner"
+      hint: "Hvilke slags e-mails denne abonnent får. Abonnenten kan ændre dem på indstillingssiden."
+      "on": "Til"
+      "off": "Fra"
+      unset: "Ikke angivet"
+      unset_receives: "Ikke angivet (modtager)"
+      unset_does_not_receive: "Ikke angivet (modtager ikke)"
+      locked_hint: "Abonnenten har slået dette emne fra. Kun abonnenten kan slå det til igen."
     form:
       intro: "Administrer abonnentens oplysninger og præferencer."
     update:
@@ -8706,6 +8750,9 @@ da:
         channel_settings:
           description: "Indstillinger for generelt, afsender, brandkit, afmeldingsside og bekræftelsesside"
           name: "Kanalindstillinger"
+        file_assets:
+          description: "Upload, vis og slet filer i filbiblioteket"
+          name: "Filer"
         webhook_endpoints:
           description: "Konfigurationer af udgående webhooks"
           name: "Webhook-endpoints"

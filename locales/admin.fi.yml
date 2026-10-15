@@ -408,6 +408,9 @@ fi:
           channel_settings:
             description: "Yleiset, lähettäjän, brändipaketin, peruutussivun ja vahvistussivun asetukset"
             name: "Kanavan asetukset"
+          file_assets:
+            description: "Tiedostojen lataaminen, listaaminen ja poistaminen tiedostokirjastossa"
+            name: "Tiedostot"
           webhook_endpoints:
             description: "Lähtevien webhookien määritykset"
             name: "Webhook-päätepisteet"
@@ -2126,6 +2129,8 @@ fi:
           label: "Riviväli"
         color:
           label: "Väri"
+        linkColor:
+          label: "Linkin väri"
       image:
         src:
           label: "Kuva"
@@ -2208,6 +2213,8 @@ fi:
           label: "Kuva oikealla"
         imageWidth:
           label: "Kuvan leveys (%)"
+        linkColor:
+          label: "Linkin väri"
       social:
         links:
           label: "Profiilit"
@@ -3528,6 +3535,11 @@ fi:
       picker_empty: "Tiedostoja ei ole vielä ladattu"
     create:
       uploaded: "Tiedosto ladattu"
+      uploaded_many:
+        one: "%{count} tiedosto ladattu"
+        other: "%{count} tiedostoa ladattu"
+      some_failed: "Joitakin tiedostoja ei ladattu: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Tiedoston lataaminen epäonnistui"
     destroy:
       deleted: "Tiedosto poistettu"
@@ -3613,6 +3625,7 @@ fi:
         broadcasts: "Kampanjat"
         channel_settings: "Kanavan asetukset"
         email_servers: "Sähköpostipalvelimet"
+        file_assets: "Tiedostot"
         opt_in_forms: "Tilauslomakkeet"
         segments: "Segmentit"
         sequences: "Sarjat"
@@ -3926,6 +3939,11 @@ fi:
         not_contains: "Tilaajalla ei ole tunnistetta"
         tagged_with: "On klikannut sähköpostia, jonka tunniste on"
         not_tagged_with: "Ei ole klikannut sähköpostia, jonka tunniste on"
+      topic_operators:
+        receives: "Saa"
+        does_not_receive: "Ei saa"
+        not_set: "Ei ole asetettu"
+      select_topic: "Valitse aihe"
       select_operator: "Valitse operaattori"
       number_of_days: "Päivien määrä"
       days_ago: "päivää sitten"
@@ -4032,6 +4050,9 @@ fi:
     file_upload:
       default_types: "PNG, JPG, GIF, enintään 10 Mt"
       selected: "Valittu tiedosto: %{name}"
+      selected_count:
+        one: "%{count} tiedosto valittu"
+        other: "%{count} tiedostoa valittu"
     form_inspector:
       delete_confirm: "Haluatko varmasti poistaa tämän lohkon?"
     host_system:
@@ -5310,6 +5331,8 @@ fi:
         has_clicked_any_email: "On klikannut jotakin sähköpostia"
         group_custom: "-- Mukautetut tiedot --"
         custom_data: "Mukautettu tietokenttä"
+        group_topics: "-- Aiheet --"
+        topic: "Aihe"
       field: "Kenttä"
       field_hint: "Valitse, minkä tilaajan ominaisuuden mukaan suodatetaan"
       select_field: "Valitse kenttä"
@@ -5367,6 +5390,10 @@ fi:
       fewer_than_within_days: "alle"
       tagged_with: "on klikannut sähköpostia, jonka tunniste on"
       not_tagged_with: "ei ole klikannut sähköpostia, jonka tunniste on"
+      receives: "saa"
+      does_not_receive: "ei saa"
+      not_set: "ei ole asetettu"
+      is_set: "on asetettu"
       not_starts_with: "ei ala"
       not_ends_with: "ei pääty"
     rule_fields:
@@ -5392,6 +5419,8 @@ fi:
       has_opened_any_email: "On avannut jonkin sähköpostin"
       has_clicked_any_email: "On klikannut jotakin sähköpostia"
       custom: "Mukautettu: %{name}"
+      topic: "Aihe"
+      deleted_topic: "Poistettu aihe"
     rate_indicator:
       excellent: "Erinomainen"
       good: "Hyvä"
@@ -8288,6 +8317,12 @@ fi:
       send_email: "Lähetä sähköposti"
       tag_link: "Näytä tilaajat tunnisteella %{tag}"
       no_tags: "Ei tunnisteita"
+      topics: "Aiheet"
+      topic_on: "Päällä"
+      topic_off: "Pois"
+      topic_unset: "Ei asetettu"
+      topic_receives: "Saa tähän aiheeseen lähetetyt sähköpostit"
+      topic_does_not_receive: "Ei saa tähän aiheeseen lähetettyjä sähköposteja"
       tabs:
         details: "Tiedot"
         emails: "Viimeisimmät sähköpostit"
@@ -8398,6 +8433,15 @@ fi:
       submit: "Lisää tilaaja"
     edit_modal_form:
       submit: "Tallenna muutokset"
+    topic_fields:
+      heading: "Aiheet"
+      hint: "Millaisia sähköposteja tämä tilaaja saa. Tilaaja voi muuttaa näitä asetussivulla."
+      "on": "Päällä"
+      "off": "Pois"
+      unset: "Ei asetettu"
+      unset_receives: "Ei asetettu (saa)"
+      unset_does_not_receive: "Ei asetettu (ei saa)"
+      locked_hint: "Tilaaja poisti tämän aiheen käytöstä. Vain tilaaja voi ottaa sen uudelleen käyttöön."
     form:
       intro: "Hallitse tilaajan tietoja ja asetuksia."
     update:
@@ -8707,6 +8751,9 @@ fi:
         channel_settings:
           description: "Yleiset, lähettäjän, brändipaketin, peruutussivun ja vahvistussivun asetukset"
           name: "Kanavan asetukset"
+        file_assets:
+          description: "Tiedostojen lataaminen, listaaminen ja poistaminen tiedostokirjastossa"
+          name: "Tiedostot"
         webhook_endpoints:
           description: "Lähtevien webhookien määritykset"
           name: "Webhook-päätepisteet"

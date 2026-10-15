@@ -405,6 +405,9 @@ it:
           channel_settings:
             description: "Impostazioni generali, mittente, kit del brand, pagina di disiscrizione e pagina di conferma"
             name: "Impostazioni del canale"
+          file_assets:
+            description: "Carica, elenca ed elimina i file nella libreria file"
+            name: "File"
           webhook_endpoints:
             description: "Configurazioni dei webhook in uscita"
             name: "Endpoint webhook"
@@ -2123,6 +2126,8 @@ it:
           label: "Interlinea"
         color:
           label: "Colore"
+        linkColor:
+          label: "Colore dei link"
       image:
         src:
           label: "Immagine"
@@ -2205,6 +2210,8 @@ it:
           label: "Immagine a destra"
         imageWidth:
           label: "Larghezza dell'immagine (%)"
+        linkColor:
+          label: "Colore dei link"
       social:
         links:
           label: "Profili"
@@ -3525,6 +3532,11 @@ it:
       picker_empty: "Ancora nessun file caricato"
     create:
       uploaded: "File caricato"
+      uploaded_many:
+        one: "%{count} file caricato"
+        other: "%{count} file caricati"
+      some_failed: "Alcuni file non sono stati caricati: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Caricamento del file non riuscito"
     destroy:
       deleted: "File eliminato"
@@ -3610,6 +3622,7 @@ it:
         broadcasts: "Campagne"
         channel_settings: "Impostazioni del canale"
         email_servers: "Server email"
+        file_assets: "File"
         opt_in_forms: "Moduli di iscrizione"
         segments: "Segmenti"
         sequences: "Sequenze"
@@ -3923,6 +3936,11 @@ it:
         not_contains: "Non ha il tag"
         tagged_with: "Ha cliccato un'email con il tag"
         not_tagged_with: "Non ha cliccato un'email con il tag"
+      topic_operators:
+        receives: "Riceve"
+        does_not_receive: "Non riceve"
+        not_set: "Non è impostato"
+      select_topic: "Scegli l'argomento"
       select_operator: "Scegli l'operatore"
       number_of_days: "Numero di giorni"
       days_ago: "giorni fa"
@@ -4029,6 +4047,9 @@ it:
     file_upload:
       default_types: "PNG, JPG, GIF fino a 10MB"
       selected: "File selezionato: %{name}"
+      selected_count:
+        one: "%{count} file selezionato"
+        other: "%{count} file selezionati"
     form_inspector:
       delete_confirm: "Vuoi davvero eliminare questo blocco?"
     host_system:
@@ -5307,6 +5328,8 @@ it:
         has_clicked_any_email: "Ha cliccato almeno una email"
         group_custom: "-- Dati personalizzati --"
         custom_data: "Campo dei dati personalizzati"
+        group_topics: "-- Argomenti --"
+        topic: "Argomento"
       field: "Campo"
       field_hint: "Scegli quale attributo dell'iscritto filtrare"
       select_field: "Scegli un campo"
@@ -5364,6 +5387,10 @@ it:
       fewer_than_within_days: "ha meno di"
       tagged_with: "ha cliccato un'email con il tag"
       not_tagged_with: "non ha cliccato un'email con il tag"
+      receives: "riceve"
+      does_not_receive: "non riceve"
+      not_set: "non è impostato"
+      is_set: "è impostato"
       not_starts_with: "non inizia con"
       not_ends_with: "non finisce con"
     rule_fields:
@@ -5389,6 +5416,8 @@ it:
       has_opened_any_email: "Ha aperto almeno una email"
       has_clicked_any_email: "Ha cliccato almeno una email"
       custom: "Personalizzato: %{name}"
+      topic: "Argomento"
+      deleted_topic: "Argomento eliminato"
     rate_indicator:
       excellent: "Ottimo"
       good: "Buono"
@@ -8285,6 +8314,12 @@ it:
       send_email: "Invia email"
       tag_link: "Mostra gli iscritti con il tag %{tag}"
       no_tags: "Nessun tag"
+      topics: "Argomenti"
+      topic_on: "Attivo"
+      topic_off: "Disattivo"
+      topic_unset: "Non impostato"
+      topic_receives: "Riceve le email inviate a questo argomento"
+      topic_does_not_receive: "Non riceve le email inviate a questo argomento"
       tabs:
         details: "Dettagli"
         emails: "Ultime email"
@@ -8395,6 +8430,15 @@ it:
       submit: "Aggiungi iscritto"
     edit_modal_form:
       submit: "Salva le modifiche"
+    topic_fields:
+      heading: "Argomenti"
+      hint: "I tipi di email che questo iscritto riceve. L'iscritto può cambiarli nella pagina delle preferenze."
+      "on": "Attivo"
+      "off": "Disattivo"
+      unset: "Non impostato"
+      unset_receives: "Non impostato (lo riceve)"
+      unset_does_not_receive: "Non impostato (non lo riceve)"
+      locked_hint: "L'iscritto ha disattivato questo argomento. Solo l'iscritto può riattivarlo."
     form:
       intro: "Gestisci le informazioni e le preferenze dell'iscritto."
     update:
@@ -8704,6 +8748,9 @@ it:
         channel_settings:
           description: "Impostazioni generali, mittente, kit del brand, pagina di disiscrizione e pagina di conferma"
           name: "Impostazioni del canale"
+        file_assets:
+          description: "Carica, elenca ed elimina i file nella libreria file"
+          name: "File"
         webhook_endpoints:
           description: "Configurazioni dei webhook in uscita"
           name: "Endpoint webhook"

@@ -413,6 +413,9 @@ pl:
           channel_settings:
             description: "Ustawienia ogólne, nadawcy, zestawu marki, strony wypisania i strony potwierdzenia"
             name: "Ustawienia kanału"
+          file_assets:
+            description: "Przesyłanie, wyświetlanie i usuwanie plików w bibliotece plików"
+            name: "Pliki"
           webhook_endpoints:
             description: "Konfiguracje wychodzących webhooków"
             name: "Endpointy webhooków"
@@ -2193,6 +2196,8 @@ pl:
           label: "Wysokość wiersza"
         color:
           label: "Kolor"
+        linkColor:
+          label: "Kolor linków"
       image:
         src:
           label: "Obraz"
@@ -2275,6 +2280,8 @@ pl:
           label: "Obraz po prawej"
         imageWidth:
           label: "Szerokość obrazu (%)"
+        linkColor:
+          label: "Kolor linków"
       social:
         links:
           label: "Profile"
@@ -3633,6 +3640,13 @@ pl:
       picker_empty: "Nie przesłano jeszcze żadnych plików"
     create:
       uploaded: "Przesłano plik"
+      uploaded_many:
+        one: "Przesłano %{count} plik"
+        few: "Przesłano %{count} pliki"
+        many: "Przesłano %{count} plików"
+        other: "Przesłano %{count} pliku"
+      some_failed: "Nie przesłano niektórych plików: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Przesyłanie pliku nie powiodło się"
     destroy:
       deleted: "Usunięto plik"
@@ -3718,6 +3732,7 @@ pl:
         broadcasts: "Kampanie"
         channel_settings: "Ustawienia kanału"
         email_servers: "Serwery poczty"
+        file_assets: "Pliki"
         opt_in_forms: "Formularze zapisu"
         segments: "Segmenty"
         sequences: "Sekwencje"
@@ -4061,6 +4076,11 @@ pl:
         not_contains: "Nie ma tagu subskrybenta"
         tagged_with: "Kliknął e-mail z tagiem"
         not_tagged_with: "Nie kliknął e-maila z tagiem"
+      topic_operators:
+        receives: "Otrzymuje"
+        does_not_receive: "Nie otrzymuje"
+        not_set: "Nie jest ustawiony"
+      select_topic: "Wybierz temat"
       select_operator: "Wybierz operator"
       number_of_days: "Liczba dni"
       days_ago: "dni temu"
@@ -4179,6 +4199,11 @@ pl:
     file_upload:
       default_types: "PNG, JPG, GIF do 10 MB"
       selected: "Wybrano plik: %{name}"
+      selected_count:
+        one: "Wybrano %{count} plik"
+        few: "Wybrano %{count} pliki"
+        many: "Wybrano %{count} plików"
+        other: "Wybrano %{count} pliku"
     form_inspector:
       delete_confirm: "Czy na pewno chcesz usunąć ten blok?"
     host_system:
@@ -5487,6 +5512,8 @@ pl:
         has_clicked_any_email: "Kliknął dowolny e-mail"
         group_custom: "-- Dane niestandardowe --"
         custom_data: "Pole danych niestandardowych"
+        group_topics: "-- Tematy --"
+        topic: "Temat"
       field: "Pole"
       field_hint: "Wybierz atrybut subskrybenta do filtrowania"
       select_field: "Wybierz pole"
@@ -5544,6 +5571,10 @@ pl:
       fewer_than_within_days: "ma mniej niż"
       tagged_with: "kliknął e-mail z tagiem"
       not_tagged_with: "nie kliknął e-maila z tagiem"
+      receives: "otrzymuje"
+      does_not_receive: "nie otrzymuje"
+      not_set: "nie jest ustawiony"
+      is_set: "jest ustawiony"
       not_starts_with: "nie zaczyna się od"
       not_ends_with: "nie kończy się na"
     rule_fields:
@@ -5569,6 +5600,8 @@ pl:
       has_opened_any_email: "Otworzył dowolny e-mail"
       has_clicked_any_email: "Kliknął dowolny e-mail"
       custom: "Niestandardowe: %{name}"
+      topic: "Temat"
+      deleted_topic: "Usunięty temat"
     rate_indicator:
       excellent: "Doskonały"
       good: "Dobry"
@@ -8571,6 +8604,12 @@ pl:
       send_email: "Wyślij e-mail"
       tag_link: "Pokaż subskrybentów z tagiem %{tag}"
       no_tags: "Brak tagów"
+      topics: "Tematy"
+      topic_on: "Włączony"
+      topic_off: "Wyłączony"
+      topic_unset: "Nie ustawiono"
+      topic_receives: "Otrzymuje e-maile wysyłane do tego tematu"
+      topic_does_not_receive: "Nie otrzymuje e-maili wysyłanych do tego tematu"
       tabs:
         details: "Szczegóły"
         emails: "Ostatnie e-maile"
@@ -8681,6 +8720,15 @@ pl:
       submit: "Dodaj subskrybenta"
     edit_modal_form:
       submit: "Zapisz zmiany"
+    topic_fields:
+      heading: "Tematy"
+      hint: "Rodzaje e-maili, które otrzymuje ten subskrybent. Subskrybent może je zmienić na stronie preferencji."
+      "on": "Włączony"
+      "off": "Wyłączony"
+      unset: "Nie ustawiono"
+      unset_receives: "Nie ustawiono (otrzymuje)"
+      unset_does_not_receive: "Nie ustawiono (nie otrzymuje)"
+      locked_hint: "Subskrybent wyłączył ten temat. Tylko subskrybent może go ponownie włączyć."
     form:
       intro: "Zarządzaj informacjami i preferencjami subskrybenta."
     update:
@@ -9010,6 +9058,9 @@ pl:
         channel_settings:
           description: "Ustawienia ogólne, nadawcy, zestawu marki, strony wypisania i strony potwierdzenia"
           name: "Ustawienia kanału"
+        file_assets:
+          description: "Przesyłanie, wyświetlanie i usuwanie plików w bibliotece plików"
+          name: "Pliki"
         webhook_endpoints:
           description: "Konfiguracje wychodzących webhooków"
           name: "Endpointy webhooków"

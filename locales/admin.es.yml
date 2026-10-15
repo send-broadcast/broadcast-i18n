@@ -408,6 +408,9 @@ es:
           channel_settings:
             description: "Ajustes generales, de remitente, kit de marca, página de baja y página de confirmación"
             name: "Configuración del canal"
+          file_assets:
+            description: "Sube, lista y elimina archivos de la biblioteca de archivos"
+            name: "Archivos"
           webhook_endpoints:
             description: "Configuración de webhooks salientes"
             name: "Endpoints de webhook"
@@ -2126,6 +2129,8 @@ es:
           label: "Interlineado"
         color:
           label: "Color"
+        linkColor:
+          label: "Color de los enlaces"
       image:
         src:
           label: "Imagen"
@@ -2208,6 +2213,8 @@ es:
           label: "Imagen a la derecha"
         imageWidth:
           label: "Ancho de la imagen (%)"
+        linkColor:
+          label: "Color de los enlaces"
       social:
         links:
           label: "Perfiles"
@@ -3528,6 +3535,11 @@ es:
       picker_empty: "Todavía no se ha subido ningún archivo"
     create:
       uploaded: "Archivo subido correctamente"
+      uploaded_many:
+        one: "%{count} archivo subido correctamente"
+        other: "%{count} archivos subidos correctamente"
+      some_failed: "Algunos archivos no se subieron: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Error al subir el archivo"
     destroy:
       deleted: "Archivo eliminado correctamente"
@@ -3613,6 +3625,7 @@ es:
         broadcasts: "Campañas"
         channel_settings: "Configuración del canal"
         email_servers: "Servidores de correo"
+        file_assets: "Archivos"
         opt_in_forms: "Formularios de suscripción"
         segments: "Segmentos"
         sequences: "Secuencias"
@@ -3926,6 +3939,11 @@ es:
         not_contains: "No tiene la etiqueta de suscriptor"
         tagged_with: "Hizo clic en un correo con la etiqueta"
         not_tagged_with: "No ha hecho clic en un correo con la etiqueta"
+      topic_operators:
+        receives: "Recibe"
+        does_not_receive: "No recibe"
+        not_set: "No está definido"
+      select_topic: "Selecciona un tema"
       select_operator: "Selecciona un operador"
       number_of_days: "Número de días"
       days_ago: "días atrás"
@@ -4032,6 +4050,9 @@ es:
     file_upload:
       default_types: "PNG, JPG, GIF de hasta 10 MB"
       selected: "Archivo seleccionado: %{name}"
+      selected_count:
+        one: "%{count} archivo seleccionado"
+        other: "%{count} archivos seleccionados"
     form_inspector:
       delete_confirm: "¿Seguro que quieres eliminar este bloque?"
     host_system:
@@ -5310,6 +5331,8 @@ es:
         has_clicked_any_email: "Ha hecho clic en algún correo"
         group_custom: "-- Datos personalizados --"
         custom_data: "Campo de datos personalizados"
+        group_topics: "-- Temas --"
+        topic: "Tema"
       field: "Campo"
       field_hint: "Elige por qué atributo del suscriptor filtrar"
       select_field: "Selecciona un campo"
@@ -5367,6 +5390,10 @@ es:
       fewer_than_within_days: "tiene menos de"
       tagged_with: "hizo clic en un correo con la etiqueta"
       not_tagged_with: "no ha hecho clic en un correo con la etiqueta"
+      receives: "recibe"
+      does_not_receive: "no recibe"
+      not_set: "no está definido"
+      is_set: "está definido"
       not_starts_with: "no empieza por"
       not_ends_with: "no termina en"
     rule_fields:
@@ -5392,6 +5419,8 @@ es:
       has_opened_any_email: "Ha abierto algún correo"
       has_clicked_any_email: "Ha hecho clic en algún correo"
       custom: "Personalizado: %{name}"
+      topic: "Tema"
+      deleted_topic: "Tema eliminado"
     rate_indicator:
       excellent: "Excelente"
       good: "Buena"
@@ -8288,6 +8317,12 @@ es:
       send_email: "Enviar correo"
       tag_link: "Ver los suscriptores con la etiqueta %{tag}"
       no_tags: "Sin etiquetas"
+      topics: "Temas"
+      topic_on: "Activado"
+      topic_off: "Desactivado"
+      topic_unset: "Sin definir"
+      topic_receives: "Recibe los correos enviados a este tema"
+      topic_does_not_receive: "No recibe los correos enviados a este tema"
       tabs:
         details: "Datos"
         emails: "Últimos correos"
@@ -8398,6 +8433,15 @@ es:
       submit: "Añadir suscriptor"
     edit_modal_form:
       submit: "Guardar cambios"
+    topic_fields:
+      heading: "Temas"
+      hint: "Los tipos de correo que recibe este suscriptor. El suscriptor puede cambiarlos en la página de preferencias."
+      "on": "Activado"
+      "off": "Desactivado"
+      unset: "Sin definir"
+      unset_receives: "Sin definir (lo recibe)"
+      unset_does_not_receive: "Sin definir (no lo recibe)"
+      locked_hint: "El suscriptor desactivó este tema. Solo el suscriptor puede volver a activarlo."
     form:
       intro: "Gestiona la información y las preferencias del suscriptor."
     update:
@@ -8707,6 +8751,9 @@ es:
         channel_settings:
           description: "Ajustes generales, de remitente, kit de marca, página de baja y página de confirmación"
           name: "Configuración del canal"
+        file_assets:
+          description: "Sube, lista y elimina archivos de la biblioteca de archivos"
+          name: "Archivos"
         webhook_endpoints:
           description: "Configuración de webhooks salientes"
           name: "Endpoints de webhook"

@@ -409,6 +409,9 @@ nl:
           channel_settings:
             description: "Instellingen voor algemeen, afzender, huisstijlkit, afmeldpagina en bevestigingspagina"
             name: "Kanaalinstellingen"
+          file_assets:
+            description: "Bestanden in de bestandsbibliotheek uploaden, weergeven en verwijderen"
+            name: "Bestanden"
           webhook_endpoints:
             description: "Configuraties voor uitgaande webhooks"
             name: "Webhook-endpoints"
@@ -2127,6 +2130,8 @@ nl:
           label: "Regelhoogte"
         color:
           label: "Kleur"
+        linkColor:
+          label: "Linkkleur"
       image:
         src:
           label: "Afbeelding"
@@ -2209,6 +2214,8 @@ nl:
           label: "Afbeelding rechts"
         imageWidth:
           label: "Afbeeldingsbreedte (%)"
+        linkColor:
+          label: "Linkkleur"
       social:
         links:
           label: "Profielen"
@@ -3529,6 +3536,11 @@ nl:
       picker_empty: "Nog geen bestanden geüpload"
     create:
       uploaded: "Bestand geüpload"
+      uploaded_many:
+        one: "%{count} bestand geüpload"
+        other: "%{count} bestanden geüpload"
+      some_failed: "Sommige bestanden zijn niet geüpload: %{files}"
+      file_error: "%{filename}: %{message}"
       failed: "Bestand uploaden mislukt"
     destroy:
       deleted: "Bestand verwijderd"
@@ -3614,6 +3626,7 @@ nl:
         broadcasts: "Campagnes"
         channel_settings: "Kanaalinstellingen"
         email_servers: "E-mailservers"
+        file_assets: "Bestanden"
         opt_in_forms: "Aanmeldformulieren"
         segments: "Segmenten"
         sequences: "Reeksen"
@@ -3927,6 +3940,11 @@ nl:
         not_contains: "Heeft abonneetag niet"
         tagged_with: "Heeft geklikt in een e-mail met tag"
         not_tagged_with: "Heeft niet geklikt in een e-mail met tag"
+      topic_operators:
+        receives: "Ontvangt"
+        does_not_receive: "Ontvangt niet"
+        not_set: "Is niet ingesteld"
+      select_topic: "Kies een onderwerp"
       select_operator: "Kies een operator"
       number_of_days: "Aantal dagen"
       days_ago: "dagen geleden"
@@ -4033,6 +4051,9 @@ nl:
     file_upload:
       default_types: "PNG, JPG, GIF tot 10 MB"
       selected: "Bestand gekozen: %{name}"
+      selected_count:
+        one: "%{count} bestand gekozen"
+        other: "%{count} bestanden gekozen"
     form_inspector:
       delete_confirm: "Weet je zeker dat je dit blok wilt verwijderen?"
     host_system:
@@ -5311,6 +5332,8 @@ nl:
         has_clicked_any_email: "Heeft in een e-mail geklikt"
         group_custom: "-- Aangepaste gegevens --"
         custom_data: "Aangepast gegevensveld"
+        group_topics: "-- Onderwerpen --"
+        topic: "Onderwerp"
       field: "Veld"
       field_hint: "Kies op welk abonnee-attribuut je wilt filteren"
       select_field: "Kies een veld"
@@ -5368,6 +5391,10 @@ nl:
       fewer_than_within_days: "heeft minder dan"
       tagged_with: "heeft geklikt in een e-mail met tag"
       not_tagged_with: "heeft niet geklikt in een e-mail met tag"
+      receives: "ontvangt"
+      does_not_receive: "ontvangt niet"
+      not_set: "is niet ingesteld"
+      is_set: "is ingesteld"
       not_starts_with: "begint niet met"
       not_ends_with: "eindigt niet op"
     rule_fields:
@@ -5393,6 +5420,8 @@ nl:
       has_opened_any_email: "Heeft een e-mail geopend"
       has_clicked_any_email: "Heeft in een e-mail geklikt"
       custom: "Aangepast: %{name}"
+      topic: "Onderwerp"
+      deleted_topic: "Verwijderd onderwerp"
     rate_indicator:
       excellent: "Uitstekend"
       good: "Goed"
@@ -8289,6 +8318,12 @@ nl:
       send_email: "E-mail versturen"
       tag_link: "Abonnees met de tag %{tag} tonen"
       no_tags: "Geen tags"
+      topics: "Onderwerpen"
+      topic_on: "Aan"
+      topic_off: "Uit"
+      topic_unset: "Niet ingesteld"
+      topic_receives: "Ontvangt e-mail die naar dit onderwerp wordt gestuurd"
+      topic_does_not_receive: "Ontvangt geen e-mail die naar dit onderwerp wordt gestuurd"
       tabs:
         details: "Gegevens"
         emails: "Laatste e-mails"
@@ -8399,6 +8434,15 @@ nl:
       submit: "Abonnee toevoegen"
     edit_modal_form:
       submit: "Wijzigingen opslaan"
+    topic_fields:
+      heading: "Onderwerpen"
+      hint: "Welke soorten e-mail deze abonnee krijgt. De abonnee kan dit wijzigen op de voorkeurenpagina."
+      "on": "Aan"
+      "off": "Uit"
+      unset: "Niet ingesteld"
+      unset_receives: "Niet ingesteld (ontvangt)"
+      unset_does_not_receive: "Niet ingesteld (ontvangt niet)"
+      locked_hint: "De abonnee heeft dit onderwerp uitgezet. Alleen de abonnee kan het weer aanzetten."
     form:
       intro: "Beheer de gegevens en voorkeuren van de abonnee."
     update:
@@ -8708,6 +8752,9 @@ nl:
         channel_settings:
           description: "Instellingen voor algemeen, afzender, huisstijlkit, afmeldpagina en bevestigingspagina"
           name: "Kanaalinstellingen"
+        file_assets:
+          description: "Bestanden in de bestandsbibliotheek uploaden, weergeven en verwijderen"
+          name: "Bestanden"
         webhook_endpoints:
           description: "Instellingen voor uitgaande webhooks"
           name: "Webhook-endpoints"
