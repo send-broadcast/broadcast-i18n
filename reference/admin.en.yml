@@ -2759,12 +2759,12 @@ en:
       retry_of_deleted: "Retry of #%{id}, deleted: reaches nobody"
       open_rate: "Open Rate"
       opens:
-        one: "%{formatted} opens"
+        one: "%{formatted} open"
         other: "%{formatted} opens"
       awaiting_send: "awaiting send"
       click_rate: "Click Rate"
       clicks:
-        one: "%{formatted} clicks"
+        one: "%{formatted} click"
         other: "%{formatted} clicks"
       tracking: "Tracking"
       opens_label: "Opens"
