@@ -5633,6 +5633,8 @@ pt-BR:
         opened: "Abriram"
         clicked: "Clicaram"
         tracking_off: "Rastreamento desativado"
+        rate_hint: "De todos os e-mails que esta etapa enviou"
+        no_rate: "Nenhum e-mail enviado ainda"
         bounced:
           one: "%{count} rejeitado"
           other: "%{count} rejeitados"
@@ -5771,6 +5773,7 @@ pt-BR:
     show:
       active: "Ativa"
       inactive: "Inativa"
+      reply_to: "Responder para"
       duplicated_from_html: "Duplicada de %{link}"
       settings: "Configurações"
       edit_steps: "Editar etapas"

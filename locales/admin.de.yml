@@ -5635,6 +5635,8 @@ de:
         opened: "Geöffnet"
         clicked: "Geklickt"
         tracking_off: "Tracking aus"
+        rate_hint: "Von allen E-Mails, die dieser Schritt gesendet hat"
+        no_rate: "Noch keine E-Mails gesendet"
         bounced:
           one: "%{count} Bounce"
           other: "%{count} Bounces"
@@ -5773,6 +5775,7 @@ de:
     show:
       active: "Aktiv"
       inactive: "Inaktiv"
+      reply_to: "Antwort an"
       duplicated_from_html: "Dupliziert von %{link}"
       settings: "Einstellungen"
       edit_steps: "Schritte bearbeiten"

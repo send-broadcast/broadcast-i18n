@@ -5616,6 +5616,8 @@ en:
         opened: "Opened"
         clicked: "Clicked"
         tracking_off: "Tracking off"
+        rate_hint: "Of all emails this step sent"
+        no_rate: "No emails sent yet"
         bounced:
           one: "%{count} bounced"
           other: "%{count} bounced"
@@ -5754,6 +5756,7 @@ en:
     show:
       active: "Active"
       inactive: "Inactive"
+      reply_to: "Reply-To"
       duplicated_from_html: "Duplicated from %{link}"
       settings: "Settings"
       edit_steps: "Edit steps"

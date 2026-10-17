@@ -5633,6 +5633,8 @@ nb:
         opened: "Åpnet"
         clicked: "Klikket"
         tracking_off: "Sporing av"
+        rate_hint: "Av alle e-poster dette trinnet har sendt"
+        no_rate: "Ingen e-poster sendt ennå"
         bounced:
           one: "%{count} returnert"
           other: "%{count} returnert"
@@ -5771,6 +5773,7 @@ nb:
     show:
       active: "Aktiv"
       inactive: "Inaktiv"
+      reply_to: "Svar til"
       duplicated_from_html: "Duplisert fra %{link}"
       settings: "Innstillinger"
       edit_steps: "Rediger trinn"

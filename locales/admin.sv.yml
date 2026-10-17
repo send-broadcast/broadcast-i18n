@@ -5633,6 +5633,8 @@ sv:
         opened: "Öppnade"
         clicked: "Klickade"
         tracking_off: "Spårning av"
+        rate_hint: "Av alla mejl som det här steget har skickat"
+        no_rate: "Inga mejl skickade ännu"
         bounced:
           one: "%{count} studsade"
           other: "%{count} studsade"
@@ -5771,6 +5773,7 @@ sv:
     show:
       active: "Aktiv"
       inactive: "Inaktiv"
+      reply_to: "Svarsadress"
       duplicated_from_html: "Kopierad från %{link}"
       settings: "Inställningar"
       edit_steps: "Redigera steg"

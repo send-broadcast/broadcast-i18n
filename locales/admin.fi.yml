@@ -5634,6 +5634,8 @@ fi:
         opened: "Avatut"
         clicked: "Klikatut"
         tracking_off: "Seuranta pois päältä"
+        rate_hint: "Kaikista tämän vaiheen lähettämistä sähköposteista"
+        no_rate: "Sähköposteja ei ole vielä lähetetty"
         bounced:
           one: "%{count} palautunut"
           other: "%{count} palautunutta"
@@ -5772,6 +5774,7 @@ fi:
     show:
       active: "Aktiivinen"
       inactive: "Ei käytössä"
+      reply_to: "Vastausosoite"
       duplicated_from_html: "Monistettu sarjasta %{link}"
       settings: "Asetukset"
       edit_steps: "Muokkaa vaiheita"

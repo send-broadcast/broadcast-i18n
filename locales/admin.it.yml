@@ -5631,6 +5631,8 @@ it:
         opened: "Aperte"
         clicked: "Cliccate"
         tracking_off: "Tracciamento disattivato"
+        rate_hint: "Su tutte le email inviate da questo passaggio"
+        no_rate: "Nessuna email ancora inviata"
         bounced:
           one: "%{count} non recapitata"
           other: "%{count} non recapitate"
@@ -5769,6 +5771,7 @@ it:
     show:
       active: "Attiva"
       inactive: "Inattiva"
+      reply_to: "Rispondi a"
       duplicated_from_html: "Duplicata da %{link}"
       settings: "Impostazioni"
       edit_steps: "Modifica i passaggi"

@@ -5634,6 +5634,8 @@ es:
         opened: "Abiertos"
         clicked: "Con clic"
         tracking_off: "Seguimiento desactivado"
+        rate_hint: "De todos los correos que envió este paso"
+        no_rate: "Aún no se han enviado correos"
         bounced:
           one: "%{count} rebotado"
           other: "%{count} rebotados"
@@ -5772,6 +5774,7 @@ es:
     show:
       active: "Activa"
       inactive: "Inactiva"
+      reply_to: "Responder a"
       duplicated_from_html: "Duplicada de %{link}"
       settings: "Configuración"
       edit_steps: "Editar pasos"

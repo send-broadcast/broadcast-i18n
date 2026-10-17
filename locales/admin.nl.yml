@@ -5635,6 +5635,8 @@ nl:
         opened: "Geopend"
         clicked: "Geklikt"
         tracking_off: "Tracking uit"
+        rate_hint: "Van alle e-mails die deze stap heeft verzonden"
+        no_rate: "Nog geen e-mails verzonden"
         bounced:
           one: "%{count} gebounced"
           other: "%{count} gebounced"
@@ -5773,6 +5775,7 @@ nl:
     show:
       active: "Actief"
       inactive: "Inactief"
+      reply_to: "Antwoordadres"
       duplicated_from_html: "Gedupliceerd van %{link}"
       settings: "Instellingen"
       edit_steps: "Stappen bewerken"

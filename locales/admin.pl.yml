@@ -5825,6 +5825,8 @@ pl:
         opened: "Otworzyli"
         clicked: "Kliknęli"
         tracking_off: "Śledzenie wyłączone"
+        rate_hint: "Ze wszystkich e-maili wysłanych przez ten krok"
+        no_rate: "Nie wysłano jeszcze żadnych e-maili"
         bounced:
           one: "%{count} odbicie"
           few: "%{count} odbicia"
@@ -5967,6 +5969,7 @@ pl:
     show:
       active: "Aktywna"
       inactive: "Nieaktywna"
+      reply_to: "Odpowiedź do"
       duplicated_from_html: "Zduplikowano z %{link}"
       settings: "Ustawienia"
       edit_steps: "Edytuj kroki"

@@ -5633,6 +5633,8 @@ da:
         opened: "Åbnet"
         clicked: "Klikket"
         tracking_off: "Sporing slået fra"
+        rate_hint: "Af alle e-mails dette trin har sendt"
+        no_rate: "Ingen e-mails sendt endnu"
         bounced:
           one: "%{count} bouncet"
           other: "%{count} bouncet"
@@ -5771,6 +5773,7 @@ da:
     show:
       active: "Aktiv"
       inactive: "Inaktiv"
+      reply_to: "Svaradresse"
       duplicated_from_html: "Kopieret fra %{link}"
       settings: "Indstillinger"
       edit_steps: "Rediger trin"

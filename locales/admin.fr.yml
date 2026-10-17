@@ -5634,6 +5634,8 @@ fr:
         opened: "Ouverts"
         clicked: "Cliqués"
         tracking_off: "Suivi désactivé"
+        rate_hint: "Sur tous les e-mails envoyés par cette étape"
+        no_rate: "Aucun e-mail envoyé pour le moment"
         bounced:
           one: "%{count} rebond"
           other: "%{count} rebonds"
@@ -5772,6 +5774,7 @@ fr:
     show:
       active: "Active"
       inactive: "Inactive"
+      reply_to: "Répondre à"
       duplicated_from_html: "Dupliquée depuis %{link}"
       settings: "Paramètres"
       edit_steps: "Modifier les étapes"
