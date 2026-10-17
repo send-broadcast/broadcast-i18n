@@ -5629,6 +5629,14 @@ fr:
         no_target: "Aucune séquence cible indiquée"
         end: "Fin de la séquence"
         no_tags: "Aucun tag indiqué"
+      email_stats:
+        sent: "Envoyés"
+        opened: "Ouverts"
+        clicked: "Cliqués"
+        tracking_off: "Suivi désactivé"
+        bounced:
+          one: "%{count} rebond"
+          other: "%{count} rebonds"
       move_target:
         label: "Placer l'étape ici"
     sub_forms:
@@ -5699,6 +5707,9 @@ fr:
         subject_placeholder: "ex. Bien démarrer"
         email_design: "Design de l'e-mail"
         preheader_placeholder: "ex. Voici quelques étapes pour bien commencer !"
+        reply_to: "Répondre à"
+        reply_to_label: "Adresse de réponse (facultatif)"
+        reply_to_hint: "Les réponses à cet e-mail arrivent à cette adresse. Laissez vide pour utiliser l'adresse de réponse de la séquence, ou celle de l'expéditeur si la séquence n'en a pas."
     confirm_move:
       title: "Déplacer l'étape ici ?"
       confirm: "Voulez-vous vraiment déplacer cette étape ici ?"
@@ -5785,6 +5796,9 @@ fr:
       opens_locked: "Impossible de désactiver le suivi des ouvertures : une étape de la séquence dépend des ouvertures d'e-mail."
       clicks_locked: "Impossible de désactiver le suivi des clics : une étape de la séquence dépend des clics dans les e-mails."
       send_as_hint: "L'identité d'expéditeur utilisée pour les e-mails de cette séquence."
+      reply_to: "Répondre à"
+      reply_to_label: "Adresse de réponse (facultatif)"
+      reply_to_hint: "Les réponses aux e-mails de cette séquence arrivent à cette adresse. Laissez vide pour envoyer les réponses à l'adresse de l'expéditeur. Une étape d'e-mail peut définir la sienne."
       stream: "Flux de messages"
       stream_hint: "Le flux Postmark utilisé par cette séquence. Les séquences marketing (accueil, nurturing, réengagement) vont sur le flux bulk, afin que les plaintes à leur sujet ne nuisent pas à la réputation qui porte vos reçus et vos réinitialisations de mot de passe. Gardez sur le flux transactionnel une séquence liée à la gestion du compte, comme les rappels de fin d'essai ou d'expiration du mot de passe."
       stream_bulk_hint: "Le flux bulk exige un lien de désabonnement dans chaque e-mail, et tous les serveurs Postmark n'en ont pas. Si les envois échouent après ce changement, vérifiez que le serveur dispose d'un flux bulk dans Postmark."

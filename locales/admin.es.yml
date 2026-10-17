@@ -5629,6 +5629,14 @@ es:
         no_target: "No se ha indicado la secuencia de destino"
         end: "Fin de la secuencia"
         no_tags: "No se han indicado etiquetas"
+      email_stats:
+        sent: "Enviados"
+        opened: "Abiertos"
+        clicked: "Con clic"
+        tracking_off: "Seguimiento desactivado"
+        bounced:
+          one: "%{count} rebotado"
+          other: "%{count} rebotados"
       move_target:
         label: "Colocar el paso aquí"
     sub_forms:
@@ -5699,6 +5707,9 @@ es:
         subject_placeholder: "p. ej., Vamos a empezar"
         email_design: "Diseño del correo"
         preheader_placeholder: "p. ej., ¡Aquí tienes unos pasos para empezar!"
+        reply_to: "Responder a"
+        reply_to_label: "Dirección de respuesta (opcional)"
+        reply_to_hint: "Las respuestas a este correo llegan a esta dirección. Déjalo en blanco para usar la dirección de respuesta de la secuencia, o la del remitente si la secuencia no tiene."
     confirm_move:
       title: "¿Mover el paso aquí?"
       confirm: "¿Seguro que quieres mover este paso aquí?"
@@ -5785,6 +5796,9 @@ es:
       opens_locked: "No se puede desactivar el seguimiento de aperturas porque hay un paso de la secuencia que depende de las aperturas."
       clicks_locked: "No se puede desactivar el seguimiento de clics porque hay un paso de la secuencia que depende de los clics."
       send_as_hint: "Desde qué identidad de remitente se envían los correos de esta secuencia."
+      reply_to: "Responder a"
+      reply_to_label: "Dirección de respuesta (opcional)"
+      reply_to_hint: "Las respuestas a los correos de esta secuencia llegan a esta dirección. Déjalo en blanco para que las respuestas vayan a la dirección del remitente. Un paso de correo puede indicar la suya."
       stream: "Message Stream"
       stream_hint: "En qué stream de Postmark envía esta secuencia. Las secuencias de marketing (bienvenida, nutrición, reactivación) van en el stream bulk, para que las quejas sobre ellas no dañen la reputación que transporta tus recibos y restablecimientos de contraseña. Mantén en el stream transaccional las secuencias que dan servicio a una cuenta, como los recordatorios de fin de prueba o de caducidad de contraseña."
       stream_bulk_hint: "El stream bulk exige un enlace de baja en cada correo, y no todos los servidores de Postmark tienen uno. Si los envíos empiezan a fallar después de cambiar esto, comprueba que el servidor tenga un stream bulk en Postmark."

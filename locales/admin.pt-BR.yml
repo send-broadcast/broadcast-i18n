@@ -5628,6 +5628,14 @@ pt-BR:
         no_target: "Nenhuma sequência de destino especificada"
         end: "Fim da sequência"
         no_tags: "Nenhuma tag especificada"
+      email_stats:
+        sent: "Enviados"
+        opened: "Abriram"
+        clicked: "Clicaram"
+        tracking_off: "Rastreamento desativado"
+        bounced:
+          one: "%{count} rejeitado"
+          other: "%{count} rejeitados"
       move_target:
         label: "Colocar a etapa aqui"
     sub_forms:
@@ -5698,6 +5706,9 @@ pt-BR:
         subject_placeholder: "ex.: Vamos começar"
         email_design: "Design do e-mail"
         preheader_placeholder: "ex.: Aqui estão alguns passos para você começar!"
+        reply_to: "Responder para"
+        reply_to_label: "Endereço de resposta (opcional)"
+        reply_to_hint: "As respostas a este e-mail chegam a este endereço. Deixe em branco para usar o endereço de resposta da sequência, ou o do remetente quando a sequência não tiver um."
     confirm_move:
       title: "Mover a etapa para cá?"
       confirm: "Tem certeza de que deseja mover esta etapa para cá?"
@@ -5784,6 +5795,9 @@ pt-BR:
       opens_locked: "Não é possível desativar o rastreamento de aberturas porque há uma etapa da sequência que depende das aberturas de e-mail."
       clicks_locked: "Não é possível desativar o rastreamento de cliques porque há uma etapa da sequência que depende dos cliques em e-mails."
       send_as_hint: "A identidade de remetente usada para enviar os e-mails desta sequência."
+      reply_to: "Responder para"
+      reply_to_label: "Endereço de resposta (opcional)"
+      reply_to_hint: "As respostas aos e-mails desta sequência chegam a este endereço. Deixe em branco para enviar as respostas ao endereço do remetente. Uma etapa de e-mail pode definir o seu próprio."
       stream: "Message Stream"
       stream_hint: "Em qual stream do Postmark esta sequência envia. Sequências de marketing (onboarding, nutrição, reengajamento) devem ficar no stream em massa, para que reclamações sobre elas não prejudiquem a reputação que entrega seus recibos e redefinições de senha. Mantenha no stream transacional as sequências que atendem uma conta, como lembretes de fim de teste ou de expiração de senha."
       stream_bulk_hint: "O stream em massa exige um link de cancelamento da inscrição em todos os e-mails, e nem todo servidor do Postmark tem um. Se os envios começarem a falhar depois desta alteração, verifique se o servidor tem um stream em massa no Postmark."

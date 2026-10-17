@@ -5626,6 +5626,14 @@ it:
         no_target: "Nessuna sequenza di destinazione indicata"
         end: "Fine della sequenza"
         no_tags: "Nessun tag indicato"
+      email_stats:
+        sent: "Inviate"
+        opened: "Aperte"
+        clicked: "Cliccate"
+        tracking_off: "Tracciamento disattivato"
+        bounced:
+          one: "%{count} non recapitata"
+          other: "%{count} non recapitate"
       move_target:
         label: "Metti qui il passaggio"
     sub_forms:
@@ -5696,6 +5704,9 @@ it:
         subject_placeholder: "es. Iniziamo insieme"
         email_design: "Design dell'email"
         preheader_placeholder: "es. Ecco i primi passi per iniziare!"
+        reply_to: "Rispondi a"
+        reply_to_label: "Indirizzo di risposta (facoltativo)"
+        reply_to_hint: "Le risposte a questa email arrivano a questo indirizzo. Lascia vuoto per usare l'indirizzo di risposta della sequenza, o quello del mittente se la sequenza non ne ha uno."
     confirm_move:
       title: "Spostare qui il passaggio?"
       confirm: "Vuoi davvero spostare qui questo passaggio?"
@@ -5782,6 +5793,9 @@ it:
       opens_locked: "Non puoi disattivare il tracciamento delle aperture: un passaggio della sequenza dipende dalle aperture delle email."
       clicks_locked: "Non puoi disattivare il tracciamento dei clic: un passaggio della sequenza dipende dai clic sulle email."
       send_as_hint: "L'identità del mittente da cui partono le email di questa sequenza."
+      reply_to: "Rispondi a"
+      reply_to_label: "Indirizzo di risposta (facoltativo)"
+      reply_to_hint: "Le risposte alle email di questa sequenza arrivano a questo indirizzo. Lascia vuoto per inviare le risposte all'indirizzo del mittente. Un passaggio email può impostarne uno proprio."
       stream: "Flusso dei messaggi"
       stream_hint: "Il flusso Postmark usato da questa sequenza. Le sequenze di marketing (onboarding, coltivazione, riattivazione) vanno sul flusso massivo, così eventuali segnalazioni non danneggiano la reputazione che serve a ricevute e reimpostazioni della password. Tieni sul flusso transazionale le sequenze legate a un account, come i promemoria di fine prova o di scadenza della password."
       stream_bulk_hint: "Il flusso massivo richiede un link di disiscrizione in ogni email e non tutti i server Postmark ne hanno uno. Se dopo questa modifica gli invii iniziano a fallire, controlla che il server abbia un flusso massivo su Postmark."

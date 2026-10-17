@@ -5630,6 +5630,14 @@ nl:
         no_target: "Geen doelreeks opgegeven"
         end: "Einde van reeks"
         no_tags: "Geen tags opgegeven"
+      email_stats:
+        sent: "Verzonden"
+        opened: "Geopend"
+        clicked: "Geklikt"
+        tracking_off: "Tracking uit"
+        bounced:
+          one: "%{count} gebounced"
+          other: "%{count} gebounced"
       move_target:
         label: "Stap hier plaatsen"
     sub_forms:
@@ -5700,6 +5708,9 @@ nl:
         subject_placeholder: "bijv. Zo ga je van start"
         email_design: "E-mailontwerp"
         preheader_placeholder: "bijv. Hier zijn een paar stappen om te beginnen!"
+        reply_to: "Antwoordadres"
+        reply_to_label: "Antwoordadres (optioneel)"
+        reply_to_hint: "Antwoorden op deze e-mail gaan naar dit adres. Laat leeg om het antwoordadres van de reeks te gebruiken, of het afzenderadres als de reeks er geen heeft."
     confirm_move:
       title: "Stap hierheen verplaatsen?"
       confirm: "Weet je zeker dat je deze stap hierheen wilt verplaatsen?"
@@ -5786,6 +5797,9 @@ nl:
       opens_locked: "Het bijhouden van openingen kan niet worden uitgeschakeld, omdat er een stap in de reeks is die van openingen afhangt."
       clicks_locked: "Het bijhouden van klikken kan niet worden uitgeschakeld, omdat er een stap in de reeks is die van klikken afhangt."
       send_as_hint: "Vanaf welke afzenderidentiteit de e-mails van deze reeks worden verzonden."
+      reply_to: "Antwoordadres"
+      reply_to_label: "Antwoordadres (optioneel)"
+      reply_to_hint: "Antwoorden op de e-mails van deze reeks gaan naar dit adres. Laat leeg om antwoorden naar het afzenderadres te sturen. Een e-mailstap kan een eigen adres instellen."
       stream: "Message Stream"
       stream_hint: "Op welke Postmark-stream deze reeks verzendt. Marketingreeksen (onboarding, nurture, heractivering) horen op de bulkstream, zodat klachten erover de reputatie van je bonnen en wachtwoordherstelmails niet kunnen schaden. Houd een reeks die een account bedient, zoals herinneringen over een proefperiode of verlopen wachtwoord, op de transactionele stream."
       stream_bulk_hint: "De bulkstream vereist een afmeldlink in elke e-mail, en niet elke Postmark-server heeft er een. Als verzenden na deze wijziging mislukt, controleer dan of de server in Postmark een bulkstream heeft."

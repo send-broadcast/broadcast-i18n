@@ -5630,6 +5630,14 @@ de:
         no_target: "Keine Zielsequenz angegeben"
         end: "Ende der Sequenz"
         no_tags: "Keine Tags angegeben"
+      email_stats:
+        sent: "Gesendet"
+        opened: "Geöffnet"
+        clicked: "Geklickt"
+        tracking_off: "Tracking aus"
+        bounced:
+          one: "%{count} Bounce"
+          other: "%{count} Bounces"
       move_target:
         label: "Schritt hier platzieren"
     sub_forms:
@@ -5700,6 +5708,9 @@ de:
         subject_placeholder: "z. B. So legen Sie los"
         email_design: "E-Mail-Design"
         preheader_placeholder: "z. B. Hier sind ein paar erste Schritte für Sie!"
+        reply_to: "Antwort an"
+        reply_to_label: "Antwortadresse (optional)"
+        reply_to_hint: "Antworten auf diese E-Mail gehen an diese Adresse. Lassen Sie das Feld leer, um die Antwortadresse der Sequenz zu verwenden, oder die Absenderadresse, wenn die Sequenz keine hat."
     confirm_move:
       title: "Schritt hierher verschieben?"
       confirm: "Möchten Sie diesen Schritt wirklich hierher verschieben?"
@@ -5786,6 +5797,9 @@ de:
       opens_locked: "Das Erfassen von Öffnungen kann nicht deaktiviert werden, da ein Sequenzschritt von E-Mail-Öffnungen abhängt."
       clicks_locked: "Das Erfassen von Klicks kann nicht deaktiviert werden, da ein Sequenzschritt von E-Mail-Klicks abhängt."
       send_as_hint: "Die Absenderidentität, mit der die E-Mails dieser Sequenz gesendet werden."
+      reply_to: "Antwort an"
+      reply_to_label: "Antwortadresse (optional)"
+      reply_to_hint: "Antworten auf die E-Mails dieser Sequenz gehen an diese Adresse. Lassen Sie das Feld leer, damit Antworten an die Absenderadresse gehen. Ein E-Mail-Schritt kann eine eigene festlegen."
       stream: "Message Stream"
       stream_hint: "Über welchen Postmark-Stream diese Sequenz sendet. Marketing-Sequenzen (Onboarding, Lead-Nurturing, Reaktivierung) gehören in den Bulk-Stream, damit Beschwerden darüber nicht die Reputation des Streams schädigen, der Ihre Belege und Passwort-Zurücksetzungen zustellt. Belassen Sie Sequenzen, die ein Konto betreffen, etwa Erinnerungen an ablaufende Testphasen oder Passwörter, im Transaktions-Stream."
       stream_bulk_hint: "Der Bulk-Stream verlangt in jeder E-Mail einen Abmeldelink, und nicht jeder Postmark-Server hat einen solchen Stream. Wenn der Versand nach dieser Änderung fehlschlägt, prüfen Sie, ob der Server in Postmark einen Bulk-Stream hat."

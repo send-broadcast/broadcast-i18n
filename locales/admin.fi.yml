@@ -5629,6 +5629,14 @@ fi:
         no_target: "Kohdesarjaa ei ole määritetty"
         end: "Sarjan loppu"
         no_tags: "Tunnisteita ei ole määritetty"
+      email_stats:
+        sent: "Lähetetyt"
+        opened: "Avatut"
+        clicked: "Klikatut"
+        tracking_off: "Seuranta pois päältä"
+        bounced:
+          one: "%{count} palautunut"
+          other: "%{count} palautunutta"
       move_target:
         label: "Sijoita vaihe tähän"
     sub_forms:
@@ -5699,6 +5707,9 @@ fi:
         subject_placeholder: "esim. Aloitetaan!"
         email_design: "Sähköpostin ulkoasu"
         preheader_placeholder: "esim. Tässä muutama vinkki alkuun!"
+        reply_to: "Vastausosoite"
+        reply_to_label: "Vastausosoite (valinnainen)"
+        reply_to_hint: "Vastaukset tähän sähköpostiin tulevat tähän osoitteeseen. Jätä tyhjäksi, niin käytetään sarjan vastausosoitetta, tai lähettäjän osoitetta, jos sarjalla ei ole sellaista."
     confirm_move:
       title: "Siirretäänkö vaihe tähän?"
       confirm: "Haluatko varmasti siirtää tämän vaiheen tähän?"
@@ -5785,6 +5796,9 @@ fi:
       opens_locked: "Avausten seurantaa ei voi poistaa käytöstä, koska jokin sarjan vaihe riippuu sähköpostien avauksista."
       clicks_locked: "Klikkausten seurantaa ei voi poistaa käytöstä, koska jokin sarjan vaihe riippuu sähköpostien klikkauksista."
       send_as_hint: "Millä lähettäjäidentiteetillä tämän sarjan sähköpostit lähetetään."
+      reply_to: "Vastausosoite"
+      reply_to_label: "Vastausosoite (valinnainen)"
+      reply_to_hint: "Vastaukset tämän sarjan sähköposteihin tulevat tähän osoitteeseen. Jätä tyhjäksi, niin vastaukset menevät lähettäjän osoitteeseen. Sähköpostivaihe voi määrittää oman osoitteensa."
       stream: "Viestivirta"
       stream_hint: "Millä Postmark-virralla tämä sarja lähettää. Markkinointisarjat (perehdytys, hoivaus, uudelleenaktivointi) kuuluvat massavirtaan, jotta niitä koskevat valitukset eivät voi vahingoittaa kuittejasi ja salasanan palautuksiasi kuljettavan virran mainetta. Pidä tiliä palveleva sarja, kuten kokeilujakson tai salasanan vanhenemisen muistutukset, transaktiovirrassa."
       stream_bulk_hint: "Massavirta vaatii peruutuslinkin jokaiseen sähköpostiin, eikä jokaisella Postmark-palvelimella ole massavirtaa. Jos lähetykset alkavat epäonnistua tämän muuttamisen jälkeen, tarkista, että palvelimella on massavirta Postmarkissa."

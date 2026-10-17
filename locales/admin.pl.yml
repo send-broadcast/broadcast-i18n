@@ -5820,6 +5820,16 @@ pl:
         no_target: "Nie wskazano sekwencji docelowej"
         end: "Koniec sekwencji"
         no_tags: "Nie wskazano tagów"
+      email_stats:
+        sent: "Wysłane"
+        opened: "Otworzyli"
+        clicked: "Kliknęli"
+        tracking_off: "Śledzenie wyłączone"
+        bounced:
+          one: "%{count} odbicie"
+          few: "%{count} odbicia"
+          many: "%{count} odbić"
+          other: "%{count} odbicia"
       move_target:
         label: "Umieść krok tutaj"
     sub_forms:
@@ -5892,6 +5902,9 @@ pl:
         subject_placeholder: "np. Zaczynajmy"
         email_design: "Projekt e-maila"
         preheader_placeholder: "np. Oto kilka pierwszych kroków dla ciebie!"
+        reply_to: "Odpowiedź do"
+        reply_to_label: "Adres do odpowiedzi (opcjonalnie)"
+        reply_to_hint: "Odpowiedzi na ten e-mail trafiają na ten adres. Zostaw puste, aby użyć adresu do odpowiedzi sekwencji, lub adresu nadawcy, gdy sekwencja go nie ma."
     confirm_move:
       title: "Przenieść krok tutaj?"
       confirm: "Czy na pewno chcesz przenieść ten krok tutaj?"
@@ -5978,6 +5991,9 @@ pl:
       opens_locked: "Nie można wyłączyć śledzenia otwarć, ponieważ jeden z kroków sekwencji zależy od otwarć e-maili."
       clicks_locked: "Nie można wyłączyć śledzenia kliknięć, ponieważ jeden z kroków sekwencji zależy od kliknięć w e-mailach."
       send_as_hint: "Tożsamość nadawcy, z której wysyłane są e-maile tej sekwencji."
+      reply_to: "Odpowiedź do"
+      reply_to_label: "Adres do odpowiedzi (opcjonalnie)"
+      reply_to_hint: "Odpowiedzi na e-maile tej sekwencji trafiają na ten adres. Zostaw puste, aby odpowiedzi trafiały na adres nadawcy. Krok e-mail może ustawić własny adres."
       stream: "Message Stream"
       stream_hint: "Strumień Postmark, przez który wysyła ta sekwencja. Sekwencje marketingowe (onboarding, pielęgnowanie leadów, reaktywacja) powinny trafiać do strumienia masowego, aby skargi na nie nie szkodziły reputacji, na której opierają się twoje potwierdzenia zakupu i resetowanie haseł. Sekwencje obsługujące konto, np. przypomnienia o końcu okresu próbnego lub wygaśnięciu hasła, zostaw w strumieniu transakcyjnym."
       stream_bulk_hint: "Strumień masowy wymaga linku do wypisania w każdym e-mailu i nie każdy serwer Postmark go ma. Jeśli po tej zmianie wysyłki zaczną kończyć się błędem, sprawdź, czy serwer ma strumień masowy w Postmark."

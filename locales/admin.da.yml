@@ -5628,6 +5628,14 @@ da:
         no_target: "Ingen målsekvens angivet"
         end: "Slut på sekvensen"
         no_tags: "Ingen tags angivet"
+      email_stats:
+        sent: "Sendt"
+        opened: "Åbnet"
+        clicked: "Klikket"
+        tracking_off: "Sporing slået fra"
+        bounced:
+          one: "%{count} bouncet"
+          other: "%{count} bouncet"
       move_target:
         label: "Placer trinnet her"
     sub_forms:
@@ -5698,6 +5706,9 @@ da:
         subject_placeholder: "f.eks. Lad os komme i gang"
         email_design: "E-maildesign"
         preheader_placeholder: "f.eks. Her er et par trin til at komme godt i gang!"
+        reply_to: "Svaradresse"
+        reply_to_label: "Svaradresse (valgfri)"
+        reply_to_hint: "Svar på denne e-mail sendes hertil. Lad feltet stå tomt for at bruge sekvensens svaradresse, eller afsenderadressen når sekvensen ikke har nogen."
     confirm_move:
       title: "Flyt trinnet hertil?"
       confirm: "Er du sikker på, at du vil flytte dette trin hertil?"
@@ -5784,6 +5795,9 @@ da:
       opens_locked: "Sporing af åbninger kan ikke slås fra, fordi et trin i sekvensen afhænger af åbninger."
       clicks_locked: "Sporing af klik kan ikke slås fra, fordi et trin i sekvensen afhænger af klik."
       send_as_hint: "Hvilken afsenderidentitet denne sekvens sender sine e-mails fra."
+      reply_to: "Svaradresse"
+      reply_to_label: "Svaradresse (valgfri)"
+      reply_to_hint: "Svar på denne sekvens’ e-mails sendes hertil. Lad feltet stå tomt for at sende svar til afsenderadressen. Et e-mail-trin kan angive sin egen."
       stream: "Message Stream"
       stream_hint: "Hvilken Postmark-stream denne sekvens sender via. Marketingsekvenser (onboarding, pleje, genaktivering) hører hjemme på bulk-streamen, så klager over dem ikke kan skade det omdømme, der bærer dine kvitteringer og nulstillinger af adgangskoder. Hold en sekvens, der betjener en konto, f.eks. påmindelser om prøveperiode eller udløb af adgangskode, på den transaktionelle stream."
       stream_bulk_hint: "Bulk-streamen kræver et afmeldingslink i hver e-mail, og ikke alle Postmark-servere har en. Hvis afsendelser begynder at fejle efter ændringen, så tjek, at serveren har en bulk-stream i Postmark."

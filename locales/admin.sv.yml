@@ -5628,6 +5628,14 @@ sv:
         no_target: "Ingen målsekvens angiven"
         end: "Slut på sekvensen"
         no_tags: "Inga taggar angivna"
+      email_stats:
+        sent: "Skickade"
+        opened: "Öppnade"
+        clicked: "Klickade"
+        tracking_off: "Spårning av"
+        bounced:
+          one: "%{count} studsade"
+          other: "%{count} studsade"
       move_target:
         label: "Placera steget här"
     sub_forms:
@@ -5698,6 +5706,9 @@ sv:
         subject_placeholder: "t.ex. Nu sätter vi igång"
         email_design: "Mejldesign"
         preheader_placeholder: "t.ex. Här är några steg för att komma igång!"
+        reply_to: "Svarsadress"
+        reply_to_label: "Svarsadress (valfritt)"
+        reply_to_hint: "Svar på det här mejlet går till den här adressen. Lämna tomt för att använda sekvensens svarsadress, eller avsändaradressen när sekvensen saknar en."
     confirm_move:
       title: "Flytta steget hit?"
       confirm: "Är du säker på att du vill flytta steget hit?"
@@ -5784,6 +5795,9 @@ sv:
       opens_locked: "Det går inte att stänga av spårning av öppningar eftersom ett steg i sekvensen är beroende av öppnade mejl."
       clicks_locked: "Det går inte att stänga av spårning av klick eftersom ett steg i sekvensen är beroende av klick i mejl."
       send_as_hint: "Vilken avsändaridentitet sekvensens mejl skickas från."
+      reply_to: "Svarsadress"
+      reply_to_label: "Svarsadress (valfritt)"
+      reply_to_hint: "Svar på sekvensens mejl går till den här adressen. Lämna tomt för att skicka svar till avsändaradressen. Ett mejlsteg kan ange en egen."
       stream: "Meddelandeström"
       stream_hint: "Vilken Postmark-ström sekvensen skickar via. Marknadsföringssekvenser (introduktion, uppföljning, återaktivering) hör hemma i bulkströmmen, så att klagomål på dem inte kan skada ryktet för dina kvitton och lösenordsåterställningar. Låt en sekvens som rör ett konto, till exempel påminnelser om provperiod eller lösenord som löper ut, ligga kvar i transaktionsströmmen."
       stream_bulk_hint: "Bulkströmmen kräver en avregistreringslänk i varje mejl, och alla Postmark-servrar har ingen bulkström. Om utskicken börjar misslyckas efter ändringen, kontrollera att servern har en bulkström i Postmark."

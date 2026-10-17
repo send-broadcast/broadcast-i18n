@@ -5611,6 +5611,14 @@ en:
         no_target: "No target sequence specified"
         end: "End of Sequence"
         no_tags: "No tags specified"
+      email_stats:
+        sent: "Sent"
+        opened: "Opened"
+        clicked: "Clicked"
+        tracking_off: "Tracking off"
+        bounced:
+          one: "%{count} bounced"
+          other: "%{count} bounced"
       move_target:
         label: "Place step here"
     sub_forms:
@@ -5681,6 +5689,9 @@ en:
         subject_placeholder: "eg. Let's get you started"
         email_design: "Email design"
         preheader_placeholder: "eg. Here are some onboarding steps for ya!"
+        reply_to: "Reply-To"
+        reply_to_label: "Reply-To address (optional)"
+        reply_to_hint: "Replies to this email go here. Leave empty to use the sequence's Reply-To, or the sender address when the sequence has none."
     confirm_move:
       title: "Move step here?"
       confirm: "Are you sure you want to move this step here?"
@@ -5767,6 +5778,9 @@ en:
       opens_locked: "Cannot disable tracking opens because there is a sequence step that depends on email opens."
       clicks_locked: "Cannot disable tracking clicks because there is a sequence step that depends on email clicks."
       send_as_hint: "Which sender identity this sequence's emails are sent from."
+      reply_to: "Reply-To"
+      reply_to_label: "Reply-To address (optional)"
+      reply_to_hint: "Replies to this sequence's emails go here. Leave empty to send replies to the sender address. An email step can set its own."
       stream: "Message Stream"
       stream_hint: "Which Postmark stream this sequence sends on. Marketing sequences (onboarding, nurture, re-engagement) belong on the bulk stream, so complaints about them cannot damage the reputation carrying your receipts and password resets. Keep a sequence that services an account, such as trial or password expiry reminders, on the transactional stream."
       stream_bulk_hint: "The bulk stream requires an unsubscribe link on every email, and not every Postmark server has one. If sends start failing after changing this, check the server has a bulk stream in Postmark."
