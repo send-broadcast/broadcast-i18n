@@ -209,6 +209,7 @@ en:
               style_value_not_allowed: "%{setting} contains characters that are not allowed in a style value"
             trigger_settings:
               unknown_frequency: "frequency %{value} is not known. Use one of: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} must be a whole number of days, 1 or more"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" is not allowed after submission (use one of %{allowed})"
               invalid_block: "block %{position}: %{details}"
@@ -2284,6 +2285,7 @@ en:
         bounced: "Bounced"
         spam: "Spam"
         unsubscribed: "Unsubscribed"
+        captured: "Captured"
       export_hint: "Download this list as CSV"
       export: "Export CSV"
       columns:
@@ -3449,6 +3451,7 @@ en:
         clicked: "Clicked"
         opened: "Opened"
         delivered: "Delivered"
+        captured: "Captured, not delivered"
         other: "Other"
         sent: "Sent"
 
@@ -4775,6 +4778,8 @@ en:
         once_per_session: "Once per session"
         once_per_day: "Once per day"
         once: "Only once (ever)"
+        every_n_days: "Every N days"
+        frequency_days: "Days between shows"
         devices: "Show on devices"
         desktop: "Desktop"
         mobile: "Mobile"
@@ -5852,12 +5857,9 @@ en:
         updated: "Topic %{name} updated."
       destroy:
         deleted: "Topic %{name} deleted."
-        in_use_by: "%{name} is used by %{uses}, so it cannot be deleted. Remove it from them first."
-        uses:
-          broadcast: "a broadcast"
-          sequence: "a sequence"
-          opt_in_form: "an opt-in form"
       form:
+        locked: "Locked while the topic is in use, because changing them would change who receives. In use by: %{uses}. Remove the topic from them to change these settings."
+        unset_in_use: "The topic is in use, so changing this setting changes who receives. In use by: %{uses}."
         name: "Name"
         name_help: "Subscribers see this name on the preference and unsubscribe pages."
         description: "Description"
@@ -6261,7 +6263,7 @@ en:
           callbacks_not_configured: "Callbacks not configured. Use the Setup Callbacks button in Provider Actions below."
           callback_error: "Callback Error: %{error}"
       create_test_server:
-        license_key_required: "A license key is required to use the test server. Please set your license key in Settings > Installation."
+        license_key_missing: "A license key is required to use the test server. Add LICENSE_KEY to the .env file in your app folder, then recreate the containers: run ./broadcast.sh restart on an automatic install, or docker compose -f docker-compose.manual.yml up -d on a manual install. See %{docs_url}."
         created: "Test server created successfully"
         failed: "Failed to create test server: %{errors}"
       create:
@@ -6361,7 +6363,7 @@ en:
         instant_setup: "Instant Setup"
         test_description: "Try out sending without emailing real people: the test server captures every email in your private test inbox and never delivers it. Captured mail is kept for 7 days."
         requires_license_key: "Requires License Key"
-        license_key_required: "A license key is required to use the test server. Set your license key in Settings > Installation."
+        license_key_missing: "A license key is required to use the test server. Add LICENSE_KEY to the .env file in your app folder, then recreate the containers: run ./broadcast.sh restart on an automatic install, or docker compose -f docker-compose.manual.yml up -d on a manual install. See %{docs_url}."
       confirm_copy_to_channel:
         heading: "Copy Email Server to Another Channel"
         intro: "This will create a copy of \"%{label}\" in another channel with the same configuration settings."
@@ -7592,6 +7594,9 @@ en:
           topic_unsubscribed:
             label: "Topic unsubscribed page"
             description: "Shown after turning one topic off. The subscriber stays subscribed."
+          topic_resubscribed:
+            label: "Topic resubscribed page"
+            description: "Shown after Resubscribe on the topic unsubscribed page turns the topic back on."
           preferences:
             label: "Preference page"
             description: "Where subscribers choose their topics ({{ preferences_url }})."
@@ -8666,6 +8671,14 @@ en:
   test_server_notices:
     view_inbox: "View test inbox"
     captured: "%{message}, and captured in the test inbox rather than delivered to anyone."
+    badge: "Captured, not delivered"
+    badge_title: "Sent through the Test Server: captured in its test inbox and never delivered to anyone."
+    badge_partial:
+      one: "%{count} captured, not delivered"
+      other: "%{count} captured, not delivered"
+    badge_partial_title:
+      one: "%{count} of %{total} messages went through the Test Server: captured in its test inbox and never delivered."
+      other: "%{count} of %{total} messages went through the Test Server: captured in its test inbox and never delivered."
 
   time:
     formats:

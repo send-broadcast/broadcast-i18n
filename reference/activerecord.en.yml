@@ -23,6 +23,10 @@ en:
           attributes:
             unset_receives:
               not_allowed_for_tag: "must be off for a tag topic: a tag cannot record an explicit opt-out"
+            base:
+              locked_while_in_use: "The storage, custom data field and tag cannot change while the topic is in use, because that would change who receives. In use by: %{uses}. Remove the topic from them first."
+              in_use_cannot_delete: "The topic cannot be deleted while it is in use, because that would change who receives. In use by: %{uses}. Remove the topic from them first."
+              kept_by_archived_broadcasts: "The topic cannot be deleted while an archived broadcast that was not sent uses it, because unarchiving it would send it to everyone it targets. Archived: %{uses}. Delete the broadcast or remove the topic from it first."
         subscriber:
           attributes:
             base:
@@ -33,3 +37,10 @@ en:
               topic_not_in_channel: "must be a topic of this channel"
             operator:
               needs_custom_data_topic: "\"is not set\" needs a custom data topic: a tag topic has no unset value"
+  # Topic#uses_summary: what uses a topic, listed in the error above and on the topic form.
+  topic_uses:
+    broadcast: "broadcast \"%{name}\""
+    sequence: "sequence \"%{name}\""
+    opt_in_form: "opt-in form \"%{name}\""
+    segment: "segment \"%{name}\""
+    and_more: "and %{count} more"

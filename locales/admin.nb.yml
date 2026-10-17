@@ -228,6 +228,7 @@ nb:
               style_value_not_allowed: "%{setting} inneholder tegn som ikke er tillatt i en stilverdi"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} er ukjent. Bruk en av disse verdiene: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} må være et helt antall dager, 1 eller flere"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blokk %{position}: block_type \"%{block_type}\" er ikke tillatt etter innsending (bruk en av %{allowed})"
               invalid_block: "blokk %{position}: %{details}"
@@ -2303,6 +2304,7 @@ nb:
         bounced: "Returnert"
         spam: "Spam"
         unsubscribed: "Avmeldt"
+        captured: "Fanget opp"
       export_hint: "Last ned denne listen som CSV"
       export: "Eksporter CSV"
       columns:
@@ -3468,6 +3470,7 @@ nb:
         clicked: "Klikket"
         opened: "Åpnet"
         delivered: "Levert"
+        captured: "Fanget opp, ikke levert"
         other: "Annet"
         sent: "Sendt"
 
@@ -4794,6 +4797,8 @@ nb:
         once_per_session: "Én gang per økt"
         once_per_day: "Én gang per dag"
         once: "Bare én gang (noensinne)"
+        every_n_days: "Hver N. dag"
+        frequency_days: "Dager mellom visninger"
         devices: "Vis på enheter"
         desktop: "Datamaskin"
         mobile: "Mobil"
@@ -6216,7 +6221,7 @@ nb:
           callbacks_not_configured: "Tilbakekall er ikke konfigurert. Bruk knappen Sett opp tilbakekall under Leverandørhandlinger nedenfor."
           callback_error: "Feil ved tilbakekall: %{error}"
       create_test_server:
-        license_key_required: "Det kreves en lisensnøkkel for å bruke testserveren. Angi lisensnøkkelen under Innstillinger > Installasjon."
+        license_key_missing: "Det kreves en lisensnøkkel for å bruke testserveren. Legg til LICENSE_KEY i filen .env i app-mappen din, og opprett deretter containerne på nytt: kjør ./broadcast.sh restart på en automatisk installasjon, eller docker compose -f docker-compose.manual.yml up -d på en manuell installasjon. Se %{docs_url}."
         created: "Testserveren er opprettet"
         failed: "Kunne ikke opprette testserveren: %{errors}"
       create:
@@ -6316,7 +6321,7 @@ nb:
         instant_setup: "Umiddelbart oppsett"
         test_description: "Prøv utsending uten å sende e-post til ekte personer: testserveren fanger opp hver e-post i den private testinnboksen din og leverer den aldri. Oppfanget e-post beholdes i 7 dager."
         requires_license_key: "Krever lisensnøkkel"
-        license_key_required: "Det kreves en lisensnøkkel for å bruke testserveren. Angi lisensnøkkelen under Innstillinger > Installasjon."
+        license_key_missing: "Det kreves en lisensnøkkel for å bruke testserveren. Legg til LICENSE_KEY i filen .env i app-mappen din, og opprett deretter containerne på nytt: kjør ./broadcast.sh restart på en automatisk installasjon, eller docker compose -f docker-compose.manual.yml up -d på en manuell installasjon. Se %{docs_url}."
       confirm_copy_to_channel:
         heading: "Kopier e-postserveren til en annen kanal"
         intro: "Dette oppretter en kopi av «%{label}» i en annen kanal med de samme konfigurasjonsinnstillingene."
@@ -7541,6 +7546,9 @@ nb:
           topic_unsubscribed:
             label: "Side for avslått emne"
             description: "Vises etter at et emne er slått av. Abonnenten forblir påmeldt."
+          topic_resubscribed:
+            label: "Side for påslått emne"
+            description: "Vises når knappen for ny påmelding på siden for avslått emne slår emnet på igjen."
           preferences:
             label: "Innstillingsside"
             description: "Der abonnenter velger emnene sine ({{ preferences_url }})."
@@ -7633,12 +7641,9 @@ nb:
         updated: "Emnet %{name} er oppdatert."
       destroy:
         deleted: "Emnet %{name} er slettet."
-        in_use_by: "%{name} brukes av %{uses} og kan derfor ikke slettes. Fjern det derfra først."
-        uses:
-          broadcast: "en kampanje"
-          sequence: "en sekvens"
-          opt_in_form: "et påmeldingsskjema"
       form:
+        locked: "Låst mens emnet er i bruk, fordi en endring ville endre hvem som mottar e-post. I bruk av: %{uses}. Fjern emnet derfra for å endre disse innstillingene."
+        unset_in_use: "Emnet er i bruk, så en endring av denne innstillingen endrer hvem som mottar e-post. I bruk av: %{uses}."
         name: "Navn"
         name_help: "Abonnenter ser dette navnet på innstillings- og avmeldingssiden."
         description: "Beskrivelse"
@@ -8683,6 +8688,14 @@ nb:
   test_server_notices:
     view_inbox: "Vis testinnboks"
     captured: "%{message}, og fanget opp i testinnboksen i stedet for å bli levert til noen."
+    badge: "Fanget opp, ikke levert"
+    badge_title: "Sendt via testserveren: fanget opp i testinnboksen og aldri levert til noen."
+    badge_partial:
+      one: "%{count} fanget opp, ikke levert"
+      other: "%{count} fanget opp, ikke levert"
+    badge_partial_title:
+      one: "%{count} av %{total} meldinger gikk via testserveren: fanget opp i testinnboksen og aldri levert."
+      other: "%{count} av %{total} meldinger gikk via testserveren: fanget opp i testinnboksen og aldri levert."
 
   time:
     formats:

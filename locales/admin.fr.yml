@@ -229,6 +229,7 @@ fr:
               style_value_not_allowed: "%{setting} contient des caractères non autorisés dans une valeur de style"
             trigger_settings:
               unknown_frequency: "la fréquence %{value} est inconnue. Utilisez une de ces valeurs : %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} doit être un nombre entier de jours, 1 ou plus"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "bloc %{position} : le block_type « %{block_type} » n'est pas autorisé après l'envoi (utilisez l'un de %{allowed})"
               invalid_block: "bloc %{position} : %{details}"
@@ -2304,6 +2305,7 @@ fr:
         bounced: "Rebond"
         spam: "Spam"
         unsubscribed: "Désabonné"
+        captured: "Capturé"
       export_hint: "Télécharger cette liste au format CSV"
       export: "Exporter en CSV"
       columns:
@@ -3318,6 +3320,7 @@ fr:
         clicked: "Cliqué"
         opened: "Ouvert"
         delivered: "Distribué"
+        captured: "Capturé, non distribué"
         other: "Autre"
         sent: "Envoyé"
     broadcast:
@@ -4795,6 +4798,8 @@ fr:
         once_per_session: "Une fois par session"
         once_per_day: "Une fois par jour"
         once: "Une seule fois (définitivement)"
+        every_n_days: "Tous les N jours"
+        frequency_days: "Jours entre deux affichages"
         devices: "Afficher sur les appareils"
         desktop: "Ordinateur"
         mobile: "Mobile"
@@ -6217,7 +6222,7 @@ fr:
           callbacks_not_configured: "Callbacks non configurés. Utilisez le bouton Configurer les callbacks dans Actions du fournisseur ci-dessous."
           callback_error: "Erreur de callback : %{error}"
       create_test_server:
-        license_key_required: "Une clé de licence est nécessaire pour utiliser le serveur de test. Définissez votre clé de licence dans Paramètres > Installation."
+        license_key_missing: "Une clé de licence est nécessaire pour utiliser le serveur de test. Ajoutez LICENSE_KEY au fichier .env du dossier de votre application, puis recréez les conteneurs : exécutez ./broadcast.sh restart pour une installation automatique, ou docker compose -f docker-compose.manual.yml up -d pour une installation manuelle. Voir %{docs_url}."
         created: "Serveur de test créé"
         failed: "Impossible de créer le serveur de test : %{errors}"
       create:
@@ -6317,7 +6322,7 @@ fr:
         instant_setup: "Configuration instantanée"
         test_description: "Essayez l'envoi sans écrire à de vraies personnes : le serveur de test capture chaque e-mail dans votre boîte de test privée et ne le distribue jamais. Les messages capturés sont conservés 7 jours."
         requires_license_key: "Clé de licence requise"
-        license_key_required: "Une clé de licence est nécessaire pour utiliser le serveur de test. Définissez votre clé de licence dans Paramètres > Installation."
+        license_key_missing: "Une clé de licence est nécessaire pour utiliser le serveur de test. Ajoutez LICENSE_KEY au fichier .env du dossier de votre application, puis recréez les conteneurs : exécutez ./broadcast.sh restart pour une installation automatique, ou docker compose -f docker-compose.manual.yml up -d pour une installation manuelle. Voir %{docs_url}."
       confirm_copy_to_channel:
         heading: "Copier le serveur e-mail vers un autre canal"
         intro: "Une copie de « %{label} » sera créée dans un autre canal avec la même configuration."
@@ -7542,6 +7547,9 @@ fr:
           topic_unsubscribed:
             label: "Page de thème désactivé"
             description: "Affichée après la désactivation d'un thème. L'abonné reste abonné."
+          topic_resubscribed:
+            label: "Page de thème réactivé"
+            description: "Affichée quand le bouton de réabonnement de la page de thème désactivé réactive le thème."
           preferences:
             label: "Page de préférences"
             description: "Là où les abonnés choisissent leurs thèmes ({{ preferences_url }})."
@@ -7634,12 +7642,9 @@ fr:
         updated: "Thème %{name} mis à jour."
       destroy:
         deleted: "Thème %{name} supprimé."
-        in_use_by: "%{name} est utilisé par %{uses}, il ne peut donc pas être supprimé. Retirez-le d'abord."
-        uses:
-          broadcast: "une campagne"
-          sequence: "une séquence"
-          opt_in_form: "un formulaire d'inscription"
       form:
+        locked: "Verrouillé tant que le thème est utilisé, car les modifier changerait les destinataires. Utilisé par : %{uses}. Retirez-en le thème pour modifier ces paramètres."
+        unset_in_use: "Le thème est utilisé, donc modifier ce paramètre change les destinataires. Utilisé par : %{uses}."
         name: "Nom"
         name_help: "Les abonnés voient ce nom sur les pages de préférences et de désabonnement."
         description: "Description"
@@ -8684,6 +8689,14 @@ fr:
   test_server_notices:
     view_inbox: "Voir la boîte de test"
     captured: "%{message}, et capturé dans la boîte de test au lieu d'être distribué."
+    badge: "Capturé, non distribué"
+    badge_title: "Envoyé via le serveur de test : capturé dans sa boîte de test et jamais distribué."
+    badge_partial:
+      one: "%{count} capturé, non distribué"
+      other: "%{count} capturés, non distribués"
+    badge_partial_title:
+      one: "%{count} message sur %{total} est passé par le serveur de test : capturé dans sa boîte de test et jamais distribué."
+      other: "%{count} messages sur %{total} sont passés par le serveur de test : capturés dans sa boîte de test et jamais distribués."
 
   time:
     formats:

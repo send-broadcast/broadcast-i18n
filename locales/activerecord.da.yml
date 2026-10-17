@@ -22,6 +22,10 @@ da:
           attributes:
             unset_receives:
               not_allowed_for_tag: "skal være slået fra for et tag-emne: et tag kan ikke registrere et udtrykkeligt fravalg"
+            base:
+              locked_while_in_use: "Lagring, brugerdefineret felt og tag kan ikke ændres, mens emnet er i brug, fordi det ville ændre, hvem der modtager mails. I brug af: %{uses}. Fjern emnet derfra først."
+              in_use_cannot_delete: "Emnet kan ikke slettes, mens det er i brug, fordi det ville ændre, hvem der modtager mails. I brug af: %{uses}. Fjern emnet derfra først."
+              kept_by_archived_broadcasts: "Emnet kan ikke slettes, mens en arkiveret kampagne, der ikke er sendt, bruger det, fordi kampagnen ville blive sendt til alle sine modtagere, hvis den gendannes fra arkivet. Arkiveret: %{uses}. Slet kampagnen, eller fjern emnet fra den først."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ da:
               topic_not_in_channel: "skal være et emne i denne kanal"
             operator:
               needs_custom_data_topic: "\"er ikke angivet\" kræver et emne med brugerdefineret felt: et tag-emne er aldrig uden værdi"
+  topic_uses:
+    broadcast: "kampagne \"%{name}\""
+    sequence: "sekvens \"%{name}\""
+    opt_in_form: "tilmeldingsformular \"%{name}\""
+    segment: "segment \"%{name}\""
+    and_more: "og %{count} til"

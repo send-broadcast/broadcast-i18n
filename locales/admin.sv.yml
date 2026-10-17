@@ -228,6 +228,7 @@ sv:
               style_value_not_allowed: "%{setting} innehåller tecken som inte är tillåtna i ett stilvärde"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} är okänd. Använd ett av dessa värden: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} måste vara ett helt antal dagar, 1 eller fler"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" är inte tillåtet efter inskickning (använd ett av %{allowed})"
               invalid_block: "block %{position}: %{details}"
@@ -2303,6 +2304,7 @@ sv:
         bounced: "Studsade"
         spam: "Spam"
         unsubscribed: "Avregistrerade"
+        captured: "Uppfångade"
       export_hint: "Ladda ner den här listan som CSV"
       export: "Exportera CSV"
       columns:
@@ -3468,6 +3470,7 @@ sv:
         clicked: "Klickad"
         opened: "Öppnad"
         delivered: "Levererad"
+        captured: "Uppfångad, inte levererad"
         other: "Annat"
         sent: "Skickad"
 
@@ -4794,6 +4797,8 @@ sv:
         once_per_session: "En gång per session"
         once_per_day: "En gång per dag"
         once: "Bara en gång (någonsin)"
+        every_n_days: "Var N:e dag"
+        frequency_days: "Dagar mellan visningar"
         devices: "Visa på enheter"
         desktop: "Dator"
         mobile: "Mobil"
@@ -6216,7 +6221,7 @@ sv:
           callbacks_not_configured: "Callbacks är inte konfigurerade. Använd knappen Konfigurera callbacks under Leverantörsåtgärder nedan."
           callback_error: "Callback-fel: %{error}"
       create_test_server:
-        license_key_required: "En licensnyckel krävs för att använda testservern. Ange din licensnyckel under Inställningar > Installation."
+        license_key_missing: "En licensnyckel krävs för att använda testservern. Lägg till LICENSE_KEY i filen .env i appmappen och skapa sedan om containrarna: kör ./broadcast.sh restart på en automatisk installation, eller docker compose -f docker-compose.manual.yml up -d på en manuell installation. Se %{docs_url}."
         created: "Testservern har skapats"
         failed: "Det gick inte att skapa testservern: %{errors}"
       create:
@@ -6316,7 +6321,7 @@ sv:
         instant_setup: "Direkt konfiguration"
         test_description: "Testa utskick utan att mejla riktiga personer: testservern fångar upp varje mejl i din privata testinkorg och levererar det aldrig. Uppfångade mejl sparas i 7 dagar."
         requires_license_key: "Kräver licensnyckel"
-        license_key_required: "En licensnyckel krävs för att använda testservern. Ange din licensnyckel under Inställningar > Installation."
+        license_key_missing: "En licensnyckel krävs för att använda testservern. Lägg till LICENSE_KEY i filen .env i appmappen och skapa sedan om containrarna: kör ./broadcast.sh restart på en automatisk installation, eller docker compose -f docker-compose.manual.yml up -d på en manuell installation. Se %{docs_url}."
       confirm_copy_to_channel:
         heading: "Kopiera e-postserver till en annan kanal"
         intro: "Detta skapar en kopia av \"%{label}\" i en annan kanal med samma konfiguration."
@@ -7541,6 +7546,9 @@ sv:
           topic_unsubscribed:
             label: "Sida för avstängt ämne"
             description: "Visas efter att ett ämne har stängts av. Prenumeranten är kvar."
+          topic_resubscribed:
+            label: "Sida för återaktiverat ämne"
+            description: "Visas när knappen för återregistrering på sidan för avstängt ämne slår på ämnet igen."
           preferences:
             label: "Inställningssida"
             description: "Där prenumeranter väljer sina ämnen ({{ preferences_url }})."
@@ -7633,12 +7641,9 @@ sv:
         updated: "Ämnet %{name} har uppdaterats."
       destroy:
         deleted: "Ämnet %{name} har tagits bort."
-        in_use_by: "%{name} används av %{uses} och kan därför inte tas bort. Ta bort det därifrån först."
-        uses:
-          broadcast: "en kampanj"
-          sequence: "en sekvens"
-          opt_in_form: "ett registreringsformulär"
       form:
+        locked: "Låst medan ämnet används, eftersom en ändring skulle ändra vem som får mejlen. Används av: %{uses}. Ta bort ämnet därifrån för att ändra de här inställningarna."
+        unset_in_use: "Ämnet används, så en ändring av den här inställningen ändrar vem som får mejlen. Används av: %{uses}."
         name: "Namn"
         name_help: "Prenumeranter ser det här namnet på inställnings- och avregistreringssidan."
         description: "Beskrivning"
@@ -8683,6 +8688,14 @@ sv:
   test_server_notices:
     view_inbox: "Visa testinkorgen"
     captured: "%{message}, och fångades i testinkorgen i stället för att levereras till någon."
+    badge: "Uppfångad, inte levererad"
+    badge_title: "Skickad via testservern: uppfångad i testinkorgen och aldrig levererad till någon."
+    badge_partial:
+      one: "%{count} uppfångad, inte levererad"
+      other: "%{count} uppfångade, inte levererade"
+    badge_partial_title:
+      one: "%{count} av %{total} meddelanden gick via testservern: uppfångat i testinkorgen och aldrig levererat."
+      other: "%{count} av %{total} meddelanden gick via testservern: uppfångade i testinkorgen och aldrig levererade."
 
   time:
     formats:

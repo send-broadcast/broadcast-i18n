@@ -22,6 +22,10 @@ es:
           attributes:
             unset_receives:
               not_allowed_for_tag: "debe estar desactivado en un tema de etiqueta: una etiqueta no puede registrar una baja explícita"
+            base:
+              locked_while_in_use: "El almacenamiento, el campo personalizado y la etiqueta no pueden cambiar mientras el tema esté en uso, porque eso cambiaría quién recibe los correos. En uso en: %{uses}. Quita el tema de ahí primero."
+              in_use_cannot_delete: "El tema no se puede eliminar mientras esté en uso, porque eso cambiaría quién recibe los correos. En uso en: %{uses}. Quita el tema de ahí primero."
+              kept_by_archived_broadcasts: "El tema no se puede eliminar mientras lo use una campaña archivada que no se ha enviado, porque al desarchivarla se enviaría a todos sus destinatarios. Archivadas: %{uses}. Elimina la campaña o quita el tema de ella primero."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ es:
               topic_not_in_channel: "debe ser un tema de este canal"
             operator:
               needs_custom_data_topic: "\"no está definido\" necesita un tema de campo personalizado: un tema de etiqueta nunca queda sin valor"
+  topic_uses:
+    broadcast: "campaña \"%{name}\""
+    sequence: "secuencia \"%{name}\""
+    opt_in_form: "formulario de suscripción \"%{name}\""
+    segment: "segmento \"%{name}\""
+    and_more: "y %{count} más"

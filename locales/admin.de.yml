@@ -230,6 +230,7 @@ de:
               style_value_not_allowed: "%{setting} enthält Zeichen, die in einem Stilwert nicht erlaubt sind"
             trigger_settings:
               unknown_frequency: "Häufigkeit %{value} ist unbekannt. Verwenden Sie einen dieser Werte: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} muss eine ganze Zahl von Tagen sein, mindestens 1"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "Block %{position}: block_type \"%{block_type}\" ist nach dem Absenden nicht erlaubt (verwenden Sie einen von %{allowed})"
               invalid_block: "Block %{position}: %{details}"
@@ -2305,6 +2306,7 @@ de:
         bounced: "Bounced"
         spam: "Spam"
         unsubscribed: "Abgemeldet"
+        captured: "Abgefangen"
       export_hint: "Diese Liste als CSV herunterladen"
       export: "CSV exportieren"
       columns:
@@ -3319,6 +3321,7 @@ de:
         clicked: "Geklickt"
         opened: "Geöffnet"
         delivered: "Zugestellt"
+        captured: "Abgefangen, nicht zugestellt"
         other: "Sonstiges"
         sent: "Gesendet"
     broadcast:
@@ -4796,6 +4799,8 @@ de:
         once_per_session: "Einmal pro Sitzung"
         once_per_day: "Einmal pro Tag"
         once: "Nur einmal (überhaupt)"
+        every_n_days: "Alle N Tage"
+        frequency_days: "Tage zwischen den Anzeigen"
         devices: "Auf Geräten anzeigen"
         desktop: "Desktop"
         mobile: "Mobil"
@@ -6218,7 +6223,7 @@ de:
           callbacks_not_configured: "Callbacks nicht konfiguriert. Verwenden Sie die Schaltfläche „Callbacks einrichten“ unter „Anbieteraktionen“ weiter unten."
           callback_error: "Callback-Fehler: %{error}"
       create_test_server:
-        license_key_required: "Für den Testserver ist ein Lizenzschlüssel erforderlich. Bitte hinterlegen Sie Ihren Lizenzschlüssel unter Einstellungen > Installation."
+        license_key_missing: "Für den Testserver ist ein Lizenzschlüssel erforderlich. Tragen Sie LICENSE_KEY in die Datei .env in Ihrem App-Ordner ein und erstellen Sie die Container dann neu: Führen Sie bei einer automatischen Installation ./broadcast.sh restart aus, bei einer manuellen Installation docker compose -f docker-compose.manual.yml up -d. Siehe %{docs_url}."
         created: "Testserver erfolgreich erstellt"
         failed: "Testserver konnte nicht erstellt werden: %{errors}"
       create:
@@ -6318,7 +6323,7 @@ de:
         instant_setup: "Sofort einsatzbereit"
         test_description: "Testen Sie den Versand, ohne echte Personen anzuschreiben: Der Testserver fängt jede E-Mail in Ihrem privaten Test-Posteingang ab und stellt sie nie zu. Abgefangene E-Mails werden 7 Tage lang aufbewahrt."
         requires_license_key: "Lizenzschlüssel erforderlich"
-        license_key_required: "Für den Testserver ist ein Lizenzschlüssel erforderlich. Hinterlegen Sie Ihren Lizenzschlüssel unter Einstellungen > Installation."
+        license_key_missing: "Für den Testserver ist ein Lizenzschlüssel erforderlich. Tragen Sie LICENSE_KEY in die Datei .env in Ihrem App-Ordner ein und erstellen Sie die Container dann neu: Führen Sie bei einer automatischen Installation ./broadcast.sh restart aus, bei einer manuellen Installation docker compose -f docker-compose.manual.yml up -d. Siehe %{docs_url}."
       confirm_copy_to_channel:
         heading: "E-Mail-Server in einen anderen Kanal kopieren"
         intro: "Dadurch wird eine Kopie von „%{label}“ mit denselben Konfigurationseinstellungen in einem anderen Kanal erstellt."
@@ -7543,6 +7548,9 @@ de:
           topic_unsubscribed:
             label: "Seite nach der Themen-Abmeldung"
             description: "Wird angezeigt, nachdem ein Thema abbestellt wurde. Der Abonnent bleibt angemeldet."
+          topic_resubscribed:
+            label: "Seite nach der Themen-Wiederanmeldung"
+            description: "Wird angezeigt, wenn der Button zur Wiederanmeldung auf der Seite nach der Themen-Abmeldung das Thema wieder anschaltet."
           preferences:
             label: "Einstellungsseite"
             description: "Hier wählen Abonnenten ihre Themen ({{ preferences_url }})."
@@ -7635,12 +7643,9 @@ de:
         updated: "Thema %{name} aktualisiert."
       destroy:
         deleted: "Thema %{name} gelöscht."
-        in_use_by: "%{name} wird von %{uses} verwendet und kann daher nicht gelöscht werden. Entfernen Sie es dort zuerst."
-        uses:
-          broadcast: "einer Kampagne"
-          sequence: "einer Sequenz"
-          opt_in_form: "einem Anmeldeformular"
       form:
+        locked: "Gesperrt, solange das Thema verwendet wird, weil sich durch eine Änderung ändern würde, wer die E-Mails erhält. Verwendet von: %{uses}. Entfernen Sie das Thema dort, um diese Einstellungen zu ändern."
+        unset_in_use: "Das Thema wird verwendet, daher ändert diese Einstellung, wer die E-Mails erhält. Verwendet von: %{uses}."
         name: "Name"
         name_help: "Abonnenten sehen diesen Namen auf der Einstellungs- und der Abmeldeseite."
         description: "Beschreibung"
@@ -8685,6 +8690,14 @@ de:
   test_server_notices:
     view_inbox: "Test-Posteingang anzeigen"
     captured: "%{message}; die E-Mail wurde im Test-Posteingang abgefangen und nicht zugestellt."
+    badge: "Abgefangen, nicht zugestellt"
+    badge_title: "Über den Testserver gesendet: im Test-Posteingang abgefangen und nie zugestellt."
+    badge_partial:
+      one: "%{count} abgefangen, nicht zugestellt"
+      other: "%{count} abgefangen, nicht zugestellt"
+    badge_partial_title:
+      one: "%{count} von %{total} Nachrichten lief über den Testserver: im Test-Posteingang abgefangen und nie zugestellt."
+      other: "%{count} von %{total} Nachrichten liefen über den Testserver: im Test-Posteingang abgefangen und nie zugestellt."
 
   time:
     formats:

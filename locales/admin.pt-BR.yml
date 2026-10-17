@@ -228,6 +228,7 @@ pt-BR:
               style_value_not_allowed: "%{setting} contém caracteres que não são permitidos em um valor de estilo"
             trigger_settings:
               unknown_frequency: "a frequência %{value} não é reconhecida. Use um destes valores: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} precisa ser um número inteiro de dias, 1 ou mais"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "bloco %{position}: o block_type \"%{block_type}\" não é permitido após o envio (use um de %{allowed})"
               invalid_block: "bloco %{position}: %{details}"
@@ -2303,6 +2304,7 @@ pt-BR:
         bounced: "Rejeitados"
         spam: "Spam"
         unsubscribed: "Cancelaram a inscrição"
+        captured: "Capturados"
       export_hint: "Baixar esta lista em CSV"
       export: "Exportar CSV"
       columns:
@@ -3468,6 +3470,7 @@ pt-BR:
         clicked: "Clicado"
         opened: "Aberto"
         delivered: "Entregue"
+        captured: "Capturado, não entregue"
         other: "Outro"
         sent: "Enviado"
 
@@ -4794,6 +4797,8 @@ pt-BR:
         once_per_session: "Uma vez por sessão"
         once_per_day: "Uma vez por dia"
         once: "Só uma vez (para sempre)"
+        every_n_days: "A cada N dias"
+        frequency_days: "Dias entre exibições"
         devices: "Mostrar nos dispositivos"
         desktop: "Desktop"
         mobile: "Celular"
@@ -6216,7 +6221,7 @@ pt-BR:
           callbacks_not_configured: "Callbacks não configurados. Use o botão Configurar callbacks em Ações do provedor abaixo."
           callback_error: "Erro de callback: %{error}"
       create_test_server:
-        license_key_required: "É necessária uma chave de licença para usar o servidor de teste. Defina sua chave de licença em Configurações > Instalação."
+        license_key_missing: "É necessária uma chave de licença para usar o servidor de teste. Adicione LICENSE_KEY ao arquivo .env na pasta do seu app e recrie os contêineres: execute ./broadcast.sh restart em uma instalação automática, ou docker compose -f docker-compose.manual.yml up -d em uma instalação manual. Veja %{docs_url}."
         created: "Servidor de teste criado com sucesso"
         failed: "Não foi possível criar o servidor de teste: %{errors}"
       create:
@@ -6316,7 +6321,7 @@ pt-BR:
         instant_setup: "Configuração instantânea"
         test_description: "Experimente enviar sem mandar e-mails para pessoas reais: o servidor de teste captura todos os e-mails na sua caixa de teste privada e nunca os entrega. Os e-mails capturados ficam guardados por 7 dias."
         requires_license_key: "Requer chave de licença"
-        license_key_required: "É necessária uma chave de licença para usar o servidor de teste. Defina sua chave de licença em Configurações > Instalação."
+        license_key_missing: "É necessária uma chave de licença para usar o servidor de teste. Adicione LICENSE_KEY ao arquivo .env na pasta do seu app e recrie os contêineres: execute ./broadcast.sh restart em uma instalação automática, ou docker compose -f docker-compose.manual.yml up -d em uma instalação manual. Veja %{docs_url}."
       confirm_copy_to_channel:
         heading: "Copiar servidor de e-mail para outro canal"
         intro: "Isso vai criar uma cópia de \"%{label}\" em outro canal, com as mesmas configurações."
@@ -7541,6 +7546,9 @@ pt-BR:
           topic_unsubscribed:
             label: "Página de tópico desativado"
             description: "Exibida depois de desativar um tópico. O assinante continua inscrito."
+          topic_resubscribed:
+            label: "Página de tópico reativado"
+            description: "Exibida quando o botão de nova inscrição na página de tópico desativado reativa o tópico."
           preferences:
             label: "Página de preferências"
             description: "Onde os assinantes escolhem seus tópicos ({{ preferences_url }})."
@@ -7633,12 +7641,9 @@ pt-BR:
         updated: "Tópico %{name} atualizado."
       destroy:
         deleted: "Tópico %{name} excluído."
-        in_use_by: "%{name} está em uso em %{uses}, por isso não pode ser excluído. Remova-o de lá primeiro."
-        uses:
-          broadcast: "uma campanha"
-          sequence: "uma sequência"
-          opt_in_form: "um formulário de inscrição"
       form:
+        locked: "Bloqueado enquanto o tópico estiver em uso, porque alterar isso mudaria quem recebe os e-mails. Em uso em: %{uses}. Remova o tópico de lá para alterar estas configurações."
+        unset_in_use: "O tópico está em uso, então alterar esta configuração muda quem recebe os e-mails. Em uso em: %{uses}."
         name: "Nome"
         name_help: "Os assinantes veem este nome nas páginas de preferências e de cancelamento."
         description: "Descrição"
@@ -8683,6 +8688,14 @@ pt-BR:
   test_server_notices:
     view_inbox: "Ver caixa de teste"
     captured: "%{message} e capturado na caixa de teste, em vez de ser entregue a alguém."
+    badge: "Capturado, não entregue"
+    badge_title: "Enviado pelo servidor de teste: capturado na caixa de teste e nunca entregue a ninguém."
+    badge_partial:
+      one: "%{count} capturado, não entregue"
+      other: "%{count} capturados, não entregues"
+    badge_partial_title:
+      one: "%{count} de %{total} mensagens passou pelo servidor de teste: capturada na caixa de teste e nunca entregue."
+      other: "%{count} de %{total} mensagens passaram pelo servidor de teste: capturadas na caixa de teste e nunca entregues."
 
   time:
     formats:

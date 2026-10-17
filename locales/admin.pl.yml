@@ -230,6 +230,7 @@ pl:
               style_value_not_allowed: "%{setting} zawiera znaki niedozwolone w wartości stylu"
             trigger_settings:
               unknown_frequency: "częstotliwość %{value} jest nieznana. Użyj jednej z tych wartości: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} musi być całkowitą liczbą dni, co najmniej 1"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" jest niedozwolony po wysłaniu (użyj jednego z %{allowed})"
               invalid_block: "blok %{position}: %{details}"
@@ -2371,6 +2372,7 @@ pl:
         bounced: "Odbicia"
         spam: "Spam"
         unsubscribed: "Wypisani"
+        captured: "Przechwycone"
       export_hint: "Pobierz tę listę jako CSV"
       export: "Eksportuj CSV"
       columns:
@@ -3570,6 +3572,7 @@ pl:
         clicked: "Kliknięty"
         opened: "Otwarty"
         delivered: "Dostarczony"
+        captured: "Przechwycony, niedostarczony"
         other: "Inny"
         sent: "Wysłany"
 
@@ -4970,6 +4973,8 @@ pl:
         once_per_session: "Raz na sesję"
         once_per_day: "Raz dziennie"
         once: "Tylko raz (na zawsze)"
+        every_n_days: "Co N dni"
+        frequency_days: "Dni między wyświetleniami"
         devices: "Pokazuj na urządzeniach"
         desktop: "Komputer"
         mobile: "Telefon"
@@ -6412,7 +6417,7 @@ pl:
           callbacks_not_configured: "Callbacki nie są skonfigurowane. Użyj przycisku Skonfiguruj callbacki w sekcji Akcje dostawcy poniżej."
           callback_error: "Błąd callbacku: %{error}"
       create_test_server:
-        license_key_required: "Do korzystania z serwera testowego potrzebny jest klucz licencyjny. Ustaw klucz licencyjny w sekcji Ustawienia > Instalacja."
+        license_key_missing: "Do korzystania z serwera testowego potrzebny jest klucz licencyjny. Dodaj LICENSE_KEY do pliku .env w folderze aplikacji, a następnie utwórz kontenery od nowa: uruchom ./broadcast.sh restart przy instalacji automatycznej lub docker compose -f docker-compose.manual.yml up -d przy instalacji ręcznej. Zobacz %{docs_url}."
         created: "Utworzono serwer testowy"
         failed: "Nie udało się utworzyć serwera testowego: %{errors}"
       create:
@@ -6514,7 +6519,7 @@ pl:
         instant_setup: "Natychmiastowa konfiguracja"
         test_description: "Wypróbuj wysyłkę bez wysyłania e-maili do prawdziwych osób: serwer testowy przechwytuje każdy e-mail do twojej prywatnej skrzynki testowej i nigdy go nie dostarcza. Przechwycone wiadomości są przechowywane przez 7 dni."
         requires_license_key: "Wymaga klucza licencyjnego"
-        license_key_required: "Do korzystania z serwera testowego potrzebny jest klucz licencyjny. Ustaw klucz licencyjny w sekcji Ustawienia > Instalacja."
+        license_key_missing: "Do korzystania z serwera testowego potrzebny jest klucz licencyjny. Dodaj LICENSE_KEY do pliku .env w folderze aplikacji, a następnie utwórz kontenery od nowa: uruchom ./broadcast.sh restart przy instalacji automatycznej lub docker compose -f docker-compose.manual.yml up -d przy instalacji ręcznej. Zobacz %{docs_url}."
       confirm_copy_to_channel:
         heading: "Kopiuj serwer poczty do innego kanału"
         intro: "W innym kanale zostanie utworzona kopia „%{label}” z tymi samymi ustawieniami konfiguracji."
@@ -7793,6 +7798,9 @@ pl:
           topic_unsubscribed:
             label: "Strona po wyłączeniu tematu"
             description: "Wyświetlana po wyłączeniu tematu. Subskrybent pozostaje zapisany."
+          topic_resubscribed:
+            label: "Strona po ponownym włączeniu tematu"
+            description: "Wyświetlana, gdy przycisk ponownego zapisu na stronie po wyłączeniu tematu włącza temat z powrotem."
           preferences:
             label: "Strona preferencji"
             description: "Tu subskrybenci wybierają swoje tematy ({{ preferences_url }})."
@@ -7885,12 +7893,9 @@ pl:
         updated: "Zaktualizowano temat %{name}."
       destroy:
         deleted: "Usunięto temat %{name}."
-        in_use_by: "%{name} jest używany w: %{uses}, więc nie można go usunąć. Najpierw usuń go stamtąd."
-        uses:
-          broadcast: "kampania"
-          sequence: "sekwencja"
-          opt_in_form: "formularz zapisu"
       form:
+        locked: "Zablokowane, dopóki temat jest używany, bo zmiana wpłynęłaby na to, kto otrzymuje wiadomości. Używany w: %{uses}. Usuń stamtąd temat, aby zmienić te ustawienia."
+        unset_in_use: "Temat jest używany, więc zmiana tego ustawienia zmienia to, kto otrzymuje wiadomości. Używany w: %{uses}."
         name: "Nazwa"
         name_help: "Subskrybenci widzą tę nazwę na stronach preferencji i wypisania."
         description: "Opis"
@@ -8991,6 +8996,18 @@ pl:
   test_server_notices:
     view_inbox: "Zobacz skrzynkę testową"
     captured: "%{message} i przechwycono w skrzynce testowej zamiast dostarczać komukolwiek."
+    badge: "Przechwycony, niedostarczony"
+    badge_title: "Wysłany przez serwer testowy: przechwycony w skrzynce testowej i nigdy nikomu niedostarczony."
+    badge_partial:
+      one: "%{count} przechwycona, niedostarczona"
+      few: "%{count} przechwycone, niedostarczone"
+      many: "%{count} przechwyconych, niedostarczonych"
+      other: "%{count} przechwyconej, niedostarczonej"
+    badge_partial_title:
+      one: "%{count} z %{total} wiadomości przeszła przez serwer testowy: przechwycona w skrzynce testowej i nigdy niedostarczona."
+      few: "%{count} z %{total} wiadomości przeszły przez serwer testowy: przechwycone w skrzynce testowej i nigdy niedostarczone."
+      many: "%{count} z %{total} wiadomości przeszło przez serwer testowy: przechwycone w skrzynce testowej i nigdy niedostarczone."
+      other: "%{count} z %{total} wiadomości przeszło przez serwer testowy: przechwycone w skrzynce testowej i nigdy niedostarczone."
 
   time:
     formats:

@@ -226,6 +226,7 @@ it:
               style_value_not_allowed: "%{setting} contiene caratteri non consentiti in un valore di stile"
             trigger_settings:
               unknown_frequency: "la frequenza %{value} non è riconosciuta. Usa uno di questi valori: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} deve essere un numero intero di giorni, almeno 1"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blocco %{position}: il block_type \"%{block_type}\" non è consentito dopo l'invio (usa uno tra %{allowed})"
               invalid_block: "blocco %{position}: %{details}"
@@ -2301,6 +2302,7 @@ it:
         bounced: "Non recapitata"
         spam: "Spam"
         unsubscribed: "Disiscritti"
+        captured: "Trattenuta"
       export_hint: "Scarica questo elenco in CSV"
       export: "Esporta CSV"
       columns:
@@ -3315,6 +3317,7 @@ it:
         clicked: "Cliccato"
         opened: "Aperto"
         delivered: "Recapitato"
+        captured: "Trattenuto, non recapitato"
         other: "Altro"
         sent: "Inviato"
     broadcast:
@@ -4792,6 +4795,8 @@ it:
         once_per_session: "Una volta per sessione"
         once_per_day: "Una volta al giorno"
         once: "Solo una volta (per sempre)"
+        every_n_days: "Ogni N giorni"
+        frequency_days: "Giorni tra una visualizzazione e l'altra"
         devices: "Mostra sui dispositivi"
         desktop: "Desktop"
         mobile: "Mobile"
@@ -6214,7 +6219,7 @@ it:
           callbacks_not_configured: "Callback non configurate. Usa il pulsante Configura callback in Azioni del provider qui sotto."
           callback_error: "Errore delle callback: %{error}"
       create_test_server:
-        license_key_required: "Per usare il server di test serve una chiave di licenza. Impostala in Impostazioni > Installazione."
+        license_key_missing: "Per usare il server di test serve una chiave di licenza. Aggiungi LICENSE_KEY al file .env nella cartella dell'app, poi ricrea i container: esegui ./broadcast.sh restart su un'installazione automatica, oppure docker compose -f docker-compose.manual.yml up -d su un'installazione manuale. Vedi %{docs_url}."
         created: "Server di test creato"
         failed: "Impossibile creare il server di test: %{errors}"
       create:
@@ -6314,7 +6319,7 @@ it:
         instant_setup: "Configurazione immediata"
         test_description: "Prova l'invio senza scrivere a persone reali: il server di test raccoglie ogni email nella tua casella di test privata e non la recapita mai. Le email raccolte vengono conservate per 7 giorni."
         requires_license_key: "Richiede la chiave di licenza"
-        license_key_required: "Per usare il server di test serve una chiave di licenza. Impostala in Impostazioni > Installazione."
+        license_key_missing: "Per usare il server di test serve una chiave di licenza. Aggiungi LICENSE_KEY al file .env nella cartella dell'app, poi ricrea i container: esegui ./broadcast.sh restart su un'installazione automatica, oppure docker compose -f docker-compose.manual.yml up -d su un'installazione manuale. Vedi %{docs_url}."
       confirm_copy_to_channel:
         heading: "Copia il server email in un altro canale"
         intro: "Verrà creata una copia di \"%{label}\" in un altro canale con le stesse impostazioni di configurazione."
@@ -7539,6 +7544,9 @@ it:
           topic_unsubscribed:
             label: "Pagina di argomento disattivato"
             description: "Mostrata dopo la disattivazione di un argomento. L'iscritto resta iscritto."
+          topic_resubscribed:
+            label: "Pagina di argomento riattivato"
+            description: "Mostrata quando il pulsante per iscriversi di nuovo nella pagina di argomento disattivato riattiva l'argomento."
           preferences:
             label: "Pagina delle preferenze"
             description: "Dove gli iscritti scelgono i loro argomenti ({{ preferences_url }})."
@@ -7631,12 +7639,9 @@ it:
         updated: "Argomento %{name} aggiornato."
       destroy:
         deleted: "Argomento %{name} eliminato."
-        in_use_by: "%{name} è usato da %{uses}, quindi non può essere eliminato. Rimuovilo prima da lì."
-        uses:
-          broadcast: "una campagna"
-          sequence: "una sequenza"
-          opt_in_form: "un modulo di iscrizione"
       form:
+        locked: "Bloccate finché l'argomento è in uso, perché modificarle cambierebbe chi riceve le email. In uso da: %{uses}. Rimuovi l'argomento da lì per modificare queste impostazioni."
+        unset_in_use: "L'argomento è in uso, quindi modificare questa impostazione cambia chi riceve le email. In uso da: %{uses}."
         name: "Nome"
         name_help: "Gli iscritti vedono questo nome nelle pagine delle preferenze e di disiscrizione."
         description: "Descrizione"
@@ -8681,6 +8686,14 @@ it:
   test_server_notices:
     view_inbox: "Apri la casella di test"
     captured: "%{message}: trattenuta nella casella di test invece di essere recapitata."
+    badge: "Trattenuta, non recapitata"
+    badge_title: "Inviata tramite il server di test: trattenuta nella casella di test e mai recapitata a nessuno."
+    badge_partial:
+      one: "%{count} trattenuta, non recapitata"
+      other: "%{count} trattenute, non recapitate"
+    badge_partial_title:
+      one: "%{count} messaggio su %{total} è passato dal server di test: trattenuto nella casella di test e mai recapitato."
+      other: "%{count} messaggi su %{total} sono passati dal server di test: trattenuti nella casella di test e mai recapitati."
 
   time:
     formats:

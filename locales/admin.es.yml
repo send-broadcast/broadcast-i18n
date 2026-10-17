@@ -229,6 +229,7 @@ es:
               style_value_not_allowed: "%{setting} contiene caracteres que no se permiten en un valor de estilo"
             trigger_settings:
               unknown_frequency: "la frecuencia %{value} no es válida. Usa uno de estos valores: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} debe ser un número entero de días, 1 o más"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "bloque %{position}: el block_type \"%{block_type}\" no está permitido después del envío (usa uno de %{allowed})"
               invalid_block: "bloque %{position}: %{details}"
@@ -2304,6 +2305,7 @@ es:
         bounced: "Rebotados"
         spam: "Spam"
         unsubscribed: "Dados de baja"
+        captured: "Capturados"
       export_hint: "Descarga esta lista en CSV"
       export: "Exportar CSV"
       columns:
@@ -3469,6 +3471,7 @@ es:
         clicked: "Clic"
         opened: "Abierto"
         delivered: "Entregado"
+        captured: "Capturado, no entregado"
         other: "Otro"
         sent: "Enviado"
 
@@ -4795,6 +4798,8 @@ es:
         once_per_session: "Una vez por sesión"
         once_per_day: "Una vez al día"
         once: "Solo una vez (para siempre)"
+        every_n_days: "Cada N días"
+        frequency_days: "Días entre visualizaciones"
         devices: "Mostrar en dispositivos"
         desktop: "Escritorio"
         mobile: "Móvil"
@@ -6217,7 +6222,7 @@ es:
           callbacks_not_configured: "Callbacks sin configurar. Usa el botón Configurar callbacks de Acciones del proveedor, más abajo."
           callback_error: "Error de callback: %{error}"
       create_test_server:
-        license_key_required: "Se necesita una clave de licencia para usar el servidor de prueba. Define tu clave de licencia en Configuración > Instalación."
+        license_key_missing: "Se necesita una clave de licencia para usar el servidor de prueba. Añade LICENSE_KEY al archivo .env de la carpeta de tu aplicación y vuelve a crear los contenedores: ejecuta ./broadcast.sh restart en una instalación automática, o docker compose -f docker-compose.manual.yml up -d en una instalación manual. Consulta %{docs_url}."
         created: "Servidor de prueba creado correctamente"
         failed: "No se pudo crear el servidor de prueba: %{errors}"
       create:
@@ -6317,7 +6322,7 @@ es:
         instant_setup: "Configuración al instante"
         test_description: "Prueba los envíos sin escribir a personas reales: el servidor de prueba captura todos los correos en tu bandeja de prueba privada y nunca los entrega. El correo capturado se conserva durante 7 días."
         requires_license_key: "Requiere clave de licencia"
-        license_key_required: "Se necesita una clave de licencia para usar el servidor de prueba. Define tu clave de licencia en Configuración > Instalación."
+        license_key_missing: "Se necesita una clave de licencia para usar el servidor de prueba. Añade LICENSE_KEY al archivo .env de la carpeta de tu aplicación y vuelve a crear los contenedores: ejecuta ./broadcast.sh restart en una instalación automática, o docker compose -f docker-compose.manual.yml up -d en una instalación manual. Consulta %{docs_url}."
       confirm_copy_to_channel:
         heading: "Copiar el servidor de correo a otro canal"
         intro: "Se creará una copia de \"%{label}\" en otro canal con la misma configuración."
@@ -7542,6 +7547,9 @@ es:
           topic_unsubscribed:
             label: "Página de tema desactivado"
             description: "Se muestra después de desactivar un tema. El suscriptor sigue suscrito."
+          topic_resubscribed:
+            label: "Página de tema reactivado"
+            description: "Se muestra cuando el botón de volver a suscribirse de la página de tema desactivado vuelve a activar el tema."
           preferences:
             label: "Página de preferencias"
             description: "Donde los suscriptores eligen sus temas ({{ preferences_url }})."
@@ -7634,12 +7642,9 @@ es:
         updated: "Tema %{name} actualizado."
       destroy:
         deleted: "Tema %{name} eliminado."
-        in_use_by: "%{name} está en uso en %{uses}, así que no se puede eliminar. Quítalo de ahí primero."
-        uses:
-          broadcast: "una campaña"
-          sequence: "una secuencia"
-          opt_in_form: "un formulario de suscripción"
       form:
+        locked: "Bloqueado mientras el tema está en uso, porque cambiarlo cambiaría quién recibe los correos. En uso en: %{uses}. Quita el tema de ahí para cambiar esta configuración."
+        unset_in_use: "El tema está en uso, así que cambiar esta opción cambia quién recibe los correos. En uso en: %{uses}."
         name: "Nombre"
         name_help: "Los suscriptores ven este nombre en las páginas de preferencias y de baja."
         description: "Descripción"
@@ -8684,6 +8689,14 @@ es:
   test_server_notices:
     view_inbox: "Ver la bandeja de prueba"
     captured: "%{message}, y se capturó en la bandeja de prueba en lugar de entregarse a nadie."
+    badge: "Capturado, no entregado"
+    badge_title: "Enviado por el servidor de prueba: capturado en su bandeja de prueba y nunca entregado a nadie."
+    badge_partial:
+      one: "%{count} capturado, no entregado"
+      other: "%{count} capturados, no entregados"
+    badge_partial_title:
+      one: "%{count} de %{total} mensajes pasó por el servidor de prueba: capturado en su bandeja de prueba y nunca entregado."
+      other: "%{count} de %{total} mensajes pasaron por el servidor de prueba: capturados en su bandeja de prueba y nunca entregados."
 
   time:
     formats:

@@ -22,6 +22,10 @@ it:
           attributes:
             unset_receives:
               not_allowed_for_tag: "deve essere disattivato per un argomento con tag: un tag non può registrare un rifiuto esplicito"
+            base:
+              locked_while_in_use: "Memorizzazione, campo personalizzato e tag non possono cambiare finché l'argomento è in uso, perché cambierebbe chi riceve le email. In uso da: %{uses}. Rimuovi prima l'argomento da lì."
+              in_use_cannot_delete: "L'argomento non può essere eliminato finché è in uso, perché cambierebbe chi riceve le email. In uso da: %{uses}. Rimuovi prima l'argomento da lì."
+              kept_by_archived_broadcasts: "L'argomento non può essere eliminato finché lo usa una campagna archiviata non inviata, perché ripristinarla la invierebbe a tutti i suoi destinatari. Archiviate: %{uses}. Elimina prima la campagna o rimuovi l'argomento da essa."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ it:
               topic_not_in_channel: "deve essere un argomento di questo canale"
             operator:
               needs_custom_data_topic: "\"non è impostato\" richiede un argomento con campo personalizzato: un argomento con tag non può restare senza valore"
+  topic_uses:
+    broadcast: "campagna \"%{name}\""
+    sequence: "sequenza \"%{name}\""
+    opt_in_form: "modulo di iscrizione \"%{name}\""
+    segment: "segmento \"%{name}\""
+    and_more: "e altri %{count}"

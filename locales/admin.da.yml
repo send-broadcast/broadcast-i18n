@@ -228,6 +228,7 @@ da:
               style_value_not_allowed: "%{setting} indeholder tegn, der ikke er tilladt i en stilværdi"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} er ukendt. Brug en af disse værdier: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} skal være et helt antal dage, 1 eller flere"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" er ikke tilladt efter indsendelse (brug en af %{allowed})"
               invalid_block: "blok %{position}: %{details}"
@@ -2303,6 +2304,7 @@ da:
         bounced: "Bouncet"
         spam: "Spam"
         unsubscribed: "Afmeldt"
+        captured: "Opfanget"
       export_hint: "Download denne liste som CSV"
       export: "Eksportér CSV"
       columns:
@@ -3468,6 +3470,7 @@ da:
         clicked: "Klikket"
         opened: "Åbnet"
         delivered: "Leveret"
+        captured: "Opfanget, ikke leveret"
         other: "Andet"
         sent: "Sendt"
 
@@ -4794,6 +4797,8 @@ da:
         once_per_session: "Én gang pr. session"
         once_per_day: "Én gang om dagen"
         once: "Kun én gang (nogensinde)"
+        every_n_days: "Hver N. dag"
+        frequency_days: "Dage mellem visninger"
         devices: "Vis på enheder"
         desktop: "Computer"
         mobile: "Mobil"
@@ -6216,7 +6221,7 @@ da:
           callbacks_not_configured: "Callbacks er ikke konfigureret. Brug knappen Konfigurer callbacks under Udbyderhandlinger nedenfor."
           callback_error: "Callback-fejl: %{error}"
       create_test_server:
-        license_key_required: "Der kræves en licensnøgle for at bruge testserveren. Angiv din licensnøgle under Indstillinger > Installation."
+        license_key_missing: "Der kræves en licensnøgle for at bruge testserveren. Tilføj LICENSE_KEY til filen .env i din app-mappe, og genopret derefter containerne: kør ./broadcast.sh restart på en automatisk installation eller docker compose -f docker-compose.manual.yml up -d på en manuel installation. Se %{docs_url}."
         created: "Testserveren er oprettet"
         failed: "Testserveren kunne ikke oprettes: %{errors}"
       create:
@@ -6316,7 +6321,7 @@ da:
         instant_setup: "Øjeblikkelig opsætning"
         test_description: "Prøv at sende uden at maile rigtige personer: testserveren opfanger hver e-mail i din private testindbakke og leverer den aldrig. Opfangede mails gemmes i 7 dage."
         requires_license_key: "Kræver licensnøgle"
-        license_key_required: "Der kræves en licensnøgle for at bruge testserveren. Angiv din licensnøgle under Indstillinger > Installation."
+        license_key_missing: "Der kræves en licensnøgle for at bruge testserveren. Tilføj LICENSE_KEY til filen .env i din app-mappe, og genopret derefter containerne: kør ./broadcast.sh restart på en automatisk installation eller docker compose -f docker-compose.manual.yml up -d på en manuel installation. Se %{docs_url}."
       confirm_copy_to_channel:
         heading: "Kopier mailserver til en anden kanal"
         intro: "Dette opretter en kopi af \"%{label}\" i en anden kanal med de samme konfigurationsindstillinger."
@@ -7541,6 +7546,9 @@ da:
           topic_unsubscribed:
             label: "Side for fravalgt emne"
             description: "Vises, når et emne er slået fra. Abonnenten forbliver tilmeldt."
+          topic_resubscribed:
+            label: "Side for gentilmeldt emne"
+            description: "Vises, når knappen for gentilmelding på siden for fravalgt emne slår emnet til igen."
           preferences:
             label: "Indstillingsside"
             description: "Hvor abonnenter vælger deres emner ({{ preferences_url }})."
@@ -7633,12 +7641,9 @@ da:
         updated: "Emnet %{name} er opdateret."
       destroy:
         deleted: "Emnet %{name} er slettet."
-        in_use_by: "%{name} bruges af %{uses} og kan derfor ikke slettes. Fjern det derfra først."
-        uses:
-          broadcast: "en kampagne"
-          sequence: "en sekvens"
-          opt_in_form: "en tilmeldingsformular"
       form:
+        locked: "Låst, mens emnet er i brug, fordi en ændring ville ændre, hvem der modtager mails. I brug af: %{uses}. Fjern emnet derfra for at ændre disse indstillinger."
+        unset_in_use: "Emnet er i brug, så en ændring af denne indstilling ændrer, hvem der modtager mails. I brug af: %{uses}."
         name: "Navn"
         name_help: "Abonnenter ser dette navn på indstillings- og afmeldingssiden."
         description: "Beskrivelse"
@@ -8683,6 +8688,14 @@ da:
   test_server_notices:
     view_inbox: "Vis testindbakke"
     captured: "%{message}, og den er opfanget i testindbakken i stedet for at blive leveret til nogen."
+    badge: "Opfanget, ikke leveret"
+    badge_title: "Sendt via testserveren: opfanget i testindbakken og aldrig leveret til nogen."
+    badge_partial:
+      one: "%{count} opfanget, ikke leveret"
+      other: "%{count} opfanget, ikke leveret"
+    badge_partial_title:
+      one: "%{count} af %{total} beskeder gik gennem testserveren: opfanget i testindbakken og aldrig leveret."
+      other: "%{count} af %{total} beskeder gik gennem testserveren: opfanget i testindbakken og aldrig leveret."
 
   time:
     formats:

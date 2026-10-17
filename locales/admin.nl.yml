@@ -230,6 +230,7 @@ nl:
               style_value_not_allowed: "%{setting} bevat tekens die niet zijn toegestaan in een stijlwaarde"
             trigger_settings:
               unknown_frequency: "frequentie %{value} is onbekend. Gebruik een van deze waarden: %{allowed}"
+              invalid_frequency_days: "frequency_cookie_days %{value} moet een geheel aantal dagen zijn, 1 of meer"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" is niet toegestaan na verzending (gebruik een van %{allowed})"
               invalid_block: "blok %{position}: %{details}"
@@ -2305,6 +2306,7 @@ nl:
         bounced: "Gebounced"
         spam: "Spam"
         unsubscribed: "Afgemeld"
+        captured: "Opgevangen"
       export_hint: "Deze lijst als CSV downloaden"
       export: "CSV exporteren"
       columns:
@@ -3470,6 +3472,7 @@ nl:
         clicked: "Geklikt"
         opened: "Geopend"
         delivered: "Afgeleverd"
+        captured: "Opgevangen, niet afgeleverd"
         other: "Overig"
         sent: "Verzonden"
 
@@ -4796,6 +4799,8 @@ nl:
         once_per_session: "Eén keer per sessie"
         once_per_day: "Eén keer per dag"
         once: "Slechts één keer (ooit)"
+        every_n_days: "Elke N dagen"
+        frequency_days: "Dagen tussen weergaven"
         devices: "Tonen op apparaten"
         desktop: "Desktop"
         mobile: "Mobiel"
@@ -6218,7 +6223,7 @@ nl:
           callbacks_not_configured: "Callbacks niet ingesteld. Gebruik de knop Callbacks instellen bij Provideracties hieronder."
           callback_error: "Callbackfout: %{error}"
       create_test_server:
-        license_key_required: "Voor de testserver is een licentiesleutel nodig. Stel je licentiesleutel in via Instellingen > Installatie."
+        license_key_missing: "Voor de testserver is een licentiesleutel nodig. Zet LICENSE_KEY in het bestand .env in je app-map en maak de containers daarna opnieuw aan: voer ./broadcast.sh restart uit bij een automatische installatie, of docker compose -f docker-compose.manual.yml up -d bij een handmatige installatie. Zie %{docs_url}."
         created: "Testserver aangemaakt"
         failed: "Testserver aanmaken mislukt: %{errors}"
       create:
@@ -6318,7 +6323,7 @@ nl:
         instant_setup: "Direct klaar"
         test_description: "Probeer verzenden uit zonder echte mensen te mailen: de testserver vangt elke e-mail op in je privé-testinbox en bezorgt hem nooit. Opgevangen mail wordt 7 dagen bewaard."
         requires_license_key: "Licentiesleutel vereist"
-        license_key_required: "Voor de testserver is een licentiesleutel nodig. Stel je licentiesleutel in via Instellingen > Installatie."
+        license_key_missing: "Voor de testserver is een licentiesleutel nodig. Zet LICENSE_KEY in het bestand .env in je app-map en maak de containers daarna opnieuw aan: voer ./broadcast.sh restart uit bij een automatische installatie, of docker compose -f docker-compose.manual.yml up -d bij een handmatige installatie. Zie %{docs_url}."
       confirm_copy_to_channel:
         heading: "E-mailserver naar een ander kanaal kopiëren"
         intro: "Er wordt een kopie van \"%{label}\" gemaakt in een ander kanaal, met dezelfde instellingen."
@@ -7543,6 +7548,9 @@ nl:
           topic_unsubscribed:
             label: "Pagina na uitzetten onderwerp"
             description: "Wordt getoond nadat een onderwerp is uitgezet. De abonnee blijft aangemeld."
+          topic_resubscribed:
+            label: "Pagina na weer aanzetten onderwerp"
+            description: "Wordt getoond nadat de knop om opnieuw aan te melden op de pagina na uitzetten onderwerp het onderwerp weer heeft aangezet."
           preferences:
             label: "Voorkeurenpagina"
             description: "Waar abonnees hun onderwerpen kiezen ({{ preferences_url }})."
@@ -7635,12 +7643,9 @@ nl:
         updated: "Onderwerp %{name} bijgewerkt."
       destroy:
         deleted: "Onderwerp %{name} verwijderd."
-        in_use_by: "%{name} wordt gebruikt door %{uses} en kan daarom niet worden verwijderd. Haal het daar eerst weg."
-        uses:
-          broadcast: "een campagne"
-          sequence: "een reeks"
-          opt_in_form: "een aanmeldformulier"
       form:
+        locked: "Vergrendeld zolang het onderwerp in gebruik is, omdat een wijziging zou veranderen wie de e-mails ontvangt. In gebruik door: %{uses}. Haal het onderwerp daar weg om deze instellingen te wijzigen."
+        unset_in_use: "Het onderwerp is in gebruik, dus als je deze instelling wijzigt, verandert wie de e-mails ontvangt. In gebruik door: %{uses}."
         name: "Naam"
         name_help: "Abonnees zien deze naam op de voorkeuren- en afmeldpagina."
         description: "Beschrijving"
@@ -8685,6 +8690,14 @@ nl:
   test_server_notices:
     view_inbox: "Testinbox bekijken"
     captured: "%{message}, en opgevangen in de testinbox in plaats van aan iemand bezorgd."
+    badge: "Opgevangen, niet afgeleverd"
+    badge_title: "Verzonden via de testserver: opgevangen in de testinbox en nooit aan iemand afgeleverd."
+    badge_partial:
+      one: "%{count} opgevangen, niet afgeleverd"
+      other: "%{count} opgevangen, niet afgeleverd"
+    badge_partial_title:
+      one: "%{count} van %{total} berichten ging via de testserver: opgevangen in de testinbox en nooit afgeleverd."
+      other: "%{count} van %{total} berichten gingen via de testserver: opgevangen in de testinbox en nooit afgeleverd."
 
   time:
     formats:

@@ -22,6 +22,10 @@ sv:
           attributes:
             unset_receives:
               not_allowed_for_tag: "måste vara av för ett taggämne: en tagg kan inte registrera ett uttryckligt nej"
+            base:
+              locked_while_in_use: "Lagring, anpassat fält och tagg kan inte ändras medan ämnet används, eftersom det skulle ändra vem som får mejlen. Används av: %{uses}. Ta bort ämnet därifrån först."
+              in_use_cannot_delete: "Ämnet kan inte tas bort medan det används, eftersom det skulle ändra vem som får mejlen. Används av: %{uses}. Ta bort ämnet därifrån först."
+              kept_by_archived_broadcasts: "Ämnet kan inte tas bort medan en arkiverad kampanj som inte har skickats använder det, eftersom kampanjen då skulle skickas till alla sina mottagare om den återställs från arkivet. Arkiverade: %{uses}. Ta bort kampanjen eller ta bort ämnet från den först."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ sv:
               topic_not_in_channel: "måste vara ett ämne i den här kanalen"
             operator:
               needs_custom_data_topic: "\"är inte angivet\" kräver ett ämne med anpassat fält: ett taggämne är aldrig utan värde"
+  topic_uses:
+    broadcast: "kampanj \"%{name}\""
+    sequence: "sekvens \"%{name}\""
+    opt_in_form: "registreringsformulär \"%{name}\""
+    segment: "segment \"%{name}\""
+    and_more: "och %{count} till"

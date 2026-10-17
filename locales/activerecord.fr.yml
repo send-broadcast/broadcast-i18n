@@ -22,6 +22,10 @@ fr:
           attributes:
             unset_receives:
               not_allowed_for_tag: "doit être désactivé pour un thème par tag : un tag ne peut pas enregistrer un refus explicite"
+            base:
+              locked_while_in_use: "Le stockage, le champ personnalisé et le tag ne peuvent pas changer tant que le thème est utilisé, car cela changerait les destinataires. Utilisé par : %{uses}. Retirez-en d'abord le thème."
+              in_use_cannot_delete: "Le thème ne peut pas être supprimé tant qu'il est utilisé, car cela changerait les destinataires. Utilisé par : %{uses}. Retirez-en d'abord le thème."
+              kept_by_archived_broadcasts: "Le thème ne peut pas être supprimé tant qu'une campagne archivée non envoyée l'utilise, car la désarchiver l'enverrait à tous ses destinataires. Campagnes archivées : %{uses}. Supprimez d'abord la campagne ou retirez-en le thème."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ fr:
               topic_not_in_channel: "doit être un thème de ce canal"
             operator:
               needs_custom_data_topic: "« n'est pas défini » nécessite un thème par champ personnalisé : un thème par tag n'est jamais sans valeur"
+  topic_uses:
+    broadcast: "campagne « %{name} »"
+    sequence: "séquence « %{name} »"
+    opt_in_form: "formulaire d'inscription « %{name} »"
+    segment: "segment « %{name} »"
+    and_more: "et %{count} de plus"

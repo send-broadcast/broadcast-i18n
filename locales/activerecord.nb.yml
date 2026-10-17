@@ -22,6 +22,10 @@ nb:
           attributes:
             unset_receives:
               not_allowed_for_tag: "må være av for et taggemne: en tagg kan ikke registrere et uttrykkelig nei"
+            base:
+              locked_while_in_use: "Lagring, egendefinert felt og tagg kan ikke endres mens emnet er i bruk, fordi det ville endre hvem som mottar e-post. I bruk av: %{uses}. Fjern emnet derfra først."
+              in_use_cannot_delete: "Emnet kan ikke slettes mens det er i bruk, fordi det ville endre hvem som mottar e-post. I bruk av: %{uses}. Fjern emnet derfra først."
+              kept_by_archived_broadcasts: "Emnet kan ikke slettes mens en arkivert kampanje som ikke er sendt, bruker det, fordi kampanjen ville bli sendt til alle mottakerne sine hvis den hentes fra arkivet. Arkivert: %{uses}. Slett kampanjen eller fjern emnet fra den først."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ nb:
               topic_not_in_channel: "må være et emne i denne kanalen"
             operator:
               needs_custom_data_topic: "«er ikke angitt» krever et emne med egendefinert felt: et taggemne er aldri uten verdi"
+  topic_uses:
+    broadcast: "kampanje «%{name}»"
+    sequence: "sekvens «%{name}»"
+    opt_in_form: "påmeldingsskjema «%{name}»"
+    segment: "segment «%{name}»"
+    and_more: "og %{count} til"

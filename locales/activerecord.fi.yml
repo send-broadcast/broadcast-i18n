@@ -22,6 +22,10 @@ fi:
           attributes:
             unset_receives:
               not_allowed_for_tag: "on oltava pois päältä tunnisteaiheessa: tunniste ei voi tallentaa erillistä kieltäytymistä"
+            base:
+              locked_while_in_use: "Tallennuspaikkaa, mukautettua kenttää ja tunnistetta ei voi muuttaa, kun aihe on käytössä, koska se muuttaisi sitä, kuka viestit saa. Käytössä kohteissa: %{uses}. Poista aihe niistä ensin."
+              in_use_cannot_delete: "Aihetta ei voi poistaa, kun se on käytössä, koska se muuttaisi sitä, kuka viestit saa. Käytössä kohteissa: %{uses}. Poista aihe niistä ensin."
+              kept_by_archived_broadcasts: "Aihetta ei voi poistaa, kun sitä käyttää arkistoitu kampanja, jota ei ole lähetetty, koska arkistosta palautettu kampanja lähtisi kaikille sen vastaanottajille. Arkistoidut: %{uses}. Poista ensin kampanja tai poista aihe siitä."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ fi:
               topic_not_in_channel: "on oltava tämän kanavan aihe"
             operator:
               needs_custom_data_topic: "\"ei ole asetettu\" vaatii mukautetun kentän aiheen: tunnisteaihe ei ole koskaan ilman arvoa"
+  topic_uses:
+    broadcast: "kampanja \"%{name}\""
+    sequence: "sarja \"%{name}\""
+    opt_in_form: "tilauslomake \"%{name}\""
+    segment: "segmentti \"%{name}\""
+    and_more: "ja %{count} muuta"

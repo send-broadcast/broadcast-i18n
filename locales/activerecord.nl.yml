@@ -22,6 +22,10 @@ nl:
           attributes:
             unset_receives:
               not_allowed_for_tag: "moet uit staan bij een tag-onderwerp: een tag kan geen expliciete afmelding vastleggen"
+            base:
+              locked_while_in_use: "De opslag, het aangepaste veld en de tag kunnen niet veranderen zolang het onderwerp in gebruik is, omdat dat zou veranderen wie de e-mails ontvangt. In gebruik door: %{uses}. Haal het onderwerp daar eerst weg."
+              in_use_cannot_delete: "Het onderwerp kan niet worden verwijderd zolang het in gebruik is, omdat dat zou veranderen wie de e-mails ontvangt. In gebruik door: %{uses}. Haal het onderwerp daar eerst weg."
+              kept_by_archived_broadcasts: "Het onderwerp kan niet worden verwijderd zolang een gearchiveerde campagne die niet is verzonden het gebruikt, omdat de campagne na het uit het archief halen naar al haar ontvangers zou gaan. Gearchiveerd: %{uses}. Verwijder eerst de campagne of haal het onderwerp eruit."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ nl:
               topic_not_in_channel: "moet een onderwerp van dit kanaal zijn"
             operator:
               needs_custom_data_topic: "\"is niet ingesteld\" vereist een onderwerp met een aangepast veld: een tag-onderwerp is nooit zonder waarde"
+  topic_uses:
+    broadcast: "campagne \"%{name}\""
+    sequence: "reeks \"%{name}\""
+    opt_in_form: "aanmeldformulier \"%{name}\""
+    segment: "segment \"%{name}\""
+    and_more: "en nog %{count}"

@@ -22,6 +22,10 @@ de:
           attributes:
             unset_receives:
               not_allowed_for_tag: "muss bei einem Tag-Thema aus sein: Ein Tag kann keine ausdrückliche Abmeldung speichern"
+            base:
+              locked_while_in_use: "Speicherort, benutzerdefiniertes Feld und Tag können nicht geändert werden, solange das Thema verwendet wird, weil sich sonst ändern würde, wer die E-Mails erhält. Verwendet von: %{uses}. Entfernen Sie das Thema zuerst dort."
+              in_use_cannot_delete: "Das Thema kann nicht gelöscht werden, solange es verwendet wird, weil sich sonst ändern würde, wer die E-Mails erhält. Verwendet von: %{uses}. Entfernen Sie das Thema zuerst dort."
+              kept_by_archived_broadcasts: "Das Thema kann nicht gelöscht werden, solange eine archivierte, nicht gesendete Kampagne es verwendet, weil die Kampagne nach dem Wiederherstellen an alle ihre Empfänger gesendet würde. Archiviert: %{uses}. Löschen Sie zuerst die Kampagne oder entfernen Sie das Thema aus ihr."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ de:
               topic_not_in_channel: "muss ein Thema dieses Kanals sein"
             operator:
               needs_custom_data_topic: "„ist nicht festgelegt“ braucht ein Thema mit benutzerdefiniertem Feld: Ein Tag-Thema ist nie ohne Wert"
+  topic_uses:
+    broadcast: "Kampagne „%{name}“"
+    sequence: "Sequenz „%{name}“"
+    opt_in_form: "Anmeldeformular „%{name}“"
+    segment: "Segment „%{name}“"
+    and_more: "und %{count} weitere"

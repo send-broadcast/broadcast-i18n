@@ -22,6 +22,10 @@ pt-BR:
           attributes:
             unset_receives:
               not_allowed_for_tag: "precisa estar desativado em um tópico por tag: uma tag não consegue registrar uma recusa explícita"
+            base:
+              locked_while_in_use: "O armazenamento, o campo personalizado e a tag não podem mudar enquanto o tópico estiver em uso, porque isso mudaria quem recebe os e-mails. Em uso em: %{uses}. Remova o tópico de lá primeiro."
+              in_use_cannot_delete: "O tópico não pode ser excluído enquanto estiver em uso, porque isso mudaria quem recebe os e-mails. Em uso em: %{uses}. Remova o tópico de lá primeiro."
+              kept_by_archived_broadcasts: "O tópico não pode ser excluído enquanto uma campanha arquivada que não foi enviada o usar, porque desarquivá-la a enviaria para todos os destinatários dela. Arquivadas: %{uses}. Exclua a campanha ou remova o tópico dela primeiro."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ pt-BR:
               topic_not_in_channel: "precisa ser um tópico deste canal"
             operator:
               needs_custom_data_topic: "\"não está definido\" precisa de um tópico por campo personalizado: um tópico por tag nunca fica sem valor"
+  topic_uses:
+    broadcast: "campanha \"%{name}\""
+    sequence: "sequência \"%{name}\""
+    opt_in_form: "formulário de inscrição \"%{name}\""
+    segment: "segmento \"%{name}\""
+    and_more: "e mais %{count}"

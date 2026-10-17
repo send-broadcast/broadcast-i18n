@@ -22,6 +22,10 @@ pl:
           attributes:
             unset_receives:
               not_allowed_for_tag: "musi być wyłączone dla tematu opartego na tagu: tag nie może zapisać jawnej rezygnacji"
+            base:
+              locked_while_in_use: "Miejsca zapisu, pola niestandardowego i tagu nie można zmienić, dopóki temat jest używany, bo zmieniłoby to, kto otrzymuje wiadomości. Używany w: %{uses}. Najpierw usuń stamtąd temat."
+              in_use_cannot_delete: "Nie można usunąć tematu, dopóki jest używany, bo zmieniłoby to, kto otrzymuje wiadomości. Używany w: %{uses}. Najpierw usuń stamtąd temat."
+              kept_by_archived_broadcasts: "Nie można usunąć tematu, dopóki używa go zarchiwizowana, niewysłana kampania, bo po przywróceniu z archiwum zostałaby wysłana do wszystkich swoich odbiorców. Zarchiwizowane: %{uses}. Najpierw usuń kampanię albo usuń z niej temat."
         subscriber:
           attributes:
             base:
@@ -32,3 +36,9 @@ pl:
               topic_not_in_channel: "musi być tematem tego kanału"
             operator:
               needs_custom_data_topic: "„nie jest ustawiony” wymaga tematu opartego na polu niestandardowym: temat oparty na tagu zawsze ma wartość"
+  topic_uses:
+    broadcast: "kampania „%{name}”"
+    sequence: "sekwencja „%{name}”"
+    opt_in_form: "formularz zapisu „%{name}”"
+    segment: "segment „%{name}”"
+    and_more: "i %{count} więcej"
