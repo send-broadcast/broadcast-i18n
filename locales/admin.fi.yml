@@ -219,6 +219,8 @@ fi:
           password_sign_in_can_only_be: "Salasanalla kirjautumisen voi poistaa käytöstä vain, kun Cloudflare Access -kirjautuminen on käytössä"
         opt_in_form:
           attributes:
+            base:
+              invalid_frequency_days: "Kentän \"Päiviä näyttökertojen välillä\" (frequency_cookie_days) arvon on oltava kokonaisluku, vähintään 1, ei %{value}."
             parent_form:
               cannot_be_a_variant_itself: "ei voi itse olla variantti"
             confirmation_email_template:
@@ -229,7 +231,6 @@ fi:
               style_value_not_allowed: "%{setting} sisältää merkkejä, jotka eivät ole sallittuja tyyliarvossa"
             trigger_settings:
               unknown_frequency: "tiheys %{value} on tuntematon. Käytä jotakin näistä arvoista: %{allowed}"
-              invalid_frequency_days: "frequency_cookie_days %{value} on oltava kokonainen määrä päiviä, vähintään 1"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "lohko %{position}: block_type \"%{block_type}\" ei ole sallittu lähetyksen jälkeen (käytä jotakin näistä: %{allowed})"
               invalid_block: "lohko %{position}: %{details}"

@@ -218,6 +218,8 @@ sv:
           password_sign_in_can_only_be: "Inloggning med lösenord kan bara inaktiveras när inloggning via Cloudflare Access är aktiverad"
         opt_in_form:
           attributes:
+            base:
+              invalid_frequency_days: "Värdet för \"Dagar mellan visningar\" (frequency_cookie_days) måste vara ett heltal, 1 eller fler, inte %{value}."
             parent_form:
               cannot_be_a_variant_itself: "kan inte själv vara en variant"
             confirmation_email_template:
@@ -228,7 +230,6 @@ sv:
               style_value_not_allowed: "%{setting} innehåller tecken som inte är tillåtna i ett stilvärde"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} är okänd. Använd ett av dessa värden: %{allowed}"
-              invalid_frequency_days: "frequency_cookie_days %{value} måste vara ett helt antal dagar, 1 eller fler"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "block %{position}: block_type \"%{block_type}\" är inte tillåtet efter inskickning (använd ett av %{allowed})"
               invalid_block: "block %{position}: %{details}"

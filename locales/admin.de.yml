@@ -220,6 +220,8 @@ de:
           password_sign_in_can_only_be: "Die Anmeldung per Passwort kann nur deaktiviert werden, solange die Anmeldung über Cloudflare Access aktiviert ist"
         opt_in_form:
           attributes:
+            base:
+              invalid_frequency_days: "Der Wert für „Tage zwischen den Anzeigen“ (frequency_cookie_days) muss eine ganze Zahl sein, mindestens 1, nicht %{value}."
             parent_form:
               cannot_be_a_variant_itself: "darf selbst keine Variante sein"
             confirmation_email_template:
@@ -230,7 +232,6 @@ de:
               style_value_not_allowed: "%{setting} enthält Zeichen, die in einem Stilwert nicht erlaubt sind"
             trigger_settings:
               unknown_frequency: "Häufigkeit %{value} ist unbekannt. Verwenden Sie einen dieser Werte: %{allowed}"
-              invalid_frequency_days: "frequency_cookie_days %{value} muss eine ganze Zahl von Tagen sein, mindestens 1"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "Block %{position}: block_type \"%{block_type}\" ist nach dem Absenden nicht erlaubt (verwenden Sie einen von %{allowed})"
               invalid_block: "Block %{position}: %{details}"

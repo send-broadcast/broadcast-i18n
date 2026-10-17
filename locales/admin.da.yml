@@ -218,6 +218,8 @@ da:
           password_sign_in_can_only_be: "Login med adgangskode kan kun slås fra, mens login med Cloudflare Access er slået til"
         opt_in_form:
           attributes:
+            base:
+              invalid_frequency_days: "Værdien for \"Dage mellem visninger\" (frequency_cookie_days) skal være et helt tal, 1 eller flere, ikke %{value}."
             parent_form:
               cannot_be_a_variant_itself: "kan ikke selv være en variant"
             confirmation_email_template:
@@ -228,7 +230,6 @@ da:
               style_value_not_allowed: "%{setting} indeholder tegn, der ikke er tilladt i en stilværdi"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} er ukendt. Brug en af disse værdier: %{allowed}"
-              invalid_frequency_days: "frequency_cookie_days %{value} skal være et helt antal dage, 1 eller flere"
             opt_in_post_submission_blocks:
               block_type_not_allowed: "blok %{position}: block_type \"%{block_type}\" er ikke tilladt efter indsendelse (brug en af %{allowed})"
               invalid_block: "blok %{position}: %{details}"
