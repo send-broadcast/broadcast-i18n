@@ -5638,8 +5638,8 @@ de:
         rate_hint: "Von allen E-Mails, die dieser Schritt gesendet hat"
         no_rate: "Noch keine E-Mails gesendet"
         bounced:
-          one: "%{count} Bounce"
-          other: "%{count} Bounces"
+          one: "%{number} Bounce"
+          other: "%{number} Bounces"
       move_target:
         label: "Schritt hier platzieren"
     sub_forms:

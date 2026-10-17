@@ -5636,8 +5636,8 @@ pt-BR:
         rate_hint: "De todos os e-mails que esta etapa enviou"
         no_rate: "Nenhum e-mail enviado ainda"
         bounced:
-          one: "%{count} rejeitado"
-          other: "%{count} rejeitados"
+          one: "%{number} rejeitado"
+          other: "%{number} rejeitados"
       move_target:
         label: "Colocar a etapa aqui"
     sub_forms:

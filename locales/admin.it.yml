@@ -5634,8 +5634,8 @@ it:
         rate_hint: "Su tutte le email inviate da questo passaggio"
         no_rate: "Nessuna email ancora inviata"
         bounced:
-          one: "%{count} non recapitata"
-          other: "%{count} non recapitate"
+          one: "%{number} non recapitata"
+          other: "%{number} non recapitate"
       move_target:
         label: "Metti qui il passaggio"
     sub_forms:

@@ -5637,8 +5637,8 @@ es:
         rate_hint: "De todos los correos que envió este paso"
         no_rate: "Aún no se han enviado correos"
         bounced:
-          one: "%{count} rebotado"
-          other: "%{count} rebotados"
+          one: "%{number} rebotado"
+          other: "%{number} rebotados"
       move_target:
         label: "Colocar el paso aquí"
     sub_forms:

@@ -5638,8 +5638,8 @@ nl:
         rate_hint: "Van alle e-mails die deze stap heeft verzonden"
         no_rate: "Nog geen e-mails verzonden"
         bounced:
-          one: "%{count} gebounced"
-          other: "%{count} gebounced"
+          one: "%{number} gebounced"
+          other: "%{number} gebounced"
       move_target:
         label: "Stap hier plaatsen"
     sub_forms:

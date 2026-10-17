@@ -5828,10 +5828,10 @@ pl:
         rate_hint: "Ze wszystkich e-maili wysłanych przez ten krok"
         no_rate: "Nie wysłano jeszcze żadnych e-maili"
         bounced:
-          one: "%{count} odbicie"
-          few: "%{count} odbicia"
-          many: "%{count} odbić"
-          other: "%{count} odbicia"
+          one: "%{number} odbicie"
+          few: "%{number} odbicia"
+          many: "%{number} odbić"
+          other: "%{number} odbicia"
       move_target:
         label: "Umieść krok tutaj"
     sub_forms:

@@ -5637,8 +5637,8 @@ fi:
         rate_hint: "Kaikista tämän vaiheen lähettämistä sähköposteista"
         no_rate: "Sähköposteja ei ole vielä lähetetty"
         bounced:
-          one: "%{count} palautunut"
-          other: "%{count} palautunutta"
+          one: "%{number} palautunut"
+          other: "%{number} palautunutta"
       move_target:
         label: "Sijoita vaihe tähän"
     sub_forms:

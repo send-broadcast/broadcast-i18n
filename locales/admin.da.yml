@@ -5636,8 +5636,8 @@ da:
         rate_hint: "Af alle e-mails dette trin har sendt"
         no_rate: "Ingen e-mails sendt endnu"
         bounced:
-          one: "%{count} bouncet"
-          other: "%{count} bouncet"
+          one: "%{number} bouncet"
+          other: "%{number} bouncet"
       move_target:
         label: "Placer trinnet her"
     sub_forms:

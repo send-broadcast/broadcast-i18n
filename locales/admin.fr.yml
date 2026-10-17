@@ -5637,8 +5637,8 @@ fr:
         rate_hint: "Sur tous les e-mails envoyés par cette étape"
         no_rate: "Aucun e-mail envoyé pour le moment"
         bounced:
-          one: "%{count} rebond"
-          other: "%{count} rebonds"
+          one: "%{number} rebond"
+          other: "%{number} rebonds"
       move_target:
         label: "Placer l'étape ici"
     sub_forms:

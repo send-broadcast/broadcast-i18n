@@ -5636,8 +5636,8 @@ nb:
         rate_hint: "Av alle e-poster dette trinnet har sendt"
         no_rate: "Ingen e-poster sendt ennå"
         bounced:
-          one: "%{count} returnert"
-          other: "%{count} returnert"
+          one: "%{number} returnert"
+          other: "%{number} returnert"
       move_target:
         label: "Plasser trinnet her"
     sub_forms:

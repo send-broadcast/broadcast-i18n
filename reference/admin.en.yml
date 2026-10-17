@@ -5619,8 +5619,8 @@ en:
         rate_hint: "Of all emails this step sent"
         no_rate: "No emails sent yet"
         bounced:
-          one: "%{count} bounced"
-          other: "%{count} bounced"
+          one: "%{number} bounced"
+          other: "%{number} bounced"
       move_target:
         label: "Place step here"
     sub_forms:

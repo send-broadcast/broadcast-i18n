@@ -5636,8 +5636,8 @@ sv:
         rate_hint: "Av alla mejl som det här steget har skickat"
         no_rate: "Inga mejl skickade ännu"
         bounced:
-          one: "%{count} studsade"
-          other: "%{count} studsade"
+          one: "%{number} studsade"
+          other: "%{number} studsade"
       move_target:
         label: "Placera steget här"
     sub_forms:
