@@ -2886,6 +2886,9 @@ pt-BR:
       title: "O Postmark adiciona um segundo link de cancelamento"
       second_link: "O servidor Postmark que envia suas campanhas usa o tratamento de cancelamentos do Postmark. O Postmark adiciona seu próprio link abaixo do link do Broadcast."
       no_tag: "Este e-mail não tem a tag %{tag}, então o Postmark adiciona o link dele no final do e-mail."
+      second_link_sequence: "O servidor Postmark que envia suas sequências usa o tratamento de cancelamentos do Postmark no stream broadcast. O Postmark adiciona seu próprio link abaixo do link do Broadcast."
+      title_footer_block: "O Postmark cuida do link de cancelamento deste e-mail"
+      footer_block: "O servidor Postmark que envia este e-mail usa o tratamento de cancelamentos do Postmark. O link de cancelamento no bloco de rodapé leva à página de cancelamento do Postmark, então o Postmark não adiciona um segundo link."
       server_link: "Ver o servidor de e-mail %{server}"
     confirm_send:
       title: "Enviar a campanha?"
@@ -3457,6 +3460,7 @@ pt-BR:
         busy: "Ocupado"
         error: "Erro"
         removed: "Removido"
+        waiting: "Aguardando"
     transactional:
       status:
         pending: "Pendente"

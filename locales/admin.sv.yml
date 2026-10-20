@@ -2886,6 +2886,9 @@ sv:
       title: "Postmark lägger till en andra avregistreringslänk"
       second_link: "Postmark-servern som skickar dina kampanjer använder Postmarks hantering av avregistreringar. Postmark lägger till sin egen länk under Broadcasts."
       no_tag: "Det här e-postmeddelandet har ingen %{tag}-tagg, så Postmark lägger sin länk längst ned i meddelandet."
+      second_link_sequence: "Postmark-servern som skickar dina sekvenser använder Postmarks hantering av avregistreringar på broadcast-strömmen. Postmark lägger till sin egen länk under Broadcasts."
+      title_footer_block: "Postmark hanterar avregistreringslänken i det här e-postmeddelandet"
+      footer_block: "Postmark-servern som skickar det här e-postmeddelandet använder Postmarks hantering av avregistreringar. Avregistreringslänken i sidfotsblocket går till Postmarks avregistreringssida, så Postmark lägger inte till en andra länk."
       server_link: "Visa e-postservern %{server}"
     confirm_send:
       title: "Skicka kampanj?"
@@ -3457,6 +3460,7 @@ sv:
         busy: "Upptagen"
         error: "Fel"
         removed: "Borttagen"
+        waiting: "Väntar"
     transactional:
       status:
         pending: "Väntande"

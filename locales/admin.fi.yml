@@ -2887,6 +2887,9 @@ fi:
       title: "Postmark lisää toisen peruutuslinkin"
       second_link: "Kampanjasi lähettävällä Postmark-palvelimella on Postmarkin peruutusten käsittely. Postmark lisää oman peruutuslinkkinsä Broadcastin linkin alle."
       no_tag: "Tässä sähköpostissa ei ole %{tag}-tagia, joten Postmark lisää linkkinsä sähköpostin loppuun."
+      second_link_sequence: "Sekvenssejäsi lähettävällä Postmark-palvelimella on Postmarkin peruutusten käsittely broadcast-streamissa. Postmark lisää oman peruutuslinkkinsä Broadcastin linkin alle."
+      title_footer_block: "Postmark hoitaa tämän sähköpostin peruutuslinkin"
+      footer_block: "Tämän sähköpostin lähettävällä Postmark-palvelimella on Postmarkin peruutusten käsittely. Alatunnistelohkon peruutuslinkki vie Postmarkin peruutussivulle, joten Postmark ei lisää toista linkkiä."
       server_link: "Näytä sähköpostipalvelin %{server}"
     confirm_send:
       title: "Lähetetäänkö kampanja?"
@@ -3458,6 +3461,7 @@ fi:
         busy: "Käsittelyssä"
         error: "Virhe"
         removed: "Poistettu"
+        waiting: "Odottaa"
     transactional:
       status:
         pending: "Odottaa"

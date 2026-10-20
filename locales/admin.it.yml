@@ -2884,6 +2884,9 @@ it:
       title: "Postmark aggiunge un secondo link di disiscrizione"
       second_link: "Il server Postmark che invia le tue campagne usa la gestione delle disiscrizioni di Postmark. Postmark aggiunge il proprio link sotto quello di Broadcast."
       no_tag: "Questa email non contiene il tag %{tag}, quindi Postmark aggiunge il suo link in fondo all'email."
+      second_link_sequence: "Il server Postmark che invia le tue sequenze usa la gestione delle disiscrizioni di Postmark sullo stream broadcast. Postmark aggiunge il proprio link sotto quello di Broadcast."
+      title_footer_block: "Postmark gestisce il link di disiscrizione di questa email"
+      footer_block: "Il server Postmark che invia questa email usa la gestione delle disiscrizioni di Postmark. Il link di disiscrizione nel blocco footer porta alla pagina di disiscrizione di Postmark, quindi Postmark non aggiunge un secondo link."
       server_link: "Vedi il server email %{server}"
     confirm_send:
       title: "Inviare la campagna?"
@@ -3466,6 +3469,7 @@ it:
         busy: "In elaborazione"
         error: "Errore"
         removed: "Rimossa"
+        waiting: "In attesa"
     transactional:
       status:
         pending: "In attesa"

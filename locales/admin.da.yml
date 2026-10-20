@@ -2886,6 +2886,9 @@ da:
       title: "Postmark tilføjer et ekstra afmeldingslink"
       second_link: "Postmark-serveren, der sender dine kampagner, har Postmark-afmeldingshåndtering. Postmark tilføjer sit eget afmeldingslink under Broadcasts."
       no_tag: "Denne e-mail har intet %{tag}-tag, så Postmark tilføjer sit link nederst i e-mailen."
+      second_link_sequence: "Postmark-serveren, der sender dine sekvenser, har Postmark-afmeldingshåndtering på broadcast-streamen. Postmark tilføjer sit eget afmeldingslink under Broadcasts."
+      title_footer_block: "Postmark håndterer denne e-mails afmeldingslink"
+      footer_block: "Postmark-serveren, der sender denne e-mail, har Postmark-afmeldingshåndtering. Afmeldingslinket i footer-blokken går til Postmarks afmeldingsside, så Postmark tilføjer ikke et ekstra link."
       server_link: "Se e-mailserveren %{server}"
     confirm_send:
       title: "Send kampagne?"
@@ -3457,6 +3460,7 @@ da:
         busy: "Optaget"
         error: "Fejl"
         removed: "Fjernet"
+        waiting: "Venter"
     transactional:
       status:
         pending: "Afventer"

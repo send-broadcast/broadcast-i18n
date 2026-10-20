@@ -2970,6 +2970,9 @@ pl:
       title: "Postmark dodaje drugi link do wypisu"
       second_link: "Serwer Postmark, który wysyła Twoje kampanie, korzysta z obsługi wypisów Postmark. Postmark dodaje własny link pod linkiem Broadcast."
       no_tag: "Ta wiadomość nie ma tagu %{tag}, więc Postmark dodaje swój link na końcu wiadomości."
+      second_link_sequence: "Serwer Postmark, który wysyła Twoje sekwencje, korzysta z obsługi wypisów Postmark w strumieniu broadcast. Postmark dodaje własny link pod linkiem Broadcast."
+      title_footer_block: "Postmark obsługuje link do wypisu w tej wiadomości"
+      footer_block: "Serwer Postmark, który wysyła tę wiadomość, korzysta z obsługi wypisów Postmark. Link do wypisu w bloku stopki prowadzi do strony wypisu Postmark, więc Postmark nie dodaje drugiego linku."
       server_link: "Zobacz serwer poczty %{server}"
     confirm_send:
       title: "Wysłać kampanię?"
@@ -3559,6 +3562,7 @@ pl:
         busy: "Zajęty"
         error: "Błąd"
         removed: "Usunięty"
+        waiting: "Oczekuje"
     transactional:
       status:
         pending: "Oczekuje"

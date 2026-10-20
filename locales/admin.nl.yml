@@ -2888,6 +2888,9 @@ nl:
       title: "Postmark voegt een tweede afmeldlink toe"
       second_link: "De Postmark-server die uw campagnes verstuurt, gebruikt de afmeldafhandeling van Postmark. Postmark voegt een eigen afmeldlink toe onder die van Broadcast."
       no_tag: "Deze e-mail heeft geen %{tag}-tag, dus Postmark zet zijn link onderaan de e-mail."
+      second_link_sequence: "De Postmark-server die uw reeksen verstuurt, gebruikt de afmeldafhandeling van Postmark op de broadcast-stream. Postmark voegt een eigen afmeldlink toe onder die van Broadcast."
+      title_footer_block: "Postmark verzorgt de afmeldlink van deze e-mail"
+      footer_block: "De Postmark-server die deze e-mail verstuurt, gebruikt de afmeldafhandeling van Postmark. De afmeldlink in het footerblok gaat naar de afmeldpagina van Postmark, dus Postmark voegt geen tweede link toe."
       server_link: "E-mailserver %{server} bekijken"
     confirm_send:
       title: "Campagne verzenden?"
@@ -3459,6 +3462,7 @@ nl:
         busy: "Bezig"
         error: "Fout"
         removed: "Verwijderd"
+        waiting: "Wachtend"
     transactional:
       status:
         pending: "In afwachting"

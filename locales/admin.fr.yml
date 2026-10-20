@@ -2887,6 +2887,9 @@ fr:
       title: "Postmark ajoute un second lien de désabonnement"
       second_link: "Le serveur Postmark qui envoie vos campagnes utilise la gestion des désabonnements de Postmark. Postmark ajoute son propre lien sous celui de Broadcast."
       no_tag: "Cet e-mail n'a pas de balise %{tag}, donc Postmark ajoute son lien en bas de l'e-mail."
+      second_link_sequence: "Le serveur Postmark qui envoie vos séquences utilise la gestion des désabonnements de Postmark sur le flux broadcast. Postmark ajoute son propre lien sous celui de Broadcast."
+      title_footer_block: "Postmark gère le lien de désabonnement de cet e-mail"
+      footer_block: "Le serveur Postmark qui envoie cet e-mail utilise la gestion des désabonnements de Postmark. Le lien de désabonnement du bloc de pied de page mène à la page de désabonnement de Postmark, donc Postmark n'ajoute pas de second lien."
       server_link: "Voir le serveur d'e-mail %{server}"
     confirm_send:
       title: "Envoyer la campagne ?"
@@ -3469,6 +3472,7 @@ fr:
         busy: "Occupé"
         error: "Erreur"
         removed: "Retiré"
+        waiting: "En attente"
     transactional:
       status:
         pending: "En attente"

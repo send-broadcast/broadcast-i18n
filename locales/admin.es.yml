@@ -2887,6 +2887,9 @@ es:
       title: "Postmark añade un segundo enlace de baja"
       second_link: "El servidor de Postmark que envía sus campañas usa la gestión de bajas de Postmark. Postmark añade su propio enlace de baja bajo el de Broadcast."
       no_tag: "Este correo no tiene la etiqueta %{tag}, así que Postmark añade su enlace al final del correo."
+      second_link_sequence: "El servidor de Postmark que envía sus secuencias usa la gestión de bajas de Postmark en el stream broadcast. Postmark añade su propio enlace de baja bajo el de Broadcast."
+      title_footer_block: "Postmark gestiona el enlace de baja de este correo"
+      footer_block: "El servidor de Postmark que envía este correo usa la gestión de bajas de Postmark. El enlace de baja del bloque de pie lleva a la página de bajas de Postmark, así que Postmark no añade un segundo enlace."
       server_link: "Ver el servidor de correo %{server}"
     confirm_send:
       title: "¿Enviar la campaña?"
@@ -3458,6 +3461,7 @@ es:
         busy: "Ocupada"
         error: "Error"
         removed: "Retirada"
+        waiting: "En espera"
     transactional:
       status:
         pending: "Pendiente"

@@ -2888,6 +2888,9 @@ de:
       title: "Postmark fügt einen zweiten Abmeldelink hinzu"
       second_link: "Der Postmark-Server, der Ihre Kampagnen versendet, nutzt die Abmeldeverwaltung von Postmark. Postmark fügt unter dem Link von Broadcast einen eigenen Abmeldelink hinzu."
       no_tag: "Diese E-Mail enthält kein %{tag}-Tag, daher fügt Postmark seinen Link am Ende der E-Mail ein."
+      second_link_sequence: "Der Postmark-Server, der Ihre Sequenzen versendet, nutzt im Broadcast-Stream die Abmeldeverwaltung von Postmark. Postmark fügt unter dem Link von Broadcast einen eigenen Abmeldelink hinzu."
+      title_footer_block: "Postmark verwaltet den Abmeldelink dieser E-Mail"
+      footer_block: "Der Postmark-Server, der diese E-Mail versendet, nutzt die Abmeldeverwaltung von Postmark. Der Abmeldelink im Footer-Block führt zur Abmeldeseite von Postmark, daher fügt Postmark keinen zweiten Link hinzu."
       server_link: "E-Mail-Server %{server} ansehen"
     confirm_send:
       title: "Kampagne senden?"
@@ -3470,6 +3473,7 @@ de:
         busy: "Beschäftigt"
         error: "Fehler"
         removed: "Entfernt"
+        waiting: "Wartend"
     transactional:
       status:
         pending: "Ausstehend"

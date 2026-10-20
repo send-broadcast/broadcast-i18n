@@ -3441,6 +3441,8 @@ en:
         busy: "Busy"
         error: "Error"
         removed: "Removed"
+        # Not an enum value: an active enrollment in an inactive sequence
+        waiting: "Waiting"
     transactional:
       status:
         pending: "Pending"
