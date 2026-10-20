@@ -8276,6 +8276,7 @@ it:
       empty: "Nessun iscritto in questa sequenza"
     subscriber_sequence:
       in: "tra %{time}"
+      due_ago: "previsto %{time} fa"
       waiting_for_room_since: "In attesa di capacità sul server email da %{time}"
       restart: "Ricomincia la sequenza dall'inizio"
       pause: "Metti in pausa la sequenza"

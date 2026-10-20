@@ -8278,6 +8278,7 @@ sv:
       empty: "Inga prenumeranter i den här sekvensen"
     subscriber_sequence:
       in: "om %{time}"
+      due_ago: "förföll för %{time} sedan"
       waiting_for_room_since: "Väntar på ledig kapacitet på e-postservern sedan %{time}"
       restart: "Starta sekvensen från början"
       pause: "Pausa sekvensen"

@@ -8279,6 +8279,7 @@ fi:
       empty: "Tässä sarjassa ei ole tilaajia"
     subscriber_sequence:
       in: "%{time} kuluttua"
+      due_ago: "erääntyi %{time} sitten"
       waiting_for_room_since: "Odottanut vapaata kapasiteettia sähköpostipalvelimella %{time} alkaen"
       restart: "Aloita sarja alusta"
       pause: "Keskeytä sarja"

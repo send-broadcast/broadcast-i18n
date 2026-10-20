@@ -8280,6 +8280,7 @@ de:
       empty: "Keine Abonnenten in dieser Sequenz"
     subscriber_sequence:
       in: "in %{time}"
+      due_ago: "fällig seit %{time}"
       waiting_for_room_since: "Wartet seit %{time} auf freie Kapazität des E-Mail-Servers"
       restart: "Sequenz von vorn beginnen"
       pause: "Sequenz pausieren"

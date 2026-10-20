@@ -2232,7 +2232,7 @@ en:
           label: "Extra text"
         showUnsubscribe:
           label: "Show unsubscribe link"
-          hint: "Turn off only for an email that must not have one, such as a double opt-in confirmation. A broadcast or sequence email without another unsubscribe link then gets the channel footer."
+          hint: "Turn off only for an email that must not have one, such as a double opt-in confirmation. The channel footer is then added unless the email is sent with the unsubscribe link off (for a confirmation, the opt-in form setting)."
         unsubscribeLabel:
           label: "Unsubscribe link text"
         preferencesLabel:
@@ -2867,6 +2867,9 @@ en:
       title: "Postmark adds a second unsubscribe link"
       second_link: "The Postmark server that sends your broadcasts has Postmark unsubscribe handling. Postmark adds its own unsubscribe link under Broadcast's."
       no_tag: "This email has no %{tag} tag, so Postmark adds its link at the bottom of the email."
+      second_link_sequence: "The Postmark server that sends your sequences has Postmark unsubscribe handling on the broadcast stream. Postmark adds its own unsubscribe link under Broadcast's."
+      title_footer_block: "Postmark handles this email's unsubscribe link"
+      footer_block: "The Postmark server that sends this email has Postmark unsubscribe handling. The unsubscribe link in the footer block goes to Postmark's unsubscribe page, so Postmark does not add a second link."
       server_link: "See the email server %{server}"
     confirm_send:
       title: "Send Broadcast?"
@@ -8261,6 +8264,7 @@ en:
       empty: "No subscribers in this sequence"
     subscriber_sequence:
       in: "in %{time}"
+      due_ago: "due %{time} ago"
       waiting_for_room_since: "Waiting for room on the email server since %{time}"
       restart: "Start sequence from beginning"
       pause: "Pause sequence"

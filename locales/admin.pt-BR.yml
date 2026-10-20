@@ -8278,6 +8278,7 @@ pt-BR:
       empty: "Nenhum assinante nesta sequência"
     subscriber_sequence:
       in: "em %{time}"
+      due_ago: "previsto há %{time}"
       waiting_for_room_since: "Aguardando capacidade no servidor de e-mail desde %{time}"
       restart: "Reiniciar a sequência do começo"
       pause: "Pausar sequência"

@@ -8568,6 +8568,7 @@ pl:
       empty: "Brak subskrybentów w tej sekwencji"
     subscriber_sequence:
       in: "za %{time}"
+      due_ago: "zaplanowano %{time} temu"
       waiting_for_room_since: "Oczekuje na wolne miejsce na serwerze poczty od %{time}"
       restart: "Rozpocznij sekwencję od początku"
       pause: "Wstrzymaj sekwencję"

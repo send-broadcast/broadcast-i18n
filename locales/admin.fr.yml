@@ -8279,6 +8279,7 @@ fr:
       empty: "Aucun abonné dans cette séquence"
     subscriber_sequence:
       in: "dans %{time}"
+      due_ago: "prévu il y a %{time}"
       waiting_for_room_since: "En attente de capacité sur le serveur e-mail depuis %{time}"
       restart: "Reprendre la séquence depuis le début"
       pause: "Mettre la séquence en pause"

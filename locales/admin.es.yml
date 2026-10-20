@@ -8279,6 +8279,7 @@ es:
       empty: "No hay suscriptores en esta secuencia"
     subscriber_sequence:
       in: "dentro de %{time}"
+      due_ago: "pendiente desde hace %{time}"
       waiting_for_room_since: "Esperando capacidad en el servidor de correo desde %{time}"
       restart: "Empezar la secuencia desde el principio"
       pause: "Pausar la secuencia"

@@ -8278,6 +8278,7 @@ nb:
       empty: "Ingen abonnenter i denne sekvensen"
     subscriber_sequence:
       in: "om %{time}"
+      due_ago: "forfalt for %{time} siden"
       waiting_for_room_since: "Venter på ledig kapasitet på e-postserveren siden %{time}"
       restart: "Start sekvensen fra begynnelsen"
       pause: "Sett sekvensen på pause"

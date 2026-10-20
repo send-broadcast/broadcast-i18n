@@ -8280,6 +8280,7 @@ nl:
       empty: "Geen abonnees in deze reeks"
     subscriber_sequence:
       in: "over %{time}"
+      due_ago: "gepland %{time} geleden"
       waiting_for_room_since: "Wacht sinds %{time} op capaciteit op de e-mailserver"
       restart: "Reeks vanaf het begin starten"
       pause: "Reeks pauzeren"
