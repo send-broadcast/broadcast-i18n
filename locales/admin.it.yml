@@ -8098,6 +8098,7 @@ it:
         removed: "Rimosso"
         completed: "Completata"
         redacted: "Oscurato"
+        retried: "Riprovato"
         activity: "Attività"
         topic_unsubscribed: "Argomento disattivato"
         preferences_updated: "Preferenze"
@@ -8272,6 +8273,14 @@ it:
       errored:
         one: "%{count} iscritto si è fermato per un errore e non riceverà i passaggi successivi."
         other: "%{count} iscritti si sono fermati per un errore e non riceveranno i passaggi successivi."
+      retry_all: "Riprova tutti"
+      retry_all_confirm:
+        one: "Riprovare il passaggio non riuscito per %{count} iscritto? Gli indirizzi esclusi proseguono senza email."
+        other: "Riprovare il passaggio non riuscito per %{count} iscritti? Gli indirizzi esclusi proseguono senza email."
+      dismiss_all: "Scarta tutti"
+      dismiss_all_confirm:
+        one: "Togliere da questa sequenza %{count} iscritto in errore? Non riceverà i passaggi successivi."
+        other: "Togliere da questa sequenza %{count} iscritti in errore? Non riceveranno i passaggi successivi."
       columns:
         subscriber: "Iscritto"
         next_step: "Passaggio successivo"
@@ -8283,6 +8292,9 @@ it:
       due_ago: "in ritardo di %{time}"
       waiting_for_room_since: "In attesa di capacità sul server email da %{time}"
       restart: "Ricomincia la sequenza dall'inizio"
+      retry: "Riprova passaggio"
+      retry_possibly_delivered_confirm: "L'email di questo passaggio potrebbe essere già stata recapitata. Riprovando potrebbe essere inviata di nuovo. Riprovare comunque?"
+      retry_suppressed_confirm: "Questo indirizzo è escluso. I passaggi email verranno saltati; gli altri passaggi, come tag e spostamenti, verranno eseguiti lo stesso. Riprovare comunque?"
       pause: "Metti in pausa la sequenza"
       resume: "Riprendi la sequenza"
       stop: "Interrompi la sequenza"
@@ -8297,6 +8309,19 @@ it:
       not_found: "Iscritto non trovato nel canale attuale."
     destroy:
       removed: "Iscritto tolto dalla sequenza"
+    retry_step:
+      not_retried: "Non è stato riprovato nulla. Questo iscritto non è più fermo per un errore, oppure non può più essere riprovato."
+    bulk:
+      retry:
+        one: "Nuovo tentativo in background per %{count} iscritto in errore."
+        other: "Nuovo tentativo in background per %{count} iscritti in errore."
+      retry_left:
+        one: "%{count} iscritto resta in errore: la sua email potrebbe essere già stata inviata, oppure non può essere riprovato. Riprova dalla sua riga, oppure ricomincia la sequenza dall'inizio."
+        other: "%{count} iscritti restano in errore: la loro email potrebbe essere già stata inviata, oppure non possono essere riprovati. Riprova ciascuno dalla sua riga, oppure ricomincia la sequenza dall'inizio."
+      dismiss:
+        one: "Rimozione in background di %{count} iscritto in errore."
+        other: "Rimozione in background di %{count} iscritti in errore."
+      none: "Nessun iscritto in questa sequenza è fermo per un errore."
     sequence_not_found: "Sequenza non trovata"
 
   subscribers:

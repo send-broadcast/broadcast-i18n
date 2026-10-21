@@ -8100,6 +8100,7 @@ da:
         removed: "Fjernet"
         completed: "Fuldført"
         redacted: "Anonymiseret"
+        retried: "Prøvet igen"
         activity: "Aktivitet"
         topic_unsubscribed: "Emne fra"
         preferences_updated: "Indstillinger"
@@ -8274,6 +8275,14 @@ da:
       errored:
         one: "%{count} abonnent stoppede med en fejl og modtager ikke flere trin."
         other: "%{count} abonnenter stoppede med en fejl og modtager ikke flere trin."
+      retry_all: "Prøv alle igen"
+      retry_all_confirm:
+        one: "Vil du prøve det mislykkede trin igen for %{count} abonnent? Spærrede adresser går videre uden mail."
+        other: "Vil du prøve det mislykkede trin igen for %{count} abonnenter? Spærrede adresser går videre uden mail."
+      dismiss_all: "Fjern alle"
+      dismiss_all_confirm:
+        one: "Vil du fjerne %{count} abonnent med fejl fra denne sekvens? Abonnenten modtager ikke flere trin."
+        other: "Vil du fjerne %{count} abonnenter med fejl fra denne sekvens? De modtager ikke flere trin."
       columns:
         subscriber: "Abonnent"
         next_step: "Næste trin"
@@ -8285,6 +8294,9 @@ da:
       due_ago: "forfaldt for %{time} siden"
       waiting_for_room_since: "Venter på ledig kapacitet på mailserveren siden %{time}"
       restart: "Start sekvensen forfra"
+      retry: "Prøv trin igen"
+      retry_possibly_delivered_confirm: "Mailen fra dette trin er muligvis allerede leveret. Et nyt forsøg kan sende den igen. Vil du prøve igen alligevel?"
+      retry_suppressed_confirm: "Denne adresse er spærret. Mailtrin springes over; andre trin, f.eks. tags og flytninger, udføres stadig. Vil du prøve igen alligevel?"
       pause: "Sæt sekvensen på pause"
       resume: "Genoptag sekvensen"
       stop: "Stop sekvensen"
@@ -8299,6 +8311,19 @@ da:
       not_found: "Abonnenten blev ikke fundet i den aktuelle kanal."
     destroy:
       removed: "Abonnenten er slettet fra sekvensen"
+    retry_step:
+      not_retried: "Intet blev prøvet igen. Denne abonnent er ikke længere stoppet med en fejl, eller trinnet kan ikke længere prøves igen."
+    bulk:
+      retry:
+        one: "Prøver %{count} abonnent med fejl igen i baggrunden."
+        other: "Prøver %{count} abonnenter med fejl igen i baggrunden."
+      retry_left:
+        one: "%{count} abonnent forbliver i fejl: mailen er muligvis allerede sendt, eller trinnet kan ikke prøves igen. Prøv igen i abonnentens egen række, eller start sekvensen forfra."
+        other: "%{count} abonnenter forbliver i fejl: deres mail er muligvis allerede sendt, eller trinnet kan ikke prøves igen. Prøv igen i hver abonnents egen række, eller start sekvensen forfra."
+      dismiss:
+        one: "Fjerner %{count} abonnent med fejl i baggrunden."
+        other: "Fjerner %{count} abonnenter med fejl i baggrunden."
+      none: "Ingen abonnenter i denne sekvens er stoppet med en fejl."
     sequence_not_found: "Sekvensen blev ikke fundet"
 
   subscribers:

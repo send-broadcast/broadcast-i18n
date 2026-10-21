@@ -8101,6 +8101,7 @@ es:
         removed: "Quitado"
         completed: "Completado"
         redacted: "Anonimizado"
+        retried: "Reintentado"
         activity: "Actividad"
         topic_unsubscribed: "Tema desactivado"
         preferences_updated: "Preferencias"
@@ -8275,6 +8276,14 @@ es:
       errored:
         one: "%{count} suscriptor se detuvo por un error y no recibirá más pasos."
         other: "%{count} suscriptores se detuvieron por un error y no recibirán más pasos."
+      retry_all: "Reintentar todos"
+      retry_all_confirm:
+        one: "¿Reintentar el paso fallido para %{count} suscriptor? Las direcciones excluidas avanzan sin recibir correo."
+        other: "¿Reintentar el paso fallido para %{count} suscriptores? Las direcciones excluidas avanzan sin recibir correo."
+      dismiss_all: "Descartar todos"
+      dismiss_all_confirm:
+        one: "¿Quitar de esta secuencia a %{count} suscriptor con error? No recibirá más pasos."
+        other: "¿Quitar de esta secuencia a %{count} suscriptores con error? No recibirán más pasos."
       columns:
         subscriber: "Suscriptor"
         next_step: "Siguiente paso"
@@ -8286,6 +8295,9 @@ es:
       due_ago: "pendiente desde hace %{time}"
       waiting_for_room_since: "Esperando capacidad en el servidor de correo desde %{time}"
       restart: "Empezar la secuencia desde el principio"
+      retry: "Reintentar paso"
+      retry_possibly_delivered_confirm: "Es posible que el correo de este paso ya se haya entregado. Si lo reintentas, puede enviarse de nuevo. ¿Reintentar de todos modos?"
+      retry_suppressed_confirm: "Esta dirección está excluida. Se omitirán los pasos de correo; los demás pasos, como las etiquetas y los movimientos, se ejecutarán igualmente. ¿Reintentar de todos modos?"
       pause: "Pausar la secuencia"
       resume: "Reanudar la secuencia"
       stop: "Detener la secuencia"
@@ -8300,6 +8312,19 @@ es:
       not_found: "No se encontró el suscriptor en el canal actual."
     destroy:
       removed: "Suscriptor quitado de la secuencia"
+    retry_step:
+      not_retried: "No se reintentó nada. Este suscriptor ya no está detenido por un error o ya no se puede reintentar."
+    bulk:
+      retry:
+        one: "Reintentando en segundo plano %{count} suscriptor con error."
+        other: "Reintentando en segundo plano %{count} suscriptores con error."
+      retry_left:
+        one: "%{count} suscriptor sigue con error: es posible que su correo ya se haya enviado o que no se pueda reintentar. Reinténtalo en su propia fila o empieza la secuencia desde el principio."
+        other: "%{count} suscriptores siguen con error: es posible que su correo ya se haya enviado o que no se puedan reintentar. Reinténtalos en su propia fila o empieza la secuencia desde el principio."
+      dismiss:
+        one: "Descartando en segundo plano %{count} suscriptor con error."
+        other: "Descartando en segundo plano %{count} suscriptores con error."
+      none: "Ningún suscriptor de esta secuencia está detenido por un error."
     sequence_not_found: "No se encontró la secuencia"
 
   subscribers:

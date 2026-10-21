@@ -8384,6 +8384,7 @@ pl:
         removed: "Usunięto"
         completed: "Ukończono"
         redacted: "Zanonimizowano"
+        retried: "Ponowiono"
         activity: "Aktywność"
         topic_unsubscribed: "Temat wyłączony"
         preferences_updated: "Preferencje"
@@ -8564,6 +8565,18 @@ pl:
         few: "%{count} subskrybentów zatrzymało się z błędem i nie otrzyma kolejnych kroków."
         many: "%{count} subskrybentów zatrzymało się z błędem i nie otrzyma kolejnych kroków."
         other: "%{count} subskrybenta zatrzymało się z błędem i nie otrzyma kolejnych kroków."
+      retry_all: "Ponów wszystkie"
+      retry_all_confirm:
+        one: "Ponowić nieudany krok dla %{count} subskrybenta? Wykluczone adresy przechodzą dalej bez e-maila."
+        few: "Ponowić nieudany krok dla %{count} subskrybentów? Wykluczone adresy przechodzą dalej bez e-maila."
+        many: "Ponowić nieudany krok dla %{count} subskrybentów? Wykluczone adresy przechodzą dalej bez e-maila."
+        other: "Ponowić nieudany krok dla %{count} subskrybenta? Wykluczone adresy przechodzą dalej bez e-maila."
+      dismiss_all: "Odrzuć wszystkie"
+      dismiss_all_confirm:
+        one: "Usunąć z tej sekwencji %{count} subskrybenta z błędem? Nie otrzyma kolejnych kroków."
+        few: "Usunąć z tej sekwencji %{count} subskrybentów z błędem? Nie otrzymają kolejnych kroków."
+        many: "Usunąć z tej sekwencji %{count} subskrybentów z błędem? Nie otrzymają kolejnych kroków."
+        other: "Usunąć z tej sekwencji %{count} subskrybenta z błędem? Nie otrzymają kolejnych kroków."
       columns:
         subscriber: "Subskrybent"
         next_step: "Następny krok"
@@ -8575,6 +8588,9 @@ pl:
       due_ago: "opóźnienie: %{time}"
       waiting_for_room_since: "Oczekuje na wolne miejsce na serwerze poczty od %{time}"
       restart: "Rozpocznij sekwencję od początku"
+      retry: "Ponów krok"
+      retry_possibly_delivered_confirm: "E-mail z tego kroku mógł już zostać dostarczony. Ponowienie może wysłać go jeszcze raz. Ponowić mimo to?"
+      retry_suppressed_confirm: "Ten adres jest wykluczony. Kroki e-mail zostaną pominięte; pozostałe kroki, takie jak tagi i przeniesienia, nadal zostaną wykonane. Ponowić mimo to?"
       pause: "Wstrzymaj sekwencję"
       resume: "Wznów sekwencję"
       stop: "Zatrzymaj sekwencję"
@@ -8589,6 +8605,25 @@ pl:
       not_found: "Nie znaleziono subskrybenta w bieżącym kanale."
     destroy:
       removed: "Usunięto subskrybenta z sekwencji"
+    retry_step:
+      not_retried: "Nic nie zostało ponowione. Ten subskrybent nie jest już zatrzymany z błędem albo jego kroku nie można już ponowić."
+    bulk:
+      retry:
+        one: "Ponawianie w tle dla %{count} subskrybenta z błędem."
+        few: "Ponawianie w tle dla %{count} subskrybentów z błędem."
+        many: "Ponawianie w tle dla %{count} subskrybentów z błędem."
+        other: "Ponawianie w tle dla %{count} subskrybenta z błędem."
+      retry_left:
+        one: "%{count} subskrybent pozostaje z błędem: jego e-mail mógł już zostać wysłany albo jego kroku nie można ponowić. Ponów krok w jego wierszu albo rozpocznij sekwencję od początku."
+        few: "%{count} subskrybentów pozostaje z błędem: ich e-mail mógł już zostać wysłany albo ich kroku nie można ponowić. Ponów krok w wierszu każdego z nich albo rozpocznij sekwencję od początku."
+        many: "%{count} subskrybentów pozostaje z błędem: ich e-mail mógł już zostać wysłany albo ich kroku nie można ponowić. Ponów krok w wierszu każdego z nich albo rozpocznij sekwencję od początku."
+        other: "%{count} subskrybenta pozostaje z błędem: ich e-mail mógł już zostać wysłany albo ich kroku nie można ponowić. Ponów krok w wierszu każdego z nich albo rozpocznij sekwencję od początku."
+      dismiss:
+        one: "Usuwanie w tle %{count} subskrybenta z błędem."
+        few: "Usuwanie w tle %{count} subskrybentów z błędem."
+        many: "Usuwanie w tle %{count} subskrybentów z błędem."
+        other: "Usuwanie w tle %{count} subskrybenta z błędem."
+      none: "Żaden subskrybent w tej sekwencji nie jest zatrzymany z błędem."
     sequence_not_found: "Nie znaleziono sekwencji"
 
   subscribers:

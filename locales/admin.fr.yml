@@ -8101,6 +8101,7 @@ fr:
         removed: "Retiré"
         completed: "Terminé"
         redacted: "Anonymisé"
+        retried: "Relancé"
         activity: "Activité"
         topic_unsubscribed: "Thème désactivé"
         preferences_updated: "Préférences"
@@ -8275,6 +8276,14 @@ fr:
       errored:
         one: "%{count} abonné s'est arrêté sur une erreur et ne recevra pas les étapes suivantes."
         other: "%{count} abonnés se sont arrêtés sur une erreur et ne recevront pas les étapes suivantes."
+      retry_all: "Tout relancer"
+      retry_all_confirm:
+        one: "Relancer l'étape en échec pour %{count} abonné ? Les adresses exclues passent à la suite sans e-mail."
+        other: "Relancer l'étape en échec pour %{count} abonnés ? Les adresses exclues passent à la suite sans e-mail."
+      dismiss_all: "Tout écarter"
+      dismiss_all_confirm:
+        one: "Retirer %{count} abonné en erreur de cette séquence ? Il ne recevra pas les étapes suivantes."
+        other: "Retirer %{count} abonnés en erreur de cette séquence ? Ils ne recevront pas les étapes suivantes."
       columns:
         subscriber: "Abonné"
         next_step: "Étape suivante"
@@ -8286,6 +8295,9 @@ fr:
       due_ago: "en retard : %{time}"
       waiting_for_room_since: "En attente de capacité sur le serveur e-mail depuis %{time}"
       restart: "Reprendre la séquence depuis le début"
+      retry: "Relancer l'étape"
+      retry_possibly_delivered_confirm: "L'e-mail de cette étape a peut-être déjà été distribué. Une relance peut l'envoyer une seconde fois. Relancer quand même ?"
+      retry_suppressed_confirm: "Cette adresse est exclue. Les étapes d'e-mail seront ignorées ; les autres étapes, comme les tags et les déplacements, seront tout de même exécutées. Relancer quand même ?"
       pause: "Mettre la séquence en pause"
       resume: "Reprendre la séquence"
       stop: "Arrêter la séquence"
@@ -8300,6 +8312,19 @@ fr:
       not_found: "Abonné introuvable dans le canal actuel."
     destroy:
       removed: "Abonné retiré de la séquence"
+    retry_step:
+      not_retried: "Rien n'a été relancé. Cet abonné n'est plus arrêté sur une erreur, ou ne peut plus être relancé."
+    bulk:
+      retry:
+        one: "Relance de %{count} abonné en erreur en arrière-plan."
+        other: "Relance de %{count} abonnés en erreur en arrière-plan."
+      retry_left:
+        one: "%{count} abonné reste en erreur : son e-mail a peut-être déjà été envoyé, ou il ne peut pas être relancé. Relancez-le sur sa propre ligne, ou reprenez la séquence depuis le début."
+        other: "%{count} abonnés restent en erreur : leur e-mail a peut-être déjà été envoyé, ou ils ne peuvent pas être relancés. Relancez-les chacun sur sa ligne, ou reprenez la séquence depuis le début."
+      dismiss:
+        one: "Retrait de %{count} abonné en erreur en arrière-plan."
+        other: "Retrait de %{count} abonnés en erreur en arrière-plan."
+      none: "Aucun abonné de cette séquence n'est arrêté sur une erreur."
     sequence_not_found: "Séquence introuvable"
 
   subscribers:

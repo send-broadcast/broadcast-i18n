@@ -8100,6 +8100,7 @@ pt-BR:
         removed: "Removido"
         completed: "Concluído"
         redacted: "Anonimizado"
+        retried: "Nova tentativa"
         activity: "Atividade"
         topic_unsubscribed: "Tópico desativado"
         preferences_updated: "Preferências"
@@ -8274,6 +8275,14 @@ pt-BR:
       errored:
         one: "%{count} assinante parou com erro e não receberá as próximas etapas."
         other: "%{count} assinantes pararam com erro e não receberão as próximas etapas."
+      retry_all: "Tentar todos novamente"
+      retry_all_confirm:
+        one: "Tentar novamente a etapa com falha para %{count} assinante? Endereços suprimidos seguem em frente sem e-mail."
+        other: "Tentar novamente a etapa com falha para %{count} assinantes? Endereços suprimidos seguem em frente sem e-mail."
+      dismiss_all: "Descartar todos"
+      dismiss_all_confirm:
+        one: "Remover %{count} assinante com erro desta sequência? Ele não receberá as próximas etapas."
+        other: "Remover %{count} assinantes com erro desta sequência? Eles não receberão as próximas etapas."
       columns:
         subscriber: "Assinante"
         next_step: "Próxima etapa"
@@ -8285,6 +8294,9 @@ pt-BR:
       due_ago: "atrasado há %{time}"
       waiting_for_room_since: "Aguardando capacidade no servidor de e-mail desde %{time}"
       restart: "Reiniciar a sequência do começo"
+      retry: "Tentar etapa novamente"
+      retry_possibly_delivered_confirm: "O e-mail desta etapa pode já ter sido entregue. Tentar novamente pode enviá-lo outra vez. Tentar novamente mesmo assim?"
+      retry_suppressed_confirm: "Este endereço está suprimido. As etapas de e-mail serão ignoradas; as outras etapas, como tags e movimentações, ainda serão executadas. Tentar novamente mesmo assim?"
       pause: "Pausar sequência"
       resume: "Retomar sequência"
       stop: "Parar sequência"
@@ -8299,6 +8311,19 @@ pt-BR:
       not_found: "Assinante não encontrado no canal atual."
     destroy:
       removed: "Assinante removido da sequência"
+    retry_step:
+      not_retried: "Nada foi tentado novamente. Este assinante não está mais parado com erro, ou a etapa não pode mais ser tentada novamente."
+    bulk:
+      retry:
+        one: "Tentando novamente %{count} assinante com erro em segundo plano."
+        other: "Tentando novamente %{count} assinantes com erro em segundo plano."
+      retry_left:
+        one: "%{count} assinante continua com erro: o e-mail dele pode já ter sido enviado, ou a etapa não pode ser tentada novamente. Tente novamente na linha dele, ou reinicie a sequência do começo."
+        other: "%{count} assinantes continuam com erro: o e-mail deles pode já ter sido enviado, ou a etapa não pode ser tentada novamente. Tente novamente na linha de cada um, ou reinicie a sequência do começo."
+      dismiss:
+        one: "Descartando %{count} assinante com erro em segundo plano."
+        other: "Descartando %{count} assinantes com erro em segundo plano."
+      none: "Nenhum assinante desta sequência está parado com erro."
     sequence_not_found: "Sequência não encontrada"
 
   subscribers:

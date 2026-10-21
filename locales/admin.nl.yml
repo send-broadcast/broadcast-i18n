@@ -8102,6 +8102,7 @@ nl:
         removed: "Verwijderd"
         completed: "Voltooid"
         redacted: "Geanonimiseerd"
+        retried: "Opnieuw geprobeerd"
         activity: "Activiteit"
         topic_unsubscribed: "Onderwerp uit"
         preferences_updated: "Voorkeuren"
@@ -8276,6 +8277,14 @@ nl:
       errored:
         one: "%{count} abonnee is gestopt met een fout en krijgt geen volgende stappen meer."
         other: "%{count} abonnees zijn gestopt met een fout en krijgen geen volgende stappen meer."
+      retry_all: "Alles opnieuw proberen"
+      retry_all_confirm:
+        one: "De mislukte stap opnieuw proberen voor %{count} abonnee? Geblokkeerde adressen gaan door zonder e-mail."
+        other: "De mislukte stap opnieuw proberen voor %{count} abonnees? Geblokkeerde adressen gaan door zonder e-mail."
+      dismiss_all: "Alles verwijderen"
+      dismiss_all_confirm:
+        one: "%{count} abonnee met een fout uit deze reeks halen? Deze abonnee krijgt geen volgende stappen meer."
+        other: "%{count} abonnees met een fout uit deze reeks halen? Ze krijgen geen volgende stappen meer."
       columns:
         subscriber: "Abonnee"
         next_step: "Volgende stap"
@@ -8287,6 +8296,9 @@ nl:
       due_ago: "%{time} te laat"
       waiting_for_room_since: "Wacht sinds %{time} op capaciteit op de e-mailserver"
       restart: "Reeks vanaf het begin starten"
+      retry: "Stap opnieuw proberen"
+      retry_possibly_delivered_confirm: "De e-mail van deze stap is misschien al afgeleverd. Opnieuw proberen kan hem nog een keer verzenden. Toch opnieuw proberen?"
+      retry_suppressed_confirm: "Dit adres is geblokkeerd. E-mailstappen worden overgeslagen; andere stappen, zoals tags en verplaatsingen, worden wel uitgevoerd. Toch opnieuw proberen?"
       pause: "Reeks pauzeren"
       resume: "Reeks hervatten"
       stop: "Reeks stoppen"
@@ -8301,6 +8313,19 @@ nl:
       not_found: "Abonnee niet gevonden in het huidige kanaal."
     destroy:
       removed: "Abonnee uit de reeks verwijderd"
+    retry_step:
+      not_retried: "Er is niets opnieuw geprobeerd. Deze abonnee is niet meer gestopt met een fout, of de stap kan niet meer opnieuw worden geprobeerd."
+    bulk:
+      retry:
+        one: "%{count} abonnee met een fout wordt op de achtergrond opnieuw geprobeerd."
+        other: "%{count} abonnees met een fout worden op de achtergrond opnieuw geprobeerd."
+      retry_left:
+        one: "%{count} abonnee blijft in de fout: de e-mail is misschien al verzonden, of de stap kan niet opnieuw worden geprobeerd. Probeer het opnieuw in de eigen rij, of start de reeks vanaf het begin."
+        other: "%{count} abonnees blijven in de fout: hun e-mail is misschien al verzonden, of de stap kan niet opnieuw worden geprobeerd. Probeer het per rij opnieuw, of start de reeks vanaf het begin."
+      dismiss:
+        one: "%{count} abonnee met een fout wordt op de achtergrond verwijderd."
+        other: "%{count} abonnees met een fout worden op de achtergrond verwijderd."
+      none: "Geen abonnees in deze reeks zijn gestopt met een fout."
     sequence_not_found: "Reeks niet gevonden"
 
   subscribers:

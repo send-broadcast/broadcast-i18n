@@ -8101,6 +8101,7 @@ fi:
         removed: "Poistettu"
         completed: "Valmis"
         redacted: "Anonymisoitu"
+        retried: "Yritetty uudelleen"
         activity: "Toiminta"
         topic_unsubscribed: "Aihe pois"
         preferences_updated: "Asetukset"
@@ -8275,6 +8276,14 @@ fi:
       errored:
         one: "%{count} tilaaja pysähtyi virheeseen eikä saa enää seuraavia vaiheita."
         other: "%{count} tilaajaa pysähtyi virheeseen eivätkä saa enää seuraavia vaiheita."
+      retry_all: "Yritä kaikkia uudelleen"
+      retry_all_confirm:
+        one: "Yritetäänkö epäonnistunutta vaihetta uudelleen %{count} tilaajalle? Estetyt osoitteet siirtyvät eteenpäin ilman sähköpostia."
+        other: "Yritetäänkö epäonnistunutta vaihetta uudelleen %{count} tilaajalle? Estetyt osoitteet siirtyvät eteenpäin ilman sähköpostia."
+      dismiss_all: "Hylkää kaikki"
+      dismiss_all_confirm:
+        one: "Poistetaanko %{count} virheeseen pysähtynyt tilaaja tästä sarjasta? Tilaaja ei saa enää seuraavia vaiheita."
+        other: "Poistetaanko %{count} virheeseen pysähtynyttä tilaajaa tästä sarjasta? Tilaajat eivät saa enää seuraavia vaiheita."
       columns:
         subscriber: "Tilaaja"
         next_step: "Seuraava vaihe"
@@ -8286,6 +8295,9 @@ fi:
       due_ago: "erääntyi %{time} sitten"
       waiting_for_room_since: "Odottanut vapaata kapasiteettia sähköpostipalvelimella %{time} alkaen"
       restart: "Aloita sarja alusta"
+      retry: "Yritä vaihetta uudelleen"
+      retry_possibly_delivered_confirm: "Tämän vaiheen sähköposti on ehkä jo toimitettu. Uusi yritys voi lähettää sen uudelleen. Yritetäänkö silti uudelleen?"
+      retry_suppressed_confirm: "Tämä osoite on estetty. Sähköpostivaiheet ohitetaan; muut vaiheet, kuten tunnisteet ja siirrot, suoritetaan kuitenkin. Yritetäänkö silti uudelleen?"
       pause: "Keskeytä sarja"
       resume: "Jatka sarjaa"
       stop: "Pysäytä sarja"
@@ -8300,6 +8312,19 @@ fi:
       not_found: "Tilaajaa ei löytynyt nykyiseltä kanavalta."
     destroy:
       removed: "Tilaaja poistettu sarjasta"
+    retry_step:
+      not_retried: "Mitään ei yritetty uudelleen. Tämä tilaaja ei ole enää pysähtynyt virheeseen, tai vaihetta ei voi enää yrittää uudelleen."
+    bulk:
+      retry:
+        one: "Yritetään uudelleen taustalla: %{count} virheeseen pysähtynyt tilaaja."
+        other: "Yritetään uudelleen taustalla: %{count} virheeseen pysähtynyttä tilaajaa."
+      retry_left:
+        one: "%{count} tilaaja jää virhetilaan: sähköposti on ehkä jo lähetetty, tai vaihetta ei voi yrittää uudelleen. Yritä uudelleen tilaajan omalla rivillä tai aloita sarja alusta."
+        other: "%{count} tilaajaa jää virhetilaan: sähköposti on ehkä jo lähetetty, tai vaihetta ei voi yrittää uudelleen. Yritä uudelleen kunkin tilaajan omalla rivillä tai aloita sarja alusta."
+      dismiss:
+        one: "Poistetaan taustalla: %{count} virheeseen pysähtynyt tilaaja."
+        other: "Poistetaan taustalla: %{count} virheeseen pysähtynyttä tilaajaa."
+      none: "Yksikään tämän sarjan tilaaja ei ole pysähtynyt virheeseen."
     sequence_not_found: "Sarjaa ei löytynyt"
 
   subscribers:

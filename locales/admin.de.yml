@@ -8102,6 +8102,7 @@ de:
         removed: "Entfernt"
         completed: "Abgeschlossen"
         redacted: "Anonymisiert"
+        retried: "Wiederholt"
         activity: "Aktivität"
         topic_unsubscribed: "Thema abbestellt"
         preferences_updated: "Einstellungen"
@@ -8276,6 +8277,14 @@ de:
       errored:
         one: "%{count} Abonnent wurde mit einem Fehler gestoppt und erhält keine weiteren Schritte."
         other: "%{count} Abonnenten wurden mit einem Fehler gestoppt und erhalten keine weiteren Schritte."
+      retry_all: "Alle wiederholen"
+      retry_all_confirm:
+        one: "Den fehlgeschlagenen Schritt für %{count} Abonnenten wiederholen? Gesperrte Adressen gehen ohne E-Mail zum nächsten Schritt über."
+        other: "Den fehlgeschlagenen Schritt für %{count} Abonnenten wiederholen? Gesperrte Adressen gehen ohne E-Mail zum nächsten Schritt über."
+      dismiss_all: "Alle verwerfen"
+      dismiss_all_confirm:
+        one: "%{count} Abonnenten mit Fehler aus dieser Sequenz entfernen? Er erhält keine weiteren Schritte."
+        other: "%{count} Abonnenten mit Fehler aus dieser Sequenz entfernen? Sie erhalten keine weiteren Schritte."
       columns:
         subscriber: "Abonnent"
         next_step: "Nächster Schritt"
@@ -8287,6 +8296,9 @@ de:
       due_ago: "überfällig: %{time}"
       waiting_for_room_since: "Wartet seit %{time} auf freie Kapazität des E-Mail-Servers"
       restart: "Sequenz von vorn beginnen"
+      retry: "Schritt wiederholen"
+      retry_possibly_delivered_confirm: "Die E-Mail dieses Schritts wurde möglicherweise bereits zugestellt. Bei einer Wiederholung kann sie erneut gesendet werden. Trotzdem wiederholen?"
+      retry_suppressed_confirm: "Diese Adresse ist gesperrt. E-Mail-Schritte werden übersprungen; andere Schritte wie Tags und Verschieben werden weiterhin ausgeführt. Trotzdem wiederholen?"
       pause: "Sequenz pausieren"
       resume: "Sequenz fortsetzen"
       stop: "Sequenz stoppen"
@@ -8301,6 +8313,19 @@ de:
       not_found: "Abonnent im aktuellen Kanal nicht gefunden."
     destroy:
       removed: "Abonnent aus der Sequenz entfernt"
+    retry_step:
+      not_retried: "Es wurde nichts wiederholt. Dieser Abonnent ist nicht mehr mit einem Fehler gestoppt oder kann nicht mehr wiederholt werden."
+    bulk:
+      retry:
+        one: "Der fehlgeschlagene Schritt wird für %{count} Abonnenten im Hintergrund wiederholt."
+        other: "Der fehlgeschlagene Schritt wird für %{count} Abonnenten im Hintergrund wiederholt."
+      retry_left:
+        one: "%{count} Abonnent bleibt im Fehlerzustand: Seine E-Mail wurde möglicherweise bereits gesendet oder der Schritt kann nicht wiederholt werden. Wiederholen Sie den Schritt in seiner Zeile oder beginnen Sie die Sequenz von vorn."
+        other: "%{count} Abonnenten bleiben im Fehlerzustand: Ihre E-Mail wurde möglicherweise bereits gesendet oder der Schritt kann nicht wiederholt werden. Wiederholen Sie den Schritt jeweils in der eigenen Zeile oder beginnen Sie die Sequenz von vorn."
+      dismiss:
+        one: "%{count} Abonnent mit Fehler wird im Hintergrund aus der Sequenz entfernt."
+        other: "%{count} Abonnenten mit Fehler werden im Hintergrund aus der Sequenz entfernt."
+      none: "In dieser Sequenz ist kein Abonnent mit einem Fehler gestoppt."
     sequence_not_found: "Sequenz nicht gefunden"
 
   subscribers:

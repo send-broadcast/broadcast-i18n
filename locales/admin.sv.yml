@@ -8100,6 +8100,7 @@ sv:
         removed: "Borttagen"
         completed: "Slutförd"
         redacted: "Anonymiserad"
+        retried: "Nytt försök"
         activity: "Aktivitet"
         topic_unsubscribed: "Ämne av"
         preferences_updated: "Inställningar"
@@ -8274,6 +8275,14 @@ sv:
       errored:
         one: "%{count} prenumerant stoppades av ett fel och får inga fler steg."
         other: "%{count} prenumeranter stoppades av ett fel och får inga fler steg."
+      retry_all: "Försök igen med alla"
+      retry_all_confirm:
+        one: "Försöka igen med det misslyckade steget för %{count} prenumerant? Spärrade adresser går vidare utan mejl."
+        other: "Försöka igen med det misslyckade steget för %{count} prenumeranter? Spärrade adresser går vidare utan mejl."
+      dismiss_all: "Avfärda alla"
+      dismiss_all_confirm:
+        one: "Ta bort %{count} prenumerant med fel från den här sekvensen? Prenumeranten får inga fler steg."
+        other: "Ta bort %{count} prenumeranter med fel från den här sekvensen? De får inga fler steg."
       columns:
         subscriber: "Prenumerant"
         next_step: "Nästa steg"
@@ -8285,6 +8294,9 @@ sv:
       due_ago: "%{time} sent"
       waiting_for_room_since: "Väntar på ledig kapacitet på e-postservern sedan %{time}"
       restart: "Starta sekvensen från början"
+      retry: "Försök igen med steget"
+      retry_possibly_delivered_confirm: "Mejlet i det här steget kan redan ha levererats. Ett nytt försök kan skicka det igen. Försöka igen ändå?"
+      retry_suppressed_confirm: "Den här adressen är spärrad. E-poststeg hoppas över; andra steg, till exempel taggar och flyttar, körs som vanligt. Försöka igen ändå?"
       pause: "Pausa sekvensen"
       resume: "Återuppta sekvensen"
       stop: "Stoppa sekvensen"
@@ -8299,6 +8311,19 @@ sv:
       not_found: "Prenumeranten hittades inte i den aktuella kanalen."
     destroy:
       removed: "Prenumeranten har tagits bort från sekvensen"
+    retry_step:
+      not_retried: "Inget nytt försök gjordes. Prenumeranten är inte längre stoppad av ett fel, eller så går steget inte längre att försöka igen."
+    bulk:
+      retry:
+        one: "Försöker igen med %{count} prenumerant med fel i bakgrunden."
+        other: "Försöker igen med %{count} prenumeranter med fel i bakgrunden."
+      retry_left:
+        one: "%{count} prenumerant är kvar i fel: mejlet kan redan ha skickats, eller så går steget inte att försöka igen. Försök igen på prenumerantens egen rad, eller starta sekvensen från början."
+        other: "%{count} prenumeranter är kvar i fel: deras mejl kan redan ha skickats, eller så går steget inte att försöka igen. Försök igen på respektive rad, eller starta sekvensen från början."
+      dismiss:
+        one: "Tar bort %{count} prenumerant med fel i bakgrunden."
+        other: "Tar bort %{count} prenumeranter med fel i bakgrunden."
+      none: "Inga prenumeranter i den här sekvensen är stoppade av ett fel."
     sequence_not_found: "Sekvensen hittades inte"
 
   subscribers:

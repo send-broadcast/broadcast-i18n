@@ -8086,6 +8086,7 @@ en:
         removed: "Removed"
         completed: "Completed"
         redacted: "Redacted"
+        retried: "Retried"
         activity: "Activity"
       by: "by %{name}"
     index:
@@ -8258,6 +8259,14 @@ en:
       errored:
         one: "%{count} subscriber stopped with an error and will not receive further steps."
         other: "%{count} subscribers stopped with an error and will not receive further steps."
+      retry_all: "Retry all"
+      retry_all_confirm:
+        one: "Retry the failed step for %{count} subscriber? Suppressed addresses are moved on without an email."
+        other: "Retry the failed step for %{count} subscribers? Suppressed addresses are moved on without an email."
+      dismiss_all: "Dismiss all"
+      dismiss_all_confirm:
+        one: "Remove %{count} errored subscriber from this sequence? They will not receive further steps."
+        other: "Remove %{count} errored subscribers from this sequence? They will not receive further steps."
       columns:
         subscriber: "Subscriber"
         next_step: "Next Step"
@@ -8269,6 +8278,9 @@ en:
       due_ago: "due %{time} ago"
       waiting_for_room_since: "Waiting for room on the email server since %{time}"
       restart: "Start sequence from beginning"
+      retry: "Retry step"
+      retry_possibly_delivered_confirm: "This step's email may already have been delivered. Retrying can send it again. Retry anyway?"
+      retry_suppressed_confirm: "This address is suppressed. Email steps will be skipped; other steps, such as tags and moves, will still run. Retry anyway?"
       pause: "Pause sequence"
       resume: "Resume sequence"
       stop: "Stop sequence"
@@ -8283,6 +8295,19 @@ en:
       not_found: "Subscriber not found in current channel."
     destroy:
       removed: "Subscriber deleted from sequence"
+    retry_step:
+      not_retried: "Nothing was retried. This subscriber is no longer stopped with an error, or can no longer be retried."
+    bulk:
+      retry:
+        one: "Retrying %{count} errored subscriber in the background."
+        other: "Retrying %{count} errored subscribers in the background."
+      retry_left:
+        one: "%{count} subscriber stays in error: its email may already have been sent, or it cannot be retried. Retry it on its own row, or restart it."
+        other: "%{count} subscribers stay in error: their email may already have been sent, or they cannot be retried. Retry them on their own rows, or restart them."
+      dismiss:
+        one: "Dismissing %{count} errored subscriber in the background."
+        other: "Dismissing %{count} errored subscribers in the background."
+      none: "No subscribers in this sequence are stopped with an error."
     sequence_not_found: "Sequence not found"
 
   subscribers:
