@@ -2253,7 +2253,7 @@ de:
           label: "Zusätzlicher Text"
         showUnsubscribe:
           label: "Abmeldelink anzeigen"
-          hint: "Nur für eine E-Mail deaktivieren, die keinen haben darf, etwa eine Double-Opt-in-Bestätigungs-E-Mail. Eine Kampagnen- oder Sequenz-E-Mail ohne anderen Abmeldelink erhält dann die Fußzeile des Kanals."
+          hint: "Nur für eine E-Mail deaktivieren, die keinen haben darf, etwa eine Double-Opt-in-Bestätigungs-E-Mail. Die Fußzeile des Kanals wird dann hinzugefügt, außer die E-Mail wird mit deaktiviertem Abmeldelink versendet (bei einer Bestätigung: die Einstellung im Opt-in-Formular)."
         unsubscribeLabel:
           label: "Text des Abmeldelinks"
         size:
@@ -8283,8 +8283,8 @@ de:
       no_match_html: "Keine Abonnenten entsprechen Ihrer Suche %{filter}"
       empty: "Keine Abonnenten in dieser Sequenz"
     subscriber_sequence:
-      in: "in %{time}"
-      due_ago: "fällig seit %{time}"
+      in: "noch %{time}"
+      due_ago: "überfällig: %{time}"
       waiting_for_room_since: "Wartet seit %{time} auf freie Kapazität des E-Mail-Servers"
       restart: "Sequenz von vorn beginnen"
       pause: "Sequenz pausieren"

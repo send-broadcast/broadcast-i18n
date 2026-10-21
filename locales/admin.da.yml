@@ -2251,7 +2251,7 @@ da:
           label: "Ekstra tekst"
         showUnsubscribe:
           label: "Vis afmeldingslink"
-          hint: "Slå kun fra for en e-mail, der ikke må have et, f.eks. en bekræftelsesmail for dobbelt opt-in. En kampagne- eller sekvensmail uden et andet afmeldingslink får så kanalens sidefod."
+          hint: "Slå kun fra for en e-mail, der ikke må have et, f.eks. en bekræftelsesmail for dobbelt opt-in. Kanalens sidefod tilføjes så, medmindre e-mailen sendes med afmeldingslinket slået fra (for en bekræftelse: indstillingen på opt-in-formularen)."
         unsubscribeLabel:
           label: "Tekst til afmeldingslink"
         size:

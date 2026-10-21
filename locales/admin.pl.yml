@@ -2319,7 +2319,7 @@ pl:
           label: "Dodatkowy tekst"
         showUnsubscribe:
           label: "Pokaż link do wypisania"
-          hint: "Wyłącz tylko w e-mailu, który nie może go zawierać, np. w e-mailu potwierdzającym double opt-in. E-mail kampanii lub sekwencji bez innego linku do wypisania otrzyma wtedy stopkę kanału."
+          hint: "Wyłącz tylko w e-mailu, który nie może go zawierać, np. w e-mailu potwierdzającym double opt-in. Stopka kanału zostanie wtedy dodana, chyba że e-mail jest wysyłany z wyłączonym linkiem do wypisania (w przypadku potwierdzenia: ustawienie formularza zapisu)."
         unsubscribeLabel:
           label: "Tekst linku do wypisania"
         size:
@@ -8572,7 +8572,7 @@ pl:
       empty: "Brak subskrybentów w tej sekwencji"
     subscriber_sequence:
       in: "za %{time}"
-      due_ago: "zaplanowano %{time} temu"
+      due_ago: "opóźnienie: %{time}"
       waiting_for_room_since: "Oczekuje na wolne miejsce na serwerze poczty od %{time}"
       restart: "Rozpocznij sekwencję od początku"
       pause: "Wstrzymaj sekwencję"

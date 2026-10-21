@@ -2252,7 +2252,7 @@ fi:
           label: "Lisäteksti"
         showUnsubscribe:
           label: "Näytä peruutuslinkki"
-          hint: "Poista käytöstä vain sähköpostista, jossa sitä ei saa olla, kuten kaksoisvahvistuksen vahvistussähköpostista. Kampanja- tai sarjasähköposti, jossa ei ole muuta peruutuslinkkiä, saa silloin kanavan alatunnisteen."
+          hint: "Poista käytöstä vain sähköpostista, jossa sitä ei saa olla, kuten kaksoisvahvistuksen vahvistussähköpostista. Kanavan alatunniste lisätään silloin, ellei sähköpostia lähetetä peruutuslinkki poistettuna käytöstä (vahvistuksessa: tilauslomakkeen asetus)."
         unsubscribeLabel:
           label: "Peruutuslinkin teksti"
         size:
@@ -8282,7 +8282,7 @@ fi:
       no_match_html: "Hakuasi %{filter} vastaavia tilaajia ei ole"
       empty: "Tässä sarjassa ei ole tilaajia"
     subscriber_sequence:
-      in: "%{time} kuluttua"
+      in: "jäljellä %{time}"
       due_ago: "erääntyi %{time} sitten"
       waiting_for_room_since: "Odottanut vapaata kapasiteettia sähköpostipalvelimella %{time} alkaen"
       restart: "Aloita sarja alusta"

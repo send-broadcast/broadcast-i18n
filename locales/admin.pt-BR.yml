@@ -2251,7 +2251,7 @@ pt-BR:
           label: "Texto extra"
         showUnsubscribe:
           label: "Mostrar link de cancelamento"
-          hint: "Desative apenas em um e-mail que não deve ter um, como um e-mail de confirmação de double opt-in. Um e-mail de campanha ou de sequência sem outro link de cancelamento recebe então o rodapé do canal."
+          hint: "Desative apenas em um e-mail que não deve ter um, como um e-mail de confirmação de double opt-in. O rodapé do canal é então adicionado, a menos que o e-mail seja enviado com o link de cancelamento desativado (em uma confirmação, a configuração do formulário de inscrição)."
         unsubscribeLabel:
           label: "Texto do link de cancelamento da inscrição"
         size:
@@ -8282,7 +8282,7 @@ pt-BR:
       empty: "Nenhum assinante nesta sequência"
     subscriber_sequence:
       in: "em %{time}"
-      due_ago: "previsto há %{time}"
+      due_ago: "atrasado há %{time}"
       waiting_for_room_since: "Aguardando capacidade no servidor de e-mail desde %{time}"
       restart: "Reiniciar a sequência do começo"
       pause: "Pausar sequência"

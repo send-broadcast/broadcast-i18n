@@ -2252,7 +2252,7 @@ fr:
           label: "Texte supplémentaire"
         showUnsubscribe:
           label: "Afficher le lien de désabonnement"
-          hint: "À désactiver uniquement pour un e-mail qui ne doit pas en avoir, comme un e-mail de confirmation du double opt-in. Un e-mail de campagne ou de séquence sans autre lien de désabonnement reçoit alors le pied de page du canal."
+          hint: "À désactiver uniquement pour un e-mail qui ne doit pas en avoir, comme un e-mail de confirmation du double opt-in. Le pied de page du canal est alors ajouté, sauf si l'e-mail est envoyé avec le lien de désabonnement désactivé (pour une confirmation, le réglage du formulaire d'inscription)."
         unsubscribeLabel:
           label: "Texte du lien de désabonnement"
         size:
@@ -8283,7 +8283,7 @@ fr:
       empty: "Aucun abonné dans cette séquence"
     subscriber_sequence:
       in: "dans %{time}"
-      due_ago: "prévu il y a %{time}"
+      due_ago: "en retard : %{time}"
       waiting_for_room_since: "En attente de capacité sur le serveur e-mail depuis %{time}"
       restart: "Reprendre la séquence depuis le début"
       pause: "Mettre la séquence en pause"

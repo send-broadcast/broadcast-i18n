@@ -2251,7 +2251,7 @@ nb:
           label: "Ekstra tekst"
         showUnsubscribe:
           label: "Vis avmeldingslenke"
-          hint: "Slå av bare for en e-post som ikke skal ha en, for eksempel en bekreftelses-e-post ved dobbel påmelding. En kampanje- eller sekvens-e-post uten en annen avmeldingslenke får da kanalens bunntekst."
+          hint: "Slå av bare for en e-post som ikke skal ha en, for eksempel en bekreftelses-e-post ved dobbel påmelding. Kanalens bunntekst legges da til, med mindre e-posten sendes med avmeldingslenken slått av (for en bekreftelse: innstillingen i påmeldingsskjemaet)."
         unsubscribeLabel:
           label: "Tekst for avmeldingslenke"
         size:

@@ -2249,7 +2249,7 @@ it:
           label: "Testo aggiuntivo"
         showUnsubscribe:
           label: "Mostra il link di disiscrizione"
-          hint: "Disattivalo solo in un'email che non deve averlo, come un'email di conferma del doppio opt-in. Un'email di campagna o di sequenza senza un altro link di disiscrizione riceve allora il piè di pagina del canale."
+          hint: "Disattivalo solo in un'email che non deve averlo, come un'email di conferma del doppio opt-in. Viene allora aggiunto il piè di pagina del canale, a meno che l'email non sia inviata con il link di disiscrizione disattivato (per una conferma, l'impostazione del modulo di iscrizione)."
         unsubscribeLabel:
           label: "Testo del link di disiscrizione"
         size:
@@ -8280,7 +8280,7 @@ it:
       empty: "Nessun iscritto in questa sequenza"
     subscriber_sequence:
       in: "tra %{time}"
-      due_ago: "previsto %{time} fa"
+      due_ago: "in ritardo di %{time}"
       waiting_for_room_since: "In attesa di capacità sul server email da %{time}"
       restart: "Ricomincia la sequenza dall'inizio"
       pause: "Metti in pausa la sequenza"

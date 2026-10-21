@@ -2251,7 +2251,7 @@ sv:
           label: "Extra text"
         showUnsubscribe:
           label: "Visa avregistreringslänk"
-          hint: "Stäng av bara för ett mejl som inte får ha en, till exempel ett bekräftelsemejl för dubbel opt-in. Ett kampanj- eller sekvensmejl utan någon annan avregistreringslänk får då kanalens sidfot."
+          hint: "Stäng av bara för ett mejl som inte får ha en, till exempel ett bekräftelsemejl för dubbel opt-in. Kanalens sidfot läggs då till, om inte mejlet skickas med avregistreringslänken avstängd (för en bekräftelse: inställningen i registreringsformuläret)."
         unsubscribeLabel:
           label: "Text för avregistreringslänk"
         size:
@@ -8282,7 +8282,7 @@ sv:
       empty: "Inga prenumeranter i den här sekvensen"
     subscriber_sequence:
       in: "om %{time}"
-      due_ago: "förföll för %{time} sedan"
+      due_ago: "%{time} sent"
       waiting_for_room_since: "Väntar på ledig kapacitet på e-postservern sedan %{time}"
       restart: "Starta sekvensen från början"
       pause: "Pausa sekvensen"

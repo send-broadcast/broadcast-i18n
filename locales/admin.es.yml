@@ -2252,7 +2252,7 @@ es:
           label: "Texto adicional"
         showUnsubscribe:
           label: "Mostrar enlace de baja"
-          hint: "Desactívalo solo en un correo que no deba tenerlo, como un correo de doble confirmación. Un correo de campaña o de secuencia sin otro enlace de baja recibe entonces el pie del canal."
+          hint: "Desactívalo solo en un correo que no deba tenerlo, como un correo de doble confirmación. Se añade entonces el pie del canal, salvo que el correo se envíe con el enlace de baja desactivado (en una confirmación, el ajuste del formulario de suscripción)."
         unsubscribeLabel:
           label: "Texto del enlace de baja"
         size:

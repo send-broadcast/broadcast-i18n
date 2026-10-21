@@ -2253,7 +2253,7 @@ nl:
           label: "Extra tekst"
         showUnsubscribe:
           label: "Afmeldlink tonen"
-          hint: "Zet dit alleen uit voor een e-mail die er geen mag hebben, zoals een double opt-in-bevestigingsmail. Een campagne- of reeksmail zonder andere afmeldlink krijgt dan de voettekst van het kanaal."
+          hint: "Zet dit alleen uit voor een e-mail die er geen mag hebben, zoals een double opt-in-bevestigingsmail. De voettekst van het kanaal wordt dan toegevoegd, tenzij de e-mail wordt verstuurd met de afmeldlink uit (bij een bevestiging: de instelling van het aanmeldformulier)."
         unsubscribeLabel:
           label: "Tekst van afmeldlink"
         size:
@@ -8284,7 +8284,7 @@ nl:
       empty: "Geen abonnees in deze reeks"
     subscriber_sequence:
       in: "over %{time}"
-      due_ago: "gepland %{time} geleden"
+      due_ago: "%{time} te laat"
       waiting_for_room_since: "Wacht sinds %{time} op capaciteit op de e-mailserver"
       restart: "Reeks vanaf het begin starten"
       pause: "Reeks pauzeren"
