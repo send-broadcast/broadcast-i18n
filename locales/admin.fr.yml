@@ -1985,6 +1985,7 @@ fr:
     channel_unavailable: "Ce canal ne vous est pas accessible."
     two_factor_required: "L'authentification à deux facteurs est obligatoire sur cette installation. Configurez-la pour continuer."
     demo_mode_notice: "Cette partie de l'application est désactivée en mode démo."
+    demo_foreign_email_server: "Un autre visiteur de la démo a connecté ce serveur e-mail : ses clés de fournisseur ne peuvent donc pas être utilisées ici. Connectez votre propre serveur pour essayer."
 
   block_designs:
     not_a_document: "Ce n'est pas un document à blocs"
@@ -2996,7 +2997,6 @@ fr:
       already_correct: "Le nombre total de destinataires était déjà correct (%{count})."
       recalculated: "Nombre total de destinataires recalculé : de %{from} à %{to}."
     not_found: "Campagne introuvable"
-    demo_mode_notice: "L'envoi d'e-mails est désactivé en mode démo."
 
   common:
     actions: "Actions"
@@ -4379,9 +4379,12 @@ fr:
       more_information: "Cliquez pour en savoir plus."
       intro: "Ceci est une version de démonstration de Broadcast. Elle se réinitialise toutes les 15 minutes : n'hésitez pas à l'explorer."
       limitations: "Cette version de démonstration a quelques limites :"
-      no_sending: "L'envoi d'e-mails ne fonctionne pas"
-      no_host_settings: "Vous ne pouvez pas modifier les paramètres de l'hôte"
-      no_channel_settings: "Vous ne pouvez pas modifier les paramètres du canal"
+      no_sending: "Vous pouvez envoyer des campagnes et des e-mails de test, mais aucun e-mail n'est distribué"
+      no_host_settings: "Vous ne pouvez pas modifier les paramètres de l'application"
+      api_read_only: "L'API est en lecture seule"
+      no_new_credentials: "Vous ne pouvez pas créer de clés API, de webhooks ni d'envois de fichiers"
+      no_public_pages: "Vous ne pouvez pas modifier la page de confirmation ni la page de désabonnement"
+      no_account_changes: "Vous ne pouvez pas modifier l'adresse e-mail, le mot de passe ni l'authentification à deux facteurs du compte démo"
       no_server_deletion: "Vous ne pouvez pas supprimer de serveurs e-mail"
       back_to_homepage: "Cliquez ici pour revenir à l'accueil"
     editor:
@@ -4451,6 +4454,8 @@ fr:
       other: "%{email} : %{count} valeurs nettoyées"
 
   onboarding:
+    base:
+      step_already_completed: "Cette étape de la configuration est déjà terminée."
     create_a_channel:
       headline: "Vous y êtes presque !"
       pitch: "Les canaux vous aident à organiser vos abonnés et à envoyer des campagnes ciblées. Voyez-les comme des listes de diffusion distinctes."
@@ -5259,6 +5264,7 @@ fr:
       set_up: "Configurer"
     form:
       password_hint: "Pour changer votre mot de passe, saisissez ci-dessous votre mot de passe actuel puis le nouveau."
+      demo_mode_credentials: "Le compte de démonstration est partagé par tous les visiteurs, son adresse e-mail et son mot de passe ne peuvent donc pas être modifiés."
       current_password: "Mot de passe actuel"
       new_password: "Nouveau mot de passe"
       confirm_password: "Confirmer le nouveau mot de passe"
@@ -6008,13 +6014,11 @@ fr:
         meta_description: "Définissez les couleurs, la police et le logo dont héritent vos e-mails en blocs"
         back_to_settings: "Paramètres"
         heading: "Charte graphique"
-        demo_channel: "Canal de démonstration : les modifications ne sont pas enregistrées"
         show_preview: "Afficher l'aperçu"
         unsaved_changes: "Modifications non enregistrées"
         preview: "Aperçu"
       update:
         updated: "Charte graphique mise à jour"
-        demo_mode: "Mode démonstration : modifications non enregistrées"
         not_saved: "Non enregistré : %{errors}"
     dns_checks:
       add_selector:
@@ -6323,6 +6327,7 @@ fr:
       test_connection:
         successful: "Connexion réussie"
         failed: "Échec de la connexion"
+        demo_mode: "Les tests de connexion sont désactivés en mode démo"
       confirm_destroy:
         heading: "Supprimer ce serveur e-mail ?"
         warning: "La suppression d'un serveur e-mail est irréversible. Tout e-mail envoyé via ce serveur échouera dès sa suppression. Assurez-vous qu'aucune campagne ni séquence active n'utilise ce serveur avant de le supprimer."
@@ -7444,7 +7449,6 @@ fr:
       show:
         title: "Détails de l'expéditeur"
         meta_description: "Mettre à jour les détails de l'expéditeur"
-        demo: "Ceci est un canal de démonstration : les paramètres ne peuvent pas être modifiés"
       tab_nav:
         heading: "Paramètres de l'expéditeur"
         aria_label: "Onglets des paramètres de l'expéditeur"
@@ -7454,7 +7458,6 @@ fr:
         domain: "Domaine"
       update:
         updated: "Paramètres du canal mis à jour"
-        demo: "Mode démonstration : modifications non enregistrées"
     sender_identities:
       create:
         added: "Identité d'expéditeur %{email} ajoutée."

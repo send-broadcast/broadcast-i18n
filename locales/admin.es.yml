@@ -1985,6 +1985,7 @@ es:
     channel_unavailable: "Ese canal no está disponible para ti."
     two_factor_required: "Esta instalación exige autenticación en dos pasos. Configúrala para continuar."
     demo_mode_notice: "Esa parte de la aplicación está desactivada en modo demo."
+    demo_foreign_email_server: "Otro visitante de la demo conectó este servidor de correo, así que sus claves del proveedor no se pueden usar aquí. Conecta tu propio servidor para probarlo."
 
   block_designs:
     not_a_document: "No es un documento de bloques"
@@ -2996,7 +2997,6 @@ es:
       already_correct: "El total de destinatarios ya era correcto (%{count})."
       recalculated: "Total de destinatarios recalculado correctamente. Ha pasado de %{from} a %{to}."
     not_found: "No se encontró la campaña"
-    demo_mode_notice: "El envío de correos está desactivado en modo demo."
 
   common:
     actions: "Acciones"
@@ -4379,9 +4379,12 @@ es:
       more_information: "Haz clic para más información."
       intro: "Esta es una versión de demostración de Broadcast. Se restablece cada 15 minutos, así que puedes probarla con total libertad."
       limitations: "Esta versión de demostración tiene algunas limitaciones:"
-      no_sending: "El envío de correos no funcionará"
-      no_host_settings: "No puedes actualizar la configuración del anfitrión"
-      no_channel_settings: "No puedes actualizar la configuración del canal"
+      no_sending: "Puedes enviar campañas y correos de prueba, pero no se entrega ningún correo"
+      no_host_settings: "No puedes cambiar la configuración de la aplicación"
+      api_read_only: "La API es de solo lectura"
+      no_new_credentials: "No puedes crear claves de API, webhooks ni cargas de archivos"
+      no_public_pages: "No puedes cambiar la página de confirmación ni la página de baja"
+      no_account_changes: "No puedes cambiar el correo electrónico, la contraseña ni la autenticación en dos pasos de la demo"
       no_server_deletion: "No puedes eliminar servidores de correo"
       back_to_homepage: "Haz clic aquí para volver a la página de inicio"
     editor:
@@ -4451,6 +4454,8 @@ es:
       other: "%{email}: %{count} valores recortados"
 
   onboarding:
+    base:
+      step_already_completed: "Este paso de la configuración ya está completado."
     create_a_channel:
       headline: "¡Ya casi está!"
       pitch: "Los canales te ayudan a organizar a tus suscriptores y a enviar campañas segmentadas. Piensa en ellos como listas de correo independientes."
@@ -5259,6 +5264,7 @@ es:
       set_up: "Configurar"
     form:
       password_hint: "Si quieres cambiar tu contraseña, introduce abajo tu contraseña actual y la nueva."
+      demo_mode_credentials: "La cuenta de demostración la comparten todos los visitantes, así que su correo electrónico y su contraseña no se pueden cambiar."
       current_password: "Contraseña actual"
       new_password: "Introduce la nueva contraseña"
       confirm_password: "Confirma la nueva contraseña"
@@ -6008,13 +6014,11 @@ es:
         meta_description: "Define los colores de marca, la fuente y el logotipo que heredan tus correos de bloques"
         back_to_settings: "Configuración"
         heading: "Kit de marca"
-        demo_channel: "Canal de demostración: los cambios no se guardan"
         show_preview: "Mostrar vista previa"
         unsaved_changes: "Cambios sin guardar"
         preview: "Vista previa"
       update:
         updated: "Kit de marca actualizado correctamente"
-        demo_mode: "Modo demo: los cambios no se guardan"
         not_saved: "No se ha guardado: %{errors}"
     dns_checks:
       add_selector:
@@ -6323,6 +6327,7 @@ es:
       test_connection:
         successful: "Conexión correcta"
         failed: "Error de conexión"
+        demo_mode: "Las pruebas de conexión están desactivadas en modo demo"
       confirm_destroy:
         heading: "¿Eliminar este servidor de correo?"
         warning: "Eliminar un servidor de correo no se puede deshacer. Todos los correos enviados con este servidor fallarán en cuanto se elimine. Se recomienda comprobar que ninguna campaña o secuencia activa use este servidor de correo antes de eliminarlo."
@@ -7444,7 +7449,6 @@ es:
       show:
         title: "Datos del remitente"
         meta_description: "Actualiza los datos del remitente"
-        demo: "Este es un canal de demostración y su configuración no se puede modificar"
       tab_nav:
         heading: "Configuración del remitente"
         aria_label: "Pestañas de configuración del remitente"
@@ -7454,7 +7458,6 @@ es:
         domain: "Dominio"
       update:
         updated: "Configuración del canal actualizada correctamente"
-        demo: "Modo de demostración: los cambios no se guardaron"
     sender_identities:
       create:
         added: "Identidad de remitente %{email} añadida."

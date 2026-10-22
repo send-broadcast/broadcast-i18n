@@ -1982,6 +1982,7 @@ it:
     channel_unavailable: "Quel canale non è disponibile per te."
     two_factor_required: "Questa installazione richiede l'autenticazione a due fattori. Configurala per continuare."
     demo_mode_notice: "Questa parte dell'app è disattivata in modalità demo."
+    demo_foreign_email_server: "Un altro visitatore della demo ha collegato questo server email, quindi le sue chiavi del provider non possono essere usate qui. Collega il tuo server per provare."
 
   block_designs:
     not_a_document: "Non è un documento a blocchi"
@@ -2993,7 +2994,6 @@ it:
       already_correct: "Il totale dei destinatari era già corretto (%{count})."
       recalculated: "Totale dei destinatari ricalcolato: da %{from} a %{to}."
     not_found: "Campagna non trovata"
-    demo_mode_notice: "L'invio delle email è disattivato in modalità demo."
 
   common:
     actions: "Azioni"
@@ -4376,9 +4376,12 @@ it:
       more_information: "Clicca per maggiori informazioni."
       intro: "Questa è una versione demo di Broadcast. Si azzera ogni 15 minuti, quindi provala pure come preferisci."
       limitations: "Questa versione demo ha alcune limitazioni:"
-      no_sending: "L'invio delle email non funziona"
-      no_host_settings: "Non puoi modificare le impostazioni dell'host"
-      no_channel_settings: "Non puoi modificare le impostazioni del canale"
+      no_sending: "Puoi inviare campagne ed email di prova, ma nessuna email viene recapitata"
+      no_host_settings: "Non puoi modificare le impostazioni dell'applicazione"
+      api_read_only: "L'API è di sola lettura"
+      no_new_credentials: "Non puoi creare chiavi API, webhook o caricamenti di file"
+      no_public_pages: "Non puoi modificare la pagina di conferma né la pagina di disiscrizione"
+      no_account_changes: "Non puoi modificare l'indirizzo email, la password o l'autenticazione a due fattori della demo"
       no_server_deletion: "Non puoi eliminare i server email"
       back_to_homepage: "Clicca qui per tornare alla homepage"
     editor:
@@ -4448,6 +4451,8 @@ it:
       other: "%{email}: %{count} valori ripuliti"
 
   onboarding:
+    base:
+      step_already_completed: "Questo passaggio della configurazione è già completato."
     create_a_channel:
       headline: "Ci siamo quasi!"
       pitch: "I canali ti aiutano a organizzare gli iscritti e a inviare campagne mirate. Pensali come liste di distribuzione separate."
@@ -5256,6 +5261,7 @@ it:
       set_up: "Configura"
     form:
       password_hint: "Per cambiare la password, inserisci qui sotto la password attuale e quella nuova."
+      demo_mode_credentials: "L'account demo è condiviso da tutti i visitatori, quindi l'indirizzo email e la password non possono essere modificati."
       current_password: "Password attuale"
       new_password: "Nuova password"
       confirm_password: "Conferma la nuova password"
@@ -6005,13 +6011,11 @@ it:
         meta_description: "Imposta i colori, il font e il logo del brand che le tue email a blocchi ereditano"
         back_to_settings: "Impostazioni"
         heading: "Kit del brand"
-        demo_channel: "Canale demo: le modifiche non vengono salvate"
         show_preview: "Mostra anteprima"
         unsaved_changes: "Modifiche non salvate"
         preview: "Anteprima"
       update:
         updated: "Kit del brand aggiornato"
-        demo_mode: "Modalità demo: modifiche non salvate"
         not_saved: "Non salvato: %{errors}"
     dns_checks:
       add_selector:
@@ -6320,6 +6324,7 @@ it:
       test_connection:
         successful: "Connessione riuscita"
         failed: "Connessione non riuscita"
+        demo_mode: "I test di connessione sono disattivati in modalità demo"
       confirm_destroy:
         heading: "Eliminare questo server email?"
         warning: "L'eliminazione di un server email non può essere annullata. Tutte le email inviate con questo server non andranno a buon fine subito dopo l'eliminazione. Prima di eliminarlo, assicurati che nessuna campagna o sequenza attiva lo stia usando."
@@ -7441,7 +7446,6 @@ it:
       show:
         title: "Dati del mittente"
         meta_description: "Aggiorna i dati del mittente"
-        demo: "Questo è un canale demo e le impostazioni non possono essere modificate"
       tab_nav:
         heading: "Impostazioni del mittente"
         aria_label: "Schede delle impostazioni del mittente"
@@ -7451,7 +7455,6 @@ it:
         domain: "Dominio"
       update:
         updated: "Impostazioni del canale aggiornate"
-        demo: "Modalità demo: modifiche non salvate"
     sender_identities:
       create:
         added: "Identità del mittente %{email} aggiunta."

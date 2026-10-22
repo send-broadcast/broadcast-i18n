@@ -1984,6 +1984,7 @@ nb:
     channel_unavailable: "Den kanalen er ikke tilgjengelig for deg."
     two_factor_required: "Tofaktorautentisering er påkrevd i denne installasjonen. Sett det opp for å fortsette."
     demo_mode_notice: "Den delen av appen er deaktivert i demomodus."
+    demo_foreign_email_server: "En annen demobesøkende koblet til denne e-postserveren, så leverandørnøklene kan ikke brukes her. Koble til din egen server for å prøve dette."
 
   block_designs:
     not_a_document: "Ikke et blokkdokument"
@@ -2995,7 +2996,6 @@ nb:
       already_correct: "Totalt antall mottakere var allerede riktig (%{count})."
       recalculated: "Totalt antall mottakere er beregnet på nytt. Oppdatert fra %{from} til %{to}."
     not_found: "Fant ikke kampanjen"
-    demo_mode_notice: "Utsending av e-post er deaktivert i demomodus."
 
   common:
     actions: "Handlinger"
@@ -4378,9 +4378,12 @@ nb:
       more_information: "Klikk for mer informasjon."
       intro: "Dette er en demoversjon av Broadcast. Den tilbakestilles hvert 15. minutt, så du kan gjerne prøve deg frem."
       limitations: "Denne demoversjonen har noen begrensninger:"
-      no_sending: "Utsending av e-post fungerer ikke"
-      no_host_settings: "Du kan ikke oppdatere vertsinnstillingene"
-      no_channel_settings: "Du kan ikke oppdatere kanalinnstillingene"
+      no_sending: "Du kan sende kampanjer og test-e-poster, men ingen e-post blir levert"
+      no_host_settings: "Du kan ikke endre applikasjonsinnstillingene"
+      api_read_only: "API-et er skrivebeskyttet"
+      no_new_credentials: "Du kan ikke opprette API-nøkler, webhooks eller filopplastinger"
+      no_public_pages: "Du kan ikke endre bekreftelsessiden og avmeldingssiden"
+      no_account_changes: "Du kan ikke endre e-postadressen, passordet eller tofaktorautentiseringen for demokontoen"
       no_server_deletion: "Du kan ikke slette e-postservere"
       back_to_homepage: "Klikk her for å gå tilbake til startsiden"
     editor:
@@ -4450,6 +4453,8 @@ nb:
       other: "%{email}: %{count} verdier trimmet"
 
   onboarding:
+    base:
+      step_already_completed: "Dette oppsettstrinnet er allerede fullført."
     create_a_channel:
       headline: "Nesten i mål!"
       pitch: "Kanaler hjelper deg med å organisere abonnentene dine og sende målrettede kampanjer. Tenk på dem som separate e-postlister."
@@ -5258,6 +5263,7 @@ nb:
       set_up: "Sett opp"
     form:
       password_hint: "Hvis du vil endre passordet, skriver du inn det nåværende passordet og det nye passordet nedenfor."
+      demo_mode_credentials: "Demokontoen deles av alle besøkende, så e-postadressen og passordet kan ikke endres."
       current_password: "Nåværende passord"
       new_password: "Skriv inn nytt passord"
       confirm_password: "Bekreft nytt passord"
@@ -6007,13 +6013,11 @@ nb:
         meta_description: "Angi merkevarefargene, skriften og logoen som blokk-e-postene dine arver"
         back_to_settings: "Innstillinger"
         heading: "Merkevaresett"
-        demo_channel: "Demokanal: endringer lagres ikke"
         show_preview: "Vis forhåndsvisning"
         unsaved_changes: "Ulagrede endringer"
         preview: "Forhåndsvisning"
       update:
         updated: "Merkevaresettet er oppdatert"
-        demo_mode: "Demomodus: endringer lagres ikke"
         not_saved: "Ikke lagret: %{errors}"
     dns_checks:
       add_selector:
@@ -6322,6 +6326,7 @@ nb:
       test_connection:
         successful: "Tilkoblingen var vellykket"
         failed: "Tilkoblingen mislyktes"
+        demo_mode: "Tilkoblingstester er slått av i demomodus"
       confirm_destroy:
         heading: "Slette denne e-postserveren?"
         warning: "Sletting av en e-postserver kan ikke angres. Alle e-poster som sendes med denne serveren, vil mislykkes umiddelbart etter at den er slettet. Vi anbefaler å sørge for at ingen aktive kampanjer eller sekvenser bruker denne e-postserveren før du sletter den."
@@ -7443,7 +7448,6 @@ nb:
       show:
         title: "Avsenderdetaljer"
         meta_description: "Oppdater avsenderdetaljene dine"
-        demo: "Dette er en demokanal, og innstillingene kan ikke endres"
       tab_nav:
         heading: "Avsenderinnstillinger"
         aria_label: "Faner for avsenderinnstillinger"
@@ -7453,7 +7457,6 @@ nb:
         domain: "Domene"
       update:
         updated: "Kanalinnstillingene er oppdatert"
-        demo: "Demomodus: Endringer lagres ikke"
     sender_identities:
       create:
         added: "Avsenderidentiteten %{email} er lagt til."

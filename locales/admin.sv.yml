@@ -1984,6 +1984,7 @@ sv:
     channel_unavailable: "Den kanalen är inte tillgänglig för dig."
     two_factor_required: "Tvåstegsverifiering krävs i den här installationen. Konfigurera den för att fortsätta."
     demo_mode_notice: "Den delen av appen är inaktiverad i demoläge."
+    demo_foreign_email_server: "En annan demobesökare har anslutit den här e-postservern, så dess leverantörsnycklar kan inte användas här. Anslut din egen server för att prova."
 
   block_designs:
     not_a_document: "Inte ett blockdokument"
@@ -2995,7 +2996,6 @@ sv:
       already_correct: "Det totala antalet mottagare var redan korrekt (%{count})."
       recalculated: "Det totala antalet mottagare har räknats om. Uppdaterat från %{from} till %{to}."
     not_found: "Kampanjen hittades inte"
-    demo_mode_notice: "Utskick av mejl är inaktiverat i demoläge."
 
   common:
     actions: "Åtgärder"
@@ -4378,9 +4378,12 @@ sv:
       more_information: "Klicka för mer information."
       intro: "Det här är en demoversion av Broadcast. Den återställs var 15:e minut, så testa gärna fritt."
       limitations: "Demoversionen har vissa begränsningar:"
-      no_sending: "Det går inte att skicka mejl"
-      no_host_settings: "Du kan inte ändra värdinställningarna"
-      no_channel_settings: "Du kan inte ändra kanalinställningarna"
+      no_sending: "Du kan skicka kampanjer och testmejl, men inga mejl levereras"
+      no_host_settings: "Du kan inte ändra applikationsinställningarna"
+      api_read_only: "API:et är skrivskyddat"
+      no_new_credentials: "Du kan inte skapa API-nycklar, webhooks eller filuppladdningar"
+      no_public_pages: "Du kan inte ändra bekräftelsesidan och avregistreringssidan"
+      no_account_changes: "Du kan inte ändra demokontots e-postadress, lösenord eller tvåstegsverifiering"
       no_server_deletion: "Du kan inte ta bort e-postservrar"
       back_to_homepage: "Klicka här för att gå tillbaka till startsidan"
     editor:
@@ -4450,6 +4453,8 @@ sv:
       other: "%{email}: %{count} värden trimmade"
 
   onboarding:
+    base:
+      step_already_completed: "Det här installationssteget är redan klart."
     create_a_channel:
       headline: "Nästan klart!"
       pitch: "Kanaler hjälper dig att organisera dina prenumeranter och skicka riktade kampanjer. Se dem som separata e-postlistor."
@@ -5258,6 +5263,7 @@ sv:
       set_up: "Konfigurera"
     form:
       password_hint: "Om du vill byta lösenord anger du ditt nuvarande lösenord och ditt nya lösenord nedan."
+      demo_mode_credentials: "Demokontot delas av alla besökare, så dess e-postadress och lösenord kan inte ändras."
       current_password: "Nuvarande lösenord"
       new_password: "Ange nytt lösenord"
       confirm_password: "Bekräfta nytt lösenord"
@@ -6007,13 +6013,11 @@ sv:
         meta_description: "Ställ in varumärkesfärger, typsnitt och logotyp som dina blockmejl ärver"
         back_to_settings: "Inställningar"
         heading: "Varumärkeskit"
-        demo_channel: "Demokanal: ändringar sparas inte"
         show_preview: "Visa förhandsvisning"
         unsaved_changes: "Osparade ändringar"
         preview: "Förhandsvisning"
       update:
         updated: "Varumärkeskitet har uppdaterats"
-        demo_mode: "Demoläge: ändringarna sparades inte"
         not_saved: "Inte sparat: %{errors}"
     dns_checks:
       add_selector:
@@ -6322,6 +6326,7 @@ sv:
       test_connection:
         successful: "Anslutningen lyckades"
         failed: "Anslutningen misslyckades"
+        demo_mode: "Anslutningstester är avstängda i demoläge"
       confirm_destroy:
         heading: "Ta bort denna e-postserver?"
         warning: "Det går inte att ångra borttagning av en e-postserver. Alla mejl som skickas via servern misslyckas direkt efter att den har tagits bort. Kontrollera att inga aktiva kampanjer eller sekvenser använder e-postservern innan du tar bort den."
@@ -7443,7 +7448,6 @@ sv:
       show:
         title: "Avsändaruppgifter"
         meta_description: "Uppdatera dina avsändaruppgifter"
-        demo: "Detta är en demokanal och inställningarna kan inte ändras"
       tab_nav:
         heading: "Avsändarinställningar"
         aria_label: "Flikar för avsändarinställningar"
@@ -7453,7 +7457,6 @@ sv:
         domain: "Domän"
       update:
         updated: "Kanalinställningarna har uppdaterats"
-        demo: "Demoläge: Ändringarna sparades inte"
     sender_identities:
       create:
         added: "Avsändaridentiteten %{email} har lagts till."

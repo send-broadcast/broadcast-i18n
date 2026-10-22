@@ -1965,6 +1965,7 @@ en:
     channel_unavailable: "That channel isn't available to you."
     two_factor_required: "Two-factor authentication is required on this installation. Set it up to continue."
     demo_mode_notice: "That part of the app is disabled in demo mode."
+    demo_foreign_email_server: "Another demo visitor connected this email server, so its provider keys cannot be used here. Connect your own server to try this."
 
   block_designs:
     not_a_document: "Not a block document"
@@ -2976,7 +2977,6 @@ en:
       already_correct: "Total recipients count was already correct (%{count})."
       recalculated: "Total recipients recalculated successfully. Updated from %{from} to %{to}."
     not_found: "Broadcast not found"
-    demo_mode_notice: "Sending emails is disabled in demo mode."
 
   common:
     actions: "Actions"
@@ -4360,9 +4360,12 @@ en:
       more_information: "Click for more information."
       intro: "This is a demo version of Broadcast. It will reset every 15 minutes, so feel free to play around with it."
       limitations: "There are some limitations to this demo version:"
-      no_sending: "Sending emails will not work"
-      no_host_settings: "You cannot update the host settings"
-      no_channel_settings: "You cannot update the channel settings"
+      no_sending: "You can send broadcasts and test emails, but no email is delivered"
+      no_host_settings: "You cannot change the application settings"
+      api_read_only: "The API is read-only"
+      no_new_credentials: "You cannot create API keys, webhooks or file uploads"
+      no_public_pages: "You cannot change the confirmation and unsubscribe pages"
+      no_account_changes: "You cannot change the demo email address, password or two-factor sign-in"
       no_server_deletion: "You cannot delete email servers"
       back_to_homepage: "Click here to go back to the homepage"
     editor:
@@ -4432,6 +4435,8 @@ en:
       other: "%{email}: %{count} values trimmed"
 
   onboarding:
+    base:
+      step_already_completed: "This setup step is already complete."
     create_a_channel:
       headline: "Almost there!"
       pitch: "Channels help you organize your subscribers and send targeted campaigns. Think of them as separate mailing lists."
@@ -5242,6 +5247,7 @@ en:
       set_up: "Set up"
     form:
       password_hint: "If you want to change your password, enter your current password and your new password below."
+      demo_mode_credentials: "The demo account is shared by every visitor, so its email address and password cannot be changed."
       current_password: "Current password"
       new_password: "Enter new password"
       confirm_password: "Confirm new password"
@@ -6050,13 +6056,11 @@ en:
         meta_description: "Set the brand colors, font and logo your block emails inherit"
         back_to_settings: "Settings"
         heading: "Brand Kit"
-        demo_channel: "Demo channel: changes are not saved"
         show_preview: "Show preview"
         unsaved_changes: "Unsaved changes"
         preview: "Preview"
       update:
         updated: "Brand kit updated successfully"
-        demo_mode: "Demo mode: changes not saved"
         not_saved: "Not saved: %{errors}"
     dns_checks:
       add_selector:
@@ -6365,6 +6369,7 @@ en:
       test_connection:
         successful: "Connection successful"
         failed: "Connection failed"
+        demo_mode: "Connection tests are off in demo mode"
       confirm_destroy:
         heading: "Delete this Email Server?"
         warning: "Deleting an Email Server cannot be undone. Any emails sent using this server will fail immediately after it has been deleted. It is recommended to ensure no active broadcasts or sequences are using this email server before deleting it."
@@ -7486,7 +7491,6 @@ en:
       show:
         title: "Sender Details"
         meta_description: "Update your sender details"
-        demo: "This is a demo channel and settings cannot be modified"
       tab_nav:
         heading: "Sender Settings"
         aria_label: "Sender settings tabs"
@@ -7496,7 +7500,6 @@ en:
         domain: "Domain"
       update:
         updated: "Channel settings updated successfully"
-        demo: "Demo mode: Changes not saved"
     sender_identities:
       create:
         added: "Sender identity %{email} added."

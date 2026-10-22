@@ -1986,6 +1986,7 @@ nl:
     channel_unavailable: "Dat kanaal is niet voor jou beschikbaar."
     two_factor_required: "Tweestapsverificatie is verplicht op deze installatie. Stel het in om door te gaan."
     demo_mode_notice: "Dat deel van de app is uitgeschakeld in demomodus."
+    demo_foreign_email_server: "Een andere demobezoeker heeft deze e-mailserver gekoppeld, dus de sleutels van de provider kunnen hier niet worden gebruikt. Koppel je eigen server om dit te proberen."
 
   block_designs:
     not_a_document: "Geen blokdocument"
@@ -2997,7 +2998,6 @@ nl:
       already_correct: "Het totale aantal ontvangers was al juist (%{count})."
       recalculated: "Totaal aantal ontvangers herberekend. Bijgewerkt van %{from} naar %{to}."
     not_found: "Campagne niet gevonden"
-    demo_mode_notice: "E-mails verzenden is uitgeschakeld in demomodus."
 
   common:
     actions: "Acties"
@@ -4380,9 +4380,12 @@ nl:
       more_information: "Klik voor meer informatie."
       intro: "Dit is een demoversie van Broadcast. Hij wordt elke 15 minuten gereset, dus probeer gerust van alles uit."
       limitations: "Deze demoversie heeft een paar beperkingen:"
-      no_sending: "E-mails verzenden werkt niet"
-      no_host_settings: "Je kunt de hostinstellingen niet wijzigen"
-      no_channel_settings: "Je kunt de kanaalinstellingen niet wijzigen"
+      no_sending: "Je kunt campagnes en testmails verzenden, maar er wordt geen e-mail afgeleverd"
+      no_host_settings: "Je kunt de applicatie-instellingen niet wijzigen"
+      api_read_only: "De API is alleen-lezen"
+      no_new_credentials: "Je kunt geen API-sleutels, webhooks of bestandsuploads aanmaken"
+      no_public_pages: "Je kunt de bevestigingspagina en de afmeldpagina niet wijzigen"
+      no_account_changes: "Je kunt het e-mailadres, het wachtwoord of de tweestapsverificatie van het demoaccount niet wijzigen"
       no_server_deletion: "Je kunt geen e-mailservers verwijderen"
       back_to_homepage: "Klik hier om terug te gaan naar de startpagina"
     editor:
@@ -4452,6 +4455,8 @@ nl:
       other: "%{email}: %{count} waarden ingekort"
 
   onboarding:
+    base:
+      step_already_completed: "Deze installatiestap is al voltooid."
     create_a_channel:
       headline: "Bijna klaar!"
       pitch: "Met kanalen orden je je abonnees en verzend je gerichte campagnes. Zie ze als afzonderlijke mailinglijsten."
@@ -5260,6 +5265,7 @@ nl:
       set_up: "Instellen"
     form:
       password_hint: "Wil je je wachtwoord wijzigen? Voer hieronder je huidige en je nieuwe wachtwoord in."
+      demo_mode_credentials: "Het demoaccount wordt door alle bezoekers gedeeld, dus het e-mailadres en het wachtwoord kunnen niet worden gewijzigd."
       current_password: "Huidig wachtwoord"
       new_password: "Nieuw wachtwoord invoeren"
       confirm_password: "Nieuw wachtwoord bevestigen"
@@ -6009,13 +6015,11 @@ nl:
         meta_description: "Stel de merkkleuren, het lettertype en het logo in die je blokmails overnemen"
         back_to_settings: "Instellingen"
         heading: "Huisstijlkit"
-        demo_channel: "Demokanaal: wijzigingen worden niet opgeslagen"
         show_preview: "Voorbeeld tonen"
         unsaved_changes: "Niet-opgeslagen wijzigingen"
         preview: "Voorbeeld"
       update:
         updated: "Huisstijlkit bijgewerkt"
-        demo_mode: "Demomodus: wijzigingen niet opgeslagen"
         not_saved: "Niet opgeslagen: %{errors}"
     dns_checks:
       add_selector:
@@ -6324,6 +6328,7 @@ nl:
       test_connection:
         successful: "Verbinding geslaagd"
         failed: "Verbinding mislukt"
+        demo_mode: "Verbindingstests staan uit in demomodus"
       confirm_destroy:
         heading: "Deze e-mailserver verwijderen?"
         warning: "Het verwijderen van een e-mailserver kan niet ongedaan worden gemaakt. Alle e-mails die via deze server worden verzonden, mislukken direct na het verwijderen. Zorg ervoor dat geen actieve campagnes of reeksen deze e-mailserver gebruiken voordat je hem verwijdert."
@@ -7445,7 +7450,6 @@ nl:
       show:
         title: "Afzendergegevens"
         meta_description: "Je afzendergegevens bijwerken"
-        demo: "Dit is een demokanaal; de instellingen kunnen niet worden gewijzigd"
       tab_nav:
         heading: "Afzenderinstellingen"
         aria_label: "Tabbladen afzenderinstellingen"
@@ -7455,7 +7459,6 @@ nl:
         domain: "Domein"
       update:
         updated: "Kanaalinstellingen bijgewerkt"
-        demo: "Demomodus: wijzigingen niet opgeslagen"
     sender_identities:
       create:
         added: "Afzenderidentiteit %{email} toegevoegd."

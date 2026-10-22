@@ -2050,6 +2050,7 @@ pl:
     channel_unavailable: "Ten kanał nie jest dla ciebie dostępny."
     two_factor_required: "W tej instalacji wymagane jest uwierzytelnianie dwuskładnikowe. Skonfiguruj je, aby kontynuować."
     demo_mode_notice: "Ta część aplikacji jest wyłączona w trybie demo."
+    demo_foreign_email_server: "Ten serwer poczty połączył inny odwiedzający demo, więc jego kluczy dostawcy nie można tu użyć. Połącz własny serwer, aby to wypróbować."
 
   block_designs:
     not_a_document: "To nie jest dokument bloków"
@@ -3085,7 +3086,6 @@ pl:
       already_correct: "Łączna liczba odbiorców była już poprawna (%{count})."
       recalculated: "Przeliczono łączną liczbę odbiorców. Zmieniono z %{from} na %{to}."
     not_found: "Nie znaleziono kampanii"
-    demo_mode_notice: "Wysyłanie e-maili jest wyłączone w trybie demo."
 
   common:
     actions: "Akcje"
@@ -4538,9 +4538,12 @@ pl:
       more_information: "Kliknij, aby dowiedzieć się więcej."
       intro: "To wersja demonstracyjna Broadcast. Jest resetowana co 15 minut, więc możesz swobodnie eksperymentować."
       limitations: "Ta wersja demonstracyjna ma pewne ograniczenia:"
-      no_sending: "Wysyłanie e-maili nie działa"
-      no_host_settings: "Nie można zmieniać ustawień hosta"
-      no_channel_settings: "Nie można zmieniać ustawień kanału"
+      no_sending: "Możesz wysyłać kampanie i testowe e-maile, ale żadne e-maile nie są dostarczane"
+      no_host_settings: "Nie można zmieniać ustawień aplikacji"
+      api_read_only: "API jest tylko do odczytu"
+      no_new_credentials: "Nie można tworzyć kluczy API, webhooków ani przesyłać plików"
+      no_public_pages: "Nie można zmieniać strony potwierdzenia ani strony wypisania"
+      no_account_changes: "Nie można zmieniać adresu e-mail, hasła ani uwierzytelniania dwuskładnikowego konta demo"
       no_server_deletion: "Nie można usuwać serwerów poczty"
       back_to_homepage: "Kliknij tutaj, aby wrócić na stronę główną"
     editor:
@@ -4616,6 +4619,8 @@ pl:
       other: "%{email}: przycięto %{count} wartości"
 
   onboarding:
+    base:
+      step_already_completed: "Ten krok konfiguracji jest już ukończony."
     create_a_channel:
       headline: "Już prawie!"
       pitch: "Kanały pomagają porządkować subskrybentów i wysyłać ukierunkowane kampanie. Traktuj je jak osobne listy mailingowe."
@@ -5440,6 +5445,7 @@ pl:
       set_up: "Skonfiguruj"
     form:
       password_hint: "Jeśli chcesz zmienić hasło, podaj poniżej obecne hasło i nowe hasło."
+      demo_mode_credentials: "Konto demo jest współdzielone przez wszystkich odwiedzających, więc jego adresu e-mail i hasła nie można zmienić."
       current_password: "Obecne hasło"
       new_password: "Podaj nowe hasło"
       confirm_password: "Potwierdź nowe hasło"
@@ -6203,13 +6209,11 @@ pl:
         meta_description: "Ustaw kolory, czcionkę i logo marki dziedziczone przez e-maile z bloków"
         back_to_settings: "Ustawienia"
         heading: "Zestaw marki"
-        demo_channel: "Kanał demo: zmiany nie są zapisywane"
         show_preview: "Pokaż podgląd"
         unsaved_changes: "Niezapisane zmiany"
         preview: "Podgląd"
       update:
         updated: "Zaktualizowano zestaw marki"
-        demo_mode: "Tryb demo: zmiany nie zostały zapisane"
         not_saved: "Nie zapisano: %{errors}"
     dns_checks:
       add_selector:
@@ -6522,6 +6526,7 @@ pl:
       test_connection:
         successful: "Połączenie udane"
         failed: "Połączenie nieudane"
+        demo_mode: "Testy połączenia są wyłączone w trybie demo"
       confirm_destroy:
         heading: "Usunąć ten serwer poczty?"
         warning: "Usunięcia serwera poczty nie można cofnąć. Wszystkie e-maile wysyłane przez ten serwer zaczną kończyć się błędem natychmiast po jego usunięciu. Przed usunięciem upewnij się, że żadna aktywna kampania ani sekwencja nie korzysta z tego serwera."
@@ -7695,7 +7700,6 @@ pl:
       show:
         title: "Dane nadawcy"
         meta_description: "Zaktualizuj dane nadawcy"
-        demo: "To kanał demo i nie można zmieniać ustawień"
       tab_nav:
         heading: "Ustawienia nadawcy"
         aria_label: "Karty ustawień nadawcy"
@@ -7705,7 +7709,6 @@ pl:
         domain: "Domena"
       update:
         updated: "Zaktualizowano ustawienia kanału"
-        demo: "Tryb demo: zmiany nie zostały zapisane"
     sender_identities:
       create:
         added: "Dodano tożsamość nadawcy %{email}."

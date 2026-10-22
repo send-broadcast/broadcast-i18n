@@ -1986,6 +1986,7 @@ de:
     channel_unavailable: "Dieser Kanal steht Ihnen nicht zur Verfügung."
     two_factor_required: "Für diese Installation ist die Zwei-Faktor-Authentifizierung erforderlich. Richten Sie sie ein, um fortzufahren."
     demo_mode_notice: "Dieser Teil der App ist im Demomodus deaktiviert."
+    demo_foreign_email_server: "Ein anderer Demo-Besucher hat diesen E-Mail-Server verbunden, daher können seine Anbieterschlüssel hier nicht verwendet werden. Verbinden Sie Ihren eigenen Server, um dies auszuprobieren."
 
   block_designs:
     not_a_document: "Kein Block-Dokument"
@@ -2997,7 +2998,6 @@ de:
       already_correct: "Die Gesamtzahl der Empfänger war bereits korrekt (%{count})."
       recalculated: "Gesamtzahl der Empfänger erfolgreich neu berechnet. Aktualisiert von %{from} auf %{to}."
     not_found: "Kampagne nicht gefunden"
-    demo_mode_notice: "Der Versand von E-Mails ist im Demomodus deaktiviert."
 
   common:
     actions: "Aktionen"
@@ -4380,9 +4380,12 @@ de:
       more_information: "Für weitere Informationen klicken."
       intro: "Dies ist eine Demoversion von Broadcast. Sie wird alle 15 Minuten zurückgesetzt, probieren Sie also gern alles aus."
       limitations: "Diese Demoversion hat einige Einschränkungen:"
-      no_sending: "Der Versand von E-Mails funktioniert nicht"
-      no_host_settings: "Sie können die Host-Einstellungen nicht ändern"
-      no_channel_settings: "Sie können die Kanaleinstellungen nicht ändern"
+      no_sending: "Sie können Kampagnen und Test-E-Mails versenden, aber es wird keine E-Mail zugestellt"
+      no_host_settings: "Sie können die Anwendungseinstellungen nicht ändern"
+      api_read_only: "Die API ist schreibgeschützt"
+      no_new_credentials: "Sie können keine API-Schlüssel, Webhooks oder Datei-Uploads erstellen"
+      no_public_pages: "Sie können die Bestätigungsseite und die Abmeldeseite nicht ändern"
+      no_account_changes: "Sie können die E-Mail-Adresse des Demokontos, das Passwort oder die Zwei-Faktor-Authentifizierung nicht ändern"
       no_server_deletion: "Sie können keine E-Mail-Server löschen"
       back_to_homepage: "Hier klicken, um zur Startseite zurückzukehren"
     editor:
@@ -4452,6 +4455,8 @@ de:
       other: "%{email}: %{count} Werte bereinigt"
 
   onboarding:
+    base:
+      step_already_completed: "Dieser Einrichtungsschritt ist bereits abgeschlossen."
     create_a_channel:
       headline: "Fast geschafft!"
       pitch: "Mit Kanälen organisieren Sie Ihre Abonnenten und senden zielgerichtete Kampagnen. Stellen Sie sie sich als separate Mailinglisten vor."
@@ -5260,6 +5265,7 @@ de:
       set_up: "Einrichten"
     form:
       password_hint: "Wenn Sie Ihr Passwort ändern möchten, geben Sie unten Ihr aktuelles und Ihr neues Passwort ein."
+      demo_mode_credentials: "Das Demokonto wird von allen Besuchern gemeinsam genutzt, daher können E-Mail-Adresse und Passwort nicht geändert werden."
       current_password: "Aktuelles Passwort"
       new_password: "Neues Passwort eingeben"
       confirm_password: "Neues Passwort bestätigen"
@@ -6009,13 +6015,11 @@ de:
         meta_description: "Markenfarben, Schriftart und Logo festlegen, die Ihre Block-E-Mails übernehmen"
         back_to_settings: "Einstellungen"
         heading: "Markenkit"
-        demo_channel: "Demo-Kanal: Änderungen werden nicht gespeichert"
         show_preview: "Vorschau anzeigen"
         unsaved_changes: "Ungespeicherte Änderungen"
         preview: "Vorschau"
       update:
         updated: "Markenkit erfolgreich aktualisiert"
-        demo_mode: "Demomodus: Änderungen nicht gespeichert"
         not_saved: "Nicht gespeichert: %{errors}"
     dns_checks:
       add_selector:
@@ -6324,6 +6328,7 @@ de:
       test_connection:
         successful: "Verbindung erfolgreich"
         failed: "Verbindung fehlgeschlagen"
+        demo_mode: "Verbindungstests sind im Demomodus deaktiviert"
       confirm_destroy:
         heading: "Diesen E-Mail-Server löschen?"
         warning: "Das Löschen eines E-Mail-Servers kann nicht rückgängig gemacht werden. Alle E-Mails, die über diesen Server gesendet werden, schlagen nach dem Löschen sofort fehl. Stellen Sie vor dem Löschen sicher, dass keine aktiven Kampagnen oder Sequenzen diesen E-Mail-Server verwenden."
@@ -7445,7 +7450,6 @@ de:
       show:
         title: "Absenderdaten"
         meta_description: "Ihre Absenderdaten aktualisieren"
-        demo: "Dies ist ein Demo-Kanal, die Einstellungen können nicht geändert werden"
       tab_nav:
         heading: "Absendereinstellungen"
         aria_label: "Tabs der Absendereinstellungen"
@@ -7455,7 +7459,6 @@ de:
         domain: "Domain"
       update:
         updated: "Kanaleinstellungen erfolgreich aktualisiert"
-        demo: "Demomodus: Änderungen nicht gespeichert"
     sender_identities:
       create:
         added: "Absenderidentität %{email} hinzugefügt."

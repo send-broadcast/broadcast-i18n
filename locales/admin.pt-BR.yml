@@ -1984,6 +1984,7 @@ pt-BR:
     channel_unavailable: "Esse canal não está disponível para você."
     two_factor_required: "A autenticação de dois fatores é obrigatória nesta instalação. Configure-a para continuar."
     demo_mode_notice: "Essa parte da aplicação está desativada no modo de demonstração."
+    demo_foreign_email_server: "Outro visitante da demonstração conectou este servidor de e-mail, então as chaves do provedor dele não podem ser usadas aqui. Conecte seu próprio servidor para testar."
 
   block_designs:
     not_a_document: "Não é um documento de blocos"
@@ -2995,7 +2996,6 @@ pt-BR:
       already_correct: "O total de destinatários já estava correto (%{count})."
       recalculated: "Total de destinatários recalculado com sucesso. Atualizado de %{from} para %{to}."
     not_found: "Campanha não encontrada"
-    demo_mode_notice: "O envio de e-mails está desativado no modo de demonstração."
 
   common:
     actions: "Ações"
@@ -4378,9 +4378,12 @@ pt-BR:
       more_information: "Clique para mais informações."
       intro: "Esta é uma versão de demonstração do Broadcast. Ela é redefinida a cada 15 minutos, então fique à vontade para explorar."
       limitations: "Esta versão de demonstração tem algumas limitações:"
-      no_sending: "O envio de e-mails não funciona"
-      no_host_settings: "Não é possível atualizar as configurações do host"
-      no_channel_settings: "Não é possível atualizar as configurações do canal"
+      no_sending: "Você pode enviar campanhas e e-mails de teste, mas nenhum e-mail é entregue"
+      no_host_settings: "Não é possível alterar as configurações da aplicação"
+      api_read_only: "A API é somente leitura"
+      no_new_credentials: "Não é possível criar chaves de API, webhooks nem uploads de arquivos"
+      no_public_pages: "Não é possível alterar a página de confirmação nem a página de cancelamento"
+      no_account_changes: "Não é possível alterar o e-mail, a senha nem a autenticação de dois fatores da conta de demonstração"
       no_server_deletion: "Não é possível excluir servidores de e-mail"
       back_to_homepage: "Clique aqui para voltar à página inicial"
     editor:
@@ -4450,6 +4453,8 @@ pt-BR:
       other: "%{email}: %{count} valores aparados"
 
   onboarding:
+    base:
+      step_already_completed: "Esta etapa da configuração já foi concluída."
     create_a_channel:
       headline: "Quase lá!"
       pitch: "Os canais ajudam você a organizar seus assinantes e enviar campanhas direcionadas. Pense neles como listas de e-mail separadas."
@@ -5258,6 +5263,7 @@ pt-BR:
       set_up: "Configurar"
     form:
       password_hint: "Se quiser trocar sua senha, informe a senha atual e a nova senha abaixo."
+      demo_mode_credentials: "A conta de demonstração é compartilhada por todos os visitantes, então o e-mail e a senha dela não podem ser alterados."
       current_password: "Senha atual"
       new_password: "Informe a nova senha"
       confirm_password: "Confirme a nova senha"
@@ -6007,13 +6013,11 @@ pt-BR:
         meta_description: "Defina as cores, a fonte e o logotipo da marca que seus e-mails em blocos herdam"
         back_to_settings: "Configurações"
         heading: "Kit da marca"
-        demo_channel: "Canal de demonstração: as alterações não são salvas"
         show_preview: "Mostrar pré-visualização"
         unsaved_changes: "Alterações não salvas"
         preview: "Pré-visualização"
       update:
         updated: "Kit da marca atualizado com sucesso"
-        demo_mode: "Modo de demonstração: alterações não salvas"
         not_saved: "Não salvo: %{errors}"
     dns_checks:
       add_selector:
@@ -6322,6 +6326,7 @@ pt-BR:
       test_connection:
         successful: "Conexão bem-sucedida"
         failed: "Falha na conexão"
+        demo_mode: "Os testes de conexão estão desativados no modo de demonstração"
       confirm_destroy:
         heading: "Excluir este servidor de e-mail?"
         warning: "A exclusão de um servidor de e-mail não pode ser desfeita. Todos os e-mails enviados por este servidor falharão imediatamente após a exclusão. Recomendamos garantir que nenhuma campanha ou sequência ativa esteja usando este servidor antes de excluí-lo."
@@ -7443,7 +7448,6 @@ pt-BR:
       show:
         title: "Dados do remetente"
         meta_description: "Atualize os dados do remetente"
-        demo: "Este é um canal de demonstração e as configurações não podem ser alteradas"
       tab_nav:
         heading: "Configurações de remetente"
         aria_label: "Abas das configurações de remetente"
@@ -7453,7 +7457,6 @@ pt-BR:
         domain: "Domínio"
       update:
         updated: "Configurações do canal atualizadas com sucesso"
-        demo: "Modo de demonstração: alterações não salvas"
     sender_identities:
       create:
         added: "Identidade de remetente %{email} adicionada."

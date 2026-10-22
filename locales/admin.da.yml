@@ -1984,6 +1984,7 @@ da:
     channel_unavailable: "Den kanal har du ikke adgang til."
     two_factor_required: "Totrinsbekræftelse er påkrævet på denne installation. Opsæt den for at fortsætte."
     demo_mode_notice: "Den del af appen er deaktiveret i demotilstand."
+    demo_foreign_email_server: "En anden demobesøgende har forbundet denne mailserver, så dens udbydernøgler kan ikke bruges her. Forbind din egen server for at prøve det."
 
   block_designs:
     not_a_document: "Ikke et blokdokument"
@@ -2995,7 +2996,6 @@ da:
       already_correct: "Det samlede antal modtagere var allerede korrekt (%{count})."
       recalculated: "Det samlede antal modtagere blev genberegnet. Opdateret fra %{from} til %{to}."
     not_found: "Kampagnen blev ikke fundet"
-    demo_mode_notice: "Afsendelse af e-mails er deaktiveret i demotilstand."
 
   common:
     actions: "Handlinger"
@@ -4378,9 +4378,12 @@ da:
       more_information: "Klik for at få flere oplysninger."
       intro: "Dette er en demoversion af Broadcast. Den nulstilles hvert 15. minut, så du er velkommen til at prøve dig frem."
       limitations: "Demoversionen har nogle begrænsninger:"
-      no_sending: "Afsendelse af e-mails virker ikke"
-      no_host_settings: "Du kan ikke ændre værtsindstillingerne"
-      no_channel_settings: "Du kan ikke ændre kanalindstillingerne"
+      no_sending: "Du kan sende kampagner og testmails, men ingen e-mails bliver leveret"
+      no_host_settings: "Du kan ikke ændre applikationens indstillinger"
+      api_read_only: "API'et er skrivebeskyttet"
+      no_new_credentials: "Du kan ikke oprette API-nøgler, webhooks eller filuploads"
+      no_public_pages: "Du kan ikke ændre bekræftelsessiden og afmeldingssiden"
+      no_account_changes: "Du kan ikke ændre demoens e-mailadresse, adgangskode eller totrinsbekræftelse"
       no_server_deletion: "Du kan ikke slette mailservere"
       back_to_homepage: "Klik her for at gå tilbage til forsiden"
     editor:
@@ -4450,6 +4453,8 @@ da:
       other: "%{email}: %{count} værdier trimmet"
 
   onboarding:
+    base:
+      step_already_completed: "Dette opsætningstrin er allerede fuldført."
     create_a_channel:
       headline: "Næsten færdig!"
       pitch: "Kanaler hjælper dig med at organisere dine abonnenter og sende målrettede kampagner. Tænk på dem som separate mailinglister."
@@ -5258,6 +5263,7 @@ da:
       set_up: "Konfigurer"
     form:
       password_hint: "Hvis du vil skifte adgangskode, skal du indtaste din nuværende og din nye adgangskode nedenfor."
+      demo_mode_credentials: "Demokontoen deles af alle besøgende, så e-mailadressen og adgangskoden kan ikke ændres."
       current_password: "Nuværende adgangskode"
       new_password: "Indtast ny adgangskode"
       confirm_password: "Bekræft ny adgangskode"
@@ -6007,13 +6013,11 @@ da:
         meta_description: "Angiv de brandfarver, den skrifttype og det logo, som dine blok-e-mails arver"
         back_to_settings: "Indstillinger"
         heading: "Brandkit"
-        demo_channel: "Demokanal: ændringer gemmes ikke"
         show_preview: "Vis forhåndsvisning"
         unsaved_changes: "Ikke-gemte ændringer"
         preview: "Forhåndsvisning"
       update:
         updated: "Brandkittet er opdateret"
-        demo_mode: "Demotilstand: ændringer er ikke gemt"
         not_saved: "Ikke gemt: %{errors}"
     dns_checks:
       add_selector:
@@ -6322,6 +6326,7 @@ da:
       test_connection:
         successful: "Forbindelsen lykkedes"
         failed: "Forbindelsen mislykkedes"
+        demo_mode: "Forbindelsestest er slået fra i demotilstand"
       confirm_destroy:
         heading: "Slet denne mailserver?"
         warning: "Sletning af en mailserver kan ikke fortrydes. Alle e-mails, der sendes via serveren, vil fejle med det samme, når den er slettet. Sørg for, at ingen aktive kampagner eller sekvenser bruger mailserveren, før du sletter den."
@@ -7443,7 +7448,6 @@ da:
       show:
         title: "Afsenderoplysninger"
         meta_description: "Opdater dine afsenderoplysninger"
-        demo: "Dette er en demokanal, og indstillingerne kan ikke ændres"
       tab_nav:
         heading: "Afsenderindstillinger"
         aria_label: "Faner for afsenderindstillinger"
@@ -7453,7 +7457,6 @@ da:
         domain: "Domæne"
       update:
         updated: "Kanalindstillingerne er opdateret"
-        demo: "Demotilstand: ændringer er ikke gemt"
     sender_identities:
       create:
         added: "Afsenderidentiteten %{email} er tilføjet."

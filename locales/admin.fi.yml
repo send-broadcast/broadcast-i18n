@@ -1985,6 +1985,7 @@ fi:
     channel_unavailable: "Sinulla ei ole pääsyä tähän kanavaan."
     two_factor_required: "Tässä asennuksessa kaksivaiheinen tunnistautuminen on pakollinen. Ota se käyttöön jatkaaksesi."
     demo_mode_notice: "Tämä sovelluksen osa ei ole käytössä esittelytilassa."
+    demo_foreign_email_server: "Toinen esittelyn kävijä yhdisti tämän sähköpostipalvelimen, joten sen palveluntarjoajan avaimia ei voi käyttää tässä. Yhdistä oma palvelimesi kokeillaksesi tätä."
 
   block_designs:
     not_a_document: "Ei lohkodokumentti"
@@ -2996,7 +2997,6 @@ fi:
       already_correct: "Vastaanottajien kokonaismäärä oli jo oikein (%{count})."
       recalculated: "Vastaanottajien kokonaismäärä laskettu uudelleen. Päivitetty: %{from} → %{to}."
     not_found: "Kampanjaa ei löytynyt"
-    demo_mode_notice: "Sähköpostien lähettäminen ei ole käytössä esittelytilassa."
 
   common:
     actions: "Toiminnot"
@@ -4379,9 +4379,12 @@ fi:
       more_information: "Lisätietoja napsauttamalla."
       intro: "Tämä on Broadcastin esittelyversio. Se nollautuu 15 minuutin välein, joten voit kokeilla vapaasti."
       limitations: "Tällä esittelyversiolla on joitakin rajoituksia:"
-      no_sending: "Sähköpostien lähettäminen ei toimi"
-      no_host_settings: "Isäntäasetuksia ei voi päivittää"
-      no_channel_settings: "Kanavan asetuksia ei voi päivittää"
+      no_sending: "Voit lähettää kampanjoita ja testisähköposteja, mutta mitään sähköpostia ei toimiteta perille"
+      no_host_settings: "Sovelluksen asetuksia ei voi muuttaa"
+      api_read_only: "API on vain luku -tilassa"
+      no_new_credentials: "API-avaimia, webhookeja tai tiedostolatauksia ei voi luoda"
+      no_public_pages: "Vahvistussivua ja peruutussivua ei voi muuttaa"
+      no_account_changes: "Esittelytilin sähköpostiosoitetta, salasanaa tai kaksivaiheista tunnistautumista ei voi muuttaa"
       no_server_deletion: "Sähköpostipalvelimia ei voi poistaa"
       back_to_homepage: "Palaa etusivulle napsauttamalla tästä"
     editor:
@@ -4451,6 +4454,8 @@ fi:
       other: "%{email}: %{count} arvoa siistitty"
 
   onboarding:
+    base:
+      step_already_completed: "Tämä käyttöönoton vaihe on jo tehty."
     create_a_channel:
       headline: "Melkein valmista!"
       pitch: "Kanavien avulla voit järjestää tilaajasi ja lähettää kohdennettuja kampanjoita. Ajattele niitä erillisinä postituslistoina."
@@ -5259,6 +5264,7 @@ fi:
       set_up: "Ota käyttöön"
     form:
       password_hint: "Jos haluat vaihtaa salasanasi, anna alla nykyinen ja uusi salasanasi."
+      demo_mode_credentials: "Kaikki kävijät jakavat esittelytilin, joten sen sähköpostiosoitetta ja salasanaa ei voi muuttaa."
       current_password: "Nykyinen salasana"
       new_password: "Anna uusi salasana"
       confirm_password: "Vahvista uusi salasana"
@@ -6008,13 +6014,11 @@ fi:
         meta_description: "Määritä brändivärit, fontti ja logo, jotka lohkosähköpostisi perivät"
         back_to_settings: "Asetukset"
         heading: "Brändipaketti"
-        demo_channel: "Esittelykanava: muutoksia ei tallenneta"
         show_preview: "Näytä esikatselu"
         unsaved_changes: "Tallentamattomia muutoksia"
         preview: "Esikatselu"
       update:
         updated: "Brändipaketti päivitetty"
-        demo_mode: "Esittelytila: muutoksia ei tallennettu"
         not_saved: "Ei tallennettu: %{errors}"
     dns_checks:
       add_selector:
@@ -6323,6 +6327,7 @@ fi:
       test_connection:
         successful: "Yhteys onnistui"
         failed: "Yhteys epäonnistui"
+        demo_mode: "Yhteystestit eivät ole käytössä esittelytilassa"
       confirm_destroy:
         heading: "Poistetaanko tämä sähköpostipalvelin?"
         warning: "Sähköpostipalvelimen poistamista ei voi perua. Kaikki tätä palvelinta käyttävät sähköpostit epäonnistuvat heti poistamisen jälkeen. Varmista ennen poistamista, ettei mikään aktiivinen kampanja tai sarja käytä tätä sähköpostipalvelinta."
@@ -7444,7 +7449,6 @@ fi:
       show:
         title: "Lähettäjän tiedot"
         meta_description: "Päivitä lähettäjätietosi"
-        demo: "Tämä on esittelykanava, eikä asetuksia voi muuttaa"
       tab_nav:
         heading: "Lähettäjäasetukset"
         aria_label: "Lähettäjäasetusten välilehdet"
@@ -7454,7 +7458,6 @@ fi:
         domain: "Verkkotunnus"
       update:
         updated: "Kanavan asetukset päivitetty"
-        demo: "Esittelytila: muutoksia ei tallennettu"
     sender_identities:
       create:
         added: "Lähettäjäidentiteetti %{email} lisätty."
