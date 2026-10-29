@@ -3646,6 +3646,7 @@ nl:
         webhook_endpoints: "Webhooks"
     email_preview:
       variable: "Variabele: %{name}"
+      liquid_error: "Deze e-mail bevat een Liquid-fout, dus het voorbeeld toont de e-mail zoals hij is geschreven: %{message}"
     duration:
       seconds:
         one: "%{count} seconde"
@@ -7720,6 +7721,11 @@ nl:
       review: "DNS-status van domeinen bekijken →"
     email_content_preview:
       title: "Voorbeeld van de e-mail"
+    liquid_mock_panel:
+      title: "Voorbeeldgegevens"
+      hint: "Voorbeeldwaarden. Wijzig ze om elke versie van de e-mail te zien."
+      none: "(geen)"
+      update: "Voorbeeld bijwerken"
     flash:
       view: "Bekijken"
     pagination:

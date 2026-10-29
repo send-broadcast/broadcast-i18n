@@ -3646,6 +3646,7 @@ de:
         webhook_endpoints: "Webhooks"
     email_preview:
       variable: "Variable: %{name}"
+      liquid_error: "Diese E-Mail enthält einen Liquid-Fehler, deshalb zeigt die Vorschau sie unverändert an: %{message}"
     duration:
       seconds:
         one: "%{count} Sekunde"
@@ -7720,6 +7721,11 @@ de:
       review: "DNS-Zustand der Domain prüfen →"
     email_content_preview:
       title: "E-Mail-Vorschau"
+    liquid_mock_panel:
+      title: "Vorschaudaten"
+      hint: "Beispielwerte. Ändern Sie sie, um jede Version der E-Mail zu sehen."
+      none: "(keine)"
+      update: "Vorschau aktualisieren"
     flash:
       view: "Anzeigen"
     pagination:

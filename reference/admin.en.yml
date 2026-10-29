@@ -3626,6 +3626,7 @@ en:
         webhook_endpoints: "Webhooks"
     email_preview:
       variable: "Variable: %{name}"
+      liquid_error: "This email has a Liquid error, so the preview shows it as written: %{message}"
     duration:
       seconds:
         one: "%{count} second"
@@ -7702,6 +7703,11 @@ en:
       review: "Review domain DNS health →"
     email_content_preview:
       title: "Email Preview"
+    liquid_mock_panel:
+      title: "Preview data"
+      hint: "Mock values. Change them to see each version of the email."
+      none: "(none)"
+      update: "Update preview"
     flash:
       view: "View"
     pagination:

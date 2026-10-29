@@ -3644,6 +3644,7 @@ nb:
         webhook_endpoints: "Webhooks"
     email_preview:
       variable: "Variabel: %{name}"
+      liquid_error: "Denne e-posten har en Liquid-feil, så forhåndsvisningen viser den slik den er skrevet: %{message}"
     duration:
       seconds:
         one: "%{count} sekund"
@@ -7718,6 +7719,11 @@ nb:
       review: "Gå gjennom DNS-helse for domener →"
     email_content_preview:
       title: "Forhåndsvisning av e-post"
+    liquid_mock_panel:
+      title: "Data for forhåndsvisning"
+      hint: "Eksempelverdier. Endre dem for å se hver versjon av e-posten."
+      none: "(ingen)"
+      update: "Oppdater forhåndsvisning"
     flash:
       view: "Vis"
     pagination:

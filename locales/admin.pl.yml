@@ -3752,6 +3752,7 @@ pl:
         webhook_endpoints: "Webhooki"
     email_preview:
       variable: "Zmienna: %{name}"
+      liquid_error: "Ten e-mail zawiera błąd Liquid, więc podgląd pokazuje go tak, jak został napisany: %{message}"
     duration:
       seconds:
         one: "%{count} sekunda"
@@ -7978,6 +7979,11 @@ pl:
       review: "Sprawdź stan DNS domeny →"
     email_content_preview:
       title: "Podgląd e-maila"
+    liquid_mock_panel:
+      title: "Dane podglądu"
+      hint: "Przykładowe wartości. Zmień je, aby zobaczyć każdą wersję e-maila."
+      none: "(brak)"
+      update: "Zaktualizuj podgląd"
     flash:
       view: "Zobacz"
     pagination:

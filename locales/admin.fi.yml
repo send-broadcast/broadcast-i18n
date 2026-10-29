@@ -3645,6 +3645,7 @@ fi:
         webhook_endpoints: "Webhookit"
     email_preview:
       variable: "Muuttuja: %{name}"
+      liquid_error: "Tässä sähköpostissa on Liquid-virhe, joten esikatselu näyttää sen kirjoitetussa muodossa: %{message}"
     duration:
       seconds:
         one: "%{count} sekunti"
@@ -7719,6 +7720,11 @@ fi:
       review: "Tarkista verkkotunnuksen DNS-tila →"
     email_content_preview:
       title: "Sähköpostin esikatselu"
+    liquid_mock_panel:
+      title: "Esikatseludata"
+      hint: "Esimerkkiarvot. Muuta niitä nähdäksesi sähköpostin jokaisen version."
+      none: "(ei mitään)"
+      update: "Päivitä esikatselu"
     flash:
       view: "Näytä"
     pagination:
