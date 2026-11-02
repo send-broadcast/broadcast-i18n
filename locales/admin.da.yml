@@ -63,6 +63,7 @@ da:
         design_settings: "Designindstillinger"
         unsubscribe_page_settings: "Indstillinger for afmeldingsside"
         confirmation_page_settings: "Indstillinger for bekræftelsesside"
+        transactional_retention_days: "Slet transaktionsmails efter (dage)"
       installation:
         s3_bucket: "S3-bucket"
         s3_region: "S3-region"

@@ -63,6 +63,7 @@ nb:
         design_settings: "Designinnstillinger"
         unsubscribe_page_settings: "Innstillinger for avmeldingssiden"
         confirmation_page_settings: "Innstillinger for bekreftelsessiden"
+        transactional_retention_days: "Slett transaksjonell e-post etter (dager)"
       installation:
         s3_bucket: "S3-bøtte"
         s3_region: "S3-region"

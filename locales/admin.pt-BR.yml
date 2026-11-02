@@ -63,6 +63,7 @@ pt-BR:
         design_settings: "Configurações de design"
         unsubscribe_page_settings: "Configurações da página de cancelamento"
         confirmation_page_settings: "Configurações da página de confirmação"
+        transactional_retention_days: "Excluir e-mails transacionais após (dias)"
       installation:
         s3_bucket: "Bucket S3"
         s3_region: "Região S3"

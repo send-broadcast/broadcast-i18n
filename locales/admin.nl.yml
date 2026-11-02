@@ -65,6 +65,7 @@ nl:
         design_settings: "Ontwerpinstellingen"
         unsubscribe_page_settings: "Instellingen afmeldpagina"
         confirmation_page_settings: "Instellingen bevestigingspagina"
+        transactional_retention_days: "Transactionele e-mail verwijderen na (dagen)"
       installation:
         s3_bucket: "S3-bucket"
         s3_region: "S3-regio"

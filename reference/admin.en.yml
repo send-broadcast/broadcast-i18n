@@ -44,6 +44,7 @@ en:
         design_settings: "Design settings"
         unsubscribe_page_settings: "Unsubscribe page settings"
         confirmation_page_settings: "Confirmation page settings"
+        transactional_retention_days: "Delete transactional email after (days)"
       installation:
         s3_bucket: "S3 bucket"
         s3_region: "S3 region"

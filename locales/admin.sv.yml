@@ -63,6 +63,7 @@ sv:
         design_settings: "Designinställningar"
         unsubscribe_page_settings: "Inställningar för avregistreringssidan"
         confirmation_page_settings: "Inställningar för bekräftelsesidan"
+        transactional_retention_days: "Radera transaktionsmejl efter (dagar)"
       installation:
         s3_bucket: "S3-bucket"
         s3_region: "S3-region"

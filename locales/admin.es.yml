@@ -64,6 +64,7 @@ es:
         design_settings: "Configuración de diseño"
         unsubscribe_page_settings: "Configuración de la página de baja"
         confirmation_page_settings: "Configuración de la página de confirmación"
+        transactional_retention_days: "Eliminar el correo transaccional después de (días)"
       installation:
         s3_bucket: "Bucket de S3"
         s3_region: "Región de S3"
