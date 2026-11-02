@@ -1335,6 +1335,38 @@ en:
         reload_heading: "Reload Application"
         reload_intro: "Apply domain configuration changes by reloading the application. Use this after modifying broadcast channel domain settings."
         reload: "Reload App"
+        cpu: "CPU"
+        disk: "Disk"
+        jobs: "Jobs"
+        cpu_figure: "%{load} of %{cores} cores"
+        memory_figure: "%{used} of %{total}"
+        disk_figure: "%{percent}% used"
+        disk_hint: "%{used} of %{total} used, %{free}% free"
+        jobs_figure: "%{count} waiting"
+        jobs_failed: "%{count} failed"
+        waiting: "Waiting"
+        running: "Running"
+        job: "Job"
+        error: "Error"
+        unknown_error: "Unknown error"
+        last_failure: "Last failure"
+        retry_all: "Retry all"
+        review_failed: "Review failed jobs"
+        more_groups: "Showing the largest %{shown} of %{total} groups."
+        failures_unreadable: "The failures could not be read here."
+        verdict_ok: "Everything is running"
+        verdict_problems:
+          one: "%{count} problem needs attention"
+          other: "%{count} problems need attention"
+        verdict_unknown: "Some readings are not available"
+        detail_unknown: "The page could not read every figure."
+        detail_failed:
+          one: "%{count} background job failed."
+          other: "%{count} background jobs failed."
+        detail_disk: "The disk has %{percent}% free."
+        detail_memory: "Memory has %{percent}% free."
+        detail_cpu: "CPU load is %{load} of %{cores} cores."
+        detail_rest: "Everything else is running."
         title: "Host System"
         meta_description: "View your host system information"
         breadcrumb: "Host system"
@@ -1351,6 +1383,22 @@ en:
         step_restart: "Restart the application so Thruster can provision SSL certificates for the new domain:"
         thruster_note_html: "Thruster will automatically request Let's Encrypt certificates for any new domains in %{variable} on restart."
         confirm: "Yes, reload app"
+      confirm_retry_failed:
+        title: "Retry these failed jobs?"
+        job: "Job"
+        error: "Error"
+        unknown_error: "Unknown error"
+        intro:
+          one: "This puts %{count} failed job back in the queue."
+          other: "This puts %{count} failed jobs back in the queue."
+        warning: "This may send work again. A job that stopped partway, such as an email send or a webhook delivery, can repeat what it already finished."
+        none_left: "These failed jobs are no longer in the list."
+        confirm: "Yes, retry all"
+      retry_failed:
+        queued:
+          one: "%{count} job is back in the queue."
+          other: "%{count} jobs are back in the queue."
+        none_left: "These failed jobs are no longer in the list."
     security:
       show:
         two_factor_heading: "Two-factor authentication"
@@ -2336,6 +2384,8 @@ en:
       settings: "Settings"
       subscribers: "Subscribers"
     broadcast_channel_row:
+      subscriber_trend: "%{name}, subscribers over the last 30 days"
+      send_trend: "%{name}, sends per week over the last 12 weeks"
       current: "Current"
       deactivate: "Deactivate"
       inactive: "Inactive"
@@ -2360,6 +2410,12 @@ en:
       name_placeholder: "eg. Website leads"
       submit: "Create channel"
     index:
+      last_30_days: "Last 30 days"
+      sends_12_weeks: "Sends, 12 weeks"
+      last_send: "Last send"
+      sort_by: "Sort by"
+      sort_recent: "Recent"
+      sort_name: "Name"
       broadcasts: "Broadcasts"
       channel: "Channel"
       clear: "Clear"
@@ -3229,6 +3285,38 @@ en:
       updated: "Confirmation template was successfully updated."
 
   dashboard:
+    metric_rail:
+      rail: "Channel figures"
+      subscribers: "Subscribers"
+      change_30_days: "%{change} in 30 days"
+      countries: "Countries"
+      countries_note: "Signups and clicks, 90 days"
+      open_rate: "Open rate"
+      last_send_clicks: "Last send, clicks %{clicks}"
+      no_sends: "No sends yet"
+      no_sends_yet: "No sends yet. Results appear here after your first broadcast."
+      growth_label: "People who joined and left each day over 90 days, with sends marked"
+      joined: "Joined"
+      left: "Left"
+      send: "Send"
+      globe_label: "Globe with a pulse for each country in the list"
+      countries_heading: "Where people signed up and clicked, 90 days"
+      countries_empty: "No countries yet. They appear when people sign up through a form or click a link. Imported subscribers are not counted."
+    last_send:
+      sent: "Sent"
+      opened: "Opened"
+      clicked: "Clicked"
+      when_people_open: "When people open, last 10 sends"
+    release_notes:
+      title: "Release notes"
+      see_all: "See all changes"
+      close: "Close"
+      take_tour: "Take a tour of these features"
+      you_are_here: "Your version"
+      kinds:
+        new: "New"
+        improved: "Improved"
+        fixed: "Fixed"
     index:
       title: "Overview"
       total_subscribers: "Total Subscribers"
@@ -3258,6 +3346,8 @@ en:
         unexpected: "An unexpected error occurred"
         unexpected_details: "Please try again later"
     broadcasts:
+      title: "Broadcasts"
+      opened: "%{rate} opened"
       new_broadcast: "New Broadcast"
       empty: "No broadcasts found"
       recipients:
@@ -3266,6 +3356,7 @@ en:
       last_modified: "Last modified %{time}"
       view: "View"
     sequences:
+      title: "Sequences"
       view_all: "View All Sequences"
       empty: "No sequences found"
       active: "Active"
@@ -3276,6 +3367,7 @@ en:
       last_modified: "Last modified %{time}"
       view: "View"
     transactionals:
+      title: "Transactional"
       view_all: "View All Transactionals"
       empty: "No transactional emails found"
       statuses:
@@ -4136,6 +4228,29 @@ en:
   layouts:
     sidebar:
       icon_rail:
+        more: "More"
+        filter_items: "Filter items"
+        no_item_match: "No item matches this filter."
+        customize_menu: "Customize menu"
+        customize_intro: "Drag items to change your menu."
+        in_menu: "In the menu"
+        in_more: "In More"
+        add_divider: "Add divider"
+        reset_to_default: "Reset to default"
+        cancel: "Cancel"
+        save: "Save"
+        save_failed: "Your menu was not saved. Try again."
+        move_up: "Move %{name} up"
+        move_down: "Move %{name} down"
+        to_more: "To More: %{name}"
+        to_menu: "To menu: %{name}"
+        divider: "Divider"
+        remove_divider: "Remove divider"
+        groups:
+          audience: "Audience"
+          sending: "Sending"
+          content: "Content"
+          admin: "Admin"
         subscribers: "Subscribers"
         segments: "Segments"
         broadcasts: "Broadcasts"
@@ -4157,6 +4272,7 @@ en:
         logout: "Logout"
       secondary_panel:
         current_channel: "Current Channel"
+        switch_hint: "All channels. Press ⌘K to switch quickly."
         restricted: "[Restricted]"
       panels:
         dashboard:
@@ -4347,6 +4463,36 @@ en:
           new_endpoint: "New Endpoint"
           all_endpoints: "All Endpoints"
           event_types: "Event Types"
+    quick_jump:
+      open: "Jump to..."
+      search: "Search pages, channels and people"
+      results: "Search results"
+      placeholder: "Search pages, channels, people..."
+      guide: "Try \"email servers\", a channel name, or ada@example.com"
+      shortcut_mac: "⌘K"
+      shortcut_other: "Ctrl K"
+      no_results: "No results found"
+      subscribers_timed_out: "Subscriber search took too long. Type more of the address."
+      channels: "Channels"
+      headings:
+        pages: "Pages"
+        channels: "Channels"
+        subscribers: "Subscribers"
+        broadcasts: "Broadcasts"
+        sequences: "Sequences"
+        segments: "Segments"
+        templates: "Templates"
+        transactionals: "Transactional emails"
+      details:
+        subscribed: "Subscribed %{time} ago"
+        sent: "Sent %{time} ago"
+        updated: "Updated %{time} ago"
+        active: "Active"
+        inactive: "Inactive"
+        subscribers:
+          one: "%{count} subscriber"
+          other: "%{count} subscribers"
+        recipient: "%{recipient}, %{time} ago"
     breadcrumbs:
       label: "Breadcrumb"
       application: "Application"
