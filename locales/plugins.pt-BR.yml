@@ -1,0 +1,460 @@
+# Broadcast plugins: plugin screens, permissions and emails, Portuguese (Brazil).
+#
+# Every key mirrors reference/plugins.en.yml. Keep each %{placeholder} as it is,
+# keep the HTML in keys ending in _html, and never use long dashes. Follow the
+# style notes and glossary at the top of admin.pt-BR.yml. bin/check validates the
+# file; see CONTRIBUTING.md.
+pt-BR:
+  plugins:
+    open_link:
+      title: "Abrir este link?"
+      body: "%{plugin} quer abrir uma página fora do Broadcast. Confira o endereço antes de continuar."
+      open: "Abrir link"
+    public_action:
+      confirm_title: "Um momento"
+      confirm_button: "Continuar"
+      done_title: "Obrigado"
+      failed_title: "Algo deu errado"
+      failed_body: "Não conseguimos salvar isso. Tente o link novamente mais tarde."
+    developer_token:
+      label: "Desenvolvedor de plugins"
+      hint: "Para um agente de IA que escreve plugins: ele pode criar, alterar e testar rascunhos com dados de teste e enviá-los para a sua revisão. Ele não pode ler dados reais de assinantes nem implantar. Ele não pode ter outras permissões e expira em até 30 dias."
+    webhook_endpoints:
+      title: "Eventos de plugins"
+      hint: "Enviados apenas para os eventos que você marcar aqui. Selecionar todos não os inclui."
+      not_available: "tem um evento de plugin que não está disponível neste canal"
+    token_endpoints:
+      label: "Endpoints de plugins"
+      hint: "Os endpoints da API de plugins que este token pode chamar, um por linha (plugin/endpoint, ou plugin/* para todos). O token também precisa da permissão que cada endpoint pede."
+      needs: "precisa de %{permission}"
+    permissions:
+      settings:
+        label: "Suas próprias configurações"
+        description: "Lê as configurações que você informa para este plugin, incluindo valores secretos."
+      store:
+        label: "Seu próprio armazenamento"
+        description: "Guarda os próprios dados no Broadcast."
+      log:
+        label: "Logs"
+        description: "Escreve linhas de log que você pode ler na página do plugin."
+      channel:
+        label: "Nome do canal"
+        description: "Lê o nome do canal em que é executado."
+      events:
+        label: "Seus próprios eventos"
+        description: "Registra eventos (por exemplo, pedidos) para as suas regras de segmento."
+      subscribers_read:
+        label: "Ler assinantes"
+        description: "Lê os dados, tags e campos personalizados dos assinantes."
+      subscribers_write:
+        label: "Alterar assinantes"
+        description: "Altera nomes, campos personalizados e outros dados de assinantes existentes."
+      tags_read:
+        label: "Ler tags"
+        description: "Lê a lista de tags."
+      tags_write:
+        label: "Alterar tags"
+        description: "Adiciona tags aos assinantes e as remove."
+      broadcasts_read:
+        label: "Ler campanhas"
+        description: "Lê as campanhas e as suas estatísticas."
+      sequences_read:
+        label: "Ler sequências"
+        description: "Lê as sequências e as suas etapas."
+      segments_read:
+        label: "Ler segmentos"
+        description: "Lê os segmentos e as suas regras."
+      network:
+        label: "Acesso à internet"
+        description: "Conecta-se a estes sites: %{hosts}."
+      subscribers_export:
+        label: "Copiar a sua lista inteira"
+        description: "Pode ler todos os assinantes, página por página, e enviá-los para %{hosts}."
+      subscribers_create:
+        label: "Adicionar novos assinantes"
+        description: "Adiciona pessoas à sua lista. A sua configuração de opt-in duplo é aplicada."
+      network_wildcard:
+        label: "Acesso à internet a muitos sites"
+        description: "Conecta-se a qualquer site que corresponda a %{hosts}."
+      network_fromSetting:
+        label: "Acesso à internet a um endereço que você informa"
+        description: "Conecta-se ao endereço que você digita na configuração %{setting}."
+      output_html:
+        label: "HTML nos e-mails"
+        description: "Adiciona HTML aos e-mails. O Broadcast o limpa antes do envio."
+      hooks_beforeSend:
+        label: "Alterar e-mails antes do envio"
+        description: "Pode pular um e-mail ou alterar o assunto e o conteúdo dele. Não pode alterar quem o recebe, o remetente nem o link de cancelamento da inscrição."
+      hooks_apiEndpoints:
+        label: "Sua própria API"
+        description: "Adiciona endereços de API que podem ser usados por quem tem um token de API correspondente."
+      events_webhook:
+        label: "Seus eventos em webhooks"
+        description: "Permite enviar eventos deste plugin para os seus endpoints de webhook. Nada é enviado até você ativar um evento para um endpoint. Um webhook contém o evento, os campos declarados dele e o id do assinante, nunca um endereço de e-mail."
+      hooks_publicActions:
+        label: "Links em e-mails que qualquer pessoa pode clicar"
+        description: "Adiciona aos e-mails links que executam este plugin quando um assinante clica neles, sem login. O Broadcast comprova quem clicou. O plugin recebe o assinante e a escolha do link."
+      network_private:
+        label: "Acesso a um endereço privado"
+        description: "Conecta-se a um endereço da sua rede privada que você aprova."
+      email_sender:
+        label: "Alterar o remetente"
+        description: "Altera De ou Responder para para um remetente verificado neste canal."
+      sql:
+        label: "Acesso ao banco de dados"
+      files:
+        label: "Acesso a arquivos"
+      env:
+        label: "Acesso às configurações do servidor"
+      process:
+        label: "Iniciar programas"
+      subscribers_resubscribe:
+        label: "Inscrever pessoas novamente"
+      suppressions_write:
+        label: "Remover supressões"
+      email_recipients:
+        label: "Alterar destinatários de e-mails"
+      email_unsubscribe:
+        label: "Alterar o link de cancelamento da inscrição"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "não pode ser combinada com outras permissões"
+            expires_at:
+              plugin_development_lifetime: "deve ser em até 30 dias para um token de desenvolvedor de plugins"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "ultrapassa o limite de armazenamento deste plugin"
+  app_installation:
+    plugins:
+      index:
+        title: "Plugins"
+        intro: "Plugins adicionam recursos ao Broadcast. Instale um plugin uma vez e depois ative-o em cada canal."
+        audit_log: "Log de auditoria"
+        safe_mode: "O modo de segurança está ativado."
+        safe_mode_body: "Nenhum plugin é executado até que BROADCAST_PLUGINS_SAFE_MODE seja removido das configurações do servidor."
+        runtime_up:
+          one: "O ambiente de execução de plugins está funcionando (1 processo de plugin)."
+          other: "O ambiente de execução de plugins está funcionando (%{count} processos de plugin)."
+        runtime_down: "O ambiente de execução de plugins não está funcionando ou não está instalado. Todo o resto do Broadcast funciona."
+        name: "Nome"
+        key: "ID"
+        version: "Versão"
+        state: "Canais"
+        not_deployed: "Não implantado"
+        first_deploy_waits: "A versão %{version} aguarda sua implantação"
+        browse: "Explorar plugins"
+        update: "Atualizar para %{version}"
+        blocked: "Bloqueado pelo diretório de plugins: %{reason}"
+        directory_stale: "O Broadcast não conseguiu verificar a lista de bloqueio do diretório de plugins por mais de uma semana (última verificação: %{checked}). Os plugins bloqueados não são desativados até que isso seja possível."
+        never: "nunca"
+        auto_disabled: "Desativado após erros repetidos"
+        coverage_all: "Todos os canais"
+        coverage_some: "%{enabled} de %{total} canais"
+        coverage_none: "Desativado"
+        coverage_label: "Escolher canais para %{name}: %{state}"
+        empty: "Nenhum plugin instalado."
+        upload_heading: "Enviar um plugin"
+        upload_intro: "Envie um arquivo .broadcast-plugin. Você vê as permissões dele antes que qualquer coisa seja executada."
+        upload: "Enviar"
+        delete_now: "Excluir agora"
+        held_intro: "Plugins removidos cujos dados estão guardados. Instalar de novo o mesmo plugin restaura as configurações e os dados."
+        held_title: "Guardados por 30 dias"
+        held_until: "Dados guardados até %{date}"
+        keeps_running: "A versão %{version} continua rodando até você decidir."
+        pause: "Pausar"
+        pinned: "Fixado em %{version}"
+        resume: "Retomar"
+        review_update: "Revisar e atualizar"
+        update_waits: "%{name} %{version} aguarda você."
+      channels_control:
+        title: "Canais para %{name}"
+        intro: "Marque os canais em que este plugin é executado."
+        filter: "Filtrar canais"
+        select_all: "Selecionar todos"
+        deselect_all: "Desmarcar todos"
+        selected_count: "%{selected} de %{total} selecionados"
+        no_match: "Nenhum canal corresponde a este filtro."
+        needs_settings: "Precisa de configurações"
+        cancel: "Cancelar"
+        save: "Salvar"
+      channels:
+        saved: "Canais salvos para %{name}."
+        refused: "Não foi possível ativar estes canais: %{channels}. Abra cada canal para verificar as configurações dele."
+      create:
+        no_file: "Escolha um arquivo .broadcast-plugin."
+        uploaded: "Enviado. Verifique as permissões e depois implante."
+      publish:
+        not_live: "Implante uma versão primeiro. Só uma versão implantada pode ser publicada."
+        submitted: "%{id} %{version} está na fila de revisão do marketplace. Acompanhe em %{url}."
+      show:
+        auto_disabled: "Desativado após erros repetidos: %{reason}. Implante uma versão para ativá-lo novamente."
+        logs: "Logs"
+        remove: "Remover"
+        pending: "A versão %{version} aguarda a sua aprovação."
+        review: "Revisar e implantar"
+        publish_title: "Publicar no marketplace"
+        publish_intro: "Envia a versão %{version} para revisão no marketplace de plugins do Broadcast, com o seu id de editor. Nada muda neste servidor. Você precisa de uma conta de editor lá: veja %{docs_url}."
+        publish_token: "Token de publicação"
+        publish_token_hint: "Em Painel > Plugins no marketplace. Ele é usado apenas para esta solicitação e não é guardado."
+        publish_summary: "Resumo (uma frase)"
+        publish_category: "Categoria"
+        publish_button: "Enviar para revisão"
+        publish_categories:
+          audience: "Público e crescimento"
+          content: "Conteúdo de e-mail"
+          analytics: "Relatórios e análises"
+          integrations: "Integrações"
+          automation: "Automação"
+          developer: "Ferramentas para desenvolvedores"
+        permissions: "Permissões"
+        enabled: "Ativado neste canal"
+        disabled: "Desativado neste canal"
+        channels: "Canais"
+        open_channel: "Abrir"
+        earlier_versions: "Versões anteriores"
+        rollback: "Reverter"
+        rollback_hint: "Volta para uma versão que você aprovou antes, com as permissões que ela tinha."
+        health_calls: "chamadas, hoje e ontem"
+        health_failures: "execuções com falha, últimas 24 horas"
+        health_hint: "As chamadas são contadas por dia. Requisições e execuções com falha são contadas a partir das linhas de log das últimas 24 horas."
+        health_requests: "requisições, últimas 24 horas"
+        health_store: "dados guardados, agora"
+        health_title: "Saúde"
+        pause: "Pausar"
+        paused_hint: "Ele não roda em nenhum canal. As configurações e os dados ficam."
+        resume: "Retomar"
+        update_policies:
+          ask:
+            help: "Novas versões são oferecidas; nada é implantado até você escolher Atualizar."
+            label: "Perguntar toda vez"
+          auto_when_same:
+            help: "Uma nova versão é implantada sozinha quando não pede novas permissões ou hooks. Todo o resto aguarda você."
+            label: "Automático quando nada novo é pedido"
+          pinned:
+            help: "Fica em %{version}. Nenhuma outra versão é oferecida ou implantada."
+            label: "Fixado"
+        updates_title: "Atualizações"
+      logs:
+        title: "%{name}: logs"
+        breadcrumb: "Logs"
+        empty: "Nenhuma linha de log nos últimos 30 dias."
+      confirm_destroy:
+        title: "Remover %{name}?"
+        body: "Isso exclui o plugin, todas as versões, configurações e dados armazenados dele neste servidor. O log de auditoria mantém um registro."
+        cancel: "Cancelar"
+        remove: "Desinstalar %{name}"
+        choice: "O que acontece com os dados"
+        delete_label: "Excluir os dados agora"
+        delete_now: "Excluir agora"
+        held_body: "Os dados dele ficam guardados até %{date}. Excluir agora apaga na hora as versões, configurações e dados guardados. O log de auditoria mantém um registro."
+        held_title: "Excluir %{name} agora?"
+        keep_help: "Ele para e é desativado em todos os canais. As versões, configurações e dados guardados ficam por 30 dias e depois são excluídos."
+        keep_label: "Guardar os dados por 30 dias, para que uma reinstalação os recupere"
+        tags_stay: "As tags que ele adicionou ficam nos seus inscritos de qualquer forma."
+      destroy:
+        removed: "%{name} foi removido."
+        kept: "%{name} foi desinstalado. Os dados ficam guardados até %{date}; instale de novo para restaurá-los."
+      held:
+        refused: "%{name} foi removido. Os dados estão guardados; instale de novo para restaurá-los, ou exclua agora."
+      pause:
+        paused: "%{name} está pausado em todos os canais."
+      resume:
+        resumed: "%{name} roda de novo."
+      status:
+        paused: "Pausado"
+        paused_at: "Pausado em %{when}"
+        paused_by: "Pausado por %{by} em %{when}"
+      stop_notice:
+        data_unchanged: "Seus dados neste servidor não mudaram."
+        no_reason: "nenhum motivo foi informado."
+        open: "Abrir o plugin"
+        reason: "Motivo: %{reason}"
+        title: "A Furvur parou %{name} %{version} em %{date}."
+      update_policy:
+        invalid: "Escolha uma das configurações de atualização."
+        nothing_to_pin: "Implante uma versão primeiro. Só uma versão implantada pode ser fixada."
+        saved: "Configuração de atualização salva."
+      waiting:
+        new_hooks:
+          one: "Ele muda quando roda: %{list}."
+          other: "Ele muda quando roda: %{list}."
+        new_hosts:
+          one: "Ele se conecta a um novo endereço: %{list}."
+          other: "Ele se conecta a novos endereços: %{list}."
+        new_permissions:
+          one: "Ele pede uma nova permissão: %{list}."
+          other: "Ele pede novas permissões: %{list}."
+        nothing_new: "Ele não pede nada novo."
+    plugin_directory:
+      unavailable: "O diretório de plugins não pode ser acessado agora. Os plugins instalados continuam funcionando."
+      index:
+        title: "Explorar plugins"
+        intro: "Plugins do diretório de plugins do Broadcast. Cada versão é revisada e assinada. Você vê as permissões dele antes que qualquer coisa seja executada."
+        empty: "O diretório ainda não tem plugins para esta versão do Broadcast."
+        by: "Por %{publisher}"
+        verified: "Editor verificado"
+        reviewed: "Revisado"
+        installed: "Instalado"
+        incompatible: "Precisa de outra versão do Broadcast"
+        details: "Detalhes"
+      show:
+        permissions: "Permissões"
+        review_after: "Depois da instalação, você revisa as permissões exatas e o código e depois implanta."
+        support: "Suporte"
+        privacy: "Política de privacidade"
+        installed: "Instalado: abrir a página do plugin"
+        install: "Instalar"
+        held_restore: "Você removeu este plugin e guardou os dados dele até %{date}. Instalar de novo restaura as configurações e os dados."
+      install:
+        installed: "Baixado e verificado. Revise as permissões e depois implante."
+      update:
+        updated: "Atualizado para a versão %{version}."
+        review: "A nova versão pede outras permissões ou hooks. Revise-a e depois implante."
+    plugin_versions:
+      changelog:
+        title: "O que mudou na %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Assinado pelo diretório de plugins (chave %{key})."
+        unsigned: "Não vem do diretório de plugins. Instale-o apenas se você confia na origem dele."
+        permissions: "Permissões"
+        permissions_intro: "O que este plugin pode fazer. Todo plugin também pode manter as próprias configurações, dados e logs."
+        hooks: "O que ele adiciona"
+        page: "Página \"%{title}\" (%{slot})"
+        deploy_hint: "Nada é executado até você implantar e ativar em um canal."
+        deploy: "Implantar"
+        status: "Status: %{status}"
+        changes: "Mudanças desde %{version}"
+        code: "Código"
+      rollback:
+        rolled_back: "A versão %{version} está ativa de novo."
+      diff:
+        unchanged: "Nenhuma mudança."
+        too_large: "Esta mudança é grande demais para ser mostrada aqui. Compare os arquivos antes de implantar."
+      approve:
+        deployed: "A versão %{version} está ativa."
+      permissions:
+        only_basic: "Apenas as próprias configurações, dados e logs."
+        tier_1: "Padrão"
+        tier_2: "Sensível"
+        tier_3: "Elevada"
+        new: "Nova"
+    plugin_channels:
+      enable:
+        enabled: "O plugin está ativado em %{channel}."
+      disable:
+        disabled: "O plugin está desativado em %{channel}."
+      settings:
+        saved: "Configurações salvas."
+      grant:
+        granted: "Permissão ativada."
+        not_declared: "Este plugin não pede essa permissão."
+      revoke:
+        revoked: "Permissão desativada."
+    plugin_audit_events:
+      index:
+        title: "Log de auditoria de plugins"
+        empty: "Nada ainda."
+      actions:
+        uploaded: "Enviado"
+        approved: "Implantado"
+        enabled: "Ativado"
+        disabled: "Desativado"
+        removed: "Removido"
+        granted: "Permissão elevada ativada"
+        revoked: "Permissão elevada desativada"
+        settings_changed: "Configurações alteradas"
+        auto_disabled: "Desativado após erros"
+        alert_not_delivered: "E-mail de alerta não entregue"
+        alert_captured: "E-mail de alerta retido pelo Servidor de teste"
+        draft_created: "Rascunho iniciado"
+        deploy_requested: "Enviado para implantação"
+        rolled_back: "Revertido"
+        restored: "Restaurado com os dados guardados"
+        blocked: "Bloqueado pelo diretório de plugins"
+        published_to_marketplace: "Enviado ao marketplace"
+        purged: "Dados guardados excluídos após 30 dias"
+        agent_draft: "Rascunho alterado por um agente"
+        agent_requested_deploy: "Implantação pedida por um agente"
+        uninstall_hook_failed: "A limpeza ao remover falhou"
+        auto_updated: "Atualizado automaticamente"
+        paused: "Pausado"
+        resumed: "Retomado"
+  channel_plugins:
+    index:
+      title: "Plugins"
+      intro: "Plugins em %{channel}. Cada plugin fica ativado ou desativado apenas para este canal."
+      all_plugins: "Todos os plugins"
+      empty: "Nenhum plugin instalado."
+      blocked: "Bloqueado pelo diretório de plugins: %{reason}"
+      auto_disabled: "Desativado após erros repetidos"
+    plugin:
+      turn_on: "Ativar %{name}"
+      turn_off: "Desativar %{name}"
+      "on": "Ativado"
+      "off": "Desativado"
+      configure: "Configurações e permissões"
+      "yes": "Sim"
+      "no": "Não"
+      secret_set: "Salvo (oculto)"
+      secret_hint: "Secreto. Deixe em branco para manter o valor salvo."
+      save_settings: "Salvar configurações"
+      granted: "Ativada: %{value}"
+      granted_on: "ativada"
+      revoke: "Desativar"
+      grant: "Ativar"
+      grant_hint: "Permissão elevada. Ela fica desativada até você ativá-la para este canal."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Plugins"
+      panels:
+        application:
+          plugins: "Plugins"
+        plugin_pages:
+          manage: "Todos os plugins"
+          this_channel: "Neste canal"
+          title: "Plugins"
+  plugin_mailer:
+    auto_disabled:
+      subject: "O plugin %{name} foi desativado"
+      intro: "O Broadcast desativou o plugin %{name} (%{key}) em todos os canais após erros repetidos."
+      reason: "Motivo: %{reason}"
+      open: "Abrir a página do plugin"
+    blocked:
+      subject: "O plugin %{name} foi bloqueado"
+      intro: "O diretório de plugins bloqueou a versão instalada de %{name} (%{key}). O Broadcast o desativou em todos os canais."
+      reason: "Motivo: %{reason}"
+      next: "Instale uma versão mais nova quando o diretório oferecer uma, ou remova o plugin."
+      open: "Abrir a página do plugin"
+    deploy_requested:
+      subject: "O plugin %{name} %{version} aguarda sua implantação"
+      intro: "Um agente pediu para implantar a versão %{version} do plugin %{name} (%{key})."
+      next: "Nada roda até você implantar. Confira as mudanças no código e as permissões, e implante ou deixe."
+      open: "Revisar e implantar"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Executado no plugin %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "Uma etapa do plugin %{plugin}."
+        unavailable: "Esta etapa de plugin não está disponível: o plugin foi desativado, removido ou alterado. A etapa é pulada."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Etapa de plugin"
+  segments:
+    plugin_timeout: "A contagem deste segmento demorou demais por causa de uma regra de segmento de plugin. Restrinja o segmento ou verifique o plugin."
+    preview_count:
+      plugin_timeout: "A contagem deste segmento demorou demais por causa de uma regra de segmento de plugin. Restrinja o segmento ou verifique o plugin."
+    segment_rule_fields:
+      plugin_matches: "Corresponde"
+      fields:
+        group_plugins: "-- Plugins --"
+        plugin_unavailable: "%{field} (plugin indisponível)"

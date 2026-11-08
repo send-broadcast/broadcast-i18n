@@ -1,0 +1,468 @@
+# Broadcast plugins: plugin screens, permissions and emails, Polish.
+#
+# Every key mirrors reference/plugins.en.yml. Keep each %{placeholder} as it is,
+# keep the HTML in keys ending in _html, and never use long dashes. Follow the
+# style notes and glossary at the top of admin.pl.yml. bin/check validates the
+# file; see CONTRIBUTING.md.
+pl:
+  plugins:
+    open_link:
+      title: "Otworzyć ten link?"
+      body: "%{plugin} chce otworzyć stronę poza Broadcast. Sprawdź adres, zanim przejdziesz dalej."
+      open: "Otwórz link"
+    public_action:
+      confirm_title: "Chwileczkę"
+      confirm_button: "Dalej"
+      done_title: "Dziękujemy"
+      failed_title: "Coś poszło nie tak"
+      failed_body: "Nie udało się tego zapisać. Spróbuj ponownie użyć linku później."
+    developer_token:
+      label: "Twórca pluginów"
+      hint: "Dla agenta AI, który pisze pluginy: może tworzyć, zmieniać i testować wersje robocze na danych testowych oraz przesyłać je Tobie do przeglądu. Nie może czytać prawdziwych danych subskrybentów ani wdrażać. Nie może mieć innych uprawnień i wygasa w ciągu 30 dni."
+    webhook_endpoints:
+      title: "Zdarzenia pluginów"
+      hint: "Wysyłane tylko dla zdarzeń zaznaczonych tutaj. Opcja Zaznacz wszystkie ich nie obejmuje."
+      not_available: "ma zdarzenie pluginu, które nie jest dostępne w tym kanale"
+    token_endpoints:
+      label: "Endpointy pluginów"
+      hint: "Endpointy API pluginów, które ten token może wywoływać, po jednym w wierszu (plugin/endpoint lub plugin/* dla wszystkich). Token potrzebuje też uprawnienia, którego wymaga każdy endpoint."
+      needs: "wymaga %{permission}"
+    permissions:
+      settings:
+        label: "Własne ustawienia"
+        description: "Odczytuje ustawienia, które wpisujesz dla tego pluginu, w tym wartości tajne."
+      store:
+        label: "Własny magazyn"
+        description: "Przechowuje własne dane w Broadcast."
+      log:
+        label: "Logi"
+        description: "Zapisuje wiersze logów, które możesz czytać na stronie pluginu."
+      channel:
+        label: "Nazwa kanału"
+        description: "Odczytuje nazwę kanału, w którym działa."
+      events:
+        label: "Własne zdarzenia"
+        description: "Rejestruje zdarzenia (na przykład zamówienia) dla swoich reguł segmentów."
+      subscribers_read:
+        label: "Odczyt subskrybentów"
+        description: "Odczytuje dane subskrybentów, tagi i pola niestandardowe."
+      subscribers_write:
+        label: "Zmiana subskrybentów"
+        description: "Zmienia imiona, pola niestandardowe i inne dane istniejących subskrybentów."
+      tags_read:
+        label: "Odczyt tagów"
+        description: "Odczytuje listę tagów."
+      tags_write:
+        label: "Zmiana tagów"
+        description: "Dodaje tagi subskrybentom i je usuwa."
+      broadcasts_read:
+        label: "Odczyt kampanii"
+        description: "Odczytuje kampanie i ich statystyki."
+      sequences_read:
+        label: "Odczyt sekwencji"
+        description: "Odczytuje sekwencje i ich kroki."
+      segments_read:
+        label: "Odczyt segmentów"
+        description: "Odczytuje segmenty i ich reguły."
+      network:
+        label: "Dostęp do internetu"
+        description: "Łączy się z tymi witrynami: %{hosts}."
+      subscribers_export:
+        label: "Kopiowanie całej listy"
+        description: "Może odczytać każdego subskrybenta, strona po stronie, i wysłać ich do %{hosts}."
+      subscribers_create:
+        label: "Dodawanie nowych subskrybentów"
+        description: "Dodaje osoby do Twojej listy. Obowiązuje Twoje ustawienie podwójnej zgody (double opt-in)."
+      network_wildcard:
+        label: "Dostęp do internetu do wielu witryn"
+        description: "Łączy się z każdą witryną pasującą do %{hosts}."
+      network_fromSetting:
+        label: "Dostęp do internetu do adresu, który wpiszesz"
+        description: "Łączy się z adresem wpisanym w ustawieniu %{setting}."
+      output_html:
+        label: "HTML w e-mailach"
+        description: "Dodaje HTML do e-maili. Broadcast oczyszcza go przed wysłaniem."
+      hooks_beforeSend:
+        label: "Zmiana e-maili przed wysłaniem"
+        description: "Może pominąć e-mail albo zmienić jego temat i treść. Nie może zmienić odbiorcy, nadawcy ani linku do wypisania się."
+      hooks_apiEndpoints:
+        label: "Własne API"
+        description: "Dodaje adresy API, z których mogą korzystać wywołujący z pasującym tokenem API."
+      events_webhook:
+        label: "Własne zdarzenia w webhookach"
+        description: "Pozwala wysyłać zdarzenia tego pluginu do Twoich endpointów webhooków. Nic nie jest wysyłane, dopóki nie włączysz zdarzenia dla endpointu. Webhook zawiera zdarzenie, jego zadeklarowane pola i id subskrybenta, nigdy adres e-mail."
+      hooks_publicActions:
+        label: "Linki w e-mailach, które każdy może kliknąć"
+        description: "Dodaje do e-maili linki, które uruchamiają ten plugin, gdy subskrybent je kliknie, bez logowania. Broadcast potwierdza, kto kliknął. Plugin otrzymuje subskrybenta i wybór zapisany w linku."
+      network_private:
+        label: "Dostęp do jednego adresu prywatnego"
+        description: "Łączy się z jednym adresem w Twojej sieci prywatnej, który zatwierdzisz."
+      email_sender:
+        label: "Zmiana nadawcy"
+        description: "Zmienia pole Od lub Odpowiedz do na nadawcę zweryfikowanego w tym kanale."
+      sql:
+        label: "Dostęp do bazy danych"
+      files:
+        label: "Dostęp do plików"
+      env:
+        label: "Dostęp do ustawień serwera"
+      process:
+        label: "Uruchamianie programów"
+      subscribers_resubscribe:
+        label: "Ponowne zapisywanie osób"
+      suppressions_write:
+        label: "Usuwanie wykluczeń"
+      email_recipients:
+        label: "Zmiana odbiorców e-maili"
+      email_unsubscribe:
+        label: "Zmiana linku do wypisania się"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "nie może być łączone z innymi uprawnieniami"
+            expires_at:
+              plugin_development_lifetime: "musi przypadać w ciągu 30 dni dla tokena twórcy pluginów"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "przekracza limit miejsca tego pluginu"
+  app_installation:
+    plugins:
+      index:
+        title: "Pluginy"
+        intro: "Pluginy dodają funkcje do Broadcast. Zainstaluj plugin raz, a potem włącz go w każdym kanale."
+        audit_log: "Dziennik audytu"
+        safe_mode: "Tryb awaryjny jest włączony."
+        safe_mode_body: "Żaden plugin nie działa, dopóki BROADCAST_PLUGINS_SAFE_MODE nie zostanie usunięte z ustawień serwera."
+        runtime_up:
+          one: "Środowisko uruchomieniowe pluginów działa (1 proces pluginów)."
+          few: "Środowisko uruchomieniowe pluginów działa (%{count} procesy pluginów)."
+          many: "Środowisko uruchomieniowe pluginów działa (%{count} procesów pluginów)."
+          other: "Środowisko uruchomieniowe pluginów działa (%{count} procesu pluginów)."
+        runtime_down: "Środowisko uruchomieniowe pluginów nie działa lub nie jest zainstalowane. Wszystko inne w Broadcast działa."
+        name: "Nazwa"
+        key: "ID"
+        version: "Wersja"
+        state: "Kanały"
+        not_deployed: "Niewdrożony"
+        first_deploy_waits: "Wersja %{version} czeka na Twoje wdrożenie"
+        browse: "Przeglądaj pluginy"
+        update: "Zaktualizuj do %{version}"
+        blocked: "Zablokowany przez katalog pluginów: %{reason}"
+        directory_stale: "Broadcast nie mógł sprawdzić listy blokad katalogu pluginów od ponad tygodnia (ostatnie sprawdzenie: %{checked}). Zablokowane pluginy nie zostaną wyłączone, dopóki sprawdzenie się nie uda."
+        never: "nigdy"
+        auto_disabled: "Wyłączony po powtarzających się błędach"
+        coverage_all: "Wszystkie kanały"
+        coverage_some: "%{enabled} z %{total} kanałów"
+        coverage_none: "Wyłączony"
+        coverage_label: "Wybierz kanały dla %{name}: %{state}"
+        empty: "Nie zainstalowano żadnych pluginów."
+        upload_heading: "Prześlij plugin"
+        upload_intro: "Prześlij plik .broadcast-plugin. Zobaczysz jego uprawnienia, zanim cokolwiek zostanie uruchomione."
+        upload: "Prześlij"
+        delete_now: "Usuń teraz"
+        held_intro: "Usunięte pluginy, których dane są zachowane. Ponowna instalacja tego samego pluginu przywraca jego ustawienia i dane."
+        held_title: "Zachowane przez 30 dni"
+        held_until: "Dane zachowane do %{date}"
+        keeps_running: "Wersja %{version} działa dalej, dopóki nie zdecydujesz."
+        pause: "Wstrzymaj"
+        pinned: "Przypięty do %{version}"
+        resume: "Wznów"
+        review_update: "Sprawdź i zaktualizuj"
+        update_waits: "%{name} %{version} czeka na Ciebie."
+      channels_control:
+        title: "Kanały dla %{name}"
+        intro: "Zaznacz kanały, w których działa ten plugin."
+        filter: "Filtruj kanały"
+        select_all: "Zaznacz wszystkie"
+        deselect_all: "Odznacz wszystkie"
+        selected_count: "Zaznaczono %{selected} z %{total}"
+        no_match: "Żaden kanał nie pasuje do tego filtra."
+        needs_settings: "Wymaga ustawień"
+        cancel: "Anuluj"
+        save: "Zapisz"
+      channels:
+        saved: "Zapisano kanały dla %{name}."
+        refused: "Nie udało się włączyć tych kanałów: %{channels}. Otwórz każdy kanał, aby sprawdzić jego ustawienia."
+      create:
+        no_file: "Wybierz plik .broadcast-plugin."
+        uploaded: "Przesłano. Sprawdź uprawnienia, a potem wdróż."
+      publish:
+        not_live: "Najpierw wdróż wersję. Opublikować można tylko wdrożoną wersję."
+        submitted: "%{id} %{version} czeka w kolejce przeglądu w Marketplace. Śledź postęp pod adresem %{url}."
+      show:
+        auto_disabled: "Wyłączony po powtarzających się błędach: %{reason}. Wdróż wersję, aby włączyć go ponownie."
+        logs: "Logi"
+        remove: "Usuń"
+        pending: "Wersja %{version} czeka na Twoje zatwierdzenie."
+        review: "Przejrzyj i wdróż"
+        publish_title: "Opublikuj w Marketplace"
+        publish_intro: "Wysyła wersję %{version} do przeglądu w Marketplace pluginów Broadcast, pod Twoim id wydawcy. Na tym serwerze nic się nie zmienia. Potrzebujesz tam konta wydawcy: zobacz %{docs_url}."
+        publish_token: "Token publikacji"
+        publish_token_hint: "Z Pulpit > Pluginy w Marketplace. Jest używany tylko do tego jednego żądania i nie jest przechowywany."
+        publish_summary: "Podsumowanie (jedno zdanie)"
+        publish_category: "Kategoria"
+        publish_button: "Wyślij do przeglądu"
+        publish_categories:
+          audience: "Odbiorcy i wzrost"
+          content: "Treść e-maili"
+          analytics: "Raporty i analityka"
+          integrations: "Integracje"
+          automation: "Automatyzacja"
+          developer: "Narzędzia dla programistów"
+        permissions: "Uprawnienia"
+        enabled: "Włączony w tym kanale"
+        disabled: "Wyłączony w tym kanale"
+        channels: "Kanały"
+        open_channel: "Otwórz"
+        earlier_versions: "Wcześniejsze wersje"
+        rollback: "Przywróć"
+        rollback_hint: "Wraca do wersji zatwierdzonej wcześniej, z uprawnieniami, które miała."
+        health_calls: "wywołania, dziś i wczoraj"
+        health_failures: "nieudane uruchomienia, ostatnie 24 godziny"
+        health_hint: "Wywołania są liczone dziennie. Żądania i nieudane uruchomienia są liczone z jego wierszy dziennika z ostatnich 24 godzin."
+        health_requests: "żądania, ostatnie 24 godziny"
+        health_store: "zapisane dane, teraz"
+        health_title: "Stan"
+        pause: "Wstrzymaj"
+        paused_hint: "Nie działa w żadnym kanale. Jego ustawienia i dane zostają."
+        resume: "Wznów"
+        update_policies:
+          ask:
+            help: "Nowe wersje są proponowane; nic nie zostaje wdrożone, dopóki nie wybierzesz Aktualizuj."
+            label: "Pytaj mnie za każdym razem"
+          auto_when_same:
+            help: "Nowa wersja wdraża się sama, gdy nie prosi o nowe uprawnienia ani hooki. Wszystko inne czeka na Ciebie."
+            label: "Automatycznie, gdy nie prosi o nic nowego"
+          pinned:
+            help: "Zostaje na %{version}. Żadna inna wersja nie jest proponowana ani wdrażana."
+            label: "Przypięty"
+        updates_title: "Aktualizacje"
+      logs:
+        title: "%{name}: logi"
+        breadcrumb: "Logi"
+        empty: "Brak wierszy logów z ostatnich 30 dni."
+      confirm_destroy:
+        title: "Usunąć %{name}?"
+        body: "To usuwa plugin, wszystkie jego wersje, ustawienia i zapisane dane na tym serwerze. Dziennik audytu zachowuje wpis."
+        cancel: "Anuluj"
+        remove: "Odinstaluj %{name}"
+        choice: "Co się stanie z jego danymi"
+        delete_label: "Usuń jego dane teraz"
+        delete_now: "Usuń teraz"
+        held_body: "Jego dane są zachowane do %{date}. Usunięcie teraz od razu kasuje jego wersje, ustawienia i zapisane dane. Dziennik audytu zachowuje wpis."
+        held_title: "Usunąć %{name} teraz?"
+        keep_help: "Plugin się zatrzymuje i zostaje wyłączony w każdym kanale. Jego wersje, ustawienia i zapisane dane zostają przez 30 dni, potem są usuwane."
+        keep_label: "Zachowaj jego dane przez 30 dni, aby ponowna instalacja je przejęła"
+        tags_stay: "Tagi, które dodał, w obu przypadkach zostają na Twoich subskrybentach."
+      destroy:
+        removed: "Usunięto %{name}."
+        kept: "Odinstalowano %{name}. Jego dane są zachowane do %{date}; zainstaluj go ponownie, aby je przywrócić."
+      held:
+        refused: "Usunięto %{name}. Jego dane są zachowane; zainstaluj go ponownie, aby je przywrócić, albo usuń je teraz."
+      pause:
+        paused: "Wstrzymano %{name} w każdym kanale."
+      resume:
+        resumed: "%{name} znów działa."
+      status:
+        paused: "Wstrzymany"
+        paused_at: "Wstrzymany %{when}"
+        paused_by: "Wstrzymany przez %{by} %{when}"
+      stop_notice:
+        data_unchanged: "Twoje dane na tym serwerze się nie zmieniły."
+        no_reason: "nie podano powodu."
+        open: "Otwórz plugin"
+        reason: "Powód: %{reason}"
+        title: "Furvur zatrzymał %{name} %{version} %{date}."
+      update_policy:
+        invalid: "Wybierz jedno z ustawień aktualizacji."
+        nothing_to_pin: "Najpierw wdróż wersję. Przypiąć można tylko wdrożoną wersję."
+        saved: "Zapisano ustawienie aktualizacji."
+      waiting:
+        new_hooks:
+          one: "Zmienia, kiedy działa: %{list}."
+          few: "Zmienia, kiedy działa: %{list}."
+          many: "Zmienia, kiedy działa: %{list}."
+          other: "Zmienia, kiedy działa: %{list}."
+        new_hosts:
+          one: "Łączy się z nowym adresem: %{list}."
+          few: "Łączy się z nowymi adresami: %{list}."
+          many: "Łączy się z nowymi adresami: %{list}."
+          other: "Łączy się z nowymi adresami: %{list}."
+        new_permissions:
+          one: "Prosi o nowe uprawnienie: %{list}."
+          few: "Prosi o nowe uprawnienia: %{list}."
+          many: "Prosi o nowe uprawnienia: %{list}."
+          other: "Prosi o nowe uprawnienia: %{list}."
+        nothing_new: "Nie prosi o nic nowego."
+    plugin_directory:
+      unavailable: "Katalog pluginów jest teraz niedostępny. Zainstalowane pluginy nadal działają."
+      index:
+        title: "Przeglądaj pluginy"
+        intro: "Pluginy z katalogu pluginów Broadcast. Każda wersja jest sprawdzona i podpisana. Zobaczysz jej uprawnienia, zanim cokolwiek zostanie uruchomione."
+        empty: "Katalog nie ma jeszcze pluginów dla tej wersji Broadcast."
+        by: "Wydawca: %{publisher}"
+        verified: "Zweryfikowany wydawca"
+        reviewed: "Sprawdzony"
+        installed: "Zainstalowany"
+        incompatible: "Wymaga innej wersji Broadcast"
+        details: "Szczegóły"
+      show:
+        permissions: "Uprawnienia"
+        review_after: "Po instalacji przejrzysz dokładne uprawnienia i kod, a potem wdrożysz."
+        support: "Pomoc"
+        privacy: "Polityka prywatności"
+        installed: "Zainstalowany: otwórz stronę pluginu"
+        install: "Zainstaluj"
+        held_restore: "Usunięto ten plugin i zachowano jego dane do %{date}. Ponowna instalacja przywraca jego ustawienia i dane."
+      install:
+        installed: "Pobrano i sprawdzono. Przejrzyj uprawnienia, a potem wdróż."
+      update:
+        updated: "Zaktualizowano do wersji %{version}."
+        review: "Nowa wersja prosi o inne uprawnienia lub hooki. Przejrzyj ją, a potem wdróż."
+    plugin_versions:
+      changelog:
+        title: "Co zmieniło się w %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Podpisany przez katalog pluginów (klucz %{key})."
+        unsigned: "Nie pochodzi z katalogu pluginów. Zainstaluj go tylko, jeśli ufasz jego źródłu."
+        permissions: "Uprawnienia"
+        permissions_intro: "Co ten plugin może robić. Każdy plugin może też przechowywać własne ustawienia, dane i logi."
+        hooks: "Co dodaje"
+        page: "Strona „%{title}” (%{slot})"
+        deploy_hint: "Nic nie działa, dopóki nie wdrożysz pluginu i nie włączysz go w kanale."
+        deploy: "Wdróż"
+        status: "Status: %{status}"
+        changes: "Zmiany od %{version}"
+        code: "Kod"
+      rollback:
+        rolled_back: "Wersja %{version} znów jest aktywna."
+      diff:
+        unchanged: "Brak zmian."
+        too_large: "Ta zmiana jest zbyt duża, aby ją tu pokazać. Porównaj pliki przed wdrożeniem."
+      approve:
+        deployed: "Wersja %{version} jest aktywna."
+      permissions:
+        only_basic: "Tylko własne ustawienia, dane i logi."
+        tier_1: "Standardowe"
+        tier_2: "Wrażliwe"
+        tier_3: "Rozszerzone"
+        new: "Nowe"
+    plugin_channels:
+      enable:
+        enabled: "Plugin jest włączony w %{channel}."
+      disable:
+        disabled: "Plugin jest wyłączony w %{channel}."
+      settings:
+        saved: "Zapisano ustawienia."
+      grant:
+        granted: "Uprawnienie włączone."
+        not_declared: "Ten plugin nie prosi o to uprawnienie."
+      revoke:
+        revoked: "Uprawnienie wyłączone."
+    plugin_audit_events:
+      index:
+        title: "Dziennik audytu pluginów"
+        empty: "Jeszcze nic."
+      actions:
+        uploaded: "Przesłano"
+        approved: "Wdrożono"
+        enabled: "Włączono"
+        disabled: "Wyłączono"
+        removed: "Usunięto"
+        granted: "Włączono rozszerzone uprawnienie"
+        revoked: "Wyłączono rozszerzone uprawnienie"
+        settings_changed: "Zmieniono ustawienia"
+        auto_disabled: "Wyłączono po błędach"
+        alert_not_delivered: "Nie dostarczono e-maila z alertem"
+        alert_captured: "E-mail z alertem zatrzymany przez Serwer testowy"
+        draft_created: "Rozpoczęto wersję roboczą"
+        deploy_requested: "Wysłano do wdrożenia"
+        rolled_back: "Przywrócono"
+        restored: "Przywrócono z zachowanymi danymi"
+        blocked: "Zablokowano przez katalog pluginów"
+        published_to_marketplace: "Wysłano do marketplace"
+        purged: "Zachowane dane usunięto po 30 dniach"
+        agent_draft: "Szkic zmieniony przez agenta"
+        agent_requested_deploy: "Wdrożenie zlecone przez agenta"
+        uninstall_hook_failed: "Sprzątanie przy usuwaniu nie powiodło się"
+        auto_updated: "Zaktualizowano automatycznie"
+        paused: "Wstrzymano"
+        resumed: "Wznowiono"
+  channel_plugins:
+    index:
+      title: "Pluginy"
+      intro: "Pluginy w %{channel}. Każdy plugin jest włączony lub wyłączony tylko dla tego kanału."
+      all_plugins: "Wszystkie pluginy"
+      empty: "Nie zainstalowano żadnych pluginów."
+      blocked: "Zablokowany przez katalog pluginów: %{reason}"
+      auto_disabled: "Wyłączony po powtarzających się błędach"
+    plugin:
+      turn_on: "Włącz %{name}"
+      turn_off: "Wyłącz %{name}"
+      "on": "Włączony"
+      "off": "Wyłączony"
+      configure: "Ustawienia i uprawnienia"
+      "yes": "Tak"
+      "no": "Nie"
+      secret_set: "Zapisano (ukryte)"
+      secret_hint: "Tajne. Zostaw puste, aby zachować zapisaną wartość."
+      save_settings: "Zapisz ustawienia"
+      granted: "Włączone: %{value}"
+      granted_on: "włączone"
+      revoke: "Wyłącz"
+      grant: "Włącz"
+      grant_hint: "Rozszerzone uprawnienie. Jest wyłączone, dopóki nie włączysz go dla tego kanału."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Pluginy"
+      panels:
+        application:
+          plugins: "Pluginy"
+        plugin_pages:
+          manage: "Wszystkie pluginy"
+          this_channel: "W tym kanale"
+          title: "Pluginy"
+  plugin_mailer:
+    auto_disabled:
+      subject: "Plugin %{name} został wyłączony"
+      intro: "Broadcast wyłączył plugin %{name} (%{key}) we wszystkich kanałach po powtarzających się błędach."
+      reason: "Powód: %{reason}"
+      open: "Otwórz stronę pluginu"
+    blocked:
+      subject: "Plugin %{name} został zablokowany"
+      intro: "Katalog pluginów zablokował zainstalowaną wersję %{name} (%{key}). Broadcast wyłączył go we wszystkich kanałach."
+      reason: "Powód: %{reason}"
+      next: "Zainstaluj nowszą wersję, gdy katalog ją udostępni, albo usuń plugin."
+      open: "Otwórz stronę pluginu"
+    deploy_requested:
+      subject: "Plugin %{name} %{version} czeka na Twoje wdrożenie"
+      intro: "Agent poprosił o wdrożenie wersji %{version} pluginu %{name} (%{key})."
+      next: "Nic nie działa, dopóki go nie wdrożysz. Sprawdź zmiany w kodzie i uprawnienia, a potem wdróż albo zostaw."
+      open: "Sprawdź i wdróż"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Działa w pluginie %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "Krok pluginu %{plugin}."
+        unavailable: "Ten krok pluginu jest niedostępny: plugin został wyłączony, usunięty lub zmieniony. Krok jest pomijany."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Krok pluginu"
+  segments:
+    plugin_timeout: "Liczenie tego segmentu trwało zbyt długo z powodu reguły segmentu z pluginu. Zawęź segment lub sprawdź plugin."
+    preview_count:
+      plugin_timeout: "Liczenie tego segmentu trwało zbyt długo z powodu reguły segmentu z pluginu. Zawęź segment lub sprawdź plugin."
+    segment_rule_fields:
+      plugin_matches: "Pasuje"
+      fields:
+        group_plugins: "-- Pluginy --"
+        plugin_unavailable: "%{field} (plugin niedostępny)"

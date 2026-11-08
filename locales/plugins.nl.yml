@@ -1,0 +1,460 @@
+# Broadcast plugins: plugin screens, permissions and emails, Dutch.
+#
+# Every key mirrors reference/plugins.en.yml. Keep each %{placeholder} as it is,
+# keep the HTML in keys ending in _html, and never use long dashes. Follow the
+# style notes and glossary at the top of admin.nl.yml. bin/check validates the
+# file; see CONTRIBUTING.md.
+nl:
+  plugins:
+    open_link:
+      title: "Deze link openen?"
+      body: "%{plugin} wil een pagina buiten Broadcast openen. Controleer het adres voordat je verdergaat."
+      open: "Link openen"
+    public_action:
+      confirm_title: "Een moment"
+      confirm_button: "Doorgaan"
+      done_title: "Bedankt"
+      failed_title: "Er ging iets mis"
+      failed_body: "We konden dit niet opslaan. Probeer de link later opnieuw."
+    developer_token:
+      label: "Pluginontwikkelaar"
+      hint: "Voor een AI-agent die plugins schrijft: hij kan concepten met testgegevens maken, wijzigen en testen, en ze ter beoordeling aan jou voorleggen. Hij kan geen echte abonneegegevens lezen en niets uitrollen. Hij kan geen andere rechten hebben en verloopt binnen 30 dagen."
+    webhook_endpoints:
+      title: "Plugingebeurtenissen"
+      hint: "Alleen verzonden voor de gebeurtenissen die je hier aanvinkt. Alles selecteren neemt ze niet mee."
+      not_available: "heeft een plugingebeurtenis die in dit kanaal niet beschikbaar is"
+    token_endpoints:
+      label: "Plugin-endpoints"
+      hint: "De plugin-API-endpoints die dit token mag aanroepen, één per regel (plugin/endpoint, of plugin/* voor alle). Het token heeft ook het recht nodig dat elk endpoint vraagt."
+      needs: "heeft %{permission} nodig"
+    permissions:
+      settings:
+        label: "Eigen instellingen"
+        description: "Leest de instellingen die je voor deze plugin invult, ook geheime waarden."
+      store:
+        label: "Eigen opslag"
+        description: "Bewaart eigen gegevens in Broadcast."
+      log:
+        label: "Logs"
+        description: "Schrijft logregels die je op de pluginpagina kunt lezen."
+      channel:
+        label: "Kanaalnaam"
+        description: "Leest de naam van het kanaal waarin de plugin draait."
+      events:
+        label: "Eigen gebeurtenissen"
+        description: "Legt gebeurtenissen vast (bijvoorbeeld bestellingen) voor de eigen segmentregels."
+      subscribers_read:
+        label: "Abonnees lezen"
+        description: "Leest abonneegegevens, tags en aangepaste velden."
+      subscribers_write:
+        label: "Abonnees wijzigen"
+        description: "Wijzigt namen, aangepaste velden en andere gegevens van bestaande abonnees."
+      tags_read:
+        label: "Tags lezen"
+        description: "Leest de lijst met tags."
+      tags_write:
+        label: "Tags wijzigen"
+        description: "Voegt tags toe aan abonnees en verwijdert ze."
+      broadcasts_read:
+        label: "Campagnes lezen"
+        description: "Leest campagnes en hun statistieken."
+      sequences_read:
+        label: "Reeksen lezen"
+        description: "Leest reeksen en hun stappen."
+      segments_read:
+        label: "Segmenten lezen"
+        description: "Leest segmenten en hun regels."
+      network:
+        label: "Internettoegang"
+        description: "Maakt verbinding met deze sites: %{hosts}."
+      subscribers_export:
+        label: "Je hele lijst kopiëren"
+        description: "Kan elke abonnee lezen, pagina voor pagina, en ze naar %{hosts} sturen."
+      subscribers_create:
+        label: "Nieuwe abonnees toevoegen"
+        description: "Voegt mensen toe aan je lijst. Je dubbele opt-in-instelling geldt."
+      network_wildcard:
+        label: "Internettoegang tot veel sites"
+        description: "Maakt verbinding met elke site die past bij %{hosts}."
+      network_fromSetting:
+        label: "Internettoegang tot een adres dat je invult"
+        description: "Maakt verbinding met het adres dat je in de instelling %{setting} typt."
+      output_html:
+        label: "HTML in e-mails"
+        description: "Voegt HTML toe aan e-mails. Broadcast schoont het op voordat het wordt verzonden."
+      hooks_beforeSend:
+        label: "E-mails wijzigen voordat ze worden verzonden"
+        description: "Kan een e-mail overslaan of het onderwerp en de inhoud wijzigen. Kan niet wijzigen wie de e-mail ontvangt, de afzender of de afmeldlink."
+      hooks_apiEndpoints:
+        label: "Eigen API"
+        description: "Voegt API-adressen toe die aanroepers met een passend API-token kunnen gebruiken."
+      events_webhook:
+        label: "Eigen gebeurtenissen in webhooks"
+        description: "Laat je gebeurtenissen van deze plugin naar je webhook-endpoints sturen. Er wordt niets verzonden totdat je een gebeurtenis voor een endpoint inschakelt. Een webhook bevat de gebeurtenis, de gedeclareerde velden en de abonnee-id, nooit een e-mailadres."
+      hooks_publicActions:
+        label: "Links in e-mails waarop iedereen kan klikken"
+        description: "Voegt links toe aan e-mails die deze plugin uitvoeren wanneer een abonnee erop klikt, zonder inloggen. Broadcast bewijst wie er klikte. De plugin krijgt de abonnee en de keuze in de link."
+      network_private:
+        label: "Toegang tot één privéadres"
+        description: "Maakt verbinding met één adres in je privénetwerk dat jij goedkeurt."
+      email_sender:
+        label: "Afzender wijzigen"
+        description: "Wijzigt Van of Antwoord aan naar een afzender die in dit kanaal geverifieerd is."
+      sql:
+        label: "Databasetoegang"
+      files:
+        label: "Bestandstoegang"
+      env:
+        label: "Toegang tot serverinstellingen"
+      process:
+        label: "Programma's starten"
+      subscribers_resubscribe:
+        label: "Mensen opnieuw aanmelden"
+      suppressions_write:
+        label: "Blokkeringen verwijderen"
+      email_recipients:
+        label: "Ontvangers van e-mails wijzigen"
+      email_unsubscribe:
+        label: "Afmeldlink wijzigen"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "kan niet met andere rechten worden gecombineerd"
+            expires_at:
+              plugin_development_lifetime: "moet binnen 30 dagen liggen voor een pluginontwikkelaarstoken"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "overschrijdt de opslaglimiet van deze plugin"
+  app_installation:
+    plugins:
+      index:
+        title: "Plugins"
+        intro: "Plugins voegen functies toe aan Broadcast. Installeer een plugin één keer en schakel hem daarna in elk kanaal in."
+        audit_log: "Auditlog"
+        safe_mode: "De veilige modus staat aan."
+        safe_mode_body: "Geen enkele plugin draait totdat BROADCAST_PLUGINS_SAFE_MODE uit de serverinstellingen is verwijderd."
+        runtime_up:
+          one: "De pluginruntime draait (1 pluginproces)."
+          other: "De pluginruntime draait (%{count} pluginprocessen)."
+        runtime_down: "De pluginruntime draait niet of is niet geïnstalleerd. Al het andere in Broadcast werkt."
+        name: "Naam"
+        key: "ID"
+        version: "Versie"
+        state: "Kanalen"
+        not_deployed: "Niet uitgerold"
+        first_deploy_waits: "Versie %{version} wacht op jouw uitrol"
+        browse: "Plugins bekijken"
+        update: "Bijwerken naar %{version}"
+        blocked: "Geblokkeerd door de plugincatalogus: %{reason}"
+        directory_stale: "Broadcast kon de blokkeerlijst van de plugincatalogus al meer dan een week niet controleren (laatste controle: %{checked}). Geblokkeerde plugins worden pas uitgeschakeld als dat weer lukt."
+        never: "nooit"
+        auto_disabled: "Uitgeschakeld na herhaalde fouten"
+        coverage_all: "Alle kanalen"
+        coverage_some: "%{enabled} van %{total} kanalen"
+        coverage_none: "Uit"
+        coverage_label: "Kanalen kiezen voor %{name}: %{state}"
+        empty: "Er zijn geen plugins geïnstalleerd."
+        upload_heading: "Plugin uploaden"
+        upload_intro: "Upload een .broadcast-plugin-bestand. Je ziet de rechten voordat er iets draait."
+        upload: "Uploaden"
+        delete_now: "Nu verwijderen"
+        held_intro: "Verwijderde plugins waarvan de gegevens bewaard worden. Dezelfde plugin opnieuw installeren herstelt de instellingen en gegevens."
+        held_title: "30 dagen bewaard"
+        held_until: "Gegevens bewaard tot %{date}"
+        keeps_running: "Versie %{version} blijft draaien tot je beslist."
+        pause: "Pauzeren"
+        pinned: "Vastgezet op %{version}"
+        resume: "Hervatten"
+        review_update: "Controleren en bijwerken"
+        update_waits: "%{name} %{version} wacht op jou."
+      channels_control:
+        title: "Kanalen voor %{name}"
+        intro: "Vink de kanalen aan waarin deze plugin draait."
+        filter: "Kanalen filteren"
+        select_all: "Alles selecteren"
+        deselect_all: "Alles deselecteren"
+        selected_count: "%{selected} van %{total} geselecteerd"
+        no_match: "Geen kanaal past bij dit filter."
+        needs_settings: "Instellingen nodig"
+        cancel: "Annuleren"
+        save: "Opslaan"
+      channels:
+        saved: "Kanalen opgeslagen voor %{name}."
+        refused: "Deze kanalen konden niet worden ingeschakeld: %{channels}. Open elk kanaal om de instellingen te controleren."
+      create:
+        no_file: "Kies een .broadcast-plugin-bestand."
+        uploaded: "Geüpload. Controleer de rechten en rol daarna uit."
+      publish:
+        not_live: "Rol eerst een versie uit. Alleen een uitgerolde versie kan worden gepubliceerd."
+        submitted: "%{id} %{version} staat in de beoordelingswachtrij van de marktplaats. Volg het op %{url}."
+      show:
+        auto_disabled: "Uitgeschakeld na herhaalde fouten: %{reason}. Rol een versie uit om de plugin weer in te schakelen."
+        logs: "Logs"
+        remove: "Verwijderen"
+        pending: "Versie %{version} wacht op je goedkeuring."
+        review: "Beoordelen en uitrollen"
+        publish_title: "Publiceren op de marktplaats"
+        publish_intro: "Stuurt versie %{version} ter beoordeling naar de Broadcast-pluginmarktplaats, onder je uitgevers-id. Op deze server verandert niets. Je hebt daar een uitgeversaccount nodig: zie %{docs_url}."
+        publish_token: "Publicatietoken"
+        publish_token_hint: "Via Dashboard > Plugins op de marktplaats. Het wordt voor dit ene verzoek gebruikt en niet bewaard."
+        publish_summary: "Samenvatting (één zin)"
+        publish_category: "Categorie"
+        publish_button: "Indienen ter beoordeling"
+        publish_categories:
+          audience: "Publiek en groei"
+          content: "E-mailinhoud"
+          analytics: "Rapporten en analyses"
+          integrations: "Integraties"
+          automation: "Automatisering"
+          developer: "Ontwikkelaarstools"
+        permissions: "Rechten"
+        enabled: "Aan in dit kanaal"
+        disabled: "Uit in dit kanaal"
+        channels: "Kanalen"
+        open_channel: "Openen"
+        earlier_versions: "Eerdere versies"
+        rollback: "Terugdraaien"
+        rollback_hint: "Gaat terug naar een versie die je eerder hebt goedgekeurd, met de rechten die die versie had."
+        health_calls: "aanroepen, vandaag en gisteren"
+        health_failures: "mislukte runs, laatste 24 uur"
+        health_hint: "Aanroepen worden per dag geteld. Verzoeken en mislukte runs worden geteld uit de logregels van de laatste 24 uur."
+        health_requests: "verzoeken, laatste 24 uur"
+        health_store: "opgeslagen gegevens, nu"
+        health_title: "Status"
+        pause: "Pauzeren"
+        paused_hint: "Hij draait in geen enkel kanaal. De instellingen en gegevens blijven."
+        resume: "Hervatten"
+        update_policies:
+          ask:
+            help: "Nieuwe versies worden aangeboden; er wordt niets uitgerold tot je Bijwerken kiest."
+            label: "Vraag het me elke keer"
+          auto_when_same:
+            help: "Een nieuwe versie rolt zichzelf uit als ze geen nieuwe rechten of hooks vraagt. Al het andere wacht op jou."
+            label: "Automatisch als er niets nieuws wordt gevraagd"
+          pinned:
+            help: "Blijft op %{version}. Er wordt geen andere versie aangeboden of uitgerold."
+            label: "Vastgezet"
+        updates_title: "Updates"
+      logs:
+        title: "%{name}: logs"
+        breadcrumb: "Logs"
+        empty: "Geen logregels in de afgelopen 30 dagen."
+      confirm_destroy:
+        title: "%{name} verwijderen?"
+        body: "Hiermee worden de plugin, alle versies, instellingen en opgeslagen gegevens op deze server verwijderd. Het auditlog bewaart een vermelding."
+        cancel: "Annuleren"
+        remove: "%{name} verwijderen"
+        choice: "Wat er met de gegevens gebeurt"
+        delete_label: "De gegevens nu verwijderen"
+        delete_now: "Nu verwijderen"
+        held_body: "De gegevens worden bewaard tot %{date}. Nu verwijderen wist meteen de versies, instellingen en opgeslagen gegevens. Het auditlogboek houdt een vermelding."
+        held_title: "%{name} nu verwijderen?"
+        keep_help: "Hij stopt en wordt in elk kanaal uitgeschakeld. De versies, instellingen en opgeslagen gegevens blijven 30 dagen en worden daarna verwijderd."
+        keep_label: "De gegevens 30 dagen bewaren, zodat een herinstallatie ze terugkrijgt"
+        tags_stay: "Tags die hij heeft toegevoegd blijven in elk geval op je abonnees."
+      destroy:
+        removed: "%{name} is verwijderd."
+        kept: "%{name} is verwijderd. De gegevens worden bewaard tot %{date}; installeer hem opnieuw om ze te herstellen."
+      held:
+        refused: "%{name} is verwijderd. De gegevens worden bewaard; installeer hem opnieuw om ze te herstellen, of verwijder ze nu."
+      pause:
+        paused: "%{name} is in elk kanaal gepauzeerd."
+      resume:
+        resumed: "%{name} draait weer."
+      status:
+        paused: "Gepauzeerd"
+        paused_at: "Gepauzeerd op %{when}"
+        paused_by: "Gepauzeerd door %{by} op %{when}"
+      stop_notice:
+        data_unchanged: "Je gegevens op deze server zijn niet veranderd."
+        no_reason: "er is geen reden gegeven."
+        open: "Plugin openen"
+        reason: "Reden: %{reason}"
+        title: "Furvur heeft %{name} %{version} op %{date} gestopt."
+      update_policy:
+        invalid: "Kies een van de update-instellingen."
+        nothing_to_pin: "Rol eerst een versie uit. Alleen een uitgerolde versie kan worden vastgezet."
+        saved: "Update-instelling opgeslagen."
+      waiting:
+        new_hooks:
+          one: "Hij verandert wanneer hij draait: %{list}."
+          other: "Hij verandert wanneer hij draait: %{list}."
+        new_hosts:
+          one: "Hij maakt verbinding met een nieuw adres: %{list}."
+          other: "Hij maakt verbinding met nieuwe adressen: %{list}."
+        new_permissions:
+          one: "Hij vraagt een nieuw recht: %{list}."
+          other: "Hij vraagt nieuwe rechten: %{list}."
+        nothing_new: "Hij vraagt niets nieuws."
+    plugin_directory:
+      unavailable: "De plugincatalogus is nu niet bereikbaar. Geïnstalleerde plugins blijven werken."
+      index:
+        title: "Plugins bekijken"
+        intro: "Plugins uit de Broadcast-plugincatalogus. Elke versie is beoordeeld en ondertekend. Je ziet de rechten voordat er iets draait."
+        empty: "De catalogus heeft nog geen plugins voor deze versie van Broadcast."
+        by: "Door %{publisher}"
+        verified: "Geverifieerde uitgever"
+        reviewed: "Beoordeeld"
+        installed: "Geïnstalleerd"
+        incompatible: "Heeft een andere versie van Broadcast nodig"
+        details: "Details"
+      show:
+        permissions: "Rechten"
+        review_after: "Na de installatie bekijk je de exacte rechten en de code, en daarna rol je uit."
+        support: "Ondersteuning"
+        privacy: "Privacybeleid"
+        installed: "Geïnstalleerd: pluginpagina openen"
+        install: "Installeren"
+        held_restore: "Je hebt deze plugin verwijderd en de gegevens bewaard tot %{date}. Opnieuw installeren herstelt de instellingen en gegevens."
+      install:
+        installed: "Gedownload en gecontroleerd. Bekijk de rechten en rol daarna uit."
+      update:
+        updated: "Bijgewerkt naar versie %{version}."
+        review: "De nieuwe versie vraagt om andere rechten of hooks. Bekijk ze en rol daarna uit."
+    plugin_versions:
+      changelog:
+        title: "Wat er is veranderd in %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Ondertekend door de plugincatalogus (sleutel %{key})."
+        unsigned: "Niet afkomstig uit de plugincatalogus. Installeer de plugin alleen als je de herkomst vertrouwt."
+        permissions: "Rechten"
+        permissions_intro: "Wat deze plugin mag doen. Elke plugin kan ook eigen instellingen, gegevens en logs bijhouden."
+        hooks: "Wat de plugin toevoegt"
+        page: "Pagina \"%{title}\" (%{slot})"
+        deploy_hint: "Er draait niets totdat je uitrolt en de plugin in een kanaal inschakelt."
+        deploy: "Uitrollen"
+        status: "Status: %{status}"
+        changes: "Wijzigingen sinds %{version}"
+        code: "Code"
+      rollback:
+        rolled_back: "Versie %{version} is weer actief."
+      diff:
+        unchanged: "Geen wijzigingen."
+        too_large: "Deze wijziging is te groot om hier te tonen. Vergelijk de bestanden voordat je uitrolt."
+      approve:
+        deployed: "Versie %{version} is actief."
+      permissions:
+        only_basic: "Alleen eigen instellingen, gegevens en logs."
+        tier_1: "Standaard"
+        tier_2: "Gevoelig"
+        tier_3: "Uitgebreid"
+        new: "Nieuw"
+    plugin_channels:
+      enable:
+        enabled: "De plugin staat aan in %{channel}."
+      disable:
+        disabled: "De plugin staat uit in %{channel}."
+      settings:
+        saved: "Instellingen opgeslagen."
+      grant:
+        granted: "Recht ingeschakeld."
+        not_declared: "Deze plugin vraagt niet om dat recht."
+      revoke:
+        revoked: "Recht uitgeschakeld."
+    plugin_audit_events:
+      index:
+        title: "Plugin-auditlog"
+        empty: "Nog niets."
+      actions:
+        uploaded: "Geüpload"
+        approved: "Uitgerold"
+        enabled: "Ingeschakeld"
+        disabled: "Uitgeschakeld"
+        removed: "Verwijderd"
+        granted: "Uitgebreid recht aan"
+        revoked: "Uitgebreid recht uit"
+        settings_changed: "Instellingen gewijzigd"
+        auto_disabled: "Uitgeschakeld na fouten"
+        alert_not_delivered: "Waarschuwingsmail niet bezorgd"
+        alert_captured: "Waarschuwingsmail tegengehouden door de Testserver"
+        draft_created: "Concept gestart"
+        deploy_requested: "Ingediend om uit te rollen"
+        rolled_back: "Teruggedraaid"
+        restored: "Hersteld met de bewaarde gegevens"
+        blocked: "Geblokkeerd door de plugin-directory"
+        published_to_marketplace: "Naar de marktplaats gestuurd"
+        purged: "Bewaarde gegevens na 30 dagen verwijderd"
+        agent_draft: "Concept gewijzigd door een agent"
+        agent_requested_deploy: "Uitrol gevraagd door een agent"
+        uninstall_hook_failed: "Opruimen bij verwijderen mislukt"
+        auto_updated: "Automatisch bijgewerkt"
+        paused: "Gepauzeerd"
+        resumed: "Hervat"
+  channel_plugins:
+    index:
+      title: "Plugins"
+      intro: "Plugins in %{channel}. Elke plugin staat alleen voor dit kanaal aan of uit."
+      all_plugins: "Alle plugins"
+      empty: "Er zijn geen plugins geïnstalleerd."
+      blocked: "Geblokkeerd door de plugincatalogus: %{reason}"
+      auto_disabled: "Uitgeschakeld na herhaalde fouten"
+    plugin:
+      turn_on: "%{name} inschakelen"
+      turn_off: "%{name} uitschakelen"
+      "on": "Aan"
+      "off": "Uit"
+      configure: "Instellingen en rechten"
+      "yes": "Ja"
+      "no": "Nee"
+      secret_set: "Opgeslagen (verborgen)"
+      secret_hint: "Geheim. Laat het leeg om de opgeslagen waarde te behouden."
+      save_settings: "Instellingen opslaan"
+      granted: "Ingeschakeld: %{value}"
+      granted_on: "aan"
+      revoke: "Uitschakelen"
+      grant: "Inschakelen"
+      grant_hint: "Uitgebreid recht. Het staat uit totdat je het voor dit kanaal inschakelt."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Plugins"
+      panels:
+        application:
+          plugins: "Plugins"
+        plugin_pages:
+          manage: "Alle plugins"
+          this_channel: "In dit kanaal"
+          title: "Plugins"
+  plugin_mailer:
+    auto_disabled:
+      subject: "Plugin %{name} is uitgeschakeld"
+      intro: "Broadcast heeft de plugin %{name} (%{key}) na herhaalde fouten in alle kanalen uitgeschakeld."
+      reason: "Reden: %{reason}"
+      open: "Pluginpagina openen"
+    blocked:
+      subject: "Plugin %{name} is geblokkeerd"
+      intro: "De plugincatalogus heeft de geïnstalleerde versie van %{name} (%{key}) geblokkeerd. Broadcast heeft de plugin in alle kanalen uitgeschakeld."
+      reason: "Reden: %{reason}"
+      next: "Installeer een nieuwere versie zodra de catalogus er een aanbiedt, of verwijder de plugin."
+      open: "Pluginpagina openen"
+    deploy_requested:
+      subject: "Plugin %{name} %{version} wacht op jouw uitrol"
+      intro: "Een agent vroeg om versie %{version} van de plugin %{name} (%{key}) uit te rollen."
+      next: "Niets draait voordat je het uitrolt. Controleer de codewijzigingen en de rechten, en rol uit of laat het."
+      open: "Controleren en uitrollen"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Draait in de plugin %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "Een stap van de plugin %{plugin}."
+        unavailable: "Deze pluginstap is niet beschikbaar: de plugin is uitgeschakeld, verwijderd of gewijzigd. De stap wordt overgeslagen."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Pluginstap"
+  segments:
+    plugin_timeout: "Het tellen van dit segment duurde te lang door een segmentregel van een plugin. Maak het segment kleiner of controleer de plugin."
+    preview_count:
+      plugin_timeout: "Het tellen van dit segment duurde te lang door een segmentregel van een plugin. Maak het segment kleiner of controleer de plugin."
+    segment_rule_fields:
+      plugin_matches: "Komt overeen"
+      fields:
+        group_plugins: "-- Plugins --"
+        plugin_unavailable: "%{field} (plugin niet beschikbaar)"

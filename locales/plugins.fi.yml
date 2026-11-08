@@ -1,0 +1,460 @@
+# Broadcast plugins: plugin screens, permissions and emails, Finnish.
+#
+# Every key mirrors reference/plugins.en.yml. Keep each %{placeholder} as it is,
+# keep the HTML in keys ending in _html, and never use long dashes. Follow the
+# style notes and glossary at the top of admin.fi.yml. bin/check validates the
+# file; see CONTRIBUTING.md.
+fi:
+  plugins:
+    open_link:
+      title: "Avataanko tämä linkki?"
+      body: "%{plugin} haluaa avata sivun Broadcastin ulkopuolella. Tarkista osoite ennen kuin jatkat."
+      open: "Avaa linkki"
+    public_action:
+      confirm_title: "Hetki vain"
+      confirm_button: "Jatka"
+      done_title: "Kiitos"
+      failed_title: "Jokin meni vikaan"
+      failed_body: "Emme voineet tallentaa tätä. Kokeile linkkiä myöhemmin uudelleen."
+    developer_token:
+      label: "Plugin-kehittäjä"
+      hint: "Plugineja kirjoittavalle tekoälyagentille: se voi luoda, muuttaa ja testata luonnoksia testidatalla ja lähettää ne sinulle tarkistettaviksi. Se ei voi lukea oikeita tilaajatietoja eikä ottaa mitään käyttöön. Sillä ei voi olla muita käyttöoikeuksia, ja se vanhenee 30 päivän kuluessa."
+    webhook_endpoints:
+      title: "Pluginien tapahtumat"
+      hint: "Lähetetään vain tapahtumista, jotka valitset tässä. Valitse kaikki ei sisällä niitä."
+      not_available: "sisältää pluginin tapahtuman, joka ei ole saatavilla tällä kanavalla"
+    token_endpoints:
+      label: "Pluginien päätepisteet"
+      hint: "Pluginien API-päätepisteet, joita tämä tunnus saa kutsua, yksi riviä kohden (plugin/päätepiste tai plugin/* kaikille). Tunnus tarvitsee myös käyttöoikeuden, jota kukin päätepiste vaatii."
+      needs: "vaatii: %{permission}"
+    permissions:
+      settings:
+        label: "Omat asetukset"
+        description: "Lukee asetukset, jotka annat tälle pluginille, myös salaiset arvot."
+      store:
+        label: "Oma tallennustila"
+        description: "Säilyttää omia tietojaan Broadcastissa."
+      log:
+        label: "Lokit"
+        description: "Kirjoittaa lokirivejä, joita voit lukea pluginin sivulla."
+      channel:
+        label: "Kanavan nimi"
+        description: "Lukee sen kanavan nimen, jossa se toimii."
+      events:
+        label: "Omat tapahtumat"
+        description: "Tallentaa tapahtumia (esimerkiksi tilauksia) omia segmenttisääntöjään varten."
+      subscribers_read:
+        label: "Tilaajien lukeminen"
+        description: "Lukee tilaajien tiedot, tunnisteet ja mukautetut kentät."
+      subscribers_write:
+        label: "Tilaajien muuttaminen"
+        description: "Muuttaa olemassa olevien tilaajien nimiä, mukautettuja kenttiä ja muita tietoja."
+      tags_read:
+        label: "Tunnisteiden lukeminen"
+        description: "Lukee tunnisteluettelon."
+      tags_write:
+        label: "Tunnisteiden muuttaminen"
+        description: "Lisää tilaajille tunnisteita ja poistaa niitä."
+      broadcasts_read:
+        label: "Kampanjoiden lukeminen"
+        description: "Lukee kampanjat ja niiden tilastot."
+      sequences_read:
+        label: "Sarjojen lukeminen"
+        description: "Lukee sarjat ja niiden vaiheet."
+      segments_read:
+        label: "Segmenttien lukeminen"
+        description: "Lukee segmentit ja niiden säännöt."
+      network:
+        label: "Internetyhteys"
+        description: "Muodostaa yhteyden näihin sivustoihin: %{hosts}."
+      subscribers_export:
+        label: "Koko listasi kopioiminen"
+        description: "Voi lukea jokaisen tilaajan sivu kerrallaan ja lähettää heidät kohteeseen %{hosts}."
+      subscribers_create:
+        label: "Uusien tilaajien lisääminen"
+        description: "Lisää henkilöitä listallesi. Kaksoisvahvistusasetuksesi (double opt-in) on voimassa."
+      network_wildcard:
+        label: "Internetyhteys moniin sivustoihin"
+        description: "Muodostaa yhteyden mihin tahansa sivustoon, joka vastaa kohdetta %{hosts}."
+      network_fromSetting:
+        label: "Internetyhteys antamaasi osoitteeseen"
+        description: "Muodostaa yhteyden osoitteeseen, jonka kirjoitat asetukseen %{setting}."
+      output_html:
+        label: "HTML sähköposteissa"
+        description: "Lisää sähköposteihin HTML:ää. Broadcast siivoaa sen ennen lähetystä."
+      hooks_beforeSend:
+        label: "Sähköpostien muuttaminen ennen lähetystä"
+        description: "Voi ohittaa sähköpostin tai muuttaa sen aihetta ja sisältöä. Se ei voi muuttaa vastaanottajaa, lähettäjää eikä tilauksen peruutuslinkkiä."
+      hooks_apiEndpoints:
+        label: "Oma API"
+        description: "Lisää API-osoitteita, joita voivat käyttää kutsujat, joilla on vastaava API-tunnus."
+      events_webhook:
+        label: "Omat tapahtumat webhookeissa"
+        description: "Voit lähettää tämän pluginin tapahtumia webhook-päätepisteisiisi. Mitään ei lähetetä, ennen kuin kytket tapahtuman päälle päätepisteelle. Webhook sisältää tapahtuman, sen ilmoitetut kentät ja tilaajan tunnisteen, ei koskaan sähköpostiosoitetta."
+      hooks_publicActions:
+        label: "Sähköpostien linkit, joita kuka tahansa voi klikata"
+        description: "Lisää sähköposteihin linkkejä, jotka suorittavat tämän pluginin, kun tilaaja klikkaa niitä, ilman kirjautumista. Broadcast todentaa, kuka klikkasi. Plugin saa tilaajan ja linkissä olevan valinnan."
+      network_private:
+        label: "Yhteys yhteen yksityiseen osoitteeseen"
+        description: "Muodostaa yhteyden yhteen yksityisen verkkosi osoitteeseen, jonka hyväksyt."
+      email_sender:
+        label: "Lähettäjän muuttaminen"
+        description: "Muuttaa Lähettäjä- tai Vastausosoite-kentän lähettäjäksi, joka on vahvistettu tällä kanavalla."
+      sql:
+        label: "Tietokannan käyttö"
+      files:
+        label: "Tiedostojen käyttö"
+      env:
+        label: "Palvelinasetusten käyttö"
+      process:
+        label: "Ohjelmien käynnistäminen"
+      subscribers_resubscribe:
+        label: "Henkilöiden tilaaminen uudelleen"
+      suppressions_write:
+        label: "Estojen poistaminen"
+      email_recipients:
+        label: "Sähköpostien vastaanottajien muuttaminen"
+      email_unsubscribe:
+        label: "Tilauksen peruutuslinkin muuttaminen"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "ei voi yhdistää muihin käyttöoikeuksiin"
+            expires_at:
+              plugin_development_lifetime: "on oltava 30 päivän sisällä plugin-kehittäjän tunnukselle"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "ylittää tämän pluginin tallennusrajan"
+  app_installation:
+    plugins:
+      index:
+        title: "Pluginit"
+        intro: "Pluginit tuovat Broadcastiin uusia ominaisuuksia. Asenna plugin kerran ja kytke se sitten päälle kullakin kanavalla."
+        audit_log: "Tarkastusloki"
+        safe_mode: "Vikasietotila on päällä."
+        safe_mode_body: "Mikään plugin ei toimi, ennen kuin BROADCAST_PLUGINS_SAFE_MODE poistetaan palvelinasetuksista."
+        runtime_up:
+          one: "Pluginien suoritusympäristö on käynnissä (1 plugin-prosessi)."
+          other: "Pluginien suoritusympäristö on käynnissä (%{count} plugin-prosessia)."
+        runtime_down: "Pluginien suoritusympäristö ei ole käynnissä tai sitä ei ole asennettu. Kaikki muu Broadcastissa toimii."
+        name: "Nimi"
+        key: "ID"
+        version: "Versio"
+        state: "Kanavat"
+        not_deployed: "Ei käytössä"
+        first_deploy_waits: "Versio %{version} odottaa käyttöönottoasi"
+        browse: "Selaa plugineja"
+        update: "Päivitä versioon %{version}"
+        blocked: "Plugin-hakemisto on estänyt: %{reason}"
+        directory_stale: "Broadcast ei ole voinut tarkistaa plugin-hakemiston estolistaa yli viikkoon (viimeisin tarkistus: %{checked}). Estettyjä plugineja ei kytketä pois, ennen kuin tarkistus onnistuu."
+        never: "ei koskaan"
+        auto_disabled: "Kytketty pois toistuvien virheiden jälkeen"
+        coverage_all: "Kaikki kanavat"
+        coverage_some: "%{enabled} / %{total} kanavaa"
+        coverage_none: "Pois"
+        coverage_label: "Valitse kanavat pluginille %{name}: %{state}"
+        empty: "Plugineja ei ole asennettu."
+        upload_heading: "Lataa plugin"
+        upload_intro: "Lataa .broadcast-plugin-tiedosto. Näet sen käyttöoikeudet ennen kuin mitään suoritetaan."
+        upload: "Lataa"
+        delete_now: "Poista nyt"
+        held_intro: "Poistetut pluginit, joiden tiedot on säilytetty. Saman pluginin asentaminen uudelleen palauttaa sen asetukset ja tiedot."
+        held_title: "Säilytetty 30 päivää"
+        held_until: "Tiedot säilytetään %{date} asti"
+        keeps_running: "Versio %{version} toimii, kunnes päätät."
+        pause: "Keskeytä"
+        pinned: "Lukittu versioon %{version}"
+        resume: "Jatka"
+        review_update: "Tarkista ja päivitä"
+        update_waits: "%{name} %{version} odottaa sinua."
+      channels_control:
+        title: "Kanavat pluginille %{name}"
+        intro: "Valitse kanavat, joilla tämä plugin toimii."
+        filter: "Suodata kanavia"
+        select_all: "Valitse kaikki"
+        deselect_all: "Poista kaikki valinnat"
+        selected_count: "%{selected} / %{total} valittu"
+        no_match: "Mikään kanava ei vastaa tätä suodatinta."
+        needs_settings: "Vaatii asetukset"
+        cancel: "Peruuta"
+        save: "Tallenna"
+      channels:
+        saved: "Kanavat tallennettu pluginille %{name}."
+        refused: "Näitä kanavia ei voitu kytkeä päälle: %{channels}. Tarkista kunkin kanavan asetukset avaamalla se."
+      create:
+        no_file: "Valitse .broadcast-plugin-tiedosto."
+        uploaded: "Ladattu. Tarkista käyttöoikeudet ja ota sitten käyttöön."
+      publish:
+        not_live: "Ota ensin versio käyttöön. Vain käyttöön otetun version voi julkaista."
+        submitted: "%{id} %{version} on kauppapaikan tarkistusjonossa. Seuraa sitä osoitteessa %{url}."
+      show:
+        auto_disabled: "Kytketty pois toistuvien virheiden jälkeen: %{reason}. Ota versio käyttöön kytkeäksesi sen taas päälle."
+        logs: "Lokit"
+        remove: "Poista"
+        pending: "Versio %{version} odottaa hyväksyntääsi."
+        review: "Tarkista ja ota käyttöön"
+        publish_title: "Julkaise kauppapaikassa"
+        publish_intro: "Lähettää version %{version} Broadcastin plugin-kauppapaikkaan tarkistettavaksi julkaisijatunnuksellasi. Tällä palvelimella mikään ei muutu. Tarvitset siellä julkaisijatilin: katso %{docs_url}."
+        publish_token: "Julkaisutunnus"
+        publish_token_hint: "Kauppapaikan kohdasta Koontinäkymä > Pluginit. Sitä käytetään vain tähän pyyntöön, eikä sitä säilytetä."
+        publish_summary: "Yhteenveto (yksi lause)"
+        publish_category: "Luokka"
+        publish_button: "Lähetä tarkistettavaksi"
+        publish_categories:
+          audience: "Yleisö ja kasvu"
+          content: "Sähköpostin sisältö"
+          analytics: "Raportit ja analytiikka"
+          integrations: "Integraatiot"
+          automation: "Automaatio"
+          developer: "Kehittäjätyökalut"
+        permissions: "Käyttöoikeudet"
+        enabled: "Päällä tällä kanavalla"
+        disabled: "Pois päältä tällä kanavalla"
+        channels: "Kanavat"
+        open_channel: "Avaa"
+        earlier_versions: "Aiemmat versiot"
+        rollback: "Palauta"
+        rollback_hint: "Palaa aiemmin hyväksymääsi versioon niillä käyttöoikeuksilla, jotka sillä oli."
+        health_calls: "kutsut, tänään ja eilen"
+        health_failures: "epäonnistuneet ajot, viimeiset 24 tuntia"
+        health_hint: "Kutsut lasketaan päivittäin. Pyynnöt ja epäonnistuneet ajot lasketaan sen viimeisten 24 tunnin lokiriveistä."
+        health_requests: "pyynnöt, viimeiset 24 tuntia"
+        health_store: "tallennetut tiedot, nyt"
+        health_title: "Tila"
+        pause: "Keskeytä"
+        paused_hint: "Se ei toimi missään kanavassa. Sen asetukset ja tiedot säilyvät."
+        resume: "Jatka"
+        update_policies:
+          ask:
+            help: "Uusia versioita tarjotaan; mitään ei oteta käyttöön, ennen kuin valitset Päivitä."
+            label: "Kysy minulta joka kerta"
+          auto_when_same:
+            help: "Uusi versio otetaan käyttöön itsestään, kun se ei pyydä uusia käyttöoikeuksia tai hookeja. Kaikki muu odottaa sinua."
+            label: "Automaattinen, kun mitään uutta ei pyydetä"
+          pinned:
+            help: "Pysyy versiossa %{version}. Muuta versiota ei tarjota eikä oteta käyttöön."
+            label: "Lukittu"
+        updates_title: "Päivitykset"
+      logs:
+        title: "%{name}: lokit"
+        breadcrumb: "Lokit"
+        empty: "Ei lokirivejä viimeisten 30 päivän ajalta."
+      confirm_destroy:
+        title: "Poistetaanko %{name}?"
+        body: "Tämä poistaa pluginin, kaikki sen versiot, asetukset ja tallennetut tiedot tältä palvelimelta. Tarkastuslokiin jää merkintä."
+        cancel: "Peruuta"
+        remove: "Poista %{name}"
+        choice: "Mitä sen tiedoille tapahtuu"
+        delete_label: "Poista sen tiedot nyt"
+        delete_now: "Poista nyt"
+        held_body: "Sen tiedot säilytetään %{date} asti. Poistaminen nyt poistaa heti sen versiot, asetukset ja tallennetut tiedot. Tarkastusloki säilyttää merkinnän."
+        held_title: "Poistetaanko %{name} nyt?"
+        keep_help: "Se pysähtyy ja kytketään pois jokaisessa kanavassa. Sen versiot, asetukset ja tallennetut tiedot säilyvät 30 päivää, minkä jälkeen ne poistetaan."
+        keep_label: "Säilytä sen tiedot 30 päivää, jotta uudelleenasennus ottaa ne käyttöön"
+        tags_stay: "Sen lisäämät tunnisteet jäävät tilaajillesi joka tapauksessa."
+      destroy:
+        removed: "%{name} poistettiin."
+        kept: "%{name} poistettiin. Sen tiedot säilytetään %{date} asti; asenna se uudelleen palauttaaksesi ne."
+      held:
+        refused: "%{name} poistettiin. Sen tiedot on säilytetty; asenna se uudelleen palauttaaksesi ne, tai poista ne nyt."
+      pause:
+        paused: "%{name} on keskeytetty jokaisessa kanavassa."
+      resume:
+        resumed: "%{name} toimii taas."
+      status:
+        paused: "Keskeytetty"
+        paused_at: "Keskeytetty %{when}"
+        paused_by: "Keskeyttäjä %{by}, %{when}"
+      stop_notice:
+        data_unchanged: "Tietosi tällä palvelimella eivät ole muuttuneet."
+        no_reason: "syytä ei annettu."
+        open: "Avaa plugin"
+        reason: "Syy: %{reason}"
+        title: "Furvur pysäytti pluginin %{name} %{version} %{date}."
+      update_policy:
+        invalid: "Valitse yksi päivitysasetuksista."
+        nothing_to_pin: "Ota ensin käyttöön versio. Vain käytössä olevan version voi lukita."
+        saved: "Päivitysasetus tallennettu."
+      waiting:
+        new_hooks:
+          one: "Se muuttaa sitä, milloin se toimii: %{list}."
+          other: "Se muuttaa sitä, milloin se toimii: %{list}."
+        new_hosts:
+          one: "Se muodostaa yhteyden uuteen osoitteeseen: %{list}."
+          other: "Se muodostaa yhteyden uusiin osoitteisiin: %{list}."
+        new_permissions:
+          one: "Se pyytää uutta käyttöoikeutta: %{list}."
+          other: "Se pyytää uusia käyttöoikeuksia: %{list}."
+        nothing_new: "Se ei pyydä mitään uutta."
+    plugin_directory:
+      unavailable: "Plugin-hakemistoon ei saada juuri nyt yhteyttä. Asennetut pluginit toimivat edelleen."
+      index:
+        title: "Selaa plugineja"
+        intro: "Plugineja Broadcastin plugin-hakemistosta. Jokainen versio on tarkistettu ja allekirjoitettu. Näet sen käyttöoikeudet ennen kuin mitään suoritetaan."
+        empty: "Hakemistossa ei ole vielä plugineja tälle Broadcastin versiolle."
+        by: "Julkaisija: %{publisher}"
+        verified: "Vahvistettu julkaisija"
+        reviewed: "Tarkistettu"
+        installed: "Asennettu"
+        incompatible: "Vaatii toisen Broadcastin version"
+        details: "Tiedot"
+      show:
+        permissions: "Käyttöoikeudet"
+        review_after: "Asennuksen jälkeen tarkistat tarkat käyttöoikeudet ja koodin ja otat sitten käyttöön."
+        support: "Tuki"
+        privacy: "Tietosuojakäytäntö"
+        installed: "Asennettu: avaa pluginin sivu"
+        install: "Asenna"
+        held_restore: "Poistit tämän pluginin ja säilytit sen tiedot %{date} asti. Asentaminen uudelleen palauttaa sen asetukset ja tiedot."
+      install:
+        installed: "Ladattu ja tarkistettu. Tarkista käyttöoikeudet ja ota sitten käyttöön."
+      update:
+        updated: "Päivitetty versioon %{version}."
+        review: "Uusi versio pyytää muita käyttöoikeuksia tai hookeja. Tarkista se ja ota sitten käyttöön."
+    plugin_versions:
+      changelog:
+        title: "Mitä muuttui versiossa %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Plugin-hakemiston allekirjoittama (avain %{key})."
+        unsigned: "Ei plugin-hakemistosta. Asenna se vain, jos luotat sen alkuperään."
+        permissions: "Käyttöoikeudet"
+        permissions_intro: "Mitä tämä plugin saa tehdä. Jokainen plugin voi myös säilyttää omia asetuksiaan, tietojaan ja lokejaan."
+        hooks: "Mitä se lisää"
+        page: "Sivu ”%{title}” (%{slot})"
+        deploy_hint: "Mitään ei suoriteta, ennen kuin otat sen käyttöön ja kytket sen päälle jollakin kanavalla."
+        deploy: "Ota käyttöön"
+        status: "Tila: %{status}"
+        changes: "Muutokset version %{version} jälkeen"
+        code: "Koodi"
+      rollback:
+        rolled_back: "Versio %{version} on taas käytössä."
+      diff:
+        unchanged: "Ei muutoksia."
+        too_large: "Tämä muutos on liian suuri näytettäväksi tässä. Vertaa tiedostoja ennen käyttöönottoa."
+      approve:
+        deployed: "Versio %{version} on käytössä."
+      permissions:
+        only_basic: "Vain omat asetukset, tiedot ja lokit."
+        tier_1: "Tavallinen"
+        tier_2: "Arkaluonteinen"
+        tier_3: "Laajennettu"
+        new: "Uusi"
+    plugin_channels:
+      enable:
+        enabled: "Plugin on päällä kanavalla %{channel}."
+      disable:
+        disabled: "Plugin on pois päältä kanavalla %{channel}."
+      settings:
+        saved: "Asetukset tallennettu."
+      grant:
+        granted: "Käyttöoikeus kytketty päälle."
+        not_declared: "Tämä plugin ei pyydä tätä käyttöoikeutta."
+      revoke:
+        revoked: "Käyttöoikeus kytketty pois."
+    plugin_audit_events:
+      index:
+        title: "Pluginien tarkastusloki"
+        empty: "Ei vielä mitään."
+      actions:
+        uploaded: "Ladattu"
+        approved: "Otettu käyttöön"
+        enabled: "Kytketty päälle"
+        disabled: "Kytketty pois"
+        removed: "Poistettu"
+        granted: "Laajennettu käyttöoikeus päälle"
+        revoked: "Laajennettu käyttöoikeus pois"
+        settings_changed: "Asetuksia muutettu"
+        auto_disabled: "Kytketty pois virheiden jälkeen"
+        alert_not_delivered: "Hälytyssähköpostia ei toimitettu"
+        alert_captured: "Testipalvelin pidätti hälytyssähköpostin"
+        draft_created: "Luonnos aloitettu"
+        deploy_requested: "Lähetetty käyttöönottoon"
+        rolled_back: "Palautettu"
+        restored: "Palautettu säilytettyjen tietojen kanssa"
+        blocked: "Lisäosahakemisto esti"
+        published_to_marketplace: "Lähetetty kauppapaikalle"
+        purged: "Säilytetyt tiedot poistettu 30 päivän jälkeen"
+        agent_draft: "Agentti muutti luonnosta"
+        agent_requested_deploy: "Agentti pyysi käyttöönottoa"
+        uninstall_hook_failed: "Siivous poistettaessa epäonnistui"
+        auto_updated: "Päivitetty automaattisesti"
+        paused: "Keskeytetty"
+        resumed: "Jatkettu"
+  channel_plugins:
+    index:
+      title: "Pluginit"
+      intro: "Pluginit kanavalla %{channel}. Jokainen plugin on päällä tai pois vain tällä kanavalla."
+      all_plugins: "Kaikki pluginit"
+      empty: "Plugineja ei ole asennettu."
+      blocked: "Plugin-hakemisto on estänyt: %{reason}"
+      auto_disabled: "Kytketty pois toistuvien virheiden jälkeen"
+    plugin:
+      turn_on: "Kytke %{name} päälle"
+      turn_off: "Kytke %{name} pois"
+      "on": "Päällä"
+      "off": "Pois"
+      configure: "Asetukset ja käyttöoikeudet"
+      "yes": "Kyllä"
+      "no": "Ei"
+      secret_set: "Tallennettu (piilotettu)"
+      secret_hint: "Salainen. Jätä tyhjäksi, niin tallennettu arvo säilyy."
+      save_settings: "Tallenna asetukset"
+      granted: "Päällä: %{value}"
+      granted_on: "päällä"
+      revoke: "Kytke pois"
+      grant: "Kytke päälle"
+      grant_hint: "Laajennettu käyttöoikeus. Se on pois päältä, kunnes kytket sen päälle tälle kanavalle."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Pluginit"
+      panels:
+        application:
+          plugins: "Pluginit"
+        plugin_pages:
+          manage: "Kaikki pluginit"
+          this_channel: "Tällä kanavalla"
+          title: "Pluginit"
+  plugin_mailer:
+    auto_disabled:
+      subject: "Plugin %{name} kytkettiin pois"
+      intro: "Broadcast kytki pluginin %{name} (%{key}) pois kaikilta kanavilta toistuvien virheiden jälkeen."
+      reason: "Syy: %{reason}"
+      open: "Avaa pluginin sivu"
+    blocked:
+      subject: "Plugin %{name} estettiin"
+      intro: "Plugin-hakemisto esti pluginin %{name} (%{key}) asennetun version. Broadcast kytki sen pois kaikilta kanavilta."
+      reason: "Syy: %{reason}"
+      next: "Asenna uudempi versio, kun hakemisto tarjoaa sellaisen, tai poista plugin."
+      open: "Avaa pluginin sivu"
+    deploy_requested:
+      subject: "Plugin %{name} %{version} odottaa käyttöönottoasi"
+      intro: "Agentti pyysi ottamaan käyttöön pluginin %{name} (%{key}) version %{version}."
+      next: "Mikään ei toimi ennen kuin otat sen käyttöön. Tarkista koodimuutokset ja käyttöoikeudet, ja ota käyttöön tai jätä."
+      open: "Tarkista ja ota käyttöön"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Suoritetaan pluginissa %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "Pluginin %{plugin} vaihe."
+        unavailable: "Tämä pluginin vaihe ei ole saatavilla: plugin kytkettiin pois, poistettiin tai sitä muutettiin. Vaihe ohitetaan."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Pluginin vaihe"
+  segments:
+    plugin_timeout: "Tämän segmentin laskeminen kesti liian kauan pluginin segmenttisäännön vuoksi. Rajaa segmenttiä tai tarkista plugin."
+    preview_count:
+      plugin_timeout: "Tämän segmentin laskeminen kesti liian kauan pluginin segmenttisäännön vuoksi. Rajaa segmenttiä tai tarkista plugin."
+    segment_rule_fields:
+      plugin_matches: "Vastaa"
+      fields:
+        group_plugins: "-- Pluginit --"
+        plugin_unavailable: "%{field} (plugin ei saatavilla)"

@@ -1,0 +1,460 @@
+# Broadcast plugins: plugin screens, permissions and emails, English reference.
+#
+# Generated from the Broadcast application, where English is written. Do not
+# edit this file: suggest English changes in an issue instead. Translations in
+# locales/ follow its keys.
+
+en:
+  plugins:
+    open_link:
+      title: "Open this link?"
+      body: "%{plugin} wants to open a page outside Broadcast. Check the address before you continue."
+      open: "Open link"
+    public_action:
+      confirm_title: "One moment"
+      confirm_button: "Continue"
+      done_title: "Thank you"
+      failed_title: "Something went wrong"
+      failed_body: "We could not save this. Please try the link again later."
+    developer_token:
+      label: "Plugin developer"
+      hint: "For an AI agent that writes plugins: it can create, change and test drafts with test data, and submit them for your review. It cannot read real subscriber data or deploy. It cannot have other permissions and expires within 30 days."
+    webhook_endpoints:
+      title: "Plugin events"
+      hint: "Sent only for the events you tick here. Select all does not include them."
+      not_available: "has a plugin event that is not available in this channel"
+    token_endpoints:
+      label: "Plugin endpoints"
+      hint: "The plugin API endpoints this token may call, one per line (plugin/endpoint, or plugin/* for all). The token also needs the permission each endpoint asks for."
+      needs: "needs %{permission}"
+    permissions:
+      settings:
+        label: "Its own settings"
+        description: "Reads the settings you enter for this plugin, including secret values."
+      store:
+        label: "Its own storage"
+        description: "Keeps its own data in Broadcast."
+      log:
+        label: "Logs"
+        description: "Writes log lines that you can read on the plugin page."
+      channel:
+        label: "Channel name"
+        description: "Reads the name of the channel it runs in."
+      events:
+        label: "Its own events"
+        description: "Records events (for example, orders) for its segment rules."
+      subscribers_read:
+        label: "Read subscribers"
+        description: "Reads subscriber details, tags and custom fields."
+      subscribers_write:
+        label: "Change subscribers"
+        description: "Changes names, custom fields and other details of existing subscribers."
+      tags_read:
+        label: "Read tags"
+        description: "Reads the list of tags."
+      tags_write:
+        label: "Change tags"
+        description: "Adds tags to subscribers and removes them."
+      broadcasts_read:
+        label: "Read broadcasts"
+        description: "Reads broadcasts and their statistics."
+      sequences_read:
+        label: "Read sequences"
+        description: "Reads sequences and their steps."
+      segments_read:
+        label: "Read segments"
+        description: "Reads segments and their rules."
+      network:
+        label: "Internet access"
+        description: "Connects to these sites: %{hosts}."
+      subscribers_export:
+        label: "Copy your whole list"
+        description: "Can read every subscriber, page by page, and send them to %{hosts}."
+      subscribers_create:
+        label: "Add new subscribers"
+        description: "Adds people to your list. They follow your double opt-in setting."
+      network_wildcard:
+        label: "Internet access to many sites"
+        description: "Connects to any site that matches %{hosts}."
+      network_fromSetting:
+        label: "Internet access to an address you enter"
+        description: "Connects to the address you type in the setting %{setting}."
+      output_html:
+        label: "HTML in emails"
+        description: "Adds HTML to emails. Broadcast cleans it before it is sent."
+      hooks_beforeSend:
+        label: "Change emails before they are sent"
+        description: "Can skip an email or change its subject and content. It cannot change who receives it, the sender or the unsubscribe link."
+      hooks_apiEndpoints:
+        label: "Its own API"
+        description: "Adds API addresses that callers with a matching API token can use."
+      events_webhook:
+        label: "Its events in webhooks"
+        description: "Lets you send events from this plugin to your webhook endpoints. Nothing is sent until you turn an event on for an endpoint. A webhook has the event, its declared fields and the subscriber id, never an email address."
+      hooks_publicActions:
+        label: "Links anyone can click in emails"
+        description: "Adds links to emails that run this plugin when a subscriber clicks them, with no sign-in. Broadcast proves who clicked. The plugin gets the subscriber and the choice in the link."
+      network_private:
+        label: "Access to one private address"
+        description: "Connects to one address on your private network that you approve."
+      email_sender:
+        label: "Change the sender"
+        description: "Changes From or Reply-To to a sender that is verified in this channel."
+      sql:
+        label: "Database access"
+      files:
+        label: "File access"
+      env:
+        label: "Server settings access"
+      process:
+        label: "Start programs"
+      subscribers_resubscribe:
+        label: "Resubscribe people"
+      suppressions_write:
+        label: "Remove suppressions"
+      email_recipients:
+        label: "Change email recipients"
+      email_unsubscribe:
+        label: "Change the unsubscribe link"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "cannot be combined with other permissions"
+            expires_at:
+              plugin_development_lifetime: "must be within 30 days for a plugin developer token"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "is over the storage limit for this plugin"
+  app_installation:
+    plugins:
+      index:
+        title: "Plugins"
+        intro: "Plugins add features to Broadcast. Install a plugin once, then turn it on in each channel."
+        audit_log: "Audit log"
+        safe_mode: "Safe mode is on."
+        safe_mode_body: "No plugin runs until BROADCAST_PLUGINS_SAFE_MODE is removed from the server settings."
+        runtime_up:
+          one: "The plugin runtime is running (1 plugin process)."
+          other: "The plugin runtime is running (%{count} plugin processes)."
+        runtime_down: "The plugin runtime is not running or not installed. Everything else in Broadcast works."
+        name: "Name"
+        key: "ID"
+        version: "Version"
+        state: "Channels"
+        not_deployed: "Not deployed"
+        first_deploy_waits: "Version %{version} waits for your deploy"
+        browse: "Browse plugins"
+        update: "Update to %{version}"
+        blocked: "Blocked by the plugin directory: %{reason}"
+        directory_stale: "Broadcast could not check the plugin directory's blocked list for more than a week (last check: %{checked}). Blocked plugins are not turned off until it can."
+        never: "never"
+        auto_disabled: "Turned off after repeated errors"
+        coverage_all: "All channels"
+        coverage_some: "%{enabled} of %{total} channels"
+        coverage_none: "Off"
+        coverage_label: "Choose channels for %{name}: %{state}"
+        empty: "No plugins are installed."
+        upload_heading: "Upload a plugin"
+        upload_intro: "Upload a .broadcast-plugin file. You see its permissions before anything runs."
+        upload: "Upload"
+        pinned: "Pinned to %{version}"
+        pause: "Pause"
+        resume: "Resume"
+        update_waits: "%{name} %{version} waits for you."
+        keeps_running: "Version %{version} keeps running until you decide."
+        review_update: "Review and update"
+        held_title: "Kept for 30 days"
+        held_intro: "Removed plugins whose data is kept. Installing the same plugin again restores its settings and data."
+        held_until: "Data kept until %{date}"
+        delete_now: "Delete now"
+      held:
+        refused: "%{name} was removed. Its data is kept; install it again to restore it, or delete it now."
+      status:
+        paused: "Paused"
+        paused_by: "Paused by %{by} on %{when}"
+        paused_at: "Paused on %{when}"
+      waiting:
+        nothing_new: "It asks for nothing new."
+        new_permissions:
+          one: "It asks for a new permission: %{list}."
+          other: "It asks for new permissions: %{list}."
+        new_hosts:
+          one: "It connects to a new address: %{list}."
+          other: "It connects to new addresses: %{list}."
+        new_hooks:
+          one: "It changes when it runs: %{list}."
+          other: "It changes when it runs: %{list}."
+      stop_notice:
+        title: "Furvur stopped %{name} %{version} on %{date}."
+        reason: "Reason: %{reason}"
+        no_reason: "no reason was given."
+        data_unchanged: "Your data on this server is unchanged."
+        open: "Open the plugin"
+      update_policy:
+        saved: "Update setting saved."
+        invalid: "Choose one of the update settings."
+        nothing_to_pin: "Deploy a version first. Only a deployed version can be pinned."
+      pause:
+        paused: "%{name} is paused in every channel."
+      resume:
+        resumed: "%{name} runs again."
+      channels_control:
+        title: "Channels for %{name}"
+        intro: "Tick the channels this plugin runs in."
+        filter: "Filter channels"
+        select_all: "Select all"
+        deselect_all: "Deselect all"
+        selected_count: "%{selected} of %{total} selected"
+        no_match: "No channel matches this filter."
+        needs_settings: "Needs settings"
+        cancel: "Cancel"
+        save: "Save"
+      channels:
+        saved: "Channels saved for %{name}."
+        refused: "These channels could not be turned on: %{channels}. Open each channel to check its settings."
+      create:
+        no_file: "Choose a .broadcast-plugin file."
+        uploaded: "Uploaded. Check the permissions, then deploy."
+      publish:
+        not_live: "Deploy a version first. Only a deployed version can be published."
+        submitted: "%{id} %{version} is in the marketplace review queue. Follow it at %{url}."
+      show:
+        auto_disabled: "Turned off after repeated errors: %{reason}. Deploy a version to turn it on again."
+        logs: "Logs"
+        remove: "Remove"
+        pending: "Version %{version} waits for your approval."
+        review: "Review and deploy"
+        publish_title: "Publish to the marketplace"
+        publish_intro: "Sends version %{version} to the Broadcast plugin marketplace for review, under your publisher id. Nothing changes on this server. You need a publisher account there: see %{docs_url}."
+        publish_token: "Publishing token"
+        publish_token_hint: "From Dashboard > Plugins on the marketplace. It is used for this one request and not kept."
+        publish_summary: "Summary (one sentence)"
+        publish_category: "Category"
+        publish_button: "Submit for review"
+        publish_categories:
+          audience: "Audience and growth"
+          content: "Email content"
+          analytics: "Reports and analytics"
+          integrations: "Integrations"
+          automation: "Automation"
+          developer: "Developer tools"
+        permissions: "Permissions"
+        enabled: "On in this channel"
+        disabled: "Off in this channel"
+        channels: "Channels"
+        open_channel: "Open"
+        earlier_versions: "Earlier versions"
+        rollback: "Roll back"
+        rollback_hint: "Goes back to a version you approved before, with the permissions it had."
+        pause: "Pause"
+        resume: "Resume"
+        paused_hint: "It does not run in any channel. Its settings and data stay."
+        health_title: "Health"
+        health_calls: "calls, today and yesterday"
+        health_requests: "requests, last 24 hours"
+        health_failures: "failed runs, last 24 hours"
+        health_store: "stored data, now"
+        health_hint: "Calls are counted per day. Requests and failed runs are counted from its log lines of the last 24 hours."
+        updates_title: "Updates"
+        update_policies:
+          auto_when_same:
+            label: "Automatic when nothing new is asked"
+            help: "A new version deploys by itself when it asks for no new permissions or hooks. Anything else waits for you."
+          ask:
+            label: "Ask me every time"
+            help: "New versions are offered; nothing deploys until you choose Update."
+          pinned:
+            label: "Pinned"
+            help: "Stays on %{version}. No other version is offered or deployed."
+      logs:
+        title: "%{name}: logs"
+        breadcrumb: "Logs"
+        empty: "No log lines in the last 30 days."
+      confirm_destroy:
+        title: "Uninstall %{name}?"
+        body: "This deletes the plugin, all its versions, settings and stored data on this server. The audit log keeps a record."
+        choice: "What happens to its data"
+        keep_label: "Keep its data for 30 days, so a reinstall picks it up"
+        keep_help: "It stops and is turned off in every channel. Its versions, settings and stored data stay for 30 days, then they are deleted."
+        delete_label: "Delete its data now"
+        tags_stay: "Tags it made stay on your subscribers either way."
+        cancel: "Cancel"
+        remove: "Uninstall %{name}"
+        held_title: "Delete %{name} now?"
+        held_body: "Its data is kept until %{date}. Deleting now removes its versions, settings and stored data at once. The audit log keeps a record."
+        delete_now: "Delete now"
+      destroy:
+        removed: "%{name} was removed."
+        kept: "%{name} was uninstalled. Its data is kept until %{date}; install it again to restore it."
+    plugin_directory:
+      unavailable: "The plugin directory cannot be reached right now. Installed plugins keep working."
+      index:
+        title: "Browse plugins"
+        intro: "Plugins from the Broadcast plugin directory. Each version is reviewed and signed. You see its permissions before anything runs."
+        empty: "The directory has no plugins for this version of Broadcast yet."
+        by: "By %{publisher}"
+        verified: "Verified publisher"
+        reviewed: "Reviewed"
+        installed: "Installed"
+        incompatible: "Needs another version of Broadcast"
+        details: "Details"
+      show:
+        permissions: "Permissions"
+        review_after: "After the install you review the exact permissions and the code, then deploy."
+        support: "Support"
+        privacy: "Privacy policy"
+        installed: "Installed: open the plugin page"
+        install: "Install"
+        held_restore: "You removed this plugin and kept its data until %{date}. Installing it again restores its settings and data."
+      install:
+        installed: "Downloaded and checked. Review the permissions, then deploy."
+      update:
+        updated: "Updated to version %{version}."
+        review: "The new version asks for other permissions or hooks. Review it, then deploy."
+    plugin_versions:
+      changelog:
+        title: "What changed in %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Signed by the plugin directory (key %{key})."
+        unsigned: "Not from the plugin directory. Install it only if you trust where it came from."
+        permissions: "Permissions"
+        permissions_intro: "What this plugin may do. Every plugin can also keep its own settings, data and logs."
+        hooks: "What it adds"
+        page: "Page \"%{title}\" (%{slot})"
+        deploy_hint: "Nothing runs until you deploy and turn it on in a channel."
+        deploy: "Deploy"
+        status: "Status: %{status}"
+        changes: "Changes since %{version}"
+        code: "Code"
+      rollback:
+        rolled_back: "Version %{version} is live again."
+      diff:
+        unchanged: "No changes."
+        too_large: "This change is too large to show here. Compare the files before you deploy."
+      approve:
+        deployed: "Version %{version} is live."
+      permissions:
+        only_basic: "Only its own settings, data and logs."
+        tier_1: "Standard"
+        tier_2: "Sensitive"
+        tier_3: "Elevated"
+        new: "New"
+    plugin_channels:
+      enable:
+        enabled: "The plugin is on in %{channel}."
+      disable:
+        disabled: "The plugin is off in %{channel}."
+      settings:
+        saved: "Settings saved."
+      grant:
+        granted: "Permission turned on."
+        not_declared: "This plugin does not ask for that permission."
+      revoke:
+        revoked: "Permission turned off."
+    plugin_audit_events:
+      index:
+        title: "Plugin audit log"
+        empty: "Nothing yet."
+      actions:
+        uploaded: "Uploaded"
+        approved: "Deployed"
+        enabled: "Turned on"
+        disabled: "Turned off"
+        removed: "Removed"
+        granted: "Elevated permission on"
+        revoked: "Elevated permission off"
+        settings_changed: "Settings changed"
+        auto_disabled: "Turned off after errors"
+        alert_not_delivered: "Alert email not delivered"
+        alert_captured: "Alert email held by the Test Server"
+        draft_created: "Draft started"
+        deploy_requested: "Submitted for deploy"
+        rolled_back: "Rolled back"
+        uninstall_hook_failed: "Clean-up on removal failed"
+        auto_updated: "Updated automatically"
+        paused: "Paused"
+        resumed: "Resumed"
+        restored: "Restored with its kept data"
+        blocked: "Blocked by the plugin directory"
+        published_to_marketplace: "Sent to the marketplace"
+        purged: "Kept data deleted after 30 days"
+        agent_draft: "Draft changed by an agent"
+        agent_requested_deploy: "Deploy asked for by an agent"
+  channel_plugins:
+    index:
+      title: "Plugins"
+      intro: "Plugins in %{channel}. Each plugin is on or off for this channel only."
+      all_plugins: "All plugins"
+      empty: "No plugins are installed."
+      blocked: "Blocked by the plugin directory: %{reason}"
+      auto_disabled: "Turned off after repeated errors"
+    plugin:
+      turn_on: "Turn %{name} on"
+      turn_off: "Turn %{name} off"
+      "on": "On"
+      "off": "Off"
+      configure: "Settings and permissions"
+      "yes": "Yes"
+      "no": "No"
+      secret_set: "Saved (hidden)"
+      secret_hint: "Secret. Leave it empty to keep the saved value."
+      save_settings: "Save settings"
+      granted: "Turned on: %{value}"
+      granted_on: "on"
+      revoke: "Turn off"
+      grant: "Turn on"
+      grant_hint: "Elevated permission. It is off until you turn it on for this channel."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Plugins"
+      panels:
+        application:
+          plugins: "Plugins"
+        plugin_pages:
+          manage: "All plugins"
+          this_channel: "In this channel"
+          title: "Plugins"
+  plugin_mailer:
+    auto_disabled:
+      subject: "Plugin %{name} was turned off"
+      intro: "Broadcast turned off the plugin %{name} (%{key}) on all channels after repeated errors."
+      reason: "Reason: %{reason}"
+      open: "Open the plugin page"
+    blocked:
+      subject: "Plugin %{name} was blocked"
+      intro: "The plugin directory blocked the installed version of %{name} (%{key}). Broadcast turned it off on all channels."
+      reason: "Reason: %{reason}"
+      next: "Install a newer version when the directory offers one, or remove the plugin."
+      open: "Open the plugin page"
+    deploy_requested:
+      subject: "Plugin %{name} %{version} waits for your deploy"
+      intro: "An agent asked to deploy version %{version} of the plugin %{name} (%{key})."
+      next: "Nothing runs until you deploy it. Check the code changes and the permissions, then deploy or leave it."
+      open: "Review and deploy"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Runs in the plugin %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "A step of the plugin %{plugin}."
+        unavailable: "This plugin step is not available: the plugin was turned off, removed or changed. The step is skipped."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Plugin step"
+  segments:
+    plugin_timeout: "This segment took too long to count because of a plugin segment rule. Narrow the segment, or check the plugin."
+    preview_count:
+      plugin_timeout: "This segment took too long to count because of a plugin segment rule. Narrow the segment, or check the plugin."
+    segment_rule_fields:
+      plugin_matches: "Matches"
+      fields:
+        group_plugins: "-- Plugins --"
+        plugin_unavailable: "%{field} (plugin not available)"

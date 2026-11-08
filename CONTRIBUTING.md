@@ -4,9 +4,11 @@ Thank you for helping Broadcast read well in your language.
 
 ## What to change
 
-- Translations live in `locales/admin.<language>.yml` and
-  `locales/activerecord.<language>.yml`. Change only these files.
-- `reference/admin.en.yml` and `reference/activerecord.en.yml` are generated
+- Translations live in `locales/admin.<language>.yml`,
+  `locales/activerecord.<language>.yml` and `locales/plugins.<language>.yml`.
+  Change only these files.
+- `reference/admin.en.yml`, `reference/activerecord.en.yml` and
+  `reference/plugins.en.yml` are generated
   from Broadcast. Do not edit them. If the
   English itself is wrong or unclear, open an issue.
 - Keep the key structure exactly as it is. Translate values, never keys.

@@ -1,0 +1,460 @@
+# Broadcast plugins: plugin screens, permissions and emails, Swedish.
+#
+# Every key mirrors reference/plugins.en.yml. Keep each %{placeholder} as it is,
+# keep the HTML in keys ending in _html, and never use long dashes. Follow the
+# style notes and glossary at the top of admin.sv.yml. bin/check validates the
+# file; see CONTRIBUTING.md.
+sv:
+  plugins:
+    open_link:
+      title: "Öppna den här länken?"
+      body: "%{plugin} vill öppna en sida utanför Broadcast. Kontrollera adressen innan du fortsätter."
+      open: "Öppna länken"
+    public_action:
+      confirm_title: "Ett ögonblick"
+      confirm_button: "Fortsätt"
+      done_title: "Tack"
+      failed_title: "Något gick fel"
+      failed_body: "Vi kunde inte spara detta. Försök med länken igen senare."
+    developer_token:
+      label: "Pluginutvecklare"
+      hint: "För en AI-agent som skriver plugin: den kan skapa, ändra och testa utkast med testdata och skicka dem till dig för granskning. Den kan inte läsa riktiga prenumerantdata eller driftsätta. Den kan inte ha andra behörigheter och upphör inom 30 dagar."
+    webhook_endpoints:
+      title: "Pluginhändelser"
+      hint: "Skickas bara för de händelser du kryssar i här. Välj alla inkluderar dem inte."
+      not_available: "har en pluginhändelse som inte är tillgänglig i den här kanalen"
+    token_endpoints:
+      label: "Plugin-endpoints"
+      hint: "De endpoints i plugin-API:t som denna token får anropa, en per rad (plugin/endpoint, eller plugin/* för alla). Token behöver också den behörighet som varje endpoint kräver."
+      needs: "kräver %{permission}"
+    permissions:
+      settings:
+        label: "Egna inställningar"
+        description: "Läser inställningarna du anger för det här pluginet, även hemliga värden."
+      store:
+        label: "Egen lagring"
+        description: "Sparar egna data i Broadcast."
+      log:
+        label: "Loggar"
+        description: "Skriver loggrader som du kan läsa på pluginets sida."
+      channel:
+        label: "Kanalnamn"
+        description: "Läser namnet på kanalen det körs i."
+      events:
+        label: "Egna händelser"
+        description: "Registrerar händelser (till exempel beställningar) för sina segmentregler."
+      subscribers_read:
+        label: "Läsa prenumeranter"
+        description: "Läser prenumerantuppgifter, taggar och anpassade fält."
+      subscribers_write:
+        label: "Ändra prenumeranter"
+        description: "Ändrar namn, anpassade fält och andra uppgifter för befintliga prenumeranter."
+      tags_read:
+        label: "Läsa taggar"
+        description: "Läser listan med taggar."
+      tags_write:
+        label: "Ändra taggar"
+        description: "Lägger till taggar på prenumeranter och tar bort dem."
+      broadcasts_read:
+        label: "Läsa kampanjer"
+        description: "Läser kampanjer och deras statistik."
+      sequences_read:
+        label: "Läsa sekvenser"
+        description: "Läser sekvenser och deras steg."
+      segments_read:
+        label: "Läsa segment"
+        description: "Läser segment och deras regler."
+      network:
+        label: "Internetåtkomst"
+        description: "Ansluter till dessa webbplatser: %{hosts}."
+      subscribers_export:
+        label: "Kopiera hela din lista"
+        description: "Kan läsa varje prenumerant, sida för sida, och skicka dem till %{hosts}."
+      subscribers_create:
+        label: "Lägga till nya prenumeranter"
+        description: "Lägger till personer i din lista. Din inställning för dubbel opt-in gäller."
+      network_wildcard:
+        label: "Internetåtkomst till många webbplatser"
+        description: "Ansluter till alla webbplatser som matchar %{hosts}."
+      network_fromSetting:
+        label: "Internetåtkomst till en adress du anger"
+        description: "Ansluter till adressen du skriver i inställningen %{setting}."
+      output_html:
+        label: "HTML i mejl"
+        description: "Lägger till HTML i mejl. Broadcast rensar det innan det skickas."
+      hooks_beforeSend:
+        label: "Ändra mejl innan de skickas"
+        description: "Kan hoppa över ett mejl eller ändra dess ämne och innehåll. Det kan inte ändra vem som tar emot det, avsändaren eller avregistreringslänken."
+      hooks_apiEndpoints:
+        label: "Eget API"
+        description: "Lägger till API-adresser som anropare med en matchande API-token kan använda."
+      events_webhook:
+        label: "Egna händelser i webhooks"
+        description: "Låter dig skicka händelser från det här pluginet till dina webhook-endpoints. Inget skickas förrän du slår på en händelse för en endpoint. En webhook innehåller händelsen, dess deklarerade fält och prenumerantens id, aldrig en e-postadress."
+      hooks_publicActions:
+        label: "Länkar i mejl som vem som helst kan klicka på"
+        description: "Lägger till länkar i mejl som kör det här pluginet när en prenumerant klickar på dem, utan inloggning. Broadcast bevisar vem som klickade. Pluginet får prenumeranten och valet i länken."
+      network_private:
+        label: "Åtkomst till en privat adress"
+        description: "Ansluter till en adress i ditt privata nätverk som du godkänner."
+      email_sender:
+        label: "Ändra avsändaren"
+        description: "Ändrar Från eller Svara till till en avsändare som är verifierad i den här kanalen."
+      sql:
+        label: "Databasåtkomst"
+      files:
+        label: "Filåtkomst"
+      env:
+        label: "Åtkomst till serverinställningar"
+      process:
+        label: "Starta program"
+      subscribers_resubscribe:
+        label: "Registrera personer igen"
+      suppressions_write:
+        label: "Ta bort spärrar"
+      email_recipients:
+        label: "Ändra mejlets mottagare"
+      email_unsubscribe:
+        label: "Ändra avregistreringslänken"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "kan inte kombineras med andra behörigheter"
+            expires_at:
+              plugin_development_lifetime: "måste ligga inom 30 dagar för en token för pluginutvecklare"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "överskrider lagringsgränsen för det här pluginet"
+  app_installation:
+    plugins:
+      index:
+        title: "Plugin"
+        intro: "Plugin ger Broadcast nya funktioner. Installera ett plugin en gång och slå sedan på det i varje kanal."
+        audit_log: "Granskningslogg"
+        safe_mode: "Felsäkert läge är på."
+        safe_mode_body: "Inga plugin körs förrän BROADCAST_PLUGINS_SAFE_MODE har tagits bort från serverinställningarna."
+        runtime_up:
+          one: "Körmiljön för plugin körs (1 pluginprocess)."
+          other: "Körmiljön för plugin körs (%{count} pluginprocesser)."
+        runtime_down: "Körmiljön för plugin körs inte eller är inte installerad. Allt annat i Broadcast fungerar."
+        name: "Namn"
+        key: "ID"
+        version: "Version"
+        state: "Kanaler"
+        not_deployed: "Inte driftsatt"
+        first_deploy_waits: "Version %{version} väntar på att du driftsätter den"
+        browse: "Bläddra bland plugin"
+        update: "Uppdatera till %{version}"
+        blocked: "Blockerat av pluginkatalogen: %{reason}"
+        directory_stale: "Broadcast har inte kunnat kontrollera pluginkatalogens blockeringslista på mer än en vecka (senaste kontroll: %{checked}). Blockerade plugin stängs inte av förrän det går igen."
+        never: "aldrig"
+        auto_disabled: "Avstängt efter upprepade fel"
+        coverage_all: "Alla kanaler"
+        coverage_some: "%{enabled} av %{total} kanaler"
+        coverage_none: "Av"
+        coverage_label: "Välj kanaler för %{name}: %{state}"
+        empty: "Inga plugin är installerade."
+        upload_heading: "Ladda upp ett plugin"
+        upload_intro: "Ladda upp en .broadcast-plugin-fil. Du ser dess behörigheter innan något körs."
+        upload: "Ladda upp"
+        delete_now: "Radera nu"
+        held_intro: "Borttagna plugins vars data sparas. Om du installerar samma plugin igen återställs dess inställningar och data."
+        held_title: "Sparas i 30 dagar"
+        held_until: "Data sparas till %{date}"
+        keeps_running: "Version %{version} fortsätter att köra tills du bestämmer dig."
+        pause: "Pausa"
+        pinned: "Låst till %{version}"
+        resume: "Återuppta"
+        review_update: "Granska och uppdatera"
+        update_waits: "%{name} %{version} väntar på dig."
+      channels_control:
+        title: "Kanaler för %{name}"
+        intro: "Kryssa i de kanaler som det här pluginet körs i."
+        filter: "Filtrera kanaler"
+        select_all: "Välj alla"
+        deselect_all: "Avmarkera alla"
+        selected_count: "%{selected} av %{total} valda"
+        no_match: "Ingen kanal matchar filtret."
+        needs_settings: "Kräver inställningar"
+        cancel: "Avbryt"
+        save: "Spara"
+      channels:
+        saved: "Kanaler sparade för %{name}."
+        refused: "Dessa kanaler kunde inte slås på: %{channels}. Öppna varje kanal för att kontrollera dess inställningar."
+      create:
+        no_file: "Välj en .broadcast-plugin-fil."
+        uploaded: "Uppladdat. Kontrollera behörigheterna och driftsätt sedan."
+      publish:
+        not_live: "Driftsätt en version först. Bara en driftsatt version kan publiceras."
+        submitted: "%{id} %{version} ligger i marknadsplatsens granskningskö. Följ det på %{url}."
+      show:
+        auto_disabled: "Avstängt efter upprepade fel: %{reason}. Driftsätt en version för att slå på det igen."
+        logs: "Loggar"
+        remove: "Ta bort"
+        pending: "Version %{version} väntar på ditt godkännande."
+        review: "Granska och driftsätt"
+        publish_title: "Publicera på marknadsplatsen"
+        publish_intro: "Skickar version %{version} till Broadcasts marknadsplats för plugin för granskning, under ditt utgivar-id. Inget ändras på den här servern. Du behöver ett utgivarkonto där: se %{docs_url}."
+        publish_token: "Publiceringstoken"
+        publish_token_hint: "Från Översikt > Plugin på marknadsplatsen. Den används för just den här begäran och sparas inte."
+        publish_summary: "Sammanfattning (en mening)"
+        publish_category: "Kategori"
+        publish_button: "Skicka för granskning"
+        publish_categories:
+          audience: "Målgrupp och tillväxt"
+          content: "Mejlinnehåll"
+          analytics: "Rapporter och analys"
+          integrations: "Integrationer"
+          automation: "Automatisering"
+          developer: "Utvecklarverktyg"
+        permissions: "Behörigheter"
+        enabled: "På i den här kanalen"
+        disabled: "Av i den här kanalen"
+        channels: "Kanaler"
+        open_channel: "Öppna"
+        earlier_versions: "Tidigare versioner"
+        rollback: "Återställ"
+        rollback_hint: "Går tillbaka till en version du har godkänt tidigare, med de behörigheter den hade."
+        health_calls: "anrop, i dag och i går"
+        health_failures: "misslyckade körningar, senaste 24 timmarna"
+        health_hint: "Anrop räknas per dag. Förfrågningar och misslyckade körningar räknas från dess loggrader de senaste 24 timmarna."
+        health_requests: "förfrågningar, senaste 24 timmarna"
+        health_store: "sparade data, nu"
+        health_title: "Hälsa"
+        pause: "Pausa"
+        paused_hint: "Det körs inte i någon kanal. Dess inställningar och data finns kvar."
+        resume: "Återuppta"
+        update_policies:
+          ask:
+            help: "Nya versioner erbjuds; inget driftsätts förrän du väljer Uppdatera."
+            label: "Fråga mig varje gång"
+          auto_when_same:
+            help: "En ny version driftsätts av sig själv när den inte ber om nya behörigheter eller hooks. Allt annat väntar på dig."
+            label: "Automatiskt när inget nytt efterfrågas"
+          pinned:
+            help: "Stannar på %{version}. Ingen annan version erbjuds eller driftsätts."
+            label: "Låst"
+        updates_title: "Uppdateringar"
+      logs:
+        title: "%{name}: loggar"
+        breadcrumb: "Loggar"
+        empty: "Inga loggrader de senaste 30 dagarna."
+      confirm_destroy:
+        title: "Ta bort %{name}?"
+        body: "Detta raderar pluginet, alla dess versioner, inställningar och sparade data på den här servern. Granskningsloggen behåller en post."
+        cancel: "Avbryt"
+        remove: "Avinstallera %{name}"
+        choice: "Vad som händer med dess data"
+        delete_label: "Radera dess data nu"
+        delete_now: "Radera nu"
+        held_body: "Dess data sparas till %{date}. Att radera nu tar bort dess versioner, inställningar och sparade data direkt. Granskningsloggen behåller en post."
+        held_title: "Radera %{name} nu?"
+        keep_help: "Det stoppas och stängs av i varje kanal. Dess versioner, inställningar och sparade data finns kvar i 30 dagar och raderas sedan."
+        keep_label: "Spara dess data i 30 dagar, så att en ny installation tar upp dem"
+        tags_stay: "Taggar som det har lagt till finns kvar på dina prenumeranter i båda fallen."
+      destroy:
+        removed: "%{name} har tagits bort."
+        kept: "%{name} avinstallerades. Dess data sparas till %{date}; installera det igen för att återställa dem."
+      held:
+        refused: "%{name} togs bort. Dess data sparas; installera det igen för att återställa dem, eller radera dem nu."
+      pause:
+        paused: "%{name} är pausat i varje kanal."
+      resume:
+        resumed: "%{name} körs igen."
+      status:
+        paused: "Pausat"
+        paused_at: "Pausat %{when}"
+        paused_by: "Pausat av %{by} %{when}"
+      stop_notice:
+        data_unchanged: "Dina data på den här servern är oförändrade."
+        no_reason: "inget skäl angavs."
+        open: "Öppna pluginet"
+        reason: "Skäl: %{reason}"
+        title: "Furvur stoppade %{name} %{version} %{date}."
+      update_policy:
+        invalid: "Välj en av uppdateringsinställningarna."
+        nothing_to_pin: "Driftsätt en version först. Bara en driftsatt version kan låsas."
+        saved: "Uppdateringsinställningen sparades."
+      waiting:
+        new_hooks:
+          one: "Det ändrar när det körs: %{list}."
+          other: "Det ändrar när det körs: %{list}."
+        new_hosts:
+          one: "Det ansluter till en ny adress: %{list}."
+          other: "Det ansluter till nya adresser: %{list}."
+        new_permissions:
+          one: "Det ber om en ny behörighet: %{list}."
+          other: "Det ber om nya behörigheter: %{list}."
+        nothing_new: "Det ber inte om något nytt."
+    plugin_directory:
+      unavailable: "Pluginkatalogen går inte att nå just nu. Installerade plugin fortsätter att fungera."
+      index:
+        title: "Bläddra bland plugin"
+        intro: "Plugin från Broadcasts pluginkatalog. Varje version är granskad och signerad. Du ser dess behörigheter innan något körs."
+        empty: "Katalogen har inga plugin för den här versionen av Broadcast än."
+        by: "Av %{publisher}"
+        verified: "Verifierad utgivare"
+        reviewed: "Granskat"
+        installed: "Installerat"
+        incompatible: "Kräver en annan version av Broadcast"
+        details: "Detaljer"
+      show:
+        permissions: "Behörigheter"
+        review_after: "Efter installationen granskar du de exakta behörigheterna och koden och driftsätter sedan."
+        support: "Support"
+        privacy: "Integritetspolicy"
+        installed: "Installerat: öppna pluginets sida"
+        install: "Installera"
+        held_restore: "Du tog bort det här pluginet och sparade dess data till %{date}. Om du installerar det igen återställs dess inställningar och data."
+      install:
+        installed: "Nedladdat och kontrollerat. Granska behörigheterna och driftsätt sedan."
+      update:
+        updated: "Uppdaterat till version %{version}."
+        review: "Den nya versionen begär andra behörigheter eller hooks. Granska den och driftsätt sedan."
+    plugin_versions:
+      changelog:
+        title: "Vad som ändrats i %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Signerat av pluginkatalogen (nyckel %{key})."
+        unsigned: "Inte från pluginkatalogen. Installera det bara om du litar på var det kommer ifrån."
+        permissions: "Behörigheter"
+        permissions_intro: "Vad det här pluginet får göra. Varje plugin kan också ha egna inställningar, data och loggar."
+        hooks: "Vad det lägger till"
+        page: "Sidan \"%{title}\" (%{slot})"
+        deploy_hint: "Inget körs förrän du driftsätter och slår på det i en kanal."
+        deploy: "Driftsätt"
+        status: "Status: %{status}"
+        changes: "Ändringar sedan %{version}"
+        code: "Kod"
+      rollback:
+        rolled_back: "Version %{version} är aktiv igen."
+      diff:
+        unchanged: "Inga ändringar."
+        too_large: "Ändringen är för stor för att visas här. Jämför filerna innan du driftsätter."
+      approve:
+        deployed: "Version %{version} är aktiv."
+      permissions:
+        only_basic: "Bara egna inställningar, data och loggar."
+        tier_1: "Standard"
+        tier_2: "Känslig"
+        tier_3: "Utökad"
+        new: "Ny"
+    plugin_channels:
+      enable:
+        enabled: "Pluginet är på i %{channel}."
+      disable:
+        disabled: "Pluginet är av i %{channel}."
+      settings:
+        saved: "Inställningarna har sparats."
+      grant:
+        granted: "Behörigheten är påslagen."
+        not_declared: "Det här pluginet begär inte den behörigheten."
+      revoke:
+        revoked: "Behörigheten är avstängd."
+    plugin_audit_events:
+      index:
+        title: "Granskningslogg för plugin"
+        empty: "Inget än."
+      actions:
+        uploaded: "Uppladdat"
+        approved: "Driftsatt"
+        enabled: "Påslaget"
+        disabled: "Avstängt"
+        removed: "Borttaget"
+        granted: "Utökad behörighet på"
+        revoked: "Utökad behörighet av"
+        settings_changed: "Inställningar ändrade"
+        auto_disabled: "Avstängt efter fel"
+        alert_not_delivered: "Varningsmejl inte levererat"
+        alert_captured: "Varningsmejl hållet av Testservern"
+        draft_created: "Utkast påbörjat"
+        deploy_requested: "Skickat för driftsättning"
+        rolled_back: "Återställt"
+        restored: "Återställt med sparade data"
+        blocked: "Blockerat av pluginkatalogen"
+        published_to_marketplace: "Skickat till marknadsplatsen"
+        purged: "Sparade data raderade efter 30 dagar"
+        agent_draft: "Utkast ändrat av en agent"
+        agent_requested_deploy: "Driftsättning begärd av en agent"
+        uninstall_hook_failed: "Städning vid borttagning misslyckades"
+        auto_updated: "Uppdaterat automatiskt"
+        paused: "Pausat"
+        resumed: "Återupptaget"
+  channel_plugins:
+    index:
+      title: "Plugin"
+      intro: "Plugin i %{channel}. Varje plugin är på eller av bara för den här kanalen."
+      all_plugins: "Alla plugin"
+      empty: "Inga plugin är installerade."
+      blocked: "Blockerat av pluginkatalogen: %{reason}"
+      auto_disabled: "Avstängt efter upprepade fel"
+    plugin:
+      turn_on: "Slå på %{name}"
+      turn_off: "Stäng av %{name}"
+      "on": "På"
+      "off": "Av"
+      configure: "Inställningar och behörigheter"
+      "yes": "Ja"
+      "no": "Nej"
+      secret_set: "Sparat (dolt)"
+      secret_hint: "Hemligt. Lämna tomt för att behålla det sparade värdet."
+      save_settings: "Spara inställningar"
+      granted: "Påslagen: %{value}"
+      granted_on: "på"
+      revoke: "Stäng av"
+      grant: "Slå på"
+      grant_hint: "Utökad behörighet. Den är av tills du slår på den för den här kanalen."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Plugin"
+      panels:
+        application:
+          plugins: "Plugin"
+        plugin_pages:
+          manage: "Alla plugin"
+          this_channel: "I den här kanalen"
+          title: "Plugin"
+  plugin_mailer:
+    auto_disabled:
+      subject: "Pluginet %{name} har stängts av"
+      intro: "Broadcast stängde av pluginet %{name} (%{key}) i alla kanaler efter upprepade fel."
+      reason: "Orsak: %{reason}"
+      open: "Öppna pluginets sida"
+    blocked:
+      subject: "Pluginet %{name} har blockerats"
+      intro: "Pluginkatalogen blockerade den installerade versionen av %{name} (%{key}). Broadcast stängde av det i alla kanaler."
+      reason: "Orsak: %{reason}"
+      next: "Installera en nyare version när katalogen erbjuder en, eller ta bort pluginet."
+      open: "Öppna pluginets sida"
+    deploy_requested:
+      subject: "Plugin %{name} %{version} väntar på att du driftsätter den"
+      intro: "En agent bad om att driftsätta version %{version} av pluginet %{name} (%{key})."
+      next: "Inget körs förrän du driftsätter det. Kontrollera kodändringarna och behörigheterna, och driftsätt eller låt bli."
+      open: "Granska och driftsätt"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Körs i pluginet %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "Ett steg från pluginet %{plugin}."
+        unavailable: "Det här pluginsteget är inte tillgängligt: pluginet har stängts av, tagits bort eller ändrats. Steget hoppas över."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Pluginsteg"
+  segments:
+    plugin_timeout: "Det tog för lång tid att räkna det här segmentet på grund av en segmentregel från ett plugin. Begränsa segmentet eller kontrollera pluginet."
+    preview_count:
+      plugin_timeout: "Det tog för lång tid att räkna det här segmentet på grund av en segmentregel från ett plugin. Begränsa segmentet eller kontrollera pluginet."
+    segment_rule_fields:
+      plugin_matches: "Matchar"
+      fields:
+        group_plugins: "-- Plugin --"
+        plugin_unavailable: "%{field} (pluginet är inte tillgängligt)"

@@ -1,0 +1,460 @@
+# Broadcast plugins: plugin screens, permissions and emails, Norwegian Bokmål.
+#
+# Every key mirrors reference/plugins.en.yml. Keep each %{placeholder} as it is,
+# keep the HTML in keys ending in _html, and never use long dashes. Follow the
+# style notes and glossary at the top of admin.nb.yml. bin/check validates the
+# file; see CONTRIBUTING.md.
+nb:
+  plugins:
+    open_link:
+      title: "Åpne denne lenken?"
+      body: "%{plugin} vil åpne en side utenfor Broadcast. Sjekk adressen før du fortsetter."
+      open: "Åpne lenken"
+    public_action:
+      confirm_title: "Et øyeblikk"
+      confirm_button: "Fortsett"
+      done_title: "Takk"
+      failed_title: "Noe gikk galt"
+      failed_body: "Vi kunne ikke lagre dette. Prøv lenken igjen senere."
+    developer_token:
+      label: "Plugin-utvikler"
+      hint: "For en KI-agent som skriver pluginer: den kan opprette, endre og teste utkast med testdata og sende dem til deg for gjennomgang. Den kan ikke lese ekte abonnentdata eller rulle ut. Den kan ikke ha andre tillatelser og utløper innen 30 dager."
+    webhook_endpoints:
+      title: "Plugin-hendelser"
+      hint: "Sendes bare for hendelsene du krysser av for her. Velg alle tar dem ikke med."
+      not_available: "har en plugin-hendelse som ikke er tilgjengelig i denne kanalen"
+    token_endpoints:
+      label: "Plugin-endepunkter"
+      hint: "Endepunktene i plugin-API-et som dette tokenet kan kalle, ett per linje (plugin/endepunkt, eller plugin/* for alle). Tokenet trenger også tillatelsen hvert endepunkt krever."
+      needs: "krever %{permission}"
+    permissions:
+      settings:
+        label: "Egne innstillinger"
+        description: "Leser innstillingene du oppgir for denne pluginen, også hemmelige verdier."
+      store:
+        label: "Egen lagring"
+        description: "Lagrer egne data i Broadcast."
+      log:
+        label: "Logger"
+        description: "Skriver logglinjer som du kan lese på pluginens side."
+      channel:
+        label: "Kanalnavn"
+        description: "Leser navnet på kanalen den kjører i."
+      events:
+        label: "Egne hendelser"
+        description: "Registrerer hendelser (for eksempel bestillinger) for sine segmentregler."
+      subscribers_read:
+        label: "Lese abonnenter"
+        description: "Leser abonnentopplysninger, tagger og egendefinerte felt."
+      subscribers_write:
+        label: "Endre abonnenter"
+        description: "Endrer navn, egendefinerte felt og andre opplysninger om eksisterende abonnenter."
+      tags_read:
+        label: "Lese tagger"
+        description: "Leser listen over tagger."
+      tags_write:
+        label: "Endre tagger"
+        description: "Legger til tagger på abonnenter og fjerner dem."
+      broadcasts_read:
+        label: "Lese kampanjer"
+        description: "Leser kampanjer og statistikken deres."
+      sequences_read:
+        label: "Lese sekvenser"
+        description: "Leser sekvenser og trinnene deres."
+      segments_read:
+        label: "Lese segmenter"
+        description: "Leser segmenter og reglene deres."
+      network:
+        label: "Internett-tilgang"
+        description: "Kobler til disse nettstedene: %{hosts}."
+      subscribers_export:
+        label: "Kopiere hele listen din"
+        description: "Kan lese alle abonnenter, side for side, og sende dem til %{hosts}."
+      subscribers_create:
+        label: "Legge til nye abonnenter"
+        description: "Legger til personer i listen din. Innstillingen din for dobbel opt-in gjelder."
+      network_wildcard:
+        label: "Internett-tilgang til mange nettsteder"
+        description: "Kobler til alle nettsteder som samsvarer med %{hosts}."
+      network_fromSetting:
+        label: "Internett-tilgang til en adresse du oppgir"
+        description: "Kobler til adressen du skriver inn i innstillingen %{setting}."
+      output_html:
+        label: "HTML i e-poster"
+        description: "Legger til HTML i e-poster. Broadcast renser den før den sendes."
+      hooks_beforeSend:
+        label: "Endre e-poster før de sendes"
+        description: "Kan hoppe over en e-post eller endre emnet og innholdet. Den kan ikke endre hvem som mottar den, avsenderen eller avmeldingslenken."
+      hooks_apiEndpoints:
+        label: "Eget API"
+        description: "Legger til API-adresser som kan brukes av de som har et samsvarende API-token."
+      events_webhook:
+        label: "Egne hendelser i webhooks"
+        description: "Lar deg sende hendelser fra denne pluginen til webhook-endepunktene dine. Ingenting sendes før du slår på en hendelse for et endepunkt. En webhook inneholder hendelsen, de deklarerte feltene og abonnentens id, aldri en e-postadresse."
+      hooks_publicActions:
+        label: "Lenker i e-poster som alle kan klikke på"
+        description: "Legger til lenker i e-poster som kjører denne pluginen når en abonnent klikker på dem, uten innlogging. Broadcast beviser hvem som klikket. Pluginen får abonnenten og valget i lenken."
+      network_private:
+        label: "Tilgang til én privat adresse"
+        description: "Kobler til én adresse i det private nettverket ditt som du godkjenner."
+      email_sender:
+        label: "Endre avsenderen"
+        description: "Endrer Fra eller Svar til til en avsender som er verifisert i denne kanalen."
+      sql:
+        label: "Databasetilgang"
+      files:
+        label: "Filtilgang"
+      env:
+        label: "Tilgang til serverinnstillinger"
+      process:
+        label: "Starte programmer"
+      subscribers_resubscribe:
+        label: "Melde på personer igjen"
+      suppressions_write:
+        label: "Fjerne sperringer"
+      email_recipients:
+        label: "Endre mottakerne av e-poster"
+      email_unsubscribe:
+        label: "Endre avmeldingslenken"
+  activerecord:
+    errors:
+      models:
+        admin_api_token:
+          attributes:
+            permission_to_plugin_development:
+              only_permission: "kan ikke kombineres med andre tillatelser"
+            expires_at:
+              plugin_development_lifetime: "må være innen 30 dager for et token for plugin-utviklere"
+        plugin_store_entry:
+          attributes:
+            value:
+              quota_exceeded: "overskrider lagringsgrensen for denne pluginen"
+  app_installation:
+    plugins:
+      index:
+        title: "Pluginer"
+        intro: "Pluginer gir Broadcast nye funksjoner. Installer en plugin én gang, og slå den deretter på i hver kanal."
+        audit_log: "Revisjonslogg"
+        safe_mode: "Sikker modus er på."
+        safe_mode_body: "Ingen pluginer kjører før BROADCAST_PLUGINS_SAFE_MODE er fjernet fra serverinnstillingene."
+        runtime_up:
+          one: "Kjøremiljøet for pluginer kjører (1 plugin-prosess)."
+          other: "Kjøremiljøet for pluginer kjører (%{count} plugin-prosesser)."
+        runtime_down: "Kjøremiljøet for pluginer kjører ikke eller er ikke installert. Alt annet i Broadcast fungerer."
+        name: "Navn"
+        key: "ID"
+        version: "Versjon"
+        state: "Kanaler"
+        not_deployed: "Ikke rullet ut"
+        first_deploy_waits: "Versjon %{version} venter på at du ruller den ut"
+        browse: "Bla gjennom pluginer"
+        update: "Oppdater til %{version}"
+        blocked: "Blokkert av plugin-katalogen: %{reason}"
+        directory_stale: "Broadcast har ikke kunnet sjekke blokkeringslisten i plugin-katalogen på mer enn en uke (siste sjekk: %{checked}). Blokkerte pluginer slås ikke av før det lykkes igjen."
+        never: "aldri"
+        auto_disabled: "Slått av etter gjentatte feil"
+        coverage_all: "Alle kanaler"
+        coverage_some: "%{enabled} av %{total} kanaler"
+        coverage_none: "Av"
+        coverage_label: "Velg kanaler for %{name}: %{state}"
+        empty: "Ingen pluginer er installert."
+        upload_heading: "Last opp en plugin"
+        upload_intro: "Last opp en .broadcast-plugin-fil. Du ser tillatelsene før noe kjører."
+        upload: "Last opp"
+        delete_now: "Slett nå"
+        held_intro: "Fjernede plugins der dataene er lagret. Hvis du installerer den samme pluginen igjen, gjenopprettes innstillingene og dataene."
+        held_title: "Lagret i 30 dager"
+        held_until: "Data lagret til %{date}"
+        keeps_running: "Versjon %{version} kjører videre til du bestemmer deg."
+        pause: "Sett på pause"
+        pinned: "Låst til %{version}"
+        resume: "Gjenoppta"
+        review_update: "Gå gjennom og oppdater"
+        update_waits: "%{name} %{version} venter på deg."
+      channels_control:
+        title: "Kanaler for %{name}"
+        intro: "Kryss av for kanalene denne pluginen kjører i."
+        filter: "Filtrer kanaler"
+        select_all: "Velg alle"
+        deselect_all: "Fjern alle valg"
+        selected_count: "%{selected} av %{total} valgt"
+        no_match: "Ingen kanaler samsvarer med dette filteret."
+        needs_settings: "Krever innstillinger"
+        cancel: "Avbryt"
+        save: "Lagre"
+      channels:
+        saved: "Kanaler lagret for %{name}."
+        refused: "Disse kanalene kunne ikke slås på: %{channels}. Åpne hver kanal for å sjekke innstillingene."
+      create:
+        no_file: "Velg en .broadcast-plugin-fil."
+        uploaded: "Lastet opp. Sjekk tillatelsene, og rull deretter ut."
+      publish:
+        not_live: "Rull ut en versjon først. Bare en utrullet versjon kan publiseres."
+        submitted: "%{id} %{version} er i gjennomgangskøen på markedsplassen. Følg den på %{url}."
+      show:
+        auto_disabled: "Slått av etter gjentatte feil: %{reason}. Rull ut en versjon for å slå den på igjen."
+        logs: "Logger"
+        remove: "Fjern"
+        pending: "Versjon %{version} venter på godkjenningen din."
+        review: "Gå gjennom og rull ut"
+        publish_title: "Publiser på markedsplassen"
+        publish_intro: "Sender versjon %{version} til gjennomgang på Broadcasts markedsplass for pluginer, under utgiver-id-en din. Ingenting endres på denne serveren. Du trenger en utgiverkonto der: se %{docs_url}."
+        publish_token: "Publiseringstoken"
+        publish_token_hint: "Fra Oversikt > Pluginer på markedsplassen. Det brukes for denne ene forespørselen og lagres ikke."
+        publish_summary: "Sammendrag (én setning)"
+        publish_category: "Kategori"
+        publish_button: "Send til gjennomgang"
+        publish_categories:
+          audience: "Målgruppe og vekst"
+          content: "E-postinnhold"
+          analytics: "Rapporter og analyse"
+          integrations: "Integrasjoner"
+          automation: "Automatisering"
+          developer: "Utviklerverktøy"
+        permissions: "Tillatelser"
+        enabled: "På i denne kanalen"
+        disabled: "Av i denne kanalen"
+        channels: "Kanaler"
+        open_channel: "Åpne"
+        earlier_versions: "Tidligere versjoner"
+        rollback: "Rull tilbake"
+        rollback_hint: "Går tilbake til en versjon du har godkjent tidligere, med tillatelsene den hadde."
+        health_calls: "kall, i dag og i går"
+        health_failures: "mislykkede kjøringer, siste 24 timer"
+        health_hint: "Kall telles per dag. Forespørsler og mislykkede kjøringer telles fra logglinjene de siste 24 timene."
+        health_requests: "forespørsler, siste 24 timer"
+        health_store: "lagrede data, nå"
+        health_title: "Tilstand"
+        pause: "Sett på pause"
+        paused_hint: "Den kjører ikke i noen kanal. Innstillingene og dataene blir værende."
+        resume: "Gjenoppta"
+        update_policies:
+          ask:
+            help: "Nye versjoner tilbys; ingenting rulles ut før du velger Oppdater."
+            label: "Spør meg hver gang"
+          auto_when_same:
+            help: "En ny versjon rulles ut av seg selv når den ikke ber om nye tillatelser eller hooks. Alt annet venter på deg."
+            label: "Automatisk når ingenting nytt blir bedt om"
+          pinned:
+            help: "Blir på %{version}. Ingen annen versjon tilbys eller rulles ut."
+            label: "Låst"
+        updates_title: "Oppdateringer"
+      logs:
+        title: "%{name}: logger"
+        breadcrumb: "Logger"
+        empty: "Ingen logglinjer de siste 30 dagene."
+      confirm_destroy:
+        title: "Fjerne %{name}?"
+        body: "Dette sletter pluginen, alle versjonene, innstillingene og de lagrede dataene på denne serveren. Revisjonsloggen beholder en oppføring."
+        cancel: "Avbryt"
+        remove: "Avinstaller %{name}"
+        choice: "Hva som skjer med dataene"
+        delete_label: "Slett dataene nå"
+        delete_now: "Slett nå"
+        held_body: "Dataene lagres til %{date}. Sletter du nå, fjernes versjonene, innstillingene og de lagrede dataene med en gang. Revisjonsloggen beholder en oppføring."
+        held_title: "Slette %{name} nå?"
+        keep_help: "Den stopper og slås av i alle kanaler. Versjonene, innstillingene og de lagrede dataene blir værende i 30 dager og slettes deretter."
+        keep_label: "Lagre dataene i 30 dager, så en ny installasjon tar dem opp"
+        tags_stay: "Tagger den har lagt til, blir værende på abonnentene dine uansett."
+      destroy:
+        removed: "%{name} ble fjernet."
+        kept: "%{name} ble avinstallert. Dataene lagres til %{date}; installer den igjen for å gjenopprette dem."
+      held:
+        refused: "%{name} ble fjernet. Dataene er lagret; installer den igjen for å gjenopprette dem, eller slett dem nå."
+      pause:
+        paused: "%{name} er satt på pause i alle kanaler."
+      resume:
+        resumed: "%{name} kjører igjen."
+      status:
+        paused: "På pause"
+        paused_at: "Satt på pause %{when}"
+        paused_by: "Satt på pause av %{by} %{when}"
+      stop_notice:
+        data_unchanged: "Dataene dine på denne serveren er uendret."
+        no_reason: "ingen grunn ble oppgitt."
+        open: "Åpne pluginen"
+        reason: "Grunn: %{reason}"
+        title: "Furvur stoppet %{name} %{version} %{date}."
+      update_policy:
+        invalid: "Velg en av oppdateringsinnstillingene."
+        nothing_to_pin: "Rull ut en versjon først. Bare en utrullet versjon kan låses."
+        saved: "Oppdateringsinnstillingen er lagret."
+      waiting:
+        new_hooks:
+          one: "Den endrer når den kjører: %{list}."
+          other: "Den endrer når den kjører: %{list}."
+        new_hosts:
+          one: "Den kobler til en ny adresse: %{list}."
+          other: "Den kobler til nye adresser: %{list}."
+        new_permissions:
+          one: "Den ber om en ny tillatelse: %{list}."
+          other: "Den ber om nye tillatelser: %{list}."
+        nothing_new: "Den ber ikke om noe nytt."
+    plugin_directory:
+      unavailable: "Plugin-katalogen kan ikke nås akkurat nå. Installerte pluginer fortsetter å fungere."
+      index:
+        title: "Bla gjennom pluginer"
+        intro: "Pluginer fra Broadcasts plugin-katalog. Hver versjon er gjennomgått og signert. Du ser tillatelsene før noe kjører."
+        empty: "Katalogen har ingen pluginer for denne versjonen av Broadcast ennå."
+        by: "Av %{publisher}"
+        verified: "Verifisert utgiver"
+        reviewed: "Gjennomgått"
+        installed: "Installert"
+        incompatible: "Krever en annen versjon av Broadcast"
+        details: "Detaljer"
+      show:
+        permissions: "Tillatelser"
+        review_after: "Etter installasjonen går du gjennom de nøyaktige tillatelsene og koden, og ruller deretter ut."
+        support: "Støtte"
+        privacy: "Personvernerklæring"
+        installed: "Installert: åpne pluginens side"
+        install: "Installer"
+        held_restore: "Du fjernet denne pluginen og lagret dataene til %{date}. Hvis du installerer den igjen, gjenopprettes innstillingene og dataene."
+      install:
+        installed: "Lastet ned og sjekket. Gå gjennom tillatelsene, og rull deretter ut."
+      update:
+        updated: "Oppdatert til versjon %{version}."
+        review: "Den nye versjonen ber om andre tillatelser eller hooks. Gå gjennom den, og rull deretter ut."
+    plugin_versions:
+      changelog:
+        title: "Hva som er endret i %{version}"
+      show:
+        title: "%{name} %{version}"
+        signed: "Signert av plugin-katalogen (nøkkel %{key})."
+        unsigned: "Ikke fra plugin-katalogen. Installer den bare hvis du stoler på hvor den kommer fra."
+        permissions: "Tillatelser"
+        permissions_intro: "Hva denne pluginen har lov til. Alle pluginer kan også ha egne innstillinger, data og logger."
+        hooks: "Hva den legger til"
+        page: "Siden «%{title}» (%{slot})"
+        deploy_hint: "Ingenting kjører før du ruller ut og slår den på i en kanal."
+        deploy: "Rull ut"
+        status: "Status: %{status}"
+        changes: "Endringer siden %{version}"
+        code: "Kode"
+      rollback:
+        rolled_back: "Versjon %{version} er aktiv igjen."
+      diff:
+        unchanged: "Ingen endringer."
+        too_large: "Denne endringen er for stor til å vises her. Sammenlign filene før du ruller ut."
+      approve:
+        deployed: "Versjon %{version} er aktiv."
+      permissions:
+        only_basic: "Bare egne innstillinger, data og logger."
+        tier_1: "Standard"
+        tier_2: "Sensitiv"
+        tier_3: "Avansert"
+        new: "Ny"
+    plugin_channels:
+      enable:
+        enabled: "Pluginen er på i %{channel}."
+      disable:
+        disabled: "Pluginen er av i %{channel}."
+      settings:
+        saved: "Innstillingene er lagret."
+      grant:
+        granted: "Tillatelsen er slått på."
+        not_declared: "Denne pluginen ber ikke om den tillatelsen."
+      revoke:
+        revoked: "Tillatelsen er slått av."
+    plugin_audit_events:
+      index:
+        title: "Revisjonslogg for pluginer"
+        empty: "Ingenting ennå."
+      actions:
+        uploaded: "Lastet opp"
+        approved: "Rullet ut"
+        enabled: "Slått på"
+        disabled: "Slått av"
+        removed: "Fjernet"
+        granted: "Avansert tillatelse på"
+        revoked: "Avansert tillatelse av"
+        settings_changed: "Innstillinger endret"
+        auto_disabled: "Slått av etter feil"
+        alert_not_delivered: "Varsel-e-post ikke levert"
+        alert_captured: "Varsel-e-post holdt tilbake av Testserveren"
+        draft_created: "Utkast påbegynt"
+        deploy_requested: "Sendt til utrulling"
+        rolled_back: "Rullet tilbake"
+        restored: "Gjenopprettet med lagrede data"
+        blocked: "Blokkert av plugin-katalogen"
+        published_to_marketplace: "Sendt til markedsplassen"
+        purged: "Lagrede data slettet etter 30 dager"
+        agent_draft: "Utkast endret av en agent"
+        agent_requested_deploy: "Utrulling bedt om av en agent"
+        uninstall_hook_failed: "Opprydding ved fjerning mislyktes"
+        auto_updated: "Oppdatert automatisk"
+        paused: "Satt på pause"
+        resumed: "Gjenopptatt"
+  channel_plugins:
+    index:
+      title: "Pluginer"
+      intro: "Pluginer i %{channel}. Hver plugin er på eller av bare for denne kanalen."
+      all_plugins: "Alle pluginer"
+      empty: "Ingen pluginer er installert."
+      blocked: "Blokkert av plugin-katalogen: %{reason}"
+      auto_disabled: "Slått av etter gjentatte feil"
+    plugin:
+      turn_on: "Slå på %{name}"
+      turn_off: "Slå av %{name}"
+      "on": "På"
+      "off": "Av"
+      configure: "Innstillinger og tillatelser"
+      "yes": "Ja"
+      "no": "Nei"
+      secret_set: "Lagret (skjult)"
+      secret_hint: "Hemmelig. La feltet stå tomt for å beholde den lagrede verdien."
+      save_settings: "Lagre innstillinger"
+      granted: "Slått på: %{value}"
+      granted_on: "på"
+      revoke: "Slå av"
+      grant: "Slå på"
+      grant_hint: "Avansert tillatelse. Den er av til du slår den på for denne kanalen."
+  layouts:
+    sidebar:
+      icon_rail:
+        plugins: "Pluginer"
+      panels:
+        application:
+          plugins: "Pluginer"
+        plugin_pages:
+          manage: "Alle pluginer"
+          this_channel: "I denne kanalen"
+          title: "Pluginer"
+  plugin_mailer:
+    auto_disabled:
+      subject: "Pluginen %{name} ble slått av"
+      intro: "Broadcast slo av pluginen %{name} (%{key}) i alle kanaler etter gjentatte feil."
+      reason: "Årsak: %{reason}"
+      open: "Åpne pluginens side"
+    blocked:
+      subject: "Pluginen %{name} ble blokkert"
+      intro: "Plugin-katalogen blokkerte den installerte versjonen av %{name} (%{key}). Broadcast slo den av i alle kanaler."
+      reason: "Årsak: %{reason}"
+      next: "Installer en nyere versjon når katalogen tilbyr en, eller fjern pluginen."
+      open: "Åpne pluginens side"
+    deploy_requested:
+      subject: "Plugin %{name} %{version} venter på at du ruller den ut"
+      intro: "En agent ba om å rulle ut versjon %{version} av pluginen %{name} (%{key})."
+      next: "Ingenting kjører før du ruller den ut. Sjekk kodeendringene og tillatelsene, og rull ut eller la være."
+      open: "Gå gjennom og rull ut"
+  sequence_steps:
+    step:
+      content:
+        plugin_step: "Kjører i pluginen %{plugin}"
+    sub_forms:
+      plugin_step:
+        from: "Et trinn fra pluginen %{plugin}."
+        unavailable: "Dette plugin-trinnet er ikke tilgjengelig: pluginen ble slått av, fjernet eller endret. Trinnet hoppes over."
+  enums:
+    sequence_step:
+      action:
+        plugin_step: "Plugin-trinn"
+  segments:
+    plugin_timeout: "Det tok for lang tid å telle dette segmentet på grunn av en segmentregel fra en plugin. Snevre inn segmentet, eller sjekk pluginen."
+    preview_count:
+      plugin_timeout: "Det tok for lang tid å telle dette segmentet på grunn av en segmentregel fra en plugin. Snevre inn segmentet, eller sjekk pluginen."
+    segment_rule_fields:
+      plugin_matches: "Samsvarer"
+      fields:
+        group_plugins: "-- Pluginer --"
+        plugin_unavailable: "%{field} (pluginen er ikke tilgjengelig)"

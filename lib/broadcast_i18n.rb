@@ -22,9 +22,10 @@ module BroadcastI18n
     'fi' => 'Suomi'
   }.freeze
 
-  # The English files translated here: admin (the interface) and activerecord
-  # (field names and validation messages of the application's own models)
-  FILES = %w[admin activerecord].freeze
+  # The English files translated here: admin (the interface), activerecord
+  # (field names and validation messages of the application's own models) and plugins (the v3
+  # plugin screens, permissions and emails)
+  FILES = %w[admin activerecord plugins].freeze
 
   def self.root = File.expand_path('..', __dir__)
 

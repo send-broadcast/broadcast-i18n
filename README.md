@@ -18,10 +18,11 @@ pages people use to run their newsletters, subscribers, sequences and sending.
 | Finnish | `locales/admin.fi.yml` |
 
 Each language also has `locales/activerecord.<language>.yml`: the field names and
-validation messages of Broadcast's own records.
+validation messages of Broadcast's own records, and `locales/plugins.<language>.yml`:
+the plugin screens, permissions and emails.
 
-English is written in the Broadcast application itself. `reference/admin.en.yml`
-and `reference/activerecord.en.yml` are copies of it, kept here so you can see
+English is written in the Broadcast application itself. `reference/admin.en.yml`,
+`reference/activerecord.en.yml` and `reference/plugins.en.yml` are copies of it, kept here so you can see
 what every key says. Pages subscribers
 see (unsubscribe, confirmation and opt-in pages) are not in this repository.
 
