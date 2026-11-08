@@ -265,6 +265,7 @@ es:
             parent_sequence:
               must_be_in_the_same_broadcast: "debe estar en el mismo canal"
         sequence_step:
+          entry_point_cannot_be_deleted: "El punto de entrada no se puede eliminar"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "debe pertenecer al mismo canal que la secuencia"
@@ -1308,6 +1309,16 @@ es:
     host_system:
       show:
         healthy: "Correcto"
+        folder_problems_title: "Una carpeta de almacenamiento necesita atención"
+        folder_problems_body: "Las subidas, las importaciones y el análisis de imágenes fallan hasta que lo arregles."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "En el contenedor %{container}, la app no puede escribir en %{folder}."
+        folder_not_writable_fix: "En el servidor, asigna al usuario de la app la carpeta montada aquí:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <la carpeta del host montada en %{folder}>"
+        folder_not_mounted_html: "En el contenedor %{container}, %{folder} no está montada, así que no ve los archivos que el otro contenedor guarda allí."
+        folder_not_mounted_fix: "Añade esta línea bajo volumes: de ese servicio en tu archivo compose y luego vuelve a crear los contenedores:"
+        folder_not_mounted_command: "- <carpeta del host>:%{folder}"
         warning: "Advertencia"
         critical: "Crítico"
         uptime_days: "%{count} d"
@@ -1468,6 +1479,8 @@ es:
         checking: "Buscando actualizaciones..."
         auto_check: "Buscar actualizaciones automáticamente"
         auto_check_help: "Comprueba cada hora y muestra un aviso cuando hay una versión más reciente. Si lo desactivas, se oculta el aviso; en ningún caso actualiza nada por sí solo."
+        plugin_telemetry: "Compartir con el directorio de plugins el número de instalaciones y errores de los plugins"
+        plugin_telemetry_help: "Envía los id y las versiones de los plugins, la versión de Broadcast y el número de errores por hook y código de error. Nunca el texto de los errores ni los datos de los suscriptores."
         title: "Buscar actualizaciones"
       developer_builds:
         title: "Compilaciones de desarrollo"
@@ -1520,6 +1533,8 @@ es:
       settings:
         auto_check_on: "Broadcast buscará actualizaciones cada hora."
         auto_check_off: "La búsqueda automática de actualizaciones está desactivada."
+        plugin_telemetry_on: "El número de instalaciones y errores de los plugins se compartirá con el directorio de plugins."
+        plugin_telemetry_off: "El número de instalaciones y errores de los plugins no se comparte."
       confirm:
         installed_notes: "Versión instalada actualmente"
         upgrade:

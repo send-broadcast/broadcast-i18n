@@ -266,6 +266,7 @@ de:
             parent_sequence:
               must_be_in_the_same_broadcast: "muss sich im selben Kanal befinden"
         sequence_step:
+          entry_point_cannot_be_deleted: "Der Einstiegspunkt kann nicht gelöscht werden"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "muss zum selben Kanal gehören wie die Sequenz"
@@ -1309,6 +1310,16 @@ de:
     host_system:
       show:
         healthy: "In Ordnung"
+        folder_problems_title: "Ein Speicherordner braucht Ihre Aufmerksamkeit"
+        folder_problems_body: "Uploads, Importe und die Bildanalyse schlagen fehl, bis Sie das beheben."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "Im Container %{container} kann die App nicht in %{folder} schreiben."
+        folder_not_writable_fix: "Übergeben Sie auf dem Server den hier eingebundenen Ordner an den App-Benutzer:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <der Host-Ordner, der unter %{folder} eingebunden ist>"
+        folder_not_mounted_html: "Im Container %{container} ist %{folder} nicht eingebunden, daher sieht er die Dateien nicht, die der andere Container dort speichert."
+        folder_not_mounted_fix: "Fügen Sie diese Zeile unter volumes: dieses Dienstes in Ihrer Compose-Datei hinzu und erstellen Sie die Container dann neu:"
+        folder_not_mounted_command: "- <Host-Ordner>:%{folder}"
         warning: "Warnung"
         critical: "Kritisch"
         uptime_days: "%{count} T."
@@ -1469,6 +1480,8 @@ de:
         checking: "Suche nach Updates …"
         auto_check: "Automatisch nach Updates suchen"
         auto_check_help: "Prüft stündlich und zeigt einen Hinweis an, wenn eine neuere Version verfügbar ist. Wenn Sie dies deaktivieren, wird der Hinweis ausgeblendet; in keinem Fall wird automatisch etwas aktualisiert."
+        plugin_telemetry: "Anzahl der Plugin-Installationen und -Fehler mit dem Plugin-Verzeichnis teilen"
+        plugin_telemetry_help: "Sendet Plugin-IDs und -Versionen, die Broadcast-Version und die Anzahl der Fehler je Hook und Fehlercode. Nie Fehlertexte oder Abonnentendaten."
         title: "Nach Updates suchen"
       developer_builds:
         title: "Entwickler-Builds"
@@ -1521,6 +1534,8 @@ de:
       settings:
         auto_check_on: "Broadcast sucht stündlich nach Updates."
         auto_check_off: "Die automatische Suche nach Updates ist deaktiviert."
+        plugin_telemetry_on: "Die Anzahl der Plugin-Installationen und -Fehler wird mit dem Plugin-Verzeichnis geteilt."
+        plugin_telemetry_off: "Die Anzahl der Plugin-Installationen und -Fehler wird nicht geteilt."
       confirm:
         installed_notes: "Aktuell installierte Version"
         upgrade:

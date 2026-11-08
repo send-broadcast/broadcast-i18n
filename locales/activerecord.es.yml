@@ -26,6 +26,10 @@ es:
               locked_while_in_use: "El almacenamiento, el campo personalizado y la etiqueta no pueden cambiar mientras el tema esté en uso, porque eso cambiaría quién recibe los correos. En uso en: %{uses}. Quita el tema de ahí primero."
               in_use_cannot_delete: "El tema no se puede eliminar mientras esté en uso, porque eso cambiaría quién recibe los correos. En uso en: %{uses}. Quita el tema de ahí primero."
               kept_by_archived_broadcasts: "El tema no se puede eliminar mientras lo use una campaña archivada que no se ha enviado, porque al desarchivarla se enviaría a todos sus destinatarios. Archivadas: %{uses}. Elimina la campaña o quita el tema de ella primero."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "no se pudo guardar: el servidor no puede escribir en su carpeta de subidas. Un administrador debe darle permiso de escritura para la app (uid 1000)."
         subscriber:
           attributes:
             base:

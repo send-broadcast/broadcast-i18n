@@ -265,6 +265,7 @@ fr:
             parent_sequence:
               must_be_in_the_same_broadcast: "doit être dans le même canal"
         sequence_step:
+          entry_point_cannot_be_deleted: "Le point d'entrée ne peut pas être supprimé"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "doit appartenir au même canal que la séquence"
@@ -1308,6 +1309,16 @@ fr:
     host_system:
       show:
         healthy: "Bon état"
+        folder_problems_title: "Un dossier de stockage demande votre attention"
+        folder_problems_body: "Les téléversements, les importations et l'analyse des images échouent tant que vous n'avez pas corrigé ce problème."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "Dans le conteneur %{container}, l'application ne peut pas écrire dans %{folder}."
+        folder_not_writable_fix: "Sur le serveur, donnez le dossier monté ici à l'utilisateur de l'application :"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <le dossier de l'hôte monté sur %{folder}>"
+        folder_not_mounted_html: "Dans le conteneur %{container}, %{folder} n'est pas monté : il ne voit donc pas les fichiers que l'autre conteneur y enregistre."
+        folder_not_mounted_fix: "Ajoutez cette ligne sous volumes: de ce service dans votre fichier compose, puis recréez les conteneurs :"
+        folder_not_mounted_command: "- <dossier de l'hôte>:%{folder}"
         warning: "Avertissement"
         critical: "Critique"
         uptime_days: "%{count} j"
@@ -1468,6 +1479,8 @@ fr:
         checking: "Recherche de mises à jour..."
         auto_check: "Rechercher automatiquement les mises à jour"
         auto_check_help: "Vérifie toutes les heures et affiche un avis quand une version plus récente est disponible. Désactiver cette option masque l'avis ; dans un cas comme dans l'autre, rien n'est mis à jour automatiquement."
+        plugin_telemetry: "Partager le nombre d'installations et d'erreurs des plugins avec le répertoire des plugins"
+        plugin_telemetry_help: "Envoie les identifiants et versions des plugins, la version de Broadcast et le nombre d'erreurs par hook et par code d'erreur. Jamais le texte des erreurs ni les données des abonnés."
         title: "Rechercher des mises à jour"
       developer_builds:
         title: "Versions de développement"
@@ -1520,6 +1533,8 @@ fr:
       settings:
         auto_check_on: "Broadcast recherchera des mises à jour toutes les heures."
         auto_check_off: "La recherche automatique de mises à jour est désactivée."
+        plugin_telemetry_on: "Le nombre d'installations et d'erreurs des plugins sera partagé avec le répertoire des plugins."
+        plugin_telemetry_off: "Le nombre d'installations et d'erreurs des plugins n'est pas partagé."
       confirm:
         installed_notes: "Version actuellement installée"
         upgrade:

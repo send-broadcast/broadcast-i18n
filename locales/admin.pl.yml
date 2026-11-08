@@ -266,6 +266,7 @@ pl:
             parent_sequence:
               must_be_in_the_same_broadcast: "musi być w tym samym kanale"
         sequence_step:
+          entry_point_cannot_be_deleted: "Punktu wejścia nie można usunąć"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "musi należeć do tego samego kanału co sekwencja"
@@ -1359,6 +1360,16 @@ pl:
     host_system:
       show:
         healthy: "Sprawny"
+        folder_problems_title: "Folder na pliki wymaga uwagi"
+        folder_problems_body: "Przesyłanie plików, importy i analiza obrazów nie działają, dopóki tego nie naprawisz."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "W kontenerze %{container} aplikacja nie może zapisywać w %{folder}."
+        folder_not_writable_fix: "Na serwerze przekaż folder zamontowany w tym miejscu użytkownikowi aplikacji:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <folder hosta zamontowany w %{folder}>"
+        folder_not_mounted_html: "W kontenerze %{container} folder %{folder} nie jest zamontowany, więc kontener nie widzi plików, które zapisuje tam drugi kontener."
+        folder_not_mounted_fix: "Dodaj ten wiersz pod volumes: tej usługi w pliku compose, a potem utwórz kontenery od nowa:"
+        folder_not_mounted_command: "- <folder hosta>:%{folder}"
         warning: "Ostrzeżenie"
         critical: "Krytyczny"
         uptime_days: "%{count} d"
@@ -1529,6 +1540,8 @@ pl:
         checking: "Sprawdzanie aktualizacji..."
         auto_check: "Automatycznie sprawdzaj aktualizacje"
         auto_check_help: "Sprawdza co godzinę i pokazuje powiadomienie, gdy dostępna jest nowsza wersja. Wyłączenie ukrywa powiadomienie; w żadnym przypadku nic nie jest aktualizowane samoczynnie."
+        plugin_telemetry: "Udostępniaj katalogowi pluginów liczby instalacji i błędów pluginów"
+        plugin_telemetry_help: "Wysyła identyfikatory i wersje pluginów, wersję Broadcast oraz liczbę błędów dla każdego hooka i kodu błędu. Nigdy treści błędów ani danych subskrybentów."
         title: "Sprawdź aktualizacje"
       developer_builds:
         title: "Wersje deweloperskie"
@@ -1581,6 +1594,8 @@ pl:
       settings:
         auto_check_on: "Broadcast będzie sprawdzać aktualizacje co godzinę."
         auto_check_off: "Automatyczne sprawdzanie aktualizacji jest wyłączone."
+        plugin_telemetry_on: "Liczby instalacji i błędów pluginów będą udostępniane katalogowi pluginów."
+        plugin_telemetry_off: "Liczby instalacji i błędów pluginów nie są udostępniane."
       confirm:
         installed_notes: "Obecnie zainstalowana wersja"
         upgrade:

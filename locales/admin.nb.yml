@@ -264,6 +264,7 @@ nb:
             parent_sequence:
               must_be_in_the_same_broadcast: "må være i samme kanal"
         sequence_step:
+          entry_point_cannot_be_deleted: "Startpunktet kan ikke slettes"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "må tilhøre samme kanal som sekvensen"
@@ -1307,6 +1308,16 @@ nb:
     host_system:
       show:
         healthy: "Frisk"
+        folder_problems_title: "En lagringsmappe trenger oppmerksomhet"
+        folder_problems_body: "Opplastinger, importer og bildeanalyse feiler til du retter dette."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "I containeren %{container} kan ikke appen skrive til %{folder}."
+        folder_not_writable_fix: "Gi mappen som er montert her, til appens bruker på serveren:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <vertsmappen som er montert på %{folder}>"
+        folder_not_mounted_html: "I containeren %{container} er ikke %{folder} montert, så den ser ikke filene som den andre containeren lagrer der."
+        folder_not_mounted_fix: "Legg til denne linjen under volumes: for den tjenesten i compose-filen din, og opprett deretter containerne på nytt:"
+        folder_not_mounted_command: "- <vertsmappe>:%{folder}"
         warning: "Advarsel"
         critical: "Kritisk"
         uptime_days: "%{count} d"
@@ -1467,6 +1478,8 @@ nb:
         checking: "Ser etter oppdateringer..."
         auto_check: "Se etter oppdateringer automatisk"
         auto_check_help: "Sjekker hver time og viser et varsel når en nyere versjon er tilgjengelig. Hvis du slår dette av, skjules varselet; uansett oppgraderes ingenting av seg selv."
+        plugin_telemetry: "Del antall plugininstallasjoner og pluginfeil med pluginkatalogen"
+        plugin_telemetry_help: "Sender plugin-ID-er og -versjoner, Broadcast-versjonen og antall feil per hook og feilkode. Aldri feiltekst eller abonnentdata."
         title: "Se etter oppdateringer"
       developer_builds:
         title: "Utviklerbygg"
@@ -1519,6 +1532,8 @@ nb:
       settings:
         auto_check_on: "Broadcast ser etter oppdateringer hver time."
         auto_check_off: "Automatiske oppdateringssjekker er slått av."
+        plugin_telemetry_on: "Antall plugininstallasjoner og pluginfeil deles med pluginkatalogen."
+        plugin_telemetry_off: "Antall plugininstallasjoner og pluginfeil deles ikke."
       confirm:
         installed_notes: "Installert versjon"
         upgrade:

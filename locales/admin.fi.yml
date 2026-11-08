@@ -265,6 +265,7 @@ fi:
             parent_sequence:
               must_be_in_the_same_broadcast: "on oltava samassa kanavassa"
         sequence_step:
+          entry_point_cannot_be_deleted: "Aloituskohtaa ei voi poistaa"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "on kuuluttava samaan kanavaan kuin sarja"
@@ -1308,6 +1309,16 @@ fi:
     host_system:
       show:
         healthy: "Kunnossa"
+        folder_problems_title: "Tallennuskansio vaatii huomiota"
+        folder_problems_body: "Lataukset, tuonnit ja kuva-analyysi epäonnistuvat, kunnes korjaat tämän."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "Kontissa %{container} sovellus ei voi kirjoittaa kansioon %{folder}."
+        folder_not_writable_fix: "Anna palvelimella tähän liitetty kansio sovelluksen käyttäjälle:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <isännän kansio, joka on liitetty kohtaan %{folder}>"
+        folder_not_mounted_html: "Kontissa %{container} kansiota %{folder} ei ole liitetty, joten se ei näe tiedostoja, jotka toinen kontti tallentaa sinne."
+        folder_not_mounted_fix: "Lisää tämä rivi kyseisen palvelun kohtaan volumes: compose-tiedostossasi ja luo sitten kontit uudelleen:"
+        folder_not_mounted_command: "- <isännän kansio>:%{folder}"
         warning: "Varoitus"
         critical: "Kriittinen"
         uptime_days: "%{count} pv"
@@ -1468,6 +1479,8 @@ fi:
         checking: "Tarkistetaan päivityksiä..."
         auto_check: "Tarkista päivitykset automaattisesti"
         auto_check_help: "Tarkistaa tunnin välein ja näyttää ilmoituksen, kun uudempi versio on saatavilla. Jos tämä on pois päältä, ilmoitusta ei näytetä. Kumpikaan asetus ei päivitä mitään itsestään."
+        plugin_telemetry: "Jaa pluginien asennus- ja virhemäärät pluginhakemiston kanssa"
+        plugin_telemetry_help: "Lähettää pluginien tunnisteet ja versiot, Broadcastin version sekä virheiden määrän hookia ja virhekoodia kohden. Ei koskaan virhetekstejä eikä tilaajatietoja."
         title: "Tarkista päivitykset"
       developer_builds:
         title: "Kehittäjäversiot"
@@ -1520,6 +1533,8 @@ fi:
       settings:
         auto_check_on: "Broadcast tarkistaa päivitykset tunnin välein."
         auto_check_off: "Automaattinen päivitysten tarkistus on pois päältä."
+        plugin_telemetry_on: "Pluginien asennus- ja virhemäärät jaetaan pluginhakemiston kanssa."
+        plugin_telemetry_off: "Pluginien asennus- ja virhemääriä ei jaeta."
       confirm:
         installed_notes: "Nykyinen asennettu versio"
         upgrade:

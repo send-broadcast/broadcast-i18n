@@ -264,6 +264,7 @@ pt-BR:
             parent_sequence:
               must_be_in_the_same_broadcast: "precisa estar no mesmo canal"
         sequence_step:
+          entry_point_cannot_be_deleted: "O ponto de entrada não pode ser excluído"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "precisa pertencer ao mesmo canal da sequência"
@@ -1307,6 +1308,16 @@ pt-BR:
     host_system:
       show:
         healthy: "Saudável"
+        folder_problems_title: "Uma pasta de armazenamento precisa de atenção"
+        folder_problems_body: "Uploads, importações e a análise de imagens falham até você corrigir isso."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "No contêiner %{container}, o app não consegue gravar em %{folder}."
+        folder_not_writable_fix: "No servidor, passe a pasta montada aqui para o usuário do app:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <a pasta do host montada em %{folder}>"
+        folder_not_mounted_html: "No contêiner %{container}, %{folder} não está montada, então ele não vê os arquivos que o outro contêiner salva lá."
+        folder_not_mounted_fix: "Adicione esta linha em volumes: desse serviço no seu arquivo compose e depois recrie os contêineres:"
+        folder_not_mounted_command: "- <pasta do host>:%{folder}"
         warning: "Alerta"
         critical: "Crítico"
         uptime_days: "%{count}d"
@@ -1467,6 +1478,8 @@ pt-BR:
         checking: "Verificando atualizações..."
         auto_check: "Verificar atualizações automaticamente"
         auto_check_help: "Verifica a cada hora e mostra um aviso quando houver uma versão mais nova. Desativar isto oculta o aviso; em nenhum dos casos algo é atualizado sozinho."
+        plugin_telemetry: "Compartilhar com o diretório de plugins o número de instalações e erros dos plugins"
+        plugin_telemetry_help: "Envia os ids e as versões dos plugins, a versão do Broadcast e o número de erros por hook e código de erro. Nunca o texto dos erros nem dados de assinantes."
         title: "Verificar atualizações"
       developer_builds:
         title: "Builds de desenvolvimento"
@@ -1519,6 +1532,8 @@ pt-BR:
       settings:
         auto_check_on: "O Broadcast vai verificar atualizações a cada hora."
         auto_check_off: "As verificações automáticas de atualização estão desativadas."
+        plugin_telemetry_on: "O número de instalações e erros dos plugins será compartilhado com o diretório de plugins."
+        plugin_telemetry_off: "O número de instalações e erros dos plugins não é compartilhado."
       confirm:
         installed_notes: "Versão instalada atualmente"
         upgrade:

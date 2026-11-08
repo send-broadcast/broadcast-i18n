@@ -26,6 +26,10 @@ sv:
               locked_while_in_use: "Lagring, anpassat fält och tagg kan inte ändras medan ämnet används, eftersom det skulle ändra vem som får mejlen. Används av: %{uses}. Ta bort ämnet därifrån först."
               in_use_cannot_delete: "Ämnet kan inte tas bort medan det används, eftersom det skulle ändra vem som får mejlen. Används av: %{uses}. Ta bort ämnet därifrån först."
               kept_by_archived_broadcasts: "Ämnet kan inte tas bort medan en arkiverad kampanj som inte har skickats använder det, eftersom kampanjen då skulle skickas till alla sina mottagare om den återställs från arkivet. Arkiverade: %{uses}. Ta bort kampanjen eller ta bort ämnet från den först."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "kunde inte sparas: servern kan inte skriva till sin uppladdningsmapp. En administratör måste göra den skrivbar för appen (uid 1000)."
         subscriber:
           attributes:
             base:

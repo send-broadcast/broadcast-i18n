@@ -262,6 +262,7 @@ it:
             parent_sequence:
               must_be_in_the_same_broadcast: "deve essere nello stesso canale"
         sequence_step:
+          entry_point_cannot_be_deleted: "Il punto di ingresso non può essere eliminato"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "deve appartenere allo stesso canale della sequenza"
@@ -1305,6 +1306,16 @@ it:
     host_system:
       show:
         healthy: "Buono"
+        folder_problems_title: "Una cartella di archiviazione richiede attenzione"
+        folder_problems_body: "Caricamenti, importazioni e analisi delle immagini non funzionano finché non risolvi il problema."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "Nel container %{container}, l'app non può scrivere in %{folder}."
+        folder_not_writable_fix: "Sul server, assegna all'utente dell'app la cartella montata qui:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <la cartella dell'host montata in %{folder}>"
+        folder_not_mounted_html: "Nel container %{container}, %{folder} non è montata, quindi non vede i file che l'altro container vi salva."
+        folder_not_mounted_fix: "Aggiungi questa riga sotto volumes: di quel servizio nel file compose, poi ricrea i container:"
+        folder_not_mounted_command: "- <cartella dell'host>:%{folder}"
         warning: "Attenzione"
         critical: "Critico"
         uptime_days: "%{count} g"
@@ -1465,6 +1476,8 @@ it:
         checking: "Verifica degli aggiornamenti in corso..."
         auto_check: "Verifica automaticamente gli aggiornamenti"
         auto_check_help: "Controlla ogni ora e mostra un avviso quando è disponibile una versione più recente. Disattivandolo nascondi l'avviso; in nessun caso aggiorna qualcosa da solo."
+        plugin_telemetry: "Condividi con il catalogo dei plugin il numero di installazioni ed errori dei plugin"
+        plugin_telemetry_help: "Invia gli id e le versioni dei plugin, la versione di Broadcast e il numero di errori per hook e codice di errore. Mai il testo degli errori o i dati degli iscritti."
         title: "Verifica aggiornamenti"
       developer_builds:
         title: "Build per sviluppatori"
@@ -1517,6 +1530,8 @@ it:
       settings:
         auto_check_on: "Broadcast verificherà gli aggiornamenti ogni ora."
         auto_check_off: "La verifica automatica degli aggiornamenti è disattivata."
+        plugin_telemetry_on: "Il numero di installazioni ed errori dei plugin verrà condiviso con il catalogo dei plugin."
+        plugin_telemetry_off: "Il numero di installazioni ed errori dei plugin non viene condiviso."
       confirm:
         installed_notes: "Versione attualmente installata"
         upgrade:

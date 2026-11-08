@@ -26,6 +26,10 @@ nl:
               locked_while_in_use: "De opslag, het aangepaste veld en de tag kunnen niet veranderen zolang het onderwerp in gebruik is, omdat dat zou veranderen wie de e-mails ontvangt. In gebruik door: %{uses}. Haal het onderwerp daar eerst weg."
               in_use_cannot_delete: "Het onderwerp kan niet worden verwijderd zolang het in gebruik is, omdat dat zou veranderen wie de e-mails ontvangt. In gebruik door: %{uses}. Haal het onderwerp daar eerst weg."
               kept_by_archived_broadcasts: "Het onderwerp kan niet worden verwijderd zolang een gearchiveerde campagne die niet is verzonden het gebruikt, omdat de campagne na het uit het archief halen naar al haar ontvangers zou gaan. Gearchiveerd: %{uses}. Verwijder eerst de campagne of haal het onderwerp eruit."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "kon niet worden opgeslagen: de server kan niet schrijven in zijn uploadmap. Een beheerder moet die map schrijfbaar maken voor de app (uid 1000)."
         subscriber:
           attributes:
             base:

@@ -266,6 +266,7 @@ nl:
             parent_sequence:
               must_be_in_the_same_broadcast: "moet in hetzelfde kanaal staan"
         sequence_step:
+          entry_point_cannot_be_deleted: "Het startpunt kan niet worden verwijderd"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "moet bij hetzelfde kanaal horen als de reeks"
@@ -1309,6 +1310,16 @@ nl:
     host_system:
       show:
         healthy: "Gezond"
+        folder_problems_title: "Een opslagmap vraagt om aandacht"
+        folder_problems_body: "Uploads, imports en beeldanalyse mislukken totdat je dit oplost."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "In de container %{container} kan de app niet schrijven in %{folder}."
+        folder_not_writable_fix: "Geef op de server de map die hier is gekoppeld aan de app-gebruiker:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <de hostmap die op %{folder} is gekoppeld>"
+        folder_not_mounted_html: "In de container %{container} is %{folder} niet gekoppeld, dus ziet hij de bestanden niet die de andere container daar opslaat."
+        folder_not_mounted_fix: "Voeg deze regel toe onder volumes: van die service in je compose-bestand en maak de containers daarna opnieuw aan:"
+        folder_not_mounted_command: "- <hostmap>:%{folder}"
         warning: "Waarschuwing"
         critical: "Kritiek"
         uptime_days: "%{count}d"
@@ -1469,6 +1480,8 @@ nl:
         checking: "Controleren op updates..."
         auto_check: "Automatisch controleren op updates"
         auto_check_help: "Controleert elk uur en toont een melding als er een nieuwere versie is. Als je dit uitschakelt, verdwijnt de melding; in geen van beide gevallen wordt er automatisch iets geüpgraded."
+        plugin_telemetry: "Aantallen plugin-installaties en -fouten delen met de plugincatalogus"
+        plugin_telemetry_help: "Verstuurt plugin-id's en -versies, de Broadcast-versie en het aantal fouten per hook en foutcode. Nooit fouttekst of abonneegegevens."
         title: "Controleren op updates"
       developer_builds:
         title: "Ontwikkelversies"
@@ -1521,6 +1534,8 @@ nl:
       settings:
         auto_check_on: "Broadcast controleert elk uur op updates."
         auto_check_off: "Automatisch controleren op updates staat uit."
+        plugin_telemetry_on: "Aantallen plugin-installaties en -fouten worden gedeeld met de plugincatalogus."
+        plugin_telemetry_off: "Aantallen plugin-installaties en -fouten worden niet gedeeld."
       confirm:
         installed_notes: "Momenteel geïnstalleerde versie"
         upgrade:

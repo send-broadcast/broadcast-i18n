@@ -264,6 +264,7 @@ sv:
             parent_sequence:
               must_be_in_the_same_broadcast: "måste finnas i samma kanal"
         sequence_step:
+          entry_point_cannot_be_deleted: "Startpunkten kan inte tas bort"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "måste tillhöra samma kanal som sekvensen"
@@ -1307,6 +1308,16 @@ sv:
     host_system:
       show:
         healthy: "Frisk"
+        folder_problems_title: "En lagringsmapp behöver åtgärdas"
+        folder_problems_body: "Uppladdningar, importer och bildanalys misslyckas tills du åtgärdar det här."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "I containern %{container} kan appen inte skriva till %{folder}."
+        folder_not_writable_fix: "Ge mappen som är monterad här till appens användare på servern:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <värdmappen som är monterad på %{folder}>"
+        folder_not_mounted_html: "I containern %{container} är %{folder} inte monterad, så den ser inte filerna som den andra containern sparar där."
+        folder_not_mounted_fix: "Lägg till den här raden under volumes: för den tjänsten i din compose-fil och skapa sedan om containrarna:"
+        folder_not_mounted_command: "- <värdmapp>:%{folder}"
         warning: "Varning"
         critical: "Kritisk"
         uptime_days: "%{count} d"
@@ -1467,6 +1478,8 @@ sv:
         checking: "Söker efter uppdateringar..."
         auto_check: "Sök automatiskt efter uppdateringar"
         auto_check_help: "Söker varje timme och visar ett meddelande när en nyare version finns. Om du stänger av detta döljs meddelandet; inget uppgraderas automatiskt i något av fallen."
+        plugin_telemetry: "Dela antal plugininstallationer och pluginfel med pluginkatalogen"
+        plugin_telemetry_help: "Skickar pluginens id och versioner, Broadcast-versionen och antal fel per hook och felkod. Aldrig feltext eller prenumerantdata."
         title: "Sök efter uppdateringar"
       developer_builds:
         title: "Utvecklarversioner"
@@ -1519,6 +1532,8 @@ sv:
       settings:
         auto_check_on: "Broadcast söker efter uppdateringar varje timme."
         auto_check_off: "Automatisk sökning efter uppdateringar är avstängd."
+        plugin_telemetry_on: "Antal plugininstallationer och pluginfel delas med pluginkatalogen."
+        plugin_telemetry_off: "Antal plugininstallationer och pluginfel delas inte."
       confirm:
         installed_notes: "Nuvarande installerad version"
         upgrade:

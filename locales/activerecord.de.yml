@@ -26,6 +26,10 @@ de:
               locked_while_in_use: "Speicherort, benutzerdefiniertes Feld und Tag können nicht geändert werden, solange das Thema verwendet wird, weil sich sonst ändern würde, wer die E-Mails erhält. Verwendet von: %{uses}. Entfernen Sie das Thema zuerst dort."
               in_use_cannot_delete: "Das Thema kann nicht gelöscht werden, solange es verwendet wird, weil sich sonst ändern würde, wer die E-Mails erhält. Verwendet von: %{uses}. Entfernen Sie das Thema zuerst dort."
               kept_by_archived_broadcasts: "Das Thema kann nicht gelöscht werden, solange eine archivierte, nicht gesendete Kampagne es verwendet, weil die Kampagne nach dem Wiederherstellen an alle ihre Empfänger gesendet würde. Archiviert: %{uses}. Löschen Sie zuerst die Kampagne oder entfernen Sie das Thema aus ihr."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "konnte nicht gespeichert werden: Der Server kann nicht in seinen Upload-Ordner schreiben. Ein Administrator muss ihn für die App beschreibbar machen (uid 1000)."
         subscriber:
           attributes:
             base:

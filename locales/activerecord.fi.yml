@@ -26,6 +26,10 @@ fi:
               locked_while_in_use: "Tallennuspaikkaa, mukautettua kenttää ja tunnistetta ei voi muuttaa, kun aihe on käytössä, koska se muuttaisi sitä, kuka viestit saa. Käytössä kohteissa: %{uses}. Poista aihe niistä ensin."
               in_use_cannot_delete: "Aihetta ei voi poistaa, kun se on käytössä, koska se muuttaisi sitä, kuka viestit saa. Käytössä kohteissa: %{uses}. Poista aihe niistä ensin."
               kept_by_archived_broadcasts: "Aihetta ei voi poistaa, kun sitä käyttää arkistoitu kampanja, jota ei ole lähetetty, koska arkistosta palautettu kampanja lähtisi kaikille sen vastaanottajille. Arkistoidut: %{uses}. Poista ensin kampanja tai poista aihe siitä."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "ei voitu tallentaa: palvelin ei voi kirjoittaa latauskansioonsa. Ylläpitäjän on annettava sovellukselle kirjoitusoikeus siihen (uid 1000)."
         subscriber:
           attributes:
             base:

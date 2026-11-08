@@ -245,6 +245,7 @@ en:
             parent_sequence:
               must_be_in_the_same_broadcast: "must be in the same broadcast channel"
         sequence_step:
+          entry_point_cannot_be_deleted: "The entry point cannot be deleted"
           attributes:
             template:
               must_belong_to_the_same_broadcast: "must belong to the same broadcast channel as the sequence"
@@ -1288,6 +1289,16 @@ en:
     host_system:
       show:
         healthy: "Healthy"
+        folder_problems_title: "A storage folder needs attention"
+        folder_problems_body: "Uploads, imports and image analysis fail until you fix this."
+        container_app: "app"
+        container_job: "job"
+        folder_not_writable_html: "In the %{container} container, the app cannot write to %{folder}."
+        folder_not_writable_fix: "On the server, give the folder that is mounted here to the app user:"
+        folder_not_writable_command: "chown -R %{uid}:%{uid} <the host folder mounted at %{folder}>"
+        folder_not_mounted_html: "In the %{container} container, %{folder} is not mounted, so it cannot see the files the other container stores there."
+        folder_not_mounted_fix: "Add this line under volumes: of that service in your compose file, then recreate the containers:"
+        folder_not_mounted_command: "- <host folder>:%{folder}"
         warning: "Warning"
         critical: "Critical"
         uptime_days: "%{count}d"
@@ -1448,6 +1459,8 @@ en:
         checking: "Checking for updates..."
         auto_check: "Automatically check for updates"
         auto_check_help: "Checks hourly and shows a notice when a newer version is available. Turning this off hides the notice; it does not upgrade anything on its own either way."
+        plugin_telemetry: "Share plugin install and error counts with the plugin directory"
+        plugin_telemetry_help: "Sends plugin ids and versions, the Broadcast version and error counts per hook and error code. Never error text or subscriber data."
         title: "Check for updates"
       developer_builds:
         title: "Developer builds"
@@ -1507,6 +1520,8 @@ en:
       settings:
         auto_check_on: "Broadcast will check for updates hourly."
         auto_check_off: "Automatic update checks are off."
+        plugin_telemetry_on: "Plugin install and error counts will be shared with the plugin directory."
+        plugin_telemetry_off: "Plugin install and error counts are not shared."
       confirm:
         installed_notes: "Currently installed version"
         upgrade:

@@ -26,6 +26,10 @@ pl:
               locked_while_in_use: "Miejsca zapisu, pola niestandardowego i tagu nie można zmienić, dopóki temat jest używany, bo zmieniłoby to, kto otrzymuje wiadomości. Używany w: %{uses}. Najpierw usuń stamtąd temat."
               in_use_cannot_delete: "Nie można usunąć tematu, dopóki jest używany, bo zmieniłoby to, kto otrzymuje wiadomości. Używany w: %{uses}. Najpierw usuń stamtąd temat."
               kept_by_archived_broadcasts: "Nie można usunąć tematu, dopóki używa go zarchiwizowana, niewysłana kampania, bo po przywróceniu z archiwum zostałaby wysłana do wszystkich swoich odbiorców. Zarchiwizowane: %{uses}. Najpierw usuń kampanię albo usuń z niej temat."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "nie udało się zapisać: serwer nie może zapisywać w swoim folderze przesłanych plików. Administrator musi nadać aplikacji prawo zapisu do niego (uid 1000)."
         subscriber:
           attributes:
             base:

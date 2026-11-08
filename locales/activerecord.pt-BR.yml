@@ -26,6 +26,10 @@ pt-BR:
               locked_while_in_use: "O armazenamento, o campo personalizado e a tag não podem mudar enquanto o tópico estiver em uso, porque isso mudaria quem recebe os e-mails. Em uso em: %{uses}. Remova o tópico de lá primeiro."
               in_use_cannot_delete: "O tópico não pode ser excluído enquanto estiver em uso, porque isso mudaria quem recebe os e-mails. Em uso em: %{uses}. Remova o tópico de lá primeiro."
               kept_by_archived_broadcasts: "O tópico não pode ser excluído enquanto uma campanha arquivada que não foi enviada o usar, porque desarquivá-la a enviaria para todos os destinatários dela. Arquivadas: %{uses}. Exclua a campanha ou remova o tópico dela primeiro."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "não pôde ser salvo: o servidor não consegue gravar na pasta de uploads. Um administrador precisa liberar a gravação para o app (uid 1000)."
         subscriber:
           attributes:
             base:

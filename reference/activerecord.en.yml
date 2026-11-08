@@ -27,6 +27,10 @@ en:
               locked_while_in_use: "The storage, custom data field and tag cannot change while the topic is in use, because that would change who receives. In use by: %{uses}. Remove the topic from them first."
               in_use_cannot_delete: "The topic cannot be deleted while it is in use, because that would change who receives. In use by: %{uses}. Remove the topic from them first."
               kept_by_archived_broadcasts: "The topic cannot be deleted while an archived broadcast that was not sent uses it, because unarchiving it would send it to everyone it targets. Archived: %{uses}. Delete the broadcast or remove the topic from it first."
+        file_asset:
+          attributes:
+            stored_file:
+              not_writable: "could not be saved: the server cannot write to its uploads folder. An administrator must make it writable for the app (uid 1000)."
         subscriber:
           attributes:
             base:
