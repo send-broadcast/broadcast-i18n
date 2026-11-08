@@ -16,6 +16,8 @@ de:
         custom_data_key: "Benutzerdefiniertes Feld"
         tag_name: "Tag"
         unset_receives: "Abonnenten ohne Wert"
+      file_asset:
+        stored_file: "Die Datei"
     errors:
       models:
         topic:

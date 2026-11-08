@@ -16,6 +16,8 @@ fr:
         custom_data_key: "Champ personnalisé"
         tag_name: "Tag"
         unset_receives: "Abonnés sans valeur"
+      file_asset:
+        stored_file: "Le fichier"
     errors:
       models:
         topic:

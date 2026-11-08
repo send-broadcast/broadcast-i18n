@@ -16,6 +16,8 @@ nl:
         custom_data_key: "Aangepast veld"
         tag_name: "Tag"
         unset_receives: "Abonnees zonder waarde"
+      file_asset:
+        stored_file: "Het bestand"
     errors:
       models:
         topic:

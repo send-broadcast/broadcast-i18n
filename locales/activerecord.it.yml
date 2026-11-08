@@ -16,6 +16,8 @@ it:
         custom_data_key: "Campo personalizzato"
         tag_name: "Tag"
         unset_receives: "Iscritti senza valore"
+      file_asset:
+        stored_file: "Il file"
     errors:
       models:
         topic:
@@ -29,7 +31,7 @@ it:
         file_asset:
           attributes:
             stored_file:
-              not_writable: "non è stato possibile salvarlo: il server non può scrivere nella sua cartella dei caricamenti. Un amministratore deve renderla scrivibile per l'app (uid 1000)."
+              not_writable: "non è stato salvato: il server non può scrivere nella sua cartella dei caricamenti. Un amministratore deve renderla scrivibile per l'app (uid 1000)."
         subscriber:
           attributes:
             base:

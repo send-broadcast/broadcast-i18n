@@ -17,6 +17,8 @@ en:
         custom_data_key: "Custom data field"
         tag_name: "Tag"
         unset_receives: "Subscribers with no value"
+      file_asset:
+        stored_file: "File"
     errors:
       models:
         topic:

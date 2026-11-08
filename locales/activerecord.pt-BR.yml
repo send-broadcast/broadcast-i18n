@@ -16,6 +16,8 @@ pt-BR:
         custom_data_key: "Campo personalizado"
         tag_name: "Tag"
         unset_receives: "Assinantes sem valor"
+      file_asset:
+        stored_file: "O arquivo"
     errors:
       models:
         topic:

@@ -16,6 +16,8 @@ es:
         custom_data_key: "Campo personalizado"
         tag_name: "Etiqueta"
         unset_receives: "Suscriptores sin valor"
+      file_asset:
+        stored_file: "El archivo"
     errors:
       models:
         topic:

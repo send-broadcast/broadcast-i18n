@@ -16,6 +16,8 @@ pl:
         custom_data_key: "Pole niestandardowe"
         tag_name: "Tag"
         unset_receives: "Subskrybenci bez wartości"
+      file_asset:
+        stored_file: "Plik"
     errors:
       models:
         topic:
@@ -29,7 +31,7 @@ pl:
         file_asset:
           attributes:
             stored_file:
-              not_writable: "nie udało się zapisać: serwer nie może zapisywać w swoim folderze przesłanych plików. Administrator musi nadać aplikacji prawo zapisu do niego (uid 1000)."
+              not_writable: "nie został zapisany: serwer nie może zapisywać w swoim folderze przesłanych plików. Administrator musi nadać aplikacji prawo zapisu do niego (uid 1000)."
         subscriber:
           attributes:
             base:

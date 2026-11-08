@@ -16,6 +16,8 @@ nb:
         custom_data_key: "Egendefinert felt"
         tag_name: "Tagg"
         unset_receives: "Abonnenter uten verdi"
+      file_asset:
+        stored_file: "Filen"
     errors:
       models:
         topic:

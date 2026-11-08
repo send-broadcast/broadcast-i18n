@@ -16,6 +16,8 @@ fi:
         custom_data_key: "Mukautettu kenttä"
         tag_name: "Tunniste"
         unset_receives: "Tilaajat ilman arvoa"
+      file_asset:
+        stored_file: "Tiedoston tallennus"
     errors:
       models:
         topic:
@@ -29,7 +31,7 @@ fi:
         file_asset:
           attributes:
             stored_file:
-              not_writable: "ei voitu tallentaa: palvelin ei voi kirjoittaa latauskansioonsa. Ylläpitäjän on annettava sovellukselle kirjoitusoikeus siihen (uid 1000)."
+              not_writable: "epäonnistui: palvelin ei voi kirjoittaa latauskansioonsa. Ylläpitäjän on annettava sovellukselle kirjoitusoikeus siihen (uid 1000)."
         subscriber:
           attributes:
             base:

@@ -16,6 +16,8 @@ sv:
         custom_data_key: "Anpassat fält"
         tag_name: "Tagg"
         unset_receives: "Prenumeranter utan värde"
+      file_asset:
+        stored_file: "Filen"
     errors:
       models:
         topic:

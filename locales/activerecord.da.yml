@@ -16,6 +16,8 @@ da:
         custom_data_key: "Brugerdefineret felt"
         tag_name: "Tag"
         unset_receives: "Abonnenter uden værdi"
+      file_asset:
+        stored_file: "Filen"
     errors:
       models:
         topic:
