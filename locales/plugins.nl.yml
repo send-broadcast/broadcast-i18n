@@ -329,6 +329,11 @@ nl:
         deploy_hint: "Er draait niets totdat je uitrolt en de plugin in een kanaal inschakelt."
         deploy: "Uitrollen"
         status: "Status: %{status}"
+        statuses:
+          draft: "Concept"
+          pending_approval: "Wacht op uitrol"
+          live: "Live"
+          archived: "Gearchiveerd"
         changes: "Wijzigingen sinds %{version}"
         code: "Code"
       rollback:

@@ -329,6 +329,11 @@ it:
         deploy_hint: "Non viene eseguito nulla finché non lo distribuisci e lo attivi in un canale."
         deploy: "Distribuisci"
         status: "Stato: %{status}"
+        statuses:
+          draft: "Bozza"
+          pending_approval: "In attesa di distribuzione"
+          live: "Attiva"
+          archived: "Archiviata"
         changes: "Modifiche da %{version}"
         code: "Codice"
       rollback:

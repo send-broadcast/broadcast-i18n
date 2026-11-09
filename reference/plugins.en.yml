@@ -329,6 +329,11 @@ en:
         deploy_hint: "Nothing runs until you deploy and turn it on in a channel."
         deploy: "Deploy"
         status: "Status: %{status}"
+        statuses:
+          draft: "Draft"
+          pending_approval: "Waiting for deploy"
+          live: "Live"
+          archived: "Archived"
         changes: "Changes since %{version}"
         code: "Code"
       rollback:

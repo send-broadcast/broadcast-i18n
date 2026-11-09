@@ -329,6 +329,11 @@ de:
         deploy_hint: "Nichts läuft, bis Sie bereitstellen und es in einem Kanal einschalten."
         deploy: "Bereitstellen"
         status: "Status: %{status}"
+        statuses:
+          draft: "Entwurf"
+          pending_approval: "Wartet auf Bereitstellung"
+          live: "Live"
+          archived: "Archiviert"
         changes: "Änderungen seit %{version}"
         code: "Code"
       rollback:

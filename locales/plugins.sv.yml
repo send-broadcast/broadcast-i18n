@@ -329,6 +329,11 @@ sv:
         deploy_hint: "Inget körs förrän du driftsätter och slår på det i en kanal."
         deploy: "Driftsätt"
         status: "Status: %{status}"
+        statuses:
+          draft: "Utkast"
+          pending_approval: "Väntar på driftsättning"
+          live: "Live"
+          archived: "Arkiverad"
         changes: "Ändringar sedan %{version}"
         code: "Kod"
       rollback:

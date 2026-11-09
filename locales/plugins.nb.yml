@@ -329,6 +329,11 @@ nb:
         deploy_hint: "Ingenting kjører før du ruller ut og slår den på i en kanal."
         deploy: "Rull ut"
         status: "Status: %{status}"
+        statuses:
+          draft: "Utkast"
+          pending_approval: "Venter på utrulling"
+          live: "Live"
+          archived: "Arkivert"
         changes: "Endringer siden %{version}"
         code: "Kode"
       rollback:

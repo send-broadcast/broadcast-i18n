@@ -329,6 +329,11 @@ pt-BR:
         deploy_hint: "Nada é executado até você implantar e ativar em um canal."
         deploy: "Implantar"
         status: "Status: %{status}"
+        statuses:
+          draft: "Rascunho"
+          pending_approval: "Aguardando implantação"
+          live: "Ativa"
+          archived: "Arquivada"
         changes: "Mudanças desde %{version}"
         code: "Código"
       rollback:

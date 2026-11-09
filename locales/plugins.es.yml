@@ -329,6 +329,11 @@ es:
         deploy_hint: "No se ejecuta nada hasta que lo despliegas y lo activas en un canal."
         deploy: "Desplegar"
         status: "Estado: %{status}"
+        statuses:
+          draft: "Borrador"
+          pending_approval: "Pendiente de despliegue"
+          live: "Activa"
+          archived: "Archivada"
         changes: "Cambios desde %{version}"
         code: "Código"
       rollback:

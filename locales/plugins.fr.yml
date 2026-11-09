@@ -329,6 +329,11 @@ fr:
         deploy_hint: "Rien ne s'exécute tant que vous ne le déployez pas et ne l'activez pas dans un canal."
         deploy: "Déployer"
         status: "Statut : %{status}"
+        statuses:
+          draft: "Brouillon"
+          pending_approval: "En attente de déploiement"
+          live: "En service"
+          archived: "Archivée"
         changes: "Modifications depuis %{version}"
         code: "Code"
       rollback:

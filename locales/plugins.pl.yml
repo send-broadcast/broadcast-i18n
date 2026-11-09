@@ -337,6 +337,11 @@ pl:
         deploy_hint: "Nic nie działa, dopóki nie wdrożysz pluginu i nie włączysz go w kanale."
         deploy: "Wdróż"
         status: "Status: %{status}"
+        statuses:
+          draft: "Szkic"
+          pending_approval: "Czeka na wdrożenie"
+          live: "Aktywna"
+          archived: "Zarchiwizowana"
         changes: "Zmiany od %{version}"
         code: "Kod"
       rollback:

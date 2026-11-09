@@ -329,6 +329,11 @@ da:
         deploy_hint: "Intet kører, før du udruller og slår det til i en kanal."
         deploy: "Udrul"
         status: "Status: %{status}"
+        statuses:
+          draft: "Kladde"
+          pending_approval: "Venter på udrulning"
+          live: "Live"
+          archived: "Arkiveret"
         changes: "Ændringer siden %{version}"
         code: "Kode"
       rollback:

@@ -329,6 +329,11 @@ fi:
         deploy_hint: "Mitään ei suoriteta, ennen kuin otat sen käyttöön ja kytket sen päälle jollakin kanavalla."
         deploy: "Ota käyttöön"
         status: "Tila: %{status}"
+        statuses:
+          draft: "Luonnos"
+          pending_approval: "Odottaa käyttöönottoa"
+          live: "Käytössä"
+          archived: "Arkistoitu"
         changes: "Muutokset version %{version} jälkeen"
         code: "Koodi"
       rollback:
