@@ -10,12 +10,20 @@ nl:
       title: "Deze link openen?"
       body: "%{plugin} wil een pagina buiten Broadcast openen. Controleer het adres voordat je verdergaat."
       open: "Link openen"
+    editor_insert:
+      close: "Sluiten"
+      from: "Van %{plugin}"
+      cleaned: "Broadcast controleert en schoont de HTML op voordat die in de e-mail komt."
+      group: "Uit plugins"
+      menu: "Invoegen uit een plugin"
     public_action:
       confirm_title: "Een moment"
       confirm_button: "Doorgaan"
       done_title: "Bedankt"
       failed_title: "Er ging iets mis"
       failed_body: "We konden dit niet opslaan. Probeer de link later opnieuw."
+      test_title: "Dit is een test-e-mail"
+      test_body: "De link werkt. In de echte e-mail wordt deze klik opgeslagen voor de persoon die klikt. Nu is er niets opgeslagen."
     developer_token:
       label: "Pluginontwikkelaar"
       hint: "Voor een AI-agent die plugins schrijft: hij kan concepten met testgegevens maken, wijzigen en testen, en ze ter beoordeling aan jou voorleggen. Hij kan geen echte abonneegegevens lezen en niets uitrollen. Hij kan geen andere rechten hebben en verloopt binnen 30 dagen."

@@ -10,12 +10,20 @@ fi:
       title: "Avataanko tämä linkki?"
       body: "%{plugin} haluaa avata sivun Broadcastin ulkopuolella. Tarkista osoite ennen kuin jatkat."
       open: "Avaa linkki"
+    editor_insert:
+      close: "Sulje"
+      from: "Lisäosasta %{plugin}"
+      cleaned: "Broadcast tarkistaa ja puhdistaa HTML:n ennen kuin se lisätään sähköpostiin."
+      group: "Lisäosista"
+      menu: "Lisää lisäosasta"
     public_action:
       confirm_title: "Hetki vain"
       confirm_button: "Jatka"
       done_title: "Kiitos"
       failed_title: "Jokin meni vikaan"
       failed_body: "Emme voineet tallentaa tätä. Kokeile linkkiä myöhemmin uudelleen."
+      test_title: "Tämä on testisähköposti"
+      test_body: "Linkki toimii. Oikeassa sähköpostissa tämä napsautus tallennetaan napsauttajalle. Nyt mitään ei tallennettu."
     developer_token:
       label: "Plugin-kehittäjä"
       hint: "Plugineja kirjoittavalle tekoälyagentille: se voi luoda, muuttaa ja testata luonnoksia testidatalla ja lähettää ne sinulle tarkistettaviksi. Se ei voi lukea oikeita tilaajatietoja eikä ottaa mitään käyttöön. Sillä ei voi olla muita käyttöoikeuksia, ja se vanhenee 30 päivän kuluessa."

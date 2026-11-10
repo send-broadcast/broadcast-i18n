@@ -10,12 +10,20 @@ de:
       title: "Diesen Link öffnen?"
       body: "%{plugin} möchte eine Seite außerhalb von Broadcast öffnen. Prüfen Sie die Adresse, bevor Sie fortfahren."
       open: "Link öffnen"
+    editor_insert:
+      close: "Schließen"
+      from: "Von %{plugin}"
+      cleaned: "Broadcast prüft und bereinigt das HTML, bevor es in die E-Mail kommt."
+      group: "Aus Plugins"
+      menu: "Aus einem Plugin einfügen"
     public_action:
       confirm_title: "Einen Moment"
       confirm_button: "Weiter"
       done_title: "Vielen Dank"
       failed_title: "Etwas ist schiefgelaufen"
       failed_body: "Wir konnten das nicht speichern. Bitte versuchen Sie den Link später erneut."
+      test_title: "Dies ist eine Test-E-Mail"
+      test_body: "Der Link funktioniert. In der echten E-Mail wird dieser Klick für die Person gespeichert, die klickt. Jetzt wurde nichts gespeichert."
     developer_token:
       label: "Plugin-Entwickler"
       hint: "Für einen KI-Agenten, der Plugins schreibt: Er kann Entwürfe mit Testdaten anlegen, ändern und testen und sie Ihnen zur Prüfung vorlegen. Er kann keine echten Abonnentendaten lesen und nichts bereitstellen. Er kann keine anderen Berechtigungen haben und läuft innerhalb von 30 Tagen ab."

@@ -10,12 +10,20 @@ nb:
       title: "Åpne denne lenken?"
       body: "%{plugin} vil åpne en side utenfor Broadcast. Sjekk adressen før du fortsetter."
       open: "Åpne lenken"
+    editor_insert:
+      close: "Lukk"
+      from: "Fra %{plugin}"
+      cleaned: "Broadcast kontrollerer og renser HTML-koden før den settes inn i e-posten."
+      group: "Fra programtillegg"
+      menu: "Sett inn fra et programtillegg"
     public_action:
       confirm_title: "Et øyeblikk"
       confirm_button: "Fortsett"
       done_title: "Takk"
       failed_title: "Noe gikk galt"
       failed_body: "Vi kunne ikke lagre dette. Prøv lenken igjen senere."
+      test_title: "Dette er en test-e-post"
+      test_body: "Lenken virker. I den ekte e-posten lagres dette klikket for personen som klikker. Ingenting ble lagret nå."
     developer_token:
       label: "Plugin-utvikler"
       hint: "For en KI-agent som skriver pluginer: den kan opprette, endre og teste utkast med testdata og sende dem til deg for gjennomgang. Den kan ikke lese ekte abonnentdata eller rulle ut. Den kan ikke ha andre tillatelser og utløper innen 30 dager."

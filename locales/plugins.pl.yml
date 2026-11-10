@@ -10,12 +10,20 @@ pl:
       title: "Otworzyć ten link?"
       body: "%{plugin} chce otworzyć stronę poza Broadcast. Sprawdź adres, zanim przejdziesz dalej."
       open: "Otwórz link"
+    editor_insert:
+      close: "Zamknij"
+      from: "Z %{plugin}"
+      cleaned: "Broadcast sprawdza i czyści HTML, zanim trafi on do e-maila."
+      group: "Z wtyczek"
+      menu: "Wstaw z wtyczki"
     public_action:
       confirm_title: "Chwileczkę"
       confirm_button: "Dalej"
       done_title: "Dziękujemy"
       failed_title: "Coś poszło nie tak"
       failed_body: "Nie udało się tego zapisać. Spróbuj ponownie użyć linku później."
+      test_title: "To jest testowy e-mail"
+      test_body: "Link działa. W prawdziwym e-mailu to kliknięcie zostanie zapisane dla osoby, która kliknie. Teraz nic nie zapisano."
     developer_token:
       label: "Twórca pluginów"
       hint: "Dla agenta AI, który pisze pluginy: może tworzyć, zmieniać i testować wersje robocze na danych testowych oraz przesyłać je Tobie do przeglądu. Nie może czytać prawdziwych danych subskrybentów ani wdrażać. Nie może mieć innych uprawnień i wygasa w ciągu 30 dni."

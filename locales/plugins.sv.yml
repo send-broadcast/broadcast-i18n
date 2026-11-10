@@ -10,12 +10,20 @@ sv:
       title: "Öppna den här länken?"
       body: "%{plugin} vill öppna en sida utanför Broadcast. Kontrollera adressen innan du fortsätter."
       open: "Öppna länken"
+    editor_insert:
+      close: "Stäng"
+      from: "Från %{plugin}"
+      cleaned: "Broadcast kontrollerar och rensar HTML-koden innan den hamnar i e-postmeddelandet."
+      group: "Från tillägg"
+      menu: "Infoga från ett tillägg"
     public_action:
       confirm_title: "Ett ögonblick"
       confirm_button: "Fortsätt"
       done_title: "Tack"
       failed_title: "Något gick fel"
       failed_body: "Vi kunde inte spara detta. Försök med länken igen senare."
+      test_title: "Det här är ett testmejl"
+      test_body: "Länken fungerar. I det riktiga mejlet sparas det här klicket för personen som klickar. Ingenting sparades nu."
     developer_token:
       label: "Pluginutvecklare"
       hint: "För en AI-agent som skriver plugin: den kan skapa, ändra och testa utkast med testdata och skicka dem till dig för granskning. Den kan inte läsa riktiga prenumerantdata eller driftsätta. Den kan inte ha andra behörigheter och upphör inom 30 dagar."

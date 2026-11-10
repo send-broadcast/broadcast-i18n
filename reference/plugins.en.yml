@@ -10,12 +10,20 @@ en:
       title: "Open this link?"
       body: "%{plugin} wants to open a page outside Broadcast. Check the address before you continue."
       open: "Open link"
+    editor_insert:
+      close: "Close"
+      from: "From %{plugin}"
+      cleaned: "Broadcast checks and cleans the HTML before it goes into the email."
+      group: "From plugins"
+      menu: "Insert from a plugin"
     public_action:
       confirm_title: "One moment"
       confirm_button: "Continue"
       done_title: "Thank you"
       failed_title: "Something went wrong"
       failed_body: "We could not save this. Please try the link again later."
+      test_title: "This is a test email"
+      test_body: "The link works. In the real email, this click is saved for the person who clicks it. Nothing was saved now."
     developer_token:
       label: "Plugin developer"
       hint: "For an AI agent that writes plugins: it can create, change and test drafts with test data, and submit them for your review. It cannot read real subscriber data or deploy. It cannot have other permissions and expires within 30 days."

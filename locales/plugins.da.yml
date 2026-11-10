@@ -10,12 +10,20 @@ da:
       title: "Vil du åbne dette link?"
       body: "%{plugin} vil åbne en side uden for Broadcast. Tjek adressen, før du fortsætter."
       open: "Åbn link"
+    editor_insert:
+      close: "Luk"
+      from: "Fra %{plugin}"
+      cleaned: "Broadcast kontrollerer og renser HTML-koden, før den kommer ind i e-mailen."
+      group: "Fra plugins"
+      menu: "Indsæt fra et plugin"
     public_action:
       confirm_title: "Et øjeblik"
       confirm_button: "Fortsæt"
       done_title: "Tak"
       failed_title: "Noget gik galt"
       failed_body: "Vi kunne ikke gemme dette. Prøv linket igen senere."
+      test_title: "Dette er en test-e-mail"
+      test_body: "Linket virker. I den rigtige e-mail gemmes dette klik for den person, der klikker. Intet blev gemt nu."
     developer_token:
       label: "Plugin-udvikler"
       hint: "Til en AI-agent, der skriver plugins: den kan oprette, ændre og teste kladder med testdata og sende dem til dig til gennemgang. Den kan ikke læse rigtige abonnentdata eller udrulle. Den kan ikke have andre tilladelser og udløber inden for 30 dage."

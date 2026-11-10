@@ -10,12 +10,20 @@ it:
       title: "Aprire questo link?"
       body: "%{plugin} vuole aprire una pagina al di fuori di Broadcast. Controlla l'indirizzo prima di continuare."
       open: "Apri il link"
+    editor_insert:
+      close: "Chiudi"
+      from: "Da %{plugin}"
+      cleaned: "Broadcast controlla e pulisce l'HTML prima che entri nell'email."
+      group: "Dai plugin"
+      menu: "Inserisci da un plugin"
     public_action:
       confirm_title: "Un momento"
       confirm_button: "Continua"
       done_title: "Grazie"
       failed_title: "Qualcosa è andato storto"
       failed_body: "Non siamo riusciti a salvare. Riprova il link più tardi."
+      test_title: "Questa è un'email di prova"
+      test_body: "Il link funziona. Nell'email reale, questo clic viene salvato per la persona che clicca. Ora non è stato salvato nulla."
     developer_token:
       label: "Sviluppatore di plugin"
       hint: "Per un agente IA che scrive plugin: può creare, modificare e testare bozze con dati di prova e inviartele da controllare. Non può leggere dati reali degli iscritti né distribuire. Non può avere altri permessi e scade entro 30 giorni."
