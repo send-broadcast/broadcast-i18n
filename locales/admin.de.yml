@@ -9386,6 +9386,7 @@ de:
       read_only: "Nur Lesezugriff"
       dormant: "Seit über 30 Tagen inaktiv"
       recently_active: "In den letzten 7 Tagen aktiv"
+      two_factor_off: "Ohne 2FA"
     empty_result:
       filter_and_quick: "Keine Benutzer gefunden, die „%{filter}“ im Filter „%{quick}“ entsprechen"
       filter: "Keine Benutzer gefunden, die „%{filter}“ entsprechen"
@@ -9415,10 +9416,14 @@ de:
       reset: "Zurücksetzen"
       name: "Name"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "Ohne 2FA · %{count}"
       access: "Zugriff"
       last_login: "Letzte Anmeldung"
     user:
       sudo: "Sudo"
+      two_factor_on: "An"
+      two_factor_off: "Aus"
       all_access: "Vollzugriff (Sudo)"
       system: "System"
       ago: "vor %{time}"

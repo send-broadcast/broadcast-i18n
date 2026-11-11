@@ -9730,6 +9730,7 @@ pl:
       read_only: "Dostęp tylko do odczytu"
       dormant: "Nieaktywni od ponad 30 dni"
       recently_active: "Aktywni w ciągu ostatnich 7 dni"
+      two_factor_off: "Bez 2FA"
     empty_result:
       filter_and_quick: "Nie znaleziono użytkowników pasujących do „%{filter}” dla filtra „%{quick}”"
       filter: "Nie znaleziono użytkowników pasujących do „%{filter}”"
@@ -9761,10 +9762,14 @@ pl:
       reset: "Resetuj"
       name: "Imię i nazwisko"
       status: "Stan"
+      two_factor: "2FA"
+      two_factor_off: "Bez 2FA · %{count}"
       access: "Dostęp"
       last_login: "Ostatnie logowanie"
     user:
       sudo: "Sudo"
+      two_factor_on: "Tak"
+      two_factor_off: "Nie"
       all_access: "Pełny dostęp (sudo)"
       system: "System"
       ago: "%{time} temu"

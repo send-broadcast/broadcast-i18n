@@ -9384,6 +9384,7 @@ pt-BR:
       read_only: "Acesso somente leitura"
       dormant: "Inativos há mais de 30 dias"
       recently_active: "Ativos nos últimos 7 dias"
+      two_factor_off: "Sem 2FA"
     empty_result:
       filter_and_quick: "Nenhum usuário encontrado para \"%{filter}\" com o filtro “%{quick}”"
       filter: "Nenhum usuário encontrado para \"%{filter}\""
@@ -9413,10 +9414,14 @@ pt-BR:
       reset: "Redefinir"
       name: "Nome"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "Sem 2FA · %{count}"
       access: "Acesso"
       last_login: "Último login"
     user:
       sudo: "Sudo"
+      two_factor_on: "Sim"
+      two_factor_off: "Não"
       all_access: "Acesso total (sudo)"
       system: "Sistema"
       ago: "há %{time}"

@@ -9385,6 +9385,7 @@ fi:
       read_only: "Vain lukuoikeus"
       dormant: "Passiivinen yli 30 päivää"
       recently_active: "Aktiivinen viimeisten 7 päivän aikana"
+      two_factor_off: "Ilman 2FA:ta"
     empty_result:
       filter_and_quick: "Hakua \"%{filter}\" vastaavia käyttäjiä ei löytynyt suodattimella “%{quick}”"
       filter: "Hakua \"%{filter}\" vastaavia käyttäjiä ei löytynyt"
@@ -9414,10 +9415,14 @@ fi:
       reset: "Palauta"
       name: "Nimi"
       status: "Tila"
+      two_factor: "2FA"
+      two_factor_off: "Ilman 2FA:ta · %{count}"
       access: "Pääsy"
       last_login: "Viimeisin kirjautuminen"
     user:
       sudo: "Sudo"
+      two_factor_on: "Päällä"
+      two_factor_off: "Pois"
       all_access: "Kaikki oikeudet (sudo)"
       system: "Järjestelmä"
       ago: "%{time} sitten"

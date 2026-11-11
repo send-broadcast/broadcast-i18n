@@ -9384,6 +9384,7 @@ da:
       read_only: "Skrivebeskyttet adgang"
       dormant: "Inaktive i 30+ dage"
       recently_active: "Aktive de seneste 7 dage"
+      two_factor_off: "Uden 2FA"
     empty_result:
       filter_and_quick: "Ingen brugere matcher \"%{filter}\" for filteret “%{quick}”"
       filter: "Ingen brugere matcher \"%{filter}\""
@@ -9413,10 +9414,14 @@ da:
       reset: "Nulstil"
       name: "Navn"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "Uden 2FA · %{count}"
       access: "Adgang"
       last_login: "Seneste login"
     user:
       sudo: "Sudo"
+      two_factor_on: "Til"
+      two_factor_off: "Fra"
       all_access: "Fuld adgang (sudo)"
       system: "System"
       ago: "for %{time} siden"

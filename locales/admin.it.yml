@@ -9382,6 +9382,7 @@ it:
       read_only: "Accesso in sola lettura"
       dormant: "Inattivi da oltre 30 giorni"
       recently_active: "Attivi negli ultimi 7 giorni"
+      two_factor_off: "Senza 2FA"
     empty_result:
       filter_and_quick: "Nessun utente corrisponde a \"%{filter}\" con il filtro “%{quick}”"
       filter: "Nessun utente corrisponde a \"%{filter}\""
@@ -9411,10 +9412,14 @@ it:
       reset: "Azzera"
       name: "Nome"
       status: "Stato"
+      two_factor: "2FA"
+      two_factor_off: "Senza 2FA · %{count}"
       access: "Accesso"
       last_login: "Ultimo accesso"
     user:
       sudo: "Sudo"
+      two_factor_on: "Sì"
+      two_factor_off: "No"
       all_access: "Accesso completo (sudo)"
       system: "Sistema"
       ago: "%{time} fa"

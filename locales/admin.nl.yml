@@ -9386,6 +9386,7 @@ nl:
       read_only: "Alleen-lezen toegang"
       dormant: "Meer dan 30 dagen inactief"
       recently_active: "Actief in de afgelopen 7 dagen"
+      two_factor_off: "Zonder 2FA"
     empty_result:
       filter_and_quick: "Geen gebruikers gevonden voor \"%{filter}\" met filter \"%{quick}\""
       filter: "Geen gebruikers gevonden voor \"%{filter}\""
@@ -9415,10 +9416,14 @@ nl:
       reset: "Herstellen"
       name: "Naam"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "Zonder 2FA · %{count}"
       access: "Toegang"
       last_login: "Laatst ingelogd"
     user:
       sudo: "Sudo"
+      two_factor_on: "Aan"
+      two_factor_off: "Uit"
       all_access: "Volledige toegang (sudo)"
       system: "Systeem"
       ago: "%{time} geleden"

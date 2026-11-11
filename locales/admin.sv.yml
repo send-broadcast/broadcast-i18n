@@ -9384,6 +9384,7 @@ sv:
       read_only: "Endast läsåtkomst"
       dormant: "Inaktiva i 30+ dagar"
       recently_active: "Aktiva de senaste 7 dagarna"
+      two_factor_off: "Utan 2FA"
     empty_result:
       filter_and_quick: "Inga användare matchar \"%{filter}\" för filtret “%{quick}”"
       filter: "Inga användare matchar \"%{filter}\""
@@ -9413,10 +9414,14 @@ sv:
       reset: "Återställ"
       name: "Namn"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "Utan 2FA · %{count}"
       access: "Åtkomst"
       last_login: "Senaste inloggning"
     user:
       sudo: "Sudo"
+      two_factor_on: "På"
+      two_factor_off: "Av"
       all_access: "Full åtkomst (sudo)"
       system: "System"
       ago: "för %{time} sedan"

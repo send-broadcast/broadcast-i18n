@@ -9368,6 +9368,7 @@ en:
       read_only: "Read-only access"
       dormant: "Inactive 30+ days"
       recently_active: "Active past 7 days"
+      two_factor_off: "2FA off"
     empty_result:
       filter_and_quick: "No users found matching \"%{filter}\" for filter “%{quick}”"
       filter: "No users found matching \"%{filter}\""
@@ -9397,10 +9398,14 @@ en:
       reset: "Reset"
       name: "Name"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "2FA off · %{count}"
       access: "Access"
       last_login: "Last Login"
     user:
       sudo: "Sudo"
+      two_factor_on: "On"
+      two_factor_off: "Off"
       all_access: "All access (sudo)"
       system: "System"
       ago: "%{time} ago"

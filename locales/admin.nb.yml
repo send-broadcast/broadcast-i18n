@@ -9384,6 +9384,7 @@ nb:
       read_only: "Bare lesetilgang"
       dormant: "Inaktive i over 30 dager"
       recently_active: "Aktive de siste 7 dagene"
+      two_factor_off: "Uten 2FA"
     empty_result:
       filter_and_quick: "Fant ingen brukere som samsvarer med «%{filter}» for filteret «%{quick}»"
       filter: "Fant ingen brukere som samsvarer med «%{filter}»"
@@ -9413,10 +9414,14 @@ nb:
       reset: "Tilbakestill"
       name: "Navn"
       status: "Status"
+      two_factor: "2FA"
+      two_factor_off: "Uten 2FA · %{count}"
       access: "Tilgang"
       last_login: "Siste pålogging"
     user:
       sudo: "Sudo"
+      two_factor_on: "På"
+      two_factor_off: "Av"
       all_access: "Full tilgang (sudo)"
       system: "System"
       ago: "for %{time} siden"

@@ -9385,6 +9385,7 @@ es:
       read_only: "Acceso de solo lectura"
       dormant: "Inactivos más de 30 días"
       recently_active: "Activos en los últimos 7 días"
+      two_factor_off: "Sin 2FA"
     empty_result:
       filter_and_quick: "No se encontraron usuarios que coincidan con \"%{filter}\" en el filtro \"%{quick}\""
       filter: "No se encontraron usuarios que coincidan con \"%{filter}\""
@@ -9414,10 +9415,14 @@ es:
       reset: "Restablecer"
       name: "Nombre"
       status: "Estado"
+      two_factor: "2FA"
+      two_factor_off: "Sin 2FA · %{count}"
       access: "Acceso"
       last_login: "Último acceso"
     user:
       sudo: "Sudo"
+      two_factor_on: "Sí"
+      two_factor_off: "No"
       all_access: "Acceso completo (sudo)"
       system: "Sistema"
       ago: "hace %{time}"
