@@ -19,6 +19,7 @@ fr:
     public_action:
       confirm_title: "Un instant"
       confirm_button: "Continuer"
+      saving: "Enregistrement…"
       done_title: "Merci"
       failed_title: "Une erreur s'est produite"
       failed_body: "Nous n'avons pas pu enregistrer cela. Réessayez le lien plus tard."

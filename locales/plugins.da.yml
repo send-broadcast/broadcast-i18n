@@ -19,6 +19,7 @@ da:
     public_action:
       confirm_title: "Et øjeblik"
       confirm_button: "Fortsæt"
+      saving: "Gemmer…"
       done_title: "Tak"
       failed_title: "Noget gik galt"
       failed_body: "Vi kunne ikke gemme dette. Prøv linket igen senere."

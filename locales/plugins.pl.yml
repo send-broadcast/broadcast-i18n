@@ -19,6 +19,7 @@ pl:
     public_action:
       confirm_title: "Chwileczkę"
       confirm_button: "Dalej"
+      saving: "Zapisywanie…"
       done_title: "Dziękujemy"
       failed_title: "Coś poszło nie tak"
       failed_body: "Nie udało się tego zapisać. Spróbuj ponownie użyć linku później."

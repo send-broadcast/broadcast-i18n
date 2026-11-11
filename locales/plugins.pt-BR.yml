@@ -19,6 +19,7 @@ pt-BR:
     public_action:
       confirm_title: "Um momento"
       confirm_button: "Continuar"
+      saving: "Salvando…"
       done_title: "Obrigado"
       failed_title: "Algo deu errado"
       failed_body: "Não conseguimos salvar isso. Tente o link novamente mais tarde."

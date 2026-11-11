@@ -19,6 +19,7 @@ fi:
     public_action:
       confirm_title: "Hetki vain"
       confirm_button: "Jatka"
+      saving: "Tallennetaan…"
       done_title: "Kiitos"
       failed_title: "Jokin meni vikaan"
       failed_body: "Emme voineet tallentaa tätä. Kokeile linkkiä myöhemmin uudelleen."

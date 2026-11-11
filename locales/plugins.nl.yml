@@ -19,6 +19,7 @@ nl:
     public_action:
       confirm_title: "Een moment"
       confirm_button: "Doorgaan"
+      saving: "Opslaan…"
       done_title: "Bedankt"
       failed_title: "Er ging iets mis"
       failed_body: "We konden dit niet opslaan. Probeer de link later opnieuw."
