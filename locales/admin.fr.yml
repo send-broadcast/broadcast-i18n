@@ -4286,8 +4286,9 @@ fr:
         save_failed: "Votre menu n'a pas été enregistré. Réessayez."
         move_up: "Monter %{name}"
         move_down: "Descendre %{name}"
-        to_more: "Vers Plus : %{name}"
-        to_menu: "Vers le menu : %{name}"
+        to_more: "Retirer du menu : %{name}"
+        to_menu: "Ajouter au menu : %{name}"
+        add_to_menu: "Ajouter au menu"
         divider: "Séparateur"
         remove_divider: "Supprimer le séparateur"
         groups:

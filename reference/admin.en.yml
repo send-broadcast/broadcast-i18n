@@ -4248,8 +4248,9 @@ en:
         save_failed: "Your menu was not saved. Try again."
         move_up: "Move %{name} up"
         move_down: "Move %{name} down"
-        to_more: "To More: %{name}"
-        to_menu: "To menu: %{name}"
+        to_more: "Remove from menu: %{name}"
+        to_menu: "Add to menu: %{name}"
+        add_to_menu: "Add to menu"
         divider: "Divider"
         remove_divider: "Remove divider"
         groups:

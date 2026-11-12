@@ -4286,8 +4286,9 @@ es:
         save_failed: "Tu menú no se guardó. Inténtalo de nuevo."
         move_up: "Subir %{name}"
         move_down: "Bajar %{name}"
-        to_more: "A Más: %{name}"
-        to_menu: "Al menú: %{name}"
+        to_more: "Quitar del menú: %{name}"
+        to_menu: "Añadir al menú: %{name}"
+        add_to_menu: "Añadir al menú"
         divider: "Separador"
         remove_divider: "Quitar separador"
         groups:

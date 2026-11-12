@@ -4287,8 +4287,9 @@ nl:
         save_failed: "Je menu is niet opgeslagen. Probeer het opnieuw."
         move_up: "%{name} omhoog"
         move_down: "%{name} omlaag"
-        to_more: "Naar Meer: %{name}"
-        to_menu: "Naar menu: %{name}"
+        to_more: "Uit menu verwijderen: %{name}"
+        to_menu: "Aan menu toevoegen: %{name}"
+        add_to_menu: "Aan menu toevoegen"
         divider: "Scheidingslijn"
         remove_divider: "Scheidingslijn verwijderen"
         groups:

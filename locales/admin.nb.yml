@@ -4285,8 +4285,9 @@ nb:
         save_failed: "Menyen din ble ikke lagret. Prøv igjen."
         move_up: "Flytt %{name} opp"
         move_down: "Flytt %{name} ned"
-        to_more: "Til Mer: %{name}"
-        to_menu: "Til menyen: %{name}"
+        to_more: "Fjern fra menyen: %{name}"
+        to_menu: "Legg til i menyen: %{name}"
+        add_to_menu: "Legg til i menyen"
         divider: "Skillelinje"
         remove_divider: "Fjern skillelinje"
         groups:

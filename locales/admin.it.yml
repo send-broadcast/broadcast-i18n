@@ -4283,8 +4283,9 @@ it:
         save_failed: "Il tuo menu non è stato salvato. Riprova."
         move_up: "Sposta su %{name}"
         move_down: "Sposta giù %{name}"
-        to_more: "In Altro: %{name}"
-        to_menu: "Nel menu: %{name}"
+        to_more: "Rimuovi dal menu: %{name}"
+        to_menu: "Aggiungi al menu: %{name}"
+        add_to_menu: "Aggiungi al menu"
         divider: "Divisore"
         remove_divider: "Rimuovi divisore"
         groups:

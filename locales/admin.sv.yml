@@ -4285,8 +4285,9 @@ sv:
         save_failed: "Din meny sparades inte. Försök igen."
         move_up: "Flytta upp %{name}"
         move_down: "Flytta ned %{name}"
-        to_more: "Till Mer: %{name}"
-        to_menu: "Till menyn: %{name}"
+        to_more: "Ta bort från menyn: %{name}"
+        to_menu: "Lägg till i menyn: %{name}"
+        add_to_menu: "Lägg till i menyn"
         divider: "Avdelare"
         remove_divider: "Ta bort avdelare"
         groups:

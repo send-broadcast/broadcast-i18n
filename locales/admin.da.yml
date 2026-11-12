@@ -4285,8 +4285,9 @@ da:
         save_failed: "Din menu blev ikke gemt. Prøv igen."
         move_up: "Flyt %{name} op"
         move_down: "Flyt %{name} ned"
-        to_more: "Til Mere: %{name}"
-        to_menu: "Til menuen: %{name}"
+        to_more: "Fjern fra menuen: %{name}"
+        to_menu: "Tilføj til menuen: %{name}"
+        add_to_menu: "Tilføj til menuen"
         divider: "Skillelinje"
         remove_divider: "Fjern skillelinje"
         groups:

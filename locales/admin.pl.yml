@@ -4451,8 +4451,9 @@ pl:
         save_failed: "Twoje menu nie zostało zapisane. Spróbuj ponownie."
         move_up: "Przesuń %{name} w górę"
         move_down: "Przesuń %{name} w dół"
-        to_more: "Do sekcji Więcej: %{name}"
-        to_menu: "Do menu: %{name}"
+        to_more: "Usuń z menu: %{name}"
+        to_menu: "Dodaj do menu: %{name}"
+        add_to_menu: "Dodaj do menu"
         divider: "Separator"
         remove_divider: "Usuń separator"
         groups:

@@ -4285,8 +4285,9 @@ pt-BR:
         save_failed: "Seu menu não foi salvo. Tente novamente."
         move_up: "Mover %{name} para cima"
         move_down: "Mover %{name} para baixo"
-        to_more: "Para Mais: %{name}"
-        to_menu: "Para o menu: %{name}"
+        to_more: "Remover do menu: %{name}"
+        to_menu: "Adicionar ao menu: %{name}"
+        add_to_menu: "Adicionar ao menu"
         divider: "Divisor"
         remove_divider: "Remover divisor"
         groups:

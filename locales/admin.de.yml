@@ -4287,8 +4287,9 @@ de:
         save_failed: "Ihr Menü wurde nicht gespeichert. Versuchen Sie es erneut."
         move_up: "%{name} nach oben"
         move_down: "%{name} nach unten"
-        to_more: "Zu Mehr: %{name}"
-        to_menu: "Ins Menü: %{name}"
+        to_more: "Aus dem Menü entfernen: %{name}"
+        to_menu: "Zum Menü hinzufügen: %{name}"
+        add_to_menu: "Zum Menü hinzufügen"
         divider: "Trennlinie"
         remove_divider: "Trennlinie entfernen"
         groups:

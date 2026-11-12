@@ -4286,8 +4286,9 @@ fi:
         save_failed: "Valikkoasi ei tallennettu. Yritä uudelleen."
         move_up: "Siirrä %{name} ylös"
         move_down: "Siirrä %{name} alas"
-        to_more: "Kohtaan Lisää: %{name}"
-        to_menu: "Valikkoon: %{name}"
+        to_more: "Poista valikosta: %{name}"
+        to_menu: "Lisää valikkoon: %{name}"
+        add_to_menu: "Lisää valikkoon"
         divider: "Erotin"
         remove_divider: "Poista erotin"
         groups:
