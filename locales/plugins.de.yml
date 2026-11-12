@@ -73,6 +73,9 @@ de:
       segments_read:
         label: "Segmente lesen"
         description: "Liest Segmente und ihre Regeln."
+      templates_read:
+        label: "Vorlagen lesen"
+        description: "Liest die Namen, die Betreffzeilen und die ersten Wörter deiner E-Mail-Vorlagen."
       network:
         label: "Internetzugriff"
         description: "Verbindet sich mit diesen Websites: %{hosts}."

@@ -73,6 +73,9 @@ pl:
       segments_read:
         label: "Odczyt segmentów"
         description: "Odczytuje segmenty i ich reguły."
+      templates_read:
+        label: "Odczyt szablonów"
+        description: "Odczytuje nazwy, tematy i pierwsze słowa Twoich szablonów e-maili."
       network:
         label: "Dostęp do internetu"
         description: "Łączy się z tymi witrynami: %{hosts}."

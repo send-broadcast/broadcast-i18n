@@ -73,6 +73,9 @@ da:
       segments_read:
         label: "Læse segmenter"
         description: "Læser segmenter og deres regler."
+      templates_read:
+        label: "Læse skabeloner"
+        description: "Læser navnene, emnelinjerne og de første ord i dine e-mailskabeloner."
       network:
         label: "Internetadgang"
         description: "Forbinder til disse websteder: %{hosts}."

@@ -73,6 +73,9 @@ en:
       segments_read:
         label: "Read segments"
         description: "Reads segments and their rules."
+      templates_read:
+        label: "Read templates"
+        description: "Reads the names, the subject lines and the first words of your email templates."
       network:
         label: "Internet access"
         description: "Connects to these sites: %{hosts}."

@@ -73,6 +73,9 @@ nb:
       segments_read:
         label: "Lese segmenter"
         description: "Leser segmenter og reglene deres."
+      templates_read:
+        label: "Lese maler"
+        description: "Leser navnene, emnelinjene og de første ordene i e-postmalene dine."
       network:
         label: "Internett-tilgang"
         description: "Kobler til disse nettstedene: %{hosts}."

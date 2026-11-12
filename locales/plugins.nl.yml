@@ -73,6 +73,9 @@ nl:
       segments_read:
         label: "Segmenten lezen"
         description: "Leest segmenten en hun regels."
+      templates_read:
+        label: "Sjablonen lezen"
+        description: "Leest de namen, de onderwerpregels en de eerste woorden van je e-mailsjablonen."
       network:
         label: "Internettoegang"
         description: "Maakt verbinding met deze sites: %{hosts}."

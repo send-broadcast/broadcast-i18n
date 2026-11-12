@@ -73,6 +73,9 @@ sv:
       segments_read:
         label: "Läsa segment"
         description: "Läser segment och deras regler."
+      templates_read:
+        label: "Läsa mallar"
+        description: "Läser namnen, ämnesraderna och de första orden i dina e-postmallar."
       network:
         label: "Internetåtkomst"
         description: "Ansluter till dessa webbplatser: %{hosts}."

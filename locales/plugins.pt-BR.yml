@@ -73,6 +73,9 @@ pt-BR:
       segments_read:
         label: "Ler segmentos"
         description: "Lê os segmentos e as suas regras."
+      templates_read:
+        label: "Ler modelos"
+        description: "Lê os nomes, os assuntos e as primeiras palavras dos seus modelos de e-mail."
       network:
         label: "Acesso à internet"
         description: "Conecta-se a estes sites: %{hosts}."

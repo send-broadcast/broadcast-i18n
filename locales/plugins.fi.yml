@@ -73,6 +73,9 @@ fi:
       segments_read:
         label: "Segmenttien lukeminen"
         description: "Lukee segmentit ja niiden säännöt."
+      templates_read:
+        label: "Mallien lukeminen"
+        description: "Lukee sähköpostimalliesi nimet, otsikkorivit ja ensimmäiset sanat."
       network:
         label: "Internetyhteys"
         description: "Muodostaa yhteyden näihin sivustoihin: %{hosts}."
