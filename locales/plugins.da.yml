@@ -21,6 +21,8 @@ da:
       confirm_button: "Fortsæt"
       saving: "Gemmer…"
       done_title: "Tak"
+      own_answer: "Dit svar"
+      form_submit: "Send"
       failed_title: "Noget gik galt"
       failed_body: "Vi kunne ikke gemme dette. Prøv linket igen senere."
       test_title: "Dette er en test-e-mail"

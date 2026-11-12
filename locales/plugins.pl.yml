@@ -21,6 +21,8 @@ pl:
       confirm_button: "Dalej"
       saving: "Zapisywanie…"
       done_title: "Dziękujemy"
+      own_answer: "Twoja odpowiedź"
+      form_submit: "Wyślij"
       failed_title: "Coś poszło nie tak"
       failed_body: "Nie udało się tego zapisać. Spróbuj ponownie użyć linku później."
       test_title: "To jest testowy e-mail"

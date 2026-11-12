@@ -21,6 +21,8 @@ pt-BR:
       confirm_button: "Continuar"
       saving: "Salvando…"
       done_title: "Obrigado"
+      own_answer: "Sua resposta"
+      form_submit: "Enviar"
       failed_title: "Algo deu errado"
       failed_body: "Não conseguimos salvar isso. Tente o link novamente mais tarde."
       test_title: "Este é um e-mail de teste"

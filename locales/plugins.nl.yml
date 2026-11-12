@@ -21,6 +21,8 @@ nl:
       confirm_button: "Doorgaan"
       saving: "Opslaan…"
       done_title: "Bedankt"
+      own_answer: "Jouw antwoord"
+      form_submit: "Verzenden"
       failed_title: "Er ging iets mis"
       failed_body: "We konden dit niet opslaan. Probeer de link later opnieuw."
       test_title: "Dit is een test-e-mail"

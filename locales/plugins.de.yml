@@ -21,6 +21,8 @@ de:
       confirm_button: "Weiter"
       saving: "Wird gespeichert…"
       done_title: "Vielen Dank"
+      own_answer: "Ihre Antwort"
+      form_submit: "Senden"
       failed_title: "Etwas ist schiefgelaufen"
       failed_body: "Wir konnten das nicht speichern. Bitte versuchen Sie den Link später erneut."
       test_title: "Dies ist eine Test-E-Mail"

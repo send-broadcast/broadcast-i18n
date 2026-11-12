@@ -21,6 +21,8 @@ fi:
       confirm_button: "Jatka"
       saving: "Tallennetaan…"
       done_title: "Kiitos"
+      own_answer: "Vastauksesi"
+      form_submit: "Lähetä"
       failed_title: "Jokin meni vikaan"
       failed_body: "Emme voineet tallentaa tätä. Kokeile linkkiä myöhemmin uudelleen."
       test_title: "Tämä on testisähköposti"

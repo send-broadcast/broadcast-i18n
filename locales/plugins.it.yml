@@ -21,6 +21,8 @@ it:
       confirm_button: "Continua"
       saving: "Salvataggio…"
       done_title: "Grazie"
+      own_answer: "La tua risposta"
+      form_submit: "Invia"
       failed_title: "Qualcosa è andato storto"
       failed_body: "Non siamo riusciti a salvare. Riprova il link più tardi."
       test_title: "Questa è un'email di prova"

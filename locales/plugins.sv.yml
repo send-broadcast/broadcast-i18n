@@ -21,6 +21,8 @@ sv:
       confirm_button: "Fortsätt"
       saving: "Sparar…"
       done_title: "Tack"
+      own_answer: "Ditt svar"
+      form_submit: "Skicka"
       failed_title: "Något gick fel"
       failed_body: "Vi kunde inte spara detta. Försök med länken igen senare."
       test_title: "Det här är ett testmejl"

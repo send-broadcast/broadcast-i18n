@@ -21,6 +21,8 @@ fr:
       confirm_button: "Continuer"
       saving: "Enregistrement…"
       done_title: "Merci"
+      own_answer: "Votre réponse"
+      form_submit: "Envoyer"
       failed_title: "Une erreur s'est produite"
       failed_body: "Nous n'avons pas pu enregistrer cela. Réessayez le lien plus tard."
       test_title: "Ceci est un e-mail de test"

@@ -21,6 +21,8 @@ nb:
       confirm_button: "Fortsett"
       saving: "Lagrer…"
       done_title: "Takk"
+      own_answer: "Ditt svar"
+      form_submit: "Send"
       failed_title: "Noe gikk galt"
       failed_body: "Vi kunne ikke lagre dette. Prøv lenken igjen senere."
       test_title: "Dette er en test-e-post"

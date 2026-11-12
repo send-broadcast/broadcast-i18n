@@ -21,6 +21,8 @@ es:
       confirm_button: "Continuar"
       saving: "Guardando…"
       done_title: "Gracias"
+      own_answer: "Tu respuesta"
+      form_submit: "Enviar"
       failed_title: "Algo salió mal"
       failed_body: "No pudimos guardar esto. Vuelve a probar el enlace más tarde."
       test_title: "Este es un correo de prueba"
