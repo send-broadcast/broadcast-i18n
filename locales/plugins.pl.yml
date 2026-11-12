@@ -23,6 +23,8 @@ pl:
       done_title: "Dziękujemy"
       own_answer: "Twoja odpowiedź"
       form_submit: "Wyślij"
+      copy_button: "Kopiuj"
+      copied: "Skopiowano"
       failed_title: "Coś poszło nie tak"
       failed_body: "Nie udało się tego zapisać. Spróbuj ponownie użyć linku później."
       test_title: "To jest testowy e-mail"
@@ -78,6 +80,9 @@ pl:
       templates_read:
         label: "Odczyt szablonów"
         description: "Odczytuje nazwy, tematy i pierwsze słowa Twoich szablonów e-maili."
+      emails_send:
+        label: "Wysyłanie Twoich szablonów e-maili"
+        description: "Wysyła jeden z Twoich szablonów e-maili do jednego subskrybenta tego kanału jako e-mail transakcyjny. Nigdy nie wysyła do osoby wypisanej lub nieaktywnej i ma limit godzinowy."
       network:
         label: "Dostęp do internetu"
         description: "Łączy się z tymi witrynami: %{hosts}."

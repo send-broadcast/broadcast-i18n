@@ -23,6 +23,8 @@ en:
       done_title: "Thank you"
       own_answer: "Your answer"
       form_submit: "Send"
+      copy_button: "Copy"
+      copied: "Copied"
       failed_title: "Something went wrong"
       failed_body: "We could not save this. Please try the link again later."
       test_title: "This is a test email"
@@ -78,6 +80,9 @@ en:
       templates_read:
         label: "Read templates"
         description: "Reads the names, the subject lines and the first words of your email templates."
+      emails_send:
+        label: "Send your email templates"
+        description: "Sends one of your email templates to one subscriber of this channel, as a transactional email. It never sends to a person who is unsubscribed or inactive, and it has an hourly limit."
       network:
         label: "Internet access"
         description: "Connects to these sites: %{hosts}."

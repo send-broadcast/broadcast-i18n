@@ -23,6 +23,8 @@ it:
       done_title: "Grazie"
       own_answer: "La tua risposta"
       form_submit: "Invia"
+      copy_button: "Copia"
+      copied: "Copiato"
       failed_title: "Qualcosa è andato storto"
       failed_body: "Non siamo riusciti a salvare. Riprova il link più tardi."
       test_title: "Questa è un'email di prova"
@@ -78,6 +80,9 @@ it:
       templates_read:
         label: "Leggere i modelli"
         description: "Legge i nomi, gli oggetti e le prime parole dei tuoi modelli di email."
+      emails_send:
+        label: "Inviare i tuoi modelli di email"
+        description: "Invia uno dei tuoi modelli di email a un iscritto di questo canale, come email transazionale. Non invia mai a una persona disiscritta o inattiva, e ha un limite orario."
       network:
         label: "Accesso a Internet"
         description: "Si collega a questi siti: %{hosts}."

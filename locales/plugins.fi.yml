@@ -23,6 +23,8 @@ fi:
       done_title: "Kiitos"
       own_answer: "Vastauksesi"
       form_submit: "Lähetä"
+      copy_button: "Kopioi"
+      copied: "Kopioitu"
       failed_title: "Jokin meni vikaan"
       failed_body: "Emme voineet tallentaa tätä. Kokeile linkkiä myöhemmin uudelleen."
       test_title: "Tämä on testisähköposti"
@@ -78,6 +80,9 @@ fi:
       templates_read:
         label: "Mallien lukeminen"
         description: "Lukee sähköpostimalliesi nimet, otsikkorivit ja ensimmäiset sanat."
+      emails_send:
+        label: "Sähköpostimalliesi lähettäminen"
+        description: "Lähettää yhden sähköpostimalleistasi yhdelle tämän kanavan tilaajalle tapahtumaviestinä. Se ei koskaan lähetä henkilölle, joka on perunut tilauksen tai on passiivinen, ja sillä on tuntikohtainen raja."
       network:
         label: "Internetyhteys"
         description: "Muodostaa yhteyden näihin sivustoihin: %{hosts}."

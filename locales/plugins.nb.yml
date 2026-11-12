@@ -23,6 +23,8 @@ nb:
       done_title: "Takk"
       own_answer: "Ditt svar"
       form_submit: "Send"
+      copy_button: "Kopier"
+      copied: "Kopiert"
       failed_title: "Noe gikk galt"
       failed_body: "Vi kunne ikke lagre dette. Prøv lenken igjen senere."
       test_title: "Dette er en test-e-post"
@@ -78,6 +80,9 @@ nb:
       templates_read:
         label: "Lese maler"
         description: "Leser navnene, emnelinjene og de første ordene i e-postmalene dine."
+      emails_send:
+        label: "Sende e-postmalene dine"
+        description: "Sender en av e-postmalene dine til én abonnent i denne kanalen, som transaksjons-e-post. Den sender aldri til en person som er avmeldt eller inaktiv, og den har en grense per time."
       network:
         label: "Internett-tilgang"
         description: "Kobler til disse nettstedene: %{hosts}."

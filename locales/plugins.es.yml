@@ -23,6 +23,8 @@ es:
       done_title: "Gracias"
       own_answer: "Tu respuesta"
       form_submit: "Enviar"
+      copy_button: "Copiar"
+      copied: "Copiado"
       failed_title: "Algo salió mal"
       failed_body: "No pudimos guardar esto. Vuelve a probar el enlace más tarde."
       test_title: "Este es un correo de prueba"
@@ -78,6 +80,9 @@ es:
       templates_read:
         label: "Leer plantillas"
         description: "Lee los nombres, los asuntos y las primeras palabras de tus plantillas de correo."
+      emails_send:
+        label: "Enviar tus plantillas de correo"
+        description: "Envía una de tus plantillas de correo a un suscriptor de este canal, como correo transaccional. Nunca envía a una persona que se dio de baja o está inactiva, y tiene un límite por hora."
       network:
         label: "Acceso a internet"
         description: "Se conecta a estos sitios: %{hosts}."

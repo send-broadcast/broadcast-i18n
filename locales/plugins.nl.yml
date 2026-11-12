@@ -23,6 +23,8 @@ nl:
       done_title: "Bedankt"
       own_answer: "Jouw antwoord"
       form_submit: "Verzenden"
+      copy_button: "Kopiëren"
+      copied: "Gekopieerd"
       failed_title: "Er ging iets mis"
       failed_body: "We konden dit niet opslaan. Probeer de link later opnieuw."
       test_title: "Dit is een test-e-mail"
@@ -78,6 +80,9 @@ nl:
       templates_read:
         label: "Sjablonen lezen"
         description: "Leest de namen, de onderwerpregels en de eerste woorden van je e-mailsjablonen."
+      emails_send:
+        label: "Je e-mailsjablonen verzenden"
+        description: "Verzendt een van je e-mailsjablonen naar één abonnee van dit kanaal, als transactionele e-mail. Een persoon die is uitgeschreven of inactief is, krijgt nooit een e-mail, en er geldt een limiet per uur."
       network:
         label: "Internettoegang"
         description: "Maakt verbinding met deze sites: %{hosts}."

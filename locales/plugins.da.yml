@@ -23,6 +23,8 @@ da:
       done_title: "Tak"
       own_answer: "Dit svar"
       form_submit: "Send"
+      copy_button: "Kopiér"
+      copied: "Kopieret"
       failed_title: "Noget gik galt"
       failed_body: "Vi kunne ikke gemme dette. Prøv linket igen senere."
       test_title: "Dette er en test-e-mail"
@@ -78,6 +80,9 @@ da:
       templates_read:
         label: "Læse skabeloner"
         description: "Læser navnene, emnelinjerne og de første ord i dine e-mailskabeloner."
+      emails_send:
+        label: "Sende dine e-mailskabeloner"
+        description: "Sender en af dine e-mailskabeloner til én abonnent i denne kanal, som transaktionsmail. Den sender aldrig til en person, der er afmeldt eller inaktiv, og den har en grænse pr. time."
       network:
         label: "Internetadgang"
         description: "Forbinder til disse websteder: %{hosts}."

@@ -23,6 +23,8 @@ pt-BR:
       done_title: "Obrigado"
       own_answer: "Sua resposta"
       form_submit: "Enviar"
+      copy_button: "Copiar"
+      copied: "Copiado"
       failed_title: "Algo deu errado"
       failed_body: "Não conseguimos salvar isso. Tente o link novamente mais tarde."
       test_title: "Este é um e-mail de teste"
@@ -78,6 +80,9 @@ pt-BR:
       templates_read:
         label: "Ler modelos"
         description: "Lê os nomes, os assuntos e as primeiras palavras dos seus modelos de e-mail."
+      emails_send:
+        label: "Enviar seus modelos de e-mail"
+        description: "Envia um dos seus modelos de e-mail a um assinante deste canal, como e-mail transacional. Nunca envia a uma pessoa que cancelou a inscrição ou está inativa, e tem um limite por hora."
       network:
         label: "Acesso à internet"
         description: "Conecta-se a estes sites: %{hosts}."

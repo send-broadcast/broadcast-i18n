@@ -23,6 +23,8 @@ de:
       done_title: "Vielen Dank"
       own_answer: "Ihre Antwort"
       form_submit: "Senden"
+      copy_button: "Kopieren"
+      copied: "Kopiert"
       failed_title: "Etwas ist schiefgelaufen"
       failed_body: "Wir konnten das nicht speichern. Bitte versuchen Sie den Link später erneut."
       test_title: "Dies ist eine Test-E-Mail"
@@ -78,6 +80,9 @@ de:
       templates_read:
         label: "Vorlagen lesen"
         description: "Liest die Namen, die Betreffzeilen und die ersten Wörter deiner E-Mail-Vorlagen."
+      emails_send:
+        label: "Ihre E-Mail-Vorlagen senden"
+        description: "Sendet eine Ihrer E-Mail-Vorlagen als Transaktions-E-Mail an einen Abonnenten dieses Kanals. Abgemeldete oder inaktive Personen erhalten nie eine E-Mail, und es gilt ein Limit pro Stunde."
       network:
         label: "Internetzugriff"
         description: "Verbindet sich mit diesen Websites: %{hosts}."
