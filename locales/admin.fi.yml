@@ -228,8 +228,13 @@ fi:
               must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
             welcome_email_template:
               must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
+            cover_image:
+              not_a_picture: "on oltava JPEG-, PNG-, WebP- tai GIF-tiedosto"
+              too_large: "saa olla enintään 5 Mt"
             theme_settings:
               style_value_not_allowed: "%{setting} sisältää merkkejä, jotka eivät ole sallittuja tyyliarvossa"
+              design_value_not_known: "%{setting} on oltava jokin näistä: %{allowed}"
+              unknown_theme: "teemaa %{value} ei tunneta. Käytä jotakin näistä: %{allowed}"
             trigger_settings:
               unknown_frequency: "tiheys %{value} on tuntematon. Käytä jotakin näistä arvoista: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4813,9 +4818,49 @@ fi:
         embed_code: "Upotuskoodi"
         javascript_embed: "JavaScript-upotus"
         direct_link: "Suora linkki"
+      theme_gallery:
+        heading: "Teemat"
+        intro: "Valitse teema, joka antaa lomakkeelle värit, fontit ja muodot. Alla olevilla kentillä voit muuttaa jokaista arvoa."
+      theme_design:
+        heading: "Ulkoasu"
+        layout: "Asettelu"
+        layout_hint: "Värinauha ja Jaettu näyttävät ennen ensimmäistä kenttää olevan otsikon ja tekstin erillään kentistä."
+        layout_options:
+          card: "Kortti"
+          band: "Värinauha"
+          split: "Jaettu kuvalla"
+          inline: "Rivi"
+        choice_style: "Valintojen tyyli"
+        choice_style_hint: "Kahdelle tai useammalle peräkkäiselle valinnaiselle valintaruudulle tai aiheelle."
+        choice_style_options:
+          list: "Luettelo"
+          pills: "Pillerit"
+          cards: "Kortit"
+        button_style: "Painikkeen tyyli"
+        button_style_hint: "Painikkeen muoto ja täyttö."
+        button_style_options:
+          theme: "Teemasta"
+          pill: "Pilleri"
+          outline: "Ääriviiva"
+        cover_image: "Kansikuva"
+        cover_image_hint: "Asetteluille Jaettu ja Värinauha. JPEG, PNG, WebP tai GIF, enintään 5 Mt."
+        cover_image_current: "Nykyinen tiedosto: %{name}"
+        remove_cover_image: "Poista kansikuva"
+      theme_button:
+        heading: "Painike ja kulmat"
+        button_background: "Painikkeen väri"
+        button_background_hint: "Jätä tyhjäksi, niin käytetään pääväriä."
+        button_text: "Painikkeen tekstin väri"
+        input_radius: "Syöttökenttien kulmat"
+        button_radius: "Painikkeen kulmat"
+        radius_from_box: "Puolet laatikon kulmista"
+        radius_round: "Pyöreä"
       theme_editor:
+        heading_font_family: "Otsikon fontti"
+        heading_font_same: "Sama kuin tekstin fontti"
+        shadow_theme: "Teemasta"
         brand_kit_title: "Brändipaketti."
-        brand_kit_html: "%{title} Kopioi korostusvärin, tekstin värit, fontin ja kulmien pyöristyksen kohdasta %{link}. Lomakkeen muut värit, koot ja efektit säilyvät ennallaan."
+        brand_kit_html: "%{title} Kopioi värit, fontin ja kulmien pyöristyksen kohdasta %{link}. Lomakkeen muut koot ja efektit säilyvät ennallaan."
         brand_kit_link: "Asetukset → Brändipaketti"
         apply_brand_kit: "Käytä brändipakettia"
         preview_heading: "Esikatselun asetukset"
@@ -5281,6 +5326,8 @@ fi:
       floating_button_description: "Kulmapainike, joka laajenee lomakkeeksi"
       sticky_bar_description: "Kiinteä palkki sivun ylä- tai alareunassa"
       full_page_description: "Oma laskeutumissivu lomakkeellesi"
+      theme_heading: "Teema"
+      theme_intro: "Voit muuttaa teemaa ja jokaista sen arvoa myöhemmin."
       continue: "Jatka valitulla tyypillä"
 
   permission_presets:

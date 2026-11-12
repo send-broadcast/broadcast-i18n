@@ -229,8 +229,13 @@ pl:
               must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
             welcome_email_template:
               must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
+            cover_image:
+              not_a_picture: "musi być plikiem JPEG, PNG, WebP lub GIF"
+              too_large: "może mieć najwyżej 5 MB"
             theme_settings:
               style_value_not_allowed: "%{setting} zawiera znaki niedozwolone w wartości stylu"
+              design_value_not_known: "%{setting} musi mieć jedną z wartości: %{allowed}"
+              unknown_theme: "motyw %{value} nie jest znany. Użyj jednego z: %{allowed}"
             trigger_settings:
               unknown_frequency: "częstotliwość %{value} jest nieznana. Użyj jednej z tych wartości: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4998,9 +5003,49 @@ pl:
         embed_code: "Kod do osadzenia"
         javascript_embed: "Osadzenie przez JavaScript"
         direct_link: "Link bezpośredni"
+      theme_gallery:
+        heading: "Motywy"
+        intro: "Wybierz motyw, aby nadać formularzowi kolory, czcionki i kształty. W polach poniżej zmienisz każdą wartość."
+      theme_design:
+        heading: "Wygląd"
+        layout: "Układ"
+        layout_hint: "Pas koloru i Podzielony pokazują nagłówek i tekst sprzed pierwszego pola osobno od pól."
+        layout_options:
+          card: "Karta"
+          band: "Pas koloru"
+          split: "Podzielony z obrazem"
+          inline: "Wiersz"
+        choice_style: "Styl opcji"
+        choice_style_hint: "Dla dwóch lub więcej opcjonalnych pól wyboru lub tematów pod rząd."
+        choice_style_options:
+          list: "Lista"
+          pills: "Pigułki"
+          cards: "Karty"
+        button_style: "Styl przycisku"
+        button_style_hint: "Kształt i wypełnienie przycisku."
+        button_style_options:
+          theme: "Z motywu"
+          pill: "Pigułka"
+          outline: "Kontur"
+        cover_image: "Obraz okładki"
+        cover_image_hint: "Dla układów Podzielony i Pas koloru. JPEG, PNG, WebP lub GIF, najwyżej 5 MB."
+        cover_image_current: "Bieżący plik: %{name}"
+        remove_cover_image: "Usuń obraz okładki"
+      theme_button:
+        heading: "Przycisk i narożniki"
+        button_background: "Kolor przycisku"
+        button_background_hint: "Zostaw puste, aby użyć koloru głównego."
+        button_text: "Kolor tekstu przycisku"
+        input_radius: "Narożniki pól"
+        button_radius: "Narożniki przycisku"
+        radius_from_box: "Połowa narożników ramki"
+        radius_round: "Okrągłe"
       theme_editor:
+        heading_font_family: "Czcionka nagłówka"
+        heading_font_same: "Taka sama jak czcionka tekstu"
+        shadow_theme: "Z motywu"
         brand_kit_title: "Zestaw marki."
-        brand_kit_html: "%{title} Kopiuje kolor akcentu, kolory tekstu, czcionkę i promień narożników z sekcji %{link}. Pozostałe kolory, rozmiary i efekty formularza pozostają bez zmian."
+        brand_kit_html: "%{title} Kopiuje kolory, czcionkę i promień narożników z sekcji %{link}. Pozostałe rozmiary i efekty formularza pozostają bez zmian."
         brand_kit_link: "Ustawienia → Zestaw marki"
         apply_brand_kit: "Zastosuj zestaw marki"
         preview_heading: "Ustawienia podglądu"
@@ -5470,6 +5515,8 @@ pl:
       floating_button_description: "Przycisk w rogu, który rozwija się w formularz"
       sticky_bar_description: "Stały pasek u góry lub u dołu strony"
       full_page_description: "Dedykowana landing page dla twojego formularza"
+      theme_heading: "Motyw"
+      theme_intro: "Motyw i każdą jego wartość możesz zmienić później."
       continue: "Kontynuuj z wybranym typem"
 
   permission_presets:

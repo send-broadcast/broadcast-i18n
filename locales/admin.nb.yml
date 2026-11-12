@@ -227,8 +227,13 @@ nb:
               must_belong_to_the_same_channel: "må tilhøre samme kanal"
             welcome_email_template:
               must_belong_to_the_same_channel: "må tilhøre samme kanal"
+            cover_image:
+              not_a_picture: "må være en JPEG-, PNG-, WebP- eller GIF-fil"
+              too_large: "må være 5 MB eller mindre"
             theme_settings:
               style_value_not_allowed: "%{setting} inneholder tegn som ikke er tillatt i en stilverdi"
+              design_value_not_known: "%{setting} må være en av: %{allowed}"
+              unknown_theme: "temaet %{value} er ikke kjent. Bruk ett av: %{allowed}"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} er ukjent. Bruk en av disse verdiene: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4812,9 +4817,49 @@ nb:
         embed_code: "Innbyggingskode"
         javascript_embed: "JavaScript-innbygging"
         direct_link: "Direktelenke"
+      theme_gallery:
+        heading: "Temaer"
+        intro: "Velg et tema for å gi skjemaet farger, skrifter og former. Med feltene nedenfor kan du endre hver verdi."
+      theme_design:
+        heading: "Design"
+        layout: "Oppsett"
+        layout_hint: "Fargebånd og Delt viser overskriften og teksten før det første feltet atskilt fra feltene."
+        layout_options:
+          card: "Kort"
+          band: "Fargebånd"
+          split: "Delt med bilde"
+          inline: "Rad"
+        choice_style: "Valgstil"
+        choice_style_hint: "For to eller flere valgfrie avmerkingsbokser eller emner etter hverandre."
+        choice_style_options:
+          list: "Liste"
+          pills: "Piller"
+          cards: "Kort"
+        button_style: "Knappestil"
+        button_style_hint: "Formen og fyllet til knappen."
+        button_style_options:
+          theme: "Fra temaet"
+          pill: "Pille"
+          outline: "Omriss"
+        cover_image: "Forsidebilde"
+        cover_image_hint: "For oppsettene Delt og Fargebånd. JPEG, PNG, WebP eller GIF, 5 MB eller mindre."
+        cover_image_current: "Gjeldende fil: %{name}"
+        remove_cover_image: "Fjern forsidebildet"
+      theme_button:
+        heading: "Knapp og hjørner"
+        button_background: "Knappefarge"
+        button_background_hint: "La stå tomt for å bruke primærfargen."
+        button_text: "Tekstfarge på knappen"
+        input_radius: "Hjørner på inndatafelt"
+        button_radius: "Hjørner på knappen"
+        radius_from_box: "Halvparten av boksens hjørner"
+        radius_round: "Rund"
       theme_editor:
+        heading_font_family: "Skrift for overskrift"
+        heading_font_same: "Samme som skriften for teksten"
+        shadow_theme: "Fra temaet"
         brand_kit_title: "Merkevaresett."
-        brand_kit_html: "%{title} Kopierer aksentfarge, tekstfarger, skrift og hjørneradius fra %{link}. Skjemaets andre farger, størrelser og effekter forblir som de er."
+        brand_kit_html: "%{title} Kopierer farger, skrift og hjørneradius fra %{link}. Skjemaets andre størrelser og effekter forblir som de er."
         brand_kit_link: "Innstillinger → Merkevaresett"
         apply_brand_kit: "Bruk merkevaresett"
         preview_heading: "Innstillinger for forhåndsvisning"
@@ -5280,6 +5325,8 @@ nb:
       floating_button_description: "Hjørneknapp som utvides til et skjema"
       sticky_bar_description: "Fast linje øverst eller nederst på siden"
       full_page_description: "Egen landingsside for skjemaet ditt"
+      theme_heading: "Tema"
+      theme_intro: "Du kan endre temaet og hver av verdiene senere."
       continue: "Fortsett med valgt type"
 
   permission_presets:

@@ -229,8 +229,13 @@ de:
               must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
             welcome_email_template:
               must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
+            cover_image:
+              not_a_picture: "muss eine JPEG-, PNG-, WebP- oder GIF-Datei sein"
+              too_large: "darf höchstens 5 MB groß sein"
             theme_settings:
               style_value_not_allowed: "%{setting} enthält Zeichen, die in einem Stilwert nicht erlaubt sind"
+              design_value_not_known: "%{setting} muss einer dieser Werte sein: %{allowed}"
+              unknown_theme: "Das Design %{value} ist nicht bekannt. Verwenden Sie eines von: %{allowed}"
             trigger_settings:
               unknown_frequency: "Häufigkeit %{value} ist unbekannt. Verwenden Sie einen dieser Werte: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4814,9 +4819,49 @@ de:
         embed_code: "Einbettungscode"
         javascript_embed: "JavaScript-Einbettung"
         direct_link: "Direktlink"
+      theme_gallery:
+        heading: "Designs"
+        intro: "Wählen Sie ein Design, um dem Formular Farben, Schriften und Formen zu geben. Mit den Feldern darunter ändern Sie jeden Wert einzeln."
+      theme_design:
+        heading: "Gestaltung"
+        layout: "Layout"
+        layout_hint: "Farbband und Geteilt zeigen die Überschrift und den Text vor dem ersten Feld getrennt von den Feldern."
+        layout_options:
+          card: "Karte"
+          band: "Farbband"
+          split: "Geteilt mit Bild"
+          inline: "Zeile"
+        choice_style: "Auswahlstil"
+        choice_style_hint: "Für zwei oder mehr optionale Kontrollkästchen oder Themen hintereinander."
+        choice_style_options:
+          list: "Liste"
+          pills: "Pillen"
+          cards: "Karten"
+        button_style: "Schaltflächenstil"
+        button_style_hint: "Form und Füllung der Schaltfläche."
+        button_style_options:
+          theme: "Aus dem Design"
+          pill: "Pille"
+          outline: "Umriss"
+        cover_image: "Titelbild"
+        cover_image_hint: "Für die Layouts Geteilt und Farbband. JPEG, PNG, WebP oder GIF, höchstens 5 MB."
+        cover_image_current: "Aktuelle Datei: %{name}"
+        remove_cover_image: "Titelbild entfernen"
+      theme_button:
+        heading: "Schaltfläche und Ecken"
+        button_background: "Schaltflächenfarbe"
+        button_background_hint: "Leer lassen, um die Primärfarbe zu verwenden."
+        button_text: "Textfarbe der Schaltfläche"
+        input_radius: "Ecken der Eingabefelder"
+        button_radius: "Ecken der Schaltfläche"
+        radius_from_box: "Hälfte der Rahmenecken"
+        radius_round: "Rund"
       theme_editor:
+        heading_font_family: "Schriftart der Überschrift"
+        heading_font_same: "Wie die Schriftart des Textes"
+        shadow_theme: "Aus dem Design"
         brand_kit_title: "Markenkit."
-        brand_kit_html: "%{title} Übernimmt Akzentfarbe, Textfarben, Schriftart und Eckenradius aus %{link}. Die übrigen Farben, Größen und Effekte des Formulars bleiben unverändert."
+        brand_kit_html: "%{title} Übernimmt Farben, Schriftart und Eckenradius aus %{link}. Die übrigen Größen und Effekte des Formulars bleiben unverändert."
         brand_kit_link: "Einstellungen → Markenkit"
         apply_brand_kit: "Markenkit anwenden"
         preview_heading: "Vorschaueinstellungen"
@@ -5282,6 +5327,8 @@ de:
       floating_button_description: "Button in der Ecke, der sich zu einem Formular öffnet"
       sticky_bar_description: "Fixierte Leiste oben oder unten auf der Seite"
       full_page_description: "Eigene Landingpage für Ihr Formular"
+      theme_heading: "Design"
+      theme_intro: "Sie können das Design und jeden seiner Werte später ändern."
       continue: "Mit ausgewähltem Typ fortfahren"
 
   permission_presets:

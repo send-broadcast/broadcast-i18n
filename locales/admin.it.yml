@@ -225,8 +225,13 @@ it:
               must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
             welcome_email_template:
               must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
+            cover_image:
+              not_a_picture: "deve essere un file JPEG, PNG, WebP o GIF"
+              too_large: "deve essere di 5 MB o meno"
             theme_settings:
               style_value_not_allowed: "%{setting} contiene caratteri non consentiti in un valore di stile"
+              design_value_not_known: "%{setting} deve essere uno di: %{allowed}"
+              unknown_theme: "il tema %{value} non esiste. Usa uno di: %{allowed}"
             trigger_settings:
               unknown_frequency: "la frequenza %{value} non è riconosciuta. Usa uno di questi valori: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4810,9 +4815,49 @@ it:
         embed_code: "Codice di incorporamento"
         javascript_embed: "Incorporamento JavaScript"
         direct_link: "Link diretto"
+      theme_gallery:
+        heading: "Temi"
+        intro: "Seleziona un tema per dare al modulo colori, caratteri e forme. Con i campi qui sotto puoi cambiare ogni valore."
+      theme_design:
+        heading: "Design"
+        layout: "Layout"
+        layout_hint: "Fascia colorata e Diviso mostrano il titolo e il testo che precedono il primo campo separati dai campi."
+        layout_options:
+          card: "Scheda"
+          band: "Fascia colorata"
+          split: "Diviso con immagine"
+          inline: "Riga"
+        choice_style: "Stile delle scelte"
+        choice_style_hint: "Per due o più caselle di controllo o argomenti facoltativi di seguito."
+        choice_style_options:
+          list: "Elenco"
+          pills: "Pillole"
+          cards: "Schede"
+        button_style: "Stile del pulsante"
+        button_style_hint: "La forma e il riempimento del pulsante."
+        button_style_options:
+          theme: "Dal tema"
+          pill: "Pillola"
+          outline: "Contorno"
+        cover_image: "Immagine di copertina"
+        cover_image_hint: "Per i layout Diviso e Fascia colorata. JPEG, PNG, WebP o GIF, al massimo 5 MB."
+        cover_image_current: "File attuale: %{name}"
+        remove_cover_image: "Rimuovi l'immagine di copertina"
+      theme_button:
+        heading: "Pulsante e angoli"
+        button_background: "Colore del pulsante"
+        button_background_hint: "Lascia vuoto per usare il colore principale."
+        button_text: "Colore del testo del pulsante"
+        input_radius: "Angoli dei campi"
+        button_radius: "Angoli del pulsante"
+        radius_from_box: "Metà degli angoli del riquadro"
+        radius_round: "Rotondo"
       theme_editor:
+        heading_font_family: "Carattere del titolo"
+        heading_font_same: "Uguale al carattere del testo"
+        shadow_theme: "Dal tema"
         brand_kit_title: "Brand kit."
-        brand_kit_html: "%{title} Copia il colore principale, i colori del testo, il carattere e l'arrotondamento degli angoli da %{link}. Gli altri colori, le dimensioni e gli effetti del modulo restano invariati."
+        brand_kit_html: "%{title} Copia i colori, il carattere e l'arrotondamento degli angoli da %{link}. Le altre dimensioni e gli effetti del modulo restano invariati."
         brand_kit_link: "Impostazioni → Brand kit"
         apply_brand_kit: "Applica il brand kit"
         preview_heading: "Impostazioni dell'anteprima"
@@ -5278,6 +5323,8 @@ it:
       floating_button_description: "Pulsante nell'angolo che si apre in un modulo"
       sticky_bar_description: "Barra fissa in cima o in fondo alla pagina"
       full_page_description: "Pagina dedicata al tuo modulo"
+      theme_heading: "Tema"
+      theme_intro: "Puoi cambiare il tema e ognuno dei suoi valori più tardi."
       continue: "Continua con il tipo selezionato"
 
   permission_presets:

@@ -229,8 +229,13 @@ nl:
               must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
             welcome_email_template:
               must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
+            cover_image:
+              not_a_picture: "moet een JPEG-, PNG-, WebP- of GIF-bestand zijn"
+              too_large: "mag hoogstens 5 MB zijn"
             theme_settings:
               style_value_not_allowed: "%{setting} bevat tekens die niet zijn toegestaan in een stijlwaarde"
+              design_value_not_known: "%{setting} moet een van deze waarden zijn: %{allowed}"
+              unknown_theme: "het thema %{value} is niet bekend. Gebruik een van: %{allowed}"
             trigger_settings:
               unknown_frequency: "frequentie %{value} is onbekend. Gebruik een van deze waarden: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4814,9 +4819,49 @@ nl:
         embed_code: "Insluitcode"
         javascript_embed: "JavaScript-insluiting"
         direct_link: "Directe link"
+      theme_gallery:
+        heading: "Thema's"
+        intro: "Selecteer een thema om het formulier kleuren, lettertypen en vormen te geven. Met de velden hieronder wijzig je elke waarde."
+      theme_design:
+        heading: "Ontwerp"
+        layout: "Indeling"
+        layout_hint: "Kleurband en Gesplitst tonen de kop en de tekst vóór het eerste veld apart van de velden."
+        layout_options:
+          card: "Kaart"
+          band: "Kleurband"
+          split: "Gesplitst met afbeelding"
+          inline: "Rij"
+        choice_style: "Keuzestijl"
+        choice_style_hint: "Voor twee of meer optionele selectievakjes of onderwerpen achter elkaar."
+        choice_style_options:
+          list: "Lijst"
+          pills: "Pillen"
+          cards: "Kaarten"
+        button_style: "Knopstijl"
+        button_style_hint: "De vorm en de vulling van de knop."
+        button_style_options:
+          theme: "Uit het thema"
+          pill: "Pil"
+          outline: "Omlijnd"
+        cover_image: "Omslagafbeelding"
+        cover_image_hint: "Voor de indelingen Gesplitst en Kleurband. JPEG, PNG, WebP of GIF, hoogstens 5 MB."
+        cover_image_current: "Huidig bestand: %{name}"
+        remove_cover_image: "Omslagafbeelding verwijderen"
+      theme_button:
+        heading: "Knop en hoeken"
+        button_background: "Knopkleur"
+        button_background_hint: "Laat leeg om de hoofdkleur te gebruiken."
+        button_text: "Tekstkleur van de knop"
+        input_radius: "Hoeken van invoervelden"
+        button_radius: "Hoeken van de knop"
+        radius_from_box: "De helft van de hoeken van het kader"
+        radius_round: "Rond"
       theme_editor:
+        heading_font_family: "Lettertype van de kop"
+        heading_font_same: "Hetzelfde als het lettertype van de tekst"
+        shadow_theme: "Uit het thema"
         brand_kit_title: "Huisstijlkit."
-        brand_kit_html: "%{title} Neemt je accentkleur, tekstkleuren, lettertype en hoekafronding over uit %{link}. De andere kleuren, formaten en effecten van het formulier blijven zoals ze zijn."
+        brand_kit_html: "%{title} Neemt je kleuren, lettertype en hoekafronding over uit %{link}. De andere formaten en effecten van het formulier blijven zoals ze zijn."
         brand_kit_link: "Instellingen → Huisstijlkit"
         apply_brand_kit: "Huisstijlkit toepassen"
         preview_heading: "Voorbeeldinstellingen"
@@ -5282,6 +5327,8 @@ nl:
       floating_button_description: "Knop in de hoek die openklapt tot een formulier"
       sticky_bar_description: "Vaste balk boven- of onderaan de pagina"
       full_page_description: "Eigen landingspagina voor je formulier"
+      theme_heading: "Thema"
+      theme_intro: "Je kunt het thema en elke waarde ervan later wijzigen."
       continue: "Doorgaan met gekozen type"
 
   permission_presets:

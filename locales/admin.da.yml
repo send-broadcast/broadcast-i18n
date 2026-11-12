@@ -227,8 +227,13 @@ da:
               must_belong_to_the_same_channel: "skal tilhøre samme kanal"
             welcome_email_template:
               must_belong_to_the_same_channel: "skal tilhøre samme kanal"
+            cover_image:
+              not_a_picture: "skal være en JPEG-, PNG-, WebP- eller GIF-fil"
+              too_large: "må højst være 5 MB"
             theme_settings:
               style_value_not_allowed: "%{setting} indeholder tegn, der ikke er tilladt i en stilværdi"
+              design_value_not_known: "%{setting} skal være en af: %{allowed}"
+              unknown_theme: "temaet %{value} er ikke kendt. Brug et af: %{allowed}"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} er ukendt. Brug en af disse værdier: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4812,9 +4817,49 @@ da:
         embed_code: "Indlejringskode"
         javascript_embed: "JavaScript-indlejring"
         direct_link: "Direkte link"
+      theme_gallery:
+        heading: "Temaer"
+        intro: "Vælg et tema for at give formularen farver, skrifttyper og former. Med felterne nedenfor kan du ændre hver værdi."
+      theme_design:
+        heading: "Design"
+        layout: "Layout"
+        layout_hint: "Farvebånd og Delt viser overskriften og teksten før det første felt adskilt fra felterne."
+        layout_options:
+          card: "Kort"
+          band: "Farvebånd"
+          split: "Delt med billede"
+          inline: "Række"
+        choice_style: "Valgstil"
+        choice_style_hint: "Til to eller flere valgfrie afkrydsningsfelter eller emner efter hinanden."
+        choice_style_options:
+          list: "Liste"
+          pills: "Piller"
+          cards: "Kort"
+        button_style: "Knapstil"
+        button_style_hint: "Knappens form og fyld."
+        button_style_options:
+          theme: "Fra temaet"
+          pill: "Pille"
+          outline: "Omrids"
+        cover_image: "Forsidebillede"
+        cover_image_hint: "Til layouterne Delt og Farvebånd. JPEG, PNG, WebP eller GIF, højst 5 MB."
+        cover_image_current: "Nuværende fil: %{name}"
+        remove_cover_image: "Fjern forsidebilledet"
+      theme_button:
+        heading: "Knap og hjørner"
+        button_background: "Knapfarve"
+        button_background_hint: "Lad feltet stå tomt for at bruge den primære farve."
+        button_text: "Knappens tekstfarve"
+        input_radius: "Inputfelternes hjørner"
+        button_radius: "Knappens hjørner"
+        radius_from_box: "Halvdelen af boksens hjørner"
+        radius_round: "Rund"
       theme_editor:
+        heading_font_family: "Skrifttype til overskrift"
+        heading_font_same: "Samme som tekstens skrifttype"
+        shadow_theme: "Fra temaet"
         brand_kit_title: "Brandkit."
-        brand_kit_html: "%{title} Kopierer din accentfarve, tekstfarver, skrifttype og hjørneradius fra %{link}. Formularens øvrige farver, størrelser og effekter forbliver uændrede."
+        brand_kit_html: "%{title} Kopierer dine farver, skrifttype og hjørneradius fra %{link}. Formularens øvrige størrelser og effekter forbliver uændrede."
         brand_kit_link: "Indstillinger → Brandkit"
         apply_brand_kit: "Anvend brandkit"
         preview_heading: "Indstillinger for forhåndsvisning"
@@ -5280,6 +5325,8 @@ da:
       floating_button_description: "Knap i hjørnet, der udvides til en formular"
       sticky_bar_description: "Fast bjælke øverst eller nederst på siden"
       full_page_description: "Dedikeret landingsside til din formular"
+      theme_heading: "Tema"
+      theme_intro: "Du kan ændre temaet og hver af dets værdier senere."
       continue: "Fortsæt med den valgte type"
 
   permission_presets:

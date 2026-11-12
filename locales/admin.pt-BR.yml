@@ -227,8 +227,13 @@ pt-BR:
               must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
             welcome_email_template:
               must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
+            cover_image:
+              not_a_picture: "deve ser um arquivo JPEG, PNG, WebP ou GIF"
+              too_large: "deve ter 5 MB ou menos"
             theme_settings:
               style_value_not_allowed: "%{setting} contém caracteres que não são permitidos em um valor de estilo"
+              design_value_not_known: "%{setting} deve ser um destes: %{allowed}"
+              unknown_theme: "o tema %{value} não existe. Use um destes: %{allowed}"
             trigger_settings:
               unknown_frequency: "a frequência %{value} não é reconhecida. Use um destes valores: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4812,9 +4817,49 @@ pt-BR:
         embed_code: "Código de incorporação"
         javascript_embed: "Incorporação via JavaScript"
         direct_link: "Link direto"
+      theme_gallery:
+        heading: "Temas"
+        intro: "Selecione um tema para dar ao formulário cores, fontes e formas. Com os campos abaixo você muda cada valor."
+      theme_design:
+        heading: "Design"
+        layout: "Layout"
+        layout_hint: "Faixa de cor e Dividido mostram o título e o texto que vêm antes do primeiro campo separados dos campos."
+        layout_options:
+          card: "Cartão"
+          band: "Faixa de cor"
+          split: "Dividido com imagem"
+          inline: "Linha"
+        choice_style: "Estilo das opções"
+        choice_style_hint: "Para duas ou mais caixas de seleção ou tópicos opcionais em sequência."
+        choice_style_options:
+          list: "Lista"
+          pills: "Pílulas"
+          cards: "Cartões"
+        button_style: "Estilo do botão"
+        button_style_hint: "A forma e o preenchimento do botão."
+        button_style_options:
+          theme: "Do tema"
+          pill: "Pílula"
+          outline: "Contorno"
+        cover_image: "Imagem de capa"
+        cover_image_hint: "Para os layouts Dividido e Faixa de cor. JPEG, PNG, WebP ou GIF, com 5 MB ou menos."
+        cover_image_current: "Arquivo atual: %{name}"
+        remove_cover_image: "Remover a imagem de capa"
+      theme_button:
+        heading: "Botão e cantos"
+        button_background: "Cor do botão"
+        button_background_hint: "Deixe vazio para usar a cor principal."
+        button_text: "Cor do texto do botão"
+        input_radius: "Cantos dos campos"
+        button_radius: "Cantos do botão"
+        radius_from_box: "Metade dos cantos da caixa"
+        radius_round: "Redondo"
       theme_editor:
+        heading_font_family: "Fonte do título"
+        heading_font_same: "A mesma fonte do texto"
+        shadow_theme: "Do tema"
         brand_kit_title: "Kit da marca."
-        brand_kit_html: "%{title} Copia a cor de destaque, as cores de texto, a fonte e o raio dos cantos de %{link}. As outras cores, tamanhos e efeitos do formulário continuam como estão."
+        brand_kit_html: "%{title} Copia as cores, a fonte e o raio dos cantos de %{link}. Os outros tamanhos e efeitos do formulário continuam como estão."
         brand_kit_link: "Configurações → Kit da marca"
         apply_brand_kit: "Aplicar kit da marca"
         preview_heading: "Configurações da pré-visualização"
@@ -5280,6 +5325,8 @@ pt-BR:
       floating_button_description: "Botão no canto que se expande em um formulário"
       sticky_bar_description: "Barra fixa no topo ou no rodapé da página"
       full_page_description: "Landing page dedicada ao seu formulário"
+      theme_heading: "Tema"
+      theme_intro: "Você pode mudar o tema e cada um dos seus valores depois."
       continue: "Continuar com o tipo selecionado"
 
   permission_presets:

@@ -228,8 +228,13 @@ fr:
               must_belong_to_the_same_channel: "doit appartenir au même canal"
             welcome_email_template:
               must_belong_to_the_same_channel: "doit appartenir au même canal"
+            cover_image:
+              not_a_picture: "doit être un fichier JPEG, PNG, WebP ou GIF"
+              too_large: "doit faire 5 Mo ou moins"
             theme_settings:
               style_value_not_allowed: "%{setting} contient des caractères non autorisés dans une valeur de style"
+              design_value_not_known: "%{setting} doit être l'une de ces valeurs : %{allowed}"
+              unknown_theme: "le thème %{value} est inconnu. Utilisez l'un de ceux-ci : %{allowed}"
             trigger_settings:
               unknown_frequency: "la fréquence %{value} est inconnue. Utilisez une de ces valeurs : %{allowed}"
             opt_in_post_submission_blocks:
@@ -4813,9 +4818,49 @@ fr:
         embed_code: "Code d'intégration"
         javascript_embed: "Intégration JavaScript"
         direct_link: "Lien direct"
+      theme_gallery:
+        heading: "Thèmes"
+        intro: "Sélectionnez un thème pour donner au formulaire ses couleurs, ses polices et ses formes. Les champs ci-dessous permettent de modifier chaque valeur."
+      theme_design:
+        heading: "Design"
+        layout: "Disposition"
+        layout_hint: "Bandeau de couleur et Divisé affichent le titre et le texte placés avant le premier champ à part des champs."
+        layout_options:
+          card: "Carte"
+          band: "Bandeau de couleur"
+          split: "Divisé avec image"
+          inline: "Ligne"
+        choice_style: "Style des choix"
+        choice_style_hint: "Pour deux cases à cocher ou sujets facultatifs ou plus à la suite."
+        choice_style_options:
+          list: "Liste"
+          pills: "Pastilles"
+          cards: "Cartes"
+        button_style: "Style du bouton"
+        button_style_hint: "La forme et le remplissage du bouton."
+        button_style_options:
+          theme: "Selon le thème"
+          pill: "Pastille"
+          outline: "Contour"
+        cover_image: "Image de couverture"
+        cover_image_hint: "Pour les dispositions Divisé et Bandeau de couleur. JPEG, PNG, WebP ou GIF, 5 Mo au maximum."
+        cover_image_current: "Fichier actuel : %{name}"
+        remove_cover_image: "Retirer l'image de couverture"
+      theme_button:
+        heading: "Bouton et angles"
+        button_background: "Couleur du bouton"
+        button_background_hint: "Laissez vide pour utiliser la couleur principale."
+        button_text: "Couleur du texte du bouton"
+        input_radius: "Angles des champs"
+        button_radius: "Angles du bouton"
+        radius_from_box: "La moitié des angles du cadre"
+        radius_round: "Rond"
       theme_editor:
+        heading_font_family: "Police du titre"
+        heading_font_same: "La même que la police du texte"
+        shadow_theme: "Selon le thème"
         brand_kit_title: "Charte graphique."
-        brand_kit_html: "%{title} Reprend votre couleur d'accent, les couleurs du texte, la police et l'arrondi des angles depuis %{link}. Les autres couleurs, tailles et effets du formulaire restent inchangés."
+        brand_kit_html: "%{title} Reprend vos couleurs, la police et l'arrondi des angles depuis %{link}. Les autres tailles et effets du formulaire restent inchangés."
         brand_kit_link: "Paramètres → Charte graphique"
         apply_brand_kit: "Appliquer la charte graphique"
         preview_heading: "Paramètres de l'aperçu"
@@ -5281,6 +5326,8 @@ fr:
       floating_button_description: "Bouton en coin qui s'ouvre sur un formulaire"
       sticky_bar_description: "Barre fixe en haut ou en bas de la page"
       full_page_description: "Page d'atterrissage dédiée à votre formulaire"
+      theme_heading: "Thème"
+      theme_intro: "Vous pourrez modifier le thème et chacune de ses valeurs plus tard."
       continue: "Continuer avec le type choisi"
 
   permission_presets:

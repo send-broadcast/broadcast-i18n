@@ -227,8 +227,13 @@ sv:
               must_belong_to_the_same_channel: "måste tillhöra samma kanal"
             welcome_email_template:
               must_belong_to_the_same_channel: "måste tillhöra samma kanal"
+            cover_image:
+              not_a_picture: "måste vara en JPEG-, PNG-, WebP- eller GIF-fil"
+              too_large: "får vara högst 5 MB"
             theme_settings:
               style_value_not_allowed: "%{setting} innehåller tecken som inte är tillåtna i ett stilvärde"
+              design_value_not_known: "%{setting} måste vara något av: %{allowed}"
+              unknown_theme: "temat %{value} är inte känt. Använd något av: %{allowed}"
             trigger_settings:
               unknown_frequency: "frekvensen %{value} är okänd. Använd ett av dessa värden: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4812,9 +4817,49 @@ sv:
         embed_code: "Inbäddningskod"
         javascript_embed: "JavaScript-inbäddning"
         direct_link: "Direktlänk"
+      theme_gallery:
+        heading: "Teman"
+        intro: "Välj ett tema för att ge formuläret färger, typsnitt och former. Med fälten nedan ändrar du varje värde."
+      theme_design:
+        heading: "Design"
+        layout: "Layout"
+        layout_hint: "Färgband och Delad visar rubriken och texten före det första fältet skilt från fälten."
+        layout_options:
+          card: "Kort"
+          band: "Färgband"
+          split: "Delad med bild"
+          inline: "Rad"
+        choice_style: "Valstil"
+        choice_style_hint: "För två eller fler valfria kryssrutor eller ämnen i rad."
+        choice_style_options:
+          list: "Lista"
+          pills: "Piller"
+          cards: "Kort"
+        button_style: "Knappstil"
+        button_style_hint: "Knappens form och fyllning."
+        button_style_options:
+          theme: "Från temat"
+          pill: "Piller"
+          outline: "Kontur"
+        cover_image: "Omslagsbild"
+        cover_image_hint: "För layouterna Delad och Färgband. JPEG, PNG, WebP eller GIF, högst 5 MB."
+        cover_image_current: "Nuvarande fil: %{name}"
+        remove_cover_image: "Ta bort omslagsbilden"
+      theme_button:
+        heading: "Knapp och hörn"
+        button_background: "Knappfärg"
+        button_background_hint: "Lämna tomt för att använda primärfärgen."
+        button_text: "Knappens textfärg"
+        input_radius: "Inmatningsfältens hörn"
+        button_radius: "Knappens hörn"
+        radius_from_box: "Hälften av rutans hörn"
+        radius_round: "Rund"
       theme_editor:
+        heading_font_family: "Typsnitt för rubrik"
+        heading_font_same: "Samma som textens typsnitt"
+        shadow_theme: "Från temat"
         brand_kit_title: "Varumärkeskit."
-        brand_kit_html: "%{title} Kopierar accentfärg, textfärger, typsnitt och hörnradie från %{link}. Formulärets övriga färger, storlekar och effekter förblir oförändrade."
+        brand_kit_html: "%{title} Kopierar dina färger, typsnitt och hörnradie från %{link}. Formulärets övriga storlekar och effekter förblir oförändrade."
         brand_kit_link: "Inställningar → Varumärkeskit"
         apply_brand_kit: "Använd varumärkeskit"
         preview_heading: "Inställningar för förhandsvisning"
@@ -5280,6 +5325,8 @@ sv:
       floating_button_description: "Hörnknapp som fälls ut till ett formulär"
       sticky_bar_description: "Fast fält högst upp eller längst ned på sidan"
       full_page_description: "Egen landningssida för ditt formulär"
+      theme_heading: "Tema"
+      theme_intro: "Du kan ändra temat och vart och ett av dess värden senare."
       continue: "Fortsätt med vald typ"
 
   permission_presets:

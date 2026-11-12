@@ -208,8 +208,13 @@ en:
               must_belong_to_the_same_channel: "must belong to the same channel"
             welcome_email_template:
               must_belong_to_the_same_channel: "must belong to the same channel"
+            cover_image:
+              not_a_picture: "must be a JPEG, PNG, WebP or GIF file"
+              too_large: "must be 5 MB or smaller"
             theme_settings:
               style_value_not_allowed: "%{setting} contains characters that are not allowed in a style value"
+              design_value_not_known: "%{setting} must be one of: %{allowed}"
+              unknown_theme: "theme %{value} is not known. Use one of: %{allowed}"
             trigger_settings:
               unknown_frequency: "frequency %{value} is not known. Use one of: %{allowed}"
             opt_in_post_submission_blocks:
@@ -4794,9 +4799,49 @@ en:
         embed_code: "Embed Code"
         javascript_embed: "JavaScript Embed"
         direct_link: "Direct Link"
+      theme_gallery:
+        heading: "Themes"
+        intro: "Select a theme to give the form its colours, fonts and shapes. The fields below let you change each value."
+      theme_design:
+        heading: "Design"
+        layout: "Layout"
+        layout_hint: "Colour band and Split show the heading and text before the first field apart from the fields."
+        layout_options:
+          card: "Card"
+          band: "Colour band"
+          split: "Split with image"
+          inline: "Inline row"
+        choice_style: "Choice style"
+        choice_style_hint: "For two or more optional checkboxes or topics in a row."
+        choice_style_options:
+          list: "List"
+          pills: "Pills"
+          cards: "Cards"
+        button_style: "Button style"
+        button_style_hint: "The shape and fill of the button."
+        button_style_options:
+          theme: "From theme"
+          pill: "Pill"
+          outline: "Outline"
+        cover_image: "Cover image"
+        cover_image_hint: "For the Split and Colour band layouts. JPEG, PNG, WebP or GIF, 5 MB or smaller."
+        cover_image_current: "Current file: %{name}"
+        remove_cover_image: "Remove the cover image"
+      theme_button:
+        heading: "Button and corners"
+        button_background: "Button colour"
+        button_background_hint: "Leave empty to use the primary colour."
+        button_text: "Button text colour"
+        input_radius: "Input corners"
+        button_radius: "Button corners"
+        radius_from_box: "Half of the box corners"
+        radius_round: "Round"
       theme_editor:
+        heading_font_family: "Heading font"
+        heading_font_same: "Same as the text font"
+        shadow_theme: "From theme"
         brand_kit_title: "Brand kit."
-        brand_kit_html: "%{title} Copies your accent, text colours, font and corner radius from %{link}. The form's other colours, sizes and effects stay as they are."
+        brand_kit_html: "%{title} Copies your colours, font and corner radius from %{link}. The form's other sizes and effects stay as they are."
         brand_kit_link: "Settings → Brand Kit"
         apply_brand_kit: "Apply brand kit"
         preview_heading: "Preview Settings"
@@ -5262,6 +5307,8 @@ en:
       floating_button_description: "Corner button that expands into a form"
       sticky_bar_description: "Fixed bar at top or bottom of the page"
       full_page_description: "Dedicated landing page for your form"
+      theme_heading: "Theme"
+      theme_intro: "You can change the theme and each of its values later."
       continue: "Continue with Selected Type"
 
   permission_presets:
