@@ -5400,6 +5400,7 @@ sv:
       permission_to_tokens_read: "Visa API-token"
       permission_to_tokens_write: "Skapa och hantera API-token"
       permission_to_tokens_refresh: "Förnya API-token"
+      permission_to_developers_read: "Använda utvecklarverktygen"
       permission_to_file_assets_read: "Visa filer"
       permission_to_file_assets_write: "Ladda upp och hantera filer"
       permission_to_transactionals_read: "Visa transaktionsmejl"

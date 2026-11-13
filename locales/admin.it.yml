@@ -5398,6 +5398,7 @@ it:
       permission_to_tokens_read: "Visualizzare i token API"
       permission_to_tokens_write: "Creare e gestire token API"
       permission_to_tokens_refresh: "Rigenerare i token API"
+      permission_to_developers_read: "Usare gli strumenti per sviluppatori"
       permission_to_file_assets_read: "Visualizzare i file"
       permission_to_file_assets_write: "Caricare e gestire file"
       permission_to_transactionals_read: "Visualizzare le email transazionali"

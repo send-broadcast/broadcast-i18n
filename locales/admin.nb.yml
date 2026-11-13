@@ -5400,6 +5400,7 @@ nb:
       permission_to_tokens_read: "Se API-tokener"
       permission_to_tokens_write: "Opprette og administrere API-tokener"
       permission_to_tokens_refresh: "Fornye API-tokener"
+      permission_to_developers_read: "Bruke utviklerverktøyene"
       permission_to_file_assets_read: "Se filer"
       permission_to_file_assets_write: "Laste opp og administrere filer"
       permission_to_transactionals_read: "Se transaksjonelle e-poster"

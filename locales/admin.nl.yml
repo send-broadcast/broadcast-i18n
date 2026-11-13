@@ -5402,6 +5402,7 @@ nl:
       permission_to_tokens_read: "API-tokens bekijken"
       permission_to_tokens_write: "API-tokens aanmaken en beheren"
       permission_to_tokens_refresh: "API-tokens vernieuwen"
+      permission_to_developers_read: "De ontwikkelaarstools gebruiken"
       permission_to_file_assets_read: "Bestanden bekijken"
       permission_to_file_assets_write: "Bestanden uploaden en beheren"
       permission_to_transactionals_read: "Transactionele e-mails bekijken"

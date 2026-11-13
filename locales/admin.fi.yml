@@ -5401,6 +5401,7 @@ fi:
       permission_to_tokens_read: "Tarkastele API-tunnuksia"
       permission_to_tokens_write: "Luo ja hallitse API-tunnuksia"
       permission_to_tokens_refresh: "Uudista API-tunnuksia"
+      permission_to_developers_read: "Käytä kehittäjätyökaluja"
       permission_to_file_assets_read: "Tarkastele tiedostoja"
       permission_to_file_assets_write: "Lataa ja hallitse tiedostoja"
       permission_to_transactionals_read: "Tarkastele transaktiosähköposteja"

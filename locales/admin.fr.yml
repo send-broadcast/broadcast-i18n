@@ -5401,6 +5401,7 @@ fr:
       permission_to_tokens_read: "Voir les jetons API"
       permission_to_tokens_write: "Créer et gérer des jetons API"
       permission_to_tokens_refresh: "Régénérer les jetons API"
+      permission_to_developers_read: "Utiliser les outils pour développeurs"
       permission_to_file_assets_read: "Voir les fichiers"
       permission_to_file_assets_write: "Envoyer et gérer des fichiers"
       permission_to_transactionals_read: "Voir les e-mails transactionnels"

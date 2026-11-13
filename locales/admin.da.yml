@@ -5400,6 +5400,7 @@ da:
       permission_to_tokens_read: "Se API-tokens"
       permission_to_tokens_write: "Opret og administrer API-tokens"
       permission_to_tokens_refresh: "Forny API-tokens"
+      permission_to_developers_read: "Brug udviklerværktøjerne"
       permission_to_file_assets_read: "Se filer"
       permission_to_file_assets_write: "Upload og administrer filer"
       permission_to_transactionals_read: "Se transaktionsmails"

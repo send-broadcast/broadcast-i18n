@@ -5590,6 +5590,7 @@ pl:
       permission_to_tokens_read: "Wyświetlanie tokenów API"
       permission_to_tokens_write: "Tworzenie tokenów API i zarządzanie nimi"
       permission_to_tokens_refresh: "Odświeżanie tokenów API"
+      permission_to_developers_read: "Korzystanie z narzędzi dla programistów"
       permission_to_file_assets_read: "Wyświetlanie plików"
       permission_to_file_assets_write: "Przesyłanie plików i zarządzanie nimi"
       permission_to_transactionals_read: "Wyświetlanie e-maili transakcyjnych"
