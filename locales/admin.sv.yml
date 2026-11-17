@@ -9518,7 +9518,7 @@ sv:
         permission_to_segments_write: "Skapa och redigera segment"
         permission_to_tokens_read: "Visa API-token"
         permission_to_tokens_write: "Skapa och hantera API-token"
-        permission_to_developers_read: "Använda utvecklarverktygen (logg över API-förfrågningar, händelser och konsol)"
+        permission_to_developers_read: "Använda utvecklarverktygen: alla API-förfrågningar och händelser i den här kanalen, med prenumerantdata"
         permission_to_file_assets_read: "Visa filer"
         permission_to_file_assets_write: "Ladda upp och hantera filer"
         permission_to_transactionals_read: "Visa transaktionsmejl och deras status"

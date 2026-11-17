@@ -9870,7 +9870,7 @@ pl:
         permission_to_segments_write: "Tworzenie i edycja segmentów"
         permission_to_tokens_read: "Wyświetlanie tokenów API"
         permission_to_tokens_write: "Tworzenie tokenów API i zarządzanie nimi"
-        permission_to_developers_read: "Korzystanie z narzędzi dla programistów (dziennik żądań API, zdarzenia i konsola)"
+        permission_to_developers_read: "Korzystanie z narzędzi dla programistów: wszystkie żądania API i zdarzenia tego kanału, z danymi subskrybentów"
         permission_to_file_assets_read: "Wyświetlanie plików"
         permission_to_file_assets_write: "Przesyłanie plików i zarządzanie nimi"
         permission_to_transactionals_read: "Wyświetlanie e-maili transakcyjnych i ich stanu"

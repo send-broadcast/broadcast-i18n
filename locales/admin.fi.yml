@@ -9519,7 +9519,7 @@ fi:
         permission_to_segments_write: "Luo ja muokkaa segmenttejä"
         permission_to_tokens_read: "Tarkastele API-tunnuksia"
         permission_to_tokens_write: "Luo ja hallitse API-tunnuksia"
-        permission_to_developers_read: "Käytä kehittäjätyökaluja (API-pyyntöloki, tapahtumat ja konsoli)"
+        permission_to_developers_read: "Käytä kehittäjätyökaluja: kaikki tämän kanavan API-pyynnöt ja tapahtumat tilaajatietoineen"
         permission_to_file_assets_read: "Tarkastele tiedostoja"
         permission_to_file_assets_write: "Lataa ja hallitse tiedostoja"
         permission_to_transactionals_read: "Tarkastele transaktiosähköposteja ja niiden tilaa"

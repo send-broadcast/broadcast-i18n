@@ -9519,7 +9519,7 @@ fr:
         permission_to_segments_write: "Créer et modifier des segments"
         permission_to_tokens_read: "Voir les jetons API"
         permission_to_tokens_write: "Créer et gérer des jetons API"
-        permission_to_developers_read: "Utiliser les outils pour développeurs (journal des requêtes API, événements et console)"
+        permission_to_developers_read: "Utiliser les outils pour développeurs : toutes les requêtes API et tous les événements de ce canal, avec les données des abonnés"
         permission_to_file_assets_read: "Voir les fichiers"
         permission_to_file_assets_write: "Envoyer et gérer des fichiers"
         permission_to_transactionals_read: "Voir les e-mails transactionnels et leur état"
