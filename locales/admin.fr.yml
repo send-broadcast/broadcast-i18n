@@ -3538,6 +3538,7 @@ fr:
         path: "Le chemin doit être celui de l'opération : %{path}"
         confirm: "Cette requête modifie des données. Cochez la case pour confirmer, puis exécutez-la à nouveau."
         json: "Le corps n'est pas un JSON valide."
+        timeout: "La requête a pris plus de %{seconds} secondes. Elle peut encore se terminer : cherchez-la dans Logs."
       show:
         operation: "Opération"
         token: "Jeton"

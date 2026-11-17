@@ -3537,6 +3537,7 @@ sv:
         path: "Sökvägen måste vara operationens sökväg: %{path}"
         confirm: "Den här förfrågan ändrar data. Markera rutan för att bekräfta och kör den igen."
         json: "Innehållet är inte giltig JSON."
+        timeout: "Förfrågan tog längre tid än %{seconds} sekunder. Den kan fortfarande slutföras: leta efter den i Logs."
       show:
         operation: "Operation"
         token: "Token"

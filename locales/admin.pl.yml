@@ -3653,6 +3653,7 @@ pl:
         path: "Ścieżka musi być ścieżką operacji: %{path}"
         confirm: "To żądanie zmienia dane. Zaznacz pole, aby potwierdzić, i wykonaj je ponownie."
         json: "Treść nie jest poprawnym JSON-em."
+        timeout: "Żądanie trwało dłużej niż %{seconds} s. Może się jeszcze zakończyć: poszukaj go w Logs."
       show:
         operation: "Operacja"
         token: "Token"

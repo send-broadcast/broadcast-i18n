@@ -3539,6 +3539,7 @@ nl:
         path: "Het pad moet het pad van de bewerking zijn: %{path}"
         confirm: "Dit verzoek wijzigt gegevens. Vink het vakje aan om te bevestigen en voer het opnieuw uit."
         json: "De inhoud is geen geldige JSON."
+        timeout: "Het verzoek duurde langer dan %{seconds} seconden. Het kan nog klaar komen: zoek het op in Logs."
       show:
         operation: "Bewerking"
         token: "Token"

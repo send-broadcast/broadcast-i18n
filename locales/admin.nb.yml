@@ -3537,6 +3537,7 @@ nb:
         path: "Stien må være operasjonens sti: %{path}"
         confirm: "Denne forespørselen endrer data. Kryss av i boksen for å bekrefte, og kjør den på nytt."
         json: "Innholdet er ikke gyldig JSON."
+        timeout: "Forespørselen tok lengre tid enn %{seconds} sekunder. Den kan fortsatt bli fullført: se etter den i Logs."
       show:
         operation: "Operasjon"
         token: "Token"

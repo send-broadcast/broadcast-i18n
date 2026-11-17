@@ -3518,6 +3518,7 @@ en:
         path: "The path must be the path of the operation: %{path}"
         confirm: "This request changes data. Tick the box to confirm, then run it again."
         json: "The body is not valid JSON."
+        timeout: "The request took longer than %{seconds} seconds. It may still finish: look for it in Logs."
       show:
         operation: "Operation"
         token: "Token"

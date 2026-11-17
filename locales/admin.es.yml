@@ -3538,6 +3538,7 @@ es:
         path: "La ruta debe ser la ruta de la operación: %{path}"
         confirm: "Esta solicitud cambia datos. Marca la casilla para confirmar y ejecútala de nuevo."
         json: "El cuerpo no es un JSON válido."
+        timeout: "La solicitud tardó más de %{seconds} segundos. Puede terminar todavía: búsquela en Logs."
       show:
         operation: "Operación"
         token: "Token"

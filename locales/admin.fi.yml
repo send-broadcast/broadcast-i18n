@@ -3538,6 +3538,7 @@ fi:
         path: "Polun on oltava toiminnon polku: %{path}"
         confirm: "Tämä pyyntö muuttaa tietoja. Vahvista valitsemalla ruutu ja suorita pyyntö uudelleen."
         json: "Sisältö ei ole kelvollista JSONia."
+        timeout: "Pyyntö kesti yli %{seconds} sekuntia. Se voi vielä valmistua: etsi se kohdasta Logs."
       show:
         operation: "Toiminto"
         token: "Tunnus"

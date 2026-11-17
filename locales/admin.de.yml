@@ -3539,6 +3539,7 @@ de:
         path: "Der Pfad muss der Pfad der Operation sein: %{path}"
         confirm: "Diese Anfrage ändert Daten. Setzen Sie das Häkchen zur Bestätigung und führen Sie sie erneut aus."
         json: "Der Inhalt ist kein gültiges JSON."
+        timeout: "Die Anfrage hat länger als %{seconds} Sekunden gedauert. Sie kann noch abgeschlossen werden: Suchen Sie sie unter Logs."
       show:
         operation: "Operation"
         token: "Token"

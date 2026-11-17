@@ -3535,6 +3535,7 @@ it:
         path: "Il percorso deve essere quello dell'operazione: %{path}"
         confirm: "Questa richiesta modifica i dati. Spunta la casella per confermare, poi eseguila di nuovo."
         json: "Il corpo non è un JSON valido."
+        timeout: "La richiesta ha impiegato più di %{seconds} secondi. Potrebbe ancora terminare: cercala in Logs."
       show:
         operation: "Operazione"
         token: "Token"

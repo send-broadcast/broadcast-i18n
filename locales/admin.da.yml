@@ -3537,6 +3537,7 @@ da:
         path: "Stien skal være operationens sti: %{path}"
         confirm: "Denne anmodning ændrer data. Sæt hak i feltet for at bekræfte, og kør den igen."
         json: "Indholdet er ikke gyldig JSON."
+        timeout: "Anmodningen tog længere end %{seconds} sekunder. Den kan stadig blive færdig: se efter den i Logs."
       show:
         operation: "Operation"
         token: "Token"
