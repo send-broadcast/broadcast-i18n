@@ -3682,7 +3682,6 @@ sv:
         postmark: "Postmark"
         mailgun: "Mailgun"
         inboxroad: "Inboxroad"
-        resend: "Resend"
         smtp_com: "SMTP.com"
         other: "Annan"
         test_server: "Testserver"

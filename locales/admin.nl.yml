@@ -3684,7 +3684,6 @@ nl:
         postmark: "Postmark"
         mailgun: "Mailgun"
         inboxroad: "Inboxroad"
-        resend: "Resend"
         smtp_com: "SMTP.com"
         other: "Overig"
         test_server: "Testserver"

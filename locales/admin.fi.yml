@@ -3683,7 +3683,6 @@ fi:
         postmark: "Postmark"
         mailgun: "Mailgun"
         inboxroad: "Inboxroad"
-        resend: "Resend"
         smtp_com: "SMTP.com"
         other: "Muu"
         test_server: "Testipalvelin"

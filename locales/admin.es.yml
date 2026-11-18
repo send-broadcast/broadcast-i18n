@@ -3683,7 +3683,6 @@ es:
         postmark: "Postmark"
         mailgun: "Mailgun"
         inboxroad: "Inboxroad"
-        resend: "Resend"
         smtp_com: "SMTP.com"
         other: "Otro"
         test_server: "Servidor de prueba"

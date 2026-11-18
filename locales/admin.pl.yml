@@ -3800,7 +3800,6 @@ pl:
         postmark: "Postmark"
         mailgun: "Mailgun"
         inboxroad: "Inboxroad"
-        resend: "Resend"
         smtp_com: "SMTP.com"
         other: "Inny"
         test_server: "Serwer testowy"

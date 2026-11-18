@@ -3663,7 +3663,6 @@ en:
         postmark: "Postmark"
         mailgun: "Mailgun"
         inboxroad: "Inboxroad"
-        resend: "Resend"
         smtp_com: "SMTP.com"
         other: "Other"
         test_server: "Test Server"
