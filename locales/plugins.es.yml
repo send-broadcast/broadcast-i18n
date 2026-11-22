@@ -40,6 +40,8 @@ es:
       label: "Endpoints de plugins"
       hint: "Los endpoints de la API de plugins que este token puede llamar, uno por línea (plugin/endpoint, o plugin/* para todos). El token también necesita el permiso que pide cada endpoint."
       needs: "necesita %{permission}"
+    settings_check:
+      no_answer: "El plugin no respondió a la prueba."
     permissions:
       settings:
         label: "Su propia configuración"
@@ -418,21 +420,64 @@ es:
       blocked: "Bloqueado por el directorio de plugins: %{reason}"
       auto_disabled: "Desactivado tras errores repetidos"
     plugin:
+      settings: "Ajustes"
+      setup_missing: "La configuración no está completa"
       turn_on: "Activar %{name}"
       turn_off: "Desactivar %{name}"
       "on": "Activado"
       "off": "Desactivado"
-      configure: "Configuración y permisos"
-      "yes": "Sí"
-      "no": "No"
-      secret_set: "Guardado (oculto)"
-      secret_hint: "Secreto. Déjalo vacío para conservar el valor guardado."
-      save_settings: "Guardar configuración"
       granted: "Activado: %{value}"
       granted_on: "activado"
       revoke: "Desactivar"
       grant: "Activar"
       grant_hint: "Permiso ampliado. Está desactivado hasta que lo actives para este canal."
+  plugin_settings:
+    tabs:
+      settings: "Ajustes"
+      permissions: "Permisos"
+      logs: "Registros"
+    header:
+      "on": "Activado en este canal"
+      "off": "Desactivado en este canal"
+      turn_on: "Activar en este canal"
+      turn_off: "Desactivar en este canal"
+    test:
+      not_on: "Active primero el plugin en este canal. La prueba se ejecuta en el plugin."
+    show:
+      settings: "Ajustes"
+      other_settings: "Otros ajustes"
+      empty: "Este plugin no tiene ajustes."
+      missing:
+        one: "La configuración no está completa: 1 ajuste obligatorio no tiene valor."
+        other: "La configuración no está completa: %{count} ajustes obligatorios no tienen valor."
+      recommended: "Recomendado"
+      secret_saved: "Hay un valor guardado. Escriba uno nuevo para reemplazarlo."
+      secret_hint: "Secreto. Broadcast lo guarda cifrado y no lo vuelve a mostrar."
+      test: "Probar la conexión"
+      test_needs_on: "Guarde los ajustes y active el plugin. Después podrá probar la conexión."
+      check_ok: "La conexión funciona."
+      check_failed: "La conexión no funciona."
+      channel_only: "Estos ajustes son solo para el canal %{channel}."
+      discard: "Descartar cambios"
+      save: "Guardar ajustes"
+      setup: "Configuración"
+      connection_works: "La conexión funciona"
+      done: "Hecho"
+      not_done: "Pendiente"
+      open_page: "Ir a %{title}"
+      can: "Qué puede hacer este plugin"
+      can_basic: "Guarda sus propios ajustes, datos y registros. No lee nada de su canal."
+      all_permissions: "Ver todos los permisos"
+      help_title: "¿Necesita ayuda?"
+      help_text: "La guía explica cómo configurar y usar %{name}."
+      help_link: "Leer la guía de %{name}"
+    permissions:
+      title: "Permisos"
+      intro: "Lo que usted aprobó para este plugin en este servidor. No puede hacer nada más."
+      elevated_title: "Permisos elevados en este canal"
+      host: "Host privado y puerto"
+    logs:
+      empty: "No hay líneas de registro en este canal en los últimos 30 días."
   layouts:
     sidebar:
       icon_rail:

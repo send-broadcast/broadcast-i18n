@@ -40,6 +40,8 @@ nl:
       label: "Plugin-endpoints"
       hint: "De plugin-API-endpoints die dit token mag aanroepen, één per regel (plugin/endpoint, of plugin/* voor alle). Het token heeft ook het recht nodig dat elk endpoint vraagt."
       needs: "heeft %{permission} nodig"
+    settings_check:
+      no_answer: "De plug-in heeft de test niet beantwoord."
     permissions:
       settings:
         label: "Eigen instellingen"
@@ -418,21 +420,64 @@ nl:
       blocked: "Geblokkeerd door de plugincatalogus: %{reason}"
       auto_disabled: "Uitgeschakeld na herhaalde fouten"
     plugin:
+      settings: "Instellingen"
+      setup_missing: "De installatie is niet voltooid"
       turn_on: "%{name} inschakelen"
       turn_off: "%{name} uitschakelen"
       "on": "Aan"
       "off": "Uit"
-      configure: "Instellingen en rechten"
-      "yes": "Ja"
-      "no": "Nee"
-      secret_set: "Opgeslagen (verborgen)"
-      secret_hint: "Geheim. Laat het leeg om de opgeslagen waarde te behouden."
-      save_settings: "Instellingen opslaan"
       granted: "Ingeschakeld: %{value}"
       granted_on: "aan"
       revoke: "Uitschakelen"
       grant: "Inschakelen"
       grant_hint: "Uitgebreid recht. Het staat uit totdat je het voor dit kanaal inschakelt."
+  plugin_settings:
+    tabs:
+      settings: "Instellingen"
+      permissions: "Machtigingen"
+      logs: "Logboeken"
+    header:
+      "on": "Aan in dit kanaal"
+      "off": "Uit in dit kanaal"
+      turn_on: "Inschakelen in dit kanaal"
+      turn_off: "Uitschakelen in dit kanaal"
+    test:
+      not_on: "Schakel de plug-in eerst in dit kanaal in. De test draait in de plug-in."
+    show:
+      settings: "Instellingen"
+      other_settings: "Overige instellingen"
+      empty: "Deze plug-in heeft geen instellingen."
+      missing:
+        one: "De installatie is niet voltooid: 1 verplichte instelling heeft geen waarde."
+        other: "De installatie is niet voltooid: %{count} verplichte instellingen hebben geen waarde."
+      recommended: "Aanbevolen"
+      secret_saved: "Er is een waarde opgeslagen. Voer een nieuwe in om deze te vervangen."
+      secret_hint: "Geheim. Broadcast slaat de waarde versleuteld op en toont deze nooit meer."
+      test: "Verbinding testen"
+      test_needs_on: "Sla de instellingen op en schakel de plug-in in. Daarna kunt u de verbinding testen."
+      check_ok: "De verbinding werkt."
+      check_failed: "De verbinding werkt niet."
+      channel_only: "Deze instellingen gelden alleen voor het kanaal %{channel}."
+      discard: "Wijzigingen verwerpen"
+      save: "Instellingen opslaan"
+      setup: "Installatie"
+      connection_works: "Verbinding werkt"
+      done: "Klaar"
+      not_done: "Niet klaar"
+      open_page: "Ga naar %{title}"
+      can: "Wat deze plug-in kan doen"
+      can_basic: "De plug-in bewaart de eigen instellingen, gegevens en logboeken. De plug-in leest niets van uw kanaal."
+      all_permissions: "Alle machtigingen bekijken"
+      help_title: "Hulp nodig?"
+      help_text: "De handleiding legt uit hoe u %{name} instelt en gebruikt."
+      help_link: "Lees de handleiding van %{name}"
+    permissions:
+      title: "Machtigingen"
+      intro: "Wat u voor deze plug-in op deze server hebt goedgekeurd. Meer kan de plug-in niet doen."
+      elevated_title: "Uitgebreide machtigingen in dit kanaal"
+      host: "Privéhost en poort"
+    logs:
+      empty: "Geen logregels in dit kanaal in de laatste 30 dagen."
   layouts:
     sidebar:
       icon_rail:

@@ -40,6 +40,8 @@ de:
       label: "Plugin-Endpunkte"
       hint: "Die Plugin-API-Endpunkte, die dieser Token aufrufen darf, einer pro Zeile (plugin/endpunkt, oder plugin/* für alle). Der Token braucht außerdem die Berechtigung, die jeder Endpunkt verlangt."
       needs: "braucht %{permission}"
+    settings_check:
+      no_answer: "Das Plugin hat auf den Test nicht geantwortet."
     permissions:
       settings:
         label: "Eigene Einstellungen"
@@ -418,21 +420,64 @@ de:
       blocked: "Vom Plugin-Verzeichnis gesperrt: %{reason}"
       auto_disabled: "Nach wiederholten Fehlern abgeschaltet"
     plugin:
+      settings: "Einstellungen"
+      setup_missing: "Die Einrichtung ist nicht abgeschlossen"
       turn_on: "%{name} einschalten"
       turn_off: "%{name} ausschalten"
       "on": "An"
       "off": "Aus"
-      configure: "Einstellungen und Berechtigungen"
-      "yes": "Ja"
-      "no": "Nein"
-      secret_set: "Gespeichert (verborgen)"
-      secret_hint: "Geheim. Lassen Sie es leer, um den gespeicherten Wert zu behalten."
-      save_settings: "Einstellungen speichern"
       granted: "Eingeschaltet: %{value}"
       granted_on: "an"
       revoke: "Ausschalten"
       grant: "Einschalten"
       grant_hint: "Erweiterte Berechtigung. Sie ist aus, bis Sie sie für diesen Kanal einschalten."
+  plugin_settings:
+    tabs:
+      settings: "Einstellungen"
+      permissions: "Berechtigungen"
+      logs: "Protokolle"
+    header:
+      "on": "In diesem Kanal an"
+      "off": "In diesem Kanal aus"
+      turn_on: "In diesem Kanal einschalten"
+      turn_off: "In diesem Kanal ausschalten"
+    test:
+      not_on: "Schalten Sie das Plugin zuerst in diesem Kanal ein. Der Test läuft im Plugin."
+    show:
+      settings: "Einstellungen"
+      other_settings: "Weitere Einstellungen"
+      empty: "Dieses Plugin hat keine Einstellungen."
+      missing:
+        one: "Die Einrichtung ist nicht abgeschlossen: 1 Pflichteinstellung hat keinen Wert."
+        other: "Die Einrichtung ist nicht abgeschlossen: %{count} Pflichteinstellungen haben keinen Wert."
+      recommended: "Empfohlen"
+      secret_saved: "Ein Wert ist gespeichert. Geben Sie einen neuen ein, um ihn zu ersetzen."
+      secret_hint: "Geheim. Broadcast speichert den Wert verschlüsselt und zeigt ihn nie wieder an."
+      test: "Verbindung testen"
+      test_needs_on: "Speichern Sie die Einstellungen und schalten Sie das Plugin ein. Dann können Sie die Verbindung testen."
+      check_ok: "Die Verbindung funktioniert."
+      check_failed: "Die Verbindung funktioniert nicht."
+      channel_only: "Diese Einstellungen gelten nur für den Kanal %{channel}."
+      discard: "Änderungen verwerfen"
+      save: "Einstellungen speichern"
+      setup: "Einrichtung"
+      connection_works: "Verbindung funktioniert"
+      done: "Erledigt"
+      not_done: "Nicht erledigt"
+      open_page: "Zu %{title}"
+      can: "Was dieses Plugin tun kann"
+      can_basic: "Es speichert seine eigenen Einstellungen, Daten und Protokolle. Es liest nichts aus Ihrem Kanal."
+      all_permissions: "Alle Berechtigungen ansehen"
+      help_title: "Brauchen Sie Hilfe?"
+      help_text: "Die Anleitung erklärt, wie Sie %{name} einrichten und verwenden."
+      help_link: "Anleitung zu %{name} lesen"
+    permissions:
+      title: "Berechtigungen"
+      intro: "Was Sie für dieses Plugin auf diesem Server genehmigt haben. Mehr kann es nicht tun."
+      elevated_title: "Erweiterte Berechtigungen in diesem Kanal"
+      host: "Privater Host und Port"
+    logs:
+      empty: "Keine Protokollzeilen in diesem Kanal in den letzten 30 Tagen."
   layouts:
     sidebar:
       icon_rail:

@@ -40,6 +40,8 @@ fr:
       label: "Points de terminaison de plugins"
       hint: "Les points de terminaison de l'API des plugins que ce jeton peut appeler, un par ligne (plugin/point-de-terminaison, ou plugin/* pour tous). Le jeton a aussi besoin de l'autorisation demandée par chaque point de terminaison."
       needs: "nécessite %{permission}"
+    settings_check:
+      no_answer: "Le plugin n'a pas répondu au test."
     permissions:
       settings:
         label: "Ses propres paramètres"
@@ -418,21 +420,64 @@ fr:
       blocked: "Bloqué par l'annuaire des plugins : %{reason}"
       auto_disabled: "Désactivé après des erreurs répétées"
     plugin:
+      settings: "Réglages"
+      setup_missing: "La configuration n'est pas terminée"
       turn_on: "Activer %{name}"
       turn_off: "Désactiver %{name}"
       "on": "Activé"
       "off": "Désactivé"
-      configure: "Paramètres et autorisations"
-      "yes": "Oui"
-      "no": "Non"
-      secret_set: "Enregistré (masqué)"
-      secret_hint: "Secret. Laissez vide pour conserver la valeur enregistrée."
-      save_settings: "Enregistrer les paramètres"
       granted: "Activée : %{value}"
       granted_on: "activée"
       revoke: "Désactiver"
       grant: "Activer"
       grant_hint: "Autorisation étendue. Elle reste désactivée tant que vous ne l'activez pas pour ce canal."
+  plugin_settings:
+    tabs:
+      settings: "Réglages"
+      permissions: "Autorisations"
+      logs: "Journaux"
+    header:
+      "on": "Activé dans ce canal"
+      "off": "Désactivé dans ce canal"
+      turn_on: "Activer dans ce canal"
+      turn_off: "Désactiver dans ce canal"
+    test:
+      not_on: "Activez d'abord le plugin dans ce canal. Le test s'exécute dans le plugin."
+    show:
+      settings: "Réglages"
+      other_settings: "Autres réglages"
+      empty: "Ce plugin n'a aucun réglage."
+      missing:
+        one: "La configuration n'est pas terminée : 1 réglage obligatoire n'a pas de valeur."
+        other: "La configuration n'est pas terminée : %{count} réglages obligatoires n'ont pas de valeur."
+      recommended: "Recommandé"
+      secret_saved: "Une valeur est enregistrée. Saisissez-en une nouvelle pour la remplacer."
+      secret_hint: "Secret. Broadcast l'enregistre chiffré et ne l'affiche plus jamais."
+      test: "Tester la connexion"
+      test_needs_on: "Enregistrez les réglages et activez le plugin. Vous pourrez ensuite tester la connexion."
+      check_ok: "La connexion fonctionne."
+      check_failed: "La connexion ne fonctionne pas."
+      channel_only: "Ces réglages concernent uniquement le canal %{channel}."
+      discard: "Annuler les modifications"
+      save: "Enregistrer les réglages"
+      setup: "Configuration"
+      connection_works: "La connexion fonctionne"
+      done: "Terminé"
+      not_done: "Non terminé"
+      open_page: "Aller à %{title}"
+      can: "Ce que ce plugin peut faire"
+      can_basic: "Il conserve ses propres réglages, données et journaux. Il ne lit rien de votre canal."
+      all_permissions: "Voir toutes les autorisations"
+      help_title: "Besoin d'aide ?"
+      help_text: "Le guide explique comment configurer et utiliser %{name}."
+      help_link: "Lire le guide de %{name}"
+    permissions:
+      title: "Autorisations"
+      intro: "Ce que vous avez approuvé pour ce plugin sur ce serveur. Il ne peut rien faire d'autre."
+      elevated_title: "Autorisations élevées dans ce canal"
+      host: "Hôte privé et port"
+    logs:
+      empty: "Aucune ligne de journal dans ce canal au cours des 30 derniers jours."
   layouts:
     sidebar:
       icon_rail:

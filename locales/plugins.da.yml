@@ -40,6 +40,8 @@ da:
       label: "Plugin-endpoints"
       hint: "De plugin-API-endpoints, dette token må kalde, ét pr. linje (plugin/endpoint, eller plugin/* for alle). Tokenet skal også have den tilladelse, hvert endpoint kræver."
       needs: "kræver %{permission}"
+    settings_check:
+      no_answer: "Pluginet svarede ikke på testen."
     permissions:
       settings:
         label: "Egne indstillinger"
@@ -418,21 +420,64 @@ da:
       blocked: "Blokeret af plugin-kataloget: %{reason}"
       auto_disabled: "Slået fra efter gentagne fejl"
     plugin:
+      settings: "Indstillinger"
+      setup_missing: "Opsætningen er ikke færdig"
       turn_on: "Slå %{name} til"
       turn_off: "Slå %{name} fra"
       "on": "Til"
       "off": "Fra"
-      configure: "Indstillinger og tilladelser"
-      "yes": "Ja"
-      "no": "Nej"
-      secret_set: "Gemt (skjult)"
-      secret_hint: "Hemmelig. Lad feltet være tomt for at beholde den gemte værdi."
-      save_settings: "Gem indstillinger"
       granted: "Slået til: %{value}"
       granted_on: "til"
       revoke: "Slå fra"
       grant: "Slå til"
       grant_hint: "Udvidet tilladelse. Den er slået fra, indtil du slår den til for denne kanal."
+  plugin_settings:
+    tabs:
+      settings: "Indstillinger"
+      permissions: "Tilladelser"
+      logs: "Logfiler"
+    header:
+      "on": "Slået til i denne kanal"
+      "off": "Slået fra i denne kanal"
+      turn_on: "Slå til i denne kanal"
+      turn_off: "Slå fra i denne kanal"
+    test:
+      not_on: "Slå først pluginet til i denne kanal. Testen kører i pluginet."
+    show:
+      settings: "Indstillinger"
+      other_settings: "Andre indstillinger"
+      empty: "Dette plugin har ingen indstillinger."
+      missing:
+        one: "Opsætningen er ikke færdig: 1 påkrævet indstilling har ingen værdi."
+        other: "Opsætningen er ikke færdig: %{count} påkrævede indstillinger har ingen værdi."
+      recommended: "Anbefalet"
+      secret_saved: "En værdi er gemt. Indtast en ny for at erstatte den."
+      secret_hint: "Hemmelig. Broadcast gemmer den krypteret og viser den aldrig igen."
+      test: "Test forbindelsen"
+      test_needs_on: "Gem indstillingerne, og slå pluginet til. Derefter kan du teste forbindelsen."
+      check_ok: "Forbindelsen virker."
+      check_failed: "Forbindelsen virker ikke."
+      channel_only: "Disse indstillinger gælder kun for kanalen %{channel}."
+      discard: "Kassér ændringer"
+      save: "Gem indstillinger"
+      setup: "Opsætning"
+      connection_works: "Forbindelsen virker"
+      done: "Færdig"
+      not_done: "Ikke færdig"
+      open_page: "Gå til %{title}"
+      can: "Hvad dette plugin kan"
+      can_basic: "Det gemmer sine egne indstillinger, data og logfiler. Det læser intet fra din kanal."
+      all_permissions: "Se alle tilladelser"
+      help_title: "Brug for hjælp?"
+      help_text: "Vejledningen forklarer, hvordan du sætter %{name} op og bruger det."
+      help_link: "Læs vejledningen til %{name}"
+    permissions:
+      title: "Tilladelser"
+      intro: "Det, du har godkendt for dette plugin på denne server. Det kan ikke gøre andet."
+      elevated_title: "Udvidede tilladelser i denne kanal"
+      host: "Privat vært og port"
+    logs:
+      empty: "Ingen loglinjer i denne kanal i de sidste 30 dage."
   layouts:
     sidebar:
       icon_rail:

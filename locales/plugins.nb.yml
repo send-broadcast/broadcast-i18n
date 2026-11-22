@@ -40,6 +40,8 @@ nb:
       label: "Plugin-endepunkter"
       hint: "Endepunktene i plugin-API-et som dette tokenet kan kalle, ett per linje (plugin/endepunkt, eller plugin/* for alle). Tokenet trenger også tillatelsen hvert endepunkt krever."
       needs: "krever %{permission}"
+    settings_check:
+      no_answer: "Programtillegget svarte ikke på testen."
     permissions:
       settings:
         label: "Egne innstillinger"
@@ -418,21 +420,64 @@ nb:
       blocked: "Blokkert av plugin-katalogen: %{reason}"
       auto_disabled: "Slått av etter gjentatte feil"
     plugin:
+      settings: "Innstillinger"
+      setup_missing: "Oppsettet er ikke ferdig"
       turn_on: "Slå på %{name}"
       turn_off: "Slå av %{name}"
       "on": "På"
       "off": "Av"
-      configure: "Innstillinger og tillatelser"
-      "yes": "Ja"
-      "no": "Nei"
-      secret_set: "Lagret (skjult)"
-      secret_hint: "Hemmelig. La feltet stå tomt for å beholde den lagrede verdien."
-      save_settings: "Lagre innstillinger"
       granted: "Slått på: %{value}"
       granted_on: "på"
       revoke: "Slå av"
       grant: "Slå på"
       grant_hint: "Avansert tillatelse. Den er av til du slår den på for denne kanalen."
+  plugin_settings:
+    tabs:
+      settings: "Innstillinger"
+      permissions: "Tillatelser"
+      logs: "Logger"
+    header:
+      "on": "På i denne kanalen"
+      "off": "Av i denne kanalen"
+      turn_on: "Slå på i denne kanalen"
+      turn_off: "Slå av i denne kanalen"
+    test:
+      not_on: "Slå først på programtillegget i denne kanalen. Testen kjører i programtillegget."
+    show:
+      settings: "Innstillinger"
+      other_settings: "Andre innstillinger"
+      empty: "Dette programtillegget har ingen innstillinger."
+      missing:
+        one: "Oppsettet er ikke ferdig: 1 påkrevd innstilling har ingen verdi."
+        other: "Oppsettet er ikke ferdig: %{count} påkrevde innstillinger har ingen verdi."
+      recommended: "Anbefalt"
+      secret_saved: "En verdi er lagret. Skriv inn en ny for å erstatte den."
+      secret_hint: "Hemmelig. Broadcast lagrer den kryptert og viser den aldri igjen."
+      test: "Test tilkoblingen"
+      test_needs_on: "Lagre innstillingene og slå på programtillegget. Deretter kan du teste tilkoblingen."
+      check_ok: "Tilkoblingen virker."
+      check_failed: "Tilkoblingen virker ikke."
+      channel_only: "Disse innstillingene gjelder bare for kanalen %{channel}."
+      discard: "Forkast endringer"
+      save: "Lagre innstillinger"
+      setup: "Oppsett"
+      connection_works: "Tilkoblingen virker"
+      done: "Ferdig"
+      not_done: "Ikke ferdig"
+      open_page: "Gå til %{title}"
+      can: "Hva dette programtillegget kan gjøre"
+      can_basic: "Det lagrer sine egne innstillinger, data og logger. Det leser ingenting fra kanalen din."
+      all_permissions: "Se alle tillatelser"
+      help_title: "Trenger du hjelp?"
+      help_text: "Veiledningen forklarer hvordan du setter opp og bruker %{name}."
+      help_link: "Les veiledningen for %{name}"
+    permissions:
+      title: "Tillatelser"
+      intro: "Det du har godkjent for dette programtillegget på denne serveren. Det kan ikke gjøre noe annet."
+      elevated_title: "Utvidede tillatelser i denne kanalen"
+      host: "Privat vert og port"
+    logs:
+      empty: "Ingen logglinjer i denne kanalen de siste 30 dagene."
   layouts:
     sidebar:
       icon_rail:

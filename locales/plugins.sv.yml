@@ -40,6 +40,8 @@ sv:
       label: "Plugin-endpoints"
       hint: "De endpoints i plugin-API:t som denna token får anropa, en per rad (plugin/endpoint, eller plugin/* för alla). Token behöver också den behörighet som varje endpoint kräver."
       needs: "kräver %{permission}"
+    settings_check:
+      no_answer: "Tillägget svarade inte på testet."
     permissions:
       settings:
         label: "Egna inställningar"
@@ -418,21 +420,64 @@ sv:
       blocked: "Blockerat av pluginkatalogen: %{reason}"
       auto_disabled: "Avstängt efter upprepade fel"
     plugin:
+      settings: "Inställningar"
+      setup_missing: "Konfigurationen är inte klar"
       turn_on: "Slå på %{name}"
       turn_off: "Stäng av %{name}"
       "on": "På"
       "off": "Av"
-      configure: "Inställningar och behörigheter"
-      "yes": "Ja"
-      "no": "Nej"
-      secret_set: "Sparat (dolt)"
-      secret_hint: "Hemligt. Lämna tomt för att behålla det sparade värdet."
-      save_settings: "Spara inställningar"
       granted: "Påslagen: %{value}"
       granted_on: "på"
       revoke: "Stäng av"
       grant: "Slå på"
       grant_hint: "Utökad behörighet. Den är av tills du slår på den för den här kanalen."
+  plugin_settings:
+    tabs:
+      settings: "Inställningar"
+      permissions: "Behörigheter"
+      logs: "Loggar"
+    header:
+      "on": "På i den här kanalen"
+      "off": "Av i den här kanalen"
+      turn_on: "Slå på i den här kanalen"
+      turn_off: "Slå av i den här kanalen"
+    test:
+      not_on: "Slå först på tillägget i den här kanalen. Testet körs i tillägget."
+    show:
+      settings: "Inställningar"
+      other_settings: "Övriga inställningar"
+      empty: "Det här tillägget har inga inställningar."
+      missing:
+        one: "Konfigurationen är inte klar: 1 obligatorisk inställning saknar värde."
+        other: "Konfigurationen är inte klar: %{count} obligatoriska inställningar saknar värde."
+      recommended: "Rekommenderas"
+      secret_saved: "Ett värde är sparat. Ange ett nytt för att ersätta det."
+      secret_hint: "Hemligt. Broadcast sparar det krypterat och visar det aldrig igen."
+      test: "Testa anslutningen"
+      test_needs_on: "Spara inställningarna och slå på tillägget. Sedan kan du testa anslutningen."
+      check_ok: "Anslutningen fungerar."
+      check_failed: "Anslutningen fungerar inte."
+      channel_only: "De här inställningarna gäller bara för kanalen %{channel}."
+      discard: "Ignorera ändringar"
+      save: "Spara inställningar"
+      setup: "Konfiguration"
+      connection_works: "Anslutningen fungerar"
+      done: "Klart"
+      not_done: "Inte klart"
+      open_page: "Gå till %{title}"
+      can: "Vad det här tillägget kan göra"
+      can_basic: "Det sparar sina egna inställningar, data och loggar. Det läser ingenting från din kanal."
+      all_permissions: "Visa alla behörigheter"
+      help_title: "Behöver du hjälp?"
+      help_text: "Guiden förklarar hur du konfigurerar och använder %{name}."
+      help_link: "Läs guiden för %{name}"
+    permissions:
+      title: "Behörigheter"
+      intro: "Det du har godkänt för det här tillägget på den här servern. Det kan inte göra något annat."
+      elevated_title: "Utökade behörigheter i den här kanalen"
+      host: "Privat värd och port"
+    logs:
+      empty: "Inga loggrader i den här kanalen de senaste 30 dagarna."
   layouts:
     sidebar:
       icon_rail:

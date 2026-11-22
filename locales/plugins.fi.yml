@@ -40,6 +40,8 @@ fi:
       label: "Pluginien päätepisteet"
       hint: "Pluginien API-päätepisteet, joita tämä tunnus saa kutsua, yksi riviä kohden (plugin/päätepiste tai plugin/* kaikille). Tunnus tarvitsee myös käyttöoikeuden, jota kukin päätepiste vaatii."
       needs: "vaatii: %{permission}"
+    settings_check:
+      no_answer: "Lisäosa ei vastannut testiin."
     permissions:
       settings:
         label: "Omat asetukset"
@@ -418,21 +420,64 @@ fi:
       blocked: "Plugin-hakemisto on estänyt: %{reason}"
       auto_disabled: "Kytketty pois toistuvien virheiden jälkeen"
     plugin:
+      settings: "Asetukset"
+      setup_missing: "Käyttöönotto ei ole valmis"
       turn_on: "Kytke %{name} päälle"
       turn_off: "Kytke %{name} pois"
       "on": "Päällä"
       "off": "Pois"
-      configure: "Asetukset ja käyttöoikeudet"
-      "yes": "Kyllä"
-      "no": "Ei"
-      secret_set: "Tallennettu (piilotettu)"
-      secret_hint: "Salainen. Jätä tyhjäksi, niin tallennettu arvo säilyy."
-      save_settings: "Tallenna asetukset"
       granted: "Päällä: %{value}"
       granted_on: "päällä"
       revoke: "Kytke pois"
       grant: "Kytke päälle"
       grant_hint: "Laajennettu käyttöoikeus. Se on pois päältä, kunnes kytket sen päälle tälle kanavalle."
+  plugin_settings:
+    tabs:
+      settings: "Asetukset"
+      permissions: "Käyttöoikeudet"
+      logs: "Lokit"
+    header:
+      "on": "Päällä tässä kanavassa"
+      "off": "Pois päältä tässä kanavassa"
+      turn_on: "Ota käyttöön tässä kanavassa"
+      turn_off: "Poista käytöstä tässä kanavassa"
+    test:
+      not_on: "Ota lisäosa ensin käyttöön tässä kanavassa. Testi ajetaan lisäosassa."
+    show:
+      settings: "Asetukset"
+      other_settings: "Muut asetukset"
+      empty: "Tällä lisäosalla ei ole asetuksia."
+      missing:
+        one: "Käyttöönotto ei ole valmis: 1 pakolliselta asetukselta puuttuu arvo."
+        other: "Käyttöönotto ei ole valmis: %{count} pakolliselta asetukselta puuttuu arvo."
+      recommended: "Suositeltu"
+      secret_saved: "Arvo on tallennettu. Korvaa se kirjoittamalla uusi."
+      secret_hint: "Salainen. Broadcast tallentaa sen salattuna eikä näytä sitä uudelleen."
+      test: "Testaa yhteys"
+      test_needs_on: "Tallenna asetukset ja ota lisäosa käyttöön. Sen jälkeen voit testata yhteyden."
+      check_ok: "Yhteys toimii."
+      check_failed: "Yhteys ei toimi."
+      channel_only: "Nämä asetukset koskevat vain kanavaa %{channel}."
+      discard: "Hylkää muutokset"
+      save: "Tallenna asetukset"
+      setup: "Käyttöönotto"
+      connection_works: "Yhteys toimii"
+      done: "Valmis"
+      not_done: "Ei valmis"
+      open_page: "Siirry kohteeseen %{title}"
+      can: "Mitä tämä lisäosa voi tehdä"
+      can_basic: "Se säilyttää omat asetuksensa, tietonsa ja lokinsa. Se ei lue mitään kanavastasi."
+      all_permissions: "Näytä kaikki käyttöoikeudet"
+      help_title: "Tarvitsetko apua?"
+      help_text: "Opas kertoo, miten %{name} otetaan käyttöön ja miten sitä käytetään."
+      help_link: "Lue opas: %{name}"
+    permissions:
+      title: "Käyttöoikeudet"
+      intro: "Mitä olet hyväksynyt tälle lisäosalle tällä palvelimella. Muuta se ei voi tehdä."
+      elevated_title: "Laajennetut käyttöoikeudet tässä kanavassa"
+      host: "Yksityinen isäntä ja portti"
+    logs:
+      empty: "Ei lokirivejä tässä kanavassa viimeisten 30 päivän ajalta."
   layouts:
     sidebar:
       icon_rail:

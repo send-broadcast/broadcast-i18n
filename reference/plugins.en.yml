@@ -40,6 +40,8 @@ en:
       label: "Plugin endpoints"
       hint: "The plugin API endpoints this token may call, one per line (plugin/endpoint, or plugin/* for all). The token also needs the permission each endpoint asks for."
       needs: "needs %{permission}"
+    settings_check:
+      no_answer: "The plugin did not answer the test."
     permissions:
       settings:
         label: "Its own settings"
@@ -422,17 +424,60 @@ en:
       turn_off: "Turn %{name} off"
       "on": "On"
       "off": "Off"
-      configure: "Settings and permissions"
-      "yes": "Yes"
-      "no": "No"
-      secret_set: "Saved (hidden)"
-      secret_hint: "Secret. Leave it empty to keep the saved value."
-      save_settings: "Save settings"
+      settings: "Settings"
+      setup_missing: "Setup is not complete"
       granted: "Turned on: %{value}"
       granted_on: "on"
       revoke: "Turn off"
       grant: "Turn on"
       grant_hint: "Elevated permission. It is off until you turn it on for this channel."
+  plugin_settings:
+    tabs:
+      settings: "Settings"
+      permissions: "Permissions"
+      logs: "Logs"
+    header:
+      "on": "On in this channel"
+      "off": "Off in this channel"
+      turn_on: "Turn on in this channel"
+      turn_off: "Turn off in this channel"
+    test:
+      not_on: "Turn the plugin on in this channel first. The test runs in the plugin."
+    show:
+      settings: "Settings"
+      other_settings: "Other settings"
+      empty: "This plugin has no settings."
+      missing:
+        one: "Setup is not complete: 1 required setting has no value."
+        other: "Setup is not complete: %{count} required settings have no value."
+      recommended: "Recommended"
+      secret_saved: "A value is saved. Enter a new one to replace it."
+      secret_hint: "Secret. Broadcast stores it encrypted and never shows it again."
+      test: "Test the connection"
+      test_needs_on: "Save the settings and turn the plugin on. Then you can test the connection."
+      check_ok: "The connection works."
+      check_failed: "The connection does not work."
+      channel_only: "These settings are for the channel %{channel} only."
+      discard: "Discard changes"
+      save: "Save settings"
+      setup: "Setup"
+      connection_works: "Connection works"
+      done: "Done"
+      not_done: "Not done"
+      open_page: "Go to %{title}"
+      can: "What this plugin can do"
+      can_basic: "It keeps its own settings, data and logs. It reads nothing of your channel."
+      all_permissions: "See all permissions"
+      help_title: "Need help?"
+      help_text: "The guide explains how to set up and use %{name}."
+      help_link: "Read the %{name} guide"
+    permissions:
+      title: "Permissions"
+      intro: "What you approved for this plugin on this server. It can do nothing else."
+      elevated_title: "Elevated permissions in this channel"
+      host: "Private host and port"
+    logs:
+      empty: "No log lines in this channel in the last 30 days."
   layouts:
     sidebar:
       icon_rail:

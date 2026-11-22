@@ -40,6 +40,8 @@ pl:
       label: "Endpointy pluginów"
       hint: "Endpointy API pluginów, które ten token może wywoływać, po jednym w wierszu (plugin/endpoint lub plugin/* dla wszystkich). Token potrzebuje też uprawnienia, którego wymaga każdy endpoint."
       needs: "wymaga %{permission}"
+    settings_check:
+      no_answer: "Wtyczka nie odpowiedziała na test."
     permissions:
       settings:
         label: "Własne ustawienia"
@@ -426,21 +428,66 @@ pl:
       blocked: "Zablokowany przez katalog pluginów: %{reason}"
       auto_disabled: "Wyłączony po powtarzających się błędach"
     plugin:
+      settings: "Ustawienia"
+      setup_missing: "Konfiguracja nie jest zakończona"
       turn_on: "Włącz %{name}"
       turn_off: "Wyłącz %{name}"
       "on": "Włączony"
       "off": "Wyłączony"
-      configure: "Ustawienia i uprawnienia"
-      "yes": "Tak"
-      "no": "Nie"
-      secret_set: "Zapisano (ukryte)"
-      secret_hint: "Tajne. Zostaw puste, aby zachować zapisaną wartość."
-      save_settings: "Zapisz ustawienia"
       granted: "Włączone: %{value}"
       granted_on: "włączone"
       revoke: "Wyłącz"
       grant: "Włącz"
       grant_hint: "Rozszerzone uprawnienie. Jest wyłączone, dopóki nie włączysz go dla tego kanału."
+  plugin_settings:
+    tabs:
+      settings: "Ustawienia"
+      permissions: "Uprawnienia"
+      logs: "Dzienniki"
+    header:
+      "on": "Włączona w tym kanale"
+      "off": "Wyłączona w tym kanale"
+      turn_on: "Włącz w tym kanale"
+      turn_off: "Wyłącz w tym kanale"
+    test:
+      not_on: "Najpierw włącz wtyczkę w tym kanale. Test działa we wtyczce."
+    show:
+      settings: "Ustawienia"
+      other_settings: "Pozostałe ustawienia"
+      empty: "Ta wtyczka nie ma ustawień."
+      missing:
+        one: "Konfiguracja nie jest zakończona: 1 wymagane ustawienie nie ma wartości."
+        few: "Konfiguracja nie jest zakończona: %{count} wymagane ustawienia nie mają wartości."
+        many: "Konfiguracja nie jest zakończona: %{count} wymaganych ustawień nie ma wartości."
+        other: "Konfiguracja nie jest zakończona: %{count} wymaganego ustawienia nie ma wartości."
+      recommended: "Zalecane"
+      secret_saved: "Wartość jest zapisana. Wpisz nową, aby ją zastąpić."
+      secret_hint: "Tajne. Broadcast zapisuje tę wartość w postaci zaszyfrowanej i nigdy więcej jej nie pokazuje."
+      test: "Sprawdź połączenie"
+      test_needs_on: "Zapisz ustawienia i włącz wtyczkę. Potem możesz sprawdzić połączenie."
+      check_ok: "Połączenie działa."
+      check_failed: "Połączenie nie działa."
+      channel_only: "Te ustawienia dotyczą tylko kanału %{channel}."
+      discard: "Odrzuć zmiany"
+      save: "Zapisz ustawienia"
+      setup: "Konfiguracja"
+      connection_works: "Połączenie działa"
+      done: "Gotowe"
+      not_done: "Niegotowe"
+      open_page: "Przejdź do: %{title}"
+      can: "Co może robić ta wtyczka"
+      can_basic: "Przechowuje własne ustawienia, dane i dzienniki. Nie czyta niczego z Twojego kanału."
+      all_permissions: "Zobacz wszystkie uprawnienia"
+      help_title: "Potrzebujesz pomocy?"
+      help_text: "Przewodnik wyjaśnia, jak skonfigurować wtyczkę %{name} i jak jej używać."
+      help_link: "Przeczytaj przewodnik: %{name}"
+    permissions:
+      title: "Uprawnienia"
+      intro: "To, co zostało zatwierdzone dla tej wtyczki na tym serwerze. Nic więcej nie może zrobić."
+      elevated_title: "Podwyższone uprawnienia w tym kanale"
+      host: "Prywatny host i port"
+    logs:
+      empty: "Brak wierszy dziennika w tym kanale z ostatnich 30 dni."
   layouts:
     sidebar:
       icon_rail:
