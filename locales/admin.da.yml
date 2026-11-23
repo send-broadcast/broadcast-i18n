@@ -4567,6 +4567,7 @@ da:
           total: "I alt"
           active: "Aktive"
           inactive: "Inaktive"
+          pending: "Afventer"
           add_subscriber: "Tilføj abonnent"
           all_subscribers: "Alle abonnenter"
           import_history: "Importhistorik"
@@ -8844,6 +8845,7 @@ da:
       joined: "Tilmeldt %{date}"
       email_confirmed: "E-mail bekræftet"
       unconfirmed: "Ikke bekræftet"
+      pending_confirmation: "Afventer bekræftelse"
       resubscribe: "Gentilmeld"
       send_email: "Send e-mail"
       add_to_sequence: "Føj til sekvens"
@@ -9043,6 +9045,7 @@ da:
       unsubscribed: "Afmeldt"
       active: "Aktiv"
       inactive: "Inaktiv"
+      pending: "Afventer"
     modal_form:
       submit: "Tilføj abonnent"
     edit_modal_form:

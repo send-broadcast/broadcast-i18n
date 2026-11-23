@@ -4569,6 +4569,7 @@ nl:
           total: "Totaal"
           active: "Actief"
           inactive: "Inactief"
+          pending: "In afwachting"
           add_subscriber: "Abonnee toevoegen"
           all_subscribers: "Alle abonnees"
           import_history: "Importgeschiedenis"
@@ -8846,6 +8847,7 @@ nl:
       joined: "Aangemeld op %{date}"
       email_confirmed: "E-mail bevestigd"
       unconfirmed: "Niet bevestigd"
+      pending_confirmation: "Bevestiging in afwachting"
       resubscribe: "Opnieuw aanmelden"
       send_email: "E-mail versturen"
       add_to_sequence: "Aan reeks toevoegen"
@@ -9045,6 +9047,7 @@ nl:
       unsubscribed: "Afgemeld"
       active: "Actief"
       inactive: "Inactief"
+      pending: "In afwachting"
     modal_form:
       submit: "Abonnee toevoegen"
     edit_modal_form:

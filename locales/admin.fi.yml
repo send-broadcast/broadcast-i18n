@@ -4568,6 +4568,7 @@ fi:
           total: "Yhteensä"
           active: "Aktiiviset"
           inactive: "Passiiviset"
+          pending: "Odottaa"
           add_subscriber: "Lisää tilaaja"
           all_subscribers: "Kaikki tilaajat"
           import_history: "Tuontihistoria"
@@ -8845,6 +8846,7 @@ fi:
       joined: "Liittynyt %{date}"
       email_confirmed: "Sähköposti vahvistettu"
       unconfirmed: "Vahvistamaton"
+      pending_confirmation: "Odottaa vahvistusta"
       resubscribe: "Tilaa uudelleen"
       send_email: "Lähetä sähköposti"
       add_to_sequence: "Lisää sarjaan"
@@ -9044,6 +9046,7 @@ fi:
       unsubscribed: "Peruttu"
       active: "Aktiivinen"
       inactive: "Passiivinen"
+      pending: "Odottaa"
     modal_form:
       submit: "Lisää tilaaja"
     edit_modal_form:

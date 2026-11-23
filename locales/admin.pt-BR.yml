@@ -4567,6 +4567,7 @@ pt-BR:
           total: "Total"
           active: "Ativos"
           inactive: "Inativos"
+          pending: "Pendente"
           add_subscriber: "Adicionar assinante"
           all_subscribers: "Todos os assinantes"
           import_history: "Histórico de importações"
@@ -8844,6 +8845,7 @@ pt-BR:
       joined: "Inscrição em %{date}"
       email_confirmed: "E-mail confirmado"
       unconfirmed: "Não confirmado"
+      pending_confirmation: "Confirmação pendente"
       resubscribe: "Reinscrever"
       send_email: "Enviar e-mail"
       add_to_sequence: "Adicionar à sequência"
@@ -9043,6 +9045,7 @@ pt-BR:
       unsubscribed: "Inscrição cancelada"
       active: "Ativo"
       inactive: "Inativo"
+      pending: "Pendente"
     modal_form:
       submit: "Adicionar assinante"
     edit_modal_form:

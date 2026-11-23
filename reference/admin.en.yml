@@ -4549,6 +4549,7 @@ en:
           total: "Total"
           active: "Active"
           inactive: "Inactive"
+          pending: "Pending"
           add_subscriber: "Add Subscriber"
           all_subscribers: "All Subscribers"
           import_history: "Import History"
@@ -8828,6 +8829,7 @@ en:
       joined: "Joined %{date}"
       email_confirmed: "Email confirmed"
       unconfirmed: "Unconfirmed"
+      pending_confirmation: "Pending confirmation"
       resubscribe: "Resubscribe"
       send_email: "Send Email"
       add_to_sequence: "Add to Sequence"
@@ -9027,6 +9029,7 @@ en:
       unsubscribed: "Unsubscribed"
       active: "Active"
       inactive: "Inactive"
+      pending: "Pending"
     modal_form:
       submit: "Add subscriber"
     edit_modal_form:

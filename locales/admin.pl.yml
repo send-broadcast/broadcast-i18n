@@ -4741,6 +4741,7 @@ pl:
           total: "Łącznie"
           active: "Aktywni"
           inactive: "Nieaktywni"
+          pending: "Oczekujące"
           add_subscriber: "Dodaj subskrybenta"
           all_subscribers: "Wszyscy subskrybenci"
           import_history: "Historia importów"
@@ -9166,6 +9167,7 @@ pl:
       joined: "Data zapisu: %{date}"
       email_confirmed: "E-mail potwierdzony"
       unconfirmed: "Niepotwierdzony"
+      pending_confirmation: "Oczekuje na potwierdzenie"
       resubscribe: "Zapisz ponownie"
       send_email: "Wyślij e-mail"
       add_to_sequence: "Dodaj do sekwencji"
@@ -9365,6 +9367,7 @@ pl:
       unsubscribed: "Wypisany"
       active: "Aktywny"
       inactive: "Nieaktywny"
+      pending: "Oczekujące"
     modal_form:
       submit: "Dodaj subskrybenta"
     edit_modal_form:

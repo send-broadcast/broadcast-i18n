@@ -4567,6 +4567,7 @@ sv:
           total: "Totalt"
           active: "Aktiva"
           inactive: "Inaktiva"
+          pending: "Väntande"
           add_subscriber: "Lägg till prenumerant"
           all_subscribers: "Alla prenumeranter"
           import_history: "Importhistorik"
@@ -8844,6 +8845,7 @@ sv:
       joined: "Registrerad %{date}"
       email_confirmed: "E-post bekräftad"
       unconfirmed: "Obekräftad"
+      pending_confirmation: "Väntar på bekräftelse"
       resubscribe: "Återregistrera"
       send_email: "Skicka mejl"
       add_to_sequence: "Lägg till i sekvens"
@@ -9043,6 +9045,7 @@ sv:
       unsubscribed: "Avregistrerad"
       active: "Aktiv"
       inactive: "Inaktiv"
+      pending: "Väntande"
     modal_form:
       submit: "Lägg till prenumerant"
     edit_modal_form:

@@ -4569,6 +4569,7 @@ de:
           total: "Gesamt"
           active: "Aktiv"
           inactive: "Inaktiv"
+          pending: "Ausstehend"
           add_subscriber: "Abonnent hinzufügen"
           all_subscribers: "Alle Abonnenten"
           import_history: "Importverlauf"
@@ -8846,6 +8847,7 @@ de:
       joined: "Angemeldet am %{date}"
       email_confirmed: "E-Mail bestätigt"
       unconfirmed: "Unbestätigt"
+      pending_confirmation: "Bestätigung ausstehend"
       resubscribe: "Wieder anmelden"
       send_email: "E-Mail senden"
       add_to_sequence: "Zu Sequenz hinzufügen"
@@ -9045,6 +9047,7 @@ de:
       unsubscribed: "Abgemeldet"
       active: "Aktiv"
       inactive: "Inaktiv"
+      pending: "Ausstehend"
     modal_form:
       submit: "Abonnent hinzufügen"
     edit_modal_form:

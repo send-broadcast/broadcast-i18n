@@ -4567,6 +4567,7 @@ nb:
           total: "Totalt"
           active: "Aktive"
           inactive: "Inaktive"
+          pending: "Venter"
           add_subscriber: "Legg til abonnent"
           all_subscribers: "Alle abonnenter"
           import_history: "Importhistorikk"
@@ -8844,6 +8845,7 @@ nb:
       joined: "Påmeldt %{date}"
       email_confirmed: "E-post bekreftet"
       unconfirmed: "Ubekreftet"
+      pending_confirmation: "Venter på bekreftelse"
       resubscribe: "Meld på igjen"
       send_email: "Send e-post"
       add_to_sequence: "Legg til i sekvens"
@@ -9043,6 +9045,7 @@ nb:
       unsubscribed: "Avmeldt"
       active: "Aktiv"
       inactive: "Inaktiv"
+      pending: "Venter"
     modal_form:
       submit: "Legg til abonnent"
     edit_modal_form:
