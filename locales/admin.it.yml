@@ -8841,6 +8841,7 @@ it:
           redacted: "Non puoi inviare email a %{name}."
         reason:
           reachable: "Niente blocca le campagne verso questo indirizzo."
+          reachable_plugins: "Broadcast non blocca le campagne verso questo indirizzo, ma %{plugins} può saltarlo quando una campagna viene inviata."
           unsubscribed: "L’iscrizione è stata annullata, quindi le campagne saltano questo indirizzo."
           inactive: "L’iscrizione è inattiva, quindi le campagne inviate a tutti saltano questo indirizzo."
           suppressed: "Questo indirizzo è escluso dalle email di marketing, quindi campagne ed email delle sequenze lo saltano."
@@ -8855,6 +8856,7 @@ it:
         suppression_none: "Nessuna"
         suppression_marketing: "Email di marketing"
         suppression_all: "Tutte le email"
+        send_plugins: "Plugin che possono saltarlo"
         to_everyone: "Campagne inviate a tutti"
         personal: "Email personali e transazionali"
         answer_yes: "Sì"

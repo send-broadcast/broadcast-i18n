@@ -8844,6 +8844,7 @@ fi:
           redacted: "Et voi lähettää sähköpostia. Vastaanottaja: %{name}."
         reason:
           reachable: "Mikään ei estä kampanjoita tähän osoitteeseen."
+          reachable_plugins: "Broadcast ei estä kampanjoita tähän osoitteeseen, mutta %{plugins} voi ohittaa osoitteen, kun kampanja lähetetään."
           unsubscribed: "Tilaus on peruutettu, joten kampanjat ohittavat osoitteen."
           inactive: "Tilaus on passiivinen, joten kaikille lähetettävät kampanjat ohittavat osoitteen."
           suppressed: "Osoite on markkinointiviestien estolistalla, joten kampanjat ja sarjojen viestit ohittavat sen."
@@ -8858,6 +8859,7 @@ fi:
         suppression_none: "Ei estoa"
         suppression_marketing: "Markkinointiviestit"
         suppression_all: "Kaikki sähköposti"
+        send_plugins: "Lisäosat, jotka voivat ohittaa sen"
         to_everyone: "Kampanjat kaikille"
         personal: "Henkilökohtainen ja transaktiosähköposti"
         answer_yes: "Kyllä"

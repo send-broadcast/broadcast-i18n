@@ -8843,6 +8843,7 @@ nb:
           redacted: "Du kan ikke sende e-post til %{name}."
         reason:
           reachable: "Ingenting blokkerer kampanjer til denne adressen."
+          reachable_plugins: "Broadcast blokkerer ikke kampanjer til denne adressen, men %{plugins} kan hoppe over adressen når en kampanje sendes."
           unsubscribed: "Adressen er avmeldt, så kampanjer hopper over den."
           inactive: "Abonnementet er inaktivt, så kampanjer til alle hopper over adressen."
           suppressed: "Adressen er sperret for markedsføring, så kampanjer og sekvens-e-post hopper over den."
@@ -8857,6 +8858,7 @@ nb:
         suppression_none: "Ingen"
         suppression_marketing: "Markedsføring"
         suppression_all: "All e-post"
+        send_plugins: "Programtillegg som kan hoppe over den"
         to_everyone: "Kampanjer til alle"
         personal: "Personlig og transaksjonell e-post"
         answer_yes: "Ja"

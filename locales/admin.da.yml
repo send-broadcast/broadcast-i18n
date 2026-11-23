@@ -8843,6 +8843,7 @@ da:
           redacted: "Du kan ikke sende e-mails til %{name}."
         reason:
           reachable: "Intet blokerer kampagner til denne adresse."
+          reachable_plugins: "Broadcast blokerer ikke kampagner til denne adresse, men %{plugins} kan springe adressen over, når en kampagne sendes."
           unsubscribed: "Adressen er afmeldt, så kampagner springer den over."
           inactive: "Abonnementet er inaktivt, så kampagner til alle springer adressen over."
           suppressed: "Adressen er spærret for marketingmails, så kampagner og sekvensmails springer den over."
@@ -8857,6 +8858,7 @@ da:
         suppression_none: "Ingen"
         suppression_marketing: "Marketingmails"
         suppression_all: "Alle e-mails"
+        send_plugins: "Plugins, der kan springe den over"
         to_everyone: "Kampagner til alle"
         personal: "Personlige mails og transaktionsmails"
         answer_yes: "Ja"

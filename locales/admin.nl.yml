@@ -8845,6 +8845,7 @@ nl:
           redacted: "Je kunt %{name} niet e-mailen."
         reason:
           reachable: "Niets blokkeert campagnes naar dit adres."
+          reachable_plugins: "Broadcast blokkeert geen campagnes naar dit adres, maar %{plugins} kan dit adres overslaan wanneer een campagne wordt verzonden."
           unsubscribed: "Dit adres is afgemeld, dus campagnes slaan het over."
           inactive: "Het abonnement is inactief, dus campagnes naar iedereen slaan dit adres over."
           suppressed: "Dit adres is geblokkeerd voor marketingmail, dus campagnes en e-mails uit reeksen slaan het over."
@@ -8859,6 +8860,7 @@ nl:
         suppression_none: "Geen"
         suppression_marketing: "Marketingmail"
         suppression_all: "Alle e-mail"
+        send_plugins: "Plug-ins die het kunnen overslaan"
         to_everyone: "Campagnes naar iedereen"
         personal: "Persoonlijke en transactionele e-mail"
         answer_yes: "Ja"

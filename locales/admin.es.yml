@@ -8844,6 +8844,7 @@ es:
           redacted: "No puedes enviar correos a %{name}."
         reason:
           reachable: "Nada bloquea las campañas a esta dirección."
+          reachable_plugins: "Broadcast no bloquea las campañas a esta dirección, pero %{plugins} puede omitirla cuando se envía una campaña."
           unsubscribed: "La suscripción está dada de baja, así que las campañas omiten esta dirección."
           inactive: "La suscripción está inactiva, así que las campañas para todos omiten esta dirección."
           suppressed: "Esta dirección está excluida del correo de marketing, así que las campañas y los correos de secuencias la omiten."
@@ -8858,6 +8859,7 @@ es:
         suppression_none: "Ninguna"
         suppression_marketing: "Correo de marketing"
         suppression_all: "Todos los correos"
+        send_plugins: "Plugins que pueden omitirla"
         to_everyone: "Campañas para todos"
         personal: "Correo personal y transaccional"
         answer_yes: "Sí"

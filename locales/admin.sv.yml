@@ -8843,6 +8843,7 @@ sv:
           redacted: "Du kan inte mejla %{name}."
         reason:
           reachable: "Inget blockerar kampanjer till den här adressen."
+          reachable_plugins: "Broadcast blockerar inte kampanjer till den här adressen, men %{plugins} kan hoppa över adressen när en kampanj skickas."
           unsubscribed: "Adressen är avregistrerad, så kampanjer hoppar över den."
           inactive: "Prenumerationen är inaktiv, så kampanjer till alla hoppar över adressen."
           suppressed: "Adressen är spärrad för marknadsföringsmejl, så kampanjer och sekvensmejl hoppar över den."
@@ -8857,6 +8858,7 @@ sv:
         suppression_none: "Ingen"
         suppression_marketing: "Marknadsföringsmejl"
         suppression_all: "All e-post"
+        send_plugins: "Tillägg som kan hoppa över den"
         to_everyone: "Kampanjer till alla"
         personal: "Personliga mejl och transaktionsmejl"
         answer_yes: "Ja"

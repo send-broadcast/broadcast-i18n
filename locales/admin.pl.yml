@@ -9161,6 +9161,7 @@ pl:
           redacted: "Nie możesz wysyłać e-maili. Odbiorca: %{name}."
         reason:
           reachable: "Nic nie blokuje kampanii na ten adres."
+          reachable_plugins: "Broadcast nie blokuje kampanii na ten adres, ale %{plugins} może pominąć ten adres podczas wysyłki kampanii."
           unsubscribed: "Ten adres jest wypisany, więc kampanie go pomijają."
           inactive: "Subskrypcja jest nieaktywna, więc kampanie do wszystkich pomijają ten adres."
           suppressed: "Ten adres jest wykluczony z e-maili marketingowych, więc kampanie i e-maile z sekwencji go pomijają."
@@ -9175,6 +9176,7 @@ pl:
         suppression_none: "Brak"
         suppression_marketing: "E-maile marketingowe"
         suppression_all: "Wszystkie e-maile"
+        send_plugins: "Wtyczki, które mogą go pominąć"
         to_everyone: "Kampanie do wszystkich"
         personal: "E-maile osobiste i transakcyjne"
         answer_yes: "Tak"

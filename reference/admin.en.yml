@@ -8827,6 +8827,7 @@ en:
           redacted: "You cannot email %{name}."
         reason:
           reachable: "Nothing blocks broadcasts to this address."
+          reachable_plugins: "Broadcast does not block broadcasts to this address, but %{plugins} can skip this address when a broadcast is sent."
           unsubscribed: "They unsubscribed, so broadcasts skip this address."
           inactive: "They are inactive, so broadcasts to everyone skip this address."
           suppressed: "This address is suppressed for marketing email, so broadcasts and sequence emails skip it."
@@ -8841,6 +8842,7 @@ en:
         suppression_none: "None"
         suppression_marketing: "Marketing email"
         suppression_all: "All email"
+        send_plugins: "Plugins that can skip it"
         to_everyone: "Broadcasts to everyone"
         personal: "Personal and transactional email"
         answer_yes: "Yes"

@@ -8845,6 +8845,7 @@ de:
           redacted: "Sie können %{name} keine E-Mails senden."
         reason:
           reachable: "Nichts blockiert Kampagnen an diese Adresse."
+          reachable_plugins: "Broadcast blockiert keine Kampagnen an diese Adresse, aber %{plugins} kann diese Adresse beim Senden einer Kampagne überspringen."
           unsubscribed: "Die Adresse ist abgemeldet, daher überspringen Kampagnen sie."
           inactive: "Das Abonnement ist inaktiv, daher überspringen Kampagnen an alle diese Adresse."
           suppressed: "Diese Adresse ist für Marketing-E-Mails gesperrt, daher überspringen Kampagnen und Sequenz-E-Mails sie."
@@ -8859,6 +8860,7 @@ de:
         suppression_none: "Keine"
         suppression_marketing: "Marketing-E-Mails"
         suppression_all: "Alle E-Mails"
+        send_plugins: "Plugins, die sie überspringen können"
         to_everyone: "Kampagnen an alle"
         personal: "Persönliche E-Mails und Transaktions-E-Mails"
         answer_yes: "Ja"
