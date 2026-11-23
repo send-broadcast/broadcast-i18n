@@ -179,6 +179,9 @@ es:
               logo_width_must_be_between_and: "el ancho del logotipo debe estar entre %{min} y %{max} píxeles"
               social_links_must_be_http_s: "los enlaces sociales deben ser URL http(s)"
               color_must_be_hex: "el color %{setting} debe ser un valor hexadecimal como #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "debe pertenecer al mismo canal"
+              must_be_a_confirmation_template: "debe ser una plantilla de confirmación"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -228,6 +231,9 @@ es:
               must_belong_to_the_same_channel: "debe pertenecer al mismo canal"
             welcome_email_template:
               must_belong_to_the_same_channel: "debe pertenecer al mismo canal"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "debe pertenecer al mismo canal"
+              must_be_a_confirmation_template: "debe ser una plantilla de confirmación"
             cover_image:
               not_a_picture: "debe ser un archivo JPEG, PNG, WebP o GIF"
               too_large: "debe ocupar 5 MB o menos"
@@ -3254,6 +3260,7 @@ es:
         save_to_edit: "Guarda la plantilla para editar su página"
       sidebar:
         available_variables: "Variables disponibles"
+        reminder_variables: "Para recordatorios: los días desde la suscripción, el número del recordatorio (0 en el primer correo) y cuántos recordatorios quedan."
         confirmation_page: "Página de confirmación"
         default_checkbox: "Plantilla de confirmación predeterminada"
         edit_from_card: "Edítala desde la tarjeta que hay debajo del editor."
@@ -5040,6 +5047,9 @@ es:
         confirmation_template: "Plantilla del correo de confirmación"
         select_template: "Selecciona una plantilla..."
         confirmation_template_help_html: "Correo enviado para confirmar la suscripción. Usa %{variable} en la plantilla."
+        reminder_template: "Plantilla del correo de recordatorio"
+        reminder_template_channel: "Ajuste del canal (Configuración > General)"
+        reminder_template_help: "Se envía cuando el canal vuelve a enviar la confirmación a las personas que no han confirmado."
         after_confirmation: "Después de la confirmación"
         after_confirmation_help: "Redirige aquí a los suscriptores después de confirmar. Déjalo en blanco para mostrar la página de confirmación predeterminada."
         include_unsubscribe_link: "Incluir enlace de baja en el correo de confirmación"
@@ -7516,7 +7526,10 @@ es:
         resend_after_days_choices:
           one: "%{count} día"
           other: "%{count} días"
-        resend_help: "Envía un nuevo correo de confirmación a las personas que no han confirmado, esta cantidad de días después del último. Se detiene cuando confirman o se dan de baja."
+        resend_help: "Desactivado de forma predeterminada. Envía un correo de recordatorio a las personas que no han confirmado, esta cantidad de días después del último correo de confirmación. Se detiene cuando confirman o se dan de baja."
+        reminder_template: "Correo de recordatorio"
+        reminder_template_ready_made: "Recordatorio listo para usar (se crea en el primer recordatorio)"
+        reminder_template_help: "Una plantilla de confirmación. Puede usar {{ signed_up_days_ago }}, {{ reminder_number }} y {{ reminders_left }}. Un formulario de suscripción puede elegir su propio correo de recordatorio."
         suppression_list: "Lista de exclusión"
         hard_bounces: "Los rebotes permanentes también bloquean el correo transaccional"
         hard_bounces_help: "Las direcciones que tu proveedor de correo marca como rebotadas o con queja solo se bloquean en campañas y secuencias, para que los restablecimientos de contraseña y los recibos sigan llegando. Activa esta opción para bloquear también el correo transaccional a las direcciones con rebote permanente. Las quejas de spam nunca bloquean el correo transaccional."

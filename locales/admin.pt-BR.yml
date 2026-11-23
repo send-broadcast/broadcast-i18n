@@ -178,6 +178,9 @@ pt-BR:
               logo_width_must_be_between_and: "a largura do logotipo precisa estar entre %{min} e %{max} pixels"
               social_links_must_be_http_s: "os links sociais precisam ser URLs http(s)"
               color_must_be_hex: "a cor %{setting} precisa ser um valor hexadecimal, como #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
+              must_be_a_confirmation_template: "precisa ser um modelo de confirmação"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -227,6 +230,9 @@ pt-BR:
               must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
             welcome_email_template:
               must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "precisa pertencer ao mesmo canal"
+              must_be_a_confirmation_template: "precisa ser um modelo de confirmação"
             cover_image:
               not_a_picture: "deve ser um arquivo JPEG, PNG, WebP ou GIF"
               too_large: "deve ter 5 MB ou menos"
@@ -3253,6 +3259,7 @@ pt-BR:
         save_to_edit: "Salve o modelo para editar a página dele"
       sidebar:
         available_variables: "Variáveis disponíveis"
+        reminder_variables: "Para lembretes: os dias desde a inscrição, o número do lembrete (0 no primeiro e-mail) e quantos lembretes restam."
         confirmation_page: "Página de confirmação"
         default_checkbox: "Modelo de confirmação padrão"
         edit_from_card: "Edite-a pelo cartão abaixo do editor."
@@ -5039,6 +5046,9 @@ pt-BR:
         confirmation_template: "Modelo do e-mail de confirmação"
         select_template: "Selecione um modelo..."
         confirmation_template_help_html: "E-mail enviado para confirmar a inscrição. Use %{variable} no modelo."
+        reminder_template: "Modelo do e-mail de lembrete"
+        reminder_template_channel: "Configuração do canal (Configurações > Geral)"
+        reminder_template_help: "Enviado quando o canal envia a confirmação de novo para pessoas que não confirmaram."
         after_confirmation: "Após a confirmação"
         after_confirmation_help: "Redirecione os assinantes para cá depois que eles confirmarem. Deixe em branco para mostrar a página de confirmação padrão."
         include_unsubscribe_link: "Incluir o link de cancelamento da inscrição no e-mail de confirmação"
@@ -7515,7 +7525,10 @@ pt-BR:
         resend_after_days_choices:
           one: "%{count} dia"
           other: "%{count} dias"
-        resend_help: "Envia um novo e-mail de confirmação para pessoas que não confirmaram, esse número de dias depois do último. Para quando elas confirmam ou cancelam a inscrição."
+        resend_help: "Desativado por padrão. Envia um e-mail de lembrete para pessoas que não confirmaram, esse número de dias depois do último e-mail de confirmação. Para quando elas confirmam ou cancelam a inscrição."
+        reminder_template: "E-mail de lembrete"
+        reminder_template_ready_made: "Lembrete pronto (criado no primeiro lembrete)"
+        reminder_template_help: "Um modelo de confirmação. Ele pode usar {{ signed_up_days_ago }}, {{ reminder_number }} e {{ reminders_left }}. Um formulário de inscrição pode escolher o próprio e-mail de lembrete."
         suppression_list: "Lista de supressão"
         hard_bounces: "Rejeições permanentes também bloqueiam e-mails transacionais"
         hard_bounces_help: "Os endereços que seu provedor de e-mail informa como rejeitados ou com reclamação só são bloqueados em campanhas e sequências, para que redefinições de senha e recibos continuem sendo enviados. Ative esta opção para bloquear também os e-mails transacionais para endereços com rejeição permanente. Denúncias de spam nunca bloqueiam e-mails transacionais."

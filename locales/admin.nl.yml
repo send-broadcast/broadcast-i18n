@@ -180,6 +180,9 @@ nl:
               logo_width_must_be_between_and: "logobreedte moet tussen %{min} en %{max} pixels liggen"
               social_links_must_be_http_s: "sociale links moeten http(s)-URL's zijn"
               color_must_be_hex: "kleur %{setting} moet een hexwaarde zijn, zoals #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
+              must_be_a_confirmation_template: "moet een bevestigingssjabloon zijn"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -229,6 +232,9 @@ nl:
               must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
             welcome_email_template:
               must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "moet bij hetzelfde kanaal horen"
+              must_be_a_confirmation_template: "moet een bevestigingssjabloon zijn"
             cover_image:
               not_a_picture: "moet een JPEG-, PNG-, WebP- of GIF-bestand zijn"
               too_large: "mag hoogstens 5 MB zijn"
@@ -3255,6 +3261,7 @@ nl:
         save_to_edit: "Sla het sjabloon op om de pagina te bewerken"
       sidebar:
         available_variables: "Beschikbare variabelen"
+        reminder_variables: "Voor herinneringen: de dagen sinds de aanmelding, het nummer van de herinnering (0 bij de eerste e-mail) en hoeveel herinneringen er nog volgen."
         confirmation_page: "Bevestigingspagina"
         default_checkbox: "Standaard bevestigingssjabloon"
         edit_from_card: "Bewerk hem via de kaart onder de editor."
@@ -5041,6 +5048,9 @@ nl:
         confirmation_template: "Sjabloon voor bevestigingsmail"
         select_template: "Kies een sjabloon..."
         confirmation_template_help_html: "E-mail die wordt verzonden om de aanmelding te bevestigen. Gebruik %{variable} in het sjabloon."
+        reminder_template: "Sjabloon voor de herinneringsmail"
+        reminder_template_channel: "Kanaalinstelling (Instellingen > Algemeen)"
+        reminder_template_help: "Verstuurd als het kanaal de bevestiging opnieuw stuurt naar mensen die nog niet hebben bevestigd."
         after_confirmation: "Na bevestiging"
         after_confirmation_help: "Stuur abonnees na het bevestigen hierheen door. Laat leeg om de standaard bevestigingspagina te tonen."
         include_unsubscribe_link: "Afmeldlink opnemen in bevestigingsmail"
@@ -7517,7 +7527,10 @@ nl:
         resend_after_days_choices:
           one: "%{count} dag"
           other: "%{count} dagen"
-        resend_help: "Stuurt mensen die nog niet hebben bevestigd een nieuwe bevestigingsmail, zoveel dagen na de vorige. Dit stopt als ze bevestigen of zich afmelden."
+        resend_help: "Standaard uit. Stuurt mensen die nog niet hebben bevestigd een herinneringsmail, zoveel dagen na de laatste bevestigingsmail. Dit stopt als ze bevestigen of zich afmelden."
+        reminder_template: "Herinneringsmail"
+        reminder_template_ready_made: "Kant-en-klare herinnering (gemaakt bij de eerste herinnering)"
+        reminder_template_help: "Een bevestigingssjabloon. Het kan {{ signed_up_days_ago }}, {{ reminder_number }} en {{ reminders_left }} gebruiken. Een aanmeldformulier kan een eigen herinneringsmail kiezen."
         suppression_list: "Blokkeerlijst"
         hard_bounces: "Hard bounces blokkeren ook transactionele e-mail"
         hard_bounces_help: "Adressen die je e-mailprovider als gebounced of als klacht meldt, worden alleen geblokkeerd voor campagnes en reeksen, zodat wachtwoordherstel en bonnetjes toch aankomen. Schakel dit in om ook transactionele e-mail naar adressen met een hard bounce te blokkeren. Spamklachten blokkeren nooit transactionele e-mail."

@@ -180,6 +180,9 @@ de:
               logo_width_must_be_between_and: "Logobreite muss zwischen %{min} und %{max} Pixeln liegen"
               social_links_must_be_http_s: "Social-Media-Links müssen http(s)-URLs sein"
               color_must_be_hex: "Farbe %{setting} muss ein Hex-Wert wie #2563eb sein"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
+              must_be_a_confirmation_template: "muss eine Bestätigungsvorlage sein"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -229,6 +232,9 @@ de:
               must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
             welcome_email_template:
               must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "muss zum selben Kanal gehören"
+              must_be_a_confirmation_template: "muss eine Bestätigungsvorlage sein"
             cover_image:
               not_a_picture: "muss eine JPEG-, PNG-, WebP- oder GIF-Datei sein"
               too_large: "darf höchstens 5 MB groß sein"
@@ -3255,6 +3261,7 @@ de:
         save_to_edit: "Speichern Sie die Vorlage, um ihre Seite zu bearbeiten"
       sidebar:
         available_variables: "Verfügbare Variablen"
+        reminder_variables: "Für Erinnerungen: die Tage seit der Anmeldung, die Nummer der Erinnerung (0 bei der ersten E-Mail) und wie viele Erinnerungen noch folgen."
         confirmation_page: "Bestätigungsseite"
         default_checkbox: "Standard-Bestätigungsvorlage"
         edit_from_card: "Bearbeiten Sie sie über die Karte unter dem Editor."
@@ -5041,6 +5048,9 @@ de:
         confirmation_template: "Vorlage für die Bestätigungs-E-Mail"
         select_template: "Vorlage auswählen …"
         confirmation_template_help_html: "E-Mail zur Bestätigung des Abonnements. Verwenden Sie %{variable} in der Vorlage."
+        reminder_template: "Vorlage für die Erinnerungs-E-Mail"
+        reminder_template_channel: "Kanaleinstellung (Einstellungen > Allgemein)"
+        reminder_template_help: "Wird gesendet, wenn der Kanal die Bestätigung erneut an Personen sendet, die noch nicht bestätigt haben."
         after_confirmation: "Nach der Bestätigung"
         after_confirmation_help: "Abonnenten nach der Bestätigung hierher weiterleiten. Leer lassen, um die Standard-Bestätigungsseite anzuzeigen."
         include_unsubscribe_link: "Abmeldelink in die Bestätigungs-E-Mail aufnehmen"
@@ -7517,7 +7527,10 @@ de:
         resend_after_days_choices:
           one: "%{count} Tag"
           other: "%{count} Tagen"
-        resend_help: "Sendet Personen, die noch nicht bestätigt haben, eine neue Bestätigungs-E-Mail, so viele Tage nach der letzten. Das endet, wenn sie bestätigen oder sich abmelden."
+        resend_help: "Standardmäßig aus. Sendet Personen, die noch nicht bestätigt haben, eine Erinnerungs-E-Mail, so viele Tage nach der letzten Bestätigungs-E-Mail. Das endet, wenn sie bestätigen oder sich abmelden."
+        reminder_template: "Erinnerungs-E-Mail"
+        reminder_template_ready_made: "Fertige Erinnerung (wird bei der ersten Erinnerung erstellt)"
+        reminder_template_help: "Eine Bestätigungsvorlage. Sie kann {{ signed_up_days_ago }}, {{ reminder_number }} und {{ reminders_left }} verwenden. Ein Anmeldeformular kann eine eigene Erinnerungs-E-Mail wählen."
         suppression_list: "Sperrliste"
         hard_bounces: "Hard Bounces sperren auch Transaktions-E-Mails"
         hard_bounces_help: "Adressen, die Ihr E-Mail-Anbieter als gebounced oder beschwert meldet, werden nur für Kampagnen und Sequenzen gesperrt, damit Passwort-Zurücksetzungen und Belege weiterhin zugestellt werden. Aktivieren Sie diese Option, um auch Transaktions-E-Mails an Adressen mit Hard Bounce zu sperren. Spam-Beschwerden sperren Transaktions-E-Mails nie."

@@ -178,6 +178,9 @@ sv:
               logo_width_must_be_between_and: "logotypens bredd måste vara mellan %{min} och %{max} pixlar"
               social_links_must_be_http_s: "sociala länkar måste vara http(s)-URL:er"
               color_must_be_hex: "färgen %{setting} måste vara ett hexvärde, till exempel #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "måste tillhöra samma kanal"
+              must_be_a_confirmation_template: "måste vara en bekräftelsemall"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -227,6 +230,9 @@ sv:
               must_belong_to_the_same_channel: "måste tillhöra samma kanal"
             welcome_email_template:
               must_belong_to_the_same_channel: "måste tillhöra samma kanal"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "måste tillhöra samma kanal"
+              must_be_a_confirmation_template: "måste vara en bekräftelsemall"
             cover_image:
               not_a_picture: "måste vara en JPEG-, PNG-, WebP- eller GIF-fil"
               too_large: "får vara högst 5 MB"
@@ -3253,6 +3259,7 @@ sv:
         save_to_edit: "Spara mallen för att redigera dess sida"
       sidebar:
         available_variables: "Tillgängliga variabler"
+        reminder_variables: "För påminnelser: dagar sedan anmälan, påminnelsens nummer (0 i det första mejlet) och hur många påminnelser som återstår."
         confirmation_page: "Bekräftelsesida"
         default_checkbox: "Standardmall för bekräftelse"
         edit_from_card: "Redigera den från kortet under redigeraren."
@@ -5039,6 +5046,9 @@ sv:
         confirmation_template: "Mall för bekräftelsemejl"
         select_template: "Välj en mall..."
         confirmation_template_help_html: "Mejl som skickas för att bekräfta prenumerationen. Använd %{variable} i mallen."
+        reminder_template: "Mall för påminnelsemejlet"
+        reminder_template_channel: "Kanalinställning (Inställningar > Allmänt)"
+        reminder_template_help: "Skickas när kanalen skickar bekräftelsen igen till personer som inte har bekräftat."
         after_confirmation: "Efter bekräftelse"
         after_confirmation_help: "Skicka prenumeranterna hit när de har bekräftat. Lämna tomt för att visa standardsidan för bekräftelse."
         include_unsubscribe_link: "Inkludera avregistreringslänk i bekräftelsemejlet"
@@ -7515,7 +7525,10 @@ sv:
         resend_after_days_choices:
           one: "%{count} dag"
           other: "%{count} dagar"
-        resend_help: "Skickar ett nytt bekräftelsemejl till personer som inte har bekräftat, så många dagar efter det senaste. Det slutar när de bekräftar eller avslutar prenumerationen."
+        resend_help: "Av som standard. Skickar ett påminnelsemejl till personer som inte har bekräftat, så många dagar efter det senaste bekräftelsemejlet. Det slutar när de bekräftar eller avslutar prenumerationen."
+        reminder_template: "Påminnelsemejl"
+        reminder_template_ready_made: "Färdig påminnelse (skapas vid första påminnelsen)"
+        reminder_template_help: "En bekräftelsemall. Den kan använda {{ signed_up_days_ago }}, {{ reminder_number }} och {{ reminders_left }}. Ett anmälningsformulär kan välja ett eget påminnelsemejl."
         suppression_list: "Spärrlista"
         hard_bounces: "Hårda studsar blockerar även transaktionsmejl"
         hard_bounces_help: "Adresser som din e-postleverantör rapporterar som studsade eller som klagat blockeras bara från kampanjer och sekvenser, så att lösenordsåterställningar och kvitton ändå skickas. Aktivera detta för att även blockera transaktionsmejl till adresser med hård studs. Spamanmälningar blockerar aldrig transaktionsmejl."

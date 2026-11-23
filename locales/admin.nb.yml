@@ -178,6 +178,9 @@ nb:
               logo_width_must_be_between_and: "logobredden må være mellom %{min} og %{max} piksler"
               social_links_must_be_http_s: "lenker til sosiale medier må være http(s)-URL-er"
               color_must_be_hex: "fargen %{setting} må være en heksadesimal verdi, for eksempel #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "må tilhøre samme kanal"
+              must_be_a_confirmation_template: "må være en bekreftelsesmal"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -227,6 +230,9 @@ nb:
               must_belong_to_the_same_channel: "må tilhøre samme kanal"
             welcome_email_template:
               must_belong_to_the_same_channel: "må tilhøre samme kanal"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "må tilhøre samme kanal"
+              must_be_a_confirmation_template: "må være en bekreftelsesmal"
             cover_image:
               not_a_picture: "må være en JPEG-, PNG-, WebP- eller GIF-fil"
               too_large: "må være 5 MB eller mindre"
@@ -3253,6 +3259,7 @@ nb:
         save_to_edit: "Lagre malen for å redigere siden"
       sidebar:
         available_variables: "Tilgjengelige variabler"
+        reminder_variables: "For påminnelser: dager siden påmeldingen, påminnelsens nummer (0 i den første e-posten) og hvor mange påminnelser som gjenstår."
         confirmation_page: "Bekreftelsesside"
         default_checkbox: "Standard bekreftelsesmal"
         edit_from_card: "Rediger den fra kortet under editoren."
@@ -5039,6 +5046,9 @@ nb:
         confirmation_template: "Mal for bekreftelses-e-post"
         select_template: "Velg en mal..."
         confirmation_template_help_html: "E-post som sendes for å bekrefte abonnementet. Bruk %{variable} i malen."
+        reminder_template: "Mal for påminnelses-e-posten"
+        reminder_template_channel: "Kanalinnstilling (Innstillinger > Generelt)"
+        reminder_template_help: "Sendes når kanalen sender bekreftelsen på nytt til personer som ikke har bekreftet."
         after_confirmation: "Etter bekreftelse"
         after_confirmation_help: "Send abonnentene hit etter at de har bekreftet. La stå tomt for å vise standard bekreftelsesside."
         include_unsubscribe_link: "Ta med avmeldingslenke i bekreftelses-e-posten"
@@ -7515,7 +7525,10 @@ nb:
         resend_after_days_choices:
           one: "%{count} dag"
           other: "%{count} dager"
-        resend_help: "Sender en ny bekreftelses-e-post til personer som ikke har bekreftet, så mange dager etter den forrige. Det stopper når de bekrefter eller melder seg av."
+        resend_help: "Av som standard. Sender en påminnelses-e-post til personer som ikke har bekreftet, så mange dager etter den forrige bekreftelses-e-posten. Det stopper når de bekrefter eller melder seg av."
+        reminder_template: "Påminnelses-e-post"
+        reminder_template_ready_made: "Ferdig påminnelse (lages ved første påminnelse)"
+        reminder_template_help: "En bekreftelsesmal. Den kan bruke {{ signed_up_days_ago }}, {{ reminder_number }} og {{ reminders_left }}. Et påmeldingsskjema kan velge sin egen påminnelses-e-post."
         suppression_list: "Sperreliste"
         hard_bounces: "Permanente returer blokkerer også transaksjonell e-post"
         hard_bounces_help: "Adresser som e-postleverandøren din rapporterer som returnert eller som har klaget, blokkeres bare fra kampanjer og sekvenser, slik at tilbakestilling av passord og kvitteringer fortsatt blir sendt. Slå på dette for også å blokkere transaksjonell e-post til adresser med permanent retur. Spamklager blokkerer aldri transaksjonell e-post."

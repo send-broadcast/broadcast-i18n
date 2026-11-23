@@ -176,6 +176,9 @@ it:
               logo_width_must_be_between_and: "la larghezza del logo deve essere tra %{min} e %{max} pixel"
               social_links_must_be_http_s: "i link social devono essere URL http(s)"
               color_must_be_hex: "il colore %{setting} deve essere un valore esadecimale come #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
+              must_be_a_confirmation_template: "deve essere un modello di conferma"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -225,6 +228,9 @@ it:
               must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
             welcome_email_template:
               must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "deve appartenere allo stesso canale"
+              must_be_a_confirmation_template: "deve essere un modello di conferma"
             cover_image:
               not_a_picture: "deve essere un file JPEG, PNG, WebP o GIF"
               too_large: "deve essere di 5 MB o meno"
@@ -3251,6 +3257,7 @@ it:
         save_to_edit: "Salva il modello per modificarne la pagina"
       sidebar:
         available_variables: "Variabili disponibili"
+        reminder_variables: "Per i promemoria: i giorni dall'iscrizione, il numero del promemoria (0 nella prima email) e quanti promemoria restano."
         confirmation_page: "Pagina di conferma"
         default_checkbox: "Modello di conferma predefinito"
         edit_from_card: "Modificala dal riquadro sotto l'editor."
@@ -5037,6 +5044,9 @@ it:
         confirmation_template: "Modello dell'email di conferma"
         select_template: "Seleziona un modello…"
         confirmation_template_help_html: "Email inviata per confermare l'iscrizione. Usa %{variable} nel modello."
+        reminder_template: "Modello dell'email di promemoria"
+        reminder_template_channel: "Impostazione del canale (Impostazioni > Generali)"
+        reminder_template_help: "Inviata quando il canale invia di nuovo la conferma alle persone che non hanno confermato."
         after_confirmation: "Dopo la conferma"
         after_confirmation_help: "Reindirizza qui gli iscritti dopo la conferma. Lascia vuoto per mostrare la pagina di conferma predefinita."
         include_unsubscribe_link: "Includi il link di disiscrizione nell'email di conferma"
@@ -7513,7 +7523,10 @@ it:
         resend_after_days_choices:
           one: "%{count} giorno"
           other: "%{count} giorni"
-        resend_help: "Invia una nuova email di conferma alle persone che non hanno confermato, questo numero di giorni dopo l'ultima. Si ferma quando confermano o annullano l'iscrizione."
+        resend_help: "Disattivato per impostazione predefinita. Invia un'email di promemoria alle persone che non hanno confermato, questo numero di giorni dopo l'ultima email di conferma. Si ferma quando confermano o annullano l'iscrizione."
+        reminder_template: "Email di promemoria"
+        reminder_template_ready_made: "Promemoria pronto (creato al primo promemoria)"
+        reminder_template_help: "Un modello di conferma. Può usare {{ signed_up_days_ago }}, {{ reminder_number }} e {{ reminders_left }}. Un modulo di iscrizione può scegliere la propria email di promemoria."
         suppression_list: "Lista di esclusione"
         hard_bounces: "I mancati recapiti permanenti bloccano anche le email transazionali"
         hard_bounces_help: "Gli indirizzi che il tuo provider email segnala come mancati recapiti o segnalazioni di spam vengono bloccati solo per campagne e sequenze, così reimpostazioni della password e ricevute continuano a partire. Attiva questa opzione per bloccare le email transazionali anche verso gli indirizzi con mancato recapito permanente. Le segnalazioni di spam non bloccano mai le email transazionali."

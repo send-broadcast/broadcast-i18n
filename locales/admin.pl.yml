@@ -180,6 +180,9 @@ pl:
               logo_width_must_be_between_and: "szerokość logo musi wynosić od %{min} do %{max} pikseli"
               social_links_must_be_http_s: "linki społecznościowe muszą być adresami URL http(s)"
               color_must_be_hex: "kolor %{setting} musi być wartością szesnastkową, np. #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
+              must_be_a_confirmation_template: "musi być szablonem potwierdzenia"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -229,6 +232,9 @@ pl:
               must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
             welcome_email_template:
               must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "musi należeć do tego samego kanału"
+              must_be_a_confirmation_template: "musi być szablonem potwierdzenia"
             cover_image:
               not_a_picture: "musi być plikiem JPEG, PNG, WebP lub GIF"
               too_large: "może mieć najwyżej 5 MB"
@@ -3357,6 +3363,7 @@ pl:
         save_to_edit: "Zapisz szablon, aby edytować jego stronę"
       sidebar:
         available_variables: "Dostępne zmienne"
+        reminder_variables: "Dla przypomnień: liczba dni od zapisu, numer przypomnienia (0 w pierwszym e-mailu) i liczba pozostałych przypomnień."
         confirmation_page: "Strona potwierdzenia"
         default_checkbox: "Domyślny szablon potwierdzenia"
         edit_from_card: "Edytuj ją z karty pod edytorem."
@@ -5233,6 +5240,9 @@ pl:
         confirmation_template: "Szablon e-maila potwierdzającego"
         select_template: "Wybierz szablon..."
         confirmation_template_help_html: "E-mail wysyłany w celu potwierdzenia subskrypcji. Użyj %{variable} w szablonie."
+        reminder_template: "Szablon e-maila z przypomnieniem"
+        reminder_template_channel: "Ustawienie kanału (Ustawienia > Ogólne)"
+        reminder_template_help: "Wysyłany, gdy kanał ponownie wysyła potwierdzenie do osób, które nie potwierdziły."
         after_confirmation: "Po potwierdzeniu"
         after_confirmation_help: "Przekieruj tu subskrybentów po potwierdzeniu. Zostaw puste, aby wyświetlić domyślną stronę potwierdzenia."
         include_unsubscribe_link: "Dołącz link do wypisania w e-mailu potwierdzającym"
@@ -7767,7 +7777,10 @@ pl:
           few: "%{count} dniach"
           many: "%{count} dniach"
           other: "%{count} dnia"
-        resend_help: "Wysyła nowy e-mail potwierdzający do osób, które nie potwierdziły, tyle dni po ostatnim. Wysyłanie kończy się, gdy potwierdzą lub wypiszą się."
+        resend_help: "Domyślnie wyłączone. Wysyła e-mail z przypomnieniem do osób, które nie potwierdziły, tyle dni po ostatnim e-mailu potwierdzającym. Wysyłanie kończy się, gdy potwierdzą lub wypiszą się."
+        reminder_template: "E-mail z przypomnieniem"
+        reminder_template_ready_made: "Gotowe przypomnienie (tworzone przy pierwszym przypomnieniu)"
+        reminder_template_help: "Szablon potwierdzenia. Może używać {{ signed_up_days_ago }}, {{ reminder_number }} i {{ reminders_left }}. Formularz zapisu może wybrać własny e-mail z przypomnieniem."
         suppression_list: "Lista wykluczeń"
         hard_bounces: "Twarde odbicia blokują też e-maile transakcyjne"
         hard_bounces_help: "Adresy zgłoszone przez dostawcę poczty jako odbite lub ze skargą są blokowane tylko w kampaniach i sekwencjach, więc resetowanie haseł i potwierdzenia zakupu nadal są wysyłane. Włącz tę opcję, aby blokować także e-maile transakcyjne do adresów z twardym odbiciem. Zgłoszenia spamu nigdy nie blokują e-maili transakcyjnych."

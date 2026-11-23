@@ -179,6 +179,9 @@ fi:
               logo_width_must_be_between_and: "logon leveyden on oltava %{min} ja %{max} pikselin välillä"
               social_links_must_be_http_s: "somelinkkien on oltava http(s)-URL-osoitteita"
               color_must_be_hex: "värin %{setting} on oltava heksadesimaaliarvo, esimerkiksi #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
+              must_be_a_confirmation_template: "on oltava vahvistuspohja"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -228,6 +231,9 @@ fi:
               must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
             welcome_email_template:
               must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "on kuuluttava samaan kanavaan"
+              must_be_a_confirmation_template: "on oltava vahvistuspohja"
             cover_image:
               not_a_picture: "on oltava JPEG-, PNG-, WebP- tai GIF-tiedosto"
               too_large: "saa olla enintään 5 Mt"
@@ -3254,6 +3260,7 @@ fi:
         save_to_edit: "Tallenna malli muokataksesi sen sivua"
       sidebar:
         available_variables: "Käytettävissä olevat muuttujat"
+        reminder_variables: "Muistutuksille: päivät tilauksesta, muistutuksen numero (0 ensimmäisessä viestissä) ja jäljellä olevien muistutusten määrä."
         confirmation_page: "Vahvistussivu"
         default_checkbox: "Oletusvahvistusmalli"
         edit_from_card: "Muokkaa sitä editorin alla olevasta kortista."
@@ -5040,6 +5047,9 @@ fi:
         confirmation_template: "Vahvistussähköpostin malli"
         select_template: "Valitse malli..."
         confirmation_template_help_html: "Tilauksen vahvistamiseksi lähetettävä sähköposti. Käytä mallissa muuttujaa %{variable}."
+        reminder_template: "Muistutusviestin pohja"
+        reminder_template_channel: "Kanavan asetus (Asetukset > Yleiset)"
+        reminder_template_help: "Lähetetään, kun kanava lähettää vahvistuksen uudelleen henkilöille, jotka eivät ole vahvistaneet."
         after_confirmation: "Vahvistuksen jälkeen"
         after_confirmation_help: "Ohjaa tilaajat tähän osoitteeseen vahvistuksen jälkeen. Jätä tyhjäksi, jos haluat näyttää oletusvahvistussivun."
         include_unsubscribe_link: "Sisällytä peruutuslinkki vahvistussähköpostiin"
@@ -7516,7 +7526,10 @@ fi:
         resend_after_days_choices:
           one: "%{count} päivä"
           other: "%{count} päivää"
-        resend_help: "Lähettää uuden vahvistusviestin henkilöille, jotka eivät ole vahvistaneet, näin monta päivää edellisen jälkeen. Lähetys loppuu, kun he vahvistavat tai peruvat tilauksen."
+        resend_help: "Oletuksena pois päältä. Lähettää muistutusviestin henkilöille, jotka eivät ole vahvistaneet, näin monta päivää viimeisen vahvistusviestin jälkeen. Lähetys loppuu, kun he vahvistavat tai peruvat tilauksen."
+        reminder_template: "Muistutusviesti"
+        reminder_template_ready_made: "Valmis muistutus (luodaan ensimmäisen muistutuksen yhteydessä)"
+        reminder_template_help: "Vahvistuspohja. Se voi käyttää muuttujia {{ signed_up_days_ago }}, {{ reminder_number }} ja {{ reminders_left }}. Tilauslomake voi valita oman muistutusviestinsä."
         suppression_list: "Estolista"
         hard_bounces: "Pysyvät palautukset estävät myös transaktiosähköpostit"
         hard_bounces_help: "Osoitteet, jotka sähköpostipalveluntarjoajasi ilmoittaa palautuneiksi tai valittaneiksi, estetään vain kampanjoilta ja sarjoilta, joten salasanan palautukset ja kuitit lähtevät edelleen. Ota tämä käyttöön, jos haluat estää transaktiosähköpostit myös pysyvästi palautuneisiin osoitteisiin. Roskapostivalitukset eivät koskaan estä transaktiosähköposteja."

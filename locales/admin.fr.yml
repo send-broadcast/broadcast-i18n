@@ -179,6 +179,9 @@ fr:
               logo_width_must_be_between_and: "la largeur du logo doit être comprise entre %{min} et %{max} pixels"
               social_links_must_be_http_s: "les liens sociaux doivent être des URL http(s)"
               color_must_be_hex: "la couleur %{setting} doit être une valeur hexadécimale comme #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "doit appartenir au même canal"
+              must_be_a_confirmation_template: "doit être un modèle de confirmation"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -228,6 +231,9 @@ fr:
               must_belong_to_the_same_channel: "doit appartenir au même canal"
             welcome_email_template:
               must_belong_to_the_same_channel: "doit appartenir au même canal"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "doit appartenir au même canal"
+              must_be_a_confirmation_template: "doit être un modèle de confirmation"
             cover_image:
               not_a_picture: "doit être un fichier JPEG, PNG, WebP ou GIF"
               too_large: "doit faire 5 Mo ou moins"
@@ -3254,6 +3260,7 @@ fr:
         save_to_edit: "Enregistrez le modèle pour modifier sa page"
       sidebar:
         available_variables: "Variables disponibles"
+        reminder_variables: "Pour les rappels : le nombre de jours depuis l'inscription, le numéro du rappel (0 pour le premier e-mail) et le nombre de rappels restants."
         confirmation_page: "Page de confirmation"
         default_checkbox: "Modèle de confirmation par défaut"
         edit_from_card: "Modifiez-la depuis la carte sous l'éditeur."
@@ -5040,6 +5047,9 @@ fr:
         confirmation_template: "Modèle de l'e-mail de confirmation"
         select_template: "Choisir un modèle..."
         confirmation_template_help_html: "E-mail envoyé pour confirmer l'inscription. Utilisez %{variable} dans le modèle."
+        reminder_template: "Modèle de l'e-mail de rappel"
+        reminder_template_channel: "Réglage du canal (Paramètres > Général)"
+        reminder_template_help: "Envoyé quand le canal renvoie la confirmation aux personnes qui n'ont pas confirmé."
         after_confirmation: "Après la confirmation"
         after_confirmation_help: "Redirigez les abonnés ici après leur confirmation. Laissez vide pour afficher la page de confirmation par défaut."
         include_unsubscribe_link: "Inclure un lien de désabonnement dans l'e-mail de confirmation"
@@ -7516,7 +7526,10 @@ fr:
         resend_after_days_choices:
           one: "%{count} jour"
           other: "%{count} jours"
-        resend_help: "Envoie un nouvel e-mail de confirmation aux personnes qui n'ont pas confirmé, ce nombre de jours après le dernier. Les envois s'arrêtent quand elles confirment ou se désabonnent."
+        resend_help: "Désactivé par défaut. Envoie un e-mail de rappel aux personnes qui n'ont pas confirmé, ce nombre de jours après le dernier e-mail de confirmation. Les envois s'arrêtent quand elles confirment ou se désabonnent."
+        reminder_template: "E-mail de rappel"
+        reminder_template_ready_made: "Rappel prêt à l'emploi (créé au premier rappel)"
+        reminder_template_help: "Un modèle de confirmation. Il peut utiliser {{ signed_up_days_ago }}, {{ reminder_number }} et {{ reminders_left }}. Un formulaire d'inscription peut choisir son propre e-mail de rappel."
         suppression_list: "Liste d'exclusion"
         hard_bounces: "Les rebonds définitifs bloquent aussi les e-mails transactionnels"
         hard_bounces_help: "Les adresses que votre fournisseur d'e-mail signale comme rejetées ou ayant porté plainte sont seulement bloquées pour les campagnes et les séquences, afin que les réinitialisations de mot de passe et les reçus continuent de partir. Activez cette option pour bloquer aussi les e-mails transactionnels vers les adresses en rebond définitif. Les plaintes pour spam ne bloquent jamais les e-mails transactionnels."

@@ -178,6 +178,9 @@ da:
               logo_width_must_be_between_and: "logobredden skal være mellem %{min} og %{max} pixels"
               social_links_must_be_http_s: "sociale links skal være http(s)-URL'er"
               color_must_be_hex: "farven %{setting} skal være en hexværdi som #2563eb"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "skal tilhøre samme kanal"
+              must_be_a_confirmation_template: "skal være en bekræftelsesskabelon"
         channel_dns_check:
           attributes:
             manual_dkim_selectors:
@@ -227,6 +230,9 @@ da:
               must_belong_to_the_same_channel: "skal tilhøre samme kanal"
             welcome_email_template:
               must_belong_to_the_same_channel: "skal tilhøre samme kanal"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "skal tilhøre samme kanal"
+              must_be_a_confirmation_template: "skal være en bekræftelsesskabelon"
             cover_image:
               not_a_picture: "skal være en JPEG-, PNG-, WebP- eller GIF-fil"
               too_large: "må højst være 5 MB"
@@ -3253,6 +3259,7 @@ da:
         save_to_edit: "Gem skabelonen for at redigere dens side"
       sidebar:
         available_variables: "Tilgængelige variabler"
+        reminder_variables: "Til påmindelser: dage siden tilmeldingen, påmindelsens nummer (0 i den første mail) og hvor mange påmindelser der er tilbage."
         confirmation_page: "Bekræftelsesside"
         default_checkbox: "Standardskabelon til bekræftelse"
         edit_from_card: "Rediger den fra kortet under editoren."
@@ -5039,6 +5046,9 @@ da:
         confirmation_template: "Skabelon til bekræftelsesmail"
         select_template: "Vælg en skabelon..."
         confirmation_template_help_html: "E-mail, der sendes for at bekræfte tilmeldingen. Brug %{variable} i skabelonen."
+        reminder_template: "Skabelon til påmindelsesmailen"
+        reminder_template_channel: "Kanalindstilling (Indstillinger > Generelt)"
+        reminder_template_help: "Sendes, når kanalen sender bekræftelsen igen til personer, der ikke har bekræftet."
         after_confirmation: "Efter bekræftelse"
         after_confirmation_help: "Send abonnenter hertil, når de har bekræftet. Lad feltet stå tomt for at vise standardsiden for bekræftelse."
         include_unsubscribe_link: "Medtag afmeldingslink i bekræftelsesmailen"
@@ -7515,7 +7525,10 @@ da:
         resend_after_days_choices:
           one: "%{count} dag"
           other: "%{count} dage"
-        resend_help: "Sender en ny bekræftelsesmail til personer, der ikke har bekræftet, så mange dage efter den sidste. Det stopper, når de bekræfter eller afmelder sig."
+        resend_help: "Slået fra som standard. Sender en påmindelsesmail til personer, der ikke har bekræftet, så mange dage efter den sidste bekræftelsesmail. Det stopper, når de bekræfter eller afmelder sig."
+        reminder_template: "Påmindelsesmail"
+        reminder_template_ready_made: "Færdig påmindelse (oprettes ved første påmindelse)"
+        reminder_template_help: "En bekræftelsesskabelon. Den kan bruge {{ signed_up_days_ago }}, {{ reminder_number }} og {{ reminders_left }}. En tilmeldingsformular kan vælge sin egen påmindelsesmail."
         suppression_list: "Spærreliste"
         hard_bounces: "Hårde bounces blokerer også transaktionsmails"
         hard_bounces_help: "Adresser, som din e-mailudbyder rapporterer som bouncet eller med klager, blokeres kun for kampagner og sekvenser, så nulstilling af adgangskoder og kvitteringer stadig bliver sendt. Slå dette til for også at blokere transaktionsmails til adresser med hårde bounces. Spamklager blokerer aldrig transaktionsmails."

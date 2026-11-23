@@ -149,6 +149,9 @@ en:
               must_be_a_bare_file_name: "must be a bare file name"
         broadcast_channel:
           attributes:
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "must belong to the same channel"
+              must_be_a_confirmation_template: "must be a confirmation template"
             design_settings:
               must_be_an_object: "must be an object"
               email_width_must_be_between_and: "email width must be between %{min} and %{max} pixels"
@@ -208,6 +211,9 @@ en:
               must_belong_to_the_same_channel: "must belong to the same channel"
             welcome_email_template:
               must_belong_to_the_same_channel: "must belong to the same channel"
+            confirmation_reminder_template:
+              must_belong_to_the_same_channel: "must belong to the same channel"
+              must_be_a_confirmation_template: "must be a confirmation template"
             cover_image:
               not_a_picture: "must be a JPEG, PNG, WebP or GIF file"
               too_large: "must be 5 MB or smaller"
@@ -3234,6 +3240,7 @@ en:
         save_to_edit: "Save the template to edit its page"
       sidebar:
         available_variables: "Available variables"
+        reminder_variables: "For reminders: the days since they signed up, which reminder this is (0 on the first email), and how many reminders are left."
         confirmation_page: "Confirmation page"
         default_checkbox: "Default confirmation template"
         edit_from_card: "Edit it from the card under the editor."
@@ -5021,6 +5028,9 @@ en:
         confirmation_template: "Confirmation Email Template"
         select_template: "Select a template..."
         confirmation_template_help_html: "Email sent to confirm subscription. Use %{variable} in the template."
+        reminder_template: "Reminder Email Template"
+        reminder_template_channel: "Channel setting (Settings > General)"
+        reminder_template_help: "Sent when the channel sends the confirmation again to people who have not confirmed."
         after_confirmation: "After Confirmation"
         after_confirmation_help: "Redirect subscribers here after they confirm. Leave blank to show the default confirmation page."
         include_unsubscribe_link: "Include unsubscribe link in confirmation email"
@@ -7558,7 +7568,10 @@ en:
         resend_after_days_choices:
           one: "%{count} day"
           other: "%{count} days"
-        resend_help: "Sends a new confirmation email to people who have not confirmed, this many days after the last one. It stops when they confirm or unsubscribe."
+        resend_help: "Off by default. Sends a reminder email to people who have not confirmed, this many days after the last confirmation email. It stops when they confirm or unsubscribe."
+        reminder_template: "Reminder email"
+        reminder_template_ready_made: "Ready-made reminder (made at the first reminder)"
+        reminder_template_help: "A confirmation template. It can use {{ signed_up_days_ago }}, {{ reminder_number }} and {{ reminders_left }}. An opt-in form can choose its own reminder email."
         suppression_list: "Suppression List"
         hard_bounces: "Hard bounces also block transactional email"
         hard_bounces_help: "Addresses your email provider reports as bounced or complained are only blocked from broadcasts and sequences, so password resets and receipts still go out. Turn this on to block transactional email to hard-bounced addresses too. Spam complaints never block transactional email."
