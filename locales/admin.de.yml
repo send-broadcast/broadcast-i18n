@@ -3335,6 +3335,7 @@ de:
       open_options: "Optionen öffnen"
       preheader: "Vorschautext"
       preview_page: "Vorschau der Bestätigungsseite"
+      reminder_variables_intro: "Nur in Erinnerungs-E-Mails:"
       rich_text: "Rich Text"
       states:
         already_confirmed: "Bereits bestätigt"
@@ -3350,6 +3351,9 @@ de:
         first_name: "Vorname"
         full_name: "Vollständiger Name"
         last_name: "Nachname"
+        reminder_number: "Nummer der Erinnerung"
+        reminders_left: "Verbleibende Erinnerungen"
+        signed_up_days_ago: "Tage seit der Anmeldung"
         unsubscribe: "Abmelden"
       variables_intro: "Verwenden Sie diese Liquid-Variablen im Inhalt Ihrer Vorlage:"
       your_name: "Ihr Name"

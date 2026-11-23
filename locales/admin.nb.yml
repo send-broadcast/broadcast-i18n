@@ -3333,6 +3333,7 @@ nb:
       open_options: "Åpne alternativer"
       preheader: "Forhåndsvisningstekst"
       preview_page: "Forhåndsvis bekreftelsessiden"
+      reminder_variables_intro: "Bare i påminnelses-e-poster:"
       rich_text: "Rik tekst"
       states:
         already_confirmed: "Allerede bekreftet"
@@ -3348,6 +3349,9 @@ nb:
         first_name: "Fornavn"
         full_name: "Fullt navn"
         last_name: "Etternavn"
+        reminder_number: "Påminnelsens nummer"
+        reminders_left: "Gjenstående påminnelser"
+        signed_up_days_ago: "Dager siden registrering"
         unsubscribe: "Avmelding"
       variables_intro: "Bruk disse Liquid-variablene i innholdet i malen:"
       your_name: "Ditt navn"

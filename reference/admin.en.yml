@@ -3314,6 +3314,7 @@ en:
       open_options: "Open options"
       preheader: "Preheader"
       preview_page: "Preview confirmation page"
+      reminder_variables_intro: "Only in reminder emails:"
       rich_text: "Rich text"
       states:
         already_confirmed: "Already confirmed"
@@ -3329,6 +3330,9 @@ en:
         first_name: "First name"
         full_name: "Full name"
         last_name: "Last name"
+        reminder_number: "Reminder number"
+        reminders_left: "Reminders left"
+        signed_up_days_ago: "Days since sign-up"
         unsubscribe: "Unsubscribe"
       variables_intro: "Use these Liquid variables in your template body:"
       your_name: "Your Name"

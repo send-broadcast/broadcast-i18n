@@ -3335,6 +3335,7 @@ nl:
       open_options: "Opties openen"
       preheader: "Voorbeeldtekst"
       preview_page: "Voorbeeld van bevestigingspagina bekijken"
+      reminder_variables_intro: "Alleen in herinneringsmails:"
       rich_text: "Opgemaakte tekst"
       states:
         already_confirmed: "Al bevestigd"
@@ -3350,6 +3351,9 @@ nl:
         first_name: "Voornaam"
         full_name: "Volledige naam"
         last_name: "Achternaam"
+        reminder_number: "Nummer van de herinnering"
+        reminders_left: "Resterende herinneringen"
+        signed_up_days_ago: "Dagen sinds aanmelding"
         unsubscribe: "Afmelden"
       variables_intro: "Gebruik deze Liquid-variabelen in de inhoud van je sjabloon:"
       your_name: "Je naam"

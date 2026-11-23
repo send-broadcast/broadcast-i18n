@@ -3331,6 +3331,7 @@ it:
       open_options: "Apri opzioni"
       preheader: "Preheader"
       preview_page: "Anteprima della pagina di conferma"
+      reminder_variables_intro: "Solo nelle email di promemoria:"
       rich_text: "Testo formattato"
       states:
         already_confirmed: "Già confermata"
@@ -3346,6 +3347,9 @@ it:
         first_name: "Nome"
         full_name: "Nome completo"
         last_name: "Cognome"
+        reminder_number: "Numero del promemoria"
+        reminders_left: "Promemoria rimanenti"
+        signed_up_days_ago: "Giorni dall'iscrizione"
         unsubscribe: "Annulla iscrizione"
       variables_intro: "Usa queste variabili Liquid nel corpo del modello:"
       your_name: "Il tuo nome"

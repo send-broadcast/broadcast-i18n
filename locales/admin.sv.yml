@@ -3333,6 +3333,7 @@ sv:
       open_options: "Öppna alternativ"
       preheader: "Förhandsvisningstext"
       preview_page: "Förhandsvisa bekräftelsesidan"
+      reminder_variables_intro: "Endast i påminnelsemejl:"
       rich_text: "Formaterad text"
       states:
         already_confirmed: "Redan bekräftad"
@@ -3348,6 +3349,9 @@ sv:
         first_name: "Förnamn"
         full_name: "Fullständigt namn"
         last_name: "Efternamn"
+        reminder_number: "Påminnelsens nummer"
+        reminders_left: "Återstående påminnelser"
+        signed_up_days_ago: "Dagar sedan anmälan"
         unsubscribe: "Avregistrera"
       variables_intro: "Använd dessa Liquid-variabler i mallens innehåll:"
       your_name: "Ditt namn"

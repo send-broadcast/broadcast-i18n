@@ -3334,6 +3334,7 @@ es:
       open_options: "Abrir opciones"
       preheader: "Texto de vista previa"
       preview_page: "Vista previa de la página de confirmación"
+      reminder_variables_intro: "Solo en los correos de recordatorio:"
       rich_text: "Texto enriquecido"
       states:
         already_confirmed: "Ya confirmado"
@@ -3349,6 +3350,9 @@ es:
         first_name: "Nombre"
         full_name: "Nombre completo"
         last_name: "Apellido"
+        reminder_number: "Número del recordatorio"
+        reminders_left: "Recordatorios restantes"
+        signed_up_days_ago: "Días desde el registro"
         unsubscribe: "Baja"
       variables_intro: "Usa estas variables de Liquid en el cuerpo de tu plantilla:"
       your_name: "Tu nombre"

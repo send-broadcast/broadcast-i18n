@@ -3334,6 +3334,7 @@ fi:
       open_options: "Avaa valinnat"
       preheader: "Esikatseluteksti"
       preview_page: "Esikatsele vahvistussivua"
+      reminder_variables_intro: "Vain muistutusviesteissä:"
       rich_text: "Muotoiltu teksti"
       states:
         already_confirmed: "Jo vahvistettu"
@@ -3349,6 +3350,9 @@ fi:
         first_name: "Etunimi"
         full_name: "Koko nimi"
         last_name: "Sukunimi"
+        reminder_number: "Muistutuksen numero"
+        reminders_left: "Muistutuksia jäljellä"
+        signed_up_days_ago: "Päiviä rekisteröitymisestä"
         unsubscribe: "Peruutus"
       variables_intro: "Käytä näitä Liquid-muuttujia mallisi sisällössä:"
       your_name: "Nimesi"

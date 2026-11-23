@@ -3334,6 +3334,7 @@ fr:
       open_options: "Ouvrir les options"
       preheader: "Texte d'aperçu"
       preview_page: "Prévisualiser la page de confirmation"
+      reminder_variables_intro: "Uniquement dans les e-mails de rappel :"
       rich_text: "Texte enrichi"
       states:
         already_confirmed: "Déjà confirmé"
@@ -3349,6 +3350,9 @@ fr:
         first_name: "Prénom"
         full_name: "Nom complet"
         last_name: "Nom"
+        reminder_number: "Numéro du rappel"
+        reminders_left: "Rappels restants"
+        signed_up_days_ago: "Jours depuis l'inscription"
         unsubscribe: "Désabonnement"
       variables_intro: "Utilisez ces variables Liquid dans le corps de votre modèle :"
       your_name: "Votre nom"

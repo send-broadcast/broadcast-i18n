@@ -3439,6 +3439,7 @@ pl:
       open_options: "Otwórz opcje"
       preheader: "Tekst podglądu"
       preview_page: "Podgląd strony potwierdzenia"
+      reminder_variables_intro: "Tylko w e-mailach z przypomnieniem:"
       rich_text: "Tekst z formatowaniem"
       states:
         already_confirmed: "Już potwierdzono"
@@ -3454,6 +3455,9 @@ pl:
         first_name: "Imię"
         full_name: "Imię i nazwisko"
         last_name: "Nazwisko"
+        reminder_number: "Numer przypomnienia"
+        reminders_left: "Pozostałe przypomnienia"
+        signed_up_days_ago: "Dni od zapisu"
         unsubscribe: "Wypisanie"
       variables_intro: "Używaj tych zmiennych Liquid w treści szablonu:"
       your_name: "Twoje imię"
