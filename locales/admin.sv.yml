@@ -2052,6 +2052,7 @@ sv:
     two_factor_required: "Tvåstegsverifiering krävs i den här installationen. Konfigurera den för att fortsätta."
     demo_mode_notice: "Den delen av appen är inaktiverad i demoläge."
     demo_foreign_email_server: "En annan demobesökare har anslutit den här e-postservern, så dess leverantörsnycklar kan inte användas här. Anslut din egen server för att prova."
+    demo_outbound_blocked: "Demon ansluter inte till %{host}, så inget skickades till ditt konto. På din egen Broadcast-server ansluter det här steget till din leverantör."
 
   block_designs:
     not_a_document: "Inte ett blockdokument"
@@ -3360,6 +3361,164 @@ sv:
       updated: "Bekräftelsemallen har uppdaterats."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Publik"
+        engagement: "Engagemang"
+        sending: "Utskick"
+        automation: "Automatisering"
+        forms: "Formulär"
+        plugins: "Tillägg"
+      subscribers:
+        title: "Prenumeranter"
+        description: "Aktiva prenumeranter och förändringen på 30 dagar"
+        note: "%{change} på 30 dagar"
+      new_signups:
+        title: "Nya anmälningar"
+        description: "Anmälningar under perioden, jämfört med perioden innan"
+        note: "%{count} under perioden innan"
+      open_rate:
+        title: "Öppningsgrad"
+        description: "Öppnings- och klickgraden för det senaste utskicket"
+        note: "Senaste utskick, klick %{clicks}"
+      pending:
+        title: "Väntande"
+        description: "Har fått ett bekräftelsemejl, inte bekräftat än"
+        note: "Inte bekräftade än"
+      signups_chart:
+        title: "Anmälningar över tid"
+        description: "En stapel för varje dag, vecka eller månad"
+        total:
+          one: "%{number} anmälan under perioden"
+          other: "%{number} anmälningar under perioden"
+      utm_sources:
+        title: "Anmälningar per UTM-källa"
+        description: "De största källorna, Övriga och Okänd"
+        by_html: "Enligt det anpassade datafältet %{key}"
+        other: "Övriga"
+        unknown: "Okänd"
+        empty: "Inga anmälningar under den här perioden."
+      cumulative_growth:
+        title: "Ackumulerad tillväxt"
+        description: "Aktiva prenumeranter under perioden"
+        change: "Aktiva: %{from} → %{to}"
+        label: "Aktiva prenumeranter gick från %{from} till %{to}"
+      subscriber_states:
+        title: "Prenumeranternas status"
+        description: "Aktiva, väntande, avregistrerade, inaktiverade och studsade"
+        people:
+          one: "person"
+          other: "personer"
+        active: "Aktiva"
+        pending: "Väntande"
+        unsubscribed: "Avregistrerade"
+        deactivated: "Inaktiverade"
+        bounced: "Studsade"
+      last_send:
+        title: "Senaste utskick"
+        description: "Levererade, öppnade, klickade och avregistreringar"
+      latest_broadcasts:
+        title: "Senaste kampanjer"
+        description: "Skickade, schemalagda och utkast"
+      countries:
+        title: "Länder"
+        description: "Var folk anmäler sig och klickar"
+        count:
+          one: "%{count} land"
+          other: "%{count} länder"
+        empty: "Inga anmälningar eller klick med ett land under den här perioden."
+        globe: "Jordglob med länderna där folk anmälde sig och klickade"
+      open_rate_trend:
+        title: "Öppningsgrad per kampanj"
+        description: "Går engagemanget upp eller ner?"
+        sends:
+          one: "%{count} utskick"
+          other: "%{count} utskick"
+      top_links:
+        title: "Mest klickade länkar"
+        description: "Länkarna som folk klickar mest på, i alla kampanjer"
+        empty: "Inga klick under den här perioden."
+        tip: "%{url}: %{clicks} klick av %{people} personer"
+      best_broadcasts:
+        title: "Bästa kampanjer"
+        description: "Dina kampanjer med högst öppningsgrad"
+        meta: "%{date} · %{count} mottagare"
+      latest_sequences:
+        title: "Senaste sekvenser"
+        description: "Dina senaste sekvenser och personerna i dem"
+      latest_transactionals:
+        title: "Senaste transaktionsmejl"
+        description: "Dina senaste transaktionsmejl"
+      deliverability:
+        title: "Leveransbarhet"
+        description: "Studs- och klagomålsgrad för dina utskick"
+        over:
+          one: "Över %{count} utskick"
+          other: "Över %{count} utskick"
+        bounce_rate: "Studsgrad"
+        complaint_rate: "Klagomålsgrad"
+        bounces:
+          one: "%{number} studs"
+          other: "%{number} studsar"
+        complaints:
+          one: "%{number} spamklagomål"
+          other: "%{number} spamklagomål"
+        suppressed: "Spärrade adresser"
+        suppressed_note: "I dag, för den här kanalen och alla kanaler"
+      sending_room:
+        title: "Utskicksutrymme"
+        description: "Mejl som återstår den här timmen inom serverns gräns"
+        note: "kvar av %{limit} den här timmen"
+        none: "Ingen aktiv e-postserver"
+        server: "%{used} av %{limit}"
+      sequences_overview:
+        title: "Sekvenser"
+        description: "Personerna i varje sekvens och dess öppningsgrad"
+        empty: "Inga sekvenser än."
+        people:
+          one: "%{number} person i den"
+          other: "%{number} personer i den"
+        opens: "%{rate} öppningar"
+      transactional_volume:
+        title: "Transaktionsmejl"
+        description: "Transaktionsmejl som skickats under perioden"
+        note: "Skickade under perioden"
+        kept: "Skickade under perioden. Sparas bara i %{count} dagar."
+      form_conversion:
+        title: "Anmälningsformulär"
+        description: "Anmälningar per visning för varje formulär"
+        empty: "Inga formulärvisningar under den här perioden."
+        tip: "%{signups} anmälningar från %{views} unika visningar"
+      periods:
+        7d: "Senaste 7 dagarna"
+        30d: "Senaste 30 dagarna"
+        12w: "Senaste 12 veckorna"
+        12m: "Senaste 12 månaderna"
+        today: "I dag"
+      loading: "Laddar…"
+      plugin_description: "Ett kort från tillägget %{plugin}"
+      no_cards: "Din instrumentpanel har inga kort. Välj Anpassa för att lägga till kort från biblioteket."
+      no_sends: "Inga utskick än. Resultat visas här efter din första kampanj."
+      no_sends_in_period: "Inga utskick under den här perioden."
+    customize:
+      customize: "Anpassa"
+      intro: "Du anpassar din instrumentpanel. Lägg till kort från biblioteket, ta bort dem, flytta dem och ändra deras storlek och period. Bara du ser den här layouten."
+      as_default: "Använd den här layouten som min standard för kanaler som jag inte har anpassat"
+      reset: "Återställ standard"
+      cancel: "Avbryt"
+      save: "Spara"
+      not_saved: "Layouten sparades inte. Försök igen."
+      library: "Kortbibliotek"
+      search: "Hitta ett kort"
+      add: "Lägg till"
+      added: "Tillagt ✓"
+      library_note: "Kort som kräver en behörighet som du inte har finns inte i biblioteket. Tillägg kan lägga till egna kort."
+      drag: "Dra för att flytta"
+      earlier: "Flytta tidigare"
+      later: "Flytta senare"
+      size: "Kortets storlek"
+      period: "Period"
+      remove: "Ta bort kortet"
     index:
       title: "Översikt"
       total_subscribers: "Totalt antal prenumeranter"
@@ -7592,6 +7751,8 @@ sv:
         tracking_title: "Spårning"
         tracking_intro: "Standard för nya kampanjer och sekvenser. Befintliga behåller sin egen inställning."
         provider_tracking_help_short: "Av ber Postmark, Mailgun och SendGrid att inte spåra. Amazon SES använder sitt configuration set."
+        utm_source_key: "Fält för UTM-källa"
+        utm_source_key_help: "Det anpassade datafältet som sparar var en person kom ifrån. Anmälningsformulär kopierar utm_source från sidans adress till det. Instrumentpanelen grupperar anmälningar efter det."
         retention_title: "Datalagring"
         retention_intro: "Hur länge Broadcast sparar skickade transaktionsmejl."
         retention_label: "Transaktionsmejl"

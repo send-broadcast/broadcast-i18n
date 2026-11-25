@@ -2033,6 +2033,7 @@ en:
     two_factor_required: "Two-factor authentication is required on this installation. Set it up to continue."
     demo_mode_notice: "That part of the app is disabled in demo mode."
     demo_foreign_email_server: "Another demo visitor connected this email server, so its provider keys cannot be used here. Connect your own server to try this."
+    demo_outbound_blocked: "The demo does not connect to %{host}, so nothing was sent to your account. On your own Broadcast server, this step connects to your provider."
 
   block_designs:
     not_a_document: "Not a block document"
@@ -3341,6 +3342,164 @@ en:
       updated: "Confirmation template was successfully updated."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Audience"
+        engagement: "Engagement"
+        sending: "Sending"
+        automation: "Automation"
+        forms: "Forms"
+        plugins: "Plugins"
+      subscribers:
+        title: "Subscribers"
+        description: "Active subscribers and the change in 30 days"
+        note: "%{change} in 30 days"
+      new_signups:
+        title: "New sign-ups"
+        description: "Sign-ups in the period, against the period before"
+        note: "%{count} in the period before"
+      open_rate:
+        title: "Open rate"
+        description: "The open and click rate of the last send"
+        note: "Last send, clicks %{clicks}"
+      pending:
+        title: "Pending"
+        description: "Sent a confirmation email, not confirmed yet"
+        note: "Not confirmed yet"
+      signups_chart:
+        title: "Sign-ups over time"
+        description: "A bar for each day, week or month"
+        total:
+          one: "%{number} sign-up in the period"
+          other: "%{number} sign-ups in the period"
+      utm_sources:
+        title: "Sign-ups by UTM source"
+        description: "Top sources, Other and Unknown"
+        by_html: "By the custom data field %{key}"
+        other: "Other"
+        unknown: "Unknown"
+        empty: "No sign-ups in this period."
+      cumulative_growth:
+        title: "Cumulative growth"
+        description: "Active subscribers over the period"
+        change: "Active: %{from} → %{to}"
+        label: "Active subscribers went from %{from} to %{to}"
+      subscriber_states:
+        title: "Subscriber states"
+        description: "Active, pending, unsubscribed, deactivated and bounced"
+        people:
+          one: "person"
+          other: "people"
+        active: "Active"
+        pending: "Pending"
+        unsubscribed: "Unsubscribed"
+        deactivated: "Deactivated"
+        bounced: "Bounced"
+      last_send:
+        title: "Last send"
+        description: "Delivered, opened, clicked and unsubscribed"
+      latest_broadcasts:
+        title: "Latest broadcasts"
+        description: "Sent, scheduled and drafts"
+      countries:
+        title: "Countries"
+        description: "Where people sign up and click"
+        count:
+          one: "%{count} country"
+          other: "%{count} countries"
+        empty: "No sign-ups or clicks with a country in this period."
+        globe: "Globe of the countries where people signed up and clicked"
+      open_rate_trend:
+        title: "Open rate per broadcast"
+        description: "Is engagement going up or down?"
+        sends:
+          one: "%{count} send"
+          other: "%{count} sends"
+      top_links:
+        title: "Top links"
+        description: "The links people click most, across broadcasts"
+        empty: "No clicks in this period."
+        tip: "%{url}: %{clicks} clicks by %{people} people"
+      best_broadcasts:
+        title: "Best broadcasts"
+        description: "Your broadcasts with the highest open rate"
+        meta: "%{date} · %{count} recipients"
+      latest_sequences:
+        title: "Latest sequences"
+        description: "Your newest sequences and the people in them"
+      latest_transactionals:
+        title: "Latest transactional emails"
+        description: "Your newest transactional emails"
+      deliverability:
+        title: "Deliverability"
+        description: "Bounce and complaint rates of your sends"
+        over:
+          one: "Over %{count} send"
+          other: "Over %{count} sends"
+        bounce_rate: "Bounce rate"
+        complaint_rate: "Complaint rate"
+        bounces:
+          one: "%{number} bounce"
+          other: "%{number} bounces"
+        complaints:
+          one: "%{number} spam complaint"
+          other: "%{number} spam complaints"
+        suppressed: "Suppressed addresses"
+        suppressed_note: "Today, for this channel and all channels"
+      sending_room:
+        title: "Sending room"
+        description: "Emails left this hour in your server limit"
+        note: "left of %{limit} this hour"
+        none: "No active email server"
+        server: "%{used} of %{limit}"
+      sequences_overview:
+        title: "Sequences"
+        description: "People in each sequence and its open rate"
+        empty: "No sequences yet."
+        people:
+          one: "%{number} person in it"
+          other: "%{number} people in it"
+        opens: "%{rate} opens"
+      transactional_volume:
+        title: "Transactional emails"
+        description: "Transactional emails sent in the period"
+        note: "Sent in the period"
+        kept: "Sent in the period. Kept for %{count} days only."
+      form_conversion:
+        title: "Opt-in forms"
+        description: "Sign-ups per view for each form"
+        empty: "No form views in this period."
+        tip: "%{signups} sign-ups from %{views} unique views"
+      periods:
+        7d: "Last 7 days"
+        30d: "Last 30 days"
+        12w: "Last 12 weeks"
+        12m: "Last 12 months"
+        today: "Today"
+      loading: "Loading…"
+      plugin_description: "A card of the %{plugin} plugin"
+      no_cards: "Your dashboard has no cards. Select Customize to add cards from the library."
+      no_sends: "No sends yet. Results show here after your first broadcast."
+      no_sends_in_period: "No sends in this period."
+    customize:
+      customize: "Customize"
+      intro: "You are customizing your dashboard. Add cards from the library, remove them, move them and change their size and period. Only you see this layout."
+      as_default: "Use this layout as my default for channels I have not customized"
+      reset: "Reset to default"
+      cancel: "Cancel"
+      save: "Save"
+      not_saved: "The layout was not saved. Try again."
+      library: "Card library"
+      search: "Find a card"
+      add: "Add"
+      added: "Added ✓"
+      library_note: "Cards that need a permission you do not have are not in the library. Plugins can add their own cards."
+      drag: "Drag to move"
+      earlier: "Move earlier"
+      later: "Move later"
+      size: "Card size"
+      period: "Period"
+      remove: "Remove card"
     metric_rail:
       rail: "Channel figures"
       subscribers: "Subscribers"
@@ -7635,6 +7794,8 @@ en:
         tracking_title: "Tracking"
         tracking_intro: "Defaults for new broadcasts and sequences. Existing ones keep their own setting."
         provider_tracking_help_short: "Off tells Postmark, Mailgun and SendGrid not to track. Amazon SES uses its configuration set."
+        utm_source_key: "UTM source field"
+        utm_source_key_help: "The custom data field that keeps where a person came from. Opt-in forms copy utm_source from the page address into it. The dashboard groups sign-ups by it."
         retention_title: "Data retention"
         retention_intro: "How long Broadcast keeps sent transactional email."
         retention_label: "Transactional email"

@@ -2052,6 +2052,7 @@ da:
     two_factor_required: "Totrinsbekræftelse er påkrævet på denne installation. Opsæt den for at fortsætte."
     demo_mode_notice: "Den del af appen er deaktiveret i demotilstand."
     demo_foreign_email_server: "En anden demobesøgende har forbundet denne mailserver, så dens udbydernøgler kan ikke bruges her. Forbind din egen server for at prøve det."
+    demo_outbound_blocked: "Demoen forbinder ikke til %{host}, så intet blev sendt til din konto. På din egen Broadcast-server forbinder dette trin til din udbyder."
 
   block_designs:
     not_a_document: "Ikke et blokdokument"
@@ -3360,6 +3361,164 @@ da:
       updated: "Bekræftelsesskabelonen blev opdateret."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Publikum"
+        engagement: "Engagement"
+        sending: "Udsendelse"
+        automation: "Automatisering"
+        forms: "Formularer"
+        plugins: "Plugins"
+      subscribers:
+        title: "Abonnenter"
+        description: "Aktive abonnenter og ændringen på 30 dage"
+        note: "%{change} på 30 dage"
+      new_signups:
+        title: "Nye tilmeldinger"
+        description: "Tilmeldinger i perioden, sammenlignet med perioden før"
+        note: "%{count} i perioden før"
+      open_rate:
+        title: "Åbningsrate"
+        description: "Åbnings- og klikraten for den seneste udsendelse"
+        note: "Seneste udsendelse, klik %{clicks}"
+      pending:
+        title: "Afventende"
+        description: "Har fået en bekræftelsesmail, ikke bekræftet endnu"
+        note: "Ikke bekræftet endnu"
+      signups_chart:
+        title: "Tilmeldinger over tid"
+        description: "En søjle for hver dag, uge eller måned"
+        total:
+          one: "%{number} tilmelding i perioden"
+          other: "%{number} tilmeldinger i perioden"
+      utm_sources:
+        title: "Tilmeldinger efter UTM-kilde"
+        description: "De største kilder, Andre og Ukendt"
+        by_html: "Efter det brugerdefinerede datafelt %{key}"
+        other: "Andre"
+        unknown: "Ukendt"
+        empty: "Ingen tilmeldinger i denne periode."
+      cumulative_growth:
+        title: "Samlet vækst"
+        description: "Aktive abonnenter i perioden"
+        change: "Aktive: %{from} → %{to}"
+        label: "Aktive abonnenter gik fra %{from} til %{to}"
+      subscriber_states:
+        title: "Abonnenternes status"
+        description: "Aktive, afventende, afmeldte, deaktiverede og afviste"
+        people:
+          one: "person"
+          other: "personer"
+        active: "Aktive"
+        pending: "Afventende"
+        unsubscribed: "Afmeldte"
+        deactivated: "Deaktiverede"
+        bounced: "Afviste"
+      last_send:
+        title: "Seneste udsendelse"
+        description: "Leveret, åbnet, klikket og afmeldt"
+      latest_broadcasts:
+        title: "Seneste kampagner"
+        description: "Sendte, planlagte og kladder"
+      countries:
+        title: "Lande"
+        description: "Hvor folk tilmelder sig og klikker"
+        count:
+          one: "%{count} land"
+          other: "%{count} lande"
+        empty: "Ingen tilmeldinger eller klik med et land i denne periode."
+        globe: "Globus med de lande, hvor folk tilmeldte sig og klikkede"
+      open_rate_trend:
+        title: "Åbningsrate pr. kampagne"
+        description: "Stiger eller falder engagementet?"
+        sends:
+          one: "%{count} udsendelse"
+          other: "%{count} udsendelser"
+      top_links:
+        title: "Mest klikkede links"
+        description: "De links, folk klikker mest på, på tværs af kampagner"
+        empty: "Ingen klik i denne periode."
+        tip: "%{url}: %{clicks} klik af %{people} personer"
+      best_broadcasts:
+        title: "Bedste kampagner"
+        description: "Dine kampagner med den højeste åbningsrate"
+        meta: "%{date} · %{count} modtagere"
+      latest_sequences:
+        title: "Seneste sekvenser"
+        description: "Dine nyeste sekvenser og personerne i dem"
+      latest_transactionals:
+        title: "Seneste transaktionsmails"
+        description: "Dine nyeste transaktionsmails"
+      deliverability:
+        title: "Leveringsevne"
+        description: "Afvisnings- og klagerater for dine udsendelser"
+        over:
+          one: "Over %{count} udsendelse"
+          other: "Over %{count} udsendelser"
+        bounce_rate: "Afvisningsrate"
+        complaint_rate: "Klagerate"
+        bounces:
+          one: "%{number} afvisning"
+          other: "%{number} afvisninger"
+        complaints:
+          one: "%{number} spamklage"
+          other: "%{number} spamklager"
+        suppressed: "Blokerede adresser"
+        suppressed_note: "I dag, for denne kanal og alle kanaler"
+      sending_room:
+        title: "Plads til udsendelse"
+        description: "Mails tilbage i denne time inden for din servers grænse"
+        note: "tilbage af %{limit} i denne time"
+        none: "Ingen aktiv mailserver"
+        server: "%{used} af %{limit}"
+      sequences_overview:
+        title: "Sekvenser"
+        description: "Personerne i hver sekvens og dens åbningsrate"
+        empty: "Ingen sekvenser endnu."
+        people:
+          one: "%{number} person i den"
+          other: "%{number} personer i den"
+        opens: "%{rate} åbninger"
+      transactional_volume:
+        title: "Transaktionsmails"
+        description: "Transaktionsmails sendt i perioden"
+        note: "Sendt i perioden"
+        kept: "Sendt i perioden. Gemmes kun i %{count} dage."
+      form_conversion:
+        title: "Tilmeldingsformularer"
+        description: "Tilmeldinger pr. visning for hver formular"
+        empty: "Ingen formularvisninger i denne periode."
+        tip: "%{signups} tilmeldinger fra %{views} unikke visninger"
+      periods:
+        7d: "Seneste 7 dage"
+        30d: "Seneste 30 dage"
+        12w: "Seneste 12 uger"
+        12m: "Seneste 12 måneder"
+        today: "I dag"
+      loading: "Indlæser…"
+      plugin_description: "Et kort fra pluginnet %{plugin}"
+      no_cards: "Dit dashboard har ingen kort. Vælg Tilpas for at tilføje kort fra biblioteket."
+      no_sends: "Ingen udsendelser endnu. Resultater vises her efter din første kampagne."
+      no_sends_in_period: "Ingen udsendelser i denne periode."
+    customize:
+      customize: "Tilpas"
+      intro: "Du tilpasser dit dashboard. Tilføj kort fra biblioteket, fjern dem, flyt dem, og skift deres størrelse og periode. Kun du ser dette layout."
+      as_default: "Brug dette layout som min standard for kanaler, jeg ikke har tilpasset"
+      reset: "Gendan standard"
+      cancel: "Annuller"
+      save: "Gem"
+      not_saved: "Layoutet blev ikke gemt. Prøv igen."
+      library: "Kortbibliotek"
+      search: "Find et kort"
+      add: "Tilføj"
+      added: "Tilføjet ✓"
+      library_note: "Kort, der kræver en tilladelse, du ikke har, er ikke i biblioteket. Plugins kan tilføje deres egne kort."
+      drag: "Træk for at flytte"
+      earlier: "Flyt tidligere"
+      later: "Flyt senere"
+      size: "Kortets størrelse"
+      period: "Periode"
+      remove: "Fjern kort"
     index:
       title: "Oversigt"
       total_subscribers: "Abonnenter i alt"
@@ -7592,6 +7751,8 @@ da:
         tracking_title: "Sporing"
         tracking_intro: "Standarder for nye kampagner og sekvenser. Eksisterende beholder deres egen indstilling."
         provider_tracking_help_short: "Fra beder Postmark, Mailgun og SendGrid om ikke at spore. Amazon SES bruger sit configuration set."
+        utm_source_key: "Felt til UTM-kilde"
+        utm_source_key_help: "Det brugerdefinerede datafelt, der gemmer, hvor en person kom fra. Tilmeldingsformularer kopierer utm_source fra sidens adresse til det. Dashboardet grupperer tilmeldinger efter det."
         retention_title: "Dataopbevaring"
         retention_intro: "Hvor længe Broadcast gemmer sendte transaktionsmails."
         retention_label: "Transaktionsmails"

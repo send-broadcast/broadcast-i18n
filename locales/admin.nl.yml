@@ -2054,6 +2054,7 @@ nl:
     two_factor_required: "Tweestapsverificatie is verplicht op deze installatie. Stel het in om door te gaan."
     demo_mode_notice: "Dat deel van de app is uitgeschakeld in demomodus."
     demo_foreign_email_server: "Een andere demobezoeker heeft deze e-mailserver gekoppeld, dus de sleutels van de provider kunnen hier niet worden gebruikt. Koppel je eigen server om dit te proberen."
+    demo_outbound_blocked: "De demo maakt geen verbinding met %{host}, dus er is niets naar je account verzonden. Op je eigen Broadcast-server maakt deze stap verbinding met je provider."
 
   block_designs:
     not_a_document: "Geen blokdocument"
@@ -3362,6 +3363,164 @@ nl:
       updated: "Bevestigingssjabloon bijgewerkt."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Publiek"
+        engagement: "Betrokkenheid"
+        sending: "Verzenden"
+        automation: "Automatisering"
+        forms: "Formulieren"
+        plugins: "Plugins"
+      subscribers:
+        title: "Abonnees"
+        description: "Actieve abonnees en de verandering in 30 dagen"
+        note: "%{change} in 30 dagen"
+      new_signups:
+        title: "Nieuwe aanmeldingen"
+        description: "Aanmeldingen in de periode, vergeleken met de periode ervoor"
+        note: "%{count} in de periode ervoor"
+      open_rate:
+        title: "Openratio"
+        description: "De open- en klikratio van de laatste verzending"
+        note: "Laatste verzending, klikken %{clicks}"
+      pending:
+        title: "In afwachting"
+        description: "Kregen een bevestigingsmail, nog niet bevestigd"
+        note: "Nog niet bevestigd"
+      signups_chart:
+        title: "Aanmeldingen in de tijd"
+        description: "Een balk voor elke dag, week of maand"
+        total:
+          one: "%{number} aanmelding in de periode"
+          other: "%{number} aanmeldingen in de periode"
+      utm_sources:
+        title: "Aanmeldingen per UTM-bron"
+        description: "De belangrijkste bronnen, Overig en Onbekend"
+        by_html: "Volgens het aangepaste gegevensveld %{key}"
+        other: "Overig"
+        unknown: "Onbekend"
+        empty: "Geen aanmeldingen in deze periode."
+      cumulative_growth:
+        title: "Cumulatieve groei"
+        description: "Actieve abonnees in de periode"
+        change: "Actief: %{from} → %{to}"
+        label: "Het aantal actieve abonnees ging van %{from} naar %{to}"
+      subscriber_states:
+        title: "Status van abonnees"
+        description: "Actief, in afwachting, afgemeld, gedeactiveerd en gebounced"
+        people:
+          one: "persoon"
+          other: "personen"
+        active: "Actief"
+        pending: "In afwachting"
+        unsubscribed: "Afgemeld"
+        deactivated: "Gedeactiveerd"
+        bounced: "Gebounced"
+      last_send:
+        title: "Laatste verzending"
+        description: "Afgeleverd, geopend, geklikt en afgemeld"
+      latest_broadcasts:
+        title: "Nieuwste campagnes"
+        description: "Verzonden, ingepland en concepten"
+      countries:
+        title: "Landen"
+        description: "Waar mensen zich aanmelden en klikken"
+        count:
+          one: "%{count} land"
+          other: "%{count} landen"
+        empty: "Geen aanmeldingen of klikken met een land in deze periode."
+        globe: "Wereldbol van de landen waar mensen zich aanmeldden en klikten"
+      open_rate_trend:
+        title: "Openratio per campagne"
+        description: "Gaat de betrokkenheid omhoog of omlaag?"
+        sends:
+          one: "%{count} verzending"
+          other: "%{count} verzendingen"
+      top_links:
+        title: "Toplinks"
+        description: "De links waarop mensen het meest klikken, over alle campagnes"
+        empty: "Geen klikken in deze periode."
+        tip: "%{url}: %{clicks} klikken door %{people} personen"
+      best_broadcasts:
+        title: "Beste campagnes"
+        description: "Je campagnes met de hoogste openratio"
+        meta: "%{date} · %{count} ontvangers"
+      latest_sequences:
+        title: "Nieuwste reeksen"
+        description: "Je nieuwste reeksen en de mensen erin"
+      latest_transactionals:
+        title: "Nieuwste transactionele e-mails"
+        description: "Je nieuwste transactionele e-mails"
+      deliverability:
+        title: "Afleverbaarheid"
+        description: "Bounce- en klachtratio's van je verzendingen"
+        over:
+          one: "Over %{count} verzending"
+          other: "Over %{count} verzendingen"
+        bounce_rate: "Bounceratio"
+        complaint_rate: "Klachtratio"
+        bounces:
+          one: "%{number} bounce"
+          other: "%{number} bounces"
+        complaints:
+          one: "%{number} spamklacht"
+          other: "%{number} spamklachten"
+        suppressed: "Onderdrukte adressen"
+        suppressed_note: "Vandaag, voor dit kanaal en alle kanalen"
+      sending_room:
+        title: "Verzendruimte"
+        description: "E-mails die dit uur nog over zijn binnen de limiet van je server"
+        note: "over van %{limit} dit uur"
+        none: "Geen actieve e-mailserver"
+        server: "%{used} van %{limit}"
+      sequences_overview:
+        title: "Reeksen"
+        description: "De mensen in elke reeks en de openratio ervan"
+        empty: "Nog geen reeksen."
+        people:
+          one: "%{number} persoon erin"
+          other: "%{number} personen erin"
+        opens: "%{rate} geopend"
+      transactional_volume:
+        title: "Transactionele e-mails"
+        description: "Transactionele e-mails verzonden in de periode"
+        note: "Verzonden in de periode"
+        kept: "Verzonden in de periode. Slechts %{count} dagen bewaard."
+      form_conversion:
+        title: "Aanmeldformulieren"
+        description: "Aanmeldingen per weergave van elk formulier"
+        empty: "Geen formulierweergaven in deze periode."
+        tip: "%{signups} aanmeldingen uit %{views} unieke weergaven"
+      periods:
+        7d: "Laatste 7 dagen"
+        30d: "Laatste 30 dagen"
+        12w: "Laatste 12 weken"
+        12m: "Laatste 12 maanden"
+        today: "Vandaag"
+      loading: "Laden…"
+      plugin_description: "Een kaart van de plugin %{plugin}"
+      no_cards: "Je dashboard heeft geen kaarten. Kies Aanpassen om kaarten uit de bibliotheek toe te voegen."
+      no_sends: "Nog geen verzendingen. Resultaten verschijnen hier na je eerste campagne."
+      no_sends_in_period: "Geen verzendingen in deze periode."
+    customize:
+      customize: "Aanpassen"
+      intro: "Je past je dashboard aan. Voeg kaarten uit de bibliotheek toe, verwijder en verplaats ze en wijzig hun grootte en periode. Alleen jij ziet deze indeling."
+      as_default: "Deze indeling gebruiken als mijn standaard voor kanalen die ik niet heb aangepast"
+      reset: "Standaard herstellen"
+      cancel: "Annuleren"
+      save: "Opslaan"
+      not_saved: "De indeling is niet opgeslagen. Probeer het opnieuw."
+      library: "Kaartenbibliotheek"
+      search: "Een kaart zoeken"
+      add: "Toevoegen"
+      added: "Toegevoegd ✓"
+      library_note: "Kaarten die een recht nodig hebben dat je niet hebt, staan niet in de bibliotheek. Plugins kunnen hun eigen kaarten toevoegen."
+      drag: "Sleep om te verplaatsen"
+      earlier: "Naar voren"
+      later: "Naar achteren"
+      size: "Grootte van de kaart"
+      period: "Periode"
+      remove: "Kaart verwijderen"
     index:
       title: "Overzicht"
       total_subscribers: "Totaal aantal abonnees"
@@ -7594,6 +7753,8 @@ nl:
         tracking_title: "Tracking"
         tracking_intro: "Standaarden voor nieuwe campagnes en reeksen. Bestaande houden hun eigen instelling."
         provider_tracking_help_short: "Uit vraagt Postmark, Mailgun en SendGrid om niet te tracken. Amazon SES gebruikt zijn configuration set."
+        utm_source_key: "Veld voor de UTM-bron"
+        utm_source_key_help: "Het aangepaste gegevensveld dat bewaart waar iemand vandaan kwam. Aanmeldformulieren kopiëren utm_source uit het adres van de pagina naar dit veld. Het dashboard groepeert aanmeldingen hierop."
         retention_title: "Bewaartermijn"
         retention_intro: "Hoe lang Broadcast verstuurde transactionele e-mail bewaart."
         retention_label: "Transactionele e-mail"

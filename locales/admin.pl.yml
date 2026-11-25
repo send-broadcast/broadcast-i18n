@@ -2126,6 +2126,7 @@ pl:
     two_factor_required: "W tej instalacji wymagane jest uwierzytelnianie dwuskładnikowe. Skonfiguruj je, aby kontynuować."
     demo_mode_notice: "Ta część aplikacji jest wyłączona w trybie demo."
     demo_foreign_email_server: "Ten serwer poczty połączył inny odwiedzający demo, więc jego kluczy dostawcy nie można tu użyć. Połącz własny serwer, aby to wypróbować."
+    demo_outbound_blocked: "Demo nie łączy się z %{host}, więc nic nie zostało wysłane na Twoje konto. Na Twoim własnym serwerze Broadcast ten krok łączy się z Twoim dostawcą."
 
   block_designs:
     not_a_document: "To nie jest dokument bloków"
@@ -3466,6 +3467,180 @@ pl:
       updated: "Szablon potwierdzenia został zaktualizowany."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Odbiorcy"
+        engagement: "Zaangażowanie"
+        sending: "Wysyłka"
+        automation: "Automatyzacja"
+        forms: "Formularze"
+        plugins: "Wtyczki"
+      subscribers:
+        title: "Subskrybenci"
+        description: "Aktywni subskrybenci i zmiana w ciągu 30 dni"
+        note: "%{change} w ciągu 30 dni"
+      new_signups:
+        title: "Nowe zapisy"
+        description: "Zapisy w okresie w porównaniu z poprzednim okresem"
+        note: "%{count} w poprzednim okresie"
+      open_rate:
+        title: "Wskaźnik otwarć"
+        description: "Wskaźnik otwarć i kliknięć ostatniej wysyłki"
+        note: "Ostatnia wysyłka, kliknięcia %{clicks}"
+      pending:
+        title: "Oczekujący"
+        description: "Otrzymali e-mail z potwierdzeniem, jeszcze niepotwierdzony"
+        note: "Jeszcze niepotwierdzeni"
+      signups_chart:
+        title: "Zapisy w czasie"
+        description: "Słupek dla każdego dnia, tygodnia lub miesiąca"
+        total:
+          one: "%{number} zapis w okresie"
+          few: "%{number} zapisy w okresie"
+          many: "%{number} zapisów w okresie"
+          other: "%{number} zapisu w okresie"
+      utm_sources:
+        title: "Zapisy według źródła UTM"
+        description: "Główne źródła, Inne i Nieznane"
+        by_html: "Według niestandardowego pola danych %{key}"
+        other: "Inne"
+        unknown: "Nieznane"
+        empty: "Brak zapisów w tym okresie."
+      cumulative_growth:
+        title: "Wzrost łączny"
+        description: "Aktywni subskrybenci w okresie"
+        change: "Aktywni: %{from} → %{to}"
+        label: "Liczba aktywnych subskrybentów wzrosła z %{from} do %{to}"
+      subscriber_states:
+        title: "Statusy subskrybentów"
+        description: "Aktywni, oczekujący, wypisani, dezaktywowani i odrzuceni"
+        people:
+          one: "osoba"
+          few: "osoby"
+          many: "osób"
+          other: "osoby"
+        active: "Aktywni"
+        pending: "Oczekujący"
+        unsubscribed: "Wypisani"
+        deactivated: "Dezaktywowani"
+        bounced: "Odrzuceni"
+      last_send:
+        title: "Ostatnia wysyłka"
+        description: "Dostarczone, otwarte, kliknięte i wypisania"
+      latest_broadcasts:
+        title: "Najnowsze kampanie"
+        description: "Wysłane, zaplanowane i szkice"
+      countries:
+        title: "Kraje"
+        description: "Gdzie ludzie się zapisują i klikają"
+        count:
+          one: "%{count} kraj"
+          few: "%{count} kraje"
+          many: "%{count} krajów"
+          other: "%{count} kraju"
+        empty: "Brak zapisów i kliknięć z krajem w tym okresie."
+        globe: "Globus krajów, w których ludzie się zapisali i kliknęli"
+      open_rate_trend:
+        title: "Wskaźnik otwarć dla kampanii"
+        description: "Czy zaangażowanie rośnie, czy spada?"
+        sends:
+          one: "%{count} wysyłka"
+          few: "%{count} wysyłki"
+          many: "%{count} wysyłek"
+          other: "%{count} wysyłki"
+      top_links:
+        title: "Najczęściej klikane linki"
+        description: "Linki, które ludzie klikają najczęściej, we wszystkich kampaniach"
+        empty: "Brak kliknięć w tym okresie."
+        tip: "%{url}: kliknięcia %{clicks}, osoby %{people}"
+      best_broadcasts:
+        title: "Najlepsze kampanie"
+        description: "Twoje kampanie z najwyższym wskaźnikiem otwarć"
+        meta: "%{date} · odbiorcy: %{count}"
+      latest_sequences:
+        title: "Najnowsze sekwencje"
+        description: "Twoje najnowsze sekwencje i osoby w nich"
+      latest_transactionals:
+        title: "Najnowsze e-maile transakcyjne"
+        description: "Twoje najnowsze e-maile transakcyjne"
+      deliverability:
+        title: "Dostarczalność"
+        description: "Wskaźniki odrzuceń i skarg Twoich wysyłek"
+        over:
+          one: "Z %{count} wysyłki"
+          few: "Z %{count} wysyłek"
+          many: "Z %{count} wysyłek"
+          other: "Z %{count} wysyłki"
+        bounce_rate: "Wskaźnik odrzuceń"
+        complaint_rate: "Wskaźnik skarg"
+        bounces:
+          one: "%{number} odrzucenie"
+          few: "%{number} odrzucenia"
+          many: "%{number} odrzuceń"
+          other: "%{number} odrzucenia"
+        complaints:
+          one: "%{number} skarga na spam"
+          few: "%{number} skargi na spam"
+          many: "%{number} skarg na spam"
+          other: "%{number} skargi na spam"
+        suppressed: "Zablokowane adresy"
+        suppressed_note: "Dziś, dla tego kanału i wszystkich kanałów"
+      sending_room:
+        title: "Zapas wysyłki"
+        description: "E-maile, które zostały w tej godzinie w limicie Twojego serwera"
+        note: "zostało z %{limit} w tej godzinie"
+        none: "Brak aktywnego serwera e-mail"
+        server: "%{used} z %{limit}"
+      sequences_overview:
+        title: "Sekwencje"
+        description: "Osoby w każdej sekwencji i jej wskaźnik otwarć"
+        empty: "Brak sekwencji."
+        people:
+          one: "%{number} osoba w niej"
+          few: "%{number} osoby w niej"
+          many: "%{number} osób w niej"
+          other: "%{number} osoby w niej"
+        opens: "otwarcia: %{rate}"
+      transactional_volume:
+        title: "E-maile transakcyjne"
+        description: "E-maile transakcyjne wysłane w okresie"
+        note: "Wysłane w okresie"
+        kept: "Wysłane w okresie. Przechowywane tylko przez %{count} dni."
+      form_conversion:
+        title: "Formularze zapisu"
+        description: "Zapisy na wyświetlenie dla każdego formularza"
+        empty: "Brak wyświetleń formularzy w tym okresie."
+        tip: "Zapisy: %{signups}, unikalne wyświetlenia: %{views}"
+      periods:
+        7d: "Ostatnie 7 dni"
+        30d: "Ostatnie 30 dni"
+        12w: "Ostatnie 12 tygodni"
+        12m: "Ostatnie 12 miesięcy"
+        today: "Dziś"
+      loading: "Ładowanie…"
+      plugin_description: "Karta wtyczki %{plugin}"
+      no_cards: "Twój pulpit nie ma kart. Wybierz Dostosuj, aby dodać karty z biblioteki."
+      no_sends: "Brak wysyłek. Wyniki pojawią się tutaj po Twojej pierwszej kampanii."
+      no_sends_in_period: "Brak wysyłek w tym okresie."
+    customize:
+      customize: "Dostosuj"
+      intro: "Dostosowujesz swój pulpit. Dodawaj karty z biblioteki, usuwaj je, przenoś i zmieniaj ich rozmiar oraz okres. Tylko Ty widzisz ten układ."
+      as_default: "Używaj tego układu jako domyślnego w kanałach bez własnego układu"
+      reset: "Przywróć domyślny"
+      cancel: "Anuluj"
+      save: "Zapisz"
+      not_saved: "Układ nie został zapisany. Spróbuj ponownie."
+      library: "Biblioteka kart"
+      search: "Znajdź kartę"
+      add: "Dodaj"
+      added: "Dodano ✓"
+      library_note: "Karty, które wymagają uprawnienia, którego nie masz, nie są w bibliotece. Wtyczki mogą dodawać własne karty."
+      drag: "Przeciągnij, aby przenieść"
+      earlier: "Przenieś wcześniej"
+      later: "Przenieś później"
+      size: "Rozmiar karty"
+      period: "Okres"
+      remove: "Usuń kartę"
     index:
       title: "Przegląd"
       total_subscribers: "Łącznie subskrybentów"
@@ -7846,6 +8021,8 @@ pl:
         tracking_title: "Śledzenie"
         tracking_intro: "Ustawienia domyślne nowych kampanii i sekwencji. Istniejące zachowują własne ustawienie."
         provider_tracking_help_short: "Wył. prosi Postmark, Mailgun i SendGrid, by nie śledziły. Amazon SES używa swojego configuration set."
+        utm_source_key: "Pole źródła UTM"
+        utm_source_key_help: "Niestandardowe pole danych, które przechowuje, skąd przyszła osoba. Formularze zapisu kopiują do niego utm_source z adresu strony. Pulpit grupuje według niego zapisy."
         retention_title: "Przechowywanie danych"
         retention_intro: "Jak długo Broadcast przechowuje wysłane e-maile transakcyjne."
         retention_label: "E-maile transakcyjne"

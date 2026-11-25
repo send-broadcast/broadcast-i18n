@@ -2053,6 +2053,7 @@ fi:
     two_factor_required: "Tässä asennuksessa kaksivaiheinen tunnistautuminen on pakollinen. Ota se käyttöön jatkaaksesi."
     demo_mode_notice: "Tämä sovelluksen osa ei ole käytössä esittelytilassa."
     demo_foreign_email_server: "Toinen esittelyn kävijä yhdisti tämän sähköpostipalvelimen, joten sen palveluntarjoajan avaimia ei voi käyttää tässä. Yhdistä oma palvelimesi kokeillaksesi tätä."
+    demo_outbound_blocked: "Demo ei muodosta yhteyttä kohteeseen %{host}, joten tilillesi ei lähetetty mitään. Omalla Broadcast-palvelimellasi tämä vaihe muodostaa yhteyden palveluntarjoajaasi."
 
   block_designs:
     not_a_document: "Ei lohkodokumentti"
@@ -3361,6 +3362,164 @@ fi:
       updated: "Vahvistusmalli päivitetty."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Yleisö"
+        engagement: "Sitoutuminen"
+        sending: "Lähetys"
+        automation: "Automaatio"
+        forms: "Lomakkeet"
+        plugins: "Laajennukset"
+      subscribers:
+        title: "Tilaajat"
+        description: "Aktiiviset tilaajat ja muutos 30 päivässä"
+        note: "%{change} 30 päivässä"
+      new_signups:
+        title: "Uudet liittymiset"
+        description: "Liittymiset jaksolla verrattuna edelliseen jaksoon"
+        note: "%{count} edellisellä jaksolla"
+      open_rate:
+        title: "Avausprosentti"
+        description: "Viimeisimmän lähetyksen avaus- ja klikkausprosentti"
+        note: "Viimeisin lähetys, klikkaukset %{clicks}"
+      pending:
+        title: "Odottavat"
+        description: "Ovat saaneet vahvistussähköpostin, eivät ole vielä vahvistaneet"
+        note: "Ei vielä vahvistettu"
+      signups_chart:
+        title: "Liittymiset ajan mittaan"
+        description: "Pylväs jokaiselle päivälle, viikolle tai kuukaudelle"
+        total:
+          one: "%{number} liittyminen jaksolla"
+          other: "%{number} liittymistä jaksolla"
+      utm_sources:
+        title: "Liittymiset UTM-lähteen mukaan"
+        description: "Suurimmat lähteet, Muut ja Tuntematon"
+        by_html: "Mukautetun tietokentän %{key} mukaan"
+        other: "Muut"
+        unknown: "Tuntematon"
+        empty: "Ei liittymisiä tällä jaksolla."
+      cumulative_growth:
+        title: "Kertynyt kasvu"
+        description: "Aktiiviset tilaajat jaksolla"
+        change: "Aktiiviset: %{from} → %{to}"
+        label: "Aktiivisten tilaajien määrä muuttui %{from} → %{to}"
+      subscriber_states:
+        title: "Tilaajien tilat"
+        description: "Aktiiviset, odottavat, peruneet, poistetut käytöstä ja palautuneet"
+        people:
+          one: "henkilö"
+          other: "henkilöä"
+        active: "Aktiiviset"
+        pending: "Odottavat"
+        unsubscribed: "Peruneet"
+        deactivated: "Poistettu käytöstä"
+        bounced: "Palautuneet"
+      last_send:
+        title: "Viimeisin lähetys"
+        description: "Toimitetut, avatut, klikatut ja perumiset"
+      latest_broadcasts:
+        title: "Uusimmat kampanjat"
+        description: "Lähetetyt, ajastetut ja luonnokset"
+      countries:
+        title: "Maat"
+        description: "Missä ihmiset liittyvät ja klikkaavat"
+        count:
+          one: "%{count} maa"
+          other: "%{count} maata"
+        empty: "Ei liittymisiä tai klikkauksia, joilla on maa, tällä jaksolla."
+        globe: "Maapallo maista, joissa ihmiset liittyivät ja klikkasivat"
+      open_rate_trend:
+        title: "Avausprosentti kampanjoittain"
+        description: "Nouseeko vai laskeeko sitoutuminen?"
+        sends:
+          one: "%{count} lähetys"
+          other: "%{count} lähetystä"
+      top_links:
+        title: "Klikatuimmat linkit"
+        description: "Linkit, joita klikataan eniten, kaikissa kampanjoissa"
+        empty: "Ei klikkauksia tällä jaksolla."
+        tip: "%{url}: %{clicks} klikkausta, %{people} henkilöä"
+      best_broadcasts:
+        title: "Parhaat kampanjat"
+        description: "Kampanjasi, joilla on korkein avausprosentti"
+        meta: "%{date} · %{count} vastaanottajaa"
+      latest_sequences:
+        title: "Uusimmat sarjat"
+        description: "Uusimmat sarjasi ja niissä olevat henkilöt"
+      latest_transactionals:
+        title: "Uusimmat transaktiosähköpostit"
+        description: "Uusimmat transaktiosähköpostisi"
+      deliverability:
+        title: "Toimitettavuus"
+        description: "Lähetystesi palautus- ja valitusprosentit"
+        over:
+          one: "%{count} lähetyksestä"
+          other: "%{count} lähetyksestä"
+        bounce_rate: "Palautusprosentti"
+        complaint_rate: "Valitusprosentti"
+        bounces:
+          one: "%{number} palautus"
+          other: "%{number} palautusta"
+        complaints:
+          one: "%{number} roskapostivalitus"
+          other: "%{number} roskapostivalitusta"
+        suppressed: "Estetyt osoitteet"
+        suppressed_note: "Tänään, tälle kanavalle ja kaikille kanaville"
+      sending_room:
+        title: "Lähetysvara"
+        description: "Tällä tunnilla jäljellä olevat sähköpostit palvelimesi rajassa"
+        note: "jäljellä %{limit}:stä tällä tunnilla"
+        none: "Ei aktiivista sähköpostipalvelinta"
+        server: "%{used} / %{limit}"
+      sequences_overview:
+        title: "Sarjat"
+        description: "Henkilöt kussakin sarjassa ja sen avausprosentti"
+        empty: "Ei vielä sarjoja."
+        people:
+          one: "%{number} henkilö sarjassa"
+          other: "%{number} henkilöä sarjassa"
+        opens: "%{rate} avauksia"
+      transactional_volume:
+        title: "Transaktiosähköpostit"
+        description: "Jaksolla lähetetyt transaktiosähköpostit"
+        note: "Lähetetty jaksolla"
+        kept: "Lähetetty jaksolla. Säilytetään vain %{count} päivää."
+      form_conversion:
+        title: "Liittymislomakkeet"
+        description: "Liittymiset näyttökertaa kohden kullekin lomakkeelle"
+        empty: "Ei lomakkeiden näyttökertoja tällä jaksolla."
+        tip: "%{signups} liittymistä %{views} yksilöllisestä näyttökerrasta"
+      periods:
+        7d: "Viimeiset 7 päivää"
+        30d: "Viimeiset 30 päivää"
+        12w: "Viimeiset 12 viikkoa"
+        12m: "Viimeiset 12 kuukautta"
+        today: "Tänään"
+      loading: "Ladataan…"
+      plugin_description: "Laajennuksen %{plugin} kortti"
+      no_cards: "Koontinäytössäsi ei ole kortteja. Valitse Mukauta lisätäksesi kortteja kirjastosta."
+      no_sends: "Ei vielä lähetyksiä. Tulokset näkyvät tässä ensimmäisen kampanjasi jälkeen."
+      no_sends_in_period: "Ei lähetyksiä tällä jaksolla."
+    customize:
+      customize: "Mukauta"
+      intro: "Mukautat koontinäyttöäsi. Lisää kortteja kirjastosta, poista ja siirrä niitä ja muuta niiden kokoa ja jaksoa. Vain sinä näet tämän asettelun."
+      as_default: "Käytä tätä asettelua oletuksenani kanavilla, joita en ole mukauttanut"
+      reset: "Palauta oletus"
+      cancel: "Peruuta"
+      save: "Tallenna"
+      not_saved: "Asettelua ei tallennettu. Yritä uudelleen."
+      library: "Korttikirjasto"
+      search: "Etsi kortti"
+      add: "Lisää"
+      added: "Lisätty ✓"
+      library_note: "Kortit, jotka vaativat oikeuden, jota sinulla ei ole, eivät ole kirjastossa. Laajennukset voivat lisätä omia korttejaan."
+      drag: "Siirrä vetämällä"
+      earlier: "Siirrä aiemmaksi"
+      later: "Siirrä myöhemmäksi"
+      size: "Kortin koko"
+      period: "Jakso"
+      remove: "Poista kortti"
     index:
       title: "Yleiskatsaus"
       total_subscribers: "Tilaajia yhteensä"
@@ -7593,6 +7752,8 @@ fi:
         tracking_title: "Seuranta"
         tracking_intro: "Oletukset uusille kampanjoille ja sarjoille. Olemassa olevat pitävät oman asetuksensa."
         provider_tracking_help_short: "Pois pyytää Postmarkia, Mailgunia ja SendGridiä olemaan seuraamatta. Amazon SES käyttää configuration setiään."
+        utm_source_key: "UTM-lähteen kenttä"
+        utm_source_key_help: "Mukautettu tietokenttä, johon tallentuu, mistä henkilö tuli. Liittymislomakkeet kopioivat siihen utm_source-arvon sivun osoitteesta. Koontinäyttö ryhmittelee liittymiset sen mukaan."
         retention_title: "Tietojen säilytys"
         retention_intro: "Kuinka kauan Broadcast säilyttää lähetetyt tapahtumaviestit."
         retention_label: "Tapahtumaviestit"

@@ -2053,6 +2053,7 @@ es:
     two_factor_required: "Esta instalación exige autenticación en dos pasos. Configúrala para continuar."
     demo_mode_notice: "Esa parte de la aplicación está desactivada en modo demo."
     demo_foreign_email_server: "Otro visitante de la demo conectó este servidor de correo, así que sus claves del proveedor no se pueden usar aquí. Conecta tu propio servidor para probarlo."
+    demo_outbound_blocked: "La demo no se conecta a %{host}, así que no se envió nada a tu cuenta. En tu propio servidor de Broadcast, este paso se conecta con tu proveedor."
 
   block_designs:
     not_a_document: "No es un documento de bloques"
@@ -3361,6 +3362,164 @@ es:
       updated: "La plantilla de confirmación se ha actualizado correctamente."
 
   dashboard:
+    cards:
+      groups:
+        audience: "Audiencia"
+        engagement: "Interacción"
+        sending: "Envío"
+        automation: "Automatización"
+        forms: "Formularios"
+        plugins: "Plugins"
+      subscribers:
+        title: "Suscriptores"
+        description: "Suscriptores activos y el cambio en 30 días"
+        note: "%{change} en 30 días"
+      new_signups:
+        title: "Nuevas suscripciones"
+        description: "Suscripciones del periodo, frente al periodo anterior"
+        note: "%{count} en el periodo anterior"
+      open_rate:
+        title: "Tasa de apertura"
+        description: "La tasa de apertura y de clics del último envío"
+        note: "Último envío, clics %{clicks}"
+      pending:
+        title: "Pendientes"
+        description: "Recibieron un email de confirmación, aún sin confirmar"
+        note: "Aún sin confirmar"
+      signups_chart:
+        title: "Suscripciones en el tiempo"
+        description: "Una barra por cada día, semana o mes"
+        total:
+          one: "%{number} suscripción en el periodo"
+          other: "%{number} suscripciones en el periodo"
+      utm_sources:
+        title: "Suscripciones por fuente UTM"
+        description: "Las fuentes principales, Otras y Desconocida"
+        by_html: "Según el campo de datos personalizado %{key}"
+        other: "Otras"
+        unknown: "Desconocida"
+        empty: "No hay suscripciones en este periodo."
+      cumulative_growth:
+        title: "Crecimiento acumulado"
+        description: "Suscriptores activos en el periodo"
+        change: "Activos: %{from} → %{to}"
+        label: "Los suscriptores activos pasaron de %{from} a %{to}"
+      subscriber_states:
+        title: "Estados de los suscriptores"
+        description: "Activos, pendientes, dados de baja, desactivados y rebotados"
+        people:
+          one: "persona"
+          other: "personas"
+        active: "Activos"
+        pending: "Pendientes"
+        unsubscribed: "Dados de baja"
+        deactivated: "Desactivados"
+        bounced: "Rebotados"
+      last_send:
+        title: "Último envío"
+        description: "Entregados, abiertos, con clic y bajas"
+      latest_broadcasts:
+        title: "Últimas campañas"
+        description: "Enviadas, programadas y borradores"
+      countries:
+        title: "Países"
+        description: "Dónde se suscribe y hace clic la gente"
+        count:
+          one: "%{count} país"
+          other: "%{count} países"
+        empty: "No hay suscripciones ni clics con un país en este periodo."
+        globe: "Globo de los países donde la gente se suscribió e hizo clic"
+      open_rate_trend:
+        title: "Tasa de apertura por campaña"
+        description: "¿La interacción sube o baja?"
+        sends:
+          one: "%{count} envío"
+          other: "%{count} envíos"
+      top_links:
+        title: "Enlaces más clicados"
+        description: "Los enlaces en los que más clic hace la gente, en todas las campañas"
+        empty: "No hay clics en este periodo."
+        tip: "%{url}: %{clicks} clics de %{people} personas"
+      best_broadcasts:
+        title: "Mejores campañas"
+        description: "Tus campañas con la tasa de apertura más alta"
+        meta: "%{date} · %{count} destinatarios"
+      latest_sequences:
+        title: "Últimas secuencias"
+        description: "Tus secuencias más recientes y las personas en ellas"
+      latest_transactionals:
+        title: "Últimos emails transaccionales"
+        description: "Tus emails transaccionales más recientes"
+      deliverability:
+        title: "Entregabilidad"
+        description: "Tasas de rebote y de quejas de tus envíos"
+        over:
+          one: "Sobre %{count} envío"
+          other: "Sobre %{count} envíos"
+        bounce_rate: "Tasa de rebote"
+        complaint_rate: "Tasa de quejas"
+        bounces:
+          one: "%{number} rebote"
+          other: "%{number} rebotes"
+        complaints:
+          one: "%{number} queja de spam"
+          other: "%{number} quejas de spam"
+        suppressed: "Direcciones suprimidas"
+        suppressed_note: "Hoy, para este canal y todos los canales"
+      sending_room:
+        title: "Margen de envío"
+        description: "Emails que quedan esta hora en el límite de tu servidor"
+        note: "quedan de %{limit} esta hora"
+        none: "Ningún servidor de email activo"
+        server: "%{used} de %{limit}"
+      sequences_overview:
+        title: "Secuencias"
+        description: "Las personas en cada secuencia y su tasa de apertura"
+        empty: "Aún no hay secuencias."
+        people:
+          one: "%{number} persona en ella"
+          other: "%{number} personas en ella"
+        opens: "%{rate} de aperturas"
+      transactional_volume:
+        title: "Emails transaccionales"
+        description: "Emails transaccionales enviados en el periodo"
+        note: "Enviados en el periodo"
+        kept: "Enviados en el periodo. Se guardan solo %{count} días."
+      form_conversion:
+        title: "Formularios de suscripción"
+        description: "Suscripciones por visita de cada formulario"
+        empty: "No hay visitas a formularios en este periodo."
+        tip: "%{signups} suscripciones de %{views} visitas únicas"
+      periods:
+        7d: "Últimos 7 días"
+        30d: "Últimos 30 días"
+        12w: "Últimas 12 semanas"
+        12m: "Últimos 12 meses"
+        today: "Hoy"
+      loading: "Cargando…"
+      plugin_description: "Una tarjeta del plugin %{plugin}"
+      no_cards: "Tu panel no tiene tarjetas. Selecciona Personalizar para añadir tarjetas de la biblioteca."
+      no_sends: "Aún no hay envíos. Los resultados aparecen aquí después de tu primera campaña."
+      no_sends_in_period: "No hay envíos en este periodo."
+    customize:
+      customize: "Personalizar"
+      intro: "Estás personalizando tu panel. Añade tarjetas de la biblioteca, quítalas, muévelas y cambia su tamaño y su periodo. Solo tú ves esta disposición."
+      as_default: "Usar esta disposición como predeterminada para los canales que no he personalizado"
+      reset: "Restablecer la predeterminada"
+      cancel: "Cancelar"
+      save: "Guardar"
+      not_saved: "La disposición no se guardó. Inténtalo de nuevo."
+      library: "Biblioteca de tarjetas"
+      search: "Buscar una tarjeta"
+      add: "Añadir"
+      added: "Añadida ✓"
+      library_note: "Las tarjetas que necesitan un permiso que no tienes no están en la biblioteca. Los plugins pueden añadir sus propias tarjetas."
+      drag: "Arrastra para mover"
+      earlier: "Mover antes"
+      later: "Mover después"
+      size: "Tamaño de la tarjeta"
+      period: "Periodo"
+      remove: "Quitar tarjeta"
     index:
       title: "Resumen"
       total_subscribers: "Total de suscriptores"
@@ -7593,6 +7752,8 @@ es:
         tracking_title: "Seguimiento"
         tracking_intro: "Valores predeterminados de las nuevas campañas y secuencias. Las existentes mantienen su ajuste."
         provider_tracking_help_short: "Desactivado indica a Postmark, Mailgun y SendGrid que no hagan seguimiento. Amazon SES usa su configuration set."
+        utm_source_key: "Campo de la fuente UTM"
+        utm_source_key_help: "El campo de datos personalizado que guarda de dónde vino una persona. Los formularios de suscripción copian en él utm_source de la dirección de la página. El panel agrupa las suscripciones según este campo."
         retention_title: "Conservación de datos"
         retention_intro: "Cuánto tiempo guarda Broadcast el correo transaccional enviado."
         retention_label: "Correo transaccional"
