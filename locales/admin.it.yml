@@ -3390,6 +3390,17 @@ it:
         total:
           one: "%{number} iscrizione nel periodo"
           other: "%{number} iscrizioni nel periodo"
+      click_rate:
+        title: "Tasso di clic"
+        description: "Clic per persona sugli invii del periodo"
+      bounce_rate:
+        title: "Tasso di rimbalzo"
+        description: "Rimbalzi per persona sugli invii del periodo"
+      unsubscribe_rate:
+        title: "Tasso di disiscrizione"
+        description: "Disiscrizioni per persona sugli invii del periodo"
+      send_rate:
+        no_sends: "Nessun invio nel periodo"
       release_notes:
         title: "Note di rilascio"
         description: "Le novità di ogni versione di Broadcast"
@@ -3507,6 +3518,30 @@ it:
       no_sends: "Ancora nessun invio. I risultati compaiono qui dopo la tua prima campagna."
       no_sends_in_period: "Nessun invio in questo periodo."
     customize:
+      presets:
+        start: "Parti da un layout predefinito"
+        note: "Un layout predefinito sostituisce le schede sulla bacheca. Nulla viene salvato finché non fai clic su Salva."
+        cards:
+          one: "%{count} scheda"
+          other: "%{count} schede"
+        overview:
+          name: "Panoramica"
+          description: "Le schede predefinite: il tuo pubblico, l'ultimo invio e le ultime campagne."
+        growth:
+          name: "KPI di crescita"
+          description: "Quanto cresce la lista e da dove arrivano le nuove persone."
+        technical:
+          name: "Aspetti tecnici delle email"
+          description: "Consegna, rimbalzi e lo spazio rimasto per inviare."
+        content:
+          name: "Rendimento dei contenuti"
+          description: "Cosa aprono e cliccano i lettori."
+        automation:
+          name: "Automazione"
+          description: "Sequenze ed email transazionali al lavoro."
+        glance:
+          name: "Colpo d'occhio"
+          description: "Quattro cifre e l'ultimo invio, senza scorrere."
       customize: "Personalizza"
       intro: "Stai personalizzando la tua dashboard. Aggiungi schede dalla libreria, rimuovile, spostale e cambia la loro dimensione e il periodo. Solo tu vedi questo layout."
       as_default: "Usa questo layout come predefinito per i canali che non ho personalizzato"

@@ -3392,6 +3392,17 @@ sv:
         total:
           one: "%{number} anmälan under perioden"
           other: "%{number} anmälningar under perioden"
+      click_rate:
+        title: "Klickgrad"
+        description: "Klick per person över periodens utskick"
+      bounce_rate:
+        title: "Studsgrad"
+        description: "Studsar per person över periodens utskick"
+      unsubscribe_rate:
+        title: "Avregistreringsgrad"
+        description: "Avregistreringar per person över periodens utskick"
+      send_rate:
+        no_sends: "Inga utskick under perioden"
       release_notes:
         title: "Versionsinformation"
         description: "Nyheter i varje version av Broadcast"
@@ -3509,6 +3520,30 @@ sv:
       no_sends: "Inga utskick än. Resultat visas här efter din första kampanj."
       no_sends_in_period: "Inga utskick under den här perioden."
     customize:
+      presets:
+        start: "Börja från en färdig layout"
+        note: "En färdig layout ersätter korten på panelen. Inget sparas förrän du klickar på Spara."
+        cards:
+          one: "%{count} kort"
+          other: "%{count} kort"
+        overview:
+          name: "Översikt"
+          description: "Standardkorten: din publik, det senaste utskicket och de senaste kampanjerna."
+        growth:
+          name: "Tillväxt-KPI:er"
+          description: "Hur snabbt listan växer och var nya personer kommer ifrån."
+        technical:
+          name: "E-postteknik"
+          description: "Leverans, studsar och utrymmet som finns kvar för utskick."
+        content:
+          name: "Innehållets resultat"
+          description: "Vad läsarna öppnar och klickar på."
+        automation:
+          name: "Automatisering"
+          description: "Sekvenser och transaktionell e-post i arbete."
+        glance:
+          name: "Daglig överblick"
+          description: "Fyra siffror och det senaste utskicket, utan att skrolla."
       customize: "Anpassa"
       intro: "Du anpassar din instrumentpanel. Lägg till kort från biblioteket, ta bort dem, flytta dem och ändra deras storlek och period. Bara du ser den här layouten."
       as_default: "Använd den här layouten som min standard för kanaler som jag inte har anpassat"

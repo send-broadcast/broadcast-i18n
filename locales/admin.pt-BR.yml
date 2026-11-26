@@ -3392,6 +3392,17 @@ pt-BR:
         total:
           one: "%{number} inscrição no período"
           other: "%{number} inscrições no período"
+      click_rate:
+        title: "Taxa de cliques"
+        description: "Cliques por pessoa nos envios do período"
+      bounce_rate:
+        title: "Taxa de rejeição"
+        description: "Rejeições por pessoa nos envios do período"
+      unsubscribe_rate:
+        title: "Taxa de descadastro"
+        description: "Descadastros por pessoa nos envios do período"
+      send_rate:
+        no_sends: "Nenhum envio no período"
       release_notes:
         title: "Notas da versão"
         description: "As novidades de cada versão do Broadcast"
@@ -3509,6 +3520,30 @@ pt-BR:
       no_sends: "Nenhum envio ainda. Os resultados aparecem aqui depois da sua primeira campanha."
       no_sends_in_period: "Nenhum envio neste período."
     customize:
+      presets:
+        start: "Começar com um layout predefinido"
+        note: "Um layout predefinido substitui os cartões do painel. Nada é salvo até você clicar em Salvar."
+        cards:
+          one: "%{count} cartão"
+          other: "%{count} cartões"
+        overview:
+          name: "Visão geral"
+          description: "Os cartões padrão: seu público, o último envio e as últimas campanhas."
+        growth:
+          name: "KPIs de crescimento"
+          description: "A velocidade de crescimento da lista e de onde vêm as novas pessoas."
+        technical:
+          name: "Parte técnica do e-mail"
+          description: "Entrega, rejeições e a margem de envio que resta."
+        content:
+          name: "Desempenho do conteúdo"
+          description: "O que os leitores abrem e clicam."
+        automation:
+          name: "Automação"
+          description: "Sequências e e-mails transacionais em ação."
+        glance:
+          name: "Visão do dia"
+          description: "Quatro números e o último envio, sem rolar a tela."
       customize: "Personalizar"
       intro: "Você está personalizando seu painel. Adicione cartões da biblioteca, remova, mova e altere o tamanho e o período deles. Só você vê este layout."
       as_default: "Usar este layout como meu padrão nos canais que não personalizei"

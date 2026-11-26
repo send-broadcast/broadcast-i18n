@@ -3373,6 +3373,17 @@ en:
         total:
           one: "%{number} sign-up in the period"
           other: "%{number} sign-ups in the period"
+      click_rate:
+        title: "Click rate"
+        description: "Clicks per person over the sends of the period"
+      bounce_rate:
+        title: "Bounce rate"
+        description: "Bounces per person over the sends of the period"
+      unsubscribe_rate:
+        title: "Unsubscribe rate"
+        description: "Unsubscribes per person over the sends of the period"
+      send_rate:
+        no_sends: "No sends in the period"
       release_notes:
         title: "Release notes"
         description: "What is new in each Broadcast version"
@@ -3490,6 +3501,30 @@ en:
       no_sends: "No sends yet. Results show here after your first broadcast."
       no_sends_in_period: "No sends in this period."
     customize:
+      presets:
+        start: "Start from a preset"
+        note: "A preset replaces the cards on the board. Nothing is saved until you click Save."
+        cards:
+          one: "%{count} card"
+          other: "%{count} cards"
+        overview:
+          name: "Overview"
+          description: "The default cards: your audience, the last send and the newest broadcasts."
+        growth:
+          name: "Growth KPIs"
+          description: "How fast the list grows, and where new people come from."
+        technical:
+          name: "Email technicals"
+          description: "Delivery, bounces and the room left to send."
+        content:
+          name: "Content performance"
+          description: "What readers open and click."
+        automation:
+          name: "Automation"
+          description: "Sequences and transactional email at work."
+        glance:
+          name: "Daily glance"
+          description: "Four figures and the last send, with no scrolling."
       customize: "Customize"
       intro: "You are customizing your dashboard. Add cards from the library, remove them, move them and change their size and period. Only you see this layout."
       as_default: "Use this layout as my default for channels I have not customized"

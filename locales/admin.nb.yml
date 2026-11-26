@@ -3392,6 +3392,17 @@ nb:
         total:
           one: "%{number} påmelding i perioden"
           other: "%{number} påmeldinger i perioden"
+      click_rate:
+        title: "Klikkrate"
+        description: "Klikk per person over periodens utsendelser"
+      bounce_rate:
+        title: "Avvisningsrate"
+        description: "Avvisninger per person over periodens utsendelser"
+      unsubscribe_rate:
+        title: "Avmeldingsrate"
+        description: "Avmeldinger per person over periodens utsendelser"
+      send_rate:
+        no_sends: "Ingen utsendelser i perioden"
       release_notes:
         title: "Utgivelsesnotater"
         description: "Nyheter i hver versjon av Broadcast"
@@ -3509,6 +3520,30 @@ nb:
       no_sends: "Ingen utsendelser ennå. Resultater vises her etter din første kampanje."
       no_sends_in_period: "Ingen utsendelser i denne perioden."
     customize:
+      presets:
+        start: "Start fra en ferdig layout"
+        note: "En ferdig layout erstatter kortene på oversikten. Ingenting lagres før du klikker på Lagre."
+        cards:
+          one: "%{count} kort"
+          other: "%{count} kort"
+        overview:
+          name: "Oversikt"
+          description: "Standardkortene: publikummet ditt, den siste utsendelsen og de nyeste kampanjene."
+        growth:
+          name: "Vekst-KPI-er"
+          description: "Hvor raskt listen vokser, og hvor nye personer kommer fra."
+        technical:
+          name: "E-postteknikk"
+          description: "Levering, avvisninger og plassen som er igjen til å sende."
+        content:
+          name: "Innholdets resultater"
+          description: "Hva leserne åpner og klikker på."
+        automation:
+          name: "Automatisering"
+          description: "Sekvenser og transaksjonelle e-poster i arbeid."
+        glance:
+          name: "Daglig oversikt"
+          description: "Fire tall og den siste utsendelsen, uten å rulle."
       customize: "Tilpass"
       intro: "Du tilpasser dashbordet ditt. Legg til kort fra biblioteket, fjern dem, flytt dem og endre størrelse og periode. Bare du ser dette oppsettet."
       as_default: "Bruk dette oppsettet som min standard for kanaler jeg ikke har tilpasset"

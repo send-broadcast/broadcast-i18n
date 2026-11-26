@@ -3393,6 +3393,17 @@ es:
         total:
           one: "%{number} suscripción en el periodo"
           other: "%{number} suscripciones en el periodo"
+      click_rate:
+        title: "Tasa de clics"
+        description: "Clics por persona en los envíos del periodo"
+      bounce_rate:
+        title: "Tasa de rebote"
+        description: "Rebotes por persona en los envíos del periodo"
+      unsubscribe_rate:
+        title: "Tasa de bajas"
+        description: "Bajas por persona en los envíos del periodo"
+      send_rate:
+        no_sends: "No hay envíos en el periodo"
       release_notes:
         title: "Notas de la versión"
         description: "Las novedades de cada versión de Broadcast"
@@ -3510,6 +3521,30 @@ es:
       no_sends: "Aún no hay envíos. Los resultados aparecen aquí después de tu primera campaña."
       no_sends_in_period: "No hay envíos en este periodo."
     customize:
+      presets:
+        start: "Empezar con un diseño predefinido"
+        note: "Un diseño predefinido sustituye las tarjetas del panel. No se guarda nada hasta que hagas clic en Guardar."
+        cards:
+          one: "%{count} tarjeta"
+          other: "%{count} tarjetas"
+        overview:
+          name: "Resumen"
+          description: "Las tarjetas predeterminadas: tu audiencia, el último envío y las últimas campañas."
+        growth:
+          name: "KPI de crecimiento"
+          description: "Lo rápido que crece la lista y de dónde llegan las personas nuevas."
+        technical:
+          name: "Aspectos técnicos del email"
+          description: "La entrega, los rebotes y el margen de envío que queda."
+        content:
+          name: "Rendimiento del contenido"
+          description: "Lo que los lectores abren y en lo que hacen clic."
+        automation:
+          name: "Automatización"
+          description: "Secuencias y emails transaccionales en acción."
+        glance:
+          name: "Vistazo diario"
+          description: "Cuatro cifras y el último envío, sin desplazarte."
       customize: "Personalizar"
       intro: "Estás personalizando tu panel. Añade tarjetas de la biblioteca, quítalas, muévelas y cambia su tamaño y su periodo. Solo tú ves esta disposición."
       as_default: "Usar esta disposición como predeterminada para los canales que no he personalizado"

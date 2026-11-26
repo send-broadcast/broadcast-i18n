@@ -3393,6 +3393,17 @@ fi:
         total:
           one: "%{number} liittyminen jaksolla"
           other: "%{number} liittymistä jaksolla"
+      click_rate:
+        title: "Klikkausprosentti"
+        description: "Klikkaukset henkilöä kohden jakson lähetyksistä"
+      bounce_rate:
+        title: "Palautusprosentti"
+        description: "Palautukset henkilöä kohden jakson lähetyksistä"
+      unsubscribe_rate:
+        title: "Peruutusprosentti"
+        description: "Tilausten peruutukset henkilöä kohden jakson lähetyksistä"
+      send_rate:
+        no_sends: "Ei lähetyksiä jaksolla"
       release_notes:
         title: "Julkaisutiedot"
         description: "Uutta kussakin Broadcastin versiossa"
@@ -3510,6 +3521,30 @@ fi:
       no_sends: "Ei vielä lähetyksiä. Tulokset näkyvät tässä ensimmäisen kampanjasi jälkeen."
       no_sends_in_period: "Ei lähetyksiä tällä jaksolla."
     customize:
+      presets:
+        start: "Aloita valmiista asettelusta"
+        note: "Valmis asettelu korvaa koontinäytön kortit. Mitään ei tallenneta ennen kuin napsautat Tallenna."
+        cards:
+          one: "%{count} kortti"
+          other: "%{count} korttia"
+        overview:
+          name: "Yleiskatsaus"
+          description: "Oletuskortit: yleisösi, viimeisin lähetys ja uusimmat kampanjat."
+        growth:
+          name: "Kasvun mittarit"
+          description: "Kuinka nopeasti lista kasvaa ja mistä uudet ihmiset tulevat."
+        technical:
+          name: "Sähköpostin tekniikka"
+          description: "Toimitus, palautukset ja jäljellä oleva lähetystila."
+        content:
+          name: "Sisällön tulokset"
+          description: "Mitä lukijat avaavat ja klikkaavat."
+        automation:
+          name: "Automaatio"
+          description: "Sarjat ja transaktiosähköpostit työssä."
+        glance:
+          name: "Päivän katsaus"
+          description: "Neljä lukua ja viimeisin lähetys ilman vierittämistä."
       customize: "Mukauta"
       intro: "Mukautat koontinäyttöäsi. Lisää kortteja kirjastosta, poista ja siirrä niitä ja muuta niiden kokoa ja jaksoa. Vain sinä näet tämän asettelun."
       as_default: "Käytä tätä asettelua oletuksenani kanavilla, joita en ole mukauttanut"

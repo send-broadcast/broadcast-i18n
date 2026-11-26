@@ -3393,6 +3393,17 @@ fr:
         total:
           one: "%{number} inscription sur la période"
           other: "%{number} inscriptions sur la période"
+      click_rate:
+        title: "Taux de clic"
+        description: "Clics par personne sur les envois de la période"
+      bounce_rate:
+        title: "Taux de rebond"
+        description: "Rebonds par personne sur les envois de la période"
+      unsubscribe_rate:
+        title: "Taux de désabonnement"
+        description: "Désabonnements par personne sur les envois de la période"
+      send_rate:
+        no_sends: "Aucun envoi sur la période"
       release_notes:
         title: "Notes de version"
         description: "Les nouveautés de chaque version de Broadcast"
@@ -3510,6 +3521,30 @@ fr:
       no_sends: "Aucun envoi pour l'instant. Les résultats s'affichent ici après votre première campagne."
       no_sends_in_period: "Aucun envoi sur cette période."
     customize:
+      presets:
+        start: "Partir d'une disposition prédéfinie"
+        note: "Une disposition prédéfinie remplace les cartes du tableau. Rien n'est enregistré tant que vous ne cliquez pas sur Enregistrer."
+        cards:
+          one: "%{count} carte"
+          other: "%{count} cartes"
+        overview:
+          name: "Vue d'ensemble"
+          description: "Les cartes par défaut : votre audience, le dernier envoi et les dernières campagnes."
+        growth:
+          name: "Indicateurs de croissance"
+          description: "La vitesse de croissance de la liste, et d'où viennent les nouvelles personnes."
+        technical:
+          name: "Aspects techniques des e-mails"
+          description: "La distribution, les rebonds et la marge d'envoi restante."
+        content:
+          name: "Performance du contenu"
+          description: "Ce que les lecteurs ouvrent et cliquent."
+        automation:
+          name: "Automatisation"
+          description: "Les séquences et les e-mails transactionnels à l'œuvre."
+        glance:
+          name: "Coup d'œil du jour"
+          description: "Quatre chiffres et le dernier envoi, sans défilement."
       customize: "Personnaliser"
       intro: "Vous personnalisez votre tableau de bord. Ajoutez des cartes depuis la bibliothèque, retirez-les, déplacez-les et changez leur taille et leur période. Vous seul voyez cette disposition."
       as_default: "Utiliser cette disposition par défaut pour les canaux que je n'ai pas personnalisés"

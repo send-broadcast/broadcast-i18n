@@ -3394,6 +3394,17 @@ nl:
         total:
           one: "%{number} aanmelding in de periode"
           other: "%{number} aanmeldingen in de periode"
+      click_rate:
+        title: "Klikratio"
+        description: "Klikken per persoon over de verzendingen van de periode"
+      bounce_rate:
+        title: "Bounceratio"
+        description: "Bounces per persoon over de verzendingen van de periode"
+      unsubscribe_rate:
+        title: "Afmeldratio"
+        description: "Afmeldingen per persoon over de verzendingen van de periode"
+      send_rate:
+        no_sends: "Geen verzendingen in de periode"
       release_notes:
         title: "Release notes"
         description: "Wat er nieuw is in elke versie van Broadcast"
@@ -3511,6 +3522,30 @@ nl:
       no_sends: "Nog geen verzendingen. Resultaten verschijnen hier na je eerste campagne."
       no_sends_in_period: "Geen verzendingen in deze periode."
     customize:
+      presets:
+        start: "Begin met een vooraf ingestelde indeling"
+        note: "Een vooraf ingestelde indeling vervangt de kaarten op het dashboard. Er wordt niets opgeslagen tot je op Opslaan klikt."
+        cards:
+          one: "%{count} kaart"
+          other: "%{count} kaarten"
+        overview:
+          name: "Overzicht"
+          description: "De standaardkaarten: je publiek, de laatste verzending en de nieuwste campagnes."
+        growth:
+          name: "Groei-KPI's"
+          description: "Hoe snel de lijst groeit en waar nieuwe mensen vandaan komen."
+        technical:
+          name: "E-mailtechniek"
+          description: "Bezorging, bounces en de ruimte die over is om te verzenden."
+        content:
+          name: "Prestaties van de inhoud"
+          description: "Wat lezers openen en aanklikken."
+        automation:
+          name: "Automatisering"
+          description: "Reeksen en transactionele e-mail aan het werk."
+        glance:
+          name: "Dagelijks overzicht"
+          description: "Vier cijfers en de laatste verzending, zonder scrollen."
       customize: "Aanpassen"
       intro: "Je past je dashboard aan. Voeg kaarten uit de bibliotheek toe, verwijder en verplaats ze en wijzig hun grootte en periode. Alleen jij ziet deze indeling."
       as_default: "Deze indeling gebruiken als mijn standaard voor kanalen die ik niet heb aangepast"

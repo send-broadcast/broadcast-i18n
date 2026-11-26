@@ -3392,6 +3392,17 @@ da:
         total:
           one: "%{number} tilmelding i perioden"
           other: "%{number} tilmeldinger i perioden"
+      click_rate:
+        title: "Klikrate"
+        description: "Klik pr. person over periodens udsendelser"
+      bounce_rate:
+        title: "Afvisningsrate"
+        description: "Afvisninger pr. person over periodens udsendelser"
+      unsubscribe_rate:
+        title: "Afmeldingsrate"
+        description: "Afmeldinger pr. person over periodens udsendelser"
+      send_rate:
+        no_sends: "Ingen udsendelser i perioden"
       release_notes:
         title: "Versionsnoter"
         description: "Nyheder i hver version af Broadcast"
@@ -3509,6 +3520,30 @@ da:
       no_sends: "Ingen udsendelser endnu. Resultater vises her efter din første kampagne."
       no_sends_in_period: "Ingen udsendelser i denne periode."
     customize:
+      presets:
+        start: "Start fra et færdigt layout"
+        note: "Et færdigt layout erstatter kortene på oversigten. Intet gemmes, før du klikker på Gem."
+        cards:
+          one: "%{count} kort"
+          other: "%{count} kort"
+        overview:
+          name: "Oversigt"
+          description: "Standardkortene: dit publikum, den seneste udsendelse og de seneste kampagner."
+        growth:
+          name: "Vækst-KPI'er"
+          description: "Hvor hurtigt listen vokser, og hvor nye personer kommer fra."
+        technical:
+          name: "E-mailteknik"
+          description: "Levering, afvisninger og den plads, der er tilbage til at sende."
+        content:
+          name: "Indholdets resultater"
+          description: "Hvad læserne åbner og klikker på."
+        automation:
+          name: "Automatisering"
+          description: "Sekvenser og transaktionelle e-mails i arbejde."
+        glance:
+          name: "Dagligt overblik"
+          description: "Fire tal og den seneste udsendelse, uden at rulle."
       customize: "Tilpas"
       intro: "Du tilpasser dit dashboard. Tilføj kort fra biblioteket, fjern dem, flyt dem, og skift deres størrelse og periode. Kun du ser dette layout."
       as_default: "Brug dette layout som min standard for kanaler, jeg ikke har tilpasset"

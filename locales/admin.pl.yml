@@ -3500,6 +3500,17 @@ pl:
           few: "%{number} zapisy w okresie"
           many: "%{number} zapisów w okresie"
           other: "%{number} zapisu w okresie"
+      click_rate:
+        title: "Wskaźnik kliknięć"
+        description: "Kliknięcia na osobę w wysyłkach z okresu"
+      bounce_rate:
+        title: "Wskaźnik odrzuceń"
+        description: "Odrzucenia na osobę w wysyłkach z okresu"
+      unsubscribe_rate:
+        title: "Wskaźnik wypisań"
+        description: "Wypisania na osobę w wysyłkach z okresu"
+      send_rate:
+        no_sends: "Brak wysyłek w okresie"
       release_notes:
         title: "Informacje o wydaniach"
         description: "Nowości w każdej wersji Broadcast"
@@ -3631,6 +3642,32 @@ pl:
       no_sends: "Brak wysyłek. Wyniki pojawią się tutaj po Twojej pierwszej kampanii."
       no_sends_in_period: "Brak wysyłek w tym okresie."
     customize:
+      presets:
+        start: "Zacznij od gotowego układu"
+        note: "Gotowy układ zastępuje karty na pulpicie. Nic nie zostanie zapisane, dopóki nie klikniesz Zapisz."
+        cards:
+          one: "%{count} karta"
+          few: "%{count} karty"
+          many: "%{count} kart"
+          other: "%{count} karty"
+        overview:
+          name: "Przegląd"
+          description: "Domyślne karty: Twoi odbiorcy, ostatnia wysyłka i najnowsze kampanie."
+        growth:
+          name: "Wskaźniki wzrostu"
+          description: "Jak szybko rośnie lista i skąd przychodzą nowe osoby."
+        technical:
+          name: "Technika e-maili"
+          description: "Doręczalność, odrzucenia i pozostały limit wysyłki."
+        content:
+          name: "Skuteczność treści"
+          description: "Co czytelnicy otwierają i klikają."
+        automation:
+          name: "Automatyzacja"
+          description: "Sekwencje i e-maile transakcyjne w działaniu."
+        glance:
+          name: "Rzut oka na dzień"
+          description: "Cztery liczby i ostatnia wysyłka, bez przewijania."
       customize: "Dostosuj"
       intro: "Dostosowujesz swój pulpit. Dodawaj karty z biblioteki, usuwaj je, przenoś i zmieniaj ich rozmiar oraz okres. Tylko Ty widzisz ten układ."
       as_default: "Używaj tego układu jako domyślnego w kanałach bez własnego układu"
