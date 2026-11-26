@@ -3481,6 +3481,7 @@ de:
         bounces:
           one: "%{number} Bounce"
           other: "%{number} Bounces"
+        by_class: "Hard %{hard} · Soft %{soft} · Blockiert %{block} · Unbekannt %{unknown}"
         complaints:
           one: "%{number} Spam-Beschwerde"
           other: "%{number} Spam-Beschwerden"
@@ -3876,6 +3877,11 @@ de:
         captured: "Abgefangen, nicht zugestellt"
         other: "Sonstiges"
         sent: "Gesendet"
+      bounce_class:
+        hard: "Hard Bounce"
+        soft: "Soft Bounce"
+        block: "Blockiert"
+        unknown: "Unbekannter Bounce"
     broadcast:
       status:
         draft: "Entwurf"

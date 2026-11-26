@@ -3479,6 +3479,7 @@ da:
         bounces:
           one: "%{number} afvisning"
           other: "%{number} afvisninger"
+        by_class: "Hård %{hard} · Blød %{soft} · Blokeret %{block} · Ukendt %{unknown}"
         complaints:
           one: "%{number} spamklage"
           other: "%{number} spamklager"
@@ -4026,6 +4027,11 @@ da:
         captured: "Opfanget, ikke leveret"
         other: "Andet"
         sent: "Sendt"
+      bounce_class:
+        hard: "Hard bounce"
+        soft: "Blød bounce"
+        block: "Blokeret"
+        unknown: "Ukendt bounce"
 
   errors:
     not_found:

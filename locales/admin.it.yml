@@ -3477,6 +3477,7 @@ it:
         bounces:
           one: "%{number} rimbalzo"
           other: "%{number} rimbalzi"
+        by_class: "Permanenti %{hard} · Temporanei %{soft} · Bloccati %{block} · Sconosciuti %{unknown}"
         complaints:
           one: "%{number} segnalazione di spam"
           other: "%{number} segnalazioni di spam"
@@ -3872,6 +3873,11 @@ it:
         captured: "Trattenuto, non recapitato"
         other: "Altro"
         sent: "Inviato"
+      bounce_class:
+        hard: "Mancato recapito permanente"
+        soft: "Mancato recapito temporaneo"
+        block: "Bloccato"
+        unknown: "Mancato recapito sconosciuto"
     broadcast:
       status:
         draft: "Bozza"

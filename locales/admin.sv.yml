@@ -3479,6 +3479,7 @@ sv:
         bounces:
           one: "%{number} studs"
           other: "%{number} studsar"
+        by_class: "Hårda %{hard} · Mjuka %{soft} · Blockerade %{block} · Okända %{unknown}"
         complaints:
           one: "%{number} spamklagomål"
           other: "%{number} spamklagomål"
@@ -4026,6 +4027,11 @@ sv:
         captured: "Uppfångad, inte levererad"
         other: "Annat"
         sent: "Skickad"
+      bounce_class:
+        hard: "Hård studs"
+        soft: "Mjuk studs"
+        block: "Blockerad"
+        unknown: "Okänd studs"
 
   errors:
     not_found:

@@ -3480,6 +3480,7 @@ fi:
         bounces:
           one: "%{number} palautus"
           other: "%{number} palautusta"
+        by_class: "Pysyvät %{hard} · Tilapäiset %{soft} · Estetyt %{block} · Tuntemattomat %{unknown}"
         complaints:
           one: "%{number} roskapostivalitus"
           other: "%{number} roskapostivalitusta"
@@ -4027,6 +4028,11 @@ fi:
         captured: "Kaapattu, ei toimitettu"
         other: "Muu"
         sent: "Lähetetty"
+      bounce_class:
+        hard: "Pysyvä palautus"
+        soft: "Tilapäinen palautus"
+        block: "Estetty"
+        unknown: "Tuntematon palautus"
 
   errors:
     not_found:

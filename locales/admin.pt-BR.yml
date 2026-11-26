@@ -3479,6 +3479,7 @@ pt-BR:
         bounces:
           one: "%{number} rejeição"
           other: "%{number} rejeições"
+        by_class: "Permanentes %{hard} · Temporárias %{soft} · Bloqueadas %{block} · Desconhecidas %{unknown}"
         complaints:
           one: "%{number} reclamação de spam"
           other: "%{number} reclamações de spam"
@@ -4026,6 +4027,11 @@ pt-BR:
         captured: "Capturado, não entregue"
         other: "Outro"
         sent: "Enviado"
+      bounce_class:
+        hard: "Rejeição permanente"
+        soft: "Rejeição temporária"
+        block: "Bloqueado"
+        unknown: "Rejeição desconhecida"
 
   errors:
     not_found:

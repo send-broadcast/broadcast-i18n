@@ -3597,6 +3597,7 @@ pl:
           few: "%{number} odrzucenia"
           many: "%{number} odrzuceń"
           other: "%{number} odrzucenia"
+        by_class: "Twarde %{hard} · Miękkie %{soft} · Zablokowane %{block} · Nieznane %{unknown}"
         complaints:
           one: "%{number} skarga na spam"
           few: "%{number} skargi na spam"
@@ -4162,6 +4163,11 @@ pl:
         captured: "Przechwycony, niedostarczony"
         other: "Inny"
         sent: "Wysłany"
+      bounce_class:
+        hard: "Twarde odbicie"
+        soft: "Miękkie odbicie"
+        block: "Zablokowane"
+        unknown: "Nieznane odbicie"
 
   errors:
     not_found:

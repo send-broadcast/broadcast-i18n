@@ -3479,6 +3479,7 @@ nb:
         bounces:
           one: "%{number} avvisning"
           other: "%{number} avvisninger"
+        by_class: "Permanente %{hard} · Midlertidige %{soft} · Blokkert %{block} · Ukjente %{unknown}"
         complaints:
           one: "%{number} spamklage"
           other: "%{number} spamklager"
@@ -4026,6 +4027,11 @@ nb:
         captured: "Fanget opp, ikke levert"
         other: "Annet"
         sent: "Sendt"
+      bounce_class:
+        hard: "Permanent retur"
+        soft: "Midlertidig retur"
+        block: "Blokkert"
+        unknown: "Ukjent retur"
 
   errors:
     not_found:

@@ -3480,6 +3480,7 @@ fr:
         bounces:
           one: "%{number} rebond"
           other: "%{number} rebonds"
+        by_class: "Définitifs %{hard} · Temporaires %{soft} · Bloqués %{block} · Inconnus %{unknown}"
         complaints:
           one: "%{number} plainte pour spam"
           other: "%{number} plaintes pour spam"
@@ -3875,6 +3876,11 @@ fr:
         captured: "Capturé, non distribué"
         other: "Autre"
         sent: "Envoyé"
+      bounce_class:
+        hard: "Rebond définitif"
+        soft: "Rebond temporaire"
+        block: "Bloqué"
+        unknown: "Rebond inconnu"
     broadcast:
       status:
         draft: "Brouillon"

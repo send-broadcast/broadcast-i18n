@@ -3460,6 +3460,7 @@ en:
         bounces:
           one: "%{number} bounce"
           other: "%{number} bounces"
+        by_class: "Hard %{hard} · Soft %{soft} · Blocked %{block} · Unknown %{unknown}"
         complaints:
           one: "%{number} spam complaint"
           other: "%{number} spam complaints"
@@ -4008,6 +4009,11 @@ en:
         captured: "Captured, not delivered"
         other: "Other"
         sent: "Sent"
+      bounce_class:
+        hard: "Hard bounce"
+        soft: "Soft bounce"
+        block: "Blocked"
+        unknown: "Unknown bounce"
 
   errors:
     not_found:

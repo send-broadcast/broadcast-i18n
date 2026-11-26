@@ -3480,6 +3480,7 @@ es:
         bounces:
           one: "%{number} rebote"
           other: "%{number} rebotes"
+        by_class: "Permanentes %{hard} · Temporales %{soft} · Bloqueados %{block} · Desconocidos %{unknown}"
         complaints:
           one: "%{number} queja de spam"
           other: "%{number} quejas de spam"
@@ -4027,6 +4028,11 @@ es:
         captured: "Capturado, no entregado"
         other: "Otro"
         sent: "Enviado"
+      bounce_class:
+        hard: "Rebote permanente"
+        soft: "Rebote temporal"
+        block: "Bloqueado"
+        unknown: "Rebote desconocido"
 
   errors:
     not_found:

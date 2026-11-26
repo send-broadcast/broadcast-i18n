@@ -3481,6 +3481,7 @@ nl:
         bounces:
           one: "%{number} bounce"
           other: "%{number} bounces"
+        by_class: "Hard %{hard} · Zacht %{soft} · Geblokkeerd %{block} · Onbekend %{unknown}"
         complaints:
           one: "%{number} spamklacht"
           other: "%{number} spamklachten"
@@ -4028,6 +4029,11 @@ nl:
         captured: "Opgevangen, niet afgeleverd"
         other: "Overig"
         sent: "Verzonden"
+      bounce_class:
+        hard: "Harde bounce"
+        soft: "Zachte bounce"
+        block: "Geblokkeerd"
+        unknown: "Onbekende bounce"
 
   errors:
     not_found:
