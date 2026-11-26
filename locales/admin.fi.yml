@@ -3369,6 +3369,7 @@ fi:
         sending: "Lähetys"
         automation: "Automaatio"
         forms: "Lomakkeet"
+        updates: "Päivitykset"
         plugins: "Laajennukset"
       subscribers:
         title: "Tilaajat"
@@ -3392,6 +3393,13 @@ fi:
         total:
           one: "%{number} liittyminen jaksolla"
           other: "%{number} liittymistä jaksolla"
+      release_notes:
+        title: "Julkaisutiedot"
+        description: "Uutta kussakin Broadcastin versiossa"
+        your_version: "Sinun versiosi: %{version}"
+        database_update: "Tietokannan päivitys"
+        earlier: "Aiemmat julkaisut"
+        empty: "Julkaisutietoja ei vielä ole. Ne näkyvät, kun Broadcast on tarkistanut päivitykset."
       utm_sources:
         title: "Liittymiset UTM-lähteen mukaan"
         description: "Suurimmat lähteet, Muut ja Tuntematon"

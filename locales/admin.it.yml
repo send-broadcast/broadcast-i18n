@@ -3366,6 +3366,7 @@ it:
         sending: "Invio"
         automation: "Automazione"
         forms: "Moduli"
+        updates: "Aggiornamenti"
         plugins: "Plugin"
       subscribers:
         title: "Iscritti"
@@ -3389,6 +3390,13 @@ it:
         total:
           one: "%{number} iscrizione nel periodo"
           other: "%{number} iscrizioni nel periodo"
+      release_notes:
+        title: "Note di rilascio"
+        description: "Le novità di ogni versione di Broadcast"
+        your_version: "La tua versione: %{version}"
+        database_update: "Aggiornamento del database"
+        earlier: "Versioni precedenti"
+        empty: "Ancora nessuna nota di rilascio. Compaiono dopo che Broadcast ha cercato aggiornamenti."
       utm_sources:
         title: "Iscrizioni per fonte UTM"
         description: "Le fonti principali, Altro e Sconosciuta"

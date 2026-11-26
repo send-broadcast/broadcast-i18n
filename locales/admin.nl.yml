@@ -3370,6 +3370,7 @@ nl:
         sending: "Verzenden"
         automation: "Automatisering"
         forms: "Formulieren"
+        updates: "Updates"
         plugins: "Plugins"
       subscribers:
         title: "Abonnees"
@@ -3393,6 +3394,13 @@ nl:
         total:
           one: "%{number} aanmelding in de periode"
           other: "%{number} aanmeldingen in de periode"
+      release_notes:
+        title: "Release notes"
+        description: "Wat er nieuw is in elke versie van Broadcast"
+        your_version: "Jouw versie: %{version}"
+        database_update: "Database-update"
+        earlier: "Eerdere versies"
+        empty: "Nog geen release notes. Ze verschijnen nadat Broadcast op updates heeft gecontroleerd."
       utm_sources:
         title: "Aanmeldingen per UTM-bron"
         description: "De belangrijkste bronnen, Overig en Onbekend"

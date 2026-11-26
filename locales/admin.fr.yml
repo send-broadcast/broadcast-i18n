@@ -3369,6 +3369,7 @@ fr:
         sending: "Envoi"
         automation: "Automatisation"
         forms: "Formulaires"
+        updates: "Mises à jour"
         plugins: "Plugins"
       subscribers:
         title: "Abonnés"
@@ -3392,6 +3393,13 @@ fr:
         total:
           one: "%{number} inscription sur la période"
           other: "%{number} inscriptions sur la période"
+      release_notes:
+        title: "Notes de version"
+        description: "Les nouveautés de chaque version de Broadcast"
+        your_version: "Votre version : %{version}"
+        database_update: "Mise à jour de la base de données"
+        earlier: "Versions précédentes"
+        empty: "Pas encore de notes de version. Elles s'affichent après que Broadcast a recherché des mises à jour."
       utm_sources:
         title: "Inscriptions par source UTM"
         description: "Les principales sources, Autre et Inconnue"

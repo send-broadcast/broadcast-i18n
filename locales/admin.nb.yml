@@ -3368,6 +3368,7 @@ nb:
         sending: "Utsending"
         automation: "Automatisering"
         forms: "Skjemaer"
+        updates: "Oppdateringer"
         plugins: "Programtillegg"
       subscribers:
         title: "Abonnenter"
@@ -3391,6 +3392,13 @@ nb:
         total:
           one: "%{number} påmelding i perioden"
           other: "%{number} påmeldinger i perioden"
+      release_notes:
+        title: "Utgivelsesnotater"
+        description: "Nyheter i hver versjon av Broadcast"
+        your_version: "Din versjon: %{version}"
+        database_update: "Databaseoppdatering"
+        earlier: "Tidligere utgivelser"
+        empty: "Ingen utgivelsesnotater ennå. De vises når Broadcast har sett etter oppdateringer."
       utm_sources:
         title: "Påmeldinger etter UTM-kilde"
         description: "De største kildene, Andre og Ukjent"

@@ -3368,6 +3368,7 @@ sv:
         sending: "Utskick"
         automation: "Automatisering"
         forms: "Formulär"
+        updates: "Uppdateringar"
         plugins: "Tillägg"
       subscribers:
         title: "Prenumeranter"
@@ -3391,6 +3392,13 @@ sv:
         total:
           one: "%{number} anmälan under perioden"
           other: "%{number} anmälningar under perioden"
+      release_notes:
+        title: "Versionsinformation"
+        description: "Nyheter i varje version av Broadcast"
+        your_version: "Din version: %{version}"
+        database_update: "Databasuppdatering"
+        earlier: "Tidigare versioner"
+        empty: "Ingen versionsinformation ännu. Den visas när Broadcast har sökt efter uppdateringar."
       utm_sources:
         title: "Anmälningar per UTM-källa"
         description: "De största källorna, Övriga och Okänd"

@@ -3474,6 +3474,7 @@ pl:
         sending: "Wysyłka"
         automation: "Automatyzacja"
         forms: "Formularze"
+        updates: "Aktualizacje"
         plugins: "Wtyczki"
       subscribers:
         title: "Subskrybenci"
@@ -3499,6 +3500,13 @@ pl:
           few: "%{number} zapisy w okresie"
           many: "%{number} zapisów w okresie"
           other: "%{number} zapisu w okresie"
+      release_notes:
+        title: "Informacje o wydaniach"
+        description: "Nowości w każdej wersji Broadcast"
+        your_version: "Twoja wersja: %{version}"
+        database_update: "Aktualizacja bazy danych"
+        earlier: "Wcześniejsze wydania"
+        empty: "Brak informacji o wydaniach. Pojawią się, gdy Broadcast sprawdzi aktualizacje."
       utm_sources:
         title: "Zapisy według źródła UTM"
         description: "Główne źródła, Inne i Nieznane"

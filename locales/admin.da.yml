@@ -3368,6 +3368,7 @@ da:
         sending: "Udsendelse"
         automation: "Automatisering"
         forms: "Formularer"
+        updates: "Opdateringer"
         plugins: "Plugins"
       subscribers:
         title: "Abonnenter"
@@ -3391,6 +3392,13 @@ da:
         total:
           one: "%{number} tilmelding i perioden"
           other: "%{number} tilmeldinger i perioden"
+      release_notes:
+        title: "Versionsnoter"
+        description: "Nyheder i hver version af Broadcast"
+        your_version: "Din version: %{version}"
+        database_update: "Databaseopdatering"
+        earlier: "Tidligere versioner"
+        empty: "Ingen versionsnoter endnu. De vises, når Broadcast har søgt efter opdateringer."
       utm_sources:
         title: "Tilmeldinger efter UTM-kilde"
         description: "De største kilder, Andre og Ukendt"

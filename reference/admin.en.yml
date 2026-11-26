@@ -3349,6 +3349,7 @@ en:
         sending: "Sending"
         automation: "Automation"
         forms: "Forms"
+        updates: "Updates"
         plugins: "Plugins"
       subscribers:
         title: "Subscribers"
@@ -3372,6 +3373,13 @@ en:
         total:
           one: "%{number} sign-up in the period"
           other: "%{number} sign-ups in the period"
+      release_notes:
+        title: "Release notes"
+        description: "What is new in each Broadcast version"
+        your_version: "Your version: %{version}"
+        database_update: "Database update"
+        earlier: "Earlier releases"
+        empty: "No release notes yet. They show after Broadcast checks for updates."
       utm_sources:
         title: "Sign-ups by UTM source"
         description: "Top sources, Other and Unknown"

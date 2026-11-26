@@ -3369,6 +3369,7 @@ es:
         sending: "Envío"
         automation: "Automatización"
         forms: "Formularios"
+        updates: "Actualizaciones"
         plugins: "Plugins"
       subscribers:
         title: "Suscriptores"
@@ -3392,6 +3393,13 @@ es:
         total:
           one: "%{number} suscripción en el periodo"
           other: "%{number} suscripciones en el periodo"
+      release_notes:
+        title: "Notas de la versión"
+        description: "Las novedades de cada versión de Broadcast"
+        your_version: "Tu versión: %{version}"
+        database_update: "Actualización de la base de datos"
+        earlier: "Versiones anteriores"
+        empty: "Aún no hay notas de la versión. Aparecen después de que Broadcast busque actualizaciones."
       utm_sources:
         title: "Suscripciones por fuente UTM"
         description: "Las fuentes principales, Otras y Desconocida"

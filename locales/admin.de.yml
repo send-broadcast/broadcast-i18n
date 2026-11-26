@@ -3370,6 +3370,7 @@ de:
         sending: "Versand"
         automation: "Automatisierung"
         forms: "Formulare"
+        updates: "Aktualisierungen"
         plugins: "Plugins"
       subscribers:
         title: "Abonnenten"
@@ -3393,6 +3394,13 @@ de:
         total:
           one: "%{number} Anmeldung im Zeitraum"
           other: "%{number} Anmeldungen im Zeitraum"
+      release_notes:
+        title: "Versionshinweise"
+        description: "Was in jeder Broadcast-Version neu ist"
+        your_version: "Ihre Version: %{version}"
+        database_update: "Datenbank-Aktualisierung"
+        earlier: "Frühere Versionen"
+        empty: "Noch keine Versionshinweise. Sie erscheinen, nachdem Broadcast nach Aktualisierungen gesucht hat."
       utm_sources:
         title: "Anmeldungen nach UTM-Quelle"
         description: "Die wichtigsten Quellen, Andere und Unbekannt"
