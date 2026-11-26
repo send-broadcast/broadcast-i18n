@@ -3516,7 +3516,7 @@ nb:
         today: "I dag"
       loading: "Laster inn…"
       plugin_description: "Et kort fra programtillegget %{plugin}"
-      no_cards: "Dashbordet ditt har ingen kort. Velg Tilpass for å legge til kort fra biblioteket."
+      no_cards: "Dashbordet ditt har ingen kort. Velg Tilpass oversikten i menyen for å legge til kort fra biblioteket."
       no_sends: "Ingen utsendelser ennå. Resultater vises her etter din første kampanje."
       no_sends_in_period: "Ingen utsendelser i denne perioden."
     customize:
@@ -4751,6 +4751,7 @@ nb:
           new_broadcast: "Ny kampanje"
           add_subscriber: "Legg til abonnent"
           import_subscribers: "Importer abonnenter"
+          customize: "Tilpass oversikten"
         common:
           navigate: "Naviger"
           filter_by_status: "Filtrer etter status"

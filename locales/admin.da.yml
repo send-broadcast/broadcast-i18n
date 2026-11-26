@@ -3516,7 +3516,7 @@ da:
         today: "I dag"
       loading: "Indlæser…"
       plugin_description: "Et kort fra pluginnet %{plugin}"
-      no_cards: "Dit dashboard har ingen kort. Vælg Tilpas for at tilføje kort fra biblioteket."
+      no_cards: "Dit dashboard har ingen kort. Vælg Tilpas oversigten i menuen for at tilføje kort fra biblioteket."
       no_sends: "Ingen udsendelser endnu. Resultater vises her efter din første kampagne."
       no_sends_in_period: "Ingen udsendelser i denne periode."
     customize:
@@ -4751,6 +4751,7 @@ da:
           new_broadcast: "Ny kampagne"
           add_subscriber: "Tilføj abonnent"
           import_subscribers: "Importér abonnenter"
+          customize: "Tilpas oversigten"
         common:
           navigate: "Naviger"
           filter_by_status: "Filtrer efter status"

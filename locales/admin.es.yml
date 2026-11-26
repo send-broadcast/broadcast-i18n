@@ -3517,7 +3517,7 @@ es:
         today: "Hoy"
       loading: "Cargando…"
       plugin_description: "Una tarjeta del plugin %{plugin}"
-      no_cards: "Tu panel no tiene tarjetas. Selecciona Personalizar para añadir tarjetas de la biblioteca."
+      no_cards: "Tu panel no tiene tarjetas. Selecciona Personalizar panel en el menú para añadir tarjetas de la biblioteca."
       no_sends: "Aún no hay envíos. Los resultados aparecen aquí después de tu primera campaña."
       no_sends_in_period: "No hay envíos en este periodo."
     customize:
@@ -4752,6 +4752,7 @@ es:
           new_broadcast: "Nueva campaña"
           add_subscriber: "Añadir suscriptor"
           import_subscribers: "Importar suscriptores"
+          customize: "Personalizar panel"
         common:
           navigate: "Navegar"
           filter_by_status: "Filtrar por estado"

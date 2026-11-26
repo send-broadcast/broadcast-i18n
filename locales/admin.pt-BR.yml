@@ -3516,7 +3516,7 @@ pt-BR:
         today: "Hoje"
       loading: "Carregando…"
       plugin_description: "Um cartão do plugin %{plugin}"
-      no_cards: "Seu painel não tem cartões. Selecione Personalizar para adicionar cartões da biblioteca."
+      no_cards: "Seu painel não tem cartões. Selecione Personalizar painel no menu para adicionar cartões da biblioteca."
       no_sends: "Nenhum envio ainda. Os resultados aparecem aqui depois da sua primeira campanha."
       no_sends_in_period: "Nenhum envio neste período."
     customize:
@@ -4751,6 +4751,7 @@ pt-BR:
           new_broadcast: "Nova campanha"
           add_subscriber: "Adicionar assinante"
           import_subscribers: "Importar assinantes"
+          customize: "Personalizar painel"
         common:
           navigate: "Navegar"
           filter_by_status: "Filtrar por status"

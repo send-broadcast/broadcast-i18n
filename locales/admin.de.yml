@@ -3518,7 +3518,7 @@ de:
         today: "Heute"
       loading: "Wird geladen…"
       plugin_description: "Eine Karte des Plugins %{plugin}"
-      no_cards: "Ihr Dashboard hat keine Karten. Wählen Sie Anpassen, um Karten aus der Bibliothek hinzuzufügen."
+      no_cards: "Ihr Dashboard hat keine Karten. Wählen Sie Dashboard anpassen im Menü, um Karten aus der Bibliothek hinzuzufügen."
       no_sends: "Noch keine Versände. Ergebnisse erscheinen hier nach Ihrer ersten Kampagne."
       no_sends_in_period: "Keine Versände in diesem Zeitraum."
     customize:
@@ -4753,6 +4753,7 @@ de:
           new_broadcast: "Neue Kampagne"
           add_subscriber: "Abonnent hinzufügen"
           import_subscribers: "Abonnenten importieren"
+          customize: "Dashboard anpassen"
         common:
           navigate: "Navigation"
           filter_by_status: "Nach Status filtern"

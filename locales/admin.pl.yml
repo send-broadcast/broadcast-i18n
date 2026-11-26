@@ -3638,7 +3638,7 @@ pl:
         today: "Dziś"
       loading: "Ładowanie…"
       plugin_description: "Karta wtyczki %{plugin}"
-      no_cards: "Twój pulpit nie ma kart. Wybierz Dostosuj, aby dodać karty z biblioteki."
+      no_cards: "Twój pulpit nie ma kart. Wybierz Dostosuj pulpit w menu, aby dodać karty z biblioteki."
       no_sends: "Brak wysyłek. Wyniki pojawią się tutaj po Twojej pierwszej kampanii."
       no_sends_in_period: "Brak wysyłek w tym okresie."
     customize:
@@ -4943,6 +4943,7 @@ pl:
           new_broadcast: "Nowa kampania"
           add_subscriber: "Dodaj subskrybenta"
           import_subscribers: "Importuj subskrybentów"
+          customize: "Dostosuj pulpit"
         common:
           navigate: "Nawigacja"
           filter_by_status: "Filtruj według stanu"

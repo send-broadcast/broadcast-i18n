@@ -3514,7 +3514,7 @@ it:
         today: "Oggi"
       loading: "Caricamento…"
       plugin_description: "Una scheda del plugin %{plugin}"
-      no_cards: "La tua dashboard non ha schede. Seleziona Personalizza per aggiungere schede dalla libreria."
+      no_cards: "La tua dashboard non ha schede. Seleziona Personalizza dashboard nel menu per aggiungere schede dalla libreria."
       no_sends: "Ancora nessun invio. I risultati compaiono qui dopo la tua prima campagna."
       no_sends_in_period: "Nessun invio in questo periodo."
     customize:
@@ -4749,6 +4749,7 @@ it:
           new_broadcast: "Nuova campagna"
           add_subscriber: "Aggiungi iscritto"
           import_subscribers: "Importa iscritti"
+          customize: "Personalizza dashboard"
         common:
           navigate: "Naviga"
           filter_by_status: "Filtra per stato"

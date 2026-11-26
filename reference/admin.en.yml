@@ -3497,7 +3497,7 @@ en:
         today: "Today"
       loading: "Loading…"
       plugin_description: "A card of the %{plugin} plugin"
-      no_cards: "Your dashboard has no cards. Select Customize to add cards from the library."
+      no_cards: "Your dashboard has no cards. Select Customize Dashboard in the menu to add cards from the library."
       no_sends: "No sends yet. Results show here after your first broadcast."
       no_sends_in_period: "No sends in this period."
     customize:
@@ -4733,6 +4733,7 @@ en:
           new_broadcast: "New Broadcast"
           add_subscriber: "Add Subscriber"
           import_subscribers: "Import Subscribers"
+          customize: "Customize Dashboard"
         common:
           navigate: "Navigate"
           filter_by_status: "Filter by Status"

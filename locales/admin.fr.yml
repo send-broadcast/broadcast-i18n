@@ -3517,7 +3517,7 @@ fr:
         today: "Aujourd'hui"
       loading: "Chargement…"
       plugin_description: "Une carte du plugin %{plugin}"
-      no_cards: "Votre tableau de bord n'a aucune carte. Sélectionnez Personnaliser pour ajouter des cartes depuis la bibliothèque."
+      no_cards: "Votre tableau de bord n'a aucune carte. Sélectionnez Personnaliser le tableau de bord dans le menu pour ajouter des cartes depuis la bibliothèque."
       no_sends: "Aucun envoi pour l'instant. Les résultats s'affichent ici après votre première campagne."
       no_sends_in_period: "Aucun envoi sur cette période."
     customize:
@@ -4752,6 +4752,7 @@ fr:
           new_broadcast: "Nouvelle campagne"
           add_subscriber: "Ajouter un abonné"
           import_subscribers: "Importer des abonnés"
+          customize: "Personnaliser le tableau de bord"
         common:
           navigate: "Navigation"
           filter_by_status: "Filtrer par état"

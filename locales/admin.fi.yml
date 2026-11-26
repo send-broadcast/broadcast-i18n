@@ -3517,7 +3517,7 @@ fi:
         today: "Tänään"
       loading: "Ladataan…"
       plugin_description: "Laajennuksen %{plugin} kortti"
-      no_cards: "Koontinäytössäsi ei ole kortteja. Valitse Mukauta lisätäksesi kortteja kirjastosta."
+      no_cards: "Koontinäytössäsi ei ole kortteja. Valitse valikosta Mukauta koontinäkymää lisätäksesi kortteja kirjastosta."
       no_sends: "Ei vielä lähetyksiä. Tulokset näkyvät tässä ensimmäisen kampanjasi jälkeen."
       no_sends_in_period: "Ei lähetyksiä tällä jaksolla."
     customize:
@@ -4752,6 +4752,7 @@ fi:
           new_broadcast: "Uusi kampanja"
           add_subscriber: "Lisää tilaaja"
           import_subscribers: "Tuo tilaajia"
+          customize: "Mukauta koontinäkymää"
         common:
           navigate: "Siirry"
           filter_by_status: "Suodata tilan mukaan"

@@ -3518,7 +3518,7 @@ nl:
         today: "Vandaag"
       loading: "Laden…"
       plugin_description: "Een kaart van de plugin %{plugin}"
-      no_cards: "Je dashboard heeft geen kaarten. Kies Aanpassen om kaarten uit de bibliotheek toe te voegen."
+      no_cards: "Je dashboard heeft geen kaarten. Kies Dashboard aanpassen in het menu om kaarten uit de bibliotheek toe te voegen."
       no_sends: "Nog geen verzendingen. Resultaten verschijnen hier na je eerste campagne."
       no_sends_in_period: "Geen verzendingen in deze periode."
     customize:
@@ -4753,6 +4753,7 @@ nl:
           new_broadcast: "Nieuwe campagne"
           add_subscriber: "Abonnee toevoegen"
           import_subscribers: "Abonnees importeren"
+          customize: "Dashboard aanpassen"
         common:
           navigate: "Navigeren"
           filter_by_status: "Filteren op status"

@@ -3516,7 +3516,7 @@ sv:
         today: "I dag"
       loading: "Laddar…"
       plugin_description: "Ett kort från tillägget %{plugin}"
-      no_cards: "Din instrumentpanel har inga kort. Välj Anpassa för att lägga till kort från biblioteket."
+      no_cards: "Din instrumentpanel har inga kort. Välj Anpassa översikten i menyn för att lägga till kort från biblioteket."
       no_sends: "Inga utskick än. Resultat visas här efter din första kampanj."
       no_sends_in_period: "Inga utskick under den här perioden."
     customize:
@@ -4751,6 +4751,7 @@ sv:
           new_broadcast: "Ny kampanj"
           add_subscriber: "Lägg till prenumerant"
           import_subscribers: "Importera prenumeranter"
+          customize: "Anpassa översikten"
         common:
           navigate: "Navigera"
           filter_by_status: "Filtrera efter status"
