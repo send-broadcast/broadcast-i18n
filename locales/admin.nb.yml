@@ -3545,6 +3545,7 @@ nb:
           name: "Daglig oversikt"
           description: "Fire tall og den siste utsendelsen, uten å rulle."
       customize: "Tilpass"
+      card_menu: "Kortvalg"
       intro: "Du tilpasser dashbordet ditt. Legg til kort fra biblioteket, fjern dem, flytt dem og endre størrelse og periode. Bare du ser dette oppsettet."
       as_default: "Bruk dette oppsettet som min standard for kanaler jeg ikke har tilpasset"
       reset: "Tilbakestill til standard"
@@ -3953,6 +3954,7 @@ nb:
         provider_bounce: "Permanent retur"
         provider_complaint: "Spamklage"
         provider_suppression: "Sperret av leverandøren"
+        provider_soft_bounce: "Midlertidige returer"
     opt_in_form:
       widget_type:
         inline_embed: "Innebygd"
@@ -7957,6 +7959,7 @@ nb:
       source_cells:
         blocks_all: "All e-post"
         blocks_marketing: "Bare markedsføring"
+        until: "Til %{date}"
       upload:
         breadcrumb: "Last opp e-postliste"
         title: "Last opp sperreliste for e-postadresser"

@@ -3545,6 +3545,7 @@ sv:
           name: "Daglig överblick"
           description: "Fyra siffror och det senaste utskicket, utan att skrolla."
       customize: "Anpassa"
+      card_menu: "Kortalternativ"
       intro: "Du anpassar din instrumentpanel. Lägg till kort från biblioteket, ta bort dem, flytta dem och ändra deras storlek och period. Bara du ser den här layouten."
       as_default: "Använd den här layouten som min standard för kanaler som jag inte har anpassat"
       reset: "Återställ standard"
@@ -3953,6 +3954,7 @@ sv:
         provider_bounce: "Hård studs"
         provider_complaint: "Spamanmälan"
         provider_suppression: "Spärrad av leverantören"
+        provider_soft_bounce: "Mjuka studsar"
     opt_in_form:
       widget_type:
         inline_embed: "Inbäddad"
@@ -7957,6 +7959,7 @@ sv:
       source_cells:
         blocks_all: "Alla mejl"
         blocks_marketing: "Bara marknadsföring"
+        until: "Till %{date}"
       upload:
         breadcrumb: "Ladda upp e-postlista"
         title: "Ladda upp spärrlista med e-postadresser"

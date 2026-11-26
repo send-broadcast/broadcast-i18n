@@ -3545,6 +3545,7 @@ pt-BR:
           name: "Visão do dia"
           description: "Quatro números e o último envio, sem rolar a tela."
       customize: "Personalizar"
+      card_menu: "Opções do cartão"
       intro: "Você está personalizando seu painel. Adicione cartões da biblioteca, remova, mova e altere o tamanho e o período deles. Só você vê este layout."
       as_default: "Usar este layout como meu padrão nos canais que não personalizei"
       reset: "Restaurar o padrão"
@@ -3953,6 +3954,7 @@ pt-BR:
         provider_bounce: "Rejeição permanente"
         provider_complaint: "Denúncia de spam"
         provider_suppression: "Suprimido pelo provedor"
+        provider_soft_bounce: "Rejeições temporárias"
     opt_in_form:
       widget_type:
         inline_embed: "Incorporado na página"
@@ -7957,6 +7959,7 @@ pt-BR:
       source_cells:
         blocks_all: "Todos os e-mails"
         blocks_marketing: "Só marketing"
+        until: "Até %{date}"
       upload:
         breadcrumb: "Enviar lista de e-mails"
         title: "Enviar lista de supressão de e-mails"

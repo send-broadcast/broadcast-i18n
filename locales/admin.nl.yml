@@ -3547,6 +3547,7 @@ nl:
           name: "Dagelijks overzicht"
           description: "Vier cijfers en de laatste verzending, zonder scrollen."
       customize: "Aanpassen"
+      card_menu: "Kaartopties"
       intro: "Je past je dashboard aan. Voeg kaarten uit de bibliotheek toe, verwijder en verplaats ze en wijzig hun grootte en periode. Alleen jij ziet deze indeling."
       as_default: "Deze indeling gebruiken als mijn standaard voor kanalen die ik niet heb aangepast"
       reset: "Standaard herstellen"
@@ -3955,6 +3956,7 @@ nl:
         provider_bounce: "Harde bounce"
         provider_complaint: "Spammelding"
         provider_suppression: "Geblokkeerd door provider"
+        provider_soft_bounce: "Zachte bounces"
     opt_in_form:
       widget_type:
         inline_embed: "Inline ingesloten"
@@ -7959,6 +7961,7 @@ nl:
       source_cells:
         blocks_all: "Alle e-mail"
         blocks_marketing: "Alleen marketing"
+        until: "Tot %{date}"
       upload:
         breadcrumb: "E-maillijst uploaden"
         title: "Blokkeerlijst van e-mailadressen uploaden"

@@ -3546,6 +3546,7 @@ fr:
           name: "Coup d'œil du jour"
           description: "Quatre chiffres et le dernier envoi, sans défilement."
       customize: "Personnaliser"
+      card_menu: "Options de la carte"
       intro: "Vous personnalisez votre tableau de bord. Ajoutez des cartes depuis la bibliothèque, retirez-les, déplacez-les et changez leur taille et leur période. Vous seul voyez cette disposition."
       as_default: "Utiliser cette disposition par défaut pour les canaux que je n'ai pas personnalisés"
       reset: "Rétablir la disposition par défaut"
@@ -3965,6 +3966,7 @@ fr:
         provider_bounce: "Rebond définitif"
         provider_complaint: "Plainte pour spam"
         provider_suppression: "Exclue par le fournisseur"
+        provider_soft_bounce: "Rebonds temporaires"
     opt_in_form:
       widget_type:
         inline_embed: "Intégré à la page"
@@ -7958,6 +7960,7 @@ fr:
       source_cells:
         blocks_all: "Tous les e-mails"
         blocks_marketing: "Marketing uniquement"
+        until: "Jusqu'au %{date}"
       upload:
         breadcrumb: "Importer une liste d'e-mails"
         title: "Importer une liste d'exclusion d'e-mails"

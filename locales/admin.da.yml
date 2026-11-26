@@ -3545,6 +3545,7 @@ da:
           name: "Dagligt overblik"
           description: "Fire tal og den seneste udsendelse, uden at rulle."
       customize: "Tilpas"
+      card_menu: "Kortindstillinger"
       intro: "Du tilpasser dit dashboard. Tilføj kort fra biblioteket, fjern dem, flyt dem, og skift deres størrelse og periode. Kun du ser dette layout."
       as_default: "Brug dette layout som min standard for kanaler, jeg ikke har tilpasset"
       reset: "Gendan standard"
@@ -3953,6 +3954,7 @@ da:
         provider_bounce: "Hard bounce"
         provider_complaint: "Spamklage"
         provider_suppression: "Spærret af udbyder"
+        provider_soft_bounce: "Bløde bounces"
     opt_in_form:
       widget_type:
         inline_embed: "Indlejret"
@@ -7957,6 +7959,7 @@ da:
       source_cells:
         blocks_all: "Alle e-mails"
         blocks_marketing: "Kun marketing"
+        until: "Indtil %{date}"
       upload:
         breadcrumb: "Upload e-mailliste"
         title: "Upload spærreliste med e-mailadresser"

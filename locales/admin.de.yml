@@ -3547,6 +3547,7 @@ de:
           name: "Tagesblick"
           description: "Vier Kennzahlen und der letzte Versand, ohne Scrollen."
       customize: "Anpassen"
+      card_menu: "Kartenoptionen"
       intro: "Sie passen Ihr Dashboard an. Fügen Sie Karten aus der Bibliothek hinzu, entfernen und verschieben Sie sie und ändern Sie ihre Größe und ihren Zeitraum. Nur Sie sehen dieses Layout."
       as_default: "Dieses Layout als meinen Standard für Kanäle verwenden, die ich nicht angepasst habe"
       reset: "Auf Standard zurücksetzen"
@@ -3966,6 +3967,7 @@ de:
         provider_bounce: "Hard Bounce"
         provider_complaint: "Spam-Beschwerde"
         provider_suppression: "Vom Anbieter gesperrt"
+        provider_soft_bounce: "Soft Bounces"
     opt_in_form:
       widget_type:
         inline_embed: "Eingebettet"
@@ -7959,6 +7961,7 @@ de:
       source_cells:
         blocks_all: "Alle E-Mails"
         blocks_marketing: "Nur Marketing"
+        until: "Bis %{date}"
       upload:
         breadcrumb: "E-Mail-Liste hochladen"
         title: "Sperrliste hochladen"

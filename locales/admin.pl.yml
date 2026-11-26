@@ -3669,6 +3669,7 @@ pl:
           name: "Rzut oka na dzień"
           description: "Cztery liczby i ostatnia wysyłka, bez przewijania."
       customize: "Dostosuj"
+      card_menu: "Opcje karty"
       intro: "Dostosowujesz swój pulpit. Dodawaj karty z biblioteki, usuwaj je, przenoś i zmieniaj ich rozmiar oraz okres. Tylko Ty widzisz ten układ."
       as_default: "Używaj tego układu jako domyślnego w kanałach bez własnego układu"
       reset: "Przywróć domyślny"
@@ -4089,6 +4090,7 @@ pl:
         provider_bounce: "Twarde odbicie"
         provider_complaint: "Zgłoszenie spamu"
         provider_suppression: "Wykluczony przez dostawcę"
+        provider_soft_bounce: "Miękkie odbicia"
     opt_in_form:
       widget_type:
         inline_embed: "Osadzony w treści"
@@ -8241,6 +8243,7 @@ pl:
       source_cells:
         blocks_all: "Wszystkie e-maile"
         blocks_marketing: "Tylko marketing"
+        until: "Do %{date}"
       upload:
         breadcrumb: "Prześlij listę adresów"
         title: "Prześlij listę wykluczonych adresów e-mail"

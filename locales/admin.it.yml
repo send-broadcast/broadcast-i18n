@@ -3543,6 +3543,7 @@ it:
           name: "Colpo d'occhio"
           description: "Quattro cifre e l'ultimo invio, senza scorrere."
       customize: "Personalizza"
+      card_menu: "Opzioni della scheda"
       intro: "Stai personalizzando la tua dashboard. Aggiungi schede dalla libreria, rimuovile, spostale e cambia la loro dimensione e il periodo. Solo tu vedi questo layout."
       as_default: "Usa questo layout come predefinito per i canali che non ho personalizzato"
       reset: "Ripristina predefinito"
@@ -3962,6 +3963,7 @@ it:
         provider_bounce: "Mancato recapito permanente"
         provider_complaint: "Segnalazione di spam"
         provider_suppression: "Esclusa dal provider"
+        provider_soft_bounce: "Mancati recapiti temporanei"
     opt_in_form:
       widget_type:
         inline_embed: "Incorporato nella pagina"
@@ -7955,6 +7957,7 @@ it:
       source_cells:
         blocks_all: "Tutte le email"
         blocks_marketing: "Solo marketing"
+        until: "Fino al %{date}"
       upload:
         breadcrumb: "Carica elenco di email"
         title: "Carica una lista di esclusione"

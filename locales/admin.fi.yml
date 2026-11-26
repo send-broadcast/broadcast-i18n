@@ -3546,6 +3546,7 @@ fi:
           name: "Päivän katsaus"
           description: "Neljä lukua ja viimeisin lähetys ilman vierittämistä."
       customize: "Mukauta"
+      card_menu: "Kortin asetukset"
       intro: "Mukautat koontinäyttöäsi. Lisää kortteja kirjastosta, poista ja siirrä niitä ja muuta niiden kokoa ja jaksoa. Vain sinä näet tämän asettelun."
       as_default: "Käytä tätä asettelua oletuksenani kanavilla, joita en ole mukauttanut"
       reset: "Palauta oletus"
@@ -3954,6 +3955,7 @@ fi:
         provider_bounce: "Pysyvä palautus"
         provider_complaint: "Roskapostivalitus"
         provider_suppression: "Palveluntarjoajan estämä"
+        provider_soft_bounce: "Tilapäiset palautukset"
     opt_in_form:
       widget_type:
         inline_embed: "Upotettu sivulle"
@@ -7958,6 +7960,7 @@ fi:
       source_cells:
         blocks_all: "Kaikki sähköpostit"
         blocks_marketing: "Vain markkinointi"
+        until: "%{date} asti"
       upload:
         breadcrumb: "Lataa sähköpostilista"
         title: "Lataa sähköpostiosoitteiden estolista"

@@ -3546,6 +3546,7 @@ es:
           name: "Vistazo diario"
           description: "Cuatro cifras y el último envío, sin desplazarte."
       customize: "Personalizar"
+      card_menu: "Opciones de la tarjeta"
       intro: "Estás personalizando tu panel. Añade tarjetas de la biblioteca, quítalas, muévelas y cambia su tamaño y su periodo. Solo tú ves esta disposición."
       as_default: "Usar esta disposición como predeterminada para los canales que no he personalizado"
       reset: "Restablecer la predeterminada"
@@ -3954,6 +3955,7 @@ es:
         provider_bounce: "Rebote permanente"
         provider_complaint: "Denuncia de spam"
         provider_suppression: "Excluido por el proveedor"
+        provider_soft_bounce: "Rebotes temporales"
     opt_in_form:
       widget_type:
         inline_embed: "Incrustado en línea"
@@ -7958,6 +7960,7 @@ es:
       source_cells:
         blocks_all: "Todo el correo"
         blocks_marketing: "Solo marketing"
+        until: "Hasta el %{date}"
       upload:
         breadcrumb: "Subir lista de correos"
         title: "Subir lista de exclusión de correos"

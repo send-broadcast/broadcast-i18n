@@ -3525,6 +3525,7 @@ en:
         glance:
           name: "Daily glance"
           description: "Four figures and the last send, with no scrolling."
+      card_menu: "Card options"
       customize: "Customize"
       intro: "You are customizing your dashboard. Add cards from the library, remove them, move them and change their size and period. Only you see this layout."
       as_default: "Use this layout as my default for channels I have not customized"
@@ -3934,6 +3935,7 @@ en:
         provider_bounce: "Hard bounce"
         provider_complaint: "Spam complaint"
         provider_suppression: "Suppressed by provider"
+        provider_soft_bounce: "Soft bounces"
     opt_in_form:
       widget_type:
         inline_embed: "Inline Embed"
@@ -8000,6 +8002,7 @@ en:
       source_cells:
         blocks_all: "All email"
         blocks_marketing: "Marketing only"
+        until: "Until %{date}"
       upload:
         breadcrumb: "Upload Email List"
         title: "Upload Email Suppression List"
