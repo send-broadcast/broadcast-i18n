@@ -3547,6 +3547,8 @@ sv:
           description: "Fyra siffror och det senaste utskicket, utan att skrolla."
       customize: "Anpassa"
       card_menu: "Kortalternativ"
+      title: "Anpassa översikten"
+      leave: "Lämna anpassningen? Dina ändringar av översikten är inte sparade."
       intro: "Du anpassar din instrumentpanel. Lägg till kort från biblioteket, ta bort dem, flytta dem och ändra deras storlek och period. Bara du ser den här layouten."
       as_default: "Använd den här layouten som min standard för kanaler som jag inte har anpassat"
       reset: "Återställ standard"

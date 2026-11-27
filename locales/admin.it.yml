@@ -3545,6 +3545,8 @@ it:
           description: "Quattro cifre e l'ultimo invio, senza scorrere."
       customize: "Personalizza"
       card_menu: "Opzioni della scheda"
+      title: "Personalizza dashboard"
+      leave: "Uscire da Personalizza? Le modifiche alla dashboard non sono salvate."
       intro: "Stai personalizzando la tua dashboard. Aggiungi schede dalla libreria, rimuovile, spostale e cambia la loro dimensione e il periodo. Solo tu vedi questo layout."
       as_default: "Usa questo layout come predefinito per i canali che non ho personalizzato"
       reset: "Ripristina predefinito"

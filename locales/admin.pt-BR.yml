@@ -3547,6 +3547,8 @@ pt-BR:
           description: "Quatro números e o último envio, sem rolar a tela."
       customize: "Personalizar"
       card_menu: "Opções do cartão"
+      title: "Personalizar painel"
+      leave: "Sair de Personalizar? Suas alterações no painel não foram salvas."
       intro: "Você está personalizando seu painel. Adicione cartões da biblioteca, remova, mova e altere o tamanho e o período deles. Só você vê este layout."
       as_default: "Usar este layout como meu padrão nos canais que não personalizei"
       reset: "Restaurar o padrão"

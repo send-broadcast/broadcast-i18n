@@ -3548,6 +3548,8 @@ fi:
           description: "Neljä lukua ja viimeisin lähetys ilman vierittämistä."
       customize: "Mukauta"
       card_menu: "Kortin asetukset"
+      title: "Mukauta koontinäkymää"
+      leave: "Poistutaanko mukauttamisesta? Koontinäkymän muutoksia ei ole tallennettu."
       intro: "Mukautat koontinäyttöäsi. Lisää kortteja kirjastosta, poista ja siirrä niitä ja muuta niiden kokoa ja jaksoa. Vain sinä näet tämän asettelun."
       as_default: "Käytä tätä asettelua oletuksenani kanavilla, joita en ole mukauttanut"
       reset: "Palauta oletus"

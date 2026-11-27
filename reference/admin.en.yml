@@ -3528,6 +3528,8 @@ en:
           description: "Four figures and the last send, with no scrolling."
       card_menu: "Card options"
       customize: "Customize"
+      title: "Customize Dashboard"
+      leave: "Leave Customize? Your changes to the dashboard are not saved."
       intro: "You are customizing your dashboard. Add cards from the library, remove them, move them and change their size and period. Only you see this layout."
       as_default: "Use this layout as my default for channels I have not customized"
       reset: "Reset to default"

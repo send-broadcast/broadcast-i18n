@@ -3547,6 +3547,8 @@ nb:
           description: "Fire tall og den siste utsendelsen, uten å rulle."
       customize: "Tilpass"
       card_menu: "Kortvalg"
+      title: "Tilpass oversikten"
+      leave: "Forlate tilpasningen? Endringene dine i oversikten er ikke lagret."
       intro: "Du tilpasser dashbordet ditt. Legg til kort fra biblioteket, fjern dem, flytt dem og endre størrelse og periode. Bare du ser dette oppsettet."
       as_default: "Bruk dette oppsettet som min standard for kanaler jeg ikke har tilpasset"
       reset: "Tilbakestill til standard"

@@ -3548,6 +3548,8 @@ fr:
           description: "Quatre chiffres et le dernier envoi, sans défilement."
       customize: "Personnaliser"
       card_menu: "Options de la carte"
+      title: "Personnaliser le tableau de bord"
+      leave: "Quitter la personnalisation ? Vos modifications du tableau de bord ne sont pas enregistrées."
       intro: "Vous personnalisez votre tableau de bord. Ajoutez des cartes depuis la bibliothèque, retirez-les, déplacez-les et changez leur taille et leur période. Vous seul voyez cette disposition."
       as_default: "Utiliser cette disposition par défaut pour les canaux que je n'ai pas personnalisés"
       reset: "Rétablir la disposition par défaut"

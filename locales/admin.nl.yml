@@ -3549,6 +3549,8 @@ nl:
           description: "Vier cijfers en de laatste verzending, zonder scrollen."
       customize: "Aanpassen"
       card_menu: "Kaartopties"
+      title: "Dashboard aanpassen"
+      leave: "Aanpassen verlaten? Je wijzigingen aan het dashboard zijn niet opgeslagen."
       intro: "Je past je dashboard aan. Voeg kaarten uit de bibliotheek toe, verwijder en verplaats ze en wijzig hun grootte en periode. Alleen jij ziet deze indeling."
       as_default: "Deze indeling gebruiken als mijn standaard voor kanalen die ik niet heb aangepast"
       reset: "Standaard herstellen"

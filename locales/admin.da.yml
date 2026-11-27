@@ -3547,6 +3547,8 @@ da:
           description: "Fire tal og den seneste udsendelse, uden at rulle."
       customize: "Tilpas"
       card_menu: "Kortindstillinger"
+      title: "Tilpas oversigten"
+      leave: "Forlad tilpasningen? Dine ændringer af oversigten er ikke gemt."
       intro: "Du tilpasser dit dashboard. Tilføj kort fra biblioteket, fjern dem, flyt dem, og skift deres størrelse og periode. Kun du ser dette layout."
       as_default: "Brug dette layout som min standard for kanaler, jeg ikke har tilpasset"
       reset: "Gendan standard"
