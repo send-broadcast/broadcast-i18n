@@ -3566,6 +3566,7 @@ es:
       later: "Mover después"
       size: "Tamaño de la tarjeta"
       period: "Periodo"
+      periods_offered: "Periodos en la tarjeta"
       remove: "Quitar tarjeta"
     index:
       title: "Resumen"

@@ -3565,6 +3565,7 @@ sv:
       later: "Flytta senare"
       size: "Kortets storlek"
       period: "Period"
+      periods_offered: "Perioder på kortet"
       remove: "Ta bort kortet"
     index:
       title: "Översikt"

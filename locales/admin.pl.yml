@@ -3689,6 +3689,7 @@ pl:
       later: "Przenieś później"
       size: "Rozmiar karty"
       period: "Okres"
+      periods_offered: "Okresy na karcie"
       remove: "Usuń kartę"
     index:
       title: "Przegląd"

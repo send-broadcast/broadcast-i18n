@@ -3567,6 +3567,7 @@ de:
       later: "Nach hinten"
       size: "Kartengröße"
       period: "Zeitraum"
+      periods_offered: "Zeiträume auf der Karte"
       remove: "Karte entfernen"
     index:
       title: "Übersicht"

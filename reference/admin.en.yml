@@ -3546,6 +3546,7 @@ en:
       later: "Move later"
       size: "Card size"
       period: "Period"
+      periods_offered: "Periods on the card"
       remove: "Remove card"
     metric_rail:
       rail: "Channel figures"

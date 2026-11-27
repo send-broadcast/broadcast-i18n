@@ -3563,6 +3563,7 @@ it:
       later: "Sposta dopo"
       size: "Dimensione della scheda"
       period: "Periodo"
+      periods_offered: "Periodi sulla scheda"
       remove: "Rimuovi scheda"
     index:
       title: "Panoramica"

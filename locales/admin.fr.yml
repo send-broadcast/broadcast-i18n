@@ -3566,6 +3566,7 @@ fr:
       later: "Déplacer après"
       size: "Taille de la carte"
       period: "Période"
+      periods_offered: "Périodes sur la carte"
       remove: "Retirer la carte"
     index:
       title: "Vue d'ensemble"

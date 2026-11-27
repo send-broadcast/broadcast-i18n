@@ -3565,6 +3565,7 @@ pt-BR:
       later: "Mover para depois"
       size: "Tamanho do cartão"
       period: "Período"
+      periods_offered: "Períodos no cartão"
       remove: "Remover cartão"
     index:
       title: "Visão geral"

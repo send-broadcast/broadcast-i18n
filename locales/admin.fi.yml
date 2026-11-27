@@ -3566,6 +3566,7 @@ fi:
       later: "Siirrä myöhemmäksi"
       size: "Kortin koko"
       period: "Jakso"
+      periods_offered: "Kortin jaksot"
       remove: "Poista kortti"
     index:
       title: "Yleiskatsaus"

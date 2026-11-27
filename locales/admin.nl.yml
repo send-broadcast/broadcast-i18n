@@ -3567,6 +3567,7 @@ nl:
       later: "Naar achteren"
       size: "Grootte van de kaart"
       period: "Periode"
+      periods_offered: "Perioden op de kaart"
       remove: "Kaart verwijderen"
     index:
       title: "Overzicht"

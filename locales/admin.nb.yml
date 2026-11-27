@@ -3565,6 +3565,7 @@ nb:
       later: "Flytt senere"
       size: "Kortstørrelse"
       period: "Periode"
+      periods_offered: "Perioder på kortet"
       remove: "Fjern kort"
     index:
       title: "Oversikt"
