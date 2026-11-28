@@ -4807,6 +4807,8 @@ it:
           total_links_clicked: "Link cliccati in totale"
           total_clicks: "Clic totali"
           average_clicks: "Media di clic per link"
+          links: "Link"
+          broadcasts: "Campagne"
         application:
           title: "Applicazione"
           subtitle: "Amministrazione del sistema"
@@ -5008,6 +5010,51 @@ it:
           other: "%{count} iscritti"
         recipient: "%{recipient}, %{time} fa"
 
+  analytics_broadcasts:
+    compare:
+      back: "Tutte le campagne"
+      best_hint: "Il tasso migliore di ogni riga è in verde: i tassi di apertura e di clic più alti, i tassi di disiscrizione e di rimbalzo più bassi."
+      intro:
+        one: "%{count} campagna a confronto"
+        other: "%{count} campagne a confronto"
+      metric: "Metrica"
+      metrics:
+        bounce_rate: "Tasso di rimbalzo"
+        bounces: "Mancati recapiti"
+        click_rate: "Tasso di clic"
+        clicks: "Clic"
+        complaints: "Segnalazioni di spam"
+        open_rate: "Tasso di apertura"
+        opens: "Aperture"
+        recipients: "Destinatari"
+        sent_at: "Inviata"
+        top_link: "Link più cliccato"
+        unsubscribe_rate: "Tasso di disiscrizione"
+        unsubscribes: "Disiscrizioni"
+      title: "Confronta le campagne"
+      too_few: "Seleziona almeno due campagne inviate da confrontare."
+    index:
+      clicks:
+        one: "%{count} clic"
+        other: "%{count} clic"
+      columns:
+        broadcast: "Campagna"
+        bounces: "Mancati recapiti"
+        clicks: "Clic"
+        opens: "Aperture"
+        recipients: "Destinatari"
+        select: "Seleziona per confrontare"
+        sent_at: "Inviata"
+        top_link: "Link più cliccato"
+        unsubscribes: "Disiscrizioni"
+      compare: "Confronta"
+      compare_hint: "Seleziona da 2 a %{max} campagne"
+      docs_link: "Scopri di più"
+      empty_heading: "Ancora nessuna campagna inviata"
+      empty_intro: "Ogni campagna compare qui dopo l'invio, con aperture, clic, disiscrizioni e mancati recapiti."
+      intro: "Tutte le campagne inviate con i loro numeri. Clicca su una colonna per ordinare o su una riga per aprire il report."
+      select_broadcast: "Seleziona %{name} per il confronto"
+      title: "Campagne"
   link_tracking:
     chart:
       clicks: "Clic"

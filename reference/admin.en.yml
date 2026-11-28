@@ -4791,6 +4791,8 @@ en:
           total_links_clicked: "Total Links Clicked"
           total_clicks: "Total Clicks"
           average_clicks: "Avg Clicks per Link"
+          links: "Links"
+          broadcasts: "Broadcasts"
         application:
           title: "Application"
           subtitle: "System administration"
@@ -4992,6 +4994,51 @@ en:
         hour: "1 hour ago"
         hours: "%{count} hours ago"
 
+  analytics_broadcasts:
+    compare:
+      back: "All broadcasts"
+      best_hint: "The best rate in each row is green: the highest open and click rates, the lowest unsubscribe and bounce rates."
+      intro:
+        one: "%{count} broadcast side by side"
+        other: "%{count} broadcasts side by side"
+      metric: "Metric"
+      metrics:
+        bounce_rate: "Bounce rate"
+        bounces: "Bounces"
+        click_rate: "Click rate"
+        clicks: "Clicks"
+        complaints: "Spam complaints"
+        open_rate: "Open rate"
+        opens: "Opens"
+        recipients: "Recipients"
+        sent_at: "Sent"
+        top_link: "Top link"
+        unsubscribe_rate: "Unsubscribe rate"
+        unsubscribes: "Unsubscribes"
+      title: "Compare broadcasts"
+      too_few: "Select at least two sent broadcasts to compare."
+    index:
+      clicks:
+        one: "%{count} click"
+        other: "%{count} clicks"
+      columns:
+        broadcast: "Broadcast"
+        bounces: "Bounces"
+        clicks: "Clicks"
+        opens: "Opens"
+        recipients: "Recipients"
+        select: "Select to compare"
+        sent_at: "Sent"
+        top_link: "Top link"
+        unsubscribes: "Unsubscribes"
+      compare: "Compare"
+      compare_hint: "Select 2 to %{max} broadcasts"
+      docs_link: "Learn more"
+      empty_heading: "No sent broadcasts yet"
+      empty_intro: "Each broadcast shows here with its opens, clicks, unsubscribes and bounces after it is sent."
+      intro: "Every sent broadcast with its numbers. Click a column to sort, or a row to open its report."
+      select_broadcast: "Select %{name} to compare"
+      title: "Broadcasts"
   link_tracking:
     chart:
       clicks: "Clicks"

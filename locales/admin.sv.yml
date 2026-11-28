@@ -4809,6 +4809,8 @@ sv:
           total_links_clicked: "Klickade länkar totalt"
           total_clicks: "Klick totalt"
           average_clicks: "Snitt klick per länk"
+          links: "Länkar"
+          broadcasts: "Kampanjer"
         application:
           title: "Applikation"
           subtitle: "Systemadministration"
@@ -5010,6 +5012,51 @@ sv:
           other: "%{count} prenumeranter"
         recipient: "%{recipient}, för %{time} sedan"
 
+  analytics_broadcasts:
+    compare:
+      back: "Alla kampanjer"
+      best_hint: "Den bästa graden på varje rad är grön: högst öppnings- och klickfrekvens, lägst avregistrerings- och studsgrad."
+      intro:
+        one: "%{count} kampanj sida vid sida"
+        other: "%{count} kampanjer sida vid sida"
+      metric: "Mått"
+      metrics:
+        bounce_rate: "Studsgrad"
+        bounces: "Studsar"
+        click_rate: "Klickfrekvens"
+        clicks: "Klick"
+        complaints: "Spamanmälningar"
+        open_rate: "Öppningsgrad"
+        opens: "Öppningar"
+        recipients: "Mottagare"
+        sent_at: "Skickad"
+        top_link: "Mest klickade länk"
+        unsubscribe_rate: "Avregistreringsgrad"
+        unsubscribes: "Avregistreringar"
+      title: "Jämför kampanjer"
+      too_few: "Välj minst två skickade kampanjer att jämföra."
+    index:
+      clicks:
+        one: "%{count} klick"
+        other: "%{count} klick"
+      columns:
+        broadcast: "Kampanj"
+        bounces: "Studsar"
+        clicks: "Klick"
+        opens: "Öppningar"
+        recipients: "Mottagare"
+        select: "Välj för att jämföra"
+        sent_at: "Skickad"
+        top_link: "Mest klickade länk"
+        unsubscribes: "Avregistreringar"
+      compare: "Jämför"
+      compare_hint: "Välj 2 till %{max} kampanjer"
+      docs_link: "Läs mer"
+      empty_heading: "Inga skickade kampanjer ännu"
+      empty_intro: "Varje kampanj visas här efter utskick, med öppningar, klick, avregistreringar och studsar."
+      intro: "Alla skickade kampanjer med sina siffror. Klicka på en kolumn för att sortera eller på en rad för att öppna rapporten."
+      select_broadcast: "Välj %{name} för att jämföra"
+      title: "Kampanjer"
   link_tracking:
     chart:
       clicks: "Klick"

@@ -5001,6 +5001,8 @@ pl:
           total_links_clicked: "Łącznie klikniętych linków"
           total_clicks: "Łącznie kliknięć"
           average_clicks: "Średnio kliknięć na link"
+          links: "Linki"
+          broadcasts: "Kampanie"
         application:
           title: "Aplikacja"
           subtitle: "Administracja systemem"
@@ -5206,6 +5208,55 @@ pl:
           other: "%{count} subskrybenta"
         recipient: "%{recipient}, %{time} temu"
 
+  analytics_broadcasts:
+    compare:
+      back: "Wszystkie kampanie"
+      best_hint: "Najlepszy wskaźnik w każdym wierszu jest zielony: najwyższy wskaźnik otwarć i kliknięć, najniższy wskaźnik wypisań i odrzuceń."
+      intro:
+        one: "%{count} kampania obok siebie"
+        few: "%{count} kampanie obok siebie"
+        many: "%{count} kampanii obok siebie"
+        other: "%{count} kampanii obok siebie"
+      metric: "Wskaźnik"
+      metrics:
+        bounce_rate: "Wskaźnik odrzuceń"
+        bounces: "Odbicia"
+        click_rate: "Wskaźnik kliknięć"
+        clicks: "Kliknięcia"
+        complaints: "Zgłoszenia spamu"
+        open_rate: "Wskaźnik otwarć"
+        opens: "Otwarcia"
+        recipients: "Odbiorcy"
+        sent_at: "Wysłano"
+        top_link: "Najczęściej klikany link"
+        unsubscribe_rate: "Wskaźnik wypisań"
+        unsubscribes: "Wypisania"
+      title: "Porównaj kampanie"
+      too_few: "Wybierz co najmniej dwie wysłane kampanie, aby je porównać."
+    index:
+      clicks:
+        one: "%{count} kliknięcie"
+        few: "%{count} kliknięcia"
+        many: "%{count} kliknięć"
+        other: "%{count} kliknięcia"
+      columns:
+        broadcast: "Kampania"
+        bounces: "Odbicia"
+        clicks: "Kliknięcia"
+        opens: "Otwarcia"
+        recipients: "Odbiorcy"
+        select: "Wybierz do porównania"
+        sent_at: "Wysłano"
+        top_link: "Najczęściej klikany link"
+        unsubscribes: "Wypisania"
+      compare: "Porównaj"
+      compare_hint: "Wybierz od 2 do %{max} kampanii"
+      docs_link: "Dowiedz się więcej"
+      empty_heading: "Brak wysłanych kampanii"
+      empty_intro: "Każda kampania pojawi się tutaj po wysłaniu, z otwarciami, kliknięciami, wypisaniami i odbiciami."
+      intro: "Wszystkie wysłane kampanie z ich liczbami. Kliknij kolumnę, aby sortować, lub wiersz, aby otworzyć raport."
+      select_broadcast: "Wybierz %{name} do porównania"
+      title: "Kampanie"
   link_tracking:
     chart:
       clicks: "Kliknięcia"

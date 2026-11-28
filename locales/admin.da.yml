@@ -4809,6 +4809,8 @@ da:
           total_links_clicked: "Klikkede links i alt"
           total_clicks: "Klik i alt"
           average_clicks: "Gns. klik pr. link"
+          links: "Links"
+          broadcasts: "Kampagner"
         application:
           title: "Applikation"
           subtitle: "Systemadministration"
@@ -5010,6 +5012,51 @@ da:
           other: "%{count} abonnenter"
         recipient: "%{recipient}, for %{time} siden"
 
+  analytics_broadcasts:
+    compare:
+      back: "Alle kampagner"
+      best_hint: "Den bedste rate i hver række er grøn: de højeste åbnings- og klikrater, de laveste afmeldings- og afvisningsrater."
+      intro:
+        one: "%{count} kampagne side om side"
+        other: "%{count} kampagner side om side"
+      metric: "Måltal"
+      metrics:
+        bounce_rate: "Afvisningsrate"
+        bounces: "Bounces"
+        click_rate: "Klikrate"
+        clicks: "Klik"
+        complaints: "Spamklager"
+        open_rate: "Åbningsrate"
+        opens: "Åbninger"
+        recipients: "Modtagere"
+        sent_at: "Sendt"
+        top_link: "Mest klikkede link"
+        unsubscribe_rate: "Afmeldingsrate"
+        unsubscribes: "Afmeldinger"
+      title: "Sammenlign kampagner"
+      too_few: "Vælg mindst to sendte kampagner for at sammenligne dem."
+    index:
+      clicks:
+        one: "%{count} klik"
+        other: "%{count} klik"
+      columns:
+        broadcast: "Kampagne"
+        bounces: "Bounces"
+        clicks: "Klik"
+        opens: "Åbninger"
+        recipients: "Modtagere"
+        select: "Vælg til sammenligning"
+        sent_at: "Sendt"
+        top_link: "Mest klikkede link"
+        unsubscribes: "Afmeldinger"
+      compare: "Sammenlign"
+      compare_hint: "Vælg 2 til %{max} kampagner"
+      docs_link: "Få mere at vide"
+      empty_heading: "Ingen sendte kampagner endnu"
+      empty_intro: "Hver kampagne vises her med sine åbninger, klik, afmeldinger og bounces, når den er sendt."
+      intro: "Alle sendte kampagner med deres tal. Klik på en kolonne for at sortere eller på en række for at åbne rapporten."
+      select_broadcast: "Vælg %{name} til sammenligning"
+      title: "Kampagner"
   link_tracking:
     chart:
       clicks: "Klik"

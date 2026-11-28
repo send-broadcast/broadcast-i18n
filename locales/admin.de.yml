@@ -4811,6 +4811,8 @@ de:
           total_links_clicked: "Angeklickte Links gesamt"
           total_clicks: "Klicks gesamt"
           average_clicks: "Ø Klicks pro Link"
+          links: "Links"
+          broadcasts: "Kampagnen"
         application:
           title: "Anwendung"
           subtitle: "Systemverwaltung"
@@ -5012,6 +5014,51 @@ de:
           other: "%{count} Abonnenten"
         recipient: "%{recipient}, vor %{time}"
 
+  analytics_broadcasts:
+    compare:
+      back: "Alle Kampagnen"
+      best_hint: "Der beste Wert jeder Zeile ist grün: die höchste Öffnungs- und Klickrate, die niedrigste Abmelde- und Bounce-Rate."
+      intro:
+        one: "%{count} Kampagne im Vergleich"
+        other: "%{count} Kampagnen im Vergleich"
+      metric: "Kennzahl"
+      metrics:
+        bounce_rate: "Bounce-Rate"
+        bounces: "Bounces"
+        click_rate: "Klickrate"
+        clicks: "Klicks"
+        complaints: "Spam-Beschwerden"
+        open_rate: "Öffnungsrate"
+        opens: "Öffnungen"
+        recipients: "Empfänger"
+        sent_at: "Gesendet"
+        top_link: "Top-Link"
+        unsubscribe_rate: "Abmelderate"
+        unsubscribes: "Abmeldungen"
+      title: "Kampagnen vergleichen"
+      too_few: "Wähle mindestens zwei gesendete Kampagnen zum Vergleichen aus."
+    index:
+      clicks:
+        one: "%{count} Klick"
+        other: "%{count} Klicks"
+      columns:
+        broadcast: "Kampagne"
+        bounces: "Bounces"
+        clicks: "Klicks"
+        opens: "Öffnungen"
+        recipients: "Empfänger"
+        select: "Zum Vergleichen auswählen"
+        sent_at: "Gesendet"
+        top_link: "Top-Link"
+        unsubscribes: "Abmeldungen"
+      compare: "Vergleichen"
+      compare_hint: "2 bis %{max} Kampagnen auswählen"
+      docs_link: "Mehr erfahren"
+      empty_heading: "Noch keine gesendeten Kampagnen"
+      empty_intro: "Jede Kampagne erscheint hier nach dem Versand mit ihren Öffnungen, Klicks, Abmeldungen und Bounces."
+      intro: "Alle gesendeten Kampagnen mit ihren Zahlen. Klicke auf eine Spalte zum Sortieren oder auf eine Zeile, um den Bericht zu öffnen."
+      select_broadcast: "%{name} zum Vergleichen auswählen"
+      title: "Kampagnen"
   link_tracking:
     chart:
       clicks: "Klicks"

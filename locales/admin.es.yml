@@ -4810,6 +4810,8 @@ es:
           total_links_clicked: "Enlaces con clics"
           total_clicks: "Clics totales"
           average_clicks: "Media de clics por enlace"
+          links: "Enlaces"
+          broadcasts: "Campañas"
         application:
           title: "Aplicación"
           subtitle: "Administración del sistema"
@@ -5011,6 +5013,51 @@ es:
           other: "%{count} suscriptores"
         recipient: "%{recipient}, hace %{time}"
 
+  analytics_broadcasts:
+    compare:
+      back: "Todas las campañas"
+      best_hint: "La mejor tasa de cada fila está en verde: las tasas de apertura y de clics más altas, las tasas de bajas y de rebote más bajas."
+      intro:
+        one: "%{count} campaña lado a lado"
+        other: "%{count} campañas lado a lado"
+      metric: "Métrica"
+      metrics:
+        bounce_rate: "Tasa de rebote"
+        bounces: "Rebotes"
+        click_rate: "Tasa de clics"
+        clicks: "Clics"
+        complaints: "Quejas de spam"
+        open_rate: "Tasa de apertura"
+        opens: "Aperturas"
+        recipients: "Destinatarios"
+        sent_at: "Enviada"
+        top_link: "Enlace más clicado"
+        unsubscribe_rate: "Tasa de bajas"
+        unsubscribes: "Bajas"
+      title: "Comparar campañas"
+      too_few: "Selecciona al menos dos campañas enviadas para compararlas."
+    index:
+      clicks:
+        one: "%{count} clic"
+        other: "%{count} clics"
+      columns:
+        broadcast: "Campaña"
+        bounces: "Rebotes"
+        clicks: "Clics"
+        opens: "Aperturas"
+        recipients: "Destinatarios"
+        select: "Seleccionar para comparar"
+        sent_at: "Enviada"
+        top_link: "Enlace más clicado"
+        unsubscribes: "Bajas"
+      compare: "Comparar"
+      compare_hint: "Selecciona de 2 a %{max} campañas"
+      docs_link: "Más información"
+      empty_heading: "Aún no hay campañas enviadas"
+      empty_intro: "Cada campaña aparece aquí con sus aperturas, clics, bajas y rebotes después del envío."
+      intro: "Todas las campañas enviadas con sus cifras. Haz clic en una columna para ordenar o en una fila para abrir su informe."
+      select_broadcast: "Seleccionar %{name} para comparar"
+      title: "Campañas"
   link_tracking:
     chart:
       clicks: "Clics"

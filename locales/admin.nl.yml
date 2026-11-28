@@ -4811,6 +4811,8 @@ nl:
           total_links_clicked: "Aantal aangeklikte links"
           total_clicks: "Totaal aantal klikken"
           average_clicks: "Gem. klikken per link"
+          links: "Links"
+          broadcasts: "Campagnes"
         application:
           title: "Applicatie"
           subtitle: "Systeembeheer"
@@ -5012,6 +5014,51 @@ nl:
           other: "%{count} abonnees"
         recipient: "%{recipient}, %{time} geleden"
 
+  analytics_broadcasts:
+    compare:
+      back: "Alle campagnes"
+      best_hint: "De beste ratio in elke rij is groen: de hoogste open- en klikratio, de laagste afmeld- en bounceratio."
+      intro:
+        one: "%{count} campagne naast elkaar"
+        other: "%{count} campagnes naast elkaar"
+      metric: "Meetwaarde"
+      metrics:
+        bounce_rate: "Bounceratio"
+        bounces: "Bounces"
+        click_rate: "Klikratio"
+        clicks: "Klikken"
+        complaints: "Spamklachten"
+        open_rate: "Openratio"
+        opens: "Openingen"
+        recipients: "Ontvangers"
+        sent_at: "Verzonden"
+        top_link: "Toplink"
+        unsubscribe_rate: "Afmeldratio"
+        unsubscribes: "Afmeldingen"
+      title: "Campagnes vergelijken"
+      too_few: "Selecteer minstens twee verzonden campagnes om ze te vergelijken."
+    index:
+      clicks:
+        one: "%{count} klik"
+        other: "%{count} klikken"
+      columns:
+        broadcast: "Campagne"
+        bounces: "Bounces"
+        clicks: "Klikken"
+        opens: "Openingen"
+        recipients: "Ontvangers"
+        select: "Selecteren om te vergelijken"
+        sent_at: "Verzonden"
+        top_link: "Toplink"
+        unsubscribes: "Afmeldingen"
+      compare: "Vergelijken"
+      compare_hint: "Selecteer 2 tot %{max} campagnes"
+      docs_link: "Meer informatie"
+      empty_heading: "Nog geen verzonden campagnes"
+      empty_intro: "Elke campagne verschijnt hier na verzending, met openingen, klikken, afmeldingen en bounces."
+      intro: "Alle verzonden campagnes met hun cijfers. Klik op een kolom om te sorteren, of op een rij om het rapport te openen."
+      select_broadcast: "%{name} selecteren om te vergelijken"
+      title: "Campagnes"
   link_tracking:
     chart:
       clicks: "Klikken"

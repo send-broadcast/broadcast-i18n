@@ -4809,6 +4809,8 @@ pt-BR:
           total_links_clicked: "Total de links clicados"
           total_clicks: "Total de cliques"
           average_clicks: "Média de cliques por link"
+          links: "Links"
+          broadcasts: "Campanhas"
         application:
           title: "Aplicação"
           subtitle: "Administração do sistema"
@@ -5010,6 +5012,51 @@ pt-BR:
           other: "%{count} assinantes"
         recipient: "%{recipient}, há %{time}"
 
+  analytics_broadcasts:
+    compare:
+      back: "Todas as campanhas"
+      best_hint: "A melhor taxa de cada linha fica em verde: as maiores taxas de abertura e de cliques, as menores taxas de descadastro e de rejeição."
+      intro:
+        one: "%{count} campanha lado a lado"
+        other: "%{count} campanhas lado a lado"
+      metric: "Métrica"
+      metrics:
+        bounce_rate: "Taxa de rejeição"
+        bounces: "Rejeições"
+        click_rate: "Taxa de cliques"
+        clicks: "Cliques"
+        complaints: "Denúncias de spam"
+        open_rate: "Taxa de abertura"
+        opens: "Aberturas"
+        recipients: "Destinatários"
+        sent_at: "Enviada"
+        top_link: "Link mais clicado"
+        unsubscribe_rate: "Taxa de descadastro"
+        unsubscribes: "Descadastros"
+      title: "Comparar campanhas"
+      too_few: "Selecione pelo menos duas campanhas enviadas para compará-las."
+    index:
+      clicks:
+        one: "%{count} clique"
+        other: "%{count} cliques"
+      columns:
+        broadcast: "Campanha"
+        bounces: "Rejeições"
+        clicks: "Cliques"
+        opens: "Aberturas"
+        recipients: "Destinatários"
+        select: "Selecionar para comparar"
+        sent_at: "Enviada"
+        top_link: "Link mais clicado"
+        unsubscribes: "Descadastros"
+      compare: "Comparar"
+      compare_hint: "Selecione de 2 a %{max} campanhas"
+      docs_link: "Saiba mais"
+      empty_heading: "Nenhuma campanha enviada ainda"
+      empty_intro: "Cada campanha aparece aqui depois do envio, com aberturas, cliques, descadastros e rejeições."
+      intro: "Todas as campanhas enviadas com seus números. Clique em uma coluna para ordenar ou em uma linha para abrir o relatório."
+      select_broadcast: "Selecionar %{name} para comparar"
+      title: "Campanhas"
   link_tracking:
     chart:
       clicks: "Cliques"

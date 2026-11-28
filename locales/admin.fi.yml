@@ -4810,6 +4810,8 @@ fi:
           total_links_clicked: "Klikattuja linkkejä yhteensä"
           total_clicks: "Klikkauksia yhteensä"
           average_clicks: "Klikkauksia keskimäärin linkkiä kohden"
+          links: "Linkit"
+          broadcasts: "Kampanjat"
         application:
           title: "Sovellus"
           subtitle: "Järjestelmän hallinta"
@@ -5011,6 +5013,51 @@ fi:
           other: "%{count} tilaajaa"
         recipient: "%{recipient}, %{time} sitten"
 
+  analytics_broadcasts:
+    compare:
+      back: "Kaikki kampanjat"
+      best_hint: "Kunkin rivin paras arvo on vihreä: suurin avaus- ja klikkausprosentti, pienin peruutus- ja palautusprosentti."
+      intro:
+        one: "%{count} kampanja rinnakkain"
+        other: "%{count} kampanjaa rinnakkain"
+      metric: "Mittari"
+      metrics:
+        bounce_rate: "Palautusprosentti"
+        bounces: "Palautukset"
+        click_rate: "Klikkausprosentti"
+        clicks: "Klikkaukset"
+        complaints: "Roskapostivalitukset"
+        open_rate: "Avausprosentti"
+        opens: "Avaukset"
+        recipients: "Vastaanottajat"
+        sent_at: "Lähetetty"
+        top_link: "Klikatuin linkki"
+        unsubscribe_rate: "Peruutusprosentti"
+        unsubscribes: "Peruutukset"
+      title: "Vertaa kampanjoita"
+      too_few: "Valitse vähintään kaksi lähetettyä kampanjaa vertailuun."
+    index:
+      clicks:
+        one: "%{count} klikkaus"
+        other: "%{count} klikkausta"
+      columns:
+        broadcast: "Kampanja"
+        bounces: "Palautukset"
+        clicks: "Klikkaukset"
+        opens: "Avaukset"
+        recipients: "Vastaanottajat"
+        select: "Valitse vertailuun"
+        sent_at: "Lähetetty"
+        top_link: "Klikatuin linkki"
+        unsubscribes: "Peruutukset"
+      compare: "Vertaa"
+      compare_hint: "Valitse vähintään 2 ja enintään %{max} kampanjaa"
+      docs_link: "Lue lisää"
+      empty_heading: "Ei vielä lähetettyjä kampanjoita"
+      empty_intro: "Jokainen kampanja näkyy täällä lähetyksen jälkeen avauksineen, klikkauksineen, peruutuksineen ja palautuksineen."
+      intro: "Kaikki lähetetyt kampanjat lukuineen. Lajittele napsauttamalla saraketta tai avaa raportti napsauttamalla riviä."
+      select_broadcast: "Valitse %{name} vertailuun"
+      title: "Kampanjat"
   link_tracking:
     chart:
       clicks: "Klikkaukset"
